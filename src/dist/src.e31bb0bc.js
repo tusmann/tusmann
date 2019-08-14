@@ -943,7 +943,7 @@ var _documentParser = require("./document-parser");
 
 console.log('hello world'); //importiamo il modulo che voglio in questo caso da file locale ma potrebbe anche essere libreria npm per poi utilizzarlo//
 
-(0, _documentParser.parseDocument)("./articles/ShihoFukada.html");
+(0, _documentParser.parseDocument)("./articles/Bloomberg/ShihoFukada.html");
 },{"./document-parser":"document-parser.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -972,7 +972,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "15455" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "16251" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
