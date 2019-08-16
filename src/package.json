@@ -33,11 +33,11 @@
   },
   "staticFiles": {
     "staticPath": [
-        {
-            "staticPath": "assets/TTTfiles",
-            "staticOutDir": "articles",
-            "watcherGlob": "**"
-        }
+      {
+        "staticPath": "assets/TTTfiles",
+        "staticOutDir": "articles",
+        "watcherGlob": "**"
+      }
     ]
-}
+  }
 }
