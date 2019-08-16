@@ -1,6 +1,116 @@
-$primary-color: white;
-$bg: black;
-body {
-  color: $primary-color;
-  background-color: $bg;
+$primary-color: #212121;
+$font-primary: 'IBM Plex Sans', sans-serif;
+$font-color: #f4f1d0;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
+
+html {
+    box-sizing: border-box;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 62.5%;
+    line-height: 1.5;
+}
+
+body {
+  background-color: $primary-color;
+  font-family: $font-primary;
+  color: $font-color;
+  font-size: 1.6rem;
+}
+
+
+.container {
+  width: 1000px;
+  margin: 30px auto;
+
+  display: grid;
+  grid-template-rows: 8vh repeat(7, 150px);
+  grid-template-columns: auto min-content;
+  grid-gap: 2rem;
+
+  .header {
+    background-color: rgb(49, 49, 192);
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+  }
+
+  .sidebar {
+    background-color: rgb(153, 80, 80);
+    grid-row: 2 / -1;
+    grid-column: 2 / 3;
+  }
+
+  .reader {
+    background-color: rgb(78, 158, 78);
+  }
+
+  .development {
+
+    &__first-style {
+      background-color: rgb(41, 204, 204);
+    }
+
+    &__second-style {
+      background-color: rgb(204, 0, 255);
+    }
+
+    &__third-style {
+      background-color: coral;
+    }
+
+    &__fourth-style {
+      background-color: darkred;
+    }
+
+    &__fifth-style {
+      background-color: darkslategray;
+    }
+
+    &__sixth-style {
+      background-color: forestgreen;
+    }
+  }
+
+  .footer {
+    background-color: steelblue;
+  }
+
+  /*.header {
+    &__container {
+     padding: 2rem;
+     background-color: rgba($primary-color, 0.6);
+     color: $font-color;
+     display: grid;
+     grid-template-rows: 1fr;
+     grid-template-columns: 1fr 1fr;
+     grid-gap: 30px;
+      
+        &--logo {
+         grid-row: 1 / 2;
+         grid-column: 1 / 2;
+        }
+   
+         &--menu {
+           grid-row: 1 / 2;
+           grid-column: 2 / 3;
+           text-align: right;
+
+           &--box {
+            display: inline-block;
+            padding: .375em .75em;
+            border: 1px solid #f4f1d0;
+            text-transform: uppercase;
+            text-decoration: none;
+           }
+        }
+     }
+   }*/
+}
+
