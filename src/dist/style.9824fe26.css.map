@@ -1,1 +1,0 @@
-{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAEA,KACE,mCAAA,CACA,UAJc,CAKd","file":"style.9824fe26.css","sourceRoot":"..","sourcesContent":["$primary-color: rgb(255, 255, 255);\r\n$bg: black;\r\nbody {\r\n  font-family: 'IBM Plex Mono', monospace;\r\n  color: $primary-color;\r\n  background-color: $bg;\r\n}"]}
