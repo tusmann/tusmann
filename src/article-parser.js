@@ -15,12 +15,13 @@ async function parseArticle(article){
     const body = articleDocument.querySelector("body");
     //create url from current article
     const articleURL = new URL(article, window.location.href)
+    const pageURL = new URL(window.location.href)
     //get article path (without file name)
     const articlePath = articleURL.pathname.substring(0, articleURL.pathname.lastIndexOf("/"))
     body.querySelectorAll("img").forEach(image => {
         //Edit image src by appending the current article path
         const url = new URL(image.src)
-        image.src = url.origin + articlePath + url.pathname
+        image.src = url.origin + articlePath + "/" + url.pathname.split(pageURL.pathname)[1]
     })
     return {
         body: body,
