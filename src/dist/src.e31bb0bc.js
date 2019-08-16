@@ -886,13 +886,13 @@ function _asyncToGenerator(fn) {
 }
 
 module.exports = _asyncToGenerator;
-},{}],"document-parser.js":[function(require,module,exports) {
+},{}],"article-parser.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.parseDocument = parseDocument;
+exports.parseArticle = parseArticle;
 
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
@@ -902,15 +902,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 //definire funzioni da esportare. creo un modulo con certe funzioni. un modulo è un contenitore di cose (funzioni e/o variabili
 //questo modulo farà -fetch documento: prendere il doc e -parsing che significa prendere html e trasformarlo in dom
-function parseDocument(_x) {
-  return _parseDocument.apply(this, arguments);
+function parseArticle(_x) {
+  return _parseArticle.apply(this, arguments);
 }
 
-function _parseDocument() {
-  _parseDocument = (0, _asyncToGenerator2.default)(
+function _parseArticle() {
+  _parseArticle = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
   _regenerator.default.mark(function _callee(article) {
-    var articleResponse, articleHtml;
+    var articleResponse, articleHtml, parser, articleDocument, body;
     return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -925,26 +925,69 @@ function _parseDocument() {
 
           case 5:
             articleHtml = _context.sent;
-            console.log(articleHtml);
+            //trasformato il text in dom
+            parser = new DOMParser();
+            articleDocument = parser.parseFromString(articleHtml, "text/html"); //preso solo body
 
-          case 7:
+            body = articleDocument.querySelector("body");
+            return _context.abrupt("return", body);
+
+          case 10:
           case "end":
             return _context.stop();
         }
       }
     }, _callee);
   }));
-  return _parseDocument.apply(this, arguments);
+  return _parseArticle.apply(this, arguments);
 } //this module will call this function and put in the general dom the one that we just generated with the previous module
 },{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
-var _documentParser = require("./document-parser");
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
+
+var _articleParser = require("./article-parser");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 console.log('hello world'); //importiamo il modulo che voglio in questo caso da file locale ma potrebbe anche essere libreria npm per poi utilizzarlo//
 
-(0, _documentParser.parseDocument)("./articles/Bloomberg/ShihoFukada.html");
-},{"./document-parser":"document-parser.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+//funzione che serve per agg i doc al dom della pagina
+function addArticle() {
+  return _addArticle.apply(this, arguments);
+} //chiamata funzione addDoc
+
+
+function _addArticle() {
+  _addArticle = (0, _asyncToGenerator2.default)(
+  /*#__PURE__*/
+  _regenerator.default.mark(function _callee() {
+    var article;
+    return _regenerator.default.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return (0, _articleParser.parseArticle)("./articles/Bloomberg/ShihoFukada.html");
+
+          case 2:
+            article = _context.sent;
+            console.log(article); //TODO: insert dom into container
+
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _addArticle.apply(this, arguments);
+}
+
+addArticle();
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","./article-parser":"article-parser.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -972,7 +1015,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "16251" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "19575" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

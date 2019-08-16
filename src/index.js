@@ -1,5 +1,12 @@
 console.log('hello world')
 //importiamo il modulo che voglio in questo caso da file locale ma potrebbe anche essere libreria npm per poi utilizzarlo//
-import {parseDocument} from "./document-parser"
+import {parseArticle} from "./article-parser"
 
-parseDocument("./articles/Bloomberg/ShihoFukada.html") 
+//funzione che serve per agg i doc al dom della pagina
+async function addArticle(){
+    var article = await parseArticle("./articles/Bloomberg/ShihoFukada.html") 
+    console.log(article)
+    //TODO: insert dom into container
+}
+//chiamata funzione addDoc
+addArticle()
