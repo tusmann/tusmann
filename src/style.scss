@@ -27,59 +27,53 @@ body {
 
 
 .container {
-  width: 1000px;
-  margin: 30px auto;
+  width: 100%;
+  margin: 0 auto;
 
   display: grid;
-  grid-template-rows: 8vh repeat(7, 150px);
-  grid-template-columns: auto min-content;
-  grid-gap: 2rem;
+  grid-template-rows: 10vh 90vh 1fr 1fr;
+  grid-template-columns: min-content 3fr;
+  grid-template-areas: "nav nav"
+                       "header sidebar"
+                       "tutorial tutorial"
+                       "footer footer";
+                       
 
-  .header {
-    background-color: rgb(49, 49, 192);
+  .navbar {
+    background-color: rgb(49, 49, 192, 0.6);
     grid-row: 1 / 2;
     grid-column: 1 / -1;
+    position: sticky;
+    top: 0;
   }
 
   .sidebar {
     background-color: rgb(153, 80, 80);
-    grid-row: 2 / -1;
-    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    grid-column: 1 / 2;
   }
 
-  .reader {
+  .header {
     background-color: rgb(78, 158, 78);
+    grid-row: 2 / 3;
+    grid-column: 2 / -1;
+    overflow: auto;
+
+    &__jumbo {
+      height: 1000px;
+    }
   }
 
-  .development {
-
-    &__first-style {
-      background-color: rgb(41, 204, 204);
-    }
-
-    &__second-style {
-      background-color: rgb(204, 0, 255);
-    }
-
-    &__third-style {
-      background-color: coral;
-    }
-
-    &__fourth-style {
-      background-color: darkred;
-    }
-
-    &__fifth-style {
-      background-color: darkslategray;
-    }
-
-    &__sixth-style {
-      background-color: forestgreen;
-    }
+  .tutorial {
+    background-color: darkslategray;
+    grid-row: 3 / 4;
+    grid-column: 2 / -1;
   }
 
   .footer {
     background-color: steelblue;
+    grid-row: 4 / 5;
+    grid-column: 2 / -1;
   }
 
   /*.header {
