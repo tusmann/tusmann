@@ -33,10 +33,6 @@ body {
   display: grid;
   grid-template-rows: 10vh 90vh 1fr 1fr;
   grid-template-columns: min-content 3fr;
-  grid-template-areas: "nav nav"
-                       "header sidebar"
-                       "tutorial tutorial"
-                       "footer footer";
                        
 
   .navbar {
