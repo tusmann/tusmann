@@ -31,8 +31,8 @@ body {
   margin: 0 auto;
 
   display: grid;
-  grid-template-rows: 10vh 90vh 1fr 1fr;
-  grid-template-columns: min-content 3fr;
+  grid-template-rows: 10vh 90vh minmax(max-content, auto) min-content;
+  grid-template-columns: 10vw auto;
                        
 
   .navbar {
@@ -45,7 +45,7 @@ body {
 
   .sidebar {
     background-color: rgb(153, 80, 80);
-    grid-row: 2 / 4;
+    grid-row: 2 / -1;
     grid-column: 1 / 2;
   }
 
@@ -53,23 +53,13 @@ body {
     background-color: rgb(78, 158, 78);
     grid-row: 2 / 3;
     grid-column: 2 / -1;
-    overflow: auto;
-
-    &__jumbo {
-      height: 1000px;
-    }
+    overflow: hidden;
   }
 
-  .tutorial {
+  .reader {
     background-color: darkslategray;
     grid-row: 3 / 4;
-    grid-column: 2 / -1;
-  }
-
-  .footer {
-    background-color: steelblue;
-    grid-row: 4 / 5;
-    grid-column: 2 / -1;
+    grid-column: 2 / 3;
   }
 
   /*.header {
