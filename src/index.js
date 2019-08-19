@@ -9,10 +9,12 @@ async function addArticle(){
     console.log(article)
     
     //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
-    const elementsToDelete = document.querySelectorAll(".header, .sidebar")
+    const elementsToDelete = document.querySelectorAll(".header, .tutorial")
     elementsToDelete.forEach(node => {
         node.classList.add("hidden");
     }) 
+
+    document.querySelector(".reader").className = document.querySelector(".reader").className.replace(/(?:^|\s)hidden(?!\S)/g, '')
 
     //actually insert the new document
     const container = document.querySelector(".reader")
@@ -24,4 +26,8 @@ async function addArticle(){
     //TODO: insert dom into container
 }
 //chiamata funzione addDoc
-addArticle()
+
+var widget = document.querySelector('.try');
+widget.addEventListener('click', addArticle);
+
+

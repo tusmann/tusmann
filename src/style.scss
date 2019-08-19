@@ -2,6 +2,7 @@ $primary-color: #212121;
 $font-primary: 'IBM Plex Sans', sans-serif;
 $font-color: #f4f1d0;
 
+
 *,
 *::before,
 *::after {
@@ -36,35 +37,42 @@ body {
                        
 
   .navbar {
-    background-color: rgb(49, 49, 192, 0.6);
+    background-color: rgb(49, 49, 192);
     grid-row: 1 / 2;
     grid-column: 1 / -1;
     position: sticky;
     top: 0;
+    z-index: 15;
   }
 
-  .sidebar {
+  .sidenav {
     background-color: rgb(153, 80, 80);
     grid-row: 2 / -1;
     grid-column: 1 / 2;
+    overflow: hidden;
     position: fixed;
     top: 10vh;
-    height: 100vh;
+    height: 100%;
     width: 6vw;
 
+  }
+
+  .reader {
+    background-color: cadetblue;
+    grid-row: 2 / 4;
+    grid-column: 2 / -1;
   }
 
   .header {
     background-color: rgb(78, 158, 78);
     grid-row: 2 / 3;
     grid-column: 2 / -1;
-    overflow: hidden;
   }
 
-  .reader {
+  .tutorial {
     background-color: darkslategray;
     grid-row: 3 / 4;
-    grid-column: 2 / 3;
+    grid-column: 2 / -1;
   }
 
   .footer {
@@ -103,6 +111,13 @@ body {
         }
      }
    }*/
+
+   /*SIDEBAR DROPDOWN*/
+   /* Fixed sidenav, full height */
+
+
+/* Style the sidenav links and the dropdown button */
+
 }
 
 .hidden {
