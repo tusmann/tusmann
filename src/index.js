@@ -7,6 +7,14 @@ async function addArticle(){
     var article = await parseArticle("./articles/Bloomberg/ShihoFukada.html") 
 
     console.log(article)
+    
+    //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
+    const elementsToDelete = document.querySelectorAll(".header, .sidebar")
+    elementsToDelete.forEach(node => {
+        node.classList.add("hidden");
+    }) 
+
+    //actually insert the new document
     const container = document.querySelector(".reader")
     const nodes = Array.from(article.body.childNodes)
     nodes.forEach(node => {

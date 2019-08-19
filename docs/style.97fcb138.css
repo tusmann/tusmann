@@ -91,4 +91,8 @@ body {
   grid-column: 2/3;
 }
 
+.hidden {
+  display: none;
+}
+
 /*# sourceMappingURL=/style.97fcb138.css.map */
