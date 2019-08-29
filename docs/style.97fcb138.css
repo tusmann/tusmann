@@ -160,7 +160,7 @@ body {
 
   /* end drawer script */
 }
-header {
+.navbar {
   grid-column: span 2;
   padding: 30px;
   text-align: center;
