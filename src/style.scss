@@ -1,125 +1,161 @@
-$primary-color: #212121;
-$font-primary: 'IBM Plex Sans', sans-serif;
-$font-color: #f4f1d0;
-
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-html {
-    box-sizing: border-box;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 62.5%;
-    line-height: 1.5;
-}
+@import "reset.scss";
 
 body {
-  background-color: $primary-color;
-  font-family: $font-primary;
-  color: $font-color;
-  font-size: 1.6rem;
+  font-family: arial;
 }
 
 
-.container {
-  width: 100%;
-  margin: 0 auto;
+@media (max-width: 768px) {
 
-  display: grid;
-  grid-template-rows: 10vh 90vh min-content min-content;
-  grid-template-columns: 6vw auto;
-                       
-
-  .navbar {
-    background-color: rgb(49, 49, 192);
-    grid-row: 1 / 2;
-    grid-column: 1 / -1;
-    position: sticky;
-    top: 0;
-    z-index: 15;
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
+    /* original sidebar */
+      nav {
+          background-color: #f90;
+          padding: 20px;
+      }
+  
+}
 
-  .sidenav {
-    background-color: rgb(153, 80, 80);
-    grid-row: 2 / -1;
-    grid-column: 1 / 2;
-    overflow: hidden;
-    position: fixed;
-    top: 10vh;
-    height: 100%;
-    width: 6vw;
+
+@media (min-width: 768px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: auto 1fr auto;
+    /* fluid animation of the sidebar only for Firefox :( */
+    /* transition: grid-template-columns 350ms ease; */
 
   }
 
-  .reader {
-    background-color: cadetblue;
-    grid-row: 2 / 4;
-    grid-column: 2 / -1;
+  /* drawer script */
+  /*.container.opened-nav {
+      grid-template-columns: 400px 1fr;
+  }*/
+
+  /* drawer sidebar */
+  nav {
+      display: flex;
+      flex-direction: column;
+      transition: width 350ms ease;
+      width: 103px;
+      background: #0048AA;
+      color: #FFF;
+      padding: 20px;
+      position: relative;
+      }
+
+  .opened-doc-list {
+      font-size: 1rem;
+      line-height: 1.7rem;
+      color: #FFF;
+      text-decoration: none;
+      z-index: 1000;
+      cursor: pointer;
+      transition: opacity 350ms;
   }
 
-  .header {
-    background-color: rgb(78, 158, 78);
-    grid-row: 2 / 3;
-    grid-column: 2 / -1;
+  .nav-list {
+    position: absolute;
+    font-size: 1rem;
+    line-height: 1.7rem;
+    color: #FFF;
+    text-decoration: none;
+    z-index: 1000;
+    cursor: pointer;
+    transition: opacity 350ms;
+}
+
+  .close-menu {
+    position: absolute;
+    font-size: 3rem;
+    color: #FFF;
+    text-decoration: none;
+    z-index: 1000;
+    cursor: pointer;
+    transition: opacity 350ms;
+}
+
+  .opened-doc-list {
+      left: 20px;
   }
 
-  .tutorial {
-    background-color: darkslategray;
-    grid-row: 3 / 4;
-    grid-column: 2 / -1;
+  .close-menu {
+      right: 20px;
   }
 
-  .footer {
-    background-color: goldenrod;
-    grid-row: 4 / -1;
-    grid-column: 2 / 3;
+  .container.opened-nav .opened-doc-list,
+  .close-menu {
+      opacity: 0;
+      visibility: hidden;
   }
 
-  /*.header {
-    &__container {
-     padding: 2rem;
-     background-color: rgba($primary-color, 0.6);
-     color: $font-color;
-     display: grid;
-     grid-template-rows: 1fr;
-     grid-template-columns: 1fr 1fr;
-     grid-gap: 30px;
-      
-        &--logo {
-         grid-row: 1 / 2;
-         grid-column: 1 / 2;
-        }
-   
-         &--menu {
-           grid-row: 1 / 2;
-           grid-column: 2 / 3;
-           text-align: right;
+  .container.opened-nav .close-menu {
+      opacity: 1;
+      visibility: visible;
+  }
 
-           &--box {
-            display: inline-block;
-            padding: .375em .75em;
-            border: 1px solid #f4f1d0;
-            text-transform: uppercase;
-            text-decoration: none;
-           }
-        }
-     }
-   }*/
+  .container.opened-nav nav {
+      width: 300px;
+  }
+  /* end drawer script */
+}
 
-   /*SIDEBAR DROPDOWN*/
-   /* Fixed sidenav, full height */
+header {
+  grid-column: span 2;
+  padding: 30px;
+  text-align: center;
+  font-size: 1.4em;
+  background-color: #369;
+  color: white;
+}
+
+main {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow-y: auto;
+}
+
+.jumbo {
+  padding: 20px;
+}
+
+.tutorial {
+  padding: 20px;
+}
 
 
-/* Style the sidenav links and the dropdown button */
 
+/*.reader {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow-y: auto;
+}*/
+
+
+footer {
+  grid-column: span 2;
+  padding: 30px;
+  text-align: center;
+  font-size: 1.4em;
+  background-color: #690;
+  color: white;
+}
+
+h1 {
+  margin-bottom: 1em;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
 .hidden {
-  display: none
+  display: none;
 }

@@ -1,103 +1,210 @@
-*,
-*::before,
-*::after {
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-html {
-  box-sizing: border-box;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 62.5%;
-  line-height: 1.5;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
 }
 
 body {
-  background-color: #212121;
-  font-family: "IBM Plex Sans", sans-serif;
-  color: #f4f1d0;
-  font-size: 1.6rem;
+  line-height: 1;
 }
 
-.container {
-  width: 100%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-rows: 10vh 90vh min-content min-content;
-  grid-template-columns: 6vw auto;
-  /*.header {
-    &__container {
-     padding: 2rem;
-     background-color: rgba($primary-color, 0.6);
-     color: $font-color;
-     display: grid;
-     grid-template-rows: 1fr;
-     grid-template-columns: 1fr 1fr;
-     grid-gap: 30px;
+ol, ul {
+  list-style: none;
+}
 
-        &--logo {
-         grid-row: 1 / 2;
-         grid-column: 1 / 2;
-        }
+blockquote, q {
+  quotes: none;
+}
 
-         &--menu {
-           grid-row: 1 / 2;
-           grid-column: 2 / 3;
-           text-align: right;
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
 
-           &--box {
-            display: inline-block;
-            padding: .375em .75em;
-            border: 1px solid #f4f1d0;
-            text-transform: uppercase;
-            text-decoration: none;
-           }
-        }
-     }
-   }*/
-  /*SIDEBAR DROPDOWN*/
-  /* Fixed sidenav, full height */
-  /* Style the sidenav links and the dropdown button */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-.container .navbar {
-  background-color: #3131c0;
-  grid-row: 1/2;
-  grid-column: 1/-1;
-  position: sticky;
-  top: 0;
-  z-index: 15;
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
 }
-.container .sidenav {
-  background-color: #995050;
-  grid-row: 2/-1;
-  grid-column: 1/2;
-  overflow: hidden;
-  position: fixed;
-  top: 10vh;
-  height: 100%;
-  width: 6vw;
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
-.container .reader {
-  background-color: cadetblue;
-  grid-row: 2/4;
-  grid-column: 2/-1;
+
+body {
+  font-family: arial;
 }
-.container .header {
-  background-color: #4e9e4e;
-  grid-row: 2/3;
-  grid-column: 2/-1;
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  /* original sidebar */
+  nav {
+    background-color: #f90;
+    padding: 20px;
+  }
 }
-.container .tutorial {
-  background-color: darkslategray;
-  grid-row: 3/4;
-  grid-column: 2/-1;
+@media (min-width: 768px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: auto 1fr auto;
+    /* fluid animation of the sidebar only for Firefox :( */
+    /* transition: grid-template-columns 350ms ease; */
+  }
+
+  /* drawer script */
+  /*.container.opened-nav {
+      grid-template-columns: 400px 1fr;
+  }*/
+  /* drawer sidebar */
+  nav {
+    display: flex;
+    flex-direction: column;
+    transition: width 350ms ease;
+    width: 103px;
+    background: #0048AA;
+    color: #FFF;
+    padding: 20px;
+    position: relative;
+  }
+
+  .opened-doc-list {
+    font-size: 1rem;
+    line-height: 1.7rem;
+    color: #FFF;
+    text-decoration: none;
+    z-index: 1000;
+    cursor: pointer;
+    transition: opacity 350ms;
+  }
+
+  .nav-list {
+    position: absolute;
+    font-size: 1rem;
+    line-height: 1.7rem;
+    color: #FFF;
+    text-decoration: none;
+    z-index: 1000;
+    cursor: pointer;
+    transition: opacity 350ms;
+  }
+
+  .close-menu {
+    position: absolute;
+    font-size: 3rem;
+    color: #FFF;
+    text-decoration: none;
+    z-index: 1000;
+    cursor: pointer;
+    transition: opacity 350ms;
+  }
+
+  .opened-doc-list {
+    left: 20px;
+  }
+
+  .close-menu {
+    right: 20px;
+  }
+
+  .container.opened-nav .opened-doc-list,
+.close-menu {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .container.opened-nav .close-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .container.opened-nav nav {
+    width: 300px;
+  }
+
+  /* end drawer script */
 }
-.container .footer {
-  background-color: goldenrod;
-  grid-row: 4/-1;
-  grid-column: 2/3;
+header {
+  grid-column: span 2;
+  padding: 30px;
+  text-align: center;
+  font-size: 1.4em;
+  background-color: #369;
+  color: white;
+}
+
+main {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow-y: auto;
+}
+
+.jumbo {
+  padding: 20px;
+}
+
+.tutorial {
+  padding: 20px;
+}
+
+/*.reader {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow-y: auto;
+}*/
+footer {
+  grid-column: span 2;
+  padding: 30px;
+  text-align: center;
+  font-size: 1.4em;
+  background-color: #690;
+  color: white;
+}
+
+h1 {
+  margin-bottom: 1em;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
 .hidden {

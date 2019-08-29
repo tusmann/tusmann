@@ -30,4 +30,14 @@ async function addArticle(){
 var widget = document.querySelector('.try');
 widget.addEventListener('click', addArticle);
 
+// mia funzione per chiamare lo stile//
+/*function callStyle() {
+    document.querySelector('head').innerHTML += '<link rel="stylesheet" href="/griffo.235af7c4.css" type="text/css"/>';
+}
+
+var stylist = document.querySelector('.sty');
+stylist.addEventListener('click', callStyle);*/
+
+//funzione di andre per chiamare lo stile//
+
 

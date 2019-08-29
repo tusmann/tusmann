@@ -1,0 +1,141 @@
+body {
+    font-family: arial;
+  }
+  
+
+  @media (max-width: 768px) {
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+      /* original sidebar */
+        nav {
+            background-color: #f90;
+            padding: 20px;
+        }
+    
+  }
+  
+  
+  @media (min-width: 768px) {
+    .container {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      grid-template-rows: auto 1fr auto;
+      /* fluid animation of the sidebar only for Firefox :( */
+      /* transition: grid-template-columns 350ms ease; */
+  
+    }
+
+    /* drawer script */
+    /*.container.opened-nav {
+        grid-template-columns: 400px 1fr;
+    }*/
+
+    /* drawer sidebar */
+    nav {
+        display: flex;
+        flex-direction: column;
+        transition: width 350ms ease;
+        width: 103px;
+        background: #0048AA;
+        color: #FFF;
+        padding: 20px;
+        position: relative;
+        }
+
+    .opened-doc-list {
+        font-size: 1rem;
+        line-height: 1.7rem;
+        color: #FFF;
+        text-decoration: none;
+        z-index: 1000;
+        cursor: pointer;
+        transition: opacity 350ms;
+    }
+
+    .nav-list {
+      position: absolute;
+      font-size: 1rem;
+      line-height: 1.7rem;
+      color: #FFF;
+      text-decoration: none;
+      z-index: 1000;
+      cursor: pointer;
+      transition: opacity 350ms;
+  }
+
+    .close-menu {
+      position: absolute;
+      font-size: 3rem;
+      color: #FFF;
+      text-decoration: none;
+      z-index: 1000;
+      cursor: pointer;
+      transition: opacity 350ms;
+  }
+
+    .opened-doc-list {
+        left: 20px;
+    }
+
+    .close-menu {
+        right: 20px;
+    }
+
+    .container.opened-nav .opened-doc-list,
+    .close-menu {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .container.opened-nav .close-menu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .container.opened-nav nav {
+        width: 300px;
+    }
+    /* end drawer script */
+  }
+  
+  header {
+    grid-column: span 2;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.4em;
+    background-color: #369;
+    color: white;
+  }
+  
+  main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+
+  
+  footer {
+    grid-column: span 2;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.4em;
+    background-color: #690;
+    color: white;
+  }
+  
+  h1 {
+    margin-bottom: 1em;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+/*# sourceMappingURL=/styles.8986bff4.css.map */
