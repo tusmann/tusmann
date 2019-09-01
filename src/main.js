@@ -1,11 +1,74 @@
-//SCRIPT ORIGINARIO DELLA FRANCI di chiamata articolo
 import {parseArticle} from "./article-parser"
 
-//funzione che serve per agg i doc al dom della pagina
-async function addArticle(){
-    var article = await parseArticle("./articles/Bloomberg/ShihoFukada.html")
 
-    console.log(article)
+// polyfill needed for using for loop on a dictionary
+  /*
+ * Object.prototype.forEach() polyfill
+ * https://gomakethings.com/looping-through-objects-with-es6/
+ * @author Chris Ferdinandi
+ * @license MIT
+ */
+if (!Object.prototype.forEach) {
+	Object.defineProperty(Object.prototype, 'forEach', {
+		value: function (callback, thisArg) {
+			if (this == null) {
+				throw new TypeError('Not an object');
+			}
+			thisArg = thisArg || window;
+			for (var key in this) {
+				if (this.hasOwnProperty(key)) {
+					callback.call(thisArg, this[key], key, this);
+				}
+			}
+		}
+	});
+}
+
+
+//article dictionary with title=key and url=value
+
+  var articlesDict = { 
+                    A: "./articles/Bloomberg/ShihoFukada.html", 
+                    B: "./articles/Harpers/ImaniPerry.html", 
+                    C: "./articles/HuffingtonPost/JasonFagone.html",
+                    D: "./articles/TheCut/JessicaPresler.html",
+                    E: "./articles/Times Literary Supplement/CarlMiller.html",
+                    F: "./articles/EUDirective/L125-75.html", 
+    };
+
+//dynamically creates buttons for selecting articles in the sidebar
+function articlesSidebarSelection(){
+    
+    articlesDict.forEach(function (item, key) {
+        var articleTitle = key;
+        var articleUrl = item;
+        console.log(articleUrl);
+        console.log(articleTitle);
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.className = "close-menu-doc";
+        a.appendChild(document.createTextNode(articleTitle));
+        li.appendChild(a);
+        a.addEventListener("click", () => addArticle(articleUrl));
+        //var newButton = document.createElement("button");
+        //newButton.className = "close-menu-doc";
+        //var buttonContent = document.createTextNode(articleTitle)
+        //newButton.appendChild(buttonContent)
+        //newButton.addEventListener("click", () => addArticle(articleUrl))
+        //console.log(key, articleUrl)
+        var location = document.querySelector(".placeholder");
+        location.insertAdjacentElement("afterbegin", a);
+        location.insertAdjacentElement("afterbegin", li);
+    }) 
+}
+articlesSidebarSelection()
+
+//SCRIPT ORIGINARIO DELLA FRANCI di chiamata articolo
+//funzione che serve per agg i doc al dom della pagina
+async function addArticle(cacca){
+    var article = await parseArticle(cacca)
+
+    console.log(cacca)
     
     //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
     const elementsToDelete = document.querySelectorAll(".jumbo, .tutorial")
@@ -14,6 +77,8 @@ async function addArticle(){
     }) 
 
     document.querySelector(".reader").className = document.querySelector(".reader").className.replace(/(?:^|\s)hidden(?!\S)/g, '')
+
+    document.querySelector(".reader").innerHTML = ""
 
     //actually insert the new document
     const container = document.querySelector(".reader")
@@ -24,8 +89,8 @@ async function addArticle(){
     
 }
 
-const readerActivation = document.querySelector('.reader-activator');
-readerActivation.addEventListener('click', addArticle);
+//const readerActivation = document.querySelector('.reader-activator');
+//readerActivation.addEventListener('click', addArticle);
 //FINE SCRIPT ORIGINARIO FRANCI
 
 

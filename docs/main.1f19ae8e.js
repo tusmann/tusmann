@@ -1000,33 +1000,102 @@ var _articleParser = require("./article-parser");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//SCRIPT ORIGINARIO DELLA FRANCI di chiamata articolo
-//funzione che serve per agg i doc al dom della pagina
-function addArticle() {
-  return _addArticle.apply(this, arguments);
+// polyfill needed for using for loop on a dictionary
+
+/*
+* Object.prototype.forEach() polyfill
+* https://gomakethings.com/looping-through-objects-with-es6/
+* @author Chris Ferdinandi
+* @license MIT
+*/
+if (!Object.prototype.forEach) {
+  Object.defineProperty(Object.prototype, 'forEach', {
+    value: function value(callback, thisArg) {
+      if (this == null) {
+        throw new TypeError('Not an object');
+      }
+
+      thisArg = thisArg || window;
+
+      for (var key in this) {
+        if (this.hasOwnProperty(key)) {
+          callback.call(thisArg, this[key], key, this);
+        }
+      }
+    }
+  });
+} //article dictionary with title=key and url=value
+
+
+var articlesDict = {
+  A: "./articles/Bloomberg/ShihoFukada.html",
+  B: "./articles/Harpers/ImaniPerry.html",
+  C: "./articles/HuffingtonPost/JasonFagone.html",
+  D: "./articles/TheCut/JessicaPresler.html",
+  E: "./articles/Times Literary Supplement/CarlMiller.html",
+  F: "./articles/EUDirective/L125-75.html"
+}; //dynamically creates buttons for selecting articles in the sidebar
+
+function articlesSidebarSelection() {
+  articlesDict.forEach(function (item, key) {
+    var articleTitle = key;
+    var articleUrl = item;
+    console.log(articleUrl);
+    console.log(articleTitle);
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.className = "close-menu-doc";
+    a.appendChild(document.createTextNode(articleTitle));
+    li.appendChild(a);
+    a.addEventListener("click", function () {
+      return addArticle(articleUrl);
+    }); //var newButton = document.createElement("button");
+    //newButton.className = "close-menu-doc";
+    //var buttonContent = document.createTextNode(articleTitle)
+    //newButton.appendChild(buttonContent)
+    //newButton.addEventListener("click", () => addArticle(articleUrl))
+    //console.log(key, articleUrl)
+
+    var location = document.querySelector(".placeholder");
+    location.insertAdjacentElement("afterbegin", a);
+    location.insertAdjacentElement("afterbegin", li);
+  });
 }
+
+articlesSidebarSelection(); //SCRIPT ORIGINARIO DELLA FRANCI di chiamata articolo
+//funzione che serve per agg i doc al dom della pagina
+
+function addArticle(_x) {
+  return _addArticle.apply(this, arguments);
+} //const readerActivation = document.querySelector('.reader-activator');
+//readerActivation.addEventListener('click', addArticle);
+//FINE SCRIPT ORIGINARIO FRANCI
+//selezione stili
+//funzione stile 1
+
 
 function _addArticle() {
   _addArticle = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
-  _regenerator.default.mark(function _callee() {
+  _regenerator.default.mark(function _callee(cacca) {
     var article, elementsToDelete, container, nodes;
     return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return (0, _articleParser.parseArticle)("./articles/Bloomberg/ShihoFukada.html");
+            return (0, _articleParser.parseArticle)(cacca);
 
           case 2:
             article = _context.sent;
-            console.log(article); //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
+            console.log(cacca); //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
 
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorial");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
             });
-            document.querySelector(".reader").className = document.querySelector(".reader").className.replace(/(?:^|\s)hidden(?!\S)/g, ''); //actually insert the new document
+            document.querySelector(".reader").className = document.querySelector(".reader").className.replace(/(?:^|\s)hidden(?!\S)/g, '');
+            document.querySelector(".reader").innerHTML = ""; //actually insert the new document
 
             container = document.querySelector(".reader");
             nodes = Array.from(article.body.childNodes);
@@ -1034,7 +1103,7 @@ function _addArticle() {
               container.appendChild(node);
             });
 
-          case 10:
+          case 11:
           case "end":
             return _context.stop();
         }
@@ -1043,11 +1112,6 @@ function _addArticle() {
   }));
   return _addArticle.apply(this, arguments);
 }
-
-var readerActivation = document.querySelector('.reader-activator');
-readerActivation.addEventListener('click', addArticle); //FINE SCRIPT ORIGINARIO FRANCI
-//selezione stili
-//funzione stile 1
 
 document.querySelector('.style-selector-first').onclick = function () {
   document.querySelector("link.secondSheet").href = './first.css';
@@ -1147,7 +1211,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59896" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51007" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
