@@ -28,12 +28,12 @@ if (!Object.prototype.forEach) {
 //article dictionary with title=key and url=value
 
   var articlesDict = { 
-                    A: "./articles/Bloomberg/ShihoFukada.html", 
-                    B: "./articles/Harpers/ImaniPerry.html", 
-                    C: "./articles/HuffingtonPost/JasonFagone.html",
-                    D: "./articles/TheCut/JessicaPresler.html",
-                    E: "./articles/Times Literary Supplement/CarlMiller.html",
-                    F: "./articles/EUDirective/L125-75.html", 
+    "Japan's Prisons Are a Haven for Elderly Women": "./articles/Bloomberg/ShihoFukada.html", 
+    "As Goes the South, so Goes the Nation": "./articles/Harpers/ImaniPerry.html", 
+    "Jerry And Marge Go Large": "./articles/HuffingtonPost/JasonFagone.html",
+    "How Anna Delvey Tricked New York’s Party People": "./articles/TheCut/JessicaPresler.html",
+    "God is in the machine": "./articles/Times Literary Supplement/CarlMiller.html",
+    "EUR-Lex - 32009L0041 - EN": "./articles/EUDirective/L125-75.html", 
     };
 
 //dynamically creates buttons for selecting articles in the sidebar
