@@ -177,6 +177,11 @@ main {
   overflow-y: auto;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
 .jumbo {
   padding: 20px;
 }

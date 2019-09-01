@@ -122,6 +122,12 @@ main {
   overflow-y: auto;
 }
 
+//test for european document
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
 .jumbo {
   padding: 20px;
 }
