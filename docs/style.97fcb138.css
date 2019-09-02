@@ -123,11 +123,12 @@ body {
     z-index: 1000;
     cursor: pointer;
     transition: opacity 350ms;
+    transform: translateY(20px);
   }
 
   .close-menu {
     position: absolute;
-    font-size: 3rem;
+    font-size: 2rem;
     color: #FFF;
     text-decoration: none;
     z-index: 1000;

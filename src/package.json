@@ -31,7 +31,8 @@
   "dependencies": {
     "@babel/runtime": "^7.5.5",
     "@material/drawer": "^3.1.1",
-    "@material/top-app-bar": "^3.1.0"
+    "@material/top-app-bar": "^3.1.0",
+    "serialize-to-js": "^3.0.0"
   },
   "staticFiles": {
     "staticPath": [
