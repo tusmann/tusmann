@@ -28,9 +28,7 @@ async function addSpecialArticle(leftArticleUrl, rightArticleUrl) {
     var location = document.querySelector("section.grid-container");
     location.insertAdjacentElement("afterbegin", rightReader);
     location.insertAdjacentElement("afterbegin", leftReader);
-    
-    //actually insert the 2 documents
-    
+
     const leftContainer = document.querySelector("section.reader.left")
     const leftNodes = Array.from(leftArticle.body.childNodes)
     leftNodes.forEach(node => {
@@ -56,7 +54,6 @@ async function addArticle(articleUrl){
     document.querySelector(".reader").className = document.querySelector(".reader").className.replace(/(?:^|\s)hidden(?!\S)/g, '')
 
     var gridReader = document.querySelector("section.grid-container")
-    console.log(gridReader)
     if (document.body.contains(gridReader)) {
         gridReader.classList.add("reader")
         gridReader.classList.remove("grid-container")

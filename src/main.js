@@ -37,26 +37,142 @@ specialArticleSidebarSelection("EUR-Lex", "./articles/EUDirective/L125-75.html",
 //selezione stili
 //funzione stile 1
 document.querySelector('.style-selector-first').onclick = function () { 
-    document.querySelector("link.secondSheet").href = './styles/first/first.css';
+    // inizio linee di codice per pulire il reader
+    //clear the reader from previous text
+    document.querySelector(".reader").innerHTML = ""
+
+    // change class to reader to avoid problems since we will create other readers
+    var reader = document.querySelector(".reader")
+    reader.classList.add("grid-container")
+    reader.classList.remove("reader")
+
+    var gridReader = document.querySelector("section.grid-container")
+    if (document.body.contains(gridReader)) {
+        gridReader.classList.add("reader")
+        gridReader.classList.remove("grid-container")
+        const gridNodes = Array.from(gridReader.childNodes)
+        gridNodes.forEach(node => {
+        gridReader.removeChild(node)
+    })
+}
+//fine linee di codice per pulire reader
+
+    var secondSheetElement = document.querySelector("link.secondSheet")
+    secondSheetElement.href = './styles/first/first.css';
 };
 
 document.querySelector('.style-selector-second').onclick = function () { 
+        // linee di codice per pulire il reader
+    //clear the reader from previous text
+    document.querySelector(".reader").innerHTML = ""
+
+    // change class to reader to avoid problems since we will create other readers
+    var reader = document.querySelector(".reader")
+    reader.classList.add("grid-container")
+    reader.classList.remove("reader")
+
+    var gridReader = document.querySelector("section.grid-container")
+    if (document.body.contains(gridReader)) {
+        gridReader.classList.add("reader")
+        gridReader.classList.remove("grid-container")
+        const gridNodes = Array.from(gridReader.childNodes)
+        gridNodes.forEach(node => {
+        gridReader.removeChild(node)
+    })
+}
+//fine linee di codice per pulire reader
     document.querySelector("link.secondSheet").href = './styles/second/second.css';
 };
 
 document.querySelector('.style-selector-third').onclick = function () { 
+        // linee di codice per pulire il reader
+    //clear the reader from previous text
+    document.querySelector(".reader").innerHTML = ""
+
+    // change class to reader to avoid problems since we will create other readers
+    var reader = document.querySelector(".reader")
+    reader.classList.add("grid-container")
+    reader.classList.remove("reader")
+
+    var gridReader = document.querySelector("section.grid-container")
+    if (document.body.contains(gridReader)) {
+        gridReader.classList.add("reader")
+        gridReader.classList.remove("grid-container")
+        const gridNodes = Array.from(gridReader.childNodes)
+        gridNodes.forEach(node => {
+        gridReader.removeChild(node)
+    })
+}
+//fine linee di codice per pulire reader
     document.querySelector("link.secondSheet").href = './styles/third.css';
 };
 
-document.querySelector('.style-selector-fourth').onclick = function () { 
+document.querySelector('.style-selector-fourth').onclick = function () {
+        // linee di codice per pulire il reader
+    //clear the reader from previous text
+    document.querySelector(".reader").innerHTML = ""
+
+    // change class to reader to avoid problems since we will create other readers
+    var reader = document.querySelector(".reader")
+    reader.classList.add("grid-container")
+    reader.classList.remove("reader")
+
+    var gridReader = document.querySelector("section.grid-container")
+    if (document.body.contains(gridReader)) {
+        gridReader.classList.add("reader")
+        gridReader.classList.remove("grid-container")
+        const gridNodes = Array.from(gridReader.childNodes)
+        gridNodes.forEach(node => {
+        gridReader.removeChild(node)
+    })
+}
+//fine linee di codice per pulire reader 
     document.querySelector("link.secondSheet").href = './styles/fourth.css';
 };
 
-document.querySelector('.style-selector-fifth').onclick = function () { 
+document.querySelector('.style-selector-fifth').onclick = function () {
+        // linee di codice per pulire il reader
+    //clear the reader from previous text
+    document.querySelector(".reader").innerHTML = ""
+
+    // change class to reader to avoid problems since we will create other readers
+    var reader = document.querySelector(".reader")
+    reader.classList.add("grid-container")
+    reader.classList.remove("reader")
+
+    var gridReader = document.querySelector("section.grid-container")
+    if (document.body.contains(gridReader)) {
+        gridReader.classList.add("reader")
+        gridReader.classList.remove("grid-container")
+        const gridNodes = Array.from(gridReader.childNodes)
+        gridNodes.forEach(node => {
+        gridReader.removeChild(node)
+    })
+}
+//fine linee di codice per pulire reader 
     document.querySelector("link.secondSheet").href = './styles/fifth.css';
 };
 
-document.querySelector('.style-selector-sixth').onclick = function () { 
+document.querySelector('.style-selector-sixth').onclick = function () {
+        // linee di codice per pulire il reader
+    //clear the reader from previous text
+    document.querySelector(".reader").innerHTML = ""
+
+    // change class to reader to avoid problems since we will create other readers
+    var reader = document.querySelector(".reader")
+    reader.classList.add("grid-container")
+    reader.classList.remove("reader")
+
+    var gridReader = document.querySelector("section.grid-container")
+    if (document.body.contains(gridReader)) {
+        gridReader.classList.add("reader")
+        gridReader.classList.remove("grid-container")
+        const gridNodes = Array.from(gridReader.childNodes)
+        gridNodes.forEach(node => {
+        gridReader.removeChild(node)
+    })
+}
+//fine linee di codice per pulire reader 
     document.querySelector("link.secondSheet").href = './styles/sixth.css';
 };
 

@@ -23,7 +23,7 @@ function articlesSidebarSelection(){
         a.className = "close-menu-doc";
         a.appendChild(document.createTextNode(articleTitle));
         li.appendChild(a);
-        console.log(li)
+
         
         a.addEventListener("click", () => addArticle(articleUrl));
         //var newButton = document.createElement("button");
