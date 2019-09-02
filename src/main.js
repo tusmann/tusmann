@@ -101,7 +101,10 @@ const toggleNavBar = () => {
 openMenu.forEach(node => {
     node.addEventListener('click', toggleNavBar, false);
 }) 
+
+
 closeMenu.addEventListener('click', toggleNavBar, false);
+
 closeDocMenu.forEach(node => {
     node.addEventListener('click', toggleNavBar, false);
 }) 

@@ -18,13 +18,13 @@ function articlesSidebarSelection(){
     articlesDict.forEach(function (item, key) {
         var articleTitle = key;
         var articleUrl = item;
-        console.log(articleUrl);
-        console.log(articleTitle);
         var li = document.createElement('li');
         var a = document.createElement('a');
         a.className = "close-menu-doc";
         a.appendChild(document.createTextNode(articleTitle));
         li.appendChild(a);
+        console.log(li)
+        
         a.addEventListener("click", () => addArticle(articleUrl));
         //var newButton = document.createElement("button");
         //newButton.className = "close-menu-doc";
@@ -33,7 +33,8 @@ function articlesSidebarSelection(){
         //newButton.addEventListener("click", () => addArticle(articleUrl))
         //console.log(key, articleUrl)
         var location = document.querySelector(".placeholder");
-        location.insertAdjacentElement("afterbegin", a);
+        //console.log(location)
+        //location.insertAdjacentElement("afterbegin", a);
         location.insertAdjacentElement("afterbegin", li);
     }) 
 }
@@ -48,7 +49,7 @@ function specialArticleSidebarSelection(articleTitle, leftArticleUrl, rightArtic
     li.appendChild(a);
     a.addEventListener("click", () => addSpecialArticle(leftArticleUrl, rightArticleUrl));
         var location = document.querySelector(".placeholder");
-        location.insertAdjacentElement("afterbegin", a);
+        //location.insertAdjacentElement("afterbegin", a);
         location.insertAdjacentElement("afterbegin", li);
 }
 
