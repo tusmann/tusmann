@@ -1379,7 +1379,7 @@ closeDocMenu.forEach(function (node) {
 
 document.querySelector(".aboutPageButton").onclick = function () {
   document.querySelector(".aboutPageSection").classList.remove("hidden");
-  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .disclaimerPageSection, .reader");
+  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .disclaimerPageSection, .reader, .documentationPageSection");
   elementsToDelete.forEach(function (node) {
     node.classList.add("hidden");
   });
@@ -1388,11 +1388,39 @@ document.querySelector(".aboutPageButton").onclick = function () {
 
 document.querySelector(".disclaimerPageButton").onclick = function () {
   document.querySelector(".disclaimerPageSection").classList.remove("hidden");
-  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .reader");
+  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .reader, .documentationPageSection");
   elementsToDelete.forEach(function (node) {
     node.classList.add("hidden");
   });
-};
+}; //add documentation page
+
+
+document.querySelector(".documentationPageButton").onclick = function () {
+  document.querySelector(".documentationPageSection").classList.remove("hidden");
+  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .reader, .disclaimerPageSection");
+  elementsToDelete.forEach(function (node) {
+    node.classList.add("hidden");
+  });
+}; //documentation page animation
+//theme 1
+//document.querySelector(".card-theme1").onclick = function () {
+
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
 },{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js","./articlesSelectionButtons":"articlesSelectionButtons.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -1421,7 +1449,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54192" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55474" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

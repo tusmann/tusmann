@@ -411,5 +411,132 @@ h1 {
   from, to { border-color: transparent }
   50% { border-color: orange; }
 }*/
+.disclaimerPageSection, .aboutPageSection {
+  font-size: 1.2rem;
+  padding: 3% 10% 3% 4%;
+}
+.disclaimerPageSection p, .aboutPageSection p {
+  padding: 0.5rem 0;
+}
+.disclaimerPageSection ul, .aboutPageSection ul {
+  padding: 1rem 0 1rem 2rem;
+}
+.disclaimerPageSection h1, .aboutPageSection h1 {
+  padding: 0;
+  font-size: 2.5rem;
+  color: #9D5D82;
+}
+.disclaimerPageSection h2, .aboutPageSection h2 {
+  padding: 1rem 0 0 0;
+  font-size: 1.5rem;
+  color: #24597B;
+}
+.disclaimerPageSection a, .aboutPageSection a {
+  color: #00497A;
+}
+
+.documentationPageSection {
+  font-size: 1.2rem;
+  padding: 1%;
+}
+.documentationPageSection p {
+  padding: 0.5rem 0;
+}
+.documentationPageSection ul {
+  padding: 1rem 0 1rem 3rem;
+}
+.documentationPageSection h1 {
+  padding: 0 0 0 3rem;
+  font-size: 2.5rem;
+  color: #9D5D82;
+}
+.documentationPageSection a {
+  color: #00497A;
+}
+.documentationPageSection .themesDocumentation {
+  padding: 0.25em;
+  overflow: hidden;
+}
+.documentationPageSection .themesDocumentation li {
+  float: left;
+  width: 50%;
+  padding: 1em;
+}
+.documentationPageSection .themesDocumentation li {
+  float: left;
+  width: 50%;
+  padding: 1em;
+}
+.documentationPageSection .themesDocumentation img {
+  display: block;
+  width: 100%;
+}
+.documentationPageSection .themesDocumentation li:nth-child(odd) {
+  clear: left;
+}
+.documentationPageSection .collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.documentationPageSection .active, .documentationPageSection .collapsible:hover {
+  background-color: #ccc;
+}
+.documentationPageSection .description {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+@media screen and (min-width: 40em) {
+  .documentationPageSection .g li {
+    width: 33.3333333333%;
+  }
+  .documentationPageSection .g li:nth-child(3n+1) {
+    clear: left;
+  }
+  .documentationPageSection .g li:nth-child(odd) {
+    clear: none;
+  }
+}
+@media screen and (min-width: 55em) {
+  .documentationPageSection .g li {
+    width: 25%;
+  }
+  .documentationPageSection .g li:nth-child(4n+1) {
+    clear: left;
+  }
+  .documentationPageSection .g li:nth-child(3n+1) {
+    clear: none;
+  }
+}
+@media screen and (min-width: 72em) {
+  .documentationPageSection .g li {
+    width: 20%;
+  }
+  .documentationPageSection .g li:nth-child(5n+1) {
+    clear: left;
+  }
+  .documentationPageSection .g li:nth-child(4n+1) {
+    clear: none;
+  }
+}
+@media screen and (min-width: 90em) {
+  .documentationPageSection .g li {
+    width: 16.666666666%;
+  }
+  .documentationPageSection .g li:nth-child(6n+1) {
+    clear: left;
+  }
+  .documentationPageSection .g li:nth-child(5n+1) {
+    clear: none;
+  }
+}
 
 /*# sourceMappingURL=/style.97fcb138.css.map */
