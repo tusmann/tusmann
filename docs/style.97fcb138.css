@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'TRY Vesterbro';
+    src: url('/TRYVesterbro-Poster.9cacf8e0.woff2') format('woff2'),
+        url('/TRYVesterbro-Poster.6c9b11ce.woff') format('woff'),
+        url('/TRYVesterbro-Poster.7c1dac42.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -62,7 +70,7 @@ html {
 }
 
 body {
-  font-family: IBM Plex Sans;
+  font-family: "IBM Plex Mono", monospace;
 }
 
 @media (max-width: 768px) {
@@ -98,8 +106,8 @@ body {
     flex-direction: column;
     transition: width 350ms ease;
     width: 103px;
-    background: #DFE575;
-    color: #FFF;
+    background: #c6e5df;
+    color: #222222;
     padding: 20px;
     position: relative;
   }
@@ -107,7 +115,7 @@ body {
   .opened-doc-list {
     font-size: 1rem;
     line-height: 1.7rem;
-    color: #FFF;
+    color: #222222;
     text-decoration: none;
     z-index: 1000;
     cursor: pointer;
@@ -118,7 +126,7 @@ body {
     position: absolute;
     font-size: 1rem;
     line-height: 1.7rem;
-    color: #FFF;
+    color: #222222;
     text-decoration: none;
     z-index: 1000;
     cursor: pointer;
@@ -129,7 +137,7 @@ body {
   .close-menu {
     position: absolute;
     font-size: 2rem;
-    color: #FFF;
+    color: #222222;
     text-decoration: none;
     z-index: 1000;
     cursor: pointer;
@@ -137,7 +145,7 @@ body {
   }
 
   .close-menu-doc {
-    color: #FFF;
+    color: #222222;
   }
 
   .opened-doc-list {
@@ -170,12 +178,13 @@ body {
   padding: 1rem;
   text-align: center;
   font-size: 1.4em;
-  background-color: #0E0C0C;
-  color: white;
+  background-color: #222222;
+  color: #f4f1d0;
 }
 
 main {
-  background-color: #f7f7ea;
+  color: #222222;
+  background-color: #f4f1d0;
   flex: 1;
   padding: 0;
   margin: 0;
@@ -208,8 +217,8 @@ footer {
   padding: 30px;
   text-align: center;
   font-size: 1.4em;
-  background-color: #0E0C0C;
-  color: white;
+  background-color: #222222;
+  color: #f4f1d0;
   font-size: 1em;
   text-align: center;
   line-height: 0.1em;
@@ -231,8 +240,9 @@ h1 {
 
 .heading {
   font-size: 8em;
-  font-family: "Oswald";
-  font-weight: bold;
+  font-family: "TRY Vesterbro";
+  font-weight: normal;
+  font-style: normal;
   padding-top: 5vh;
   letter-spacing: 0em;
   line-height: 0.8em;
@@ -272,7 +282,7 @@ h1 {
 }
 
 .opened-doc-list:focus {
-  background-color: #f90;
+  background-color: #c6e5df;
 }
 
 .navIcons {
@@ -282,7 +292,7 @@ h1 {
   position: relative;
   display: inline-block;
   text-decoration: none;
-  color: #FFF;
+  color: #f4f1d0;
   padding: 0.8em;
   line-height: 0.1em;
 }
@@ -305,7 +315,7 @@ h1 {
 }
 
 .jumbo__img--1 {
-  background-color: #c33149;
+  background-image: linear-gradient(rgba(195, 49, 73, 0.6), rgba(32, 8, 12, 0.6)), url("/bembo.35364a0b.jpg");
   position: fixed;
   z-index: 3;
   height: 40vh;
@@ -325,13 +335,14 @@ h1 {
 
 .jumbo__img--2 {
   z-index: 2;
-  background-color: #e698c5;
+  background-image: linear-gradient(rgba(230, 152, 197, 0.6), rgba(143, 35, 97, 0.6)), url("/jan_2.7917d7aa.jpg");
+  background-position: center;
+  background-size: 30rem;
   position: fixed;
   height: 65vh;
   width: 50vh;
   top: 12%;
   right: 16%;
-  background-position: left;
 }
 
 .jumbo__img--2:hover {
@@ -342,13 +353,14 @@ h1 {
 
 .jumbo__img--3 {
   z-index: 1;
-  background-color: #2113e4;
+  background-image: linear-gradient(rgba(33, 19, 228, 0.6), rgba(6, 3, 40, 0.6)), url("/munari.9cd8112c.jpg");
   position: fixed;
   height: 50vh;
   width: 50vh;
   top: 11%;
   right: 4%;
-  background-position: left;
+  background-position: center;
+  background-size: 35rem;
   clip-path: polygon(75% 0, 0 69%, 100% 100%);
 }
 
@@ -367,7 +379,7 @@ h1 {
 
 .heading__btn {
   position: absolute;
-  color: #FFF;
+  color: #f4f1d0;
   background-color: #0E0C0C;
   font-family: IBM Plex Sans;
   font-size: 1.5em;

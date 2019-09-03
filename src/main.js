@@ -224,3 +224,23 @@ closeMenu.addEventListener('click', toggleNavBar, false);
 closeDocMenu.forEach(node => {
     node.addEventListener('click', toggleNavBar, false);
 }) 
+
+
+
+//add about page
+document.querySelector(".aboutPageButton").onclick = function () {
+    document.querySelector(".aboutPageSection").classList.remove("hidden")
+    var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .disclaimerPageSection, .reader")
+    elementsToDelete.forEach(node => {
+        node.classList.add("hidden");
+    })
+}
+
+//add disclaimer page
+document.querySelector(".disclaimerPageButton").onclick = function () {
+    document.querySelector(".disclaimerPageSection").classList.remove("hidden")
+    var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .reader")
+    elementsToDelete.forEach(node => {
+        node.classList.add("hidden");
+    })
+}

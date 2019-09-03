@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'TRY Vesterbro';
+    src: url('TRYVesterbro-Poster.woff2') format('woff2'),
+        url('TRYVesterbro-Poster.woff') format('woff'),
+        url('TRYVesterbro-Poster.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

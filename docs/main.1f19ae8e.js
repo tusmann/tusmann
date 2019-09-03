@@ -1410,7 +1410,24 @@ openMenu.forEach(function (node) {
 closeMenu.addEventListener('click', toggleNavBar, false);
 closeDocMenu.forEach(function (node) {
   node.addEventListener('click', toggleNavBar, false);
-});
+}); //add about page
+
+document.querySelector(".aboutPageButton").onclick = function () {
+  document.querySelector(".aboutPageSection").classList.remove("hidden");
+  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .disclaimerPageSection, .reader");
+  elementsToDelete.forEach(function (node) {
+    node.classList.add("hidden");
+  });
+}; //add disclaimer page
+
+
+document.querySelector(".disclaimerPageButton").onclick = function () {
+  document.querySelector(".disclaimerPageSection").classList.remove("hidden");
+  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .reader");
+  elementsToDelete.forEach(function (node) {
+    node.classList.add("hidden");
+  });
+};
 },{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js","./articlesSelectionButtons":"articlesSelectionButtons.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -1439,11 +1456,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61368" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52510" + '/');
->>>>>>> refs/remotes/origin/master
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62902" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

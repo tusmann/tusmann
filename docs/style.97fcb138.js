@@ -184,12 +184,17 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"style.scss":[function(require,module,exports) {
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"fonts/fonts.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./TRYVesterbro-Poster.woff2":[["TRYVesterbro-Poster.9cacf8e0.woff2","fonts/TRYVesterbro-Poster.woff2"],"fonts/TRYVesterbro-Poster.woff2"],"./TRYVesterbro-Poster.woff":[["TRYVesterbro-Poster.6c9b11ce.woff","fonts/TRYVesterbro-Poster.woff"],"fonts/TRYVesterbro-Poster.woff"],"./TRYVesterbro-Poster.ttf":[["TRYVesterbro-Poster.7c1dac42.ttf","fonts/TRYVesterbro-Poster.ttf"],"fonts/TRYVesterbro-Poster.ttf"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"style.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./fonts/fonts.css":"fonts/fonts.css","./images\\bembo.jpg":[["bembo.35364a0b.jpg","images/bembo.jpg"],"images/bembo.jpg"],"./images\\jan_2.jpg":[["jan_2.7917d7aa.jpg","images/jan_2.jpg"],"images/jan_2.jpg"],"./images\\munari.jpg":[["munari.9cd8112c.jpg","images/munari.jpg"],"images/munari.jpg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,11 +222,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61368" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52510" + '/');
->>>>>>> refs/remotes/origin/master
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62902" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

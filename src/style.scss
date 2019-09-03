@@ -1,7 +1,15 @@
 @import "reset.scss";
+@import url("./fonts/fonts.css");
+
+$font-poster: 'TRY Vesterbro';
+$font-monotype: 'IBM Plex Mono', monospace;
+$primary-color: #222222;
+$secondary-color: #f4f1d0;
+$tertiary-color: #c6e5df;
+
 
 body {
-  font-family: IBM Plex Sans;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 
@@ -43,16 +51,17 @@ body {
       flex-direction: column;
       transition: width 350ms ease;
       width: 103px;
-      background: #DFE575;
-      color: #FFF;
+      background: $tertiary-color;
+      color: $primary-color;
       padding: 20px;
       position: relative;
       }
+    
 
   .opened-doc-list {
       font-size: 1rem;
       line-height: 1.7rem;
-      color: #FFF;
+      color: $primary-color;
       text-decoration: none;
       z-index: 1000;
       cursor: pointer;
@@ -63,7 +72,7 @@ body {
     position: absolute;
     font-size: 1rem;
     line-height: 1.7rem;
-    color: #FFF;
+    color: $primary-color;
     text-decoration: none;
     z-index: 1000;
     cursor: pointer;
@@ -74,7 +83,7 @@ body {
   .close-menu {
     position: absolute;
     font-size: 2rem;
-    color: #FFF;
+    color: $primary-color;
     text-decoration: none;
     z-index: 1000;
     cursor: pointer;
@@ -82,7 +91,7 @@ body {
 }
 
 .close-menu-doc {
-  color: #FFF;
+  color: $primary-color;
 }
 
   .opened-doc-list {
@@ -115,12 +124,13 @@ body {
   padding: 1rem;
   text-align: center;
   font-size: 1.4em;
-  background-color: #0E0C0C;
-  color: white;
+  background-color: $primary-color;
+  color: $secondary-color;
 }
 
 main {
-  background-color: rgb(247, 247, 234);
+  color: $primary-color;
+  background-color: $secondary-color;
   flex: 1;
   padding: 0;
   margin: 0;
@@ -158,8 +168,8 @@ footer {
   padding: 30px;
   text-align: center;
   font-size: 1.4em;
-  background-color: #0E0C0C;
-  color: white;
+  background-color: $primary-color;
+  color: $secondary-color;
   font-size: 1em;
   text-align: center;
   line-height: 0.1em;
@@ -182,8 +192,9 @@ h1 {
 
 .heading {
   font-size: 8em;
-  font-family: 'Oswald';
-  font-weight: bold;
+  font-family: 'TRY Vesterbro';
+  font-weight: normal;
+  font-style: normal;
   padding-top: 5vh;
   letter-spacing: 0em;
   line-height: .8em;
@@ -223,7 +234,7 @@ h1 {
 }
 
 .opened-doc-list:focus {
-  background-color: #f90;
+  background-color: $tertiary-color;
 }
 
 .navIcons {
@@ -233,7 +244,7 @@ h1 {
   position: relative;
   display: inline-block; 
   text-decoration: none;
-  color: #FFF;
+  color: $secondary-color;
   padding:.8em;
   line-height: 0.1em;
 }
@@ -252,7 +263,8 @@ h1 {
 }
 
 .jumbo__img--1 {
-  background-color: rgb(195, 49, 73);
+  //background-color: rgb(195, 49, 73);
+  background-image: linear-gradient(rgba(195, 49, 73, 0.6), darken(rgba(195, 49, 73, 0.6), 40%)), url("./images/bembo.jpg");
   position: fixed;
   z-index: 3;
   height: 40vh;
@@ -272,13 +284,16 @@ h1 {
 
 .jumbo__img--2 {
   z-index: 2;
-  background-color: rgb(230, 152, 197);
+  //background-color: rgb(230, 152, 197);
+  background-image: linear-gradient(rgba(230, 152, 197, 0.6), darken(rgba(230, 152, 197, 0.6), 40%)), url("./images/jan_2.jpg");
+  background-position: center;
+  background-size: 30rem;
   position: fixed;
   height: 65vh;
   width: 50vh;
   top: 12%;
   right: 16%;
-  background-position: left;
+  
 }
 
 .jumbo__img--2:hover {
@@ -289,13 +304,15 @@ h1 {
 
 .jumbo__img--3 {
   z-index: 1;
-  background-color: rgb(33, 19, 228);
+  //background-color: rgb(33, 19, 228);
+  background-image: linear-gradient(rgba(33, 19, 228, 0.6), darken(rgba(33, 19, 228, 0.6), 40%)), url("./images/munari.jpg");
   position: fixed;
   height: 50vh;
   width: 50vh;
   top: 11%;
   right: 4%;
-  background-position: left;
+  background-position: center;
+  background-size: 35rem;
   clip-path: polygon(75% 0, 0 69%, 100% 100%);
 }
 
@@ -314,7 +331,7 @@ h1 {
 
 .heading__btn {
   position: absolute;
-  color: #FFF;
+  color: $secondary-color;
   background-color: #0E0C0C;
   font-family: IBM Plex Sans;
   font-size: 1.5em;
