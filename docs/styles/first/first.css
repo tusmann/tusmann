@@ -5,6 +5,11 @@
   font-weight: normal;
   font-style: normal;
 }
+@media screen and (max-width: 600px) {
+  body {
+    font-size: smaller;
+  }
+}
 *,
 *::before,
 *::after {
@@ -13,98 +18,102 @@
   box-sizing: inherit;
 }
 
-.reader {
-  box-sizing: border-box;
-  background: url("background.jpg") no-repeat 50% fixed/cover;
+article > * {
   padding: 10% 20% 10% 20%;
+  background: url("background.jpg") no-repeat 50% fixed/cover;
   box-sizing: border-box;
   font-family: "Fanwood Text", serif;
   font-weight: 400;
   line-height: 1.7;
   color: #333;
   font-size: 1.3rem;
-  text-align: justify;
+  text-align: justify;}
+
+  main a:-webkit-any-link {
+    color: #777;
+  }
+  main p {
+    padding: 0.5rem 0;
+  }
+  main figure {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+ figure figcaption {
+    font-style: italic;
+    font-size: smaller;
+  }
+  figure img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-align: center;
+    -webkit-filter: grayscale(100%) sepia(0.2) contrast(100%);
+    filter: grayscale(100%) sepia(0.2) contrast(100%);
+    border-width: 0.3rem;
+    border-style: double;
+  }
+  figure img:hover {
+    -webkit-filter: none;
+  }
+  figure img:first-of-type {
+    margin-bottom: 1rem;
+  }
+
+article header, article footer {
+    text-align: center;
+    padding: 0 20% 0 20%;
+
 }
-.reader header h1 {
+
+  article header h1, article footer h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+    padding: 2rem 0;
+  }
+  article header h2, article footer h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 1rem 0;
+  }
+  article header h3, article footer h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 1rem 0;
+  }
+}
+
+article main h1 {
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.3rem;
   padding: 2rem 0;
 }
-.reader header h2 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-weight: 400;
-  padding: 1rem 0;
-}
-.reader header h3 {
-  font-size: 2rem;
+article main h2 {
+  font-size: 2.5rem;
   text-transform: uppercase;
   font-weight: 500;
-  padding: 1rem 0;
-}
-.reader article {
-  max-width: 90%;
-  margin: auto;
-}
-.reader article header {
-  text-align: center;
-}
-.reader article figure {
-  text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-.reader article figure figcaption {
-  font-style: italic;
-  font-size: smaller;
-}
-.reader article figure img {
-  height: auto;
-  width: 100%;
-  object-fit: contain;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  box-align: center;
-  -webkit-filter: grayscale(100%) sepia(0.2) contrast(100%);
-  filter: grayscale(100%) sepia(0.2) contrast(100%);
-  border-width: 0.3rem;
-  border-style: double;
-}
-.reader article figure img:hover {
-  -webkit-filter: none;
-}
-.reader article figure img:first-of-type {
-  margin-bottom: 1rem;
-}
-.reader article h1 {
-  font-size: 3rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.3rem;
   padding: 2rem 0;
+  text-align: center;
+  letter-spacing: 0.2rem;
 }
-.reader article h2 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-weight: 400;
-  padding: 1rem 0;
-}
-.reader article h3 {
+article main h3 {
   font-size: 2rem;
   text-transform: uppercase;
   font-weight: 500;
   padding: 1rem 0;
+  text-align: center;
 }
-.reader article a:-webkit-any-link {
-  color: #777;
-}
-.reader article p {
-  padding: 0.5rem 0;
-}
-.reader article main p:first-of-type:first-letter {
+article main p:first-of-type:first-letter {
   float: left;
   color: #222;
   font-size: 7.5rem;
@@ -114,22 +123,7 @@
   font-family: "roycroft_initialsregular";
   font-style: normal;
 }
-.reader article main h2 {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  padding: 2rem 0;
-  text-align: center;
-  letter-spacing: 0.2rem;
-}
-.reader article main h3 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  padding: 1rem 0;
-  text-align: center;
-}
-.reader article table {
+article table {
   table-layout: fixed;
   width: 100%;
   border-width: 0.3rem;
@@ -137,7 +131,7 @@
   padding: 0.2rem;
   border-collapse: collapse;
 }
-.reader article th {
+article th {
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 600;
@@ -145,7 +139,8 @@
   border: 0.1rem solid #999;
   padding: 0.2rem;
 }
-.reader article td {
+article td {
   padding: 0.2rem;
   border: 0.1rem solid #999;
 }
+
