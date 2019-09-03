@@ -62,7 +62,7 @@ html {
 }
 
 body {
-  font-family: arial;
+  font-family: IBM Plex Sans;
 }
 
 @media (max-width: 768px) {
@@ -98,7 +98,7 @@ body {
     flex-direction: column;
     transition: width 350ms ease;
     width: 103px;
-    background: #0048AA;
+    background: #DFE575;
     color: #FFF;
     padding: 20px;
     position: relative;
@@ -136,6 +136,10 @@ body {
     transition: opacity 350ms;
   }
 
+  .close-menu-doc {
+    color: #FFF;
+  }
+
   .opened-doc-list {
     left: 20px;
   }
@@ -163,14 +167,15 @@ body {
 }
 .navbar {
   grid-column: span 2;
-  padding: 30px;
+  padding: 1rem;
   text-align: center;
   font-size: 1.4em;
-  background-color: #369;
+  background-color: #0E0C0C;
   color: white;
 }
 
 main {
+  background-color: #f7f7ea;
   flex: 1;
   padding: 0;
   margin: 0;
@@ -203,8 +208,12 @@ footer {
   padding: 30px;
   text-align: center;
   font-size: 1.4em;
-  background-color: #690;
+  background-color: #0E0C0C;
   color: white;
+  font-size: 1em;
+  text-align: center;
+  line-height: 0.1em;
+  letter-spacing: 0.1em;
 }
 
 h1 {
@@ -213,8 +222,182 @@ h1 {
   font-weight: bold;
 }
 
+.text-box {
+  position: absolute;
+  grid-column-start: 1;
+  grid-column-end: span col4-start;
+  z-index: 10;
+}
+
+.heading {
+  font-size: 8em;
+  font-family: "Oswald";
+  font-weight: bold;
+  padding-top: 5vh;
+  letter-spacing: 0em;
+  line-height: 0.8em;
+}
+
+.heading__first {
+  display: block;
+  /*overflow: hidden; /* Ensures the content is not revealed until the animation 
+  border-right: .15em solid #FFF; /* The typwriter cursor 
+  white-space: nowrap; /* Keeps the content on a single line 
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens 
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+  animation-duration: 2.9s;*/
+}
+
+.heading__second {
+  display: block;
+  margin-left: 5rem;
+  /*overflow: hidden; /* Ensures the content is not revealed until the animation 
+  border-right: .15em solid #FFF; /* The typwriter cursor 
+  white-space: nowrap; /* Keeps the content on a single line 
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens 
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+  animation-delay: 2s;*/
+}
+
 .hidden {
   display: none;
 }
+
+.translate {
+  transform: translateX(10rem);
+}
+
+.opened-doc-list:focus {
+  background-color: #f90;
+}
+
+.navIcons {
+  text-align: center;
+  font-size: 0.9em;
+  letter-spacing: 0.1em;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #FFF;
+  padding: 0.8em;
+  line-height: 0.1em;
+}
+
+.navIcons:visited {
+  text-decoration: none;
+}
+
+.navbar__logo--image {
+  float: left;
+}
+
+.navIcons {
+  float: right;
+}
+
+.jumbo__img--container {
+  background-position-x: left;
+  background-position-y: bottom;
+}
+
+.jumbo__img--1 {
+  background-color: #c33149;
+  position: fixed;
+  z-index: 3;
+  height: 40vh;
+  width: 40vh;
+  background-size: cover;
+  border-radius: 50%;
+  top: 49%;
+  right: 5%;
+  background-position: left;
+}
+
+.jumbo__img--1:hover {
+  z-index: 9;
+  transform: translateY(-0.1rem);
+  box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+}
+
+.jumbo__img--2 {
+  z-index: 2;
+  background-color: #e698c5;
+  position: fixed;
+  height: 65vh;
+  width: 50vh;
+  top: 12%;
+  right: 16%;
+  background-position: left;
+}
+
+.jumbo__img--2:hover {
+  z-index: 9;
+  transform: translateY(-0.1rem);
+  box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+}
+
+.jumbo__img--3 {
+  z-index: 1;
+  background-color: #2113e4;
+  position: fixed;
+  height: 50vh;
+  width: 50vh;
+  top: 11%;
+  right: 4%;
+  background-position: left;
+  clip-path: polygon(75% 0, 0 69%, 100% 100%);
+}
+
+.jumbo__img--3:hover {
+  z-index: 9;
+  transform: translateY(-0.1rem);
+  box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.heading__btn {
+  position: absolute;
+  color: #FFF;
+  background-color: #0E0C0C;
+  font-family: IBM Plex Sans;
+  font-size: 1.5em;
+  z-index: 100;
+  margin-top: -2rem;
+  margin-left: 26rem;
+  padding: 1rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.heading__btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+}
+
+.heading__btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(14, 12, 12, 0.26);
+}
+
+/* The typing effect 
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}*/
+/* The typewriter cursor effect 
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}*/
 
 /*# sourceMappingURL=/style.97fcb138.css.map */
