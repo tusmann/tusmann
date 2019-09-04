@@ -932,21 +932,22 @@ function _parseArticle() {
             body = articleDocument.querySelector("body"); //create url from current article
 
             articleURL = new URL(article, window.location.href);
-            console.log(articleURL);
             pageURL = new URL(window.location.href); //get article path (without file name)
 
             articlePath = articleURL.pathname.substring(0, articleURL.pathname.lastIndexOf("/"));
             body.querySelectorAll("img").forEach(function (image) {
               //Edit image src by appending the current article path
               var url = new URL(image.src);
-              image.src = url.origin + articlePath + "/" + url.pathname.split("/")[2];
+              var imageSplitUrl = url.pathname.split("/");
+              var imageName = imageSplitUrl[imageSplitUrl.length - 1];
+              image.src = url.origin + articlePath + "/" + imageName;
             });
             return _context.abrupt("return", {
               body: body,
               title: articleDocument.querySelector("title").text
             });
 
-          case 15:
+          case 14:
           case "end":
             return _context.stop();
         }
@@ -1450,7 +1451,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63836" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64072" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
