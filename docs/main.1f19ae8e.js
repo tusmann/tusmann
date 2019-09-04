@@ -939,7 +939,7 @@ function _parseArticle() {
             body.querySelectorAll("img").forEach(function (image) {
               //Edit image src by appending the current article path
               var url = new URL(image.src);
-              image.src = url.origin + articlePath + "/" + url.pathname.split("/")[1];
+              image.src = url.origin + articlePath + "/" + url.pathname.split("/")[2];
             });
             return _context.abrupt("return", {
               body: body,
@@ -1450,7 +1450,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62529" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63836" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

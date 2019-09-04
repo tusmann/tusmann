@@ -22,7 +22,7 @@ async function parseArticle(article){
     body.querySelectorAll("img").forEach(image => {
         //Edit image src by appending the current article path
         const url = new URL(image.src)
-        image.src = url.origin + articlePath + "/" + url.pathname.split("/")[1]
+        image.src = url.origin + articlePath + "/" + url.pathname.split("/")[2]
     })
     return {
         body: body,
