@@ -932,20 +932,21 @@ function _parseArticle() {
             body = articleDocument.querySelector("body"); //create url from current article
 
             articleURL = new URL(article, window.location.href);
+            console.log(articleURL);
             pageURL = new URL(window.location.href); //get article path (without file name)
 
             articlePath = articleURL.pathname.substring(0, articleURL.pathname.lastIndexOf("/"));
             body.querySelectorAll("img").forEach(function (image) {
               //Edit image src by appending the current article path
               var url = new URL(image.src);
-              image.src = url.origin + articlePath + "/" + url.pathname.split(pageURL.pathname)[1];
+              image.src = url.origin + articlePath + "/" + url.pathname.split("/")[1];
             });
             return _context.abrupt("return", {
               body: body,
               title: articleDocument.querySelector("title").text
             });
 
-          case 14:
+          case 15:
           case "end":
             return _context.stop();
         }
@@ -996,7 +997,7 @@ function _addSpecialArticle() {
           case 5:
             rightArticle = _context.sent;
             //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
-            elementsToDelete = document.querySelectorAll(".jumbo, .tutorial");
+            elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
             });
@@ -1055,7 +1056,7 @@ function _addArticle() {
           case 2:
             article = _context2.sent;
             //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
-            elementsToDelete = document.querySelectorAll(".jumbo, .tutorial");
+            elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
             });
@@ -1449,7 +1450,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55474" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59998" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

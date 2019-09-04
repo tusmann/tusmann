@@ -5,7 +5,7 @@ async function addSpecialArticle(leftArticleUrl, rightArticleUrl) {
     var rightArticle = await parseArticle(rightArticleUrl) 
 
     //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
-    const elementsToDelete = document.querySelectorAll(".jumbo, .tutorial")
+    const elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .documentationPageSection, .disclaimerPageSection")
     elementsToDelete.forEach(node => {
         node.classList.add("hidden");
     }) 
@@ -46,7 +46,7 @@ async function addArticle(articleUrl){
     var article = await parseArticle(articleUrl)
     
     //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
-    const elementsToDelete = document.querySelectorAll(".jumbo, .tutorial")
+    const elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .documentationPageSection, .disclaimerPageSection")
     elementsToDelete.forEach(node => {
         node.classList.add("hidden");
     }) 
