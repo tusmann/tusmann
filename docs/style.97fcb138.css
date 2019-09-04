@@ -82,8 +82,121 @@ body {
 
   /* original sidebar */
   nav {
-    background-color: #DFE575;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    transition: width 350ms ease;
+    width: auto;
+    background: #c6e5df;
+    color: #222222;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .style-selector-first {
+    grid-column: 1;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 8vh;
+    left: 0rem;
+  }
+
+  .style-selector-second {
+    grid-column: 2;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 8vh;
+    left: 0rem;
+  }
+
+  .style-selector-third {
+    grid-column: 3;
+    position: relative;
+    background-image: url(/three.a334fce9.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 8vh;
+    left: 0rem;
+  }
+
+  .style-selector-fourth {
+    grid-column: 4;
+    position: relative;
+    background-image: url(/four.b72f6141.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 8vh;
+    left: 0rem;
+  }
+
+  .style-selector-fifth {
+    grid-column: 5;
+    position: relative;
+    background-image: url(/five.dd2a19df.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 8vh;
+    left: 0rem;
+  }
+
+  .style-selector-sixth {
+    grid-column: 6;
+    position: relative;
+    background-image: url(/six.04897191.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 8vh;
+    left: 0rem;
+  }
+
+  .style-selector-first:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .style-selector-second:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .style-selector-third:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .style-selector-fourth:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .style-selector-fifth:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .style-selector-sixth:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 }
 @media (min-width: 768px) {
@@ -107,13 +220,9 @@ body {
     grid-template-rows: repeat(6, 1fr);
     transition: width 350ms ease;
     width: 10, 3rem;
-<<<<<<< Updated upstream
-    height: 100%;
-=======
     height: auto;
->>>>>>> Stashed changes
-    background: #DFE575;
-    color: #FFF;
+    background: #c6e5df;
+    color: #222222;
     padding: 2rem;
     position: relative;
     padding-top: 9vh;
@@ -322,6 +431,110 @@ body {
   }
 
   /* end drawer script */
+  .style-selector-first {
+    grid-row: 1;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 8vh;
+    left: 0rem;
+  }
+
+  .style-selector-second {
+    grid-row: 2;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 8vh;
+    left: 0rem;
+  }
+
+  .style-selector-third {
+    grid-row: 3;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 8vh;
+    left: 0rem;
+  }
+
+  .style-selector-fourth {
+    grid-row: 4;
+    position: relative;
+    background-image: url(/four.b72f6141.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 8vh;
+    left: 0rem;
+  }
+
+  .style-selector-fifth {
+    grid-row: 5;
+    position: relative;
+    background-image: url(/five.dd2a19df.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 8vh;
+    left: 0rem;
+  }
+
+  .style-selector-sixth {
+    grid-row: 6;
+    position: relative;
+    background-image: url(/six.04897191.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 8vh;
+    width: 8vh;
+    left: 0rem;
+  }
+
+  .style-selector-first:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .style-selector-second:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .style-selector-third:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .style-selector-fourth:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .style-selector-fifth:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  .style-selector-sixth:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
 }
 .navbar {
   grid-column: span 2;
@@ -588,114 +801,6 @@ h1 {
   box-shadow: 0 0.5rem 1rem rgba(14, 12, 12, 0.26);
 }
 
-.style-selector-first {
-  grid-row: 1;
-  position: relative;
-  background-image: url(/one.23f04564.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 8vh;
-  width: 8vh;
-  left: 0rem;
-}
-
-.style-selector-second {
-  grid-row: 2;
-  position: relative;
-  background-image: url(/two.e9b6879d.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 8vh;
-  width: 8vh;
-  left: 0rem;
-}
-
-.style-selector-third {
-  grid-row: 3;
-  position: relative;
-  background-image: url(/three.a334fce9.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 8vh;
-  width: 8vh;
-  left: 0rem;
-}
-
-.style-selector-fourth {
-  grid-row: 4;
-  position: relative;
-  background-image: url(/four.b72f6141.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 8vh;
-  width: 8vh;
-  left: 0rem;
-}
-
-.style-selector-fifth {
-  grid-row: 5;
-  position: relative;
-  background-image: url(/five.dd2a19df.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 8vh;
-  width: 8vh;
-  left: 0rem;
-}
-
-.style-selector-sixth {
-  grid-row: 6;
-  position: relative;
-  background-image: url(/six.04897191.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 8vh;
-  width: 8vh;
-  left: 0rem;
-}
-
-.style-selector-first:hover {
-  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-.style-selector-second:hover {
-  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-.style-selector-third:hover {
-  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-.style-selector-fourth:hover {
-  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-.style-selector-fifth:hover {
-  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-.style-selector-sixth:hover {
-  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
 @keyframes shake {
   10%, 90% {
     transform: translate3d(-1px, 0, 0);
@@ -836,6 +941,12 @@ h1 {
   .documentationPageSection .g li:nth-child(5n+1) {
     clear: none;
   }
+}
+
+.icn {
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=/style.97fcb138.css.map */
