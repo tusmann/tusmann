@@ -1,5 +1,6 @@
-@import "reset.scss";
+@import "./reset.scss";
 @import url("./fonts/fonts.css");
+@import "./documentationPage.scss";
 
 $font-poster: 'TRY Vesterbro';
 $font-monotype: 'IBM Plex Mono', monospace;
@@ -661,7 +662,8 @@ h1 {
 
 .jumbo__img--1 {
   //background-color: rgb(195, 49, 73);
-  background-image: linear-gradient(rgba(195, 49, 73, 0.6), darken(rgba(195, 49, 73, 0.6), 40%)), url("./images/bembo.jpg");
+  //background-image: linear-gradient(rgba(195, 49, 73, 0.6), darken(rgba(195, 49, 73, 0.6), 40%)), url("./images/bembo.jpg");
+  background-image: url('./images/rinpa_duo.jpg');
   position: absolute;
   z-index: 3;
   height: 40vh;
@@ -682,9 +684,10 @@ h1 {
 .jumbo__img--2 {
   z-index: 2;
   //background-color: rgb(230, 152, 197);
-  background-image: linear-gradient(rgba(230, 152, 197, 0.6), darken(rgba(230, 152, 197, 0.6), 40%)), url("./images/jan_2.jpg");
+  //background-image: linear-gradient(rgba(230, 152, 197, 0.6), darken(rgba(230, 152, 197, 0.6), 40%)), url("./images/jan_2.jpg");
+  background-image: url('./images/jan_duo.jpg');
   background-position: center;
-  background-size: 30rem;
+  background-size: 35rem;
   position: absolute;
   height: 65vh;
   width: 50vh;
@@ -702,7 +705,8 @@ h1 {
 .jumbo__img--3 {
   z-index: 1;
   //background-color: rgb(33, 19, 228);
-  background-image: linear-gradient(rgba(33, 19, 228, 0.6), darken(rgba(33, 19, 228, 0.6), 40%)), url("./images/munari.jpg");
+  //background-image: linear-gradient(rgba(33, 19, 228, 0.6), darken(rgba(33, 19, 228, 0.6), 40%)), url("./images/munari.jpg");
+  background-image: url('./images/munari_duo.jpg');
   position: absolute;
   height: 50vh;
   width: 50vh;
