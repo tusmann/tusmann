@@ -16,16 +16,28 @@
   box-sizing: inherit;
 }
 
+
 article > * {
     padding: 10% 20% 10% 20%;
-    background: url("background2.jpg") no-repeat 50% fixed/cover;
+    background-image: url(background.jpg);
+    background-position-x: 50%;
+    background-position-y: center;
+    background-size: cover;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: fixed;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
     box-sizing: border-box;
     font-family: 'japanese', serif;
     font-weight: 400;
     line-height: 1.7;
     color: #210102;
     font-size: 1.3rem;
-    text-align: justify;}
+    text-align: justify;
+
+  }
 
 article h1, h2, h3, h4 {
     /*gradient*/
@@ -54,18 +66,16 @@ article h1, h2, h3, h4 {
     }
     article figure img {
       height: auto;
-      width: 100%;
+      width: 80%;
       object-fit: contain;
       display: block;
       margin-left: auto;
       margin-right: auto;
       box-align: center;
-      -webkit-filter: sepia(0.2) contrast(100%);
-      filter: sepia(0.2) contrast(100%);
+      -webkit-filter: grayscale(20%) sepia(0.5) contrast(100%) opacity(0.99);
+      filter: grayscale(20%) sepia(0.5) contrast(100%) opacity(0.99);
     }
-    article figure img:hover {
-      -webkit-filter: none;
-    }
+
     article figure img:first-of-type {
       margin-bottom: 1rem;
     }
@@ -95,7 +105,6 @@ article h1, h2, h3, h4 {
       font-weight: 500;
       padding: 1rem 0;
     }
-  }
   
   article main h1 {
     font-size: 3rem;
