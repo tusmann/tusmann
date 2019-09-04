@@ -47,15 +47,18 @@ body {
 
   /* drawer sidebar */
   nav {
-      display: flex;
-      flex-direction: column;
-      transition: width 350ms ease;
-      width: 103px;
-      background: $tertiary-color;
-      color: $primary-color;
-      padding: 20px;
-      position: relative;
-      }
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(6, 1fr); 
+    transition: width 350ms ease;
+    width: 10,3rem;
+    height: 100%;
+    background: #DFE575;
+    color: #FFF;
+    padding: 2rem;
+    position: relative;
+    padding-top: 9vh;
+    }
     
 
   .opened-doc-list {
@@ -70,17 +73,62 @@ body {
 
   .nav-list {
     position: absolute;
-    font-size: 1rem;
-    line-height: 1.7rem;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.1em;
     color: $primary-color;
     text-decoration: none;
     z-index: 1000;
     cursor: pointer;
+    padding-left: 3rem;
     transition: opacity 350ms;
-    transform: translateY(20px);
+    transform: translateY(3.8rem);
 }
 
-  .close-menu {
+//X BUTTON animation//
+.close-container{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0rem;
+  cursor: pointer;
+}
+
+.leftright{
+  height: .4rem;
+  width: 2.5rem;
+  position: absolute;
+  margin-top: 2.4rem;
+  background-color: rgb(195, 49, 73);
+  border-radius: .2rem;
+  transform: rotate(45deg);
+  transition: all .3s ease-in;
+}
+
+.rightleft{
+  height: .4rem;
+  width: 2.5rem;
+  position: absolute;
+  margin-top: 2.4rem;
+  background-color: rgb(195, 49, 73);
+  border-radius: .2rem;
+  transform: rotate(-45deg);
+  transition: all .3s ease-in;
+}
+
+.close-container:hover .leftright{
+  transform: rotate(-45deg);
+  background-color: rgb(33, 19, 228);
+}
+.close-container:hover .rightleft{
+  transform: rotate(45deg);
+  background-color: rgb(33, 19, 228);
+}
+.close-container:hover label{
+  opacity: 1;
+}
+/*  
+.close-menu {
     position: absolute;
     font-size: 2rem;
     color: $primary-color;
@@ -88,7 +136,7 @@ body {
     z-index: 1000;
     cursor: pointer;
     transition: opacity 350ms;
-}
+}*/
 
 .close-menu-doc {
   color: $primary-color;
@@ -184,6 +232,7 @@ h1 {
 
 
 .text-box {
+  background-size: 100%;
   position: absolute; 
   grid-column-start: 1;
   grid-column-end: span col4-start;
@@ -202,27 +251,46 @@ h1 {
 
 .heading__first {
   display: block;
-  /*overflow: hidden; /* Ensures the content is not revealed until the animation 
-  border-right: .15em solid #FFF; /* The typwriter cursor 
-  white-space: nowrap; /* Keeps the content on a single line 
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens 
+  overflow: hidden; // Ensures the content is not revealed until the animation 
+  border-right: .15em solid transparent; // The typwriter cursor 
+  white-space: nowrap; // Keeps the content on a single line 
+  margin: 0 auto; // Gives that scrolling effect as the typing happens 
   animation: 
     typing 3.5s steps(40, end),
     blink-caret .75s step-end infinite;
-  animation-duration: 2.9s;*/
+  animation-duration: 2s;
 }
 
 .heading__second {
+  height: 21vh;
   display: block;
   margin-left: 5rem;
-  /*overflow: hidden; /* Ensures the content is not revealed until the animation 
-  border-right: .15em solid #FFF; /* The typwriter cursor 
-  white-space: nowrap; /* Keeps the content on a single line 
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens 
+  overflow: hidden; // Ensures the content is not revealed until the animation 
+  border-right: .15em solid transparent; // The typwriter cursor
+  margin: 0 5rem; // Gives that scrolling effect as the typing happens 
   animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
-  animation-delay: 2s;*/
+    hideing 2s linear,
+    typing 3.5s 2s steps(40, end) ,
+    blink-caret .75s 2s step-end infinite;
+  animation-duration: 2s;
+}
+
+// Hides the second line
+@keyframes hideing {
+  0% { opacity: 0 }
+  100% { opacity: 0  }
+}
+
+// The typing effect 
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+// The typewriter cursor effect 
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: transparent; }
 }
 
 .hidden {
@@ -258,6 +326,7 @@ h1 {
 .navIcons {float: right;}
 
 .jumbo__img--container {
+  grid-area: 2 2;
   background-position-x: left;
   background-position-y: bottom;
 }
@@ -265,7 +334,7 @@ h1 {
 .jumbo__img--1 {
   //background-color: rgb(195, 49, 73);
   background-image: linear-gradient(rgba(195, 49, 73, 0.6), darken(rgba(195, 49, 73, 0.6), 40%)), url("./images/bembo.jpg");
-  position: fixed;
+  position: absolute;
   z-index: 3;
   height: 40vh;
   width: 40vh;
@@ -273,7 +342,7 @@ h1 {
   border-radius: 50%;
   top: 49%;
   right: 5%;
-  background-position: left;
+  background-position: bottom;
 }
 
 .jumbo__img--1:hover {
@@ -288,12 +357,12 @@ h1 {
   background-image: linear-gradient(rgba(230, 152, 197, 0.6), darken(rgba(230, 152, 197, 0.6), 40%)), url("./images/jan_2.jpg");
   background-position: center;
   background-size: 30rem;
-  position: fixed;
+  position: absolute;
   height: 65vh;
   width: 50vh;
   top: 12%;
   right: 16%;
-  
+  background-position: bottom;
 }
 
 .jumbo__img--2:hover {
@@ -306,7 +375,7 @@ h1 {
   z-index: 1;
   //background-color: rgb(33, 19, 228);
   background-image: linear-gradient(rgba(33, 19, 228, 0.6), darken(rgba(33, 19, 228, 0.6), 40%)), url("./images/munari.jpg");
-  position: fixed;
+  position: absolute;
   height: 50vh;
   width: 50vh;
   top: 11%;
@@ -314,6 +383,7 @@ h1 {
   background-position: center;
   background-size: 35rem;
   clip-path: polygon(75% 0, 0 69%, 100% 100%);
+  background-position: bottom;
 }
 
 .jumbo__img--3:hover {
@@ -336,7 +406,7 @@ h1 {
   font-family: IBM Plex Sans;
   font-size: 1.5em;
   z-index: 100;
-  margin-top: -2rem;
+  margin-top: -3.8rem;
   margin-left: 26rem;
   padding: 1rem 1rem;
   border-radius: 0.5rem;
@@ -353,18 +423,134 @@ h1 {
   box-shadow: 0 0.5rem 1rem rgba(14, 12, 12, 0.26);
 }
 
-/* The typing effect 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}*/
 
-/* The typewriter cursor effect 
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}*/
+//SIDEBAR BUTTONS
 
+.style-selector-first {
+  grid-row: 1;
+  position: relative;
+  background-image: url(images/one.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 8vh;
+  left: 0rem;
+}
+
+.style-selector-second {
+  grid-row: 2;
+  position: relative;
+  background-image: url(images/two.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 8vh;
+  left: 0rem;
+}
+
+.style-selector-third {
+  grid-row: 3;
+  position: relative;
+  background-image: url(images/three.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 8vh;
+  left: 0rem;
+}
+
+.style-selector-fourth {
+  grid-row: 4;
+  position: relative;
+  background-image: url(images/four.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 8vh;
+  left: 0rem;
+}
+
+.style-selector-fifth {
+  grid-row: 5;
+  position: relative;
+  background-image: url(images/five.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 8vh;
+  left: 0rem;
+}
+
+.style-selector-sixth {
+  grid-row: 6;
+  position: relative;
+  background-image: url(images/six.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 8vh;
+  left: 0rem;
+}
+
+.style-selector-first:hover {
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.style-selector-second:hover {
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.style-selector-third:hover {
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.style-selector-fourth:hover {
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.style-selector-fifth:hover {
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.style-selector-sixth:hover {
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
 // ABOUT E DISCLAIMER PAGE
 .disclaimerPageSection, .aboutPageSection {
   font-size: 1.2rem;
@@ -451,7 +637,6 @@ h1 {
     overflow: hidden;
     background-color: #f1f1f1;
   }
-
 
 
 
