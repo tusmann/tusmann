@@ -102,14 +102,17 @@ body {
   }*/
   /* drawer sidebar */
   nav {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(6, 1fr);
     transition: width 350ms ease;
-    width: 103px;
-    background: #c6e5df;
-    color: #222222;
-    padding: 20px;
+    width: 10, 3rem;
+    height: 80vh;
+    background: #DFE575;
+    color: #FFF;
+    padding: 2rem;
     position: relative;
+    padding-top: 9vh;
   }
 
   .opened-doc-list {
@@ -124,26 +127,72 @@ body {
 
   .nav-list {
     position: absolute;
-    font-size: 1rem;
-    line-height: 1.7rem;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.1em;
     color: #222222;
     text-decoration: none;
     z-index: 1000;
     cursor: pointer;
+    padding-left: 3rem;
     transition: opacity 350ms;
-    transform: translateY(20px);
+    transform: translateY(3.8rem);
   }
 
-  .close-menu {
+  .close-container {
     position: absolute;
-    font-size: 2rem;
-    color: #222222;
-    text-decoration: none;
-    z-index: 1000;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0rem;
     cursor: pointer;
-    transition: opacity 350ms;
   }
 
+  .leftright {
+    height: 0.4rem;
+    width: 2.5rem;
+    position: absolute;
+    margin-top: 2.4rem;
+    background-color: #c33149;
+    border-radius: 0.2rem;
+    transform: rotate(45deg);
+    transition: all 0.3s ease-in;
+  }
+
+  .rightleft {
+    height: 0.4rem;
+    width: 2.5rem;
+    position: absolute;
+    margin-top: 2.4rem;
+    background-color: #c33149;
+    border-radius: 0.2rem;
+    transform: rotate(-45deg);
+    transition: all 0.3s ease-in;
+  }
+
+  .close-container:hover .leftright {
+    transform: rotate(-45deg);
+    background-color: #2113e4;
+  }
+
+  .close-container:hover .rightleft {
+    transform: rotate(45deg);
+    background-color: #2113e4;
+  }
+
+  .close-container:hover label {
+    opacity: 1;
+  }
+
+  /*  
+  .close-menu {
+      position: absolute;
+      font-size: 2rem;
+      color: $primary-color;
+      text-decoration: none;
+      z-index: 1000;
+      cursor: pointer;
+      transition: opacity 350ms;
+  }*/
   .close-menu-doc {
     color: #222222;
   }
@@ -232,6 +281,7 @@ h1 {
 }
 
 .text-box {
+  background-size: 100%;
   position: absolute;
   grid-column-start: 1;
   grid-column-end: span col4-start;
@@ -250,29 +300,49 @@ h1 {
 
 .heading__first {
   display: block;
-  /*overflow: hidden; /* Ensures the content is not revealed until the animation 
-  border-right: .15em solid #FFF; /* The typwriter cursor 
-  white-space: nowrap; /* Keeps the content on a single line 
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens 
-  animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
-  animation-duration: 2.9s;*/
+  overflow: hidden;
+  border-right: 0.15em solid transparent;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation-duration: 2s;
 }
 
 .heading__second {
+  height: 21vh;
   display: block;
   margin-left: 5rem;
-  /*overflow: hidden; /* Ensures the content is not revealed until the animation 
-  border-right: .15em solid #FFF; /* The typwriter cursor 
-  white-space: nowrap; /* Keeps the content on a single line 
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens 
-  animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
-  animation-delay: 2s;*/
+  overflow: hidden;
+  border-right: 0.15em solid transparent;
+  margin: 0 5rem;
+  animation: hideing 2s linear, typing 3.5s 2s steps(40, end), blink-caret 0.75s 2s step-end infinite;
+  animation-duration: 2s;
 }
 
+@keyframes hideing {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
 .hidden {
   display: none;
 }
@@ -310,13 +380,14 @@ h1 {
 }
 
 .jumbo__img--container {
+  grid-area: 2 2;
   background-position-x: left;
   background-position-y: bottom;
 }
 
 .jumbo__img--1 {
   background-image: linear-gradient(rgba(195, 49, 73, 0.6), rgba(32, 8, 12, 0.6)), url("/bembo.35364a0b.jpg");
-  position: fixed;
+  position: absolute;
   z-index: 3;
   height: 40vh;
   width: 40vh;
@@ -324,7 +395,7 @@ h1 {
   border-radius: 50%;
   top: 49%;
   right: 5%;
-  background-position: left;
+  background-position: bottom;
 }
 
 .jumbo__img--1:hover {
@@ -338,11 +409,12 @@ h1 {
   background-image: linear-gradient(rgba(230, 152, 197, 0.6), rgba(143, 35, 97, 0.6)), url("/jan_2.7917d7aa.jpg");
   background-position: center;
   background-size: 30rem;
-  position: fixed;
+  position: absolute;
   height: 65vh;
   width: 50vh;
   top: 12%;
   right: 16%;
+  background-position: bottom;
 }
 
 .jumbo__img--2:hover {
@@ -354,7 +426,7 @@ h1 {
 .jumbo__img--3 {
   z-index: 1;
   background-image: linear-gradient(rgba(33, 19, 228, 0.6), rgba(6, 3, 40, 0.6)), url("/munari.9cd8112c.jpg");
-  position: fixed;
+  position: absolute;
   height: 50vh;
   width: 50vh;
   top: 11%;
@@ -362,6 +434,7 @@ h1 {
   background-position: center;
   background-size: 35rem;
   clip-path: polygon(75% 0, 0 69%, 100% 100%);
+  background-position: bottom;
 }
 
 .jumbo__img--3:hover {
@@ -384,7 +457,7 @@ h1 {
   font-family: IBM Plex Sans;
   font-size: 1.5em;
   z-index: 100;
-  margin-top: -2rem;
+  margin-top: -3.8rem;
   margin-left: 26rem;
   padding: 1rem 1rem;
   border-radius: 0.5rem;
@@ -401,16 +474,128 @@ h1 {
   box-shadow: 0 0.5rem 1rem rgba(14, 12, 12, 0.26);
 }
 
-/* The typing effect 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}*/
-/* The typewriter cursor effect 
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}*/
+.style-selector-first {
+  grid-row: 1;
+  position: relative;
+  background-image: url(/one.23f04564.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 8vh;
+  left: 0rem;
+}
+
+.style-selector-second {
+  grid-row: 2;
+  position: relative;
+  background-image: url(/two.e9b6879d.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 8vh;
+  left: 0rem;
+}
+
+.style-selector-third {
+  grid-row: 3;
+  position: relative;
+  background-image: url(/three.a334fce9.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 8vh;
+  left: 0rem;
+}
+
+.style-selector-fourth {
+  grid-row: 4;
+  position: relative;
+  background-image: url(/four.b72f6141.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 8vh;
+  left: 0rem;
+}
+
+.style-selector-fifth {
+  grid-row: 5;
+  position: relative;
+  background-image: url(/five.dd2a19df.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 8vh;
+  left: 0rem;
+}
+
+.style-selector-sixth {
+  grid-row: 6;
+  position: relative;
+  background-image: url(/six.04897191.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 8vh;
+  width: 8vh;
+  left: 0rem;
+}
+
+.style-selector-first:hover {
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.style-selector-second:hover {
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.style-selector-third:hover {
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.style-selector-fourth:hover {
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.style-selector-fifth:hover {
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.style-selector-sixth:hover {
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
 .disclaimerPageSection, .aboutPageSection {
   font-size: 1.2rem;
   padding: 3% 10% 3% 4%;
