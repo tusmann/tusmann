@@ -212,33 +212,33 @@ html {
 }
 
 .card__picture--1 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#DAD6D4), to(#796C63)), url(/card1.a8cde74f.jpg);
-  background-image: linear-gradient(to right bottom, #DAD6D4, #796C63), url(/card1.a8cde74f.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#DAD6D4), to(#796C63)), url(/card1.4c48483c.jpg);
+  background-image: linear-gradient(to right bottom, #DAD6D4, #796C63), url(/card1.4c48483c.jpg);
 }
 
 .card__picture--2 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#ecca4d), to(#279d53)), url(/card2.2d777ff0.jpg);
-  background-image: linear-gradient(to right bottom, #ecca4d, #279d53), url(/card2.2d777ff0.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ecca4d), to(#279d53)), url(/card2.a5e0f1ec.jpg);
+  background-image: linear-gradient(to right bottom, #ecca4d, #279d53), url(/card2.a5e0f1ec.jpg);
 }
 
 .card__picture--3 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#9D5D82), to(#4F1722)), url(/card1.a8cde74f.jpg);
-  background-image: linear-gradient(to right bottom, #9D5D82, #4F1722), url(/card1.a8cde74f.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#9D5D82), to(#4F1722)), url(/card1.4c48483c.jpg);
+  background-image: linear-gradient(to right bottom, #9D5D82, #4F1722), url(/card1.4c48483c.jpg);
 }
 
 .card__picture--4 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#24597B), to(#00497A)), url(/card1.a8cde74f.jpg);
-  background-image: linear-gradient(to right bottom, #24597B, #00497A), url(/card1.a8cde74f.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#24597B), to(#00497A)), url(/card1.4c48483c.jpg);
+  background-image: linear-gradient(to right bottom, #24597B, #00497A), url(/card1.4c48483c.jpg);
 }
 
 .card__picture--5 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#796C63), to(#796C63)), url(/card1.a8cde74f.jpg);
-  background-image: linear-gradient(to right bottom, #796C63, #796C63), url(/card1.a8cde74f.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#796C63), to(#796C63)), url(/card1.4c48483c.jpg);
+  background-image: linear-gradient(to right bottom, #796C63, #796C63), url(/card1.4c48483c.jpg);
 }
 
 .card__picture--6 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#796C63), to(#796C63)), url(/card1.a8cde74f.jpg);
-  background-image: linear-gradient(to right bottom, #796C63, #796C63), url(/card1.a8cde74f.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#796C63), to(#796C63)), url(/card1.4c48483c.jpg);
+  background-image: linear-gradient(to right bottom, #796C63, #796C63), url(/card1.4c48483c.jpg);
 }
 
 .card__heading {
@@ -290,9 +290,9 @@ html {
 .details {
   text-align: center;
   color: #fff;
-  margin-bottom: 8rem;
+  margin-bottom: 2rem;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   padding: 1rem;
 }
 
@@ -451,6 +451,21 @@ html {
   display: table-cell;
   vertical-align: middle;
   padding: 0 0 0 1rem;
+}
+
+.styleDescriptionBlockNoImage {
+  width: 100%;
+  vertical-align: middle;
+  display: table;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.textNoImage {
+  font-size: 1rem;
+  width: 90%;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 0 0 0;
 }
 
 body {
@@ -1292,6 +1307,7 @@ h1 {
   padding: 0;
   font-size: 2.5rem;
   color: #9D5D82;
+  margin-bottom: 0.5rem;
 }
 .disclaimerPageSection h2, .aboutPageSection h2 {
   padding: 1rem 0 0 0;
@@ -1300,6 +1316,26 @@ h1 {
 }
 .disclaimerPageSection a, .aboutPageSection a {
   color: #00497A;
+}
+.disclaimerPageSection .bio, .aboutPageSection .bio {
+  width: 100%;
+  height: 50%;
+  vertical-align: middle;
+  display: table;
+  padding: 1rem 0 1rem 0;
+}
+.disclaimerPageSection .bioPic, .aboutPageSection .bioPic {
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 1rem 0 0 0;
+}
+.disclaimerPageSection .bioText, .aboutPageSection .bioText {
+  font-size: 1rem;
+  width: 90%;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 0 0 1rem;
 }
 
 .icn {

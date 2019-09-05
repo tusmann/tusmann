@@ -924,6 +924,7 @@ h1 {
     padding: 0;
     font-size: 2.5rem;
     color: #9D5D82;
+    margin-bottom: 0.5rem;
   }
   h2{
     padding: 1rem 0 0 0;
@@ -932,6 +933,26 @@ h1 {
   }
   a {
     color: #00497A;
+  }
+  .bio {
+    width: 100%;
+          height: 50%;
+          vertical-align: middle;
+          display: table;
+          padding: 1rem 0 1rem 0;
+  }
+  .bioPic {
+    width: 100%;
+          display: table-cell;
+          vertical-align: middle;
+          padding: 1rem 0 0 0;
+  }
+  .bioText {
+    font-size: 1rem;
+    width: 90%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 0 0 1rem;
   }
 }
 

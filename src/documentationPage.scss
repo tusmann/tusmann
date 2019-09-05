@@ -165,9 +165,9 @@ $card-color-6-dark: #796C63;
         from($card-color-1-light),
         to($card-color-1-dark)
       ),
-      url(card1.jpg);
+      url(./cards/card1.jpg);
     background-image: linear-gradient(to right bottom, $card-color-1-light, $card-color-1-dark),
-      url(card1.jpg);
+      url(./cards/card1.jpg);
   }
   .card__picture--2 {
     background-image: -webkit-gradient(
@@ -177,9 +177,9 @@ $card-color-6-dark: #796C63;
         from($card-color-2-light),
         to($card-color-2-dark)
       ),
-      url(card2.jpg);
+      url(./cards/card2.jpg);
     background-image: linear-gradient(to right bottom, $card-color-2-light, $card-color-2-dark),
-      url(card2.jpg);
+      url(./cards/card2.jpg);
   }
   .card__picture--3 {
     background-image: -webkit-gradient(
@@ -189,9 +189,9 @@ $card-color-6-dark: #796C63;
         from($card-color-3-light),
         to($card-color-3-dark)
       ),
-      url(card1.jpg);
+      url(./cards/card1.jpg);
     background-image: linear-gradient(to right bottom, $card-color-3-light, $card-color-3-dark),
-      url(card1.jpg);
+      url(./cards/card1.jpg);
   }
   .card__picture--4 {
     background-image: -webkit-gradient(
@@ -201,9 +201,9 @@ $card-color-6-dark: #796C63;
         from($card-color-4-light),
         to($card-color-4-dark)
       ),
-      url(card1.jpg);
+      url(./cards/card1.jpg);
     background-image: linear-gradient(to right bottom, $card-color-4-light, $card-color-4-dark),
-      url(card1.jpg);
+      url(./cards/card1.jpg);
   }
   .card__picture--5 {
     background-image: -webkit-gradient(
@@ -213,9 +213,9 @@ $card-color-6-dark: #796C63;
         from($card-color-5-light),
         to($card-color-5-dark)
       ),
-      url(card1.jpg);
+      url(./cards/card1.jpg);
     background-image: linear-gradient(to right bottom, $card-color-5-light, $card-color-5-dark),
-      url(card1.jpg);
+      url(./cards/card1.jpg);
   }
   .card__picture--6 {
     background-image: -webkit-gradient(
@@ -225,9 +225,9 @@ $card-color-6-dark: #796C63;
         from($card-color-6-light),
         to($card-color-6-dark)
       ),
-      url(card1.jpg);
+      url(./cards/card1.jpg);
     background-image: linear-gradient(to right bottom, $card-color-6-light, $card-color-6-dark),
-      url(card1.jpg);
+      url(./cards/card1.jpg);
   }
 
   .card__heading {
@@ -271,9 +271,9 @@ $card-color-6-dark: #796C63;
   .details {
     text-align: center;
     color: #fff;
-    margin-bottom: 8rem;
+    margin-bottom: 2rem;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     padding: 1rem;
   }
 
@@ -423,6 +423,20 @@ $card-color-6-dark: #796C63;
         display: table-cell;
         vertical-align: middle;
         padding: 0 0 0 1rem;
+      }
+
+      .styleDescriptionBlockNoImage {
+        width: 100%;
+        vertical-align: middle;
+        display: table;
+        padding: 0.5rem 0 0.5rem 0;
+      }
+      .textNoImage {
+        font-size: 1rem;
+        width: 90%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 0 0 0;
       }
 
   

@@ -18,28 +18,24 @@
 
 
 article > * {
+  
     padding: 10% 20% 10% 20%;
-    background-image: url(background.jpg);
-    background-position-x: 50%;
-    background-position-y: center;
-    background-size: cover;
-    background-repeat-x: no-repeat;
-    background-repeat-y: no-repeat;
-    background-attachment: fixed;
-    background-origin: initial;
-    background-clip: initial;
-    background-color: initial;
+    background: url("background.jpg") no-repeat 50% fixed/cover;
     box-sizing: border-box;
     font-family: 'japanese', serif;
     font-weight: 400;
     line-height: 1.7;
-    color: #210102;
+    color: #210102; 
     font-size: 1.3rem;
     text-align: justify;
 
   }
 
-article h1, h2, h3, h4 {
+article main {
+  padding: 5% 20% 5% 20%;
+}
+
+article h1, h2, h3, h4, p {
     /*gradient*/
     background: -webkit-linear-gradient(left, #210102, #7B562A);
     background: -o-linear-gradient(right, #210102, #7B562A);
@@ -72,8 +68,10 @@ article h1, h2, h3, h4 {
       margin-left: auto;
       margin-right: auto;
       box-align: center;
-      -webkit-filter: grayscale(20%) sepia(0.5) contrast(100%) opacity(0.99);
-      filter: grayscale(20%) sepia(0.5) contrast(100%) opacity(0.99);
+      /*-webkit-filter: grayscale(20%) sepia(0.5) contrast(100%) opacity(0.99);*/
+      /*filter: grayscale(20%) sepia(0.5) contrast(100%) opacity(0.99);*/
+      /*-moz-box-shadow: 0 0 5px #D4AF37;*/
+      
     }
 
     article figure img:first-of-type {
@@ -133,7 +131,6 @@ article h1, h2, h3, h4 {
     table-layout: fixed;
     width: 100%;
     border-width: 0.3rem;
-    border-style: double;
     padding: 0.2rem;
     border-collapse: collapse;
   }
@@ -142,10 +139,10 @@ article h1, h2, h3, h4 {
     text-transform: uppercase;
     font-weight: 600;
     text-align: center;
-    border: 0.1rem solid #893235;
+    border: 0.1rem solid;
     padding: 0.2rem;
   }
   article td {
     padding: 0.2rem;
-    border: 0.1rem solid #893235;
+    border: 0.1rem solid;
   }

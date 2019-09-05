@@ -39,14 +39,16 @@ article > * {
     text-align: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
+
   }
  figure figcaption {
     font-style: italic;
     font-size: smaller;
+    
   }
   figure img {
     height: auto;
-    width: 100%;
+    width: 80%;
     object-fit: contain;
     display: block;
     margin-left: auto;
@@ -66,7 +68,7 @@ article > * {
 
 article header, article footer {
     text-align: center;
-    padding: 0 20% 0 20%;
+    padding: 5% 20% 5% 20%;
 
 }
 
@@ -130,6 +132,8 @@ article table {
   border-style: double;
   padding: 0.2rem;
   border-collapse: collapse;
+  text-align: left;
+  line-height: 1.5rem;
 }
 article th {
   font-size: 1rem;
