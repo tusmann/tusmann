@@ -464,15 +464,13 @@ body {
   font-family: "IBM Plex Mono", monospace;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 480px) and (max-width: 768px) {
   .container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
   }
-
-  /* original sidebar */
-  nav {
+  .container nav {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto;
@@ -483,8 +481,7 @@ body {
     padding: 2rem;
     position: relative;
   }
-
-  .style-selector-first {
+  .container nav .style-selector-first {
     grid-column: 1;
     position: relative;
     background-repeat: no-repeat;
@@ -493,8 +490,13 @@ body {
     width: 8vh;
     left: 0rem;
   }
-
-  .style-selector-second {
+  .container nav .style-selector-first:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  .container nav .style-selector-second {
     grid-column: 2;
     position: relative;
     background-repeat: no-repeat;
@@ -503,8 +505,13 @@ body {
     width: 8vh;
     left: 0rem;
   }
-
-  .style-selector-third {
+  .container nav .style-selector-second:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  .container nav .style-selector-third {
     grid-column: 3;
     position: relative;
     background-image: url(/three.a334fce9.png);
@@ -514,8 +521,13 @@ body {
     width: 8vh;
     left: 0rem;
   }
-
-  .style-selector-fourth {
+  .container nav .style-selector-third:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  .container nav .style-selector-fourth {
     grid-column: 4;
     position: relative;
     background-image: url(/four.b72f6141.png);
@@ -525,8 +537,13 @@ body {
     width: 8vh;
     left: 0rem;
   }
-
-  .style-selector-fifth {
+  .container nav .style-selector-fourth:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  .container nav .style-selector-fifth {
     grid-column: 5;
     position: relative;
     background-image: url(/five.dd2a19df.png);
@@ -536,8 +553,13 @@ body {
     width: 8vh;
     left: 0rem;
   }
-
-  .style-selector-sixth {
+  .container nav .style-selector-fifth:hover {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  .container nav .style-selector-sixth {
     grid-column: 6;
     position: relative;
     background-image: url(/six.04897191.png);
@@ -547,47 +569,126 @@ body {
     width: 8vh;
     left: 0rem;
   }
-
-  .style-selector-first:hover {
+  .container nav .style-selector-sixth:hover {
     animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
   }
-
-  .style-selector-second:hover {
-    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
+  .container .jumbo {
+    padding: 20px;
   }
-
-  .style-selector-third:hover {
-    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
+  .container .jumbo .text-box {
+    background-size: 100%;
+    position: absolute;
+    grid-column-start: 1;
+    grid-column-end: span col4-start;
+    z-index: 10;
   }
-
-  .style-selector-fourth:hover {
-    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
+  .container .jumbo .text-box .heading {
+    font-size: 6rem;
+    font-family: "TRY Vesterbro";
+    font-weight: normal;
+    font-style: normal;
+    padding-top: 5vh;
+    letter-spacing: 0em;
+    line-height: 0.8em;
   }
-
-  .style-selector-fifth:hover {
-    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
+  .container .jumbo .text-box .heading__first {
+    display: block;
+    overflow: hidden;
+    border-right: 0.15em solid transparent;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+    animation-duration: 0.8s;
   }
-
-  .style-selector-sixth:hover {
-    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
+  .container .jumbo .text-box .heading__second {
+    height: 21vh;
+    display: block;
+    margin-left: 5rem;
+    overflow: hidden;
+    border-right: 0.15em solid transparent;
+    animation: hideing 0.8s linear, typing 2s 0.75s steps(40, end), blink-caret 0.75s 0.75s step-end infinite;
+    animation-duration: 0.9s;
+  }
+  .container .jumbo .text-box .heading__btn {
+    position: absolute;
+    color: #f4f1d0;
+    background-color: #0E0C0C;
+    font-family: IBM Plex Sans;
+    font-size: 1.2em;
+    z-index: 100;
+    margin-top: -6.8rem;
+    margin-left: 16rem;
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+  }
+  .container .jumbo .text-box .heading__btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+  }
+  .container .jumbo .text-box .heading__btn:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(14, 12, 12, 0.26);
+  }
+  .container .jumbo__img--container {
+    grid-area: 2 2;
+    background-position-x: left;
+    background-position-y: bottom;
+  }
+  .container .jumbo__img--container .jumbo__img--1 {
+    background-image: url("/rinpa_duo.f5b000ac.jpg");
+    position: absolute;
+    z-index: 3;
+    height: 30vh;
+    width: 30vh;
+    background-size: cover;
+    border-radius: 50%;
+    top: 54%;
+    right: 25%;
+    background-position: bottom;
+  }
+  .container .jumbo__img--container .jumbo__img--1:hover {
+    z-index: 9;
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+  }
+  .container .jumbo__img--container .jumbo__img--2 {
+    z-index: 2;
+    background-image: url("/jan_duo.d5a40610.jpg");
+    background-position: center;
+    background-size: 35rem;
+    position: absolute;
+    height: 45vh;
+    width: 30vh;
+    top: 34%;
+    right: 46%;
+    background-position: bottom;
+  }
+  .container .jumbo__img--container .jumbo__img--2:hover {
+    z-index: 9;
+    transform: translateY(-0.1rem);
+    box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+  }
+  .container .jumbo__img--container .jumbo__img--3 {
+    z-index: 1;
+    background-image: url("/munari_duo.35d95cdb.jpg");
+    position: absolute;
+    height: 30vh;
+    width: 30vh;
+    top: 31%;
+    right: 28%;
+    background-position: center;
+    background-size: 35rem;
+    clip-path: polygon(75% 0, 0 69%, 100% 100%);
+    background-position: bottom;
+  }
+  .container .jumbo__img--container .jumbo__img--3:hover {
+    z-index: 9;
+    transform: translateY(-0.1rem);
+    box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
   }
 }
 @media (min-width: 768px) {
@@ -598,6 +699,122 @@ body {
     grid-template-rows: auto 1fr auto;
     /* fluid animation of the sidebar only for Firefox :( */
     /* transition: grid-template-columns 350ms ease; */
+  }
+  .container .jumbo {
+    padding: 20px;
+  }
+  .container .jumbo .text-box {
+    background-size: 100%;
+    position: absolute;
+    grid-column-start: 1;
+    grid-column-end: span col4-start;
+    z-index: 10;
+  }
+  .container .jumbo .text-box .heading {
+    font-size: 8em;
+    font-family: "TRY Vesterbro";
+    font-weight: normal;
+    font-style: normal;
+    padding-top: 5vh;
+    letter-spacing: 0em;
+    line-height: 0.8em;
+  }
+  .container .jumbo .text-box .heading__first {
+    display: block;
+    overflow: hidden;
+    border-right: 0.15em solid transparent;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+    animation-duration: 0.8s;
+  }
+  .container .jumbo .text-box .heading__second {
+    height: 21vh;
+    display: block;
+    margin-left: 5rem;
+    overflow: hidden;
+    border-right: 0.15em solid transparent;
+    margin: 0 5rem;
+    animation: hideing 0.8s linear, typing 2s 0.75s steps(40, end), blink-caret 0.75s 0.75s step-end infinite;
+    animation-duration: 0.9s;
+  }
+  .container .jumbo .text-box .heading__btn {
+    position: absolute;
+    color: #f4f1d0;
+    background-color: #0E0C0C;
+    font-family: IBM Plex Sans;
+    font-size: 1.5em;
+    z-index: 100;
+    margin-top: -3.8rem;
+    margin-left: 26rem;
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+  }
+  .container .jumbo .text-box .heading__btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+  }
+  .container .jumbo .text-box .heading__btn:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(14, 12, 12, 0.26);
+  }
+  .container .jumbo__img--container {
+    grid-area: 2 2;
+    background-position-x: left;
+    background-position-y: bottom;
+  }
+  .container .jumbo__img--container .jumbo__img--1 {
+    background-image: url("/rinpa_duo.f5b000ac.jpg");
+    position: absolute;
+    z-index: 3;
+    height: 40vh;
+    width: 40vh;
+    background-size: cover;
+    border-radius: 50%;
+    top: 49%;
+    right: 5%;
+    background-position: bottom;
+  }
+  .container .jumbo__img--container .jumbo__img--1:hover {
+    z-index: 9;
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+  }
+  .container .jumbo__img--container .jumbo__img--2 {
+    z-index: 2;
+    background-image: url("/jan_duo.d5a40610.jpg");
+    background-position: center;
+    background-size: 35rem;
+    position: absolute;
+    height: 65vh;
+    width: 50vh;
+    top: 12%;
+    right: 16%;
+    background-position: bottom;
+  }
+  .container .jumbo__img--container .jumbo__img--2:hover {
+    z-index: 9;
+    transform: translateY(-0.1rem);
+    box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+  }
+  .container .jumbo__img--container .jumbo__img--3 {
+    z-index: 1;
+    background-image: url("/munari_duo.35d95cdb.jpg");
+    position: absolute;
+    height: 50vh;
+    width: 50vh;
+    top: 11%;
+    right: 4%;
+    background-position: center;
+    background-size: 35rem;
+    clip-path: polygon(75% 0, 0 69%, 100% 100%);
+    background-position: bottom;
+  }
+  .container .jumbo__img--container .jumbo__img--3:hover {
+    z-index: 9;
+    transform: translateY(-0.1rem);
+    box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
   }
 
   /* drawer script */
@@ -951,21 +1168,10 @@ main {
   grid-template-columns: 1fr 1fr;
 }
 
-.jumbo {
-  padding: 20px;
-}
-
 .tutorial {
   padding: 20px;
 }
 
-/*.reader {
-  flex: 1;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  overflow-y: auto;
-}*/
 footer {
   grid-column: span 2;
   padding: 30px;
@@ -983,45 +1189,6 @@ h1 {
   margin-bottom: 1em;
   font-size: 1.3em;
   font-weight: bold;
-}
-
-.text-box {
-  background-size: 100%;
-  position: absolute;
-  grid-column-start: 1;
-  grid-column-end: span col4-start;
-  z-index: 10;
-}
-
-.heading {
-  font-size: 8em;
-  font-family: "TRY Vesterbro";
-  font-weight: normal;
-  font-style: normal;
-  padding-top: 5vh;
-  letter-spacing: 0em;
-  line-height: 0.8em;
-}
-
-.heading__first {
-  display: block;
-  overflow: hidden;
-  border-right: 0.15em solid transparent;
-  white-space: nowrap;
-  margin: 0 auto;
-  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
-  animation-duration: 0.8s;
-}
-
-.heading__second {
-  height: 21vh;
-  display: block;
-  margin-left: 5rem;
-  overflow: hidden;
-  border-right: 0.15em solid transparent;
-  margin: 0 5rem;
-  animation: hideing 0.8s linear, typing 2s 0.75s steps(40, end), blink-caret 0.75s 0.75s step-end infinite;
-  animation-duration: 0.9s;
 }
 
 @keyframes hideing {
@@ -1097,99 +1264,11 @@ h1 {
   text-shadow: 0 0.5rem 1rem rgba(244, 241, 208, 0.493);
 }
 
-.jumbo__img--container {
-  grid-area: 2 2;
-  background-position-x: left;
-  background-position-y: bottom;
-}
-
-.jumbo__img--1 {
-  background-image: url("/rinpa_duo.f5b000ac.jpg");
-  position: absolute;
-  z-index: 3;
-  height: 40vh;
-  width: 40vh;
-  background-size: cover;
-  border-radius: 50%;
-  top: 49%;
-  right: 5%;
-  background-position: bottom;
-}
-
-.jumbo__img--1:hover {
-  z-index: 9;
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
-}
-
-.jumbo__img--2 {
-  z-index: 2;
-  background-image: url("/jan_duo.d5a40610.jpg");
-  background-position: center;
-  background-size: 35rem;
-  position: absolute;
-  height: 65vh;
-  width: 50vh;
-  top: 12%;
-  right: 16%;
-  background-position: bottom;
-}
-
-.jumbo__img--2:hover {
-  z-index: 9;
-  transform: translateY(-0.1rem);
-  box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
-}
-
-.jumbo__img--3 {
-  z-index: 1;
-  background-image: url("/munari_duo.35d95cdb.jpg");
-  position: absolute;
-  height: 50vh;
-  width: 50vh;
-  top: 11%;
-  right: 4%;
-  background-position: center;
-  background-size: 35rem;
-  clip-path: polygon(75% 0, 0 69%, 100% 100%);
-  background-position: bottom;
-}
-
-.jumbo__img--3:hover {
-  z-index: 9;
-  transform: translateY(-0.1rem);
-  box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
-}
-
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   display: inline-block;
-}
-
-.heading__btn {
-  position: absolute;
-  color: #f4f1d0;
-  background-color: #0E0C0C;
-  font-family: IBM Plex Sans;
-  font-size: 1.5em;
-  z-index: 100;
-  margin-top: -3.8rem;
-  margin-left: 26rem;
-  padding: 1rem 1rem;
-  border-radius: 0.5rem;
-  transition: all 0.2s;
-}
-
-.heading__btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
-}
-
-.heading__btn:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(14, 12, 12, 0.26);
 }
 
 @keyframes shake {
