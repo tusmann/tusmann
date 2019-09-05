@@ -1,11 +1,11 @@
 $card-color-1-light: #DAD6D4;
 $card-color-1-dark: #796C63;
-$card-color-2-light: #24597B;
-$card-color-2-dark: #00497A;
+$card-color-2-light: #ecca4d;
+$card-color-2-dark: #279d53;
 $card-color-3-light: #9D5D82;
 $card-color-3-dark: #4F1722;
-$card-color-4-light: #796C63;
-$card-color-4-dark: #796C63;
+$card-color-4-light:  #24597B;
+$card-color-4-dark: #00497A;
 $card-color-5-light: #796C63;
 $card-color-5-dark: #796C63;
 $card-color-6-light: #796C63;
@@ -27,37 +27,9 @@ $card-color-6-dark: #796C63;
     }
     a {
       color: #00497A;
-    }
-    .themesDocumentation {
-      padding: 0.25em;
-      overflow: hidden;
-    }
-    .themesDocumentation li {
-      float: left;
-      width: 50%;
-      padding: 1em;
-    }
-    .themesDocumentation li {
-      float: left;
-      width: 50%;
-      padding: 1em;
     }}
-    
-  .themesDocumentation img {
-    display: block;
-    width: 100%;
-  }
-  .themesDocumentation li:nth-child(odd) {
-    clear: left;
-  }
-  
 
-
-
-
-
-
-  //cards test
+  //cards media queries
   @media only screen and (max-width: 56.25em) {
     .footer__copyright {
       width: 100%;
@@ -105,7 +77,7 @@ $card-color-6-dark: #796C63;
     }
   }
   .row .col-1-of-3 {
-    width: calc((100% - 2 * 23rem) / 3);
+    width: calc((100% - 2 * 3rem) / 6);
   }
 
   //card
@@ -153,10 +125,10 @@ $card-color-6-dark: #796C63;
       linear,
       left top,
       right bottom,
-      from(#7ed56f),
-      to(#28b485)
+      from($card-color-2-light),
+      to($card-color-2-dark)
     );
-    background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+    background-image: linear-gradient(to right bottom, $card-color-2-light, $card-color-2-dark);
   }
   .card__side--back-3 {
     background-image: -webkit-gradient(
@@ -222,13 +194,13 @@ $card-color-6-dark: #796C63;
       url(card.jpg);
   }
   .card__heading {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     font-weight: 300;
     text-transform: uppercase;
-    text-align: right;
+    text-align: center;
     color: #fff;
     position: absolute;
-    top: 12rem;
+    bottom: 3rem;
     right: 2rem;
     width: 75%;
   }
@@ -371,17 +343,20 @@ $card-color-6-dark: #796C63;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         width: 75%;
+        height: inherit;
         background-color: #fff;
         -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
         box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
         border-radius: 3px;
-        display: table;
-        overflow: auto;
+        overflow: scroll;
         opacity: 0;
         -webkit-transform: translate(-50%, -50%) scale(0.25);
         transform: translate(-50%, -50%) scale(0.25);
         -webkit-transition: all 0.5s 0.2s;
         transition: all 0.5s 0.2s;
+        //vertical-align: middle;
+        padding: 3rem 5rem;
+        display: block;
       }
       .popup__left {
         width: 33.333333%;
@@ -392,8 +367,7 @@ $card-color-6-dark: #796C63;
         display: table-cell;
         vertical-align: middle;
         padding: 3rem 5rem;
-      }
-      
+      }  
     
       .popup:target {
         opacity: 1;
@@ -421,50 +395,24 @@ $card-color-6-dark: #796C63;
         color: $card-color-3-light;
       }
 
-      .keyFeature {
-        width: 66.6666667%;
-        display: table-cell;
-        vertical-align: middle;
-        padding: 3rem 5rem;
+        .styleDescriptionBlock {
+          width: 100%;
+          height: 50%;
+          vertical-align: middle;
+          display: table;
+          padding: 1rem 0 1rem 0;}
 
         .popup__img {
-            display: block;
-            width: 100%;
+          width: 100%;
+          display: table-cell;
+          vertical-align: middle;
+          padding: 0 1rem 0 0;
+            
       }     
       .popup__text {
-        font-size: 1.4rem;
-        margin-bottom: 4rem;
-        -moz-column-count: 2;
-        -moz-column-gap: 4rem;
-        -moz-column-rule: 1px solid #eee;
-        -webkit-column-count: 2;
-        column-count: 2;
-        -webkit-column-gap: 4rem;
-        column-gap: 4rem;
-        -webkit-column-rule: 1px solid #eee;
-        column-rule: 1px solid #eee;
-        -ms-hyphens: auto;
-        -webkit-hyphens: auto;
-        hyphens: auto;
-        
+        font-size: 1rem;
+        width: 60%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 0 0 1rem;
       }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
