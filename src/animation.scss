@@ -1,0 +1,74 @@
+// Hides the second line
+@keyframes hideing {
+    0% { opacity: 0 }
+    100% { opacity: 0  }
+  }
+  
+  // The typing effect 
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  // The typewriter cursor effect 
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: transparent; }
+  }
+
+  //SIDEBAR BUTTONS
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+  //
+
+  @keyframes fallImg1 {
+    0% {opacity: 0;
+        transform: translateY(-20rem);}
+    80%{opacity: 0.8;
+        transform: translateY(3rem);}
+    100%{opacity: 1;
+        transform: translateY(0rem);}
+  }
+  
+  @keyframes fallImg2 {
+    0% {opacity: 0;
+        transform: translateY(-20rem);}
+    80%{opacity: 0.8;
+        transform: translateY(3rem);}
+    100%{opacity: 1;
+        transform: translateY(0rem);}
+  }
+  
+  @keyframes fallImg3 {
+    0% {opacity: 0;
+        transform: translateY(-20rem);}
+    80%{opacity: 0.8;
+        transform: translateY(3rem);}
+    100%{opacity: 1;
+        transform: translateY(0rem);}
+  }
+
+  @keyframes moveInBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(3rem); }
+    100% {
+      opacity: 1;
+      transform: translate(0); } }
