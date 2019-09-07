@@ -301,3 +301,38 @@ document.querySelector(".documentationPageButton").onclick = function () {
         }
       });
     }
+
+    var articlesLinkDict = {"Japan's Prisons Are a Haven for Elderly Women": "https://www.bloomberg.com/news/features/2018-03-16/japan-s-prisons-are-a-haven-for-elderly-women", 
+    "As Goes the South, so Goes the Nation": "https://harpers.org/archive/2018/07/as-goes-the-south-so-goes-the-nation/", 
+    "Jerry And Marge Go Large":"https://highline.huffingtonpost.com/articles/en/lotto-winners/", 
+    "How Anna Delvey Tricked New York’s Party People" :"https://www.thecut.com/2018/05/how-anna-delvey-tricked-new-york.html",
+    "God is in the machine" : "https://www.the-tls.co.uk/articles/public/ridiculously-complicated-algorithms/"}
+
+var elementIsClicked = false; // declare the variable that tracks the state
+function clickHandler(){ // declare a function that updates the state
+      elementIsClicked = true;
+    }
+
+function addArticleGlobalUrl(){
+    articlesLinkDict.forEach(function (item, key) {
+    var articleTitle = key;
+    var articleLinkUrl = item;
+    var articlesNavbar = document.querySelectorAll("a.close-menu-doc")
+    articlesNavbar.forEach(node => {
+        if (node.textContent == articleTitle) {
+            node.addEventListener("click", function() {
+                document.querySelector("a.footerArticleLink").href = articleLinkUrl;
+                document.querySelector("div.footerRights").classList.add("hidden");
+                document.querySelector("a.footerArticleLink").classList.remove("hidden");
+        }
+
+    )
+}})       
+})
+if (document.querySelector("section.reader").hasChildNodes) {
+}
+else {
+    document.querySelector("div.footerRights").classList.remove("hidden");
+    document.querySelector("a.footerArticleLink").classList.add("hidden");}
+}
+addArticleGlobalUrl()
