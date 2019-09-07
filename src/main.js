@@ -5,40 +5,32 @@ import {articlesSidebarSelection} from "./articlesSelectionButtons"
 import {specialArticleSidebarSelection} from "./articlesSelectionButtons"
 
 
-//NAVBAR HAMBURGER
-(function () {
+//OVERLAY MENU
+/* Open */
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
 
-    // Create mobile element
-    var mobile = document.createElement('div');
-    mobile.className = 'nav-mobile';
-    document.querySelector('.navbar').appendChild(mobile);
+const openOverlay = document.querySelector('.navMenu');
+openOverlay.addEventListener('click', openNav);
 
-    // hasClass
-    function hasClass(elem, className) {
-        return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-    }
+/* Close */
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+}
 
-    // toggleClass
-    function toggleClass(elem, className) {
-        var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
-        if (hasClass(elem, className)) {
-            while (newClass.indexOf(' ' + className + ' ') >= 0) {
-                newClass = newClass.replace(' ' + className + ' ', ' ');
-            }
-            elem.className = newClass.replace(/^\s+|\s+$/g, '');
-        } else {
-            elem.className += ' ' + className;
-        }
-    }
+const closeOverlay = document.querySelector('.closebtn');
+closeOverlay.addEventListener('click', closeNav);
 
-    // Mobile nav function
-    var mobileNav = document.querySelector('.nav-mobile');
-    var toggle = document.querySelector('.navbar__icons');
-    mobileNav.onclick = function () {
-        toggleClass(this, 'nav-mobile-open');
-        toggleClass(toggle, 'nav-active');
-    };
-})();
+const closeOverlayAbout = document.querySelector('.aboutPageButton');
+closeOverlayAbout.addEventListener('click', closeNav);
+
+const closeOverlayDoc = document.querySelector('.documentationPageButton');
+closeOverlayDoc.addEventListener('click', closeNav);
+
+const closeOverlayDisc = document.querySelector('.disclaimerPageButton');
+closeOverlayDisc.addEventListener('click', closeNav);
+//
 
 
 

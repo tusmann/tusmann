@@ -1195,41 +1195,30 @@ var _addArticle = require("./addArticle.js");
 
 var _articlesSelectionButtons = require("./articlesSelectionButtons");
 
-//NAVBAR HAMBURGER
-(function () {
-  // Create mobile element
-  var mobile = document.createElement('div');
-  mobile.className = 'nav-mobile';
-  document.querySelector('.navbar').appendChild(mobile); // hasClass
+//OVERLAY MENU
 
-  function hasClass(elem, className) {
-    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-  } // toggleClass
+/* Open */
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
 
+var openOverlay = document.querySelector('.navMenu');
+openOverlay.addEventListener('click', openNav);
+/* Close */
 
-  function toggleClass(elem, className) {
-    var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
 
-    if (hasClass(elem, className)) {
-      while (newClass.indexOf(' ' + className + ' ') >= 0) {
-        newClass = newClass.replace(' ' + className + ' ', ' ');
-      }
-
-      elem.className = newClass.replace(/^\s+|\s+$/g, '');
-    } else {
-      elem.className += ' ' + className;
-    }
-  } // Mobile nav function
-
-
-  var mobileNav = document.querySelector('.nav-mobile');
-  var toggle = document.querySelector('.navbar__icons');
-
-  mobileNav.onclick = function () {
-    toggleClass(this, 'nav-mobile-open');
-    toggleClass(toggle, 'nav-active');
-  };
-})(); // polyfill needed for using for loop on a dictionary
+var closeOverlay = document.querySelector('.closebtn');
+closeOverlay.addEventListener('click', closeNav);
+var closeOverlayAbout = document.querySelector('.aboutPageButton');
+closeOverlayAbout.addEventListener('click', closeNav);
+var closeOverlayDoc = document.querySelector('.documentationPageButton');
+closeOverlayDoc.addEventListener('click', closeNav);
+var closeOverlayDisc = document.querySelector('.disclaimerPageButton');
+closeOverlayDisc.addEventListener('click', closeNav); //
+// polyfill needed for using for loop on a dictionary
 
 /*
 * Object.prototype.forEach() polyfill
@@ -1237,7 +1226,6 @@ var _articlesSelectionButtons = require("./articlesSelectionButtons");
 * @author Chris Ferdinandi
 * @license MIT
 */
-
 
 if (!Object.prototype.forEach) {
   Object.defineProperty(Object.prototype, 'forEach', {
@@ -1522,7 +1510,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61640" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58015" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

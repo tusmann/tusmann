@@ -23,21 +23,27 @@ body {
     flex-direction: column;
     min-height: 100vh;
 
-    .nav-mobile {
-      display: block;
-
-      &.nav-mobile-open {
-        display: block;
-        cursor:pointer;
-        position:absolute;
-        top:15px;
-        right: 20px;
-        content: url(./images/cancel.png);
-        //object-fit: contain;
-        width: 30px;
-        height: 30px;
-      }
+    //OVERLAY MENU
+    /* Nav Button */
+    .navMenu {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      top: 15px;
+      right: 15px;
+      font-size: 40px;
+      font-weight: 700;
+      cursor: pointer;
     }
+
+    /* Position the close button (top right corner) */
+    .closebtn {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        font-size: 60px !important; /* Override the font-size specified earlier (36px) for all navigation links */
+    }
+    //
 
     .navbar {
       grid-column: span 2;
@@ -52,43 +58,84 @@ body {
       }
 
       &__icons {
-        display: none;
-  
-        &.nav-active {
-          display: block;
+        display: block;
+
+              /* The Overlay (background) */
+          .overlay {
+            /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+            height: 0%;
+            width: 100%;
+            position: fixed; /* Stay in place */
+            z-index: 999999; /* Sit on top */
+            left: 0;
+            top: 0;
+            //background-color: rgb(51,51,51); /* Black fallback color */
+            //background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+            background-image: linear-gradient(to bottom, #a18cd1 0%, #fbc2ebf6 100%);
+            overflow-y: hidden;
+            transition: 0.5s;
+
+            /* Position the content inside the overlay */
+            &-content {
+              position: relative;
+              top: 25%;
+              width: 100%;
+              text-align: center; /* Centered text/links */
+              margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+
+              .navIcons {
+                background-color: transparent;
+                //text-align: center;
+                font-size: .9em;
+                letter-spacing: 0.1em;
+                position: relative;
+                //display: inline-block; 
+                width: 100%;
+                float: right;
+                text-decoration: none;
+                color: $secondary-color;
+                padding: .8em;
+                line-height: 0.1em;
+              
+                &:visited {
+                  text-decoration: none;
+                }
+              
+                &:hover {
+                  font-weight: 700;
+                  transform: translateY(-0.1rem);
+                  text-shadow: 0 1rem 2rem rgba(244, 241, 208, 0.445);
+                }
+              
+                &:active {
+                  font-weight: 700;
+                  transform: translateY(-0.1rem);
+                  text-shadow: 0 0.5rem 1rem rgba(244, 241, 208, 0.493);
+                }
+              }
+          }
+
+            /* The navigation links inside the overlay */
+            & a {
+              padding: 8px;
+              text-decoration: none;
+              font-size: 36px;
+              color: $secondary-color !important;
+              display: block; /* Display block instead of inline */
+              transition: 0.2s; /* Transition effects on hover (color) */
+              //text-transform: uppercase;
+              //font-family: 'Open Sans', sans-serif;
+
+              /* When you mouse over the navigation links, change their color */
+              &:hover, &:focus {
+                font-weight: 700;
+                transform: translateY(-0.1rem);
+                text-shadow: 0 1rem 2rem rgba(244, 241, 208, 0.445);
+              }
+          }
         }
       }
-    
-      .navIcons {
-        background-color: transparent;
-        //text-align: center;
-        font-size: .9em;
-        letter-spacing: 0.1em;
-        position: relative;
-        //display: inline-block; 
-        width: 100%;
-        float: right;
-        text-decoration: none;
-        color: $secondary-color;
-        padding: .8em;
-        line-height: 0.1em;
-      
-        &:visited {
-          text-decoration: none;
-        }
-      
-        &:hover {
-          font-weight: 700;
-          transform: translateY(-0.1rem);
-          text-shadow: 0 1rem 2rem rgba(244, 241, 208, 0.445);
-        }
-      
-        &:active {
-          font-weight: 700;
-          transform: translateY(-0.1rem);
-          text-shadow: 0 0.5rem 1rem rgba(244, 241, 208, 0.493);
-        }
-      }
+
     }
 
     nav {
@@ -97,11 +144,12 @@ body {
       grid-template-rows: auto; 
       transition: width 350ms ease;
       width: auto;
+      z-index: 9;
       justify-items: center;
       //height: auto;
       background: $tertiary-color;
       color: $primary-color;
-      padding: 2rem;
+      padding: 1rem;
       position: relative;
       //padding-top: 9vh;
 
@@ -144,7 +192,7 @@ body {
       .style-selector-third {
         grid-column: 3;
         position: relative;
-        background-image: url(images/three.png);
+        //background-image: url(images/three.png);
         background-repeat: no-repeat;
         background-size: contain;
         height: 8vh;
@@ -212,6 +260,29 @@ body {
           perspective: 1000px;
         }
       }
+      
+      .nav-list {
+      
+        grid-column: 1 / -1;
+
+        & .placeholder {
+
+          margin: 20px;
+
+          & > li {
+              color: $primary-color;
+              text-transform: uppercase;
+              padding: 3px;
+              cursor: pointer;
+
+              &:hover {
+                font-weight: 700;
+                transform: translateY(-0.1rem);
+                text-shadow: 0 1rem 2rem rgba(244, 241, 208, 0.445);
+              }
+            }
+          }
+        }
     }
 
     .jumbo {
@@ -225,11 +296,11 @@ body {
         z-index: 10;
       
         .heading {
-          font-size: 3.8rem;
+          font-size: 3.2rem;
           font-family: 'TRY Vesterbro';
           font-weight: normal;
           font-style: normal;
-          padding-top: 9vh;
+          padding-top: 5vh;
           letter-spacing: 0em;
           line-height: .8em;
         
@@ -246,9 +317,9 @@ body {
           }
           
           &__second {
-            height: 21vh;
+            height: 10vh;
             display: block;
-            margin-left: 5rem;
+            margin-left: 1rem;
             overflow: hidden; // Ensures the content is not revealed until the animation 
             border-right: .15em solid transparent; // The typwriter cursor
             //margin: 0 5rem; // Gives that scrolling effect as the typing happens 
@@ -261,27 +332,55 @@ body {
         }
       
         .heading__btn {
-          position: absolute;
-          color: $secondary-color;
-          background-color: #0E0C0C;
+          position: relative;
+          color: transparent;
+          background: transparent;
           font-family: IBM Plex Sans;
-          font-size: 1.3rem;
-          z-index: 100;
-          margin-top: -7.8rem;
-          margin-left: 8.8rem;
+          font-size: 0.9rem;
+          //margin-top: 8rem;
+          margin-left: 6rem;
           padding: 1rem 1rem;
-          border-radius: 0.5rem;
+          border-radius: 0.1rem;
+          animation: moveInBottom .55s ease-out;
           transition: all .2s;
-        
-          &:hover {
-            transform: translateY(-0.3rem);
-            box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            //background-color: $secondary-color;
+            border: 0.09rem solid $primary-color;
+            border-radius: .1rem;
+            top: .35rem;
+            left: -.35rem;
+            z-index: -2;
+            box-shadow: 0 0 0 1px $primary-color;
+            transition: transform 150ms ease-out, -webkit-transform 150ms ease-out;
           }
-          
-          &:active {
-            transform: translateY(-0.1rem);
-            box-shadow: 0 0.5rem 1rem rgba(14, 12, 12, 0.26);
+          &::before {
+            content: "Start the tour";
+            display: inline-block;
+            position: absolute;
+            font-family: IBM Plex Sans;
+            text-align: center;
+            font-size: .95em;
+            padding: 1rem 1rem;
+            color: $secondary-color;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            background-color: $primary-color;
+            border-radius: .1rem;
+            top: 0rem;
+            left: 0rem;
           }
+          &:hover::before{
+            transform: translate(-.18rem, .18rem);
+          }
+          &:active::before {
+            transform: translate(-.35rem, .35rem);
+            }
         }
       }
     
@@ -302,11 +401,6 @@ body {
           right: 25%;
           background-position: bottom;
     
-          &:hover {
-            z-index: 9;
-            transform: translateY(-0.3rem);
-            box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
-          }
         }
         
         .jumbo__img--2 {
@@ -320,12 +414,6 @@ body {
           top: 34%;
           right: 46%;
           background-position: bottom;
-    
-          &:hover {
-            z-index: 9;
-            transform: translateY(-0.1rem);
-            box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
-          }
         }
         
         .jumbo__img--3 {
@@ -340,17 +428,23 @@ body {
           background-size: 23rem;
           clip-path: polygon(75% 0, 0 69%, 100% 100%);
           background-position: bottom;
-    
-          &:hover {
-            z-index: 9;
-            transform: translateY(-0.1rem);
-            box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
-          }
+
         }
         
       }
       
       
+    }
+
+    footer {
+      grid-column: span 2;
+      padding: 30px;
+      background-color: $primary-color;
+      color: $secondary-color;
+      font-size: 0.8rem;
+      text-align: center;
+      line-height: 1.2rem;
+      //letter-spacing: .1em;
     }
   }
 
@@ -363,21 +457,27 @@ body {
     flex-direction: column;
     min-height: 100vh;
 
-    .nav-mobile {
-      display: block;
+    //OVERLAY MENU
+    /* Nav Button */
+    .navMenu {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      top: 15px;
+      right: 15px;
+      font-size: 40px;
+      font-weight: 700;
+      cursor: pointer;
+    }    
 
-      &.nav-mobile-open {
-        display: block;
-        cursor:pointer;
-        position:absolute;
-        top:15px;
-        right: 20px;
-        content: url(./images/cancel.png);
-        //object-fit: contain;
-        width: 30px;
-        height: 30px;
-      }
+    /* Position the close button (top right corner) */
+    .closebtn {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        font-size: 60px !important; /* Override the font-size specified earlier (36px) for all navigation links */
     }
+    //
 
     .navbar {
       grid-column: span 2;
@@ -392,84 +492,84 @@ body {
       }
 
       &__icons {
-        display: none;
-  
-        &.nav-active {
-          display: block;
-        }
-      }
-    
-      .navIcons {
-        background-color: transparent;
-        //text-align: center;
-        font-size: .9em;
-        letter-spacing: 0.1em;
-        position: relative;
-        //display: inline-block; 
-        width: 100%;
-        float: right;
-        text-decoration: none;
-        color: $secondary-color;
-        padding: .8em;
-        line-height: 0.1em;
-      
-        &:visited {
-          text-decoration: none;
-        }
-      
-        &:hover {
-          font-weight: 700;
-          transform: translateY(-0.1rem);
-          text-shadow: 0 1rem 2rem rgba(244, 241, 208, 0.445);
-        }
-      
-        &:active {
-          font-weight: 700;
-          transform: translateY(-0.1rem);
-          text-shadow: 0 0.5rem 1rem rgba(244, 241, 208, 0.493);
-        }
-      }
-    }
+        display: block;
 
-    .navbar {
-      grid-column: span 2;
-      padding: 1rem;
-      text-align: center;
-      font-size: 1.4em;
-      background-color: $primary-color;
-      color: $secondary-color;
-    
-      &__logo--image {float: left;}
-    
-      .navIcons {
-        background-color: transparent;
-        text-align: center;
-        font-size: .9em;
-        letter-spacing: 0.1em;
-        position: relative;
-        //display: inline-block; 
-        float: right;
-        text-decoration: none;
-        color: $secondary-color;
-        padding:.8em;
-        line-height: 0.1em;
-      
-        &:visited {
-          text-decoration: none;
-        }
-      
-        &:hover {
-          font-weight: 700;
-          transform: translateY(-0.1rem);
-          text-shadow: 0 1rem 2rem rgba(244, 241, 208, 0.445);
-        }
-      
-        &:active {
-          font-weight: 700;
-          transform: translateY(-0.1rem);
-          text-shadow: 0 0.5rem 1rem rgba(244, 241, 208, 0.493);
+              /* The Overlay (background) */
+          .overlay {
+            /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+            height: 0%;
+            width: 100%;
+            position: fixed; /* Stay in place */
+            z-index: 999999; /* Sit on top */
+            left: 0;
+            top: 0;
+            //background-color: rgb(51,51,51); /* Black fallback color */
+            //background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+            background-image: linear-gradient(to bottom, #a18cd1 0%, #fbc2ebf6 100%);
+            overflow-y: hidden;
+            transition: 0.5s;
+
+            /* Position the content inside the overlay */
+            &-content {
+              position: relative;
+              top: 25%;
+              width: 100%;
+              text-align: center; /* Centered text/links */
+              margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+
+              .navIcons {
+                background-color: transparent;
+                //text-align: center;
+                font-size: .9em;
+                letter-spacing: 0.1em;
+                position: relative;
+                //display: inline-block; 
+                width: 100%;
+                float: right;
+                text-decoration: none;
+                color: $secondary-color;
+                padding: .8em;
+                line-height: 0.1em;
+              
+                &:visited {
+                  text-decoration: none;
+                }
+              
+                &:hover {
+                  font-weight: 700;
+                  transform: translateY(-0.1rem);
+                  text-shadow: 0 1rem 2rem rgba(244, 241, 208, 0.445);
+                }
+              
+                &:active {
+                  font-weight: 700;
+                  transform: translateY(-0.1rem);
+                  text-shadow: 0 0.5rem 1rem rgba(244, 241, 208, 0.493);
+                }
+              }
+          }
+
+            /* The navigation links inside the overlay */
+            & a {
+              padding: 8px;
+              text-decoration: none;
+              font-size: 36px;
+              color: $secondary-color !important;
+              display: block; /* Display block instead of inline */
+              transition: 0.2s; /* Transition effects on hover (color) */
+              //text-transform: uppercase;
+              //font-family: 'Open Sans', sans-serif;
+
+              /* When you mouse over the navigation links, change their color */
+              &:hover, &:focus {
+                font-weight: 700;
+                transform: translateY(-0.1rem);
+                text-shadow: 0 1rem 2rem rgba(244, 241, 208, 0.445);
+              }
+          }
         }
       }
+
     }
 
     nav {
@@ -478,11 +578,12 @@ body {
       grid-template-rows: auto; 
       transition: width 350ms ease;
       width: auto;
+      z-index: 9;
       justify-items: center;
       //height: auto;
       background: $tertiary-color;
       color: $primary-color;
-      padding: 2rem;
+      padding: 1rem;
       position: relative;
       //padding-top: 9vh;
 
@@ -525,7 +626,7 @@ body {
       .style-selector-third {
         grid-column: 3;
         position: relative;
-        background-image: url(images/three.png);
+        //background-image: url(images/three.png);
         background-repeat: no-repeat;
         background-size: contain;
         height: 8vh;
@@ -593,6 +694,29 @@ body {
           perspective: 1000px;
         }
       }
+      
+      .nav-list {
+      
+        grid-column: 1 / -1;
+
+        & .placeholder {
+
+          margin: 20px;
+
+          & > li {
+              color: $primary-color;
+              text-transform: uppercase;
+              padding: 3px;
+              cursor: pointer;
+
+              &:hover {
+                font-weight: 700;
+                transform: translateY(-0.1rem);
+                text-shadow: 0 1rem 2rem rgba(244, 241, 208, 0.445);
+              }
+            }
+          }
+        }
     }
 
     .jumbo {
@@ -610,7 +734,7 @@ body {
           font-family: 'TRY Vesterbro';
           font-weight: normal;
           font-style: normal;
-          padding-top: 9vh;
+          padding-top: 4vh;
           letter-spacing: 0em;
           line-height: .8em;
         
@@ -627,9 +751,9 @@ body {
           }
           
           &__second {
-            height: 21vh;
+            height: 10vh;
             display: block;
-            margin-left: 5rem;
+            margin-left: 2rem;
             overflow: hidden; // Ensures the content is not revealed until the animation 
             border-right: .15em solid transparent; // The typwriter cursor
             //margin: 0 5rem; // Gives that scrolling effect as the typing happens 
@@ -642,27 +766,55 @@ body {
         }
       
         .heading__btn {
-          position: absolute;
-          color: $secondary-color;
-          background-color: #0E0C0C;
+          position: relative;
+          color: transparent;
+          background: transparent;
           font-family: IBM Plex Sans;
-          font-size: 1.3rem;
-          z-index: 100;
-          margin-top: -7.8rem;
-          margin-left: 8.8rem;
+          font-size: 1.2rem;
+          //margin-top: 8rem;
+          margin-left: 9rem;
           padding: 1rem 1rem;
-          border-radius: 0.5rem;
+          border-radius: 0.1rem;
+          animation: moveInBottom .55s ease-out;
           transition: all .2s;
-        
-          &:hover {
-            transform: translateY(-0.3rem);
-            box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            //background-color: $secondary-color;
+            border: 0.09rem solid $primary-color;
+            border-radius: .1rem;
+            top: .35rem;
+            left: -.35rem;
+            z-index: -2;
+            box-shadow: 0 0 0 1px $primary-color;
+            transition: transform 150ms ease-out, -webkit-transform 150ms ease-out;
           }
-          
-          &:active {
-            transform: translateY(-0.1rem);
-            box-shadow: 0 0.5rem 1rem rgba(14, 12, 12, 0.26);
+          &::before {
+            content: "Start the tour";
+            display: inline-block;
+            position: absolute;
+            font-family: IBM Plex Sans;
+            text-align: center;
+            font-size: .95em;
+            padding: 1rem 1rem;
+            color: $secondary-color;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            background-color: $primary-color;
+            border-radius: .1rem;
+            top: 0rem;
+            left: 0rem;
           }
+          &:hover::before{
+            transform: translate(-.18rem, .18rem);
+          }
+          &:active::before {
+            transform: translate(-.35rem, .35rem);
+            }
         }
       }
     
@@ -682,12 +834,6 @@ body {
           top: 54%;
           right: 25%;
           background-position: bottom;
-    
-          &:hover {
-            z-index: 9;
-            transform: translateY(-0.3rem);
-            box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
-          }
         }
         
         .jumbo__img--2 {
@@ -701,12 +847,6 @@ body {
           top: 34%;
           right: 46%;
           background-position: bottom;
-    
-          &:hover {
-            z-index: 9;
-            transform: translateY(-0.1rem);
-            box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
-          }
         }
         
         .jumbo__img--3 {
@@ -721,17 +861,22 @@ body {
           background-size: 23rem;
           clip-path: polygon(75% 0, 0 69%, 100% 100%);
           background-position: bottom;
-    
-          &:hover {
-            z-index: 9;
-            transform: translateY(-0.1rem);
-            box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
-          }
         }
         
       }
       
       
+    }
+
+    footer {
+      grid-column: span 2;
+      padding: 30px;
+      background-color: $primary-color;
+      color: $secondary-color;
+      font-size: 0.9rem;
+      text-align: center;
+      line-height: 0.1rem;
+      //letter-spacing: .1em;
     }
   }
 }
@@ -756,6 +901,16 @@ body {
       color: $secondary-color;
     
       &__logo--image {float: left;}
+
+      //
+      .navMenu {
+        display: none;
+      }
+
+      .closebtn {
+        display: none;
+      }
+      //
     
       .navIcons {
         background-color: transparent;
@@ -825,7 +980,7 @@ body {
             margin-left: 5rem;
             overflow: hidden; // Ensures the content is not revealed until the animation 
             border-right: .15em solid transparent; // The typwriter cursor
-            margin: 0 3rem; // Gives that scrolling effect as the typing happens 
+            margin: 0 0rem; // Gives that scrolling effect as the typing happens 
             animation: 
               hideing .8s linear,
               typing 2s .75s steps(40, end) ,
@@ -835,27 +990,55 @@ body {
         }
       
         .heading__btn {
-          position: absolute;
-          color: $secondary-color;
-          background-color: #0E0C0C;
+          position: relative;
+          color: transparent;
+          background: transparent;
           font-family: IBM Plex Sans;
-          font-size: 1.5em;
-          z-index: 100;
-          margin-top: -4.8rem;
-          margin-left: 12rem;
+          font-size: 1.3rem;
+          //margin-top: 8rem;
+          margin-left: 9rem;
           padding: 1rem 1rem;
-          border-radius: 0.5rem;
+          border-radius: 0.1rem;
+          animation: moveInBottom .55s ease-out;
           transition: all .2s;
-        
-          &:hover {
-            transform: translateY(-0.3rem);
-            box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            //background-color: $secondary-color;
+            border: 0.09rem solid $primary-color;
+            border-radius: .1rem;
+            top: .35rem;
+            left: -.35rem;
+            z-index: -2;
+            box-shadow: 0 0 0 1px $primary-color;
+            transition: transform 150ms ease-out, -webkit-transform 150ms ease-out;
           }
-          
-          &:active {
-            transform: translateY(-0.1rem);
-            box-shadow: 0 0.5rem 1rem rgba(14, 12, 12, 0.26);
+          &::before {
+            content: "Start the tour";
+            display: inline-block;
+            position: absolute;
+            font-family: IBM Plex Sans;
+            text-align: center;
+            font-size: .95em;
+            padding: 1rem 1rem;
+            color: $secondary-color;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            background-color: $primary-color;
+            border-radius: .1rem;
+            top: 0rem;
+            left: 0rem;
           }
+          &:hover::before{
+            transform: translate(-.18rem, .18rem);
+          }
+          &:active::before {
+            transform: translate(-.35rem, .35rem);
+            }
         }
       }
     
@@ -1145,7 +1328,7 @@ body {
   }
 
   .container.opened-nav nav {
-      width: 300px;
+      width: 25vw;
   }
   /* end drawer script */
 
@@ -1257,6 +1440,17 @@ body {
     backface-visibility: hidden;
     perspective: 1000px;
   }
+
+  footer {
+    grid-column: span 2;
+    padding: 30px;
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-size: 1em;
+    text-align: center;
+    line-height: 0.1em;
+    letter-spacing: .1em;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -1278,6 +1472,16 @@ body {
       color: $secondary-color;
     
       &__logo--image {float: left;}
+
+      //
+      .navMenu {
+        display: none;
+      }
+
+      .closebtn {
+        display: none;
+      }
+      //
     
       .navIcons {
         background-color: transparent;
@@ -1347,7 +1551,7 @@ body {
             margin-left: 5rem;
             overflow: hidden; // Ensures the content is not revealed until the animation 
             border-right: .15em solid transparent; // The typwriter cursor
-            margin: 0 5rem; // Gives that scrolling effect as the typing happens 
+            margin: 0 3rem; // Gives that scrolling effect as the typing happens 
             animation: 
               hideing .8s linear,
               typing 2s .75s steps(40, end) ,
@@ -1357,27 +1561,55 @@ body {
         }
       
         .heading__btn {
-          position: absolute;
-          color: $secondary-color;
-          background-color: #0E0C0C;
+          position: relative;
+          color: transparent;
+          background: transparent;
           font-family: IBM Plex Sans;
-          font-size: 1.4em;
-          z-index: 100;
-          margin-top: -3.8rem;
-          margin-left: 21rem;
+          font-size: 1.5em;
+          //margin-top: 8rem;
+          margin-left: 16rem;
           padding: 1rem 1rem;
-          border-radius: 0.5rem;
+          border-radius: 0.1rem;
+          animation: moveInBottom .55s ease-out;
           transition: all .2s;
-        
-          &:hover {
-            transform: translateY(-0.3rem);
-            box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            //background-color: $secondary-color;
+            border: 0.09rem solid $primary-color;
+            border-radius: .1rem;
+            top: .35rem;
+            left: -.35rem;
+            z-index: -2;
+            box-shadow: 0 0 0 1px $primary-color;
+            transition: transform 150ms ease-out, -webkit-transform 150ms ease-out;
           }
-          
-          &:active {
-            transform: translateY(-0.1rem);
-            box-shadow: 0 0.5rem 1rem rgba(14, 12, 12, 0.26);
+          &::before {
+            content: "Start the tour";
+            display: inline-block;
+            position: absolute;
+            font-family: IBM Plex Sans;
+            text-align: center;
+            font-size: .95em;
+            padding: 1rem 1rem;
+            color: $secondary-color;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            background-color: $primary-color;
+            border-radius: .1rem;
+            top: 0rem;
+            left: 0rem;
           }
+          &:hover::before{
+            transform: translate(-.18rem, .18rem);
+          }
+          &:active::before {
+            transform: translate(-.35rem, .35rem);
+            }
         }
       }
     
@@ -1667,7 +1899,7 @@ body {
   }
 
   .container.opened-nav nav {
-      width: 300px;
+      width: 25vw;
   }
   /* end drawer script */
 
@@ -1779,6 +2011,17 @@ body {
     backface-visibility: hidden;
     perspective: 1000px;
   }
+
+  footer {
+    grid-column: span 2;
+    padding: 30px;
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-size: 1em;
+    text-align: center;
+    line-height: 0.1em;
+    letter-spacing: .1em;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -1791,6 +2034,8 @@ body {
     /* fluid animation of the sidebar only for Firefox :( */
     /* transition: grid-template-columns 350ms ease; */
 
+    
+
     .navbar {
       grid-column: span 2;
       padding: 1rem;
@@ -1800,6 +2045,16 @@ body {
       color: $secondary-color;
     
       &__logo--image {float: left;}
+
+      //
+      .navMenu {
+        display: none;
+      }
+
+      .closebtn {
+        display: none;
+      }
+      //
     
       .navIcons {
         background-color: transparent;
@@ -1880,27 +2135,55 @@ body {
         }
       
         .heading__btn {
-          position: absolute;
-          color: $secondary-color;
-          background-color: #0E0C0C;
+          position: relative;
+          color: transparent;
+          background: transparent;
           font-family: IBM Plex Sans;
           font-size: 1.5em;
-          z-index: 100;
-          margin-top: -3.8rem;
-          margin-left: 26rem;
+          //margin-top: 8rem;
+          margin-left: 16rem;
           padding: 1rem 1rem;
-          border-radius: 0.5rem;
+          border-radius: 0.1rem;
+          animation: moveInBottom .55s ease-out;
           transition: all .2s;
-        
-          &:hover {
-            transform: translateY(-0.3rem);
-            box-shadow: 0 1rem 2rem rgba(14, 12, 12, 0.26);
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            //background-color: $secondary-color;
+            border: 0.09rem solid $primary-color;
+            border-radius: .1rem;
+            top: .35rem;
+            left: -.35rem;
+            z-index: -2;
+            box-shadow: 0 0 0 1px $primary-color;
+            transition: transform 150ms ease-out, -webkit-transform 150ms ease-out;
           }
-          
-          &:active {
-            transform: translateY(-0.1rem);
-            box-shadow: 0 0.5rem 1rem rgba(14, 12, 12, 0.26);
+          &::before {
+            content: "Start the tour";
+            display: inline-block;
+            position: absolute;
+            font-family: IBM Plex Sans;
+            text-align: center;
+            font-size: .95em;
+            padding: 1rem 1rem;
+            color: $secondary-color;
+            z-index: -1;
+            height: 100%;
+            width: 100%;
+            background-color: $primary-color;
+            border-radius: .1rem;
+            top: 0rem;
+            left: 0rem;
           }
+          &:hover::before{
+            transform: translate(-.18rem, .18rem);
+          }
+          &:active::before {
+            transform: translate(-.35rem, .35rem);
+            }
         }
       }
     
@@ -1910,8 +2193,6 @@ body {
         background-position-y: bottom;
     
         .jumbo__img--1 {
-          //background-color: rgb(195, 49, 73);
-          //background-image: linear-gradient(rgba(195, 49, 73, 0.6), darken(rgba(195, 49, 73, 0.6), 40%)), url("./images/bembo.jpg");
           background-image: url('./images/rinpa_duo.jpg');
           position: absolute;
           z-index: 3;
@@ -1932,8 +2213,6 @@ body {
         
         .jumbo__img--2 {
           z-index: 2;
-          //background-color: rgb(230, 152, 197);
-          //background-image: linear-gradient(rgba(230, 152, 197, 0.6), darken(rgba(230, 152, 197, 0.6), 40%)), url("./images/jan_2.jpg");
           background-image: url('./images/jan_duo.jpg');
           background-position: center;
           background-size: 35rem;
@@ -1953,8 +2232,6 @@ body {
         
         .jumbo__img--3 {
           z-index: 1;
-          //background-color: rgb(33, 19, 228);
-          //background-image: linear-gradient(rgba(33, 19, 228, 0.6), darken(rgba(33, 19, 228, 0.6), 40%)), url("./images/munari.jpg");
           background-image: url('./images/munari_duo.jpg');
           position: absolute;
           height: 50vh;
@@ -2067,16 +2344,6 @@ body {
 .close-container:hover label{
   opacity: 1;
 }
-/*  
-.close-menu {
-    position: absolute;
-    font-size: 2rem;
-    color: $primary-color;
-    text-decoration: none;
-    z-index: 1000;
-    cursor: pointer;
-    transition: opacity 350ms;
-}*/
 
 .close-menu-doc {
   position: relative;
@@ -2190,7 +2457,7 @@ body {
   }
 
   .container.opened-nav nav {
-      width: 300px;
+      width: 25vw;
   }
   /* end drawer script */
 
@@ -2302,33 +2569,21 @@ body {
     backface-visibility: hidden;
     perspective: 1000px;
   }
+
+  footer {
+    grid-column: span 2;
+    padding: 30px;
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-size: 1em;
+    text-align: center;
+    line-height: 0.1em;
+    letter-spacing: .1em;
+  }
 }
 
 
-
-
-.nav-mobile {
-  display:none; /* Hide from browsers that don't support media queries */
-  cursor:pointer;
-  position:absolute;
-  top:8px;
-  right: 18px;
-  content: url(./images/menu-button-def.png);
-  //object-fit: contain;
-  width: 40px;
-  height: 50px;
-}
-
-footer {
-  grid-column: span 2;
-  padding: 30px;
-  background-color: $primary-color;
-  color: $secondary-color;
-  font-size: 1em;
-  text-align: center;
-  line-height: 0.1em;
-  letter-spacing: .1em;
-}
+//
 
 main {
   color: $primary-color;
@@ -2351,7 +2606,7 @@ main {
 }
 
 h1 {
-  margin-bottom: 1em;
+  //margin-bottom: 1em;
   font-size: 1.3em;
   font-weight: bold;
 }
@@ -2367,11 +2622,6 @@ h1 {
 .opened-doc-list:focus {
   background-color: $tertiary-color;
 }
-
-
-
-
-
 
 .btn:link,
 .btn:visited {
