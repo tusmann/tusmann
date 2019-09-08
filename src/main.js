@@ -5,34 +5,6 @@ import {articlesSidebarSelection} from "./articlesSelectionButtons"
 import {specialArticleSidebarSelection} from "./articlesSelectionButtons"
 
 
-//OVERLAY MENU
-/* Open */
-function openNav() {
-    document.getElementById("myNav").style.height = "100%";
-}
-
-const openOverlay = document.querySelector('.navMenu');
-openOverlay.addEventListener('click', openNav);
-
-/* Close */
-function closeNav() {
-    document.getElementById("myNav").style.height = "0%";
-}
-
-const closeOverlay = document.querySelector('.closebtn');
-closeOverlay.addEventListener('click', closeNav);
-
-const closeOverlayAbout = document.querySelector('.aboutPageButton');
-closeOverlayAbout.addEventListener('click', closeNav);
-
-const closeOverlayDoc = document.querySelector('.documentationPageButton');
-closeOverlayDoc.addEventListener('click', closeNav);
-
-const closeOverlayDisc = document.querySelector('.disclaimerPageButton');
-closeOverlayDisc.addEventListener('click', closeNav);
-//
-
-
 
 // polyfill needed for using for loop on a dictionary
   /*
@@ -336,3 +308,34 @@ else {
     document.querySelector("a.footerArticleLink").classList.add("hidden");}
 }
 addArticleGlobalUrl()
+
+
+
+
+
+//OVERLAY MENU
+/* Open */
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
+
+const openOverlay = document.querySelector('.navMenu');
+openOverlay.addEventListener('click', openNav);
+
+/* Close */
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+}
+
+const closeOverlay = document.querySelector('.closebtn');
+closeOverlay.addEventListener('click', closeNav);
+
+const closeOverlayAbout = document.querySelector('.aboutPageButton');
+closeOverlayAbout.addEventListener('click', closeNav);
+
+const closeOverlayDoc = document.querySelector('.documentationPageButton');
+closeOverlayDoc.addEventListener('click', closeNav);
+
+const closeOverlayDisc = document.querySelector('.disclaimerPageButton');
+closeOverlayDisc.addEventListener('click', closeNav);
+//
