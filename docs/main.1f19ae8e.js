@@ -1002,9 +1002,10 @@ function _addSpecialArticle() {
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
             });
-            document.querySelector(".reader").className = document.querySelector(".reader").className.replace(/(?:^|\s)hidden(?!\S)/g, ''); //clear the reader from previous text
+            document.querySelector(".reader").className = document.querySelector(".reader").className.replace(/(?:^|\s)hidden(?!\S)/g, ''); //clear the reader from previous text, add another text in the middle page, remove link btn in footer
 
-            document.querySelector(".reader").innerHTML = ""; // change class to reader to avoid problems since we will create other readers
+            document.querySelector(".reader").innerHTML = "";
+            document.querySelector(".changeTheme").classList.remove("hidden"); // change class to reader to avoid problems since we will create other readers
 
             reader = document.querySelector(".reader");
             reader.classList.add("grid-container");
@@ -1028,7 +1029,7 @@ function _addSpecialArticle() {
               rightContainer.appendChild(node);
             });
 
-          case 26:
+          case 27:
           case "end":
             return _context.stop();
         }
@@ -1073,7 +1074,8 @@ function _addArticle() {
               });
             }
 
-            document.querySelector(".reader").innerHTML = ""; //actually insert the new document
+            document.querySelector(".reader").innerHTML = "";
+            document.querySelector(".changeTheme").classList.remove("hidden"); //actually insert the new document
 
             container = document.querySelector(".reader");
             nodes = Array.from(article.body.childNodes);
@@ -1081,7 +1083,7 @@ function _addArticle() {
               container.appendChild(node);
             });
 
-          case 12:
+          case 13:
           case "end":
             return _context2.stop();
         }
@@ -1405,7 +1407,7 @@ closeDocMenu.forEach(function (node) {
 
 document.querySelector(".aboutPageButton").onclick = function () {
   document.querySelector(".aboutPageSection").classList.remove("hidden");
-  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .disclaimerPageSection, .reader, .documentationPageSection");
+  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .disclaimerPageSection, .reader, .documentationPageSection, .changeTheme");
   elementsToDelete.forEach(function (node) {
     node.classList.add("hidden");
   });
@@ -1414,7 +1416,7 @@ document.querySelector(".aboutPageButton").onclick = function () {
 
 document.querySelector(".disclaimerPageButton").onclick = function () {
   document.querySelector(".disclaimerPageSection").classList.remove("hidden");
-  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .reader, .documentationPageSection");
+  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .reader, .documentationPageSection, .changeTheme");
   elementsToDelete.forEach(function (node) {
     node.classList.add("hidden");
   });
@@ -1423,7 +1425,7 @@ document.querySelector(".disclaimerPageButton").onclick = function () {
 
 document.querySelector(".documentationPageButton").onclick = function () {
   document.querySelector(".documentationPageSection").classList.remove("hidden");
-  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .reader, .disclaimerPageSection");
+  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .reader, .disclaimerPageSection, .changeTheme");
   elementsToDelete.forEach(function (node) {
     node.classList.add("hidden");
   });
@@ -1449,18 +1451,13 @@ for (i = 0; i < coll.length; i++) {
 }
 
 var articlesLinkDict = {
+  "EUR-Lex": "https://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1552167424995&uri=CELEX:32009L0041",
   "Japan's Prisons Are a Haven for Elderly Women": "https://www.bloomberg.com/news/features/2018-03-16/japan-s-prisons-are-a-haven-for-elderly-women",
   "As Goes the South, so Goes the Nation": "https://harpers.org/archive/2018/07/as-goes-the-south-so-goes-the-nation/",
   "Jerry And Marge Go Large": "https://highline.huffingtonpost.com/articles/en/lotto-winners/",
   "How Anna Delvey Tricked New York’s Party People": "https://www.thecut.com/2018/05/how-anna-delvey-tricked-new-york.html",
   "God is in the machine": "https://www.the-tls.co.uk/articles/public/ridiculously-complicated-algorithms/"
 };
-var elementIsClicked = false; // declare the variable that tracks the state
-
-function clickHandler() {
-  // declare a function that updates the state
-  elementIsClicked = true;
-}
 
 function addArticleGlobalUrl() {
   articlesLinkDict.forEach(function (item, key) {
@@ -1477,11 +1474,6 @@ function addArticleGlobalUrl() {
       }
     });
   });
-
-  if (document.querySelector("section.reader").hasChildNodes) {} else {
-    document.querySelector("div.footerRights").classList.remove("hidden");
-    document.querySelector("a.footerArticleLink").classList.add("hidden");
-  }
 }
 
 addArticleGlobalUrl();
@@ -1513,7 +1505,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1865" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "10246" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
