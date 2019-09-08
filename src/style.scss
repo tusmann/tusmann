@@ -2683,9 +2683,11 @@ h1 {
   pointer-events: none;
 }
 
+//AlertBox
+
 .changeTheme {
   background: linear-gradient(270deg, #a0faf8, #e482e3);
-background-size: 400% 400%;
+background-size: 200% 200%;
 
 -webkit-animation: alertBox 30s ease infinite;
 -moz-animation: alertBox 30s ease infinite;
@@ -2707,9 +2709,10 @@ animation: alertBox 30s ease infinite;
     100%{background-position:0% 50%}
 }
   p {
-    font-size: 3rem;
+    font-size: 1.4rem;
     text-align: center;
-    padding: 20%;
+    align-self: center;
+    height: 79.8vh;
   }
   
 }
