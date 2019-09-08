@@ -4,21 +4,36 @@
 @import "./animation.scss";
 
 $font-poster: 'TRY Vesterbro';
+$font-vester-regular: 'TRYVesterbro-Regular'; 
+$font-vester-bold: 'TRYVesterbro-Bold';
 $font-monotype: 'IBM Plex Mono', monospace;
+$font-mono-gt: 'GTAmericaMono-Regular';
+$font-sectra: 'GTSectraFine';
 $primary-color: #222222;
 $secondary-color: #f4f1d0;
 $tertiary-color: #c6e5df;
+$primary-heading-color: #d29129;
+//#f76c6c
+//#EE7674
+//#F9B5AC
+//#d29129
+//#680816
+//#286278
+//#629488
+$secondary-heading-color: #629488;
+//#75B9BE
+//#A8D0E6
 $red-color: #c33149;
 
 
 body {
-  font-family: $font-monotype;
+  font-family: $font-mono-gt;
 }
 
 //mobile-portrait
 @media (min-width: 320px) and (max-width: 480px) {
   
-  .container {
+  .container { 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -297,7 +312,7 @@ body {
       
         .heading {
           font-size: 3.2rem;
-          font-family: 'TRY Vesterbro';
+          font-family: $font-poster;
           font-weight: normal;
           font-style: normal;
           padding-top: 5vh;
@@ -731,7 +746,7 @@ body {
       
         .heading {
           font-size: 3.8rem;
-          font-family: 'TRY Vesterbro';
+          font-family: $font-poster;
           font-weight: normal;
           font-style: normal;
           padding-top: 4vh;
@@ -955,7 +970,7 @@ body {
       
         .heading {
           font-size: 5.2rem;
-          font-family: 'TRY Vesterbro';
+          font-family: $font-poster;
           font-weight: normal;
           font-style: normal;
           padding-top: 8vh;
@@ -1526,7 +1541,7 @@ body {
       
         .heading {
           font-size: 6.8rem;
-          font-family: 'TRY Vesterbro';
+          font-family: $font-poster;
           font-weight: normal;
           font-style: normal;
           padding-top: 5vh;
@@ -2100,7 +2115,7 @@ body {
         .heading {
           font-size: 8em;
           //height: 5rem;
-          font-family: 'TRY Vesterbro';
+          font-family: $font-poster;
           font-weight: normal;
           font-style: normal;
           padding-top: 5vh;
@@ -2641,18 +2656,20 @@ h1 {
     padding: 1rem 0 1rem 2rem;
   }
   h1 {
+    font-family: $font-poster;
     padding: 0;
     font-size: 2.5rem;
-    color: #9D5D82;
+    color: $primary-heading-color;
     margin-bottom: 0.5rem;
   }
   h2{
     padding: 1rem 0 0 0;
     font-size: 1.5rem;
-    color: #24597B;
+    font-family: $font-sectra;
+    color: $secondary-heading-color;
   }
   a {
-    color: #00497A;
+    color: #286278;
   }
   .bio {
     width: 100%;
@@ -2686,12 +2703,17 @@ h1 {
 //AlertBox
 
 .changeTheme {
-  background: linear-gradient(270deg, #a0faf8, #e482e3);
+text-align: center;
+position: relative;
+padding-top: 32vh;
+padding-left: 37vw;
+height: 79.8vh;
+background: linear-gradient(270deg, #a0faf8, #e482e3);
 background-size: 200% 200%;
 
--webkit-animation: alertBox 30s ease infinite;
--moz-animation: alertBox 30s ease infinite;
-animation: alertBox 30s ease infinite;
+-webkit-animation: alertBox 10s ease infinite;
+-moz-animation: alertBox 10s ease infinite;
+animation: alertBox 10s ease infinite;
 
 @-webkit-keyframes alertBox {
     0%{background-position:0% 50%}
@@ -2708,11 +2730,12 @@ animation: alertBox 30s ease infinite;
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
-  p {
-    font-size: 1.4rem;
-    text-align: center;
-    align-self: center;
-    height: 79.8vh;
+  .alert {
+    font-size: 1.2rem;
+    border: 3px double $primary-color;
+    padding-top: 25px;
+    height: 100px;
+    width: 240px;
   }
   
 }
