@@ -12,8 +12,9 @@ async function addSpecialArticle(leftArticleUrl, rightArticleUrl) {
 
     document.querySelector(".reader").className = document.querySelector(".reader").className.replace(/(?:^|\s)hidden(?!\S)/g, '')
 
-    //clear the reader from previous text
+    //clear the reader from previous text, add another text in the middle page, remove link btn in footer
     document.querySelector(".reader").innerHTML = ""
+    document.querySelector(".changeTheme").classList.remove("hidden")
 
     // change class to reader to avoid problems since we will create other readers
     var reader = document.querySelector(".reader")
@@ -65,6 +66,7 @@ async function addArticle(articleUrl){
 
     } 
     document.querySelector(".reader").innerHTML = ""
+    document.querySelector(".changeTheme").classList.remove("hidden")
 
     //actually insert the new document
     const container = document.querySelector(".reader")
