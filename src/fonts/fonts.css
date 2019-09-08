@@ -6,3 +6,30 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: "TRYVesterbro-Bold";
+  
+    src: url("TRYVesterbro-Bold.ttf") format("truetype"), /* Safari, Android, iOS */
+      url("TRYVesterbro-Bold.woff") format("woff"), /* Modern Browsers */
+      url("TRYVesterbro-Bold.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "TRYVesterbro-Regular";
+  
+    src: url("TRYVesterbro-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+      url("TRYVesterbro-Regular.woff") format("woff"), /* Modern Browsers */
+      url("TRYVesterbro-Regular.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "GTAmericaMono-Regular";
+  
+    src: url("GT-America-Mono-Regular.ttf") format("truetype"), /* Safari, Android, iOS */
+      url("GT-America-Mono-Regular.woff") format("woff"), /* Modern Browsers */
+      url("GT-America-Mono-Regular.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }

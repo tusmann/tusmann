@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./TRYVesterbro-Poster.woff2":[["TRYVesterbro-Poster.9cacf8e0.woff2","fonts/TRYVesterbro-Poster.woff2"],"fonts/TRYVesterbro-Poster.woff2"],"./TRYVesterbro-Poster.woff":[["TRYVesterbro-Poster.6c9b11ce.woff","fonts/TRYVesterbro-Poster.woff"],"fonts/TRYVesterbro-Poster.woff"],"./TRYVesterbro-Poster.ttf":[["TRYVesterbro-Poster.7c1dac42.ttf","fonts/TRYVesterbro-Poster.ttf"],"fonts/TRYVesterbro-Poster.ttf"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"style.scss":[function(require,module,exports) {
+},{"./TRYVesterbro-Poster.woff2":[["TRYVesterbro-Poster.9cacf8e0.woff2","fonts/TRYVesterbro-Poster.woff2"],"fonts/TRYVesterbro-Poster.woff2"],"./TRYVesterbro-Poster.woff":[["TRYVesterbro-Poster.6c9b11ce.woff","fonts/TRYVesterbro-Poster.woff"],"fonts/TRYVesterbro-Poster.woff"],"./TRYVesterbro-Poster.ttf":[["TRYVesterbro-Poster.7c1dac42.ttf","fonts/TRYVesterbro-Poster.ttf"],"fonts/TRYVesterbro-Poster.ttf"],"./TRYVesterbro-Bold.ttf":[["TRYVesterbro-Bold.bf7f9838.ttf","fonts/TRYVesterbro-Bold.ttf"],"fonts/TRYVesterbro-Bold.ttf"],"./TRYVesterbro-Bold.woff":[["TRYVesterbro-Bold.136b5eaa.woff","fonts/TRYVesterbro-Bold.woff"],"fonts/TRYVesterbro-Bold.woff"],"./TRYVesterbro-Bold.woff2":[["TRYVesterbro-Bold.5a5aeca6.woff2","fonts/TRYVesterbro-Bold.woff2"],"fonts/TRYVesterbro-Bold.woff2"],"./TRYVesterbro-Regular.ttf":[["TRYVesterbro-Regular.9837b92d.ttf","fonts/TRYVesterbro-Regular.ttf"],"fonts/TRYVesterbro-Regular.ttf"],"./TRYVesterbro-Regular.woff":[["TRYVesterbro-Regular.44ba70bc.woff","fonts/TRYVesterbro-Regular.woff"],"fonts/TRYVesterbro-Regular.woff"],"./TRYVesterbro-Regular.woff2":[["TRYVesterbro-Regular.2092fef2.woff2","fonts/TRYVesterbro-Regular.woff2"],"fonts/TRYVesterbro-Regular.woff2"],"./GT-America-Mono-Regular.ttf":[["GT-America-Mono-Regular.6df69689.ttf","fonts/GT-America-Mono-Regular.ttf"],"fonts/GT-America-Mono-Regular.ttf"],"./GT-America-Mono-Regular.woff":[["GT-America-Mono-Regular.f7307cd3.woff","fonts/GT-America-Mono-Regular.woff"],"fonts/GT-America-Mono-Regular.woff"],"./GT-America-Mono-Regular.woff2":[["GT-America-Mono-Regular.8a024427.woff2","fonts/GT-America-Mono-Regular.woff2"],"fonts/GT-America-Mono-Regular.woff2"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"style.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -222,7 +222,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "10246" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "10850" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
