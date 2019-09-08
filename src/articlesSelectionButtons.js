@@ -7,7 +7,7 @@ import {addSpecialArticle} from "./addArticle.js"
 var articlesDict = { 
     "Japan's Prisons Are a Haven for Elderly Women": "./articles/Bloomberg/ShihoFukada.html", 
     "As Goes the South, so Goes the Nation": "./articles/Harpers/ImaniPerry.html", 
-    "Jerry And Marge Go Large": "./articles/HuffingtonPost/JasonFagone.html",
+    "Jerry And Marge Go Large": "./articles/HuffingtonPost/JasonFagone.html", 
     "How Anna Delvey Tricked New York’s Party People": "./articles/TheCut/JessicaPresler.html",
     "God is in the machine": "./articles/Times Literary Supplement/CarlMiller.html",
     };

@@ -39,6 +39,7 @@ async function addSpecialArticle(leftArticleUrl, rightArticleUrl) {
     rightNodes.forEach(node => {
         rightContainer.appendChild(node)
     })
+
 }
 
 //add articles to dom
