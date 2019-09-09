@@ -61,150 +61,97 @@ if (!Object.prototype.forEach) {
 articlesSidebarSelection()
 specialArticleSidebarSelection("EUR-Lex", "./articles/EUDirective/L125-75.html", "./articles/EUDirective/EUDirectiveItalian.html")
 
-//const readerActivation = document.querySelector('.reader-activator');
-//readerActivation.addEventListener('click', addArticle);
+//clean reader from previous text and show "select article" text
+var styleButton = document.querySelectorAll(".doc-sel")
+styleButton.forEach(node => {
+        
+    node.onclick = function () {
+        console.log(node)
+        //clear the reader from previous text
+        document.querySelector(".reader").innerHTML = ""
+        document.querySelector(".changeTheme").classList.remove("hidden")
+        document.querySelector(".jumbo").classList.add("hidden")
+
+        // change class to reader to avoid problems since we will create other readers
+        var reader = document.querySelector(".reader")
+        reader.classList.add("grid-container")
+        reader.classList.remove("reader")
+
+        var gridReader = document.querySelector("section.grid-container")
+        if (document.body.contains(gridReader)) {
+            gridReader.classList.add("reader")
+            gridReader.classList.remove("grid-container")
+            const gridNodes = Array.from(gridReader.childNodes)
+            gridNodes.forEach(node => {
+            gridReader.removeChild(node)
+        })
+        }
+    }
+    })
 
 //selezione stili
 //funzione stile 1
 document.querySelector('.style-selector-first').onclick = function () { 
-    // inizio linee di codice per pulire il reader
-    //clear the reader from previous text
-    document.querySelector(".reader").innerHTML = ""
+    
+    document.querySelector(".reader").classList.remove("rimpa")
+    document.querySelector(".reader").classList.remove("third")
+    document.querySelector(".reader").classList.remove("fourth")
+    document.querySelector(".reader").classList.remove("fifth")
+    document.querySelector(".reader").classList.remove("sixth")
 
-    // change class to reader to avoid problems since we will create other readers
-    var reader = document.querySelector(".reader")
-    reader.classList.add("grid-container")
-    reader.classList.remove("reader")
-
-    var gridReader = document.querySelector("section.grid-container")
-    if (document.body.contains(gridReader)) {
-        gridReader.classList.add("reader")
-        gridReader.classList.remove("grid-container")
-        const gridNodes = Array.from(gridReader.childNodes)
-        gridNodes.forEach(node => {
-        gridReader.removeChild(node)
-    })
+    document.querySelector(".reader").classList.add("manuzio");
 }
-//fine linee di codice per pulire reader
-
-    var secondSheetElement = document.querySelector("link.secondSheet")
-    secondSheetElement.href = './styles/first/first.css';
-};
-
+//stile 2
 document.querySelector('.style-selector-second').onclick = function () { 
-        // linee di codice per pulire il reader
-    //clear the reader from previous text
-    document.querySelector(".reader").innerHTML = ""
+    document.querySelector(".reader").classList.remove("manuzio")
+    document.querySelector(".reader").classList.remove("third")
+    document.querySelector(".reader").classList.remove("fourth")
+    document.querySelector(".reader").classList.remove("fifth")
+    document.querySelector(".reader").classList.remove("sixth")
 
-    // change class to reader to avoid problems since we will create other readers
-    var reader = document.querySelector(".reader")
-    reader.classList.add("grid-container")
-    reader.classList.remove("reader")
-
-    var gridReader = document.querySelector("section.grid-container")
-    if (document.body.contains(gridReader)) {
-        gridReader.classList.add("reader")
-        gridReader.classList.remove("grid-container")
-        const gridNodes = Array.from(gridReader.childNodes)
-        gridNodes.forEach(node => {
-        gridReader.removeChild(node)
-    })
+    document.querySelector(".reader").classList.add("rimpa");
 }
-//fine linee di codice per pulire reader
-    document.querySelector("link.secondSheet").href = './styles/second/second.css';
-};
-
+//stile 3
 document.querySelector('.style-selector-third').onclick = function () { 
-        // linee di codice per pulire il reader
-    //clear the reader from previous text
-    document.querySelector(".reader").innerHTML = ""
+    document.querySelector(".reader").classList.remove("manuzio")
+    document.querySelector(".reader").classList.remove("second")
+    document.querySelector(".reader").classList.remove("fourth")
+    document.querySelector(".reader").classList.remove("fifth")
+    document.querySelector(".reader").classList.remove("sixth")
 
-    // change class to reader to avoid problems since we will create other readers
-    var reader = document.querySelector(".reader")
-    reader.classList.add("grid-container")
-    reader.classList.remove("reader")
-
-    var gridReader = document.querySelector("section.grid-container")
-    if (document.body.contains(gridReader)) {
-        gridReader.classList.add("reader")
-        gridReader.classList.remove("grid-container")
-        const gridNodes = Array.from(gridReader.childNodes)
-        gridNodes.forEach(node => {
-        gridReader.removeChild(node)
-    })
-}
-//fine linee di codice per pulire reader
-    document.querySelector("link.secondSheet").href = './styles/third.css';
+    document.querySelector(".reader").classList.add("third")
 };
 
 document.querySelector('.style-selector-fourth').onclick = function () {
-        // linee di codice per pulire il reader
-    //clear the reader from previous text
-    document.querySelector(".reader").innerHTML = ""
+    document.querySelector(".reader").classList.remove("manuzio")
+    document.querySelector(".reader").classList.remove("second")
+    document.querySelector(".reader").classList.remove("third")
+    document.querySelector(".reader").classList.remove("fifth")
+    document.querySelector(".reader").classList.remove("sixth")
 
-    // change class to reader to avoid problems since we will create other readers
-    var reader = document.querySelector(".reader")
-    reader.classList.add("grid-container")
-    reader.classList.remove("reader")
-
-    var gridReader = document.querySelector("section.grid-container")
-    if (document.body.contains(gridReader)) {
-        gridReader.classList.add("reader")
-        gridReader.classList.remove("grid-container")
-        const gridNodes = Array.from(gridReader.childNodes)
-        gridNodes.forEach(node => {
-        gridReader.removeChild(node)
-    })
-}
-//fine linee di codice per pulire reader 
-    document.querySelector("link.secondSheet").href = './styles/fourth.css';
+    document.querySelector(".reader").classList.add("fourth")
 };
 
 document.querySelector('.style-selector-fifth').onclick = function () {
-        // linee di codice per pulire il reader
-    //clear the reader from previous text
-    document.querySelector(".reader").innerHTML = ""
+    document.querySelector(".reader").classList.remove("manuzio")
+    document.querySelector(".reader").classList.remove("second")
+    document.querySelector(".reader").classList.remove("third")
+    document.querySelector(".reader").classList.remove("fourth")
+    document.querySelector(".reader").classList.remove("sixth")
 
-    // change class to reader to avoid problems since we will create other readers
-    var reader = document.querySelector(".reader")
-    reader.classList.add("grid-container")
-    reader.classList.remove("reader")
-
-    var gridReader = document.querySelector("section.grid-container")
-    if (document.body.contains(gridReader)) {
-        gridReader.classList.add("reader")
-        gridReader.classList.remove("grid-container")
-        const gridNodes = Array.from(gridReader.childNodes)
-        gridNodes.forEach(node => {
-        gridReader.removeChild(node)
-    })
-}
-//fine linee di codice per pulire reader 
-    document.querySelector("link.secondSheet").href = './styles/fifth.css';
+    document.querySelector(".reader").classList.add("fifth")
 };
 
 document.querySelector('.style-selector-sixth').onclick = function () {
-        // linee di codice per pulire il reader
-    //clear the reader from previous text
-    document.querySelector(".reader").innerHTML = ""
+    document.querySelector(".reader").classList.remove("manuzio")
+    document.querySelector(".reader").classList.remove("second")
+    document.querySelector(".reader").classList.remove("third")
+    document.querySelector(".reader").classList.remove("fourth")
+    document.querySelector(".reader").classList.remove("fifth")
 
-    // change class to reader to avoid problems since we will create other readers
-    var reader = document.querySelector(".reader")
-    reader.classList.add("grid-container")
-    reader.classList.remove("reader")
-
-    var gridReader = document.querySelector("section.grid-container")
-    if (document.body.contains(gridReader)) {
-        gridReader.classList.add("reader")
-        gridReader.classList.remove("grid-container")
-        const gridNodes = Array.from(gridReader.childNodes)
-        gridNodes.forEach(node => {
-        gridReader.removeChild(node)
-    })
-}
-//fine linee di codice per pulire reader 
-    document.querySelector("link.secondSheet").href = './styles/sixth.css';
+    document.querySelector(".reader").classList.add("sixth")
 };
+
 
 // Script lista documenti
 /* docs selection script: quando clicchi l'elemento con classe .doc-sel ti rivela togliendo 'hidden' la nav-list, 

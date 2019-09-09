@@ -36,6 +36,7 @@ function articlesSidebarSelection(){
         //console.log(location)
         //location.insertAdjacentElement("afterbegin", a);
         location.insertAdjacentElement("afterbegin", li);
+        
     }) 
 }
 

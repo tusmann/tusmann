@@ -2,6 +2,7 @@
 @import url("./fonts/fonts.css");
 @import "./documentationPage.scss";
 @import "./animation.scss";
+@import "./historicalThemes.scss";
 
 $font-poster: 'TRY Vesterbro';
 $font-monotype: 'IBM Plex Mono', monospace;
@@ -2713,3 +2714,4 @@ animation: alertBox 30s ease infinite;
   }
   
 }
+
