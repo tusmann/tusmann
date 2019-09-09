@@ -1,8 +1,8 @@
 // Hides the second line
-@keyframes hideing {
-    0% { opacity: 0 }
-    100% { opacity: 0  }
-  }
+  @keyframes hideing {
+      0% { opacity: 0 }
+      100% { opacity: 0  }
+    }
   
   // The typing effect 
   @keyframes typing {
@@ -72,3 +72,21 @@
     100% {
       opacity: 1;
       transform: translate(0); } }
+
+@keyframes moveInBottom2 {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: 
+        translateY(-10rem);}
+  100% {
+    opacity: 1;
+    transform: translate(0),
+    rotate(40deg);} }

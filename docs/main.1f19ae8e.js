@@ -997,7 +997,6 @@ function _addSpecialArticle() {
 
           case 5:
             rightArticle = _context.sent;
-            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1057,7 +1056,6 @@ function _addArticle() {
 
           case 2:
             article = _context2.sent;
-            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1105,7 +1103,6 @@ var _articleParser = require("./article-parser");
 
 var _addArticle = require("./addArticle.js");
 
-//article dictionary with title=key and url=value
 var articlesDict = {
   "Japan's Prisons Are a Haven for Elderly Women": "./articles/Bloomberg/ShihoFukada.html",
   "As Goes the South, so Goes the Nation": "./articles/Harpers/ImaniPerry.html",
@@ -1162,30 +1159,44 @@ var _addArticle = require("./addArticle.js");
 
 var _articlesSelectionButtons = require("./articlesSelectionButtons");
 
-//OVERLAY MENU
-
-/* Open */
-function openNav() {
-  document.getElementById("myNav").style.height = "100%";
-}
-
-var openOverlay = document.querySelector('.navMenu');
-openOverlay.addEventListener('click', openNav);
-/* Close */
-
-function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
-}
-
-var closeOverlay = document.querySelector('.closebtn');
-closeOverlay.addEventListener('click', closeNav);
-var closeOverlayAbout = document.querySelector('.aboutPageButton');
-closeOverlayAbout.addEventListener('click', closeNav);
-var closeOverlayDoc = document.querySelector('.documentationPageButton');
-closeOverlayDoc.addEventListener('click', closeNav);
-var closeOverlayDisc = document.querySelector('.disclaimerPageButton');
-closeOverlayDisc.addEventListener('click', closeNav); //
+<<<<<<< Updated upstream
 // polyfill needed for using for loop on a dictionary
+=======
+(function () {
+  // Create mobile element
+  var mobile = document.createElement('div');
+  mobile.className = 'nav-mobile';
+  document.querySelector('.navbar').appendChild(mobile); // hasClass
+
+  function hasClass(elem, className) {
+    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+  } // toggleClass
+
+
+  function toggleClass(elem, className) {
+    var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+
+    if (hasClass(elem, className)) {
+      while (newClass.indexOf(' ' + className + ' ') >= 0) {
+        newClass = newClass.replace(' ' + className + ' ', ' ');
+      }
+
+      elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    } else {
+      elem.className += ' ' + className;
+    }
+  } // Mobile nav function
+
+
+  var mobileNav = document.querySelector('.nav-mobile');
+  var toggle = document.querySelector('.navbar__icons');
+
+  mobileNav.onclick = function () {
+    toggleClass(this, 'nav-mobile-open');
+    toggleClass(toggle, 'nav-active');
+  };
+})(); // polyfill needed for using for loop on a dictionary
+>>>>>>> Stashed changes
 
 /*
 * Object.prototype.forEach() polyfill
@@ -1193,7 +1204,6 @@ closeOverlayDisc.addEventListener('click', closeNav); //
 * @author Chris Ferdinandi
 * @license MIT
 */
-
 if (!Object.prototype.forEach) {
   Object.defineProperty(Object.prototype, 'forEach', {
     value: function value(callback, thisArg) {
@@ -1429,6 +1439,15 @@ document.querySelector(".documentationPageButton").onclick = function () {
   elementsToDelete.forEach(function (node) {
     node.classList.add("hidden");
   });
+}; //add tutorial page
+
+
+document.querySelector(".tutorialButton").onclick = function () {
+  document.querySelector(".tutorial").classList.remove("hidden");
+  var elementsToDelete = document.querySelectorAll(".jumbo, .aboutPageSection, .reader, .disclaimerPageSection");
+  elementsToDelete.forEach(function (node) {
+    node.classList.add("hidden");
+  });
 }; //documentation page animation
 //theme 1
 //document.querySelector(".card-theme1").onclick = function () {
@@ -1476,7 +1495,30 @@ function addArticleGlobalUrl() {
   });
 }
 
-addArticleGlobalUrl();
+addArticleGlobalUrl(); //OVERLAY MENU
+
+/* Open */
+
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+var openOverlay = document.querySelector('.navMenu');
+openOverlay.addEventListener('click', openNav);
+/* Close */
+
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
+
+var closeOverlay = document.querySelector('.closebtn');
+closeOverlay.addEventListener('click', closeNav);
+var closeOverlayAbout = document.querySelector('.aboutPageButton');
+closeOverlayAbout.addEventListener('click', closeNav);
+var closeOverlayDoc = document.querySelector('.documentationPageButton');
+closeOverlayDoc.addEventListener('click', closeNav);
+var closeOverlayDisc = document.querySelector('.disclaimerPageButton');
+closeOverlayDisc.addEventListener('click', closeNav); //
 },{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js","./articlesSelectionButtons":"articlesSelectionButtons.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -1505,7 +1547,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "10850" + '/');
+<<<<<<< Updated upstream
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56909" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63864" + '/');
+>>>>>>> Stashed changes
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -5,34 +5,6 @@ import {articlesSidebarSelection} from "./articlesSelectionButtons"
 import {specialArticleSidebarSelection} from "./articlesSelectionButtons"
 
 
-//OVERLAY MENU
-/* Open */
-function openNav() {
-    document.getElementById("myNav").style.height = "100%";
-}
-
-const openOverlay = document.querySelector('.navMenu');
-openOverlay.addEventListener('click', openNav);
-
-/* Close */
-function closeNav() {
-    document.getElementById("myNav").style.height = "0%";
-}
-
-const closeOverlay = document.querySelector('.closebtn');
-closeOverlay.addEventListener('click', closeNav);
-
-const closeOverlayAbout = document.querySelector('.aboutPageButton');
-closeOverlayAbout.addEventListener('click', closeNav);
-
-const closeOverlayDoc = document.querySelector('.documentationPageButton');
-closeOverlayDoc.addEventListener('click', closeNav);
-
-const closeOverlayDisc = document.querySelector('.disclaimerPageButton');
-closeOverlayDisc.addEventListener('click', closeNav);
-//
-
-
 
 // polyfill needed for using for loop on a dictionary
   /*
@@ -231,6 +203,15 @@ document.querySelector(".documentationPageButton").onclick = function () {
     })
 }
 
+//add tutorial page
+document.querySelector(".tutorialButton").onclick = function () {
+    document.querySelector(".tutorial").classList.remove("hidden")
+    var elementsToDelete = document.querySelectorAll(".jumbo, .aboutPageSection, .reader, .disclaimerPageSection, .changeTheme")
+    elementsToDelete.forEach(node => {
+        node.classList.add("hidden");
+    })
+}
+
 //documentation page animation
 //theme 1
 //document.querySelector(".card-theme1").onclick = function () {
@@ -273,3 +254,34 @@ function addArticleGlobalUrl(){
 })
 }
 addArticleGlobalUrl()
+
+
+
+
+
+//OVERLAY MENU
+/* Open */
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
+
+const openOverlay = document.querySelector('.navMenu');
+openOverlay.addEventListener('click', openNav);
+
+/* Close */
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+}
+
+const closeOverlay = document.querySelector('.closebtn');
+closeOverlay.addEventListener('click', closeNav);
+
+const closeOverlayAbout = document.querySelector('.aboutPageButton');
+closeOverlayAbout.addEventListener('click', closeNav);
+
+const closeOverlayDoc = document.querySelector('.documentationPageButton');
+closeOverlayDoc.addEventListener('click', closeNav);
+
+const closeOverlayDisc = document.querySelector('.disclaimerPageButton');
+closeOverlayDisc.addEventListener('click', closeNav);
+//
