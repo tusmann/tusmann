@@ -3038,7 +3038,6 @@ h1 {
   pointer-events: none;
 }
 
-<<<<<<< Updated upstream
 .changeTheme {
   text-align: center;
   position: relative;
@@ -3090,7 +3089,8 @@ h1 {
   padding-top: 25px;
   height: 100px;
   width: 240px;
-=======
+}
+
 .tutorial {
   position: absolute;
   background: rgba(244, 241, 208, 0);
@@ -3107,9 +3107,10 @@ h1 {
   margin-left: -1rem;
 }
 .tutorial h1 {
+  font-family: "TRY Vesterbro";
   padding: 0;
   font-size: 2.5rem;
-  color: #9D5D82;
+  color: #d29129;
   margin-bottom: 0.5rem;
 }
 .tutorial em {
@@ -3124,10 +3125,10 @@ h1 {
   background-repeat: no-repeat;
   height: 47vh;
   width: 30vh;
-  margin-top: -31rem;
+  margin-top: -33rem;
   margin-left: 63rem;
   opacity: 0.85;
-  animation: moveInBottom2 0.6s ease-in 0.1s;
+  animation: moveInBottom2 0.6s ease-in;
 }
 .tutorial__arrow2 {
   position: absolute;
@@ -3139,8 +3140,7 @@ h1 {
   margin-top: -13rem;
   margin-left: -9.7rem;
   transform: rotate(40deg);
-  animation: moveInTop 0.6s ease-in 0.1s;
->>>>>>> Stashed changes
+  animation: moveInTop 0.6s ease-in;
 }
 
 /*# sourceMappingURL=/style.97fcb138.css.map */
