@@ -594,6 +594,26 @@ html {
     transform: translate(0);
   }
 }
+@keyframes moveInBottom2 {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0), rotate(40deg);
+  }
+}
 body {
   font-family: "GTAmericaMono-Regular";
 }
@@ -3018,6 +3038,7 @@ h1 {
   pointer-events: none;
 }
 
+<<<<<<< Updated upstream
 .changeTheme {
   text-align: center;
   position: relative;
@@ -3069,6 +3090,57 @@ h1 {
   padding-top: 25px;
   height: 100px;
   width: 240px;
+=======
+.tutorial {
+  position: absolute;
+  background: rgba(244, 241, 208, 0);
+  font-size: 1.2rem;
+  padding: 3% 10% 3% 4%;
+}
+.tutorial p {
+  padding: 0.5rem 0;
+}
+.tutorial ul {
+  padding: 1rem 0 1rem 2rem;
+}
+.tutorial li {
+  margin-left: -1rem;
+}
+.tutorial h1 {
+  padding: 0;
+  font-size: 2.5rem;
+  color: #9D5D82;
+  margin-bottom: 0.5rem;
+}
+.tutorial em {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+}
+.tutorial__arrow1 {
+  position: absolute;
+  background-image: url(/arrow2.bc7c6268.png);
+  background-size: 30vh 47vh;
+  background-repeat: no-repeat;
+  height: 47vh;
+  width: 30vh;
+  margin-top: -31rem;
+  margin-left: 63rem;
+  opacity: 0.85;
+  animation: moveInBottom2 0.6s ease-in 0.1s;
+}
+.tutorial__arrow2 {
+  position: absolute;
+  background-image: url(/arrow3.384b5b70.png);
+  background-size: 27vh 17vh;
+  background-repeat: no-repeat;
+  height: 30vh;
+  width: 40vh;
+  margin-top: -13rem;
+  margin-left: -9.7rem;
+  transform: rotate(40deg);
+  animation: moveInTop 0.6s ease-in 0.1s;
+>>>>>>> Stashed changes
 }
 
 /*# sourceMappingURL=/style.97fcb138.css.map */

@@ -256,6 +256,15 @@ document.querySelector(".documentationPageButton").onclick = function () {
     })
 }
 
+//add tutorial page
+document.querySelector(".tutorialButton").onclick = function () {
+    document.querySelector(".tutorial").classList.remove("hidden")
+    var elementsToDelete = document.querySelectorAll(".jumbo, .aboutPageSection, .reader, .disclaimerPageSection, .changeTheme")
+    elementsToDelete.forEach(node => {
+        node.classList.add("hidden");
+    })
+}
+
 //documentation page animation
 //theme 1
 //document.querySelector(".card-theme1").onclick = function () {
