@@ -982,7 +982,7 @@ function _addSpecialArticle() {
   _addSpecialArticle = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
   _regenerator.default.mark(function _callee(leftArticleUrl, rightArticleUrl) {
-    var leftArticle, rightArticle, elementsToDelete, gridContainer, locationGridContainer, rightReader, leftReader, location, leftContainer, leftNodes, rightContainer, rightNodes, styleClass;
+    var leftArticle, rightArticle, elementsToDelete, gridContainer, locationGridContainer, rightReader, leftReader, location, leftContainer, leftNodes, rightContainer, rightNodes;
     return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -1028,13 +1028,9 @@ function _addSpecialArticle() {
             rightNodes = Array.from(rightArticle.body.childNodes);
             rightNodes.forEach(function (node) {
               rightContainer.appendChild(node);
-            }); // get style class from previously executed function
+            });
 
-            styleClass = document.querySelector(".grid-container").classList[0];
-            console.log(styleClass);
-            document.querySelector("reader left").classList.add(styleClass);
-
-          case 31:
+          case 28:
           case "end":
             return _context.stop();
         }
@@ -1382,9 +1378,9 @@ function addArticleGlobalUrl() {
     articlesNavbar.forEach(function (node) {
       if (node.textContent == articleTitle) {
         node.addEventListener("click", function () {
-          document.querySelector("a.footerArticleLink").href = articleLinkUrl;
-          document.querySelector("div.footerRights").classList.add("hidden");
-          document.querySelector("a.footerArticleLink").classList.remove("hidden");
+          document.querySelector("a.footerLink").href = articleLinkUrl;
+          document.querySelector(".footerRights").classList.add("hidden");
+          document.querySelector(".footerArticleLink").classList.remove("hidden");
         });
       }
     });
@@ -1443,7 +1439,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1329" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "5673" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
