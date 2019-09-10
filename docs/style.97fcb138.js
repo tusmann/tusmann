@@ -194,7 +194,11 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./fonts/fonts.css":"fonts/fonts.css","./cards\\card1.jpg":[["card1.4c48483c.jpg","cards/card1.jpg"],"cards/card1.jpg"],"./cards\\card2.jpg":[["card2.a5e0f1ec.jpg","cards/card2.jpg"],"cards/card2.jpg"],"./images\\four.png":[["four.b72f6141.png","images/four.png"],"images/four.png"],"./images\\five.png":[["five.dd2a19df.png","images/five.png"],"images/five.png"],"./images\\six.png":[["six.04897191.png","images/six.png"],"images/six.png"],"./images\\rinpa_duo.jpg":[["rinpa_duo.f5b000ac.jpg","images/rinpa_duo.jpg"],"images/rinpa_duo.jpg"],"./images\\jan_duo.jpg":[["jan_duo.d5a40610.jpg","images/jan_duo.jpg"],"images/jan_duo.jpg"],"./images\\munari_duo.jpg":[["munari_duo.35d95cdb.jpg","images/munari_duo.jpg"],"images/munari_duo.jpg"],"./images\\arrow2.png":[["arrow2.bc7c6268.png","images/arrow2.png"],"images/arrow2.png"],"./images\\arrow3.png":[["arrow3.384b5b70.png","images/arrow3.png"],"images/arrow3.png"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+<<<<<<< Updated upstream
+},{"./fonts/fonts.css":"fonts/fonts.css","./cards\\card1.jpg":[["card1.4c48483c.jpg","cards/card1.jpg"],"cards/card1.jpg"],"./cards\\card2.jpg":[["card2.a5e0f1ec.jpg","cards/card2.jpg"],"cards/card2.jpg"],"./images\\four.png":[["four.b72f6141.png","images/four.png"],"images/four.png"],"./images\\five.png":[["five.dd2a19df.png","images/five.png"],"images/five.png"],"./images\\six.png":[["six.04897191.png","images/six.png"],"images/six.png"],"./images\\rinpa_duo.jpg":[["rinpa_duo.f5b000ac.jpg","images/rinpa_duo.jpg"],"images/rinpa_duo.jpg"],"./images\\jan_duo.jpg":[["jan_duo.d5a40610.jpg","images/jan_duo.jpg"],"images/jan_duo.jpg"],"./images\\munari_duo.jpg":[["munari_duo.35d95cdb.jpg","images/munari_duo.jpg"],"images/munari_duo.jpg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+=======
+},{"./fonts/fonts.css":"fonts/fonts.css","./cards\\card1.jpg":[["card1.4c48483c.jpg","cards/card1.jpg"],"cards/card1.jpg"],"./cards\\card2.jpg":[["card2.a5e0f1ec.jpg","cards/card2.jpg"],"cards/card2.jpg"],"./images\\cancel.png":[["cancel.cc76ebc2.png","images/cancel.png"],"images/cancel.png"],"./images\\three.png":[["three.a334fce9.png","images/three.png"],"images/three.png"],"./images\\four.png":[["four.b72f6141.png","images/four.png"],"images/four.png"],"./images\\five.png":[["five.dd2a19df.png","images/five.png"],"images/five.png"],"./images\\six.png":[["six.04897191.png","images/six.png"],"images/six.png"],"./images\\rinpa_duo.jpg":[["rinpa_duo.f5b000ac.jpg","images/rinpa_duo.jpg"],"images/rinpa_duo.jpg"],"./images\\jan_duo.jpg":[["jan_duo.d5a40610.jpg","images/jan_duo.jpg"],"images/jan_duo.jpg"],"./images\\munari_duo.jpg":[["munari_duo.35d95cdb.jpg","images/munari_duo.jpg"],"images/munari_duo.jpg"],"./images\\menu-button-def.png":[["menu-button-def.4858ac60.png","images/menu-button-def.png"],"images/menu-button-def.png"],"./images\\arrow2.png":[["arrow2.bc7c6268.png","images/arrow2.png"],"images/arrow2.png"],"./images\\arrow3.png":[["arrow3.384b5b70.png","images/arrow3.png"],"images/arrow3.png"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+>>>>>>> Stashed changes
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -222,7 +226,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61671" + '/');
+<<<<<<< Updated upstream
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56909" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63864" + '/');
+>>>>>>> Stashed changes
 
   ws.onmessage = function (event) {
     checkedAssets = {};

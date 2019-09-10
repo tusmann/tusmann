@@ -1159,6 +1159,51 @@ var _addArticle = require("./addArticle.js");
 
 var _articlesSelectionButtons = require("./articlesSelectionButtons");
 
+<<<<<<< Updated upstream
+// polyfill needed for using for loop on a dictionary
+=======
+(function () {
+  // Create mobile element
+  var mobile = document.createElement('div');
+  mobile.className = 'nav-mobile';
+  document.querySelector('.navbar').appendChild(mobile); // hasClass
+
+  function hasClass(elem, className) {
+    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+  } // toggleClass
+
+
+  function toggleClass(elem, className) {
+    var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+
+    if (hasClass(elem, className)) {
+      while (newClass.indexOf(' ' + className + ' ') >= 0) {
+        newClass = newClass.replace(' ' + className + ' ', ' ');
+      }
+
+      elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    } else {
+      elem.className += ' ' + className;
+    }
+  } // Mobile nav function
+
+
+  var mobileNav = document.querySelector('.nav-mobile');
+  var toggle = document.querySelector('.navbar__icons');
+
+  mobileNav.onclick = function () {
+    toggleClass(this, 'nav-mobile-open');
+    toggleClass(toggle, 'nav-active');
+  };
+})(); // polyfill needed for using for loop on a dictionary
+>>>>>>> Stashed changes
+
+/*
+* Object.prototype.forEach() polyfill
+* https://gomakethings.com/looping-through-objects-with-es6/
+* @author Chris Ferdinandi
+* @license MIT
+*/
 if (!Object.prototype.forEach) {
   Object.defineProperty(Object.prototype, 'forEach', {
     value: function value(callback, thisArg) {
@@ -1399,7 +1444,7 @@ document.querySelector(".documentationPageButton").onclick = function () {
 
 document.querySelector(".tutorialButton").onclick = function () {
   document.querySelector(".tutorial").classList.remove("hidden");
-  var elementsToDelete = document.querySelectorAll(".jumbo, .aboutPageSection, .reader, .disclaimerPageSection, .changeTheme");
+  var elementsToDelete = document.querySelectorAll(".jumbo, .aboutPageSection, .reader, .disclaimerPageSection");
   elementsToDelete.forEach(function (node) {
     node.classList.add("hidden");
   });
@@ -1502,7 +1547,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61671" + '/');
+<<<<<<< Updated upstream
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56909" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63864" + '/');
+>>>>>>> Stashed changes
 
   ws.onmessage = function (event) {
     checkedAssets = {};
