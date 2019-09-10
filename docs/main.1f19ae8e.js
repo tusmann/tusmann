@@ -997,6 +997,7 @@ function _addSpecialArticle() {
 
           case 5:
             rightArticle = _context.sent;
+            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1057,6 +1058,7 @@ function _addArticle() {
 
           case 2:
             article = _context2.sent;
+            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1104,6 +1106,7 @@ var _articleParser = require("./article-parser");
 
 var _addArticle = require("./addArticle.js");
 
+//article dictionary with title=key and url=value
 var articles = [{
   title: "Japan's Prisons Are a Haven for Elderly Women",
   url: "./articles/Bloomberg/ShihoFukada.html"
@@ -1244,6 +1247,8 @@ function stylesSidebarSelection() {
 
       document.querySelector(".reader").innerHTML = "";
       document.querySelector(".changeTheme").classList.remove("hidden");
+      document.querySelector(".footerRights").classList.remove("hidden");
+      document.querySelector(".footerArticleLink").classList.add("hidden");
       document.querySelector(".jumbo").classList.add("hidden");
     });
   });
@@ -1301,6 +1306,8 @@ closeDocMenu.forEach(function (node) {
 }); //add about page
 
 document.querySelector(".aboutPageButton").onclick = function () {
+  document.querySelector(".footerRights").classList.remove("hidden");
+  document.querySelector(".footerArticleLink").classList.add("hidden");
   document.querySelector(".aboutPageSection").classList.remove("hidden");
   var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .disclaimerPageSection, .reader, .documentationPageSection, .changeTheme");
   elementsToDelete.forEach(function (node) {
@@ -1310,6 +1317,8 @@ document.querySelector(".aboutPageButton").onclick = function () {
 
 
 document.querySelector(".disclaimerPageButton").onclick = function () {
+  document.querySelector(".footerRights").classList.remove("hidden");
+  document.querySelector(".footerArticleLink").classList.add("hidden");
   document.querySelector(".disclaimerPageSection").classList.remove("hidden");
   var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .reader, .documentationPageSection, .changeTheme");
   elementsToDelete.forEach(function (node) {
@@ -1319,6 +1328,8 @@ document.querySelector(".disclaimerPageButton").onclick = function () {
 
 
 document.querySelector(".documentationPageButton").onclick = function () {
+  document.querySelector(".footerRights").classList.remove("hidden");
+  document.querySelector(".footerArticleLink").classList.add("hidden");
   document.querySelector(".documentationPageSection").classList.remove("hidden");
   var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .reader, .disclaimerPageSection, .changeTheme");
   elementsToDelete.forEach(function (node) {
@@ -1433,7 +1444,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61943" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "10331" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
