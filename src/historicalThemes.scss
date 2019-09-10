@@ -424,6 +424,7 @@ $font-transito: 'WaddemChooNFW01';
 
         h3 {
         grid-column: 1 / 4;
+        grid-row: 1 / 2; //
         text-align: right; 
         align-self: end; //
         font-size: 1.3rem;
@@ -484,7 +485,10 @@ $font-transito: 'WaddemChooNFW01';
         }
   
         figure {
-  
+
+            //grid-column: 4 / 6;
+            //grid-row: 1 / 3;
+
             img {
             //works only in the header
             width: 80%;
@@ -582,7 +586,7 @@ $font-transito: 'WaddemChooNFW01';
                 -ms-flex-item-align: start;
                     align-self: start; }
               header .red-line {
-                border-bottom: 20px solid #f9423a; } }
+                border-bottom: 20px solid #f9423a; } } }
           @media (max-width: 700px) {
             header .references {
               /* autoprefixer: off */
@@ -621,7 +625,7 @@ $font-transito: 'WaddemChooNFW01';
             article > header {
               padding-bottom: 30rem; } }
   
-        }
+        
       }
     
   

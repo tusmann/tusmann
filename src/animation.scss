@@ -90,3 +90,28 @@
     opacity: 1;
     transform: translate(0),
     rotate(40deg);} }
+
+
+//ICONS ANIMATION
+.opened-doc-list.doc-sel:hover {
+  animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;  
+}
+
+//SIDEBAR SELECTOR
+.placeholder > li {
+  margin-bottom: 1rem;
+  padding: 0.82rem 0;
+  background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
+  background-size: 300% 200%;
+  background-position: right bottom;
+
+    &:hover {
+    background-position: left bottom;
+    font-weight: 700;
+    transition: all 0.7s ease-out;
+    text-transform: uppercase;
+  }
+}

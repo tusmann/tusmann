@@ -51,10 +51,6 @@ const styles = [
     icon: ""
   },
   {
-    name: "fourth",
-    icon: ""
-  },
-  {
     name: "fifth",
     icon: ""
   },
@@ -244,11 +240,9 @@ function addArticleGlobalUrl() {
     articlesNavbar.forEach(node => {
       if (node.textContent == articleTitle) {
         node.addEventListener("click", function() {
-          document.querySelector("a.footerArticleLink").href = articleLinkUrl;
-          document.querySelector("div.footerRights").classList.add("hidden");
-          document
-            .querySelector("a.footerArticleLink")
-            .classList.remove("hidden");
+          document.querySelector("a.footerLink").href = articleLinkUrl;
+          document.querySelector(".footerRights").classList.add("hidden");
+          document.querySelector(".footerArticleLink").classList.remove("hidden");
         });
       }
     });
