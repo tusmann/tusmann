@@ -31,13 +31,6 @@
         </div>
     </header>
     <nav>
-        <div class="opened-doc-list doc-sel style-selector-first" href="#"><embed class="icn" src="images/aldus_leaf.svg"></div>
-        <div class="opened-doc-list doc-sel style-selector-second" href="#"><embed class="icn" src="images/sakura.svg"></div>
-        <div class="opened-doc-list doc-sel style-selector-third" href="#"><embed class="icn" src="images/bauhaus.svg"></div>
-        <div class="opened-doc-list doc-sel style-selector-fourth" href="#"></div>
-        <div class="opened-doc-list doc-sel style-selector-fifth" href="#"></div>
-        <div class="opened-doc-list doc-sel style-selector-sixth" href="#"></div>
-    <!--<a class="close-menu doc-close" href="#">X</a>-->
         <div class="close-menu doc-close close-container">
             <div class="leftright"></div>
             <div class="rightleft"></div>
@@ -50,7 +43,7 @@
         </section>
 
     </nav>
-    <main>
+    <main class="mainHome">
     <section class="reader hidden">
     </section>
     <section class="jumbo">
@@ -59,7 +52,7 @@
                 <span class="heading__first">Tusmann</span>
                 <span class="heading__second">Typography</span>
             </h1>
-            <a class="btn heading__btn tutorialButton" href="#">Start the tour</a>
+            <a class="btn heading__btn tutorialPageButton" href="#">Start the tour</a>
         </div>
         <p></p>
         <div class="jumbo__img--container">
@@ -68,26 +61,22 @@
             <div class="jumbo__img--3"></div>
         </div>
     </section>
-    <section class="tutorial hidden">
+    <section class="tutorialPageSection hidden">
         <h1>Tutorial</h1>
         <p>In this section you will learn how this website works and how we implemented it according to the project guidelines.</p>
-        <!--<p>But first...<em>who's Tusmann?</em></p>
-        <p><em>Tusmann</em> was blablablablablablabla</p>
-        <h1>Website structure</h1>-->
         <p>The website is structured in two main parts:
             <ul>
-                <li><p>on the top navbar you can find useful information about the project and the website itself. 
+                <li><p>On the top navbar you can find useful information about the project and the website itself. 
                     In the <em>.documentation</em> section all the specification of each style can be examined. 
-                    In the <em>.discalaimer</em> page you will find details about the articles contained in this website, 
-                    while in the last secion <em>.about</em> you can access the group member's biographies.</p></li>
+                    In the <em>.discalaimer</em> page you will find details about the articles contained in this website.
+                    In the last section <em>.about</em> you can access the group members' biographies.</p></li>
                 <br>
-                <li><p>to access our Trans-historial Typographical Tour-de-force select one of the six styles 
-                    we implemented, each represented by a button in the light blue navbar and then on one of the six article which are shown after 
-                    the selection of the style.</p></li>
+                <li><p>To access our Trans-historial Typographical Tour-de-force select one of the six styles 
+                    we implemented, each represented by a button in the light blue sidebar and then on one of the six articles which are shown after the style is selected.</p></li>
             </ul>
         <p>In every page of the website you can access the home page by clicking on the Tusmann <em>logo</em>.</p>
-        <div class="tutorial__arrow1"></div>
-        <div class="tutorial__arrow2"></div>
+        <div class="tutorialPageSection arrow1"></div>
+        <div class="tutorialPageSection arrow2"></div>
         </p>
 
     </section>
@@ -285,11 +274,8 @@
                         <p>All copyright on the typographic and layout choices are 2019 © Tusmann</p>             
         </section>
     </main>
-    <footer>
-
-    <a class="footerArticleLink hidden" href="" target="_blank"><img src="./images/linkIcon.svg" alt="" width="20px"/></a>
-    <div class="footerRights">©2019 tusmann typography. all rights reserved.</div>
-</footer>
+    <footer class="footerArticleLink hidden" href="" target="_blank"><img class="icn" src="./images/linkIcon.svg" alt=""/></footer>
+    <footer class="footerRights">©2019 tusmann typography. all rights reserved.</footer>
     </section>
 
     <!--pop up card1--> 
