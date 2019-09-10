@@ -26,6 +26,9 @@ $secondary-heading-color: #629488;
 //#A8D0E6
 $red-color: #c33149;
 
+$footer-height: 8vh;
+$footerLink-height: 5vh;
+
 body {
   font-family: $font-mono-gt;
 }
@@ -337,16 +340,6 @@ body {
       }
     }
 
-    .footerRights {
-      grid-column: span 2;
-      padding: 20px;
-      background-color: $primary-color;
-      color: $secondary-color;
-      font-size: 0.8rem;
-      text-align: center;
-      line-height: 1.2rem;
-      //letter-spacing: .1em;
-    }
   }
 }
 
@@ -658,16 +651,7 @@ body {
       }
     }
 
-    .footerRights {
-      grid-column: span 2;
-      padding: 30px;
-      background-color: $primary-color;
-      color: $secondary-color;
-      font-size: 0.9rem;
-      text-align: center;
-      line-height: 0.1rem;
-      //letter-spacing: .1em;
-    }
+
   }
 }
 
@@ -1031,16 +1015,7 @@ body {
   }
   /* end drawer script */
 
-  .footerRights {
-    grid-column: span 2;
-    padding: 30px;
-    background-color: $primary-color;
-    color: $secondary-color;
-    font-size: 1em;
-    text-align: center;
-    line-height: 0.1em;
-    letter-spacing: 0.1em;
-  }
+
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -1412,19 +1387,7 @@ body {
     left: 0rem;
   }
 
-  .footerRights {
-    grid-column: span 2;
-    padding: 30px;
-    background-color: $primary-color;
-    color: $secondary-color;
-    font-size: 1em;
-    text-align: center;
-    line-height: 0.1em;
-    letter-spacing: 0.1em;
-  }
-  .footerArticleLink {
-    padding: 10px;
-  }
+  
 }
 
 @media (min-width: 1200px) {
@@ -1771,19 +1734,10 @@ body {
   }
   /* end drawer script */
 
-  .footerRights {
-    grid-column: span 2;
-    padding: 30px;
-    background-color: $primary-color;
-    color: $secondary-color;
-    font-size: 1em;
-    text-align: center;
-    line-height: 0.1em;
-    letter-spacing: 0.1em;
-  }
+  
 }
 
-//
+// OUT OF MEDIA QUERIES
 
 .mainHome {
   color: $primary-color;
@@ -1797,6 +1751,8 @@ body {
 
 .footerArticleLink {
   grid-column: span 2;
+  height: $footerLink-height;
+  padding: 0px;
   background-color: $primary-color;
   color: $secondary-color;
   text-align: center;
@@ -1808,12 +1764,14 @@ body {
 
 .footerRights {
   grid-column: span 2;
+  height: $footer-height;
   padding: 20px;
   background-color: $primary-color;
   color: $secondary-color;
   font-size: 1rem;
   text-align: center;
   line-height: 1.2rem;
+  letter-spacing: .1em;
 }
 
 
@@ -1910,13 +1868,14 @@ h1 {
 //AlertBox
 
 .changeTheme {
+  p {
   text-align: center;
   position: relative;
   padding-top: 32vh;
   padding-left: 37vw;
-  height: 82.4vh;
+  height: 82.9vh;
   background: linear-gradient(270deg, #a0faf8, #e482e3);
-  background-size: 200% 200%;
+  background-size: 100%;
 
   -webkit-animation: alertBox 10s ease infinite;
   -moz-animation: alertBox 10s ease infinite;
@@ -1962,6 +1921,7 @@ h1 {
     height: 100px;
     width: 240px;
   }
+}
 }
 
 //TUTORIAL PAGE
