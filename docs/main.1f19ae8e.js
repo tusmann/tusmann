@@ -982,7 +982,7 @@ function _addSpecialArticle() {
   _addSpecialArticle = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
   _regenerator.default.mark(function _callee(leftArticleUrl, rightArticleUrl) {
-    var leftArticle, rightArticle, elementsToDelete, reader, rightReader, leftReader, location, leftContainer, leftNodes, rightContainer, rightNodes;
+    var leftArticle, rightArticle, elementsToDelete, gridContainer, locationGridContainer, rightReader, leftReader, location, leftContainer, leftNodes, rightContainer, rightNodes, styleClass;
     return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -997,18 +997,20 @@ function _addSpecialArticle() {
 
           case 5:
             rightArticle = _context.sent;
-            elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
+            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
+            elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
             });
             document.querySelector(".reader").className = document.querySelector(".reader").className.replace(/(?:^|\s)hidden(?!\S)/g, ''); //clear the reader from previous text, add another text in the middle page, remove link btn in footer
 
             document.querySelector(".reader").innerHTML = "";
-            document.querySelector(".changeTheme").classList.remove("hidden"); // change class to reader to avoid problems since we will create other readers
+            document.querySelector(".changeTheme").classList.add("hidden"); // create a container for the articles
 
-            reader = document.querySelector(".reader");
-            reader.classList.add("grid-container");
-            reader.classList.remove("reader"); //create 2 containers for the documents
+            gridContainer = document.createElement("section");
+            gridContainer.className = "grid-container";
+            locationGridContainer = document.querySelector(".reader");
+            locationGridContainer.insertAdjacentElement("afterbegin", gridContainer); //create 2 containers for the documents
 
             rightReader = document.createElement("section");
             leftReader = document.createElement("section");
@@ -1026,9 +1028,13 @@ function _addSpecialArticle() {
             rightNodes = Array.from(rightArticle.body.childNodes);
             rightNodes.forEach(function (node) {
               rightContainer.appendChild(node);
-            });
+            }); // get style class from previously executed function
 
-          case 27:
+            styleClass = document.querySelector(".grid-container").classList[0];
+            console.log(styleClass);
+            document.querySelector("reader left").classList.add(styleClass);
+
+          case 31:
           case "end":
             return _context.stop();
         }
@@ -1056,7 +1062,8 @@ function _addArticle() {
 
           case 2:
             article = _context2.sent;
-            elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
+            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
+            elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
             });
@@ -1073,7 +1080,7 @@ function _addArticle() {
             }
 
             document.querySelector(".reader").innerHTML = "";
-            document.querySelector(".changeTheme").classList.remove("hidden"); //actually insert the new document
+            document.querySelector(".changeTheme").classList.add("hidden"); //actually insert the new document
 
             container = document.querySelector(".reader");
             nodes = Array.from(article.body.childNodes);
@@ -1103,35 +1110,35 @@ var _articleParser = require("./article-parser");
 
 var _addArticle = require("./addArticle.js");
 
-var articlesDict = {
-  "Japan's Prisons Are a Haven for Elderly Women": "./articles/Bloomberg/ShihoFukada.html",
-  "As Goes the South, so Goes the Nation": "./articles/Harpers/ImaniPerry.html",
-  "Jerry And Marge Go Large": "./articles/HuffingtonPost/JasonFagone.html",
-  "How Anna Delvey Tricked New York’s Party People": "./articles/TheCut/JessicaPresler.html",
-  "God is in the machine": "./articles/Times Literary Supplement/CarlMiller.html"
-}; //dynamically creates buttons for selecting articles in the sidebar
+//article dictionary with title=key and url=value
+var articles = [{
+  title: "Japan's Prisons Are a Haven for Elderly Women",
+  url: "./articles/Bloomberg/ShihoFukada.html"
+}, {
+  title: "As Goes the South, so Goes the Nation",
+  url: "./articles/Harpers/ImaniPerry.html"
+}, {
+  title: "Jerry And Marge Go Large",
+  url: "./articles/HuffingtonPost/JasonFagone.html"
+}, {
+  title: "How Anna Delvey Tricked New York’s Party People",
+  url: "./articles/TheCut/JessicaPresler.html"
+}, {
+  title: "God is in the machine",
+  url: "./articles/Times Literary Supplement/CarlMiller.html"
+}]; //dynamically creates buttons for selecting articles in the sidebar
 
 function articlesSidebarSelection() {
-  articlesDict.forEach(function (item, key) {
-    var articleTitle = key;
-    var articleUrl = item;
+  articles.forEach(function (article) {
     var li = document.createElement('li');
     var a = document.createElement('a');
     a.className = "close-menu-doc";
-    a.appendChild(document.createTextNode(articleTitle));
+    a.appendChild(document.createTextNode(article.title));
     li.appendChild(a);
     a.addEventListener("click", function () {
-      return (0, _addArticle.addArticle)(articleUrl);
-    }); //var newButton = document.createElement("button");
-    //newButton.className = "close-menu-doc";
-    //var buttonContent = document.createTextNode(articleTitle)
-    //newButton.appendChild(buttonContent)
-    //newButton.addEventListener("click", () => addArticle(articleUrl))
-    //console.log(key, articleUrl)
-
-    var location = document.querySelector(".placeholder"); //console.log(location)
-    //location.insertAdjacentElement("afterbegin", a);
-
+      return (0, _addArticle.addArticle)(article.url);
+    });
+    var location = document.querySelector(".placeholder");
     location.insertAdjacentElement("afterbegin", li);
   });
 } //same but for the european translated article
@@ -1150,7 +1157,13 @@ function specialArticleSidebarSelection(articleTitle, leftArticleUrl, rightArtic
 
   location.insertAdjacentElement("afterbegin", li);
 }
-},{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js"}],"main.js":[function(require,module,exports) {
+},{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js"}],"images/bauhaus.svg":[function(require,module,exports) {
+module.exports = "/bauhaus.00287030.svg";
+},{}],"images/aldus_leaf.svg":[function(require,module,exports) {
+module.exports = "/aldus_leaf.72009c54.svg";
+},{}],"images/sakura.svg":[function(require,module,exports) {
+module.exports = "/sakura.3275ced2.svg";
+},{}],"main.js":[function(require,module,exports) {
 "use strict";
 
 var _articleParser = require("./article-parser");
@@ -1159,56 +1172,27 @@ var _addArticle = require("./addArticle.js");
 
 var _articlesSelectionButtons = require("./articlesSelectionButtons");
 
-<<<<<<< Updated upstream
+var _bauhaus = _interopRequireDefault(require("./images/bauhaus.svg"));
+
+var _aldus_leaf = _interopRequireDefault(require("./images/aldus_leaf.svg"));
+
+var _sakura = _interopRequireDefault(require("./images/sakura.svg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 // polyfill needed for using for loop on a dictionary
-=======
-(function () {
-  // Create mobile element
-  var mobile = document.createElement('div');
-  mobile.className = 'nav-mobile';
-  document.querySelector('.navbar').appendChild(mobile); // hasClass
-
-  function hasClass(elem, className) {
-    return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
-  } // toggleClass
-
-
-  function toggleClass(elem, className) {
-    var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
-
-    if (hasClass(elem, className)) {
-      while (newClass.indexOf(' ' + className + ' ') >= 0) {
-        newClass = newClass.replace(' ' + className + ' ', ' ');
-      }
-
-      elem.className = newClass.replace(/^\s+|\s+$/g, '');
-    } else {
-      elem.className += ' ' + className;
-    }
-  } // Mobile nav function
-
-
-  var mobileNav = document.querySelector('.nav-mobile');
-  var toggle = document.querySelector('.navbar__icons');
-
-  mobileNav.onclick = function () {
-    toggleClass(this, 'nav-mobile-open');
-    toggleClass(toggle, 'nav-active');
-  };
-})(); // polyfill needed for using for loop on a dictionary
->>>>>>> Stashed changes
 
 /*
-* Object.prototype.forEach() polyfill
-* https://gomakethings.com/looping-through-objects-with-es6/
-* @author Chris Ferdinandi
-* @license MIT
-*/
+ * Object.prototype.forEach() polyfill
+ * https://gomakethings.com/looping-through-objects-with-es6/
+ * @author Chris Ferdinandi
+ * @license MIT
+ */
 if (!Object.prototype.forEach) {
-  Object.defineProperty(Object.prototype, 'forEach', {
+  Object.defineProperty(Object.prototype, "forEach", {
     value: function value(callback, thisArg) {
       if (this == null) {
-        throw new TypeError('Not an object');
+        throw new TypeError("Not an object");
       }
 
       thisArg = thisArg || window;
@@ -1220,165 +1204,76 @@ if (!Object.prototype.forEach) {
       }
     }
   });
-} //creation of article, buttons and links
+} //selezione stili
+//styles dictionary with style name=key and icon=value
 
+
+var styles = [{
+  name: "manuzio",
+  icon: _aldus_leaf.default
+}, {
+  name: "rimpa",
+  icon: _sakura.default
+}, {
+  name: "third",
+  icon: _bauhaus.default
+}, {
+  name: "fourth",
+  icon: ""
+}, {
+  name: "fourth",
+  icon: ""
+}, {
+  name: "fifth",
+  icon: ""
+}, {
+  name: "sixth",
+  icon: ""
+}]; //dynamically creates buttons for styles in the sidebar
+
+function stylesSidebarSelection() {
+  styles.forEach(function (style) {
+    //aggiungo pulsante stile
+    var div = document.createElement("div");
+    div.className = "opened-doc-list doc-sel";
+    div.href = "#"; //agg icona stile
+
+    var embed = document.createElement("embed");
+    embed.className = "icn";
+    embed.src = style.icon;
+    div.appendChild(embed); // add to dom
+
+    var location = document.querySelector("nav");
+    location.insertAdjacentElement("afterbegin", div);
+    div.addEventListener("click", function () {
+      console.log("hello");
+      styles.forEach(function (style) {
+        document.querySelector(".reader").classList.remove(style.name);
+      });
+      document.querySelector(".reader").classList.add(style.name); //PULITURA READER
+
+      document.querySelector(".reader").innerHTML = "";
+      document.querySelector(".changeTheme").classList.remove("hidden");
+      document.querySelector(".jumbo").classList.add("hidden");
+    });
+  });
+}
+
+stylesSidebarSelection(); //creation of article, buttons and links
 
 (0, _articlesSelectionButtons.articlesSidebarSelection)();
-(0, _articlesSelectionButtons.specialArticleSidebarSelection)("EUR-Lex", "./articles/EUDirective/L125-75.html", "./articles/EUDirective/EUDirectiveItalian.html"); //const readerActivation = document.querySelector('.reader-activator');
-//readerActivation.addEventListener('click', addArticle);
-//selezione stili
-//funzione stile 1
-
-document.querySelector('.style-selector-first').onclick = function () {
-  // inizio linee di codice per pulire il reader
-  //clear the reader from previous text
-  document.querySelector(".reader").innerHTML = ""; // change class to reader to avoid problems since we will create other readers
-
-  var reader = document.querySelector(".reader");
-  reader.classList.add("grid-container");
-  reader.classList.remove("reader");
-  var gridReader = document.querySelector("section.grid-container");
-
-  if (document.body.contains(gridReader)) {
-    gridReader.classList.add("reader");
-    gridReader.classList.remove("grid-container");
-    var gridNodes = Array.from(gridReader.childNodes);
-    gridNodes.forEach(function (node) {
-      gridReader.removeChild(node);
-    });
-  } //fine linee di codice per pulire reader
-
-
-  var secondSheetElement = document.querySelector("link.secondSheet");
-  secondSheetElement.href = './styles/first/first.css';
-};
-
-document.querySelector('.style-selector-second').onclick = function () {
-  // linee di codice per pulire il reader
-  //clear the reader from previous text
-  document.querySelector(".reader").innerHTML = ""; // change class to reader to avoid problems since we will create other readers
-
-  var reader = document.querySelector(".reader");
-  reader.classList.add("grid-container");
-  reader.classList.remove("reader");
-  var gridReader = document.querySelector("section.grid-container");
-
-  if (document.body.contains(gridReader)) {
-    gridReader.classList.add("reader");
-    gridReader.classList.remove("grid-container");
-    var gridNodes = Array.from(gridReader.childNodes);
-    gridNodes.forEach(function (node) {
-      gridReader.removeChild(node);
-    });
-  } //fine linee di codice per pulire reader
-
-
-  document.querySelector("link.secondSheet").href = './styles/second/second.css';
-};
-
-document.querySelector('.style-selector-third').onclick = function () {
-  // linee di codice per pulire il reader
-  //clear the reader from previous text
-  document.querySelector(".reader").innerHTML = ""; // change class to reader to avoid problems since we will create other readers
-
-  var reader = document.querySelector(".reader");
-  reader.classList.add("grid-container");
-  reader.classList.remove("reader");
-  var gridReader = document.querySelector("section.grid-container");
-
-  if (document.body.contains(gridReader)) {
-    gridReader.classList.add("reader");
-    gridReader.classList.remove("grid-container");
-    var gridNodes = Array.from(gridReader.childNodes);
-    gridNodes.forEach(function (node) {
-      gridReader.removeChild(node);
-    });
-  } //fine linee di codice per pulire reader
-
-
-  document.querySelector("link.secondSheet").href = './styles/third.css';
-};
-
-document.querySelector('.style-selector-fourth').onclick = function () {
-  // linee di codice per pulire il reader
-  //clear the reader from previous text
-  document.querySelector(".reader").innerHTML = ""; // change class to reader to avoid problems since we will create other readers
-
-  var reader = document.querySelector(".reader");
-  reader.classList.add("grid-container");
-  reader.classList.remove("reader");
-  var gridReader = document.querySelector("section.grid-container");
-
-  if (document.body.contains(gridReader)) {
-    gridReader.classList.add("reader");
-    gridReader.classList.remove("grid-container");
-    var gridNodes = Array.from(gridReader.childNodes);
-    gridNodes.forEach(function (node) {
-      gridReader.removeChild(node);
-    });
-  } //fine linee di codice per pulire reader 
-
-
-  document.querySelector("link.secondSheet").href = './styles/fourth.css';
-};
-
-document.querySelector('.style-selector-fifth').onclick = function () {
-  // linee di codice per pulire il reader
-  //clear the reader from previous text
-  document.querySelector(".reader").innerHTML = ""; // change class to reader to avoid problems since we will create other readers
-
-  var reader = document.querySelector(".reader");
-  reader.classList.add("grid-container");
-  reader.classList.remove("reader");
-  var gridReader = document.querySelector("section.grid-container");
-
-  if (document.body.contains(gridReader)) {
-    gridReader.classList.add("reader");
-    gridReader.classList.remove("grid-container");
-    var gridNodes = Array.from(gridReader.childNodes);
-    gridNodes.forEach(function (node) {
-      gridReader.removeChild(node);
-    });
-  } //fine linee di codice per pulire reader 
-
-
-  document.querySelector("link.secondSheet").href = './styles/fifth.css';
-};
-
-document.querySelector('.style-selector-sixth').onclick = function () {
-  // linee di codice per pulire il reader
-  //clear the reader from previous text
-  document.querySelector(".reader").innerHTML = ""; // change class to reader to avoid problems since we will create other readers
-
-  var reader = document.querySelector(".reader");
-  reader.classList.add("grid-container");
-  reader.classList.remove("reader");
-  var gridReader = document.querySelector("section.grid-container");
-
-  if (document.body.contains(gridReader)) {
-    gridReader.classList.add("reader");
-    gridReader.classList.remove("grid-container");
-    var gridNodes = Array.from(gridReader.childNodes);
-    gridNodes.forEach(function (node) {
-      gridReader.removeChild(node);
-    });
-  } //fine linee di codice per pulire reader 
-
-
-  document.querySelector("link.secondSheet").href = './styles/sixth.css';
-}; // Script lista documenti
+(0, _articlesSelectionButtons.specialArticleSidebarSelection)("EUR-Lex", "./articles/EUDirective/L125-75.html", "./articles/EUDirective/EUDirectiveItalian.html"); // Script lista documenti
 
 /* docs selection script: quando clicchi l'elemento con classe .doc-sel ti rivela togliendo 'hidden' la nav-list, 
 dove è contenuta la lista documenti. */
 
-
 function docsList() {
-  document.querySelector(".nav-list").className = document.querySelector(".nav-list").className.replace(/(?:^|\s)hidden(?!\S)/g, '');
+  document.querySelector(".nav-list").className = document.querySelector(".nav-list").className.replace(/(?:^|\s)hidden(?!\S)/g, "");
 }
 
-var docsSelection = document.querySelectorAll('.doc-sel');
+var docsSelection = document.querySelectorAll(".doc-sel");
 docsSelection.forEach(function (node) {
-  node.addEventListener('click', docsList);
+  node.addEventListener("click", docsList);
 }); // Script chiusura lista documenti
 
 /*stessa cosa di sopra ma nasconde i documenti quando si richiude la sidebar*/
@@ -1388,36 +1283,36 @@ function closeDocs() {
   v.classList.add("hidden");
 }
 
-var docsHidden = document.querySelector('.doc-close');
-docsHidden.addEventListener('click', closeDocs);
+var docsHidden = document.querySelector(".doc-close");
+docsHidden.addEventListener("click", closeDocs);
 /*stessa cosa di sopra ma si attiva quando clicchi un documento */
 
-var docsHiddenFromMenu = document.querySelectorAll('.close-menu-doc');
+var docsHiddenFromMenu = document.querySelectorAll(".close-menu-doc");
 docsHiddenFromMenu.forEach(function (node) {
-  node.addEventListener('click', closeDocs);
+  node.addEventListener("click", closeDocs);
 });
 /* sidebar drawer script */
 
-var mainElement = document.querySelector('.container');
-var openMenu = document.querySelectorAll('.opened-doc-list');
-var closeMenu = document.querySelector('.close-menu');
-var closeDocMenu = document.querySelectorAll('.close-menu-doc');
+var mainElement = document.querySelector(".container");
+var openMenu = document.querySelectorAll(".opened-doc-list");
+var closeMenu = document.querySelector(".close-menu");
+var closeDocMenu = document.querySelectorAll(".close-menu-doc");
 
 var toggleNavBar = function toggleNavBar() {
-  mainElement.classList.toggle('opened-nav');
+  mainElement.classList.toggle("opened-nav");
 };
 
 openMenu.forEach(function (node) {
-  node.addEventListener('click', toggleNavBar, false);
+  node.addEventListener("click", toggleNavBar, false);
 });
-closeMenu.addEventListener('click', toggleNavBar, false);
+closeMenu.addEventListener("click", toggleNavBar, false);
 closeDocMenu.forEach(function (node) {
-  node.addEventListener('click', toggleNavBar, false);
+  node.addEventListener("click", toggleNavBar, false);
 }); //add about page
 
 document.querySelector(".aboutPageButton").onclick = function () {
   document.querySelector(".aboutPageSection").classList.remove("hidden");
-  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .disclaimerPageSection, .reader, .documentationPageSection, .changeTheme");
+  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .disclaimerPageSection, .reader, .documentationPageSection, .changeTheme");
   elementsToDelete.forEach(function (node) {
     node.classList.add("hidden");
   });
@@ -1426,7 +1321,7 @@ document.querySelector(".aboutPageButton").onclick = function () {
 
 document.querySelector(".disclaimerPageButton").onclick = function () {
   document.querySelector(".disclaimerPageSection").classList.remove("hidden");
-  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .reader, .documentationPageSection, .changeTheme");
+  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .reader, .documentationPageSection, .changeTheme");
   elementsToDelete.forEach(function (node) {
     node.classList.add("hidden");
   });
@@ -1435,16 +1330,16 @@ document.querySelector(".disclaimerPageButton").onclick = function () {
 
 document.querySelector(".documentationPageButton").onclick = function () {
   document.querySelector(".documentationPageSection").classList.remove("hidden");
-  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .reader, .disclaimerPageSection, .changeTheme");
+  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .reader, .disclaimerPageSection, .changeTheme");
   elementsToDelete.forEach(function (node) {
     node.classList.add("hidden");
   });
 }; //add tutorial page
 
 
-document.querySelector(".tutorialButton").onclick = function () {
-  document.querySelector(".tutorial").classList.remove("hidden");
-  var elementsToDelete = document.querySelectorAll(".jumbo, .aboutPageSection, .reader, .disclaimerPageSection");
+document.querySelector(".tutorialPageButton").onclick = function () {
+  document.querySelector(".tutorialPageSection").classList.remove("hidden");
+  var elementsToDelete = document.querySelectorAll(".jumbo, .aboutPageSection, .reader, .disclaimerPageSection, .changeTheme");
   elementsToDelete.forEach(function (node) {
     node.classList.add("hidden");
   });
@@ -1467,7 +1362,8 @@ for (i = 0; i < coll.length; i++) {
       content.style.display = "block";
     }
   });
-}
+} //function to add the link button with ref to the original articles urls
+
 
 var articlesLinkDict = {
   "EUR-Lex": "https://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1552167424995&uri=CELEX:32009L0041",
@@ -1503,23 +1399,23 @@ function openNav() {
   document.getElementById("myNav").style.height = "100%";
 }
 
-var openOverlay = document.querySelector('.navMenu');
-openOverlay.addEventListener('click', openNav);
+var openOverlay = document.querySelector(".navMenu");
+openOverlay.addEventListener("click", openNav);
 /* Close */
 
 function closeNav() {
   document.getElementById("myNav").style.height = "0%";
 }
 
-var closeOverlay = document.querySelector('.closebtn');
-closeOverlay.addEventListener('click', closeNav);
-var closeOverlayAbout = document.querySelector('.aboutPageButton');
-closeOverlayAbout.addEventListener('click', closeNav);
-var closeOverlayDoc = document.querySelector('.documentationPageButton');
-closeOverlayDoc.addEventListener('click', closeNav);
-var closeOverlayDisc = document.querySelector('.disclaimerPageButton');
-closeOverlayDisc.addEventListener('click', closeNav); //
-},{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js","./articlesSelectionButtons":"articlesSelectionButtons.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var closeOverlay = document.querySelector(".closebtn");
+closeOverlay.addEventListener("click", closeNav);
+var closeOverlayAbout = document.querySelector(".aboutPageButton");
+closeOverlayAbout.addEventListener("click", closeNav);
+var closeOverlayDoc = document.querySelector(".documentationPageButton");
+closeOverlayDoc.addEventListener("click", closeNav);
+var closeOverlayDisc = document.querySelector(".disclaimerPageButton");
+closeOverlayDisc.addEventListener("click", closeNav); //
+},{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js","./articlesSelectionButtons":"articlesSelectionButtons.js","./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -1547,11 +1443,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< Updated upstream
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56909" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63864" + '/');
->>>>>>> Stashed changes
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1329" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

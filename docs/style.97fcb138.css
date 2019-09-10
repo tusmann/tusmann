@@ -46,6 +46,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Fanwood+Text:400,400i&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -614,6 +615,297 @@ html {
     transform: translate(0), rotate(40deg);
   }
 }
+@font-face {
+  font-family: "roycroft_initialsregular";
+  src: url("/roycroft-webfont.51df3fbb.woff2") format("woff2"), url("/roycroft-webfont.8abc1c68.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "japanese";
+  src: url("/ZinHenaKokuryu-RCF.c78880ff.ttf") format("truetype");
+}
+@media screen and (max-width: 600px) {
+  body {
+    font-size: smaller;
+  }
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.reader.manuzio article {
+  padding: 10% 20% 10% 20%;
+  background: url("/background.708683ce.jpg") no-repeat 50% fixed/cover;
+  box-sizing: border-box;
+  font-family: "Fanwood Text", serif;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #222;
+  font-size: 1.3rem;
+  text-align: justify;
+  letter-spacing: 0.1rem;
+}
+.reader.manuzio article section {
+  padding: 5% 0;
+}
+.reader.manuzio article a:-webkit-any-link {
+  color: #777;
+}
+.reader.manuzio article p {
+  padding: 0.2rem 0;
+}
+.reader.manuzio article figure {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.reader.manuzio article figure figcaption {
+  font-style: normal;
+  font-size: smaller;
+}
+.reader.manuzio article figure img {
+  height: auto;
+  width: 80%;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-align: center;
+  -webkit-filter: grayscale(100%) sepia(0.2) contrast(100%);
+  filter: grayscale(100%) sepia(0.2) contrast(100%);
+  border-width: 0.3rem;
+  border-style: double;
+}
+.reader.manuzio article figure img:hover {
+  -webkit-filter: none;
+}
+.reader.manuzio article figure img:first-of-type {
+  margin-bottom: 1rem;
+}
+.reader.manuzio article table {
+  table-layout: fixed;
+  width: 100%;
+  border-width: 0.3rem;
+  border-style: double;
+  padding: 0.2rem;
+  border-collapse: collapse;
+  text-align: left;
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
+.reader.manuzio article th {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  border: 0.1rem solid #222;
+  padding: 0.2rem;
+  font-style: normal;
+}
+.reader.manuzio article td {
+  padding: 0.2rem;
+  border: 0.1rem solid #222;
+}
+.reader.manuzio article h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.3rem;
+  padding: 2rem 0;
+  font-style: normal;
+}
+.reader.manuzio article h2 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 1rem 0;
+  font-style: normal;
+}
+.reader.manuzio article h3 {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1rem 0;
+  font-style: normal;
+}
+.reader.manuzio article main h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.3rem;
+  padding: 2rem 0;
+  font-style: normal;
+}
+.reader.manuzio article main h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 2rem 0;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  font-style: normal;
+}
+.reader.manuzio article main h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1rem 0;
+  text-align: center;
+  font-style: normal;
+}
+.reader.manuzio article main p:first-of-type:first-letter {
+  float: left;
+  color: #222;
+  font-size: 13rem;
+  line-height: 10rem;
+  text-align: left;
+  padding: 0.2rem;
+  font-family: "roycroft_initialsregular";
+  font-style: normal;
+}
+.reader.manuzio article header {
+  text-align: center;
+}
+.reader.manuzio article footer {
+  text-align: center;
+}
+.reader.manuzio .left article, .reader.manuzio .right article {
+  padding: 4%;
+}
+
+.reader.rimpa article {
+  padding: 10% 20% 10% 20%;
+  background: url("/background.273bbb38.jpg") no-repeat 50% fixed/cover;
+  box-sizing: border-box;
+  font-family: "japanese", serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #210102;
+  font-size: 1.3rem;
+  text-align: justify;
+}
+.reader.rimpa article a:-webkit-any-link {
+  color: #777;
+}
+.reader.rimpa article p {
+  padding: 0.5rem 0;
+}
+.reader.rimpa article figure {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.reader.rimpa article figure figcaption {
+  font-style: italic;
+  font-size: smaller;
+}
+.reader.rimpa article figure img {
+  height: auto;
+  width: 80%;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-align: center;
+}
+.reader.rimpa article figure:hover {
+  -webkit-filter: none;
+}
+.reader.rimpa article figure:first-of-type {
+  margin-bottom: 1rem;
+}
+.reader.rimpa article table {
+  table-layout: fixed;
+  width: 100%;
+  border-width: 0.3rem;
+  padding: 0.2rem;
+  border-collapse: collapse;
+}
+.reader.rimpa article th {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  border: 0.1rem solid #210102;
+  padding: 0.2rem;
+  font-style: normal;
+}
+.reader.rimpa article td {
+  padding: 0.2rem;
+  border: 0.1rem solid #210102;
+}
+.reader.rimpa article p,
+.reader.rimpa article h1,
+.reader.rimpa article h2,
+.reader.rimpa article h3,
+.reader.rimpa article h4 {
+  background: -webkit-linear-gradient(left, #210102, #7b562a);
+  background: -o-linear-gradient(right, #210102, #7b562a);
+  background: -moz-linear-gradient(right, #210102, #7b562a);
+  background: linear-gradient(to right, #210102, #7b562a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.reader.rimpa article h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.3rem;
+  padding: 2rem 0;
+  font-style: normal;
+}
+.reader.rimpa article h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 1rem 0;
+  font-style: normal;
+}
+.reader.rimpa article h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1rem 0;
+  font-style: normal;
+}
+.reader.rimpa article main h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.3rem;
+  padding: 2rem 0;
+  font-style: normal;
+}
+.reader.rimpa article main h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 2rem 0;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  font-style: normal;
+}
+.reader.rimpa article main h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1rem 0;
+  text-align: center;
+  font-style: normal;
+}
+.reader.rimpa article header {
+  text-align: center;
+}
+.reader.rimpa article footer {
+  text-align: center;
+}
+
 body {
   font-family: "GTAmericaMono-Regular";
 }
@@ -974,9 +1266,9 @@ body {
     clip-path: polygon(75% 0, 0 69%, 100% 100%);
     background-position: bottom;
   }
-  .container footer {
+  .container .footerRights {
     grid-column: span 2;
-    padding: 30px;
+    padding: 20px;
     background-color: #222222;
     color: #f4f1d0;
     font-size: 0.8rem;
@@ -1340,7 +1632,7 @@ body {
     clip-path: polygon(75% 0, 0 69%, 100% 100%);
     background-position: bottom;
   }
-  .container footer {
+  .container .footerRights {
     grid-column: span 2;
     padding: 30px;
     background-color: #222222;
@@ -1653,7 +1945,7 @@ body {
   .placeholder > li:nth-of-type(1) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -1661,7 +1953,7 @@ body {
   .placeholder > li:nth-of-type(2) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -1669,7 +1961,7 @@ body {
   .placeholder > li:nth-of-type(3) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -1677,7 +1969,7 @@ body {
   .placeholder > li:nth-of-type(4) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -1685,7 +1977,7 @@ body {
   .placeholder > li:nth-of-type(5) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -1693,7 +1985,7 @@ body {
   .placeholder > li:nth-of-type(6) {
     margin-bottom: 0rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -1873,7 +2165,7 @@ body {
     perspective: 1000px;
   }
 
-  footer {
+  .footerRights {
     grid-column: span 2;
     padding: 30px;
     background-color: #222222;
@@ -2187,7 +2479,7 @@ body {
   .placeholder > li:nth-of-type(1) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -2195,7 +2487,7 @@ body {
   .placeholder > li:nth-of-type(2) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -2203,7 +2495,7 @@ body {
   .placeholder > li:nth-of-type(3) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -2211,7 +2503,7 @@ body {
   .placeholder > li:nth-of-type(4) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -2219,7 +2511,7 @@ body {
   .placeholder > li:nth-of-type(5) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -2227,7 +2519,7 @@ body {
   .placeholder > li:nth-of-type(6) {
     margin-bottom: 0rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -2302,8 +2594,7 @@ body {
   }
 
   /* end drawer script */
-  .style-selector-first {
-    grid-row: 1;
+  .opened-doc-list.doc-sel {
     position: relative;
     background-repeat: no-repeat;
     background-size: contain;
@@ -2407,7 +2698,7 @@ body {
     perspective: 1000px;
   }
 
-  footer {
+  .footerRights {
     grid-column: span 2;
     padding: 30px;
     background-color: #222222;
@@ -2416,6 +2707,10 @@ body {
     text-align: center;
     line-height: 0.1em;
     letter-spacing: 0.1em;
+  }
+
+  .footerArticleLink {
+    padding: 10px;
   }
 }
 @media (min-width: 1200px) {
@@ -2711,7 +3006,7 @@ body {
   .placeholder > li:nth-of-type(1) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -2719,7 +3014,7 @@ body {
   .placeholder > li:nth-of-type(2) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -2727,7 +3022,7 @@ body {
   .placeholder > li:nth-of-type(3) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -2735,7 +3030,7 @@ body {
   .placeholder > li:nth-of-type(4) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -2743,7 +3038,7 @@ body {
   .placeholder > li:nth-of-type(5) {
     margin-bottom: 1rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -2751,7 +3046,7 @@ body {
   .placeholder > li:nth-of-type(6) {
     margin-bottom: 0rem;
     padding: 0.82rem 0;
-    background: linear-gradient(to right, #c33149 50%, #DFE575 50%);
+    background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
     background-size: 300% 200%;
     background-position: right bottom;
   }
@@ -2931,7 +3226,7 @@ body {
     perspective: 1000px;
   }
 
-  footer {
+  .footerRights {
     grid-column: span 2;
     padding: 30px;
     background-color: #222222;
@@ -2942,7 +3237,7 @@ body {
     letter-spacing: 0.1em;
   }
 }
-main {
+.mainHome {
   color: #222222;
   background-color: #f4f1d0;
   flex: 1;
@@ -2957,7 +3252,7 @@ main {
   grid-template-columns: 1fr 1fr;
 }
 
-.tutorial {
+.tutorialPageSection {
   padding: 20px;
 }
 
@@ -2985,46 +3280,55 @@ h1 {
   display: inline-block;
 }
 
-.disclaimerPageSection, .aboutPageSection {
+.disclaimerPageSection,
+.aboutPageSection {
   font-size: 1.2rem;
   padding: 3% 10% 3% 4%;
 }
-.disclaimerPageSection p, .aboutPageSection p {
+.disclaimerPageSection p,
+.aboutPageSection p {
   padding: 0.5rem 0;
 }
-.disclaimerPageSection ul, .aboutPageSection ul {
+.disclaimerPageSection ul,
+.aboutPageSection ul {
   padding: 1rem 0 1rem 2rem;
 }
-.disclaimerPageSection h1, .aboutPageSection h1 {
+.disclaimerPageSection h1,
+.aboutPageSection h1 {
   font-family: "TRY Vesterbro";
   padding: 0;
   font-size: 2.5rem;
   color: #d29129;
   margin-bottom: 0.5rem;
 }
-.disclaimerPageSection h2, .aboutPageSection h2 {
+.disclaimerPageSection h2,
+.aboutPageSection h2 {
   padding: 1rem 0 0 0;
   font-size: 1.5rem;
   font-family: "GTSectraFine";
   color: #629488;
 }
-.disclaimerPageSection a, .aboutPageSection a {
+.disclaimerPageSection a,
+.aboutPageSection a {
   color: #286278;
 }
-.disclaimerPageSection .bio, .aboutPageSection .bio {
+.disclaimerPageSection .bio,
+.aboutPageSection .bio {
   width: 100%;
   height: 50%;
   vertical-align: middle;
   display: table;
   padding: 1rem 0 1rem 0;
 }
-.disclaimerPageSection .bioPic, .aboutPageSection .bioPic {
+.disclaimerPageSection .bioPic,
+.aboutPageSection .bioPic {
   width: 100%;
   display: table-cell;
   vertical-align: middle;
   padding: 1rem 0 0 0;
 }
-.disclaimerPageSection .bioText, .aboutPageSection .bioText {
+.disclaimerPageSection .bioText,
+.aboutPageSection .bioText {
   font-size: 1rem;
   width: 90%;
   display: table-cell;
@@ -3038,7 +3342,6 @@ h1 {
   pointer-events: none;
 }
 
-<<<<<<< Updated upstream
 .changeTheme {
   text-align: center;
   position: relative;
@@ -3090,34 +3393,35 @@ h1 {
   padding-top: 25px;
   height: 100px;
   width: 240px;
-=======
-.tutorial {
+}
+
+.tutorialPageSection {
   position: absolute;
   background: rgba(244, 241, 208, 0);
   font-size: 1.2rem;
   padding: 3% 10% 3% 4%;
 }
-.tutorial p {
+.tutorialPageSection p {
   padding: 0.5rem 0;
 }
-.tutorial ul {
+.tutorialPageSection ul {
   padding: 1rem 0 1rem 2rem;
 }
-.tutorial li {
+.tutorialPageSection li {
   margin-left: -1rem;
 }
-.tutorial h1 {
+.tutorialPageSection h1 {
   padding: 0;
   font-size: 2.5rem;
-  color: #9D5D82;
+  color: #9d5d82;
   margin-bottom: 0.5rem;
 }
-.tutorial em {
+.tutorialPageSection em {
   font-size: 1.25rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
 }
-.tutorial__arrow1 {
+.tutorialPageSection .arrow1 {
   position: absolute;
   background-image: url(/arrow2.bc7c6268.png);
   background-size: 30vh 47vh;
@@ -3129,7 +3433,7 @@ h1 {
   opacity: 0.85;
   animation: moveInBottom2 0.6s ease-in 0.1s;
 }
-.tutorial__arrow2 {
+.tutorialPageSection .arrow2 {
   position: absolute;
   background-image: url(/arrow3.384b5b70.png);
   background-size: 27vh 17vh;
@@ -3140,7 +3444,6 @@ h1 {
   margin-left: -9.7rem;
   transform: rotate(40deg);
   animation: moveInTop 0.6s ease-in 0.1s;
->>>>>>> Stashed changes
 }
 
 /*# sourceMappingURL=/style.97fcb138.css.map */

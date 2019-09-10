@@ -5,7 +5,7 @@ async function addSpecialArticle(leftArticleUrl, rightArticleUrl) {
     var rightArticle = await parseArticle(rightArticleUrl) 
 
     //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
-    const elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .documentationPageSection, .disclaimerPageSection")
+    const elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection")
     elementsToDelete.forEach(node => {
         node.classList.add("hidden");
     }) 
@@ -16,10 +16,11 @@ async function addSpecialArticle(leftArticleUrl, rightArticleUrl) {
     document.querySelector(".reader").innerHTML = ""
     document.querySelector(".changeTheme").classList.add("hidden")
 
-    // change class to reader to avoid problems since we will create other readers
-    var reader = document.querySelector(".reader")
-    reader.classList.add("grid-container")
-    reader.classList.remove("reader")
+    // create a container for the articles
+    var gridContainer = document.createElement("section")
+    gridContainer.className = "grid-container"
+    var locationGridContainer = document.querySelector(".reader")
+    locationGridContainer.insertAdjacentElement("afterbegin", gridContainer)
 
     //create 2 containers for the documents
     var rightReader = document.createElement("section");
@@ -41,6 +42,14 @@ async function addSpecialArticle(leftArticleUrl, rightArticleUrl) {
         rightContainer.appendChild(node)
     })
 
+    // get style class from previously executed function
+
+    const styleClass = (document.querySelector(".grid-container").classList)[0]
+    console.log(styleClass)
+    document.querySelector("reader left").classList.add(styleClass)
+
+    
+    
 }
 
 //add articles to dom
@@ -48,7 +57,7 @@ async function addArticle(articleUrl){
     var article = await parseArticle(articleUrl)
     
     //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
-    const elementsToDelete = document.querySelectorAll(".jumbo, .tutorial, .aboutPageSection, .documentationPageSection, .disclaimerPageSection")
+    const elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection")
     elementsToDelete.forEach(node => {
         node.classList.add("hidden");
     }) 
