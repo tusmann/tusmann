@@ -51,10 +51,6 @@ const styles = [
     icon: ""
   },
   {
-    name: "fourth",
-    icon: ""
-  },
-  {
     name: "fifth",
     icon: ""
   },
