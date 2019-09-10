@@ -957,34 +957,34 @@ body {
   }
 
   .leftright {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: rgb(195, 49, 73);
-    border-radius: 0.2rem;
+    background-color: $primary-heading-color;
+    border-radius: 0rem;
     transform: rotate(45deg);
     transition: all 0.3s ease-in;
   }
 
   .rightleft {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: rgb(195, 49, 73);
-    border-radius: 0.2rem;
+    background-color: $primary-heading-color;
+    border-radius: 0rem;
     transform: rotate(-45deg);
     transition: all 0.3s ease-in;
   }
 
   .close-container:hover .leftright {
     transform: rotate(-45deg);
-    background-color: rgb(33, 19, 228);
+    background-color: #a18cd1;
   }
   .close-container:hover .rightleft {
     transform: rotate(45deg);
-    background-color: rgb(33, 19, 228);
+    background-color: #a18cd1;
   }
   .close-container:hover label {
     opacity: 1;
@@ -1328,34 +1328,34 @@ body {
   }
 
   .leftright {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: rgb(195, 49, 73);
-    border-radius: 0.2rem;
+    background-color: $primary-heading-color;
+    border-radius: 0rem;
     transform: rotate(45deg);
     transition: all 0.3s ease-in;
   }
 
   .rightleft {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: rgb(195, 49, 73);
-    border-radius: 0.2rem;
+    background-color: $primary-heading-color;
+    border-radius: 0rem;
     transform: rotate(-45deg);
     transition: all 0.3s ease-in;
   }
 
   .close-container:hover .leftright {
     transform: rotate(-45deg);
-    background-color: rgb(33, 19, 228);
+    background-color: #a18cd1;
   }
   .close-container:hover .rightleft {
     transform: rotate(45deg);
-    background-color: rgb(33, 19, 228);
+    background-color: #a18cd1;
   }
   .close-container:hover label {
     opacity: 1;
@@ -1702,39 +1702,40 @@ body {
     position: absolute;
     width: 2rem;
     height: 2rem;
-    margin-top: 0rem;
+    margin-top: -.8rem;
+    margin-right: -1rem;
     cursor: pointer;
   }
 
   .leftright {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: rgb(195, 49, 73);
-    border-radius: 0.2rem;
+    background-color: $primary-heading-color;
+    border-radius: 0rem;
     transform: rotate(45deg);
     transition: all 0.3s ease-in;
   }
 
   .rightleft {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: rgb(195, 49, 73);
-    border-radius: 0.2rem;
+    background-color: $primary-heading-color;
+    border-radius: 0rem;
     transform: rotate(-45deg);
     transition: all 0.3s ease-in;
   }
 
   .close-container:hover .leftright {
     transform: rotate(-45deg);
-    background-color: rgb(33, 19, 228);
+    background-color: #a18cd1;
   }
   .close-container:hover .rightleft {
     transform: rotate(45deg);
-    background-color: rgb(33, 19, 228);
+    background-color: #a18cd1;
   }
   .close-container:hover label {
     opacity: 1;
@@ -1980,16 +1981,17 @@ h1 {
     margin-left: -1rem;
   }
   h1 {
+    font-family: $font-poster;
     padding: 0;
     font-size: 2.5rem;
-    color: #9d5d82;
+    color: $primary-heading-color;
     margin-bottom: 0.5rem;
   }
   em {
     font-size: 1.25rem;
     font-weight: bold;
     letter-spacing: 0.1rem;
-  }
+  }/*
   .arrow1 {
     position: absolute;
     background-image: url(images/arrow2.png);
@@ -2013,5 +2015,5 @@ h1 {
     margin-left: -9.7rem;
     transform: rotate(40deg);
     animation: moveInTop 0.6s ease-in 0.1s;
-  }
+  }*/
 }
