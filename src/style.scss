@@ -26,6 +26,9 @@ $secondary-heading-color: #629488;
 //#A8D0E6
 $red-color: #c33149;
 
+$footer-height: 8vh;
+$footerLink-height: 5vh;
+
 body {
   font-family: $font-mono-gt;
 }
@@ -337,16 +340,6 @@ body {
       }
     }
 
-    .footerRights {
-      grid-column: span 2;
-      padding: 20px;
-      background-color: $primary-color;
-      color: $secondary-color;
-      font-size: 0.8rem;
-      text-align: center;
-      line-height: 1.2rem;
-      //letter-spacing: .1em;
-    }
   }
 }
 
@@ -658,16 +651,7 @@ body {
       }
     }
 
-    .footerRights {
-      grid-column: span 2;
-      padding: 30px;
-      background-color: $primary-color;
-      color: $secondary-color;
-      font-size: 0.9rem;
-      text-align: center;
-      line-height: 0.1rem;
-      //letter-spacing: .1em;
-    }
+
   }
 }
 
@@ -957,34 +941,34 @@ body {
   }
 
   .leftright {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: rgb(195, 49, 73);
-    border-radius: 0.2rem;
+    background-color: $primary-heading-color;
+    border-radius: 0rem;
     transform: rotate(45deg);
     transition: all 0.3s ease-in;
   }
 
   .rightleft {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: rgb(195, 49, 73);
-    border-radius: 0.2rem;
+    background-color: $primary-heading-color;
+    border-radius: 0rem;
     transform: rotate(-45deg);
     transition: all 0.3s ease-in;
   }
 
   .close-container:hover .leftright {
     transform: rotate(-45deg);
-    background-color: rgb(33, 19, 228);
+    background-color: #a18cd1;
   }
   .close-container:hover .rightleft {
     transform: rotate(45deg);
-    background-color: rgb(33, 19, 228);
+    background-color: #a18cd1;
   }
   .close-container:hover label {
     opacity: 1;
@@ -1031,16 +1015,7 @@ body {
   }
   /* end drawer script */
 
-  .footerRights {
-    grid-column: span 2;
-    padding: 30px;
-    background-color: $primary-color;
-    color: $secondary-color;
-    font-size: 1em;
-    text-align: center;
-    line-height: 0.1em;
-    letter-spacing: 0.1em;
-  }
+
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -1328,34 +1303,34 @@ body {
   }
 
   .leftright {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: rgb(195, 49, 73);
-    border-radius: 0.2rem;
+    background-color: $primary-heading-color;
+    border-radius: 0rem;
     transform: rotate(45deg);
     transition: all 0.3s ease-in;
   }
 
   .rightleft {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: rgb(195, 49, 73);
-    border-radius: 0.2rem;
+    background-color: $primary-heading-color;
+    border-radius: 0rem;
     transform: rotate(-45deg);
     transition: all 0.3s ease-in;
   }
 
   .close-container:hover .leftright {
     transform: rotate(-45deg);
-    background-color: rgb(33, 19, 228);
+    background-color: #a18cd1;
   }
   .close-container:hover .rightleft {
     transform: rotate(45deg);
-    background-color: rgb(33, 19, 228);
+    background-color: #a18cd1;
   }
   .close-container:hover label {
     opacity: 1;
@@ -1412,19 +1387,7 @@ body {
     left: 0rem;
   }
 
-  .footerRights {
-    grid-column: span 2;
-    padding: 30px;
-    background-color: $primary-color;
-    color: $secondary-color;
-    font-size: 1em;
-    text-align: center;
-    line-height: 0.1em;
-    letter-spacing: 0.1em;
-  }
-  .footerArticleLink {
-    padding: 10px;
-  }
+  
 }
 
 @media (min-width: 1200px) {
@@ -1702,39 +1665,40 @@ body {
     position: absolute;
     width: 2rem;
     height: 2rem;
-    margin-top: 0rem;
+    margin-top: -.8rem;
+    margin-right: -1rem;
     cursor: pointer;
   }
 
   .leftright {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: rgb(195, 49, 73);
-    border-radius: 0.2rem;
+    background-color: $primary-heading-color;
+    border-radius: 0rem;
     transform: rotate(45deg);
     transition: all 0.3s ease-in;
   }
 
   .rightleft {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: rgb(195, 49, 73);
-    border-radius: 0.2rem;
+    background-color: $primary-heading-color;
+    border-radius: 0rem;
     transform: rotate(-45deg);
     transition: all 0.3s ease-in;
   }
 
   .close-container:hover .leftright {
     transform: rotate(-45deg);
-    background-color: rgb(33, 19, 228);
+    background-color: #a18cd1;
   }
   .close-container:hover .rightleft {
     transform: rotate(45deg);
-    background-color: rgb(33, 19, 228);
+    background-color: #a18cd1;
   }
   .close-container:hover label {
     opacity: 1;
@@ -1771,19 +1735,10 @@ body {
   }
   /* end drawer script */
 
-  .footerRights {
-    grid-column: span 2;
-    padding: 30px;
-    background-color: $primary-color;
-    color: $secondary-color;
-    font-size: 1em;
-    text-align: center;
-    line-height: 0.1em;
-    letter-spacing: 0.1em;
-  }
+  
 }
 
-//
+// OUT OF MEDIA QUERIES
 
 .mainHome {
   color: $primary-color;
@@ -1797,6 +1752,8 @@ body {
 
 .footerArticleLink {
   grid-column: span 2;
+  height: $footerLink-height;
+  padding: 0px;
   background-color: $primary-color;
   color: $secondary-color;
   text-align: center;
@@ -1808,12 +1765,14 @@ body {
 
 .footerRights {
   grid-column: span 2;
+  height: $footer-height;
   padding: 20px;
   background-color: $primary-color;
   color: $secondary-color;
   font-size: 1rem;
   text-align: center;
   line-height: 1.2rem;
+  letter-spacing: .1em;
 }
 
 
@@ -1914,9 +1873,9 @@ h1 {
   position: relative;
   padding-top: 32vh;
   padding-left: 37vw;
-  height: 82.4vh;
+  height: 82.9vh;
   background: linear-gradient(270deg, #a0faf8, #e482e3);
-  background-size: 200% 200%;
+  background-size: 100%;
 
   -webkit-animation: alertBox 10s ease infinite;
   -moz-animation: alertBox 10s ease infinite;
@@ -1980,16 +1939,17 @@ h1 {
     margin-left: -1rem;
   }
   h1 {
+    font-family: $font-poster;
     padding: 0;
     font-size: 2.5rem;
-    color: #9d5d82;
+    color: $primary-heading-color;
     margin-bottom: 0.5rem;
   }
   em {
     font-size: 1.25rem;
     font-weight: bold;
     letter-spacing: 0.1rem;
-  }
+  }/*
   .arrow1 {
     position: absolute;
     background-image: url(images/arrow2.png);
@@ -2013,5 +1973,5 @@ h1 {
     margin-left: -9.7rem;
     transform: rotate(40deg);
     animation: moveInTop 0.6s ease-in 0.1s;
-  }
+  }*/
 }

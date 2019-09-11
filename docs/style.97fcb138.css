@@ -624,8 +624,8 @@ html {
 
 .placeholder > li {
   margin-bottom: 1rem;
-  padding: 0.82rem 0;
-  background: linear-gradient(to right, #c33149 50%, #dfe575 50%);
+  padding: 0.82rem 0.2rem;
+  background: linear-gradient(to right, #d29129 50%, #dfe575 50%);
   background-size: 300% 200%;
   background-position: right bottom;
 }
@@ -734,7 +734,6 @@ html {
   color: #222;
   font-size: 1.3rem;
   text-align: justify;
-  letter-spacing: 0.1rem;
 }
 .reader.manuzio article section {
   padding: 5% 0;
@@ -753,6 +752,7 @@ html {
 .reader.manuzio article figure figcaption {
   font-style: normal;
   font-size: smaller;
+  padding: 1rem;
 }
 .reader.manuzio article figure img {
   height: auto;
@@ -785,7 +785,6 @@ html {
   font-size: 1rem;
 }
 .reader.manuzio article th {
-  font-size: 1rem;
   text-transform: uppercase;
   font-weight: 600;
   text-align: center;
@@ -797,7 +796,7 @@ html {
   padding: 0.2rem;
   border: 0.1rem solid #222;
 }
-.reader.manuzio article h1 {
+.reader.manuzio article h1, .reader.manuzio article h2, .reader.manuzio article h3, .reader.manuzio article h4 {
   font-size: 2.5rem;
   text-transform: uppercase;
   font-weight: 600;
@@ -807,17 +806,18 @@ html {
 }
 .reader.manuzio article h2 {
   font-size: 1.5rem;
-  text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 500;
   padding: 1rem 0;
-  font-style: normal;
 }
 .reader.manuzio article h3 {
   font-size: 1.3rem;
-  text-transform: uppercase;
   font-weight: 500;
   padding: 1rem 0;
-  font-style: normal;
+}
+.reader.manuzio article h4 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding: 1rem 0;
 }
 .reader.manuzio article main h1 {
   font-size: 2.5rem;
@@ -857,10 +857,31 @@ html {
 .reader.manuzio article header {
   text-align: center;
 }
+.reader.manuzio article header h1:after {
+  content: "";
+  display: inline-block;
+  background-image: url(/manuzio-logo.cf800171.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 90%;
+  width: 100%;
+  padding-top: 70%;
+}
+.reader.manuzio article header:after {
+  content: "";
+  display: inline-block;
+  background-image: url(/decoration.d65c04ac.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  width: 100%;
+  padding-top: 30%;
+}
 .reader.manuzio article footer {
   text-align: center;
 }
-.reader.manuzio .left article, .reader.manuzio .right article {
+.reader.manuzio .left article,
+.reader.manuzio .right article {
   padding: 4%;
 }
 
@@ -889,6 +910,7 @@ html {
 .reader.rimpa article figure figcaption {
   font-style: italic;
   font-size: smaller;
+  padding: 1rem;
 }
 .reader.rimpa article figure img {
   height: auto;
@@ -937,7 +959,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.reader.rimpa article h1 {
+.reader.rimpa article h1, .reader.rimpa article h2, .reader.rimpa article h3, .reader.rimpa article h4 {
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: 600;
@@ -946,20 +968,21 @@ html {
   font-style: normal;
 }
 .reader.rimpa article h2 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-weight: 400;
+  font-size: 2.5rem;
+  font-weight: 500;
   padding: 1rem 0;
-  font-style: normal;
 }
 .reader.rimpa article h3 {
   font-size: 2rem;
-  text-transform: uppercase;
   font-weight: 500;
   padding: 1rem 0;
-  font-style: normal;
 }
-.reader.rimpa article main h1 {
+.reader.rimpa article h4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 1rem 0;
+}
+.reader.rimpa article main h1, .reader.rimpa article main h2, .reader.rimpa article main h3, .reader.rimpa article main h4 {
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: 600;
@@ -969,20 +992,18 @@ html {
 }
 .reader.rimpa article main h2 {
   font-size: 2.5rem;
-  text-transform: uppercase;
   font-weight: 500;
-  padding: 2rem 0;
-  text-align: center;
   letter-spacing: 0.2rem;
-  font-style: normal;
 }
 .reader.rimpa article main h3 {
   font-size: 2rem;
-  text-transform: uppercase;
   font-weight: 500;
   padding: 1rem 0;
-  text-align: center;
-  font-style: normal;
+}
+.reader.rimpa article main h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem 0;
 }
 .reader.rimpa article header {
   text-align: center;
@@ -1441,15 +1462,6 @@ body {
     clip-path: polygon(75% 0, 0 69%, 100% 100%);
     background-position: bottom;
   }
-  .container .footerRights {
-    grid-column: span 2;
-    padding: 20px;
-    background-color: #222222;
-    color: #f4f1d0;
-    font-size: 0.8rem;
-    text-align: center;
-    line-height: 1.2rem;
-  }
 }
 @media (min-width: 480px) and (max-width: 768px) {
   .container {
@@ -1714,15 +1726,6 @@ body {
     clip-path: polygon(75% 0, 0 69%, 100% 100%);
     background-position: bottom;
   }
-  .container .footerRights {
-    grid-column: span 2;
-    padding: 30px;
-    background-color: #222222;
-    color: #f4f1d0;
-    font-size: 0.9rem;
-    text-align: center;
-    line-height: 0.1rem;
-  }
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .container {
@@ -1972,35 +1975,35 @@ body {
   }
 
   .leftright {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: #c33149;
-    border-radius: 0.2rem;
+    background-color: #d29129;
+    border-radius: 0rem;
     transform: rotate(45deg);
     transition: all 0.3s ease-in;
   }
 
   .rightleft {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: #c33149;
-    border-radius: 0.2rem;
+    background-color: #d29129;
+    border-radius: 0rem;
     transform: rotate(-45deg);
     transition: all 0.3s ease-in;
   }
 
   .close-container:hover .leftright {
     transform: rotate(-45deg);
-    background-color: #2113e4;
+    background-color: #a18cd1;
   }
 
   .close-container:hover .rightleft {
     transform: rotate(45deg);
-    background-color: #2113e4;
+    background-color: #a18cd1;
   }
 
   .close-container:hover label {
@@ -2048,16 +2051,6 @@ body {
   }
 
   /* end drawer script */
-  .footerRights {
-    grid-column: span 2;
-    padding: 30px;
-    background-color: #222222;
-    color: #f4f1d0;
-    font-size: 1em;
-    text-align: center;
-    line-height: 0.1em;
-    letter-spacing: 0.1em;
-  }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   .container {
@@ -2307,35 +2300,35 @@ body {
   }
 
   .leftright {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: #c33149;
-    border-radius: 0.2rem;
+    background-color: #d29129;
+    border-radius: 0rem;
     transform: rotate(45deg);
     transition: all 0.3s ease-in;
   }
 
   .rightleft {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: #c33149;
-    border-radius: 0.2rem;
+    background-color: #d29129;
+    border-radius: 0rem;
     transform: rotate(-45deg);
     transition: all 0.3s ease-in;
   }
 
   .close-container:hover .leftright {
     transform: rotate(-45deg);
-    background-color: #2113e4;
+    background-color: #a18cd1;
   }
 
   .close-container:hover .rightleft {
     transform: rotate(45deg);
-    background-color: #2113e4;
+    background-color: #a18cd1;
   }
 
   .close-container:hover label {
@@ -2390,21 +2383,6 @@ body {
     height: 8vh;
     width: 8vh;
     left: 0rem;
-  }
-
-  .footerRights {
-    grid-column: span 2;
-    padding: 30px;
-    background-color: #222222;
-    color: #f4f1d0;
-    font-size: 1em;
-    text-align: center;
-    line-height: 0.1em;
-    letter-spacing: 0.1em;
-  }
-
-  .footerArticleLink {
-    padding: 10px;
   }
 }
 @media (min-width: 1200px) {
@@ -2650,40 +2628,41 @@ body {
     position: absolute;
     width: 2rem;
     height: 2rem;
-    margin-top: 0rem;
+    margin-top: -0.8rem;
+    margin-right: -1rem;
     cursor: pointer;
   }
 
   .leftright {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: #c33149;
-    border-radius: 0.2rem;
+    background-color: #d29129;
+    border-radius: 0rem;
     transform: rotate(45deg);
     transition: all 0.3s ease-in;
   }
 
   .rightleft {
-    height: 0.4rem;
+    height: 0.25rem;
     width: 2.5rem;
     position: absolute;
     margin-top: 2.4rem;
-    background-color: #c33149;
-    border-radius: 0.2rem;
+    background-color: #d29129;
+    border-radius: 0rem;
     transform: rotate(-45deg);
     transition: all 0.3s ease-in;
   }
 
   .close-container:hover .leftright {
     transform: rotate(-45deg);
-    background-color: #2113e4;
+    background-color: #a18cd1;
   }
 
   .close-container:hover .rightleft {
     transform: rotate(45deg);
-    background-color: #2113e4;
+    background-color: #a18cd1;
   }
 
   .close-container:hover label {
@@ -2721,16 +2700,6 @@ body {
   }
 
   /* end drawer script */
-  .footerRights {
-    grid-column: span 2;
-    padding: 30px;
-    background-color: #222222;
-    color: #f4f1d0;
-    font-size: 1em;
-    text-align: center;
-    line-height: 0.1em;
-    letter-spacing: 0.1em;
-  }
 }
 .mainHome {
   color: #222222;
@@ -2744,6 +2713,8 @@ body {
 
 .footerArticleLink {
   grid-column: span 2;
+  height: 5vh;
+  padding: 0px;
   background-color: #222222;
   color: #f4f1d0;
   text-align: center;
@@ -2755,12 +2726,14 @@ body {
 
 .footerRights {
   grid-column: span 2;
+  height: 8vh;
   padding: 20px;
   background-color: #222222;
   color: #f4f1d0;
   font-size: 1rem;
   text-align: center;
   line-height: 1.2rem;
+  letter-spacing: 0.1em;
 }
 
 .grid-container {
@@ -2863,9 +2836,9 @@ h1 {
   position: relative;
   padding-top: 32vh;
   padding-left: 37vw;
-  height: 82.4vh;
+  height: 82.9vh;
   background: linear-gradient(270deg, #a0faf8, #e482e3);
-  background-size: 200% 200%;
+  background-size: 100%;
   -webkit-animation: alertBox 10s ease infinite;
   -moz-animation: alertBox 10s ease infinite;
   animation: alertBox 10s ease infinite;
@@ -2916,6 +2889,31 @@ h1 {
   background: rgba(244, 241, 208, 0);
   font-size: 1.2rem;
   padding: 3% 10% 3% 4%;
+  /*
+  .arrow1 {
+    position: absolute;
+    background-image: url(images/arrow2.png);
+    background-size: 30vh 47vh;
+    background-repeat: no-repeat;
+    height: 47vh;
+    width: 30vh;
+    margin-top: -31rem;
+    margin-left: 63rem;
+    opacity: 0.85;
+    animation: moveInBottom2 0.6s ease-in 0.1s;
+  }
+  .arrow2 {
+    position: absolute;
+    background-image: url(images/arrow3.png);
+    background-size: 27vh 17vh;
+    background-repeat: no-repeat;
+    height: 30vh;
+    width: 40vh;
+    margin-top: -13rem;
+    margin-left: -9.7rem;
+    transform: rotate(40deg);
+    animation: moveInTop 0.6s ease-in 0.1s;
+  }*/
 }
 .tutorialPageSection p {
   padding: 0.5rem 0;
@@ -2927,39 +2925,16 @@ h1 {
   margin-left: -1rem;
 }
 .tutorialPageSection h1 {
+  font-family: "TRY Vesterbro";
   padding: 0;
   font-size: 2.5rem;
-  color: #9d5d82;
+  color: #d29129;
   margin-bottom: 0.5rem;
 }
 .tutorialPageSection em {
   font-size: 1.25rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
-}
-.tutorialPageSection .arrow1 {
-  position: absolute;
-  background-image: url(/arrow2.bc7c6268.png);
-  background-size: 30vh 47vh;
-  background-repeat: no-repeat;
-  height: 47vh;
-  width: 30vh;
-  margin-top: -31rem;
-  margin-left: 63rem;
-  opacity: 0.85;
-  animation: moveInBottom2 0.6s ease-in 0.1s;
-}
-.tutorialPageSection .arrow2 {
-  position: absolute;
-  background-image: url(/arrow3.384b5b70.png);
-  background-size: 27vh 17vh;
-  background-repeat: no-repeat;
-  height: 30vh;
-  width: 40vh;
-  margin-top: -13rem;
-  margin-left: -9.7rem;
-  transform: rotate(40deg);
-  animation: moveInTop 0.6s ease-in 0.1s;
 }
 
 /*# sourceMappingURL=/style.97fcb138.css.map */

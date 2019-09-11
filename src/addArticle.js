@@ -40,15 +40,7 @@ async function addSpecialArticle(leftArticleUrl, rightArticleUrl) {
     const rightNodes = Array.from(rightArticle.body.childNodes)
     rightNodes.forEach(node => {
         rightContainer.appendChild(node)
-    })
-
-    // get style class from previously executed function
-
-    const styleClass = (document.querySelector(".grid-container").classList)[0]
-    console.log(styleClass)
-    document.querySelector("reader left").classList.add(styleClass)
-
-    
+    })  
     
 }
 

@@ -87,6 +87,9 @@ function stylesSidebarSelection() {
       //PULITURA READER
       document.querySelector(".reader").innerHTML = "";
       document.querySelector(".changeTheme").classList.remove("hidden");
+      document.querySelector(".footerRights").classList.remove("hidden");
+  document.querySelector(".footerArticleLink").classList.add("hidden");
+
       document.querySelector(".jumbo").classList.add("hidden");
     });
   });
@@ -154,6 +157,8 @@ closeDocMenu.forEach(node => {
 
 //add about page
 document.querySelector(".aboutPageButton").onclick = function() {
+  document.querySelector(".footerRights").classList.remove("hidden");
+  document.querySelector(".footerArticleLink").classList.add("hidden");
   document.querySelector(".aboutPageSection").classList.remove("hidden");
   var elementsToDelete = document.querySelectorAll(
     ".jumbo, .tutorialPageSection, .disclaimerPageSection, .reader, .documentationPageSection, .changeTheme"
@@ -165,6 +170,8 @@ document.querySelector(".aboutPageButton").onclick = function() {
 
 //add disclaimer page
 document.querySelector(".disclaimerPageButton").onclick = function() {
+  document.querySelector(".footerRights").classList.remove("hidden");
+  document.querySelector(".footerArticleLink").classList.add("hidden");
   document.querySelector(".disclaimerPageSection").classList.remove("hidden");
   var elementsToDelete = document.querySelectorAll(
     ".jumbo, .tutorialPageSection, .aboutPageSection, .reader, .documentationPageSection, .changeTheme"
@@ -176,6 +183,8 @@ document.querySelector(".disclaimerPageButton").onclick = function() {
 
 //add documentation page
 document.querySelector(".documentationPageButton").onclick = function() {
+  document.querySelector(".footerRights").classList.remove("hidden");
+  document.querySelector(".footerArticleLink").classList.add("hidden");
   document
     .querySelector(".documentationPageSection")
     .classList.remove("hidden");
@@ -189,6 +198,7 @@ document.querySelector(".documentationPageButton").onclick = function() {
 
 //add tutorial page
 document.querySelector(".tutorialPageButton").onclick = function() {
+
   document.querySelector(".tutorialPageSection").classList.remove("hidden");
   var elementsToDelete = document.querySelectorAll(
     ".jumbo, .aboutPageSection, .reader, .disclaimerPageSection, .changeTheme"

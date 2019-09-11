@@ -132,7 +132,6 @@ $font-transito: 'WaddemChooNFW01';
     color: $manuzio-text-color;
     font-size: 1.3rem;
     text-align: justify;
-    letter-spacing: 0.1rem;
 
     section {
       padding: 5% 0;
@@ -152,6 +151,7 @@ $font-transito: 'WaddemChooNFW01';
       figcaption {
         font-style: normal;
         font-size: smaller;
+        padding: 1rem;
       }
       img {
         height: auto;
@@ -187,7 +187,6 @@ $font-transito: 'WaddemChooNFW01';
       font-size: 1rem;
     }
     th {
-      font-size: 1rem;
       text-transform: uppercase;
       font-weight: 600;
       text-align: center;
@@ -199,7 +198,7 @@ $font-transito: 'WaddemChooNFW01';
       padding: 0.2rem;
       border: 0.1rem solid $manuzio-text-color;
     }
-    h1 {
+    h1, h2, h3, h4 {
       font-size: 2.5rem;
       text-transform: uppercase;
       font-weight: 600;
@@ -209,17 +208,18 @@ $font-transito: 'WaddemChooNFW01';
     }
     h2 {
       font-size: 1.5rem;
-      text-transform: uppercase;
-      font-weight: 400;
+      font-weight: 500;
       padding: 1rem 0;
-      font-style: normal;
     }
     h3 {
       font-size: 1.3rem;
-      text-transform: uppercase;
       font-weight: 500;
       padding: 1rem 0;
-      font-style: normal;
+    }
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      padding: 1rem 0;
     }
 
     main {
@@ -250,30 +250,51 @@ $font-transito: 'WaddemChooNFW01';
       }
       p:first-of-type:first-letter {
         float: left;
-    color:$manuzio-first-letter;
-    font-size: 13rem;
-    line-height: 10rem;
-    text-align: left;
-    padding: 0.2rem;
-    font-family: "roycroft_initialsregular";
-    font-style: normal;
+        color: $manuzio-first-letter;
+        font-size: 13rem;
+        line-height: 10rem;
+        text-align: left;
+        padding: 0.2rem;
+        font-family: "roycroft_initialsregular";
+        font-style: normal;
       }
     }
     header {
       text-align: center;
+      h1:after {
+        content: "";
+        display: inline-block;
+        background-image: url(./styles/first/manuzio-logo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 90%;
+        width: 100%;
+        padding-top: 70%;
+    }
+    &:after {
+      content: "";
+        display: inline-block;
+        background-image: url(./styles/first/decoration.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        width: 100%;
+        padding-top: 30%;
+    }
     }
     footer {
       text-align: center;
     }
   }
-  .left, .right{
+  .left,
+  .right {
     article {
       padding: 4%;
     }
-
   }
-      
-    }
+}
+
+//second style
 
 .reader.rimpa {
   article {
@@ -301,6 +322,7 @@ $font-transito: 'WaddemChooNFW01';
       figcaption {
         font-style: italic;
         font-size: smaller;
+        padding: 1rem;
       }
       img {
         height: auto;
@@ -366,7 +388,7 @@ $font-transito: 'WaddemChooNFW01';
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    h1 {
+    h1, h2, h3, h4 {
       font-size: 3rem;
       text-transform: uppercase;
       font-weight: 600;
@@ -375,22 +397,23 @@ $font-transito: 'WaddemChooNFW01';
       font-style: normal;
     }
     h2 {
-      font-size: 2rem;
-      text-transform: uppercase;
-      font-weight: 400;
+      font-size: 2.5rem;
+      font-weight: 500;
       padding: 1rem 0;
-      font-style: normal;
     }
     h3 {
       font-size: 2rem;
-      text-transform: uppercase;
       font-weight: 500;
       padding: 1rem 0;
-      font-style: normal;
+    }
+    h4 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      padding: 1rem 0;
     }
 
     main {
-      h1 {
+      h1, h2, h3, h4 {
         font-size: 3rem;
         text-transform: uppercase;
         font-weight: 600;
@@ -400,20 +423,18 @@ $font-transito: 'WaddemChooNFW01';
       }
       h2 {
         font-size: 2.5rem;
-        text-transform: uppercase;
         font-weight: 500;
-        padding: 2rem 0;
-        text-align: center;
         letter-spacing: 0.2rem;
-        font-style: normal;
       }
       h3 {
         font-size: 2rem;
-        text-transform: uppercase;
         font-weight: 500;
         padding: 1rem 0;
-        text-align: center;
-        font-style: normal;
+      }
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding: 1rem 0;
       }
     }
     header {
@@ -423,7 +444,6 @@ $font-transito: 'WaddemChooNFW01';
       text-align: center;
     }
   }
-  
 }
 
 //
