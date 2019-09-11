@@ -643,6 +643,10 @@ html {
   font-style: normal;
 }
 @font-face {
+  font-family: "japanese";
+  src: url("/ZinHenaKokuryu-RCF.c78880ff.ttf") format("truetype");
+}
+@font-face {
   font-family: "FuturaFuturisBlackC";
   src: url("/FuturaFuturisBlackC.fec8ffe5.woff2") format("woff2"), url("/FuturaFuturisBlackC.f7dfd6a4.woff") format("woff"), url("/FuturaFuturisBlackC.c00f348e.ttf") format("truetype");
   font-weight: 900;
@@ -660,15 +664,57 @@ html {
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: "japanese";
-  src: url("/ZinHenaKokuryu-RCF.c78880ff.ttf") format("truetype");
-}
 @media screen and (max-width: 600px) {
   body {
     font-size: smaller;
   }
 }
+/* 
+
+  @media (max-width: 800px) {
+  article > header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    transform: rotate(0);
+    //padding-top: 5rem;
+    //padding-bottom: 5rem; }
+      h1 {
+      margin-top: -5px; }
+      p:first-of-type {
+      margin-left: 1rem;
+      -ms-flex-item-align: start;
+      align-self: start; } } }
+@media (max-width: 700px) {
+  header .references {
+
+    grid-column: 3 / -1;
+    grid-row: 6; } }
+@media (max-width: 500px) {
+  article > header {
+
+    width: 66vw;
+    grid-template-columns: auto 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: auto auto auto auto; }
+  header h1 {
+    grid-column: 1 / -1; }
+  header h3 {
+    grid-column: 5;
+    grid-row: 2 / 4;
+    margin-right: -5px; }
+  header p {
+    grid-column: 1 / -1;
+    grid-row: 5;
+    margin-left: 0; } } 
+@media (min-width: 1000px) {
+  article > header {
+    padding-bottom: 15rem; } }
+@media (min-width: 1300px) {
+  article > header {
+    padding-bottom: 25rem; } } 
+
+    */
 *,
 *::before,
 *::after {
@@ -953,23 +999,21 @@ html {
   margin: auto;
   padding-top: 1rem;
   padding-bottom: 1rem; } */
-  /* header .red-line {
-    grid-column: 3 / 6;
-    grid-row: 5;
-    border-bottom: 25px solid #f9423a;
-    align-self: start;
-    justify-content: end; 
-  }*/
-  /*  header .references {
-    grid-column: 1 / 3;
-    grid-row: 4 / span 2;
-    font-weight: 700;
-    line-height: 1.2;
-    align-self: end; 
-    border-top: 5px solid rgba(12, 12, 10, 0.8);
-    text-align: left;
-    padding: 2px 0; 
-    border-bottom: 5px solid rgba(12, 12, 10, 0.8); } */
+  /*@media (min-width: 1800px) {
+    article > header {
+    padding-bottom: 30rem; } }*/
+}
+.reader.third .reader.left article main {
+  margin: 2rem 4rem 6rem 2rem;
+  background-color: #f6f3ea;
+  text-align: justify;
+  column-count: 1;
+}
+.reader.third .reader.right article main {
+  margin: 2rem 4rem 6rem 2rem;
+  background-color: #f6f3ea;
+  text-align: justify;
+  column-count: 1;
 }
 .reader.third article {
   background-color: #f6f3ea;
@@ -1053,6 +1097,12 @@ html {
   grid-column: 4/6;
   align-self: start;
 }
+.reader.third article header tr {
+  grid-auto-flow: column;
+}
+.reader.third article header tr td {
+  width: 20px;
+}
 .reader.third article header img {
   width: 80%;
   height: auto;
@@ -1085,10 +1135,30 @@ html {
   border-right: 5px solid rgba(12, 12, 10, 0.8);
 }
 .reader.third article main {
-  padding: 5rem;
-  margin: 4rem 8rem 4rem 4rem;
+  margin: 2rem 4rem 6rem 2rem;
   background-color: #f6f3ea;
   text-align: justify;
+  column-count: 2;
+  column-gap: 4vw;
+}
+.reader.third article main p {
+  font-size: 1rem;
+}
+.reader.third article main figure {
+  width: auto;
+}
+.reader.third article main figure img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-top: 2%;
+  display: block;
+  -webkit-filter: grayscale(100%) contrast(100%);
+  filter: grayscale(100%) contrast(100%);
+}
+.reader.third article main figure figcaption {
+  font-style: "FuturaFuturisBlackC";
+  font-weight: 700;
 }
 .reader.third article h1, .reader.third article h2, .reader.third article h3 {
   margin: 0;
@@ -1100,81 +1170,8 @@ html {
   line-height: 1.2rem;
   border-top: 15px solid #f9423a;
   border-bottom: 15px solid #f9423a;
-}
-@media (max-width: 820px) {
-  .reader.third article > header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin: auto;
-  }
-  .reader.third article > header article > header {
-    /* autoprefixer: off */
-    transform: rotate(0);
-  }
-  .reader.third article > header h1 {
-    margin-top: -5px;
-  }
-  .reader.third article > header p:first-of-type {
-    margin-left: 1rem;
-    -ms-flex-item-align: start;
-    align-self: start;
-  }
-  .reader.third article > header header .red-line {
-    border-bottom: 20px solid #f9423a;
-  }
-}
-@media (max-width: 700px) {
-  .reader.third header .references {
-    /* autoprefixer: off */
-    grid-column: 3/-1;
-    grid-row: 6;
-  }
-}
-@media (max-width: 500px) {
-  .reader.third article > header {
-    /* autoprefixer: off */
-    width: 66vw;
-    grid-template-columns: auto 1fr 1fr 1fr 0.5fr;
-    grid-template-rows: auto auto auto auto;
-  }
-  .reader.third header h1 {
-    grid-column: 1/-1;
-  }
-  .reader.third header h3 {
-    grid-column: 5;
-    grid-row: 2/4;
-    margin-right: -5px;
-  }
-  .reader.third header .red-line {
-    grid-column: 1/4;
-    grid-row: 3;
-    border-bottom: 10px solid #f9423a;
-  }
-  .reader.third header .references {
-    grid-column: 1/-1;
-    grid-row: 4;
-  }
-  .reader.third header p {
-    grid-column: 1/-1;
-    grid-row: 5;
-    margin-left: 0;
-  }
-}
-@media (min-width: 1000px) {
-  .reader.third article > header {
-    padding-bottom: 15rem;
-  }
-}
-@media (min-width: 1300px) {
-  .reader.third article > header {
-    padding-bottom: 25rem;
-  }
-}
-@media (min-width: 1800px) {
-  .reader.third article > header {
-    padding-bottom: 30rem;
-  }
+  text-align: center;
+  font-style: "FuturaFuturisC";
 }
 
 body {
