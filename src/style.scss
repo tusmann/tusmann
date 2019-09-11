@@ -26,9 +26,6 @@ $secondary-heading-color: #629488;
 //#A8D0E6
 $red-color: #c33149;
 
-$footer-height: 8vh;
-$footerLink-height: 5vh;
-
 body {
   font-family: $font-mono-gt;
 }
@@ -341,6 +338,32 @@ body {
     }
 
   }
+  .footerArticleLink {
+    grid-column: span 2;
+    height: 5vh;
+    padding: 0px;
+    background-color: $primary-color;
+    color: $secondary-color;
+    text-align: center;
+    .footerIcn {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
+  .footerRights {
+    grid-column: span 2;
+    height: 8vh;
+    padding: 20px;
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.2rem;
+    letter-spacing: .1em;
+  }
+  
+
 }
 
 //mobile-landscape (and larger)
@@ -1752,7 +1775,7 @@ body {
 
 .footerArticleLink {
   grid-column: span 2;
-  height: $footerLink-height;
+  height: 5vh;
   padding: 0px;
   background-color: $primary-color;
   color: $secondary-color;
@@ -1765,7 +1788,7 @@ body {
 
 .footerRights {
   grid-column: span 2;
-  height: $footer-height;
+  height: 8vh;
   padding: 20px;
   background-color: $primary-color;
   color: $secondary-color;
@@ -1873,7 +1896,7 @@ h1 {
   position: relative;
   padding-top: 32vh;
   padding-left: 37vw;
-  height: 82.9vh;
+  height: calc(100vh - 64px - 8vh);
   background: linear-gradient(270deg, #a0faf8, #e482e3);
   background-size: 100%;
 

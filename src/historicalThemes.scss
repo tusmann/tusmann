@@ -68,9 +68,11 @@ $font-transito: 'WaddemChooNFW01';
   box-sizing: inherit;
 }
 
+//STYLE: MANUZIO
+
 .reader.manuzio {
   article {
-    padding: 10% 20% 10% 20%;
+    padding: 15.6% 29.9% 26% 10.4%;
     background: url("./styles/first/background.jpg") no-repeat 50% fixed/cover;
     box-sizing: border-box;
     font-family: "Fanwood Text", serif;
@@ -78,7 +80,7 @@ $font-transito: 'WaddemChooNFW01';
     font-weight: 400;
     line-height: 1.3;
     color: $manuzio-text-color;
-    font-size: 1.3rem;
+    font-size: 2rem;
     text-align: justify;
 
     section {
@@ -242,7 +244,7 @@ $font-transito: 'WaddemChooNFW01';
   }
 }
 
-//second style
+//STYLE: RIMPA
 
 .reader.rimpa {
   article {
@@ -394,7 +396,6 @@ $font-transito: 'WaddemChooNFW01';
   }
 }
 
-//
 
 //STYLE: JAN TSCHICHOLD
 

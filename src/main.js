@@ -84,9 +84,17 @@ function stylesSidebarSelection() {
         document.querySelector(".reader").classList.remove(style.name);
       });
       document.querySelector(".reader").classList.add(style.name);
-      //PULITURA READER
+      
       document.querySelector(".reader").innerHTML = "";
       document.querySelector(".changeTheme").classList.remove("hidden");
+//PULITURA READER
+      var elementsToDelete = document.querySelectorAll(
+        ".jumbo, .tutorialPageSection, .disclaimerPageSection, .reader, .documentationPageSection, .aboutPageSection"
+      );
+      elementsToDelete.forEach(node => {
+        node.classList.add("hidden");
+      });
+
       document.querySelector(".footerRights").classList.remove("hidden");
   document.querySelector(".footerArticleLink").classList.add("hidden");
 

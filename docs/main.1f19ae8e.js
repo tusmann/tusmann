@@ -1243,10 +1243,14 @@ function stylesSidebarSelection() {
       styles.forEach(function (style) {
         document.querySelector(".reader").classList.remove(style.name);
       });
-      document.querySelector(".reader").classList.add(style.name); //PULITURA READER
-
+      document.querySelector(".reader").classList.add(style.name);
       document.querySelector(".reader").innerHTML = "";
-      document.querySelector(".changeTheme").classList.remove("hidden");
+      document.querySelector(".changeTheme").classList.remove("hidden"); //PULITURA READER
+
+      var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .disclaimerPageSection, .reader, .documentationPageSection, .aboutPageSection");
+      elementsToDelete.forEach(function (node) {
+        node.classList.add("hidden");
+      });
       document.querySelector(".footerRights").classList.remove("hidden");
       document.querySelector(".footerArticleLink").classList.add("hidden");
       document.querySelector(".jumbo").classList.add("hidden");
@@ -1444,7 +1448,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "10331" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "14339" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
