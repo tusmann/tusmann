@@ -1,5 +1,5 @@
-$card-color-1-light: #DAD6D4;
-$card-color-1-dark: #796C63;
+$card-color-1-light: #E8D0AE;
+$card-color-1-dark: #806261;
 $card-color-2-light: #ecca4d;
 $card-color-2-dark: #279d53;
 $card-color-3-light: #9D5D82;
@@ -165,9 +165,9 @@ $card-color-6-dark: #796C63;
         from($card-color-1-light),
         to($card-color-1-dark)
       ),
-      url(./cards/card1.jpg);
+      url(./cards/manuzio-card-front.jpg);
     background-image: linear-gradient(to right bottom, $card-color-1-light, $card-color-1-dark),
-      url(./cards/card1.jpg);
+      url(./cards/manuzio-card-front.jpg);
   }
   .card__picture--2 {
     background-image: -webkit-gradient(
@@ -177,9 +177,9 @@ $card-color-6-dark: #796C63;
         from($card-color-2-light),
         to($card-color-2-dark)
       ),
-      url(./cards/card2.jpg);
+      url(./cards/rimpa-card-front.jpg);
     background-image: linear-gradient(to right bottom, $card-color-2-light, $card-color-2-dark),
-      url(./cards/card2.jpg);
+      url(./cards/rimpa-card-front.jpg);
   }
   .card__picture--3 {
     background-image: -webkit-gradient(
@@ -189,9 +189,9 @@ $card-color-6-dark: #796C63;
         from($card-color-3-light),
         to($card-color-3-dark)
       ),
-      url(./cards/card1.jpg);
+      url(./cards/manuzio-card-front.jpg);
     background-image: linear-gradient(to right bottom, $card-color-3-light, $card-color-3-dark),
-      url(./cards/card1.jpg);
+      url(./cards/manuzio-card-front.jpg);
   }
   .card__picture--4 {
     background-image: -webkit-gradient(
@@ -201,9 +201,9 @@ $card-color-6-dark: #796C63;
         from($card-color-4-light),
         to($card-color-4-dark)
       ),
-      url(./cards/card1.jpg);
+      url(./cards/manuzio-card-front.jpg);
     background-image: linear-gradient(to right bottom, $card-color-4-light, $card-color-4-dark),
-      url(./cards/card1.jpg);
+      url(./cards/manuzio-card-front.jpg);
   }
   .card__picture--5 {
     background-image: -webkit-gradient(
@@ -213,9 +213,9 @@ $card-color-6-dark: #796C63;
         from($card-color-5-light),
         to($card-color-5-dark)
       ),
-      url(./cards/card1.jpg);
+      url(./cards/manuzio-card-front.jpg);
     background-image: linear-gradient(to right bottom, $card-color-5-light, $card-color-5-dark),
-      url(./cards/card1.jpg);
+      url(./cards/manuzio-card-front.jpg);
   }
   .card__picture--6 {
     background-image: -webkit-gradient(
@@ -225,9 +225,9 @@ $card-color-6-dark: #796C63;
         from($card-color-6-light),
         to($card-color-6-dark)
       ),
-      url(./cards/card1.jpg);
+      url(./cards/manuzio-card-front.jpg);
     background-image: linear-gradient(to right bottom, $card-color-6-light, $card-color-6-dark),
-      url(./cards/card1.jpg);
+      url(./cards/manuzio-card-front.jpg);
   }
 
   .card__heading {

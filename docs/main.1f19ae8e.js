@@ -1239,7 +1239,6 @@ function stylesSidebarSelection() {
     var location = document.querySelector("nav");
     location.insertAdjacentElement("afterbegin", div);
     div.addEventListener("click", function () {
-      console.log("hello");
       styles.forEach(function (style) {
         document.querySelector(".reader").classList.remove(style.name);
       });
@@ -1448,7 +1447,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "14339" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "31875" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

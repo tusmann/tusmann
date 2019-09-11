@@ -38,13 +38,18 @@ function articlesSidebarSelection(){
 
         
         a.addEventListener("click", () => addArticle(article.url));
+        
 
         var location = document.querySelector(".placeholder");
 
         location.insertAdjacentElement("afterbegin", li);
+
         
     }) 
+    
+    
 }
+
 
 //same but for the european translated article
 function specialArticleSidebarSelection(articleTitle, leftArticleUrl, rightArticleUrl) {

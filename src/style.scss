@@ -1771,6 +1771,7 @@ body {
   margin: 0;
   border: 0;
   overflow-y: auto;
+  box-sizing: inherit;
 }
 
 .footerArticleLink {
@@ -1810,7 +1811,7 @@ body {
 }
 
 h1 {
-  //margin-bottom: 1em;
+  margin-bottom: 1rem;
   font-size: 1.3em;
   font-weight: bold;
 }

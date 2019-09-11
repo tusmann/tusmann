@@ -33,7 +33,7 @@
     "@material/drawer": "^3.1.1",
     "@material/top-app-bar": "^3.1.0",
     "bindery": "^2.2.7",
-    "serialize-to-js": "^3.0.0"
+    "bindery-controls": "^1.1.2"
   },
   "staticFiles": {
     "staticPath": [

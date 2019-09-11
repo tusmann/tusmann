@@ -7,6 +7,7 @@ import bauhaus from "./images/bauhaus.svg";
 import aldus_leaf from "./images/aldus_leaf.svg";
 import sakura from "./images/sakura.svg";
 
+
 // polyfill needed for using for loop on a dictionary
 /*
  * Object.prototype.forEach() polyfill
@@ -79,7 +80,6 @@ function stylesSidebarSelection() {
     location.insertAdjacentElement("afterbegin", div);
 
     div.addEventListener("click", () => {
-      console.log("hello");
       styles.forEach(function(style) {
         document.querySelector(".reader").classList.remove(style.name);
       });
@@ -294,3 +294,4 @@ closeOverlayDoc.addEventListener("click", closeNav);
 const closeOverlayDisc = document.querySelector(".disclaimerPageButton");
 closeOverlayDisc.addEventListener("click", closeNav);
 //
+

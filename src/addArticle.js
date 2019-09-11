@@ -75,7 +75,6 @@ async function addArticle(articleUrl){
     nodes.forEach(node => {
         container.appendChild(node)
     })
-    
 }
 
 export {addSpecialArticle}

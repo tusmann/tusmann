@@ -102,7 +102,7 @@
                    <div class="card__side card__side--back card__side--back-1">
                         <div class="card__cta">
                             <div class="details">
-                                <p>Somebody once told me... </p>
+                                <p>This style was inspired by the work of Aldus Manutius, an italian humanist scholar and print publisher of the Renaissance known for founding the Aldine Press at Venice. </p>
                             </div>
                             <a href="#popupCard1" class="btn btn--white">More details</a>
                         </div>
@@ -124,7 +124,7 @@
                     <div class="card__side card__side--back card__side--back-2">
                          <div class="card__cta">
                              <div class="details">
-                                 <p>This theme was inspired by the "Rimpa" (alternately spelled Rinpa), a modern term that refers to a distinctive style of Japanese pictorial and applied arts, which flourished during the Edo period (1615-1868).</p>
+                                 <p>This theme was inspired by the Rimpa, a modern term that refers to a distinctive style of Japanese pictorial and applied arts, which flourished during the Edo period (1615-1868).</p>
                              </div>
                              <a href="#popupCard2" class="btn btn--white">More details</a>
                          </div>
@@ -283,26 +283,40 @@
     <!--pop up card1--> 
     <div class="popup" id="popupCard1">
         <div class="popup__content">
+                <div class="styleDescriptionBlockNoImage">
+                        <div class="popup__text textNoImage">
+                                 After working as educator, Aldus Manutius (1449/1452 – 6 February 1515) decided to devote the later part of his life to publishing and disseminating rare texts (especially Greek and Latin classics). Many intellectuals like the philosopher Erasmus highly esteemed Manutius for his tireless efforts in restoring ancient learning. In addition to their textual value, many Aldine editions embody Aldus restless efforts to re-configure the printed book both as a typographical and commercial product, marking him as an innovative publisher of his age. His enchiridia, small portable books, revolutionized personal reading and are the predecessor of the modern paperback. 
+                </div>
+                </div>
+                <div class="styleDescriptionBlock">
+                        <img src="./cards/manuzio-logo.png" alt="" class="popup__img">
+                        <div class="popup__text">
+                        <h1 class="popupHeading">Printer's mark</h1>
+                        <p>
+                            The symbol of the dolphin and anchor has been used since Roman times to illustrate the adage <em>Festina Lente</em>. This emblem appeared for the first time as Manutius' mark in 1502, and in contrast to the tradition before Aldus, it was located in the first pages of the book instead of the ending pages.
+                        </p>
+                    </div>
+                    </div>
             <div class="styleDescriptionBlock">
-                <img src="./cards/card1.jpg" alt="" class="popup__img">
+                <img src="./cards/manuzio-margins.jpg" alt="" class="popup__img">
                 <div class="popup__text">
                 <h1 class="popupHeading">Margins</h1>
                 <p>
-                    In ancient paginated books, margin measures were chosen accordingly to the Van de Graaf's canon and resulted specularly symmetrical. This "secret canon" allowed for the construction of a pleasingly divided page with proportions 2:3:4:6 (inner:top:outer:bottom). However, I decided not to follow these proportions since they were thought for paginated books and not for scroll. Following this ratio in scroll would have resulted extremely asymmetrical, against the actual concept of the canon. However, I maintained wide spaces and margins since that would allow for illuminated initials and decoration to be added by hand.
+                    In ancient paginated books, margin measures were chosen accordingly to the reconstructed Van de Graaf's canon and resulted specularly symmetrical. This "secret canon" allowed for the construction of a pleasingly divided page with proportions 2:3:4:6 (inner:top:outer:bottom). I checked proportions from several Aldine Editions images on the web and found the correct ratio between margins, images and font size.
                 </p>
             </div>
             </div>
             <div class="styleDescriptionBlock">
-                <img src="./cards/card1-1.jpg" alt="" class="popup__img">
+                <img src="./cards/manuzio-typeface.jpg" alt="" class="popup__img">
                 <div class="popup__text">
                 <h1 class="popupHeading">Typeface</h1>
                 <p>
-                    Manutius commissioned the punchcutter Francesco Griffo of Bologna to create a new typeface designed to look like the handwriting of humanists both in Latin and Greek, since at the time printed works only imitated formal manuscript hands (either blackletter or the humanistic littera antica). Manutius and Griffo's original typeface is the first known model of italic type. I chose a font that had the most similar characteristics: letters appear in high contrast, with serif, connections between the arms and ball terminals of the lowercases.
+                    Manutius commissioned the punchcutter Francesco Griffo of Bologna to create a new typeface designed to look like the handwriting of humanists both in Latin and Greek, since at the time printed works only imitated formal manuscript hands (either blackletter or the humanistic littera antica). Manutius and Griffo's original typeface is the first known model of italic type. I chose a font ("Griffo Classico") that had the most similar characteristics: letters appear in high contrast with serif. For frontispiece and image captions I used a small capital font ("Griffo Classico Small Caps").
                 </p>
             </div>
             </div>
             <div class="styleDescriptionBlock">
-                <img src="./cards/card1-2.jpg" alt="" class="popup__img">
+                <img src="./cards/manuzio-initials.jpg" alt="" class="popup__img">
                 <div class="popup__text">
                 <h1 class="popupHeading">Initials</h1>
                 <p>
@@ -311,11 +325,11 @@
             </div>
             </div>
             <div class="styleDescriptionBlock">
-                <img src="./cards/card1-3.jpg" alt="" class="popup__img">
+                <img src="./cards/manuzio-images.jpg" alt="" class="popup__img">
                 <div class="popup__text">
                 <h1 class="popupHeading">Images</h1>
                 <p>
-                    It turned out to be impossible to reproduce the extraordinary skill of the craftsmen who engraved the sophisticated illustrations of many Aldine editions, expression of the “classical” style generally regarded as typical of the best Venetian illustrations of the late 1490s. I decided to emulate the style of the image borders and the high-contrast greyscale of the images. However, it will still be possible to see the original colors by hovering on the image.
+                    It turned out to be impossible to reproduce the extraordinary skill of the craftsmen who engraved the sophisticated illustrations of many Aldine editions, expression of the “classical” style generally regarded as typical of the best Venetian illustrations of the late 1490s. I decided to emulate the style of the image borders and the high-contrast greyscale of the images. It will still be possible to see the original colors by hovering on the image.
                 </p>
             </div>            
             </div>
@@ -457,5 +471,6 @@
 
      <script src="main.js"></script>
      <script src="historicalThemes.js"></script>
+     <!--test bindery-->
 </body>
 </html>
