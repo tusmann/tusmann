@@ -1,7 +1,6 @@
 import {parseArticle} from "./article-parser"
 import {addArticle} from "./addArticle.js"
 import {addSpecialArticle} from "./addArticle.js"
-
 //article dictionary with title=key and url=value
 const articles = [
     {
@@ -37,7 +36,7 @@ function articlesSidebarSelection(){
         li.appendChild(a);
 
         
-        a.addEventListener("click", () => addArticle(article.url));
+        a.addEventListener("click", () => {addArticle(article.url);});
         
 
         var location = document.querySelector(".placeholder");

@@ -42,6 +42,7 @@
     font-weight: normal;
     font-style: normal;
 }
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -869,14 +870,54 @@ html {
 }
 .reader.manuzio .left article,
 .reader.manuzio .right article {
-  padding: 9%, 17.2%, 15%, 6%;
+  font-size: 1.4rem;
+}
+.reader.manuzio .left article h1, .reader.manuzio .left article h2, .reader.manuzio .left article h3, .reader.manuzio .left article h4,
+.reader.manuzio .right article h1,
+.reader.manuzio .right article h2,
+.reader.manuzio .right article h3,
+.reader.manuzio .right article h4 {
+  font-size: 1.6rem;
+}
+.reader.manuzio .left article main p:first-of-type:first-letter,
+.reader.manuzio .right article main p:first-of-type:first-letter {
+  font-size: 10rem;
+  line-height: 6rem;
+}
+.reader.manuzio .left article {
+  padding: 9% 6% 15% 17.2%;
+}
+.reader.manuzio .right article {
+  padding: 9% 17.2% 15% 6%;
 }
 
+@media (min-width: 320px) and (max-width: 650px) {
+  .reader.rimpa article {
+    font-size: small;
+  }
+  .reader.rimpa article h1, .reader.rimpa article h2, .reader.rimpa article h3, .reader.rimpa article h4 {
+    font-size: medium;
+  }
+  .reader.rimpa article p:first-of-type:first-letter {
+    font-size: 6rem;
+    line-height: 3rem;
+    text-align: left;
+  }
+  .reader.rimpa .left,
+.reader.rimpa .right {
+    webkit-animation: slide-in-top 0.5s both;
+    animation: slide-in-top 0.5s both;
+  }
+  .reader.rimpa .left article,
+.reader.rimpa .right article {
+    padding: 9%, 17.2%, 15%, 6%;
+  }
+}
 .reader.rimpa article {
   padding: 10% 20% 10% 20%;
   background: url("/background.273bbb38.jpg") no-repeat 50% fixed/cover;
   box-sizing: border-box;
-  font-family: "japanese", serif;
+  font-family: "Zin Hena Kokoryu";
   font-weight: 400;
   line-height: 1.7;
   color: #210102;
@@ -1474,7 +1515,7 @@ body {
 
   .footerRights {
     grid-column: span 2;
-    height: 8vh;
+    height: 2%;
     padding: 20px;
     background-color: #222222;
     color: #f4f1d0;
@@ -2722,6 +2763,42 @@ body {
 
   /* end drawer script */
 }
+.buttonTop {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+.buttonTop:after {
+  content: "";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+.buttonTop:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+.buttonTop:active {
+  background-color: #555;
+}
+.buttonTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 .mainHome {
   color: #222222;
   background-color: #f4f1d0;
@@ -2748,7 +2825,6 @@ body {
 
 .footerRights {
   grid-column: span 2;
-  height: 8vh;
   padding: 20px;
   background-color: #222222;
   color: #f4f1d0;
@@ -2908,7 +2984,6 @@ h1 {
 }
 
 .tutorialPageSection {
-  position: absolute;
   background: rgba(244, 241, 208, 0);
   font-size: 1.2rem;
   padding: 3% 10% 3% 4%;

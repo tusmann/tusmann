@@ -1,4 +1,5 @@
 import {parseArticle} from "./article-parser"
+import {applyCustomStyleLogic} from "./customStyleLogic.js"
 
 async function addSpecialArticle(leftArticleUrl, rightArticleUrl) {
     var leftArticle = await parseArticle(leftArticleUrl)
@@ -41,7 +42,7 @@ async function addSpecialArticle(leftArticleUrl, rightArticleUrl) {
     rightNodes.forEach(node => {
         rightContainer.appendChild(node)
     })  
-    
+    applyCustomStyleLogic()
 }
 
 //add articles to dom
@@ -75,6 +76,8 @@ async function addArticle(articleUrl){
     nodes.forEach(node => {
         container.appendChild(node)
     })
+
+    applyCustomStyleLogic()
 }
 
 export {addSpecialArticle}

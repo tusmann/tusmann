@@ -956,7 +956,88 @@ function _parseArticle() {
   }));
   return _parseArticle.apply(this, arguments);
 } //this module will call this function and put in the general dom the one that we just generated with the previous module
-},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js"}],"addArticle.js":[function(require,module,exports) {
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js"}],"images/bauhaus.svg":[function(require,module,exports) {
+module.exports = "/bauhaus.00287030.svg";
+},{}],"images/aldus_leaf.svg":[function(require,module,exports) {
+module.exports = "/aldus_leaf.72009c54.svg";
+},{}],"images/sakura.svg":[function(require,module,exports) {
+module.exports = "/sakura.3275ced2.svg";
+},{}],"manuzio.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function manuzioLogic() {
+  var div = document.createElement("div");
+  var location = document.querySelectorAll(".reader section");
+  location.insertAdjacentElement("afterbegin", div);
+}
+
+var _default = manuzioLogic;
+exports.default = _default;
+},{}],"styles.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _bauhaus = _interopRequireDefault(require("./images/bauhaus.svg"));
+
+var _aldus_leaf = _interopRequireDefault(require("./images/aldus_leaf.svg"));
+
+var _sakura = _interopRequireDefault(require("./images/sakura.svg"));
+
+var _manuzio = _interopRequireDefault(require("./manuzio"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var styles = [{
+  name: "manuzio",
+  icon: _aldus_leaf.default,
+  logic: _manuzio.default
+}, {
+  name: "rimpa",
+  icon: _sakura.default
+}, {
+  name: "third",
+  icon: _bauhaus.default
+}, {
+  name: "fourth",
+  icon: ""
+}, {
+  name: "fifth",
+  icon: ""
+}, {
+  name: "sixth",
+  icon: ""
+}];
+var _default = styles;
+exports.default = _default;
+},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./manuzio":"manuzio.js"}],"customStyleLogic.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.applyCustomStyleLogic = applyCustomStyleLogic;
+
+var _styles = _interopRequireDefault(require("./styles"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function applyCustomStyleLogic() {
+  _styles.default.forEach(function (style) {
+    if (document.querySelector(".reader").classList.contains(style.name)) {
+      if (typeof style.logic !== 'undefined') style.logic();
+    }
+  });
+}
+},{"./styles":"styles.js"}],"addArticle.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -970,6 +1051,8 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 
 var _articleParser = require("./article-parser");
+
+var _customStyleLogic = require("./customStyleLogic.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1029,8 +1112,9 @@ function _addSpecialArticle() {
             rightNodes.forEach(function (node) {
               rightContainer.appendChild(node);
             });
+            (0, _customStyleLogic.applyCustomStyleLogic)();
 
-          case 28:
+          case 29:
           case "end":
             return _context.stop();
         }
@@ -1083,8 +1167,9 @@ function _addArticle() {
             nodes.forEach(function (node) {
               container.appendChild(node);
             });
+            (0, _customStyleLogic.applyCustomStyleLogic)();
 
-          case 13:
+          case 14:
           case "end":
             return _context2.stop();
         }
@@ -1093,7 +1178,7 @@ function _addArticle() {
   }));
   return _addArticle.apply(this, arguments);
 }
-},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","./article-parser":"article-parser.js"}],"articlesSelectionButtons.js":[function(require,module,exports) {
+},{"@babel/runtime/regenerator":"node_modules/@babel/runtime/regenerator/index.js","@babel/runtime/helpers/asyncToGenerator":"node_modules/@babel/runtime/helpers/asyncToGenerator.js","./article-parser":"article-parser.js","./customStyleLogic.js":"customStyleLogic.js"}],"articlesSelectionButtons.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1132,7 +1217,7 @@ function articlesSidebarSelection() {
     a.appendChild(document.createTextNode(article.title));
     li.appendChild(a);
     a.addEventListener("click", function () {
-      return (0, _addArticle.addArticle)(article.url);
+      (0, _addArticle.addArticle)(article.url);
     });
     var location = document.querySelector(".placeholder");
     location.insertAdjacentElement("afterbegin", li);
@@ -1153,12 +1238,211 @@ function specialArticleSidebarSelection(articleTitle, leftArticleUrl, rightArtic
 
   location.insertAdjacentElement("afterbegin", li);
 }
-},{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js"}],"images/bauhaus.svg":[function(require,module,exports) {
-module.exports = "/bauhaus.00287030.svg";
-},{}],"images/aldus_leaf.svg":[function(require,module,exports) {
-module.exports = "/aldus_leaf.72009c54.svg";
-},{}],"images/sakura.svg":[function(require,module,exports) {
-module.exports = "/sakura.3275ced2.svg";
+},{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js"}],"createThemeButtons.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.stylesSidebarSelection = stylesSidebarSelection;
+
+var _styles = _interopRequireDefault(require("./styles"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//dynamically creates buttons for styles in the sidebar
+function stylesSidebarSelection() {
+  _styles.default.forEach(function (style) {
+    //aggiungo pulsante stile
+    var div = document.createElement("div");
+    div.className = "opened-doc-list doc-sel";
+    div.href = "#"; //agg icona stile
+
+    var embed = document.createElement("embed");
+    embed.className = "icn";
+    embed.src = style.icon;
+    div.appendChild(embed); // add to dom
+
+    var location = document.querySelector("nav");
+    location.insertAdjacentElement("afterbegin", div);
+    div.addEventListener("click", function () {
+      _styles.default.forEach(function (style) {
+        document.querySelector(".reader").classList.remove(style.name);
+      });
+
+      document.querySelector(".reader").classList.add(style.name);
+      document.querySelector(".reader").innerHTML = "";
+      document.querySelector(".changeTheme").classList.remove("hidden"); //PULITURA READER
+
+      var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .disclaimerPageSection, .reader, .documentationPageSection, .aboutPageSection");
+      elementsToDelete.forEach(function (node) {
+        node.classList.add("hidden");
+      });
+      document.querySelector(".footerRights").classList.remove("hidden");
+      document.querySelector(".footerArticleLink").classList.add("hidden");
+      document.querySelector(".jumbo").classList.add("hidden");
+    });
+  });
+}
+},{"./styles":"styles.js"}],"sidebar.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.sidebar = sidebar;
+
+// Script lista documenti
+
+/* docs selection script: quando clicchi l'elemento con classe .doc-sel ti rivela togliendo 'hidden' la nav-list, 
+dove è contenuta la lista documenti. */
+function sidebar() {
+  function docsList() {
+    document.querySelector(".nav-list").className = document.querySelector(".nav-list").className.replace(/(?:^|\s)hidden(?!\S)/g, "");
+  }
+
+  var docsSelection = document.querySelectorAll(".doc-sel");
+  docsSelection.forEach(function (node) {
+    node.addEventListener("click", docsList);
+  }); // Script chiusura lista documenti
+
+  /*stessa cosa di sopra ma nasconde i documenti quando si richiude la sidebar*/
+
+  function closeDocs() {
+    var v = document.querySelector(".nav-list");
+    v.classList.add("hidden");
+  }
+
+  var docsHidden = document.querySelector(".doc-close");
+  docsHidden.addEventListener("click", closeDocs);
+  /*stessa cosa di sopra ma si attiva quando clicchi un documento */
+
+  var docsHiddenFromMenu = document.querySelectorAll(".close-menu-doc");
+  docsHiddenFromMenu.forEach(function (node) {
+    node.addEventListener("click", closeDocs);
+  });
+  /* sidebar drawer script */
+
+  var mainElement = document.querySelector(".container");
+  var openMenu = document.querySelectorAll(".opened-doc-list");
+  var closeMenu = document.querySelector(".close-menu");
+  var closeDocMenu = document.querySelectorAll(".close-menu-doc");
+
+  var toggleNavBar = function toggleNavBar() {
+    mainElement.classList.toggle("opened-nav");
+  };
+
+  openMenu.forEach(function (node) {
+    node.addEventListener("click", toggleNavBar, false);
+  });
+  closeMenu.addEventListener("click", toggleNavBar, false);
+  closeDocMenu.forEach(function (node) {
+    node.addEventListener("click", toggleNavBar, false);
+  });
+}
+},{}],"addDocumentationPages.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.addDocumentationPages = addDocumentationPages;
+
+function addDocumentationPages() {
+  //add about page
+  document.querySelector(".aboutPageButton").onclick = function () {
+    document.querySelector(".footerRights").classList.remove("hidden");
+    document.querySelector(".footerArticleLink").classList.add("hidden");
+    document.querySelector(".aboutPageSection").classList.remove("hidden");
+    var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .disclaimerPageSection, .reader, .documentationPageSection, .changeTheme");
+    elementsToDelete.forEach(function (node) {
+      node.classList.add("hidden");
+    });
+  }; //add disclaimer page
+
+
+  document.querySelector(".disclaimerPageButton").onclick = function () {
+    document.querySelector(".footerRights").classList.remove("hidden");
+    document.querySelector(".footerArticleLink").classList.add("hidden");
+    document.querySelector(".disclaimerPageSection").classList.remove("hidden");
+    var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .reader, .documentationPageSection, .changeTheme");
+    elementsToDelete.forEach(function (node) {
+      node.classList.add("hidden");
+    });
+  }; //add documentation page
+
+
+  document.querySelector(".documentationPageButton").onclick = function () {
+    document.querySelector(".footerRights").classList.remove("hidden");
+    document.querySelector(".footerArticleLink").classList.add("hidden");
+    document.querySelector(".documentationPageSection").classList.remove("hidden");
+    var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .reader, .disclaimerPageSection, .changeTheme");
+    elementsToDelete.forEach(function (node) {
+      node.classList.add("hidden");
+    });
+  }; //add tutorial page
+
+
+  document.querySelector(".tutorialPageButton").onclick = function () {
+    document.querySelector(".tutorialPageSection").classList.remove("hidden");
+    var elementsToDelete = document.querySelectorAll(".jumbo, .aboutPageSection, .reader, .disclaimerPageSection, .changeTheme");
+    elementsToDelete.forEach(function (node) {
+      node.classList.add("hidden");
+    });
+  }; //documentation page animation
+  //theme 1
+  //document.querySelector(".card-theme1").onclick = function () {
+
+
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+}
+},{}],"overlayMenu.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.overlayMenu = overlayMenu;
+
+function overlayMenu() {
+  //OVERLAY MENU
+
+  /* Open */
+  function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+  }
+
+  var openOverlay = document.querySelector(".navMenu");
+  openOverlay.addEventListener("click", openNav);
+  /* Close */
+
+  function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+  }
+
+  var closeOverlay = document.querySelector(".closebtn");
+  closeOverlay.addEventListener("click", closeNav);
+  var closeOverlayAbout = document.querySelector(".aboutPageButton");
+  closeOverlayAbout.addEventListener("click", closeNav);
+  var closeOverlayDoc = document.querySelector(".documentationPageButton");
+  closeOverlayDoc.addEventListener("click", closeNav);
+  var closeOverlayDisc = document.querySelector(".disclaimerPageButton");
+  closeOverlayDisc.addEventListener("click", closeNav); //
+}
 },{}],"main.js":[function(require,module,exports) {
 "use strict";
 
@@ -1168,13 +1452,13 @@ var _addArticle = require("./addArticle.js");
 
 var _articlesSelectionButtons = require("./articlesSelectionButtons");
 
-var _bauhaus = _interopRequireDefault(require("./images/bauhaus.svg"));
+var _createThemeButtons = require("./createThemeButtons");
 
-var _aldus_leaf = _interopRequireDefault(require("./images/aldus_leaf.svg"));
+var _sidebar = require("./sidebar");
 
-var _sakura = _interopRequireDefault(require("./images/sakura.svg"));
+var _addDocumentationPages = require("./addDocumentationPages");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _overlayMenu = require("./overlayMenu");
 
 // polyfill needed for using for loop on a dictionary
 
@@ -1200,174 +1484,19 @@ if (!Object.prototype.forEach) {
       }
     }
   });
-} //selezione stili
-//styles dictionary with style name=key and icon=value
+} //creation of sidebar with applied styles
 
 
-var styles = [{
-  name: "manuzio",
-  icon: _aldus_leaf.default
-}, {
-  name: "rimpa",
-  icon: _sakura.default
-}, {
-  name: "third",
-  icon: _bauhaus.default
-}, {
-  name: "fourth",
-  icon: ""
-}, {
-  name: "fifth",
-  icon: ""
-}, {
-  name: "sixth",
-  icon: ""
-}]; //dynamically creates buttons for styles in the sidebar
-
-function stylesSidebarSelection() {
-  styles.forEach(function (style) {
-    //aggiungo pulsante stile
-    var div = document.createElement("div");
-    div.className = "opened-doc-list doc-sel";
-    div.href = "#"; //agg icona stile
-
-    var embed = document.createElement("embed");
-    embed.className = "icn";
-    embed.src = style.icon;
-    div.appendChild(embed); // add to dom
-
-    var location = document.querySelector("nav");
-    location.insertAdjacentElement("afterbegin", div);
-    div.addEventListener("click", function () {
-      styles.forEach(function (style) {
-        document.querySelector(".reader").classList.remove(style.name);
-      });
-      document.querySelector(".reader").classList.add(style.name);
-      document.querySelector(".reader").innerHTML = "";
-      document.querySelector(".changeTheme").classList.remove("hidden"); //PULITURA READER
-
-      var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .disclaimerPageSection, .reader, .documentationPageSection, .aboutPageSection");
-      elementsToDelete.forEach(function (node) {
-        node.classList.add("hidden");
-      });
-      document.querySelector(".footerRights").classList.remove("hidden");
-      document.querySelector(".footerArticleLink").classList.add("hidden");
-      document.querySelector(".jumbo").classList.add("hidden");
-    });
-  });
-}
-
-stylesSidebarSelection(); //creation of article, buttons and links
+(0, _createThemeButtons.stylesSidebarSelection)(); //creation of articles sidebar-list with links
 
 (0, _articlesSelectionButtons.articlesSidebarSelection)();
-(0, _articlesSelectionButtons.specialArticleSidebarSelection)("EUR-Lex", "./articles/EUDirective/L125-75.html", "./articles/EUDirective/EUDirectiveItalian.html"); // Script lista documenti
+(0, _articlesSelectionButtons.specialArticleSidebarSelection)("EUR-Lex", "./articles/EUDirective/L125-75.html", "./articles/EUDirective/EUDirectiveItalian.html"); // sidebar functioning
 
-/* docs selection script: quando clicchi l'elemento con classe .doc-sel ti rivela togliendo 'hidden' la nav-list, 
-dove è contenuta la lista documenti. */
+(0, _sidebar.sidebar)(); //documentation pages
 
-function docsList() {
-  document.querySelector(".nav-list").className = document.querySelector(".nav-list").className.replace(/(?:^|\s)hidden(?!\S)/g, "");
-}
+(0, _addDocumentationPages.addDocumentationPages)(); //
 
-var docsSelection = document.querySelectorAll(".doc-sel");
-docsSelection.forEach(function (node) {
-  node.addEventListener("click", docsList);
-}); // Script chiusura lista documenti
-
-/*stessa cosa di sopra ma nasconde i documenti quando si richiude la sidebar*/
-
-function closeDocs() {
-  var v = document.querySelector(".nav-list");
-  v.classList.add("hidden");
-}
-
-var docsHidden = document.querySelector(".doc-close");
-docsHidden.addEventListener("click", closeDocs);
-/*stessa cosa di sopra ma si attiva quando clicchi un documento */
-
-var docsHiddenFromMenu = document.querySelectorAll(".close-menu-doc");
-docsHiddenFromMenu.forEach(function (node) {
-  node.addEventListener("click", closeDocs);
-});
-/* sidebar drawer script */
-
-var mainElement = document.querySelector(".container");
-var openMenu = document.querySelectorAll(".opened-doc-list");
-var closeMenu = document.querySelector(".close-menu");
-var closeDocMenu = document.querySelectorAll(".close-menu-doc");
-
-var toggleNavBar = function toggleNavBar() {
-  mainElement.classList.toggle("opened-nav");
-};
-
-openMenu.forEach(function (node) {
-  node.addEventListener("click", toggleNavBar, false);
-});
-closeMenu.addEventListener("click", toggleNavBar, false);
-closeDocMenu.forEach(function (node) {
-  node.addEventListener("click", toggleNavBar, false);
-}); //add about page
-
-document.querySelector(".aboutPageButton").onclick = function () {
-  document.querySelector(".footerRights").classList.remove("hidden");
-  document.querySelector(".footerArticleLink").classList.add("hidden");
-  document.querySelector(".aboutPageSection").classList.remove("hidden");
-  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .disclaimerPageSection, .reader, .documentationPageSection, .changeTheme");
-  elementsToDelete.forEach(function (node) {
-    node.classList.add("hidden");
-  });
-}; //add disclaimer page
-
-
-document.querySelector(".disclaimerPageButton").onclick = function () {
-  document.querySelector(".footerRights").classList.remove("hidden");
-  document.querySelector(".footerArticleLink").classList.add("hidden");
-  document.querySelector(".disclaimerPageSection").classList.remove("hidden");
-  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .reader, .documentationPageSection, .changeTheme");
-  elementsToDelete.forEach(function (node) {
-    node.classList.add("hidden");
-  });
-}; //add documentation page
-
-
-document.querySelector(".documentationPageButton").onclick = function () {
-  document.querySelector(".footerRights").classList.remove("hidden");
-  document.querySelector(".footerArticleLink").classList.add("hidden");
-  document.querySelector(".documentationPageSection").classList.remove("hidden");
-  var elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .reader, .disclaimerPageSection, .changeTheme");
-  elementsToDelete.forEach(function (node) {
-    node.classList.add("hidden");
-  });
-}; //add tutorial page
-
-
-document.querySelector(".tutorialPageButton").onclick = function () {
-  document.querySelector(".tutorialPageSection").classList.remove("hidden");
-  var elementsToDelete = document.querySelectorAll(".jumbo, .aboutPageSection, .reader, .disclaimerPageSection, .changeTheme");
-  elementsToDelete.forEach(function (node) {
-    node.classList.add("hidden");
-  });
-}; //documentation page animation
-//theme 1
-//document.querySelector(".card-theme1").onclick = function () {
-
-
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-} //function to add the link button with ref to the original articles urls
-
+(0, _overlayMenu.overlayMenu)(); //function to add the link button with ref to the original articles urls
 
 var articlesLinkDict = {
   "EUR-Lex": "https://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1552167424995&uri=CELEX:32009L0041",
@@ -1395,31 +1524,8 @@ function addArticleGlobalUrl() {
   });
 }
 
-addArticleGlobalUrl(); //OVERLAY MENU
-
-/* Open */
-
-function openNav() {
-  document.getElementById("myNav").style.height = "100%";
-}
-
-var openOverlay = document.querySelector(".navMenu");
-openOverlay.addEventListener("click", openNav);
-/* Close */
-
-function closeNav() {
-  document.getElementById("myNav").style.height = "0%";
-}
-
-var closeOverlay = document.querySelector(".closebtn");
-closeOverlay.addEventListener("click", closeNav);
-var closeOverlayAbout = document.querySelector(".aboutPageButton");
-closeOverlayAbout.addEventListener("click", closeNav);
-var closeOverlayDoc = document.querySelector(".documentationPageButton");
-closeOverlayDoc.addEventListener("click", closeNav);
-var closeOverlayDisc = document.querySelector(".disclaimerPageButton");
-closeOverlayDisc.addEventListener("click", closeNav); //
-},{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js","./articlesSelectionButtons":"articlesSelectionButtons.js","./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+addArticleGlobalUrl();
+},{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js","./articlesSelectionButtons":"articlesSelectionButtons.js","./createThemeButtons":"createThemeButtons.js","./sidebar":"sidebar.js","./addDocumentationPages":"addDocumentationPages.js","./overlayMenu":"overlayMenu.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -1447,7 +1553,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "31875" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36804" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
