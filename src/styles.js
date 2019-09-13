@@ -2,6 +2,7 @@ import bauhaus from "./images/bauhaus.svg";
 import aldus_leaf from "./images/aldus_leaf.svg";
 import sakura from "./images/sakura.svg";
 import manuzioLogic from "./manuzio"
+import rimpaLogic from "./rimpa"
 
 const styles = [
     {
@@ -11,7 +12,8 @@ const styles = [
     },
     {
       name: "rimpa",
-      icon: sakura
+      icon: sakura,
+      logic: rimpaLogic
     },
     {
       name: "third",

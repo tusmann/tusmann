@@ -41,7 +41,8 @@ async function addSpecialArticle(leftArticleUrl, rightArticleUrl) {
     const rightNodes = Array.from(rightArticle.body.childNodes)
     rightNodes.forEach(node => {
         rightContainer.appendChild(node)
-    })  
+    }) 
+    //this function allows for using js on articles dom 
     applyCustomStyleLogic()
 }
 

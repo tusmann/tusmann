@@ -971,12 +971,68 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 function manuzioLogic() {
-  var div = document.createElement("div");
-  var location = document.querySelectorAll(".reader section");
-  location.insertAdjacentElement("afterbegin", div);
+  function insertTriangles() {
+    var sectionElement = document.querySelectorAll(".reader section");
+    sectionElement.forEach(function (node) {
+      //quando vera ho trovato figlio idoneo
+      var checkChildren = false; // quando falso ho trovato il secondo type
+
+      var countP = 0;
+      var i = 0;
+      var sectionChildren = Array.from(node.children);
+
+      while (i < sectionChildren.length && !checkChildren) {
+        var childHeigt = sectionChildren[i].clientHeight;
+        console.log(sectionChildren[i]);
+        console.log(childHeigt);
+
+        if (sectionChildren[i].tagName == "P") {
+          countP++;
+        }
+
+        checkChildren = Boolean(countP >= 2 && childHeigt > 300 && sectionChildren[i].tagName !== "FIGURE" && "TABLE");
+        i++;
+      }
+
+      if (checkChildren) {
+        i--;
+        var leftTriangle = document.createElement("div");
+        leftTriangle.classList.add("left-triangle-shape");
+        var rightTriangle = document.createElement("div");
+        rightTriangle.classList.add("right-triangle-shape");
+        sectionChildren[i].insertAdjacentElement("beforebegin", leftTriangle);
+        sectionChildren[i].insertAdjacentElement("beforebegin", rightTriangle);
+        leftTriangle.style.height = childHeigt + "px";
+        rightTriangle.style.height = childHeigt + "px";
+      }
+    });
+  }
+
+  insertTriangles();
 }
 
 var _default = manuzioLogic;
+exports.default = _default;
+},{}],"rimpa.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function rimpaLogic() {
+  var image = document.querySelectorAll(".reader figure img");
+  image.forEach(function (node) {
+    var imageParent = node.parentNode;
+    var backgroundColorDiv = document.createElement("div");
+    backgroundColorDiv.classList.add("image-background-color");
+    imageParent.replaceChild(backgroundColorDiv, node);
+    backgroundColorDiv.appendChild(node); // node.insertAdjacentElement("beforebegin", backgroundColorDiv);
+  });
+}
+
+var _default = rimpaLogic;
 exports.default = _default;
 },{}],"styles.js":[function(require,module,exports) {
 "use strict";
@@ -994,6 +1050,8 @@ var _sakura = _interopRequireDefault(require("./images/sakura.svg"));
 
 var _manuzio = _interopRequireDefault(require("./manuzio"));
 
+var _rimpa = _interopRequireDefault(require("./rimpa"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = [{
@@ -1002,7 +1060,8 @@ var styles = [{
   logic: _manuzio.default
 }, {
   name: "rimpa",
-  icon: _sakura.default
+  icon: _sakura.default,
+  logic: _rimpa.default
 }, {
   name: "third",
   icon: _bauhaus.default
@@ -1018,7 +1077,7 @@ var styles = [{
 }];
 var _default = styles;
 exports.default = _default;
-},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./manuzio":"manuzio.js"}],"customStyleLogic.js":[function(require,module,exports) {
+},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./manuzio":"manuzio.js","./rimpa":"rimpa.js"}],"customStyleLogic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1111,7 +1170,8 @@ function _addSpecialArticle() {
             rightNodes = Array.from(rightArticle.body.childNodes);
             rightNodes.forEach(function (node) {
               rightContainer.appendChild(node);
-            });
+            }); //this function allows for using js on articles dom 
+
             (0, _customStyleLogic.applyCustomStyleLogic)();
 
           case 29:
@@ -1553,7 +1613,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36804" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "47890" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

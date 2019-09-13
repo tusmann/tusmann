@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Fanwood+Text:400,400i&display=swap");
 
 @font-face {
-  font-family: "Roycroft Initials Regular";
+  font-family: "RoycroftInitialsRegular";
   src: url("./styles/first/roycroft-webfont.woff2") format("woff2"),
     url("./styles/first/roycroft-webfont.woff") format("woff");
   font-weight: normal;
@@ -31,7 +31,7 @@
 }
 
 @font-face {
-  font-family: "Zin Hena Kokoryu";
+  font-family: "ZinHenaKokoryu";
   src: url("./styles/second/ZinHenaKokuryu-RCF.ttf") format("truetype");
 }
 
@@ -67,13 +67,18 @@
 //VARIABLES
 $manuzio-font: "GriffoClassicoItalic";
 $manuzio-font-maiusc: "GriffoClassicoSmallCaps";
-$manuzio-font-initial: "Roycroft Initials Regular";
+$manuzio-font-initial: "RoycroftInitialsRegular";
 $manuzio-text-color: #222;
 $manuzio-link-color: #777;
 $manuzio-first-letter: #222;
-$rimpa-font: "Zin Hena Kokoryu";
+//
+$rimpa-font: "ZinHenaKokoryu";
 $rimpa-text-color: #210102;
 $rimpa-light-gradient: #7b562a;
+$rimpa-yellow: #EAC543;
+$rimpa-blue:#06558E;
+$rimpa-green: #2A9957;
+$rimpa-red: #E04D21;
 
 //tschichold
 $font-futura-black: "FuturaFuturisBlackC";
@@ -151,7 +156,11 @@ $font-transito: "WaddemChooNFW01";
 .reader.manuzio {
   article {
     padding: 18% 34.5% 30% 12%;
-    background: url("./styles/first/background.jpg") no-repeat 50% fixed/cover;
+    background-image: url("./styles/first/background.jpg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-attachment: fixed;
+    background-size: cover;
     box-sizing: border-box;
     font-family: $manuzio-font;
     font-style: normal;
@@ -160,9 +169,21 @@ $font-transito: "WaddemChooNFW01";
     color: $manuzio-text-color;
     font-size: 1.9rem;
     text-align: justify;
+    
 
     section {
       margin: 2rem 0;
+p:first-of-type:first-letter {
+        text-transform: uppercase;
+        float: left;
+        color: $manuzio-first-letter;
+        font-size: 13rem;
+        line-height: 10rem;
+        text-align: left;
+        margin: 1rem 0.5rem 0.5rem 0;
+        font-family: $manuzio-font-initial;
+      }
+      
     }
 
     a:-webkit-any-link {
@@ -244,15 +265,7 @@ $font-transito: "WaddemChooNFW01";
       h4 {
         text-align: center;
       }
-      p:first-of-type:first-letter {
-        float: left;
-        color: $manuzio-first-letter;
-        font-size: 13rem;
-        line-height: 10rem;
-        text-align: left;
-        margin: 1rem 0.5rem 0.5rem 0;
-        font-family: $manuzio-font-initial;
-      }
+      
     }
     header {
       text-align: center;
@@ -314,6 +327,23 @@ $font-transito: "WaddemChooNFW01";
     }
   }
 }
+
+//triangles
+.left-triangle-shape {
+  float: left;
+  shape-outside: polygon(0 0, 0 100%, 100% 50%);
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+  width: 45%;
+  position: relative;
+}
+.right-triangle-shape {
+  float: right;
+  shape-outside: polygon(100% 0, 100% 100%, 0 50%);
+  clip-path: polygon(100% 0, 100% 100%, 0 50%);
+  width: 45%;
+  position: relative;
+  
+}
 //mobile-portrait
 @media (min-width: 320px) and (max-width: 650px) {
 .reader.rimpa {
@@ -342,16 +372,27 @@ $font-transito: "WaddemChooNFW01";
 //STYLE: RIMPA
 
 .reader.rimpa {
+  width: 100%;
   article {
-    padding: 10% 20% 10% 20%;
-    background: url("./styles/second/background.jpg") no-repeat 50% fixed/cover;
+    padding: 5%;
+    background-image: url("./styles/second/background.jpg");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-attachment: fixed;
+    background-size: cover;
     box-sizing: border-box;
     font-family: $rimpa-font;
     font-weight: 400;
     line-height: 1.7;
     color: $rimpa-text-color;
-    font-size: 1.3rem;
-    text-align: justify;
+    font-size: 1.5rem;
+    overflow-x: auto;
+    overflow-y: auto;
+
+
+    section {
+      margin: 1rem;
+    }
 
     a:-webkit-any-link {
       color: #777;
@@ -360,9 +401,8 @@ $font-transito: "WaddemChooNFW01";
       padding: 0.5rem 0;
     }
     figure {
-      text-align: center;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      padding: 0 1rem;
+      
 
       figcaption {
         font-style: italic;
@@ -371,12 +411,13 @@ $font-transito: "WaddemChooNFW01";
       }
       img {
         height: auto;
-        width: 80%;
+        width: 70vh;
         object-fit: contain;
         display: block;
         margin-left: auto;
         margin-right: auto;
         box-align: center;
+        
       }
       &:hover {
         -webkit-filter: none;
@@ -385,12 +426,23 @@ $font-transito: "WaddemChooNFW01";
         margin-bottom: 1rem;
       }
     }
+    .image-background-color {
+      background: $rimpa-yellow;
+      height: fit-content;
+      width: fit-content;
+      img {
+        -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  opacity: 0.5;
+      }
+  }
     table {
       table-layout: fixed;
       width: 100%;
       border-width: 0.3rem;
       padding: 0.2rem;
       border-collapse: collapse;
+      background: rgba(234, 197, 67, 0.5);
     }
     th {
       font-size: 1rem;
@@ -410,6 +462,7 @@ $font-transito: "WaddemChooNFW01";
     h2,
     h3,
     h4 {
+      padding: 0 1rem;
       background: -webkit-linear-gradient(
         left,
         $rimpa-text-color,
@@ -437,40 +490,19 @@ $font-transito: "WaddemChooNFW01";
     h2,
     h3,
     h4 {
-      font-size: 3rem;
+      font-size: 2.2rem;
       text-transform: uppercase;
       font-weight: 600;
       letter-spacing: 0.3rem;
-      padding: 2rem 0;
-      font-style: normal;
+      // padding: 2rem 0;
+      
     }
-    h2 {
-      font-size: 2.5rem;
-      font-weight: 500;
-      padding: 1rem 0;
-    }
-    h3 {
-      font-size: 2rem;
-      font-weight: 500;
-      padding: 1rem 0;
-    }
-    h4 {
-      font-size: 1.5rem;
-      font-weight: 400;
-      padding: 1rem 0;
-    }
-
-    main {
+     main {
       h1,
       h2,
       h3,
       h4 {
-        font-size: 3rem;
-        text-transform: uppercase;
-        font-weight: 600;
-        letter-spacing: 0.3rem;
-        padding: 2rem 0;
-        font-style: normal;
+        text-align: center;
       }
       h2 {
         font-size: 2.5rem;
@@ -489,11 +521,26 @@ $font-transito: "WaddemChooNFW01";
       }
     }
     header {
-      text-align: center;
+      text-transform: uppercase;
+      writing-mode: vertical-lr;
+      text-orientation: upright;
     }
     footer {
-      text-align: center;
+      margin: 1rem;
+      text-transform: uppercase;
+      height: 100vh;
     }
+    
+  }
+//EU article
+.left,
+.right {
+  article {
+    font-size: 1.4rem;
+    h1, h2, h3, h4 {
+      font-size: 1.6rem;
+    }
+  }
   }
 }
 

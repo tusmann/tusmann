@@ -638,7 +638,7 @@ html {
 }
 
 @font-face {
-  font-family: "Roycroft Initials Regular";
+  font-family: "RoycroftInitialsRegular";
   src: url("/roycroft-webfont.51df3fbb.woff2") format("woff2"), url("/roycroft-webfont.8abc1c68.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -658,7 +658,7 @@ html {
   font-style: normal;
 }
 @font-face {
-  font-family: "Zin Hena Kokoryu";
+  font-family: "ZinHenaKokoryu";
   src: url("/ZinHenaKokuryu-RCF.c78880ff.ttf") format("truetype");
 }
 @font-face {
@@ -740,7 +740,11 @@ html {
 
 .reader.manuzio article {
   padding: 18% 34.5% 30% 12%;
-  background: url("/background.708683ce.jpg") no-repeat 50% fixed/cover;
+  background-image: url("/background.708683ce.jpg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-attachment: fixed;
+  background-size: cover;
   box-sizing: border-box;
   font-family: "GriffoClassicoItalic";
   font-style: normal;
@@ -752,6 +756,16 @@ html {
 }
 .reader.manuzio article section {
   margin: 2rem 0;
+}
+.reader.manuzio article section p:first-of-type:first-letter {
+  text-transform: uppercase;
+  float: left;
+  color: #222;
+  font-size: 13rem;
+  line-height: 10rem;
+  text-align: left;
+  margin: 1rem 0.5rem 0.5rem 0;
+  font-family: "RoycroftInitialsRegular";
 }
 .reader.manuzio article a:-webkit-any-link {
   color: #777;
@@ -829,15 +843,6 @@ html {
 .reader.manuzio article main h4 {
   text-align: center;
 }
-.reader.manuzio article main p:first-of-type:first-letter {
-  float: left;
-  color: #222;
-  font-size: 13rem;
-  line-height: 10rem;
-  text-align: left;
-  margin: 1rem 0.5rem 0.5rem 0;
-  font-family: "Roycroft Initials Regular";
-}
 .reader.manuzio article header {
   text-align: center;
   font-family: "GriffoClassicoSmallCaps";
@@ -891,6 +896,22 @@ html {
   padding: 9% 17.2% 15% 6%;
 }
 
+.left-triangle-shape {
+  float: left;
+  shape-outside: polygon(0 0, 0 100%, 100% 50%);
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+  width: 45%;
+  position: relative;
+}
+
+.right-triangle-shape {
+  float: right;
+  shape-outside: polygon(100% 0, 100% 100%, 0 50%);
+  clip-path: polygon(100% 0, 100% 100%, 0 50%);
+  width: 45%;
+  position: relative;
+}
+
 @media (min-width: 320px) and (max-width: 650px) {
   .reader.rimpa article {
     font-size: small;
@@ -913,16 +934,27 @@ html {
     padding: 9%, 17.2%, 15%, 6%;
   }
 }
+.reader.rimpa {
+  width: 100%;
+}
 .reader.rimpa article {
-  padding: 10% 20% 10% 20%;
-  background: url("/background.273bbb38.jpg") no-repeat 50% fixed/cover;
+  padding: 5%;
+  background-image: url("/background.273bbb38.jpg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-attachment: fixed;
+  background-size: cover;
   box-sizing: border-box;
-  font-family: "Zin Hena Kokoryu";
+  font-family: "ZinHenaKokoryu";
   font-weight: 400;
   line-height: 1.7;
   color: #210102;
-  font-size: 1.3rem;
-  text-align: justify;
+  font-size: 1.5rem;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+.reader.rimpa article section {
+  margin: 1rem;
 }
 .reader.rimpa article a:-webkit-any-link {
   color: #777;
@@ -931,9 +963,7 @@ html {
   padding: 0.5rem 0;
 }
 .reader.rimpa article figure {
-  text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 0 1rem;
 }
 .reader.rimpa article figure figcaption {
   font-style: italic;
@@ -942,7 +972,7 @@ html {
 }
 .reader.rimpa article figure img {
   height: auto;
-  width: 80%;
+  width: 70vh;
   object-fit: contain;
   display: block;
   margin-left: auto;
@@ -955,12 +985,23 @@ html {
 .reader.rimpa article figure:first-of-type {
   margin-bottom: 1rem;
 }
+.reader.rimpa article .image-background-color {
+  background: #EAC543;
+  height: fit-content;
+  width: fit-content;
+}
+.reader.rimpa article .image-background-color img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
 .reader.rimpa article table {
   table-layout: fixed;
   width: 100%;
   border-width: 0.3rem;
   padding: 0.2rem;
   border-collapse: collapse;
+  background: rgba(234, 197, 67, 0.5);
 }
 .reader.rimpa article th {
   font-size: 1rem;
@@ -980,6 +1021,7 @@ html {
 .reader.rimpa article h2,
 .reader.rimpa article h3,
 .reader.rimpa article h4 {
+  padding: 0 1rem;
   background: -webkit-linear-gradient(left, #210102, #7b562a);
   background: -o-linear-gradient(right, #210102, #7b562a);
   background: -moz-linear-gradient(right, #210102, #7b562a);
@@ -991,38 +1033,16 @@ html {
 .reader.rimpa article h2,
 .reader.rimpa article h3,
 .reader.rimpa article h4 {
-  font-size: 3rem;
+  font-size: 2.2rem;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.3rem;
-  padding: 2rem 0;
-  font-style: normal;
-}
-.reader.rimpa article h2 {
-  font-size: 2.5rem;
-  font-weight: 500;
-  padding: 1rem 0;
-}
-.reader.rimpa article h3 {
-  font-size: 2rem;
-  font-weight: 500;
-  padding: 1rem 0;
-}
-.reader.rimpa article h4 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  padding: 1rem 0;
 }
 .reader.rimpa article main h1,
 .reader.rimpa article main h2,
 .reader.rimpa article main h3,
 .reader.rimpa article main h4 {
-  font-size: 3rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.3rem;
-  padding: 2rem 0;
-  font-style: normal;
+  text-align: center;
 }
 .reader.rimpa article main h2 {
   font-size: 2.5rem;
@@ -1040,10 +1060,25 @@ html {
   padding: 1rem 0;
 }
 .reader.rimpa article header {
-  text-align: center;
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
 }
 .reader.rimpa article footer {
-  text-align: center;
+  margin: 1rem;
+  text-transform: uppercase;
+  height: 100vh;
+}
+.reader.rimpa .left article,
+.reader.rimpa .right article {
+  font-size: 1.4rem;
+}
+.reader.rimpa .left article h1, .reader.rimpa .left article h2, .reader.rimpa .left article h3, .reader.rimpa .left article h4,
+.reader.rimpa .right article h1,
+.reader.rimpa .right article h2,
+.reader.rimpa .right article h3,
+.reader.rimpa .right article h4 {
+  font-size: 1.6rem;
 }
 
 .reader.third {
