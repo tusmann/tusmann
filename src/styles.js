@@ -1,7 +1,9 @@
 import bauhaus from "./images/bauhaus.svg";
 import aldus_leaf from "./images/aldus_leaf.svg";
 import sakura from "./images/sakura.svg";
-import manuzioLogic from "./manuzio"
+import manuzioLogic from "./manuzio";
+import twentyLogic from "./2020";
+import rollingDom from "./rollingDom"
 
 const styles = [
     {
@@ -23,11 +25,13 @@ const styles = [
     },
     {
       name: "fifth",
-      icon: ""
+      icon: "",
+      logic: rollingDom
     },
     {
       name: "sixth",
-      icon: ""
+      icon: "",
+      logic: twentyLogic
     }
   ];
 

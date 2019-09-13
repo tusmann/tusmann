@@ -679,6 +679,34 @@ html {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "stolzMedium";
+  src: url("/StolzlMedium.9ce07e41.ttf") format("truetype");
+}
+@font-face {
+  font-family: "stolzRegular";
+  src: url("/StolzlRegular.5ff40316.ttf") format("truetype");
+}
+@font-face {
+  font-family: "stolzLight";
+  src: url("/StolzlLight.5a13b4ff.ttf") format("truetype");
+}
+@font-face {
+  font-family: "morganiteMedium";
+  src: url("/Morganite-Thin.c9110b61.ttf") format("truetype");
+}
+@font-face {
+  font-family: "rollingFont";
+  src: url("/Royalacid_o.3e0f2d83.ttf") format("truetype");
+}
+@font-face {
+  font-family: "bernsteinBold";
+  src: url("/bernstein-serial-bold.58e41cf6.ttf") format("truetype");
+}
+@font-face {
+  font-family: "fifthCorpus";
+  src: url("/smorgasbord.4e40d7a8.otf") format("truetype");
+}
 @media screen and (max-width: 600px) {
   body {
     font-size: smaller;
@@ -1230,6 +1258,169 @@ html {
   border-bottom: 15px solid #f9423a;
   text-align: center;
   font-style: "FuturaFuturisC";
+}
+
+.reader.fifth article {
+  columns: 3 200px;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 0;
+  border: 0.1rem solid #222;
+  border-left: -5rem;
+  border-right: -1rem;
+  padding: 2rem 4rem 2rem;
+}
+.reader.fifth article::after {
+  content: "";
+  border-top: 0.1rem solid #222;
+}
+.reader.fifth article h1 {
+  position: relative;
+  font-family: "bernsteinBold";
+  font-size: 4em;
+  text-align: left;
+  width: auto;
+}
+.reader.fifth article h4 {
+  color: #ff0019;
+  position: relative;
+  font-family: "bernsteinBold";
+  font-size: 1.4em;
+  border-bottom: 0.05rem solid #222;
+  border-top: 0.05rem solid #222;
+  text-align: center;
+  width: auto;
+  padding: 0.5rem 1rem;
+  column-span: 2;
+}
+.reader.fifth article img {
+  object-fit: contain;
+  width: 25vw;
+  height: auto;
+  padding-top: 1rem;
+}
+.reader.fifth article figure {
+  text-align: center;
+  padding: 0 0;
+}
+.reader.fifth article figure img {
+  object-fit: contain;
+  width: 25vw;
+  height: auto;
+  padding-top: 1rem;
+}
+.reader.fifth article figure figcaption {
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 0.8em;
+  display: block;
+  width: 20vw;
+  color: white;
+  position: relative;
+  bottom: 4.5rem;
+  right: -2rem;
+}
+.reader.fifth article p:first-of-type {
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 1.1em;
+  text-align: justify;
+  position: relative;
+  color: #777;
+  padding: 1rem 0;
+  border-bottom: #222;
+}
+.reader.fifth article main {
+  padding: 0.5rem;
+}
+.reader.fifth article main p {
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 1.1em;
+  text-align: justify;
+  position: relative;
+  color: black;
+}
+.reader.fifth article main p:first-of-type {
+  border-bottom: 0.05rem solid black;
+}
+.reader.fifth article main p:nth-of-type(2)::first-letter {
+  text-transform: uppercase;
+  font-size: 5em;
+}
+.reader.fifth article main p em {
+  text-transform: uppercase;
+}
+.reader.fifth article mark {
+  font-style: italic;
+  background-color: white;
+}
+.reader.fifth article footer {
+  font-size: 0.8em;
+  column-span: all !important;
+  text-transform: uppercase;
+  position: relative;
+  padding-top: 3rem;
+  text-align: right;
+}
+.reader.fifth table {
+  width: 10vw;
+}
+
+.reader.sixth article {
+  background-color: #222;
+  color: #f6f3ea;
+  overflow-x: auto;
+  width: auto;
+}
+.reader.sixth article header {
+  display: flex;
+  flex-direction: column;
+}
+.reader.sixth article header h1 {
+  order: 1;
+  background-image: url(https://media.giphy.com/media/JoVV55m3KZHdxlpFZ6/giphy.gif);
+  background-size: 90vw 110vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex: 0 0 auto;
+  font-family: "stolzRegular", sans-serif;
+  font-size: 9em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8rem;
+  text-rendering: optimizeLegibility;
+}
+.reader.sixth article header h4 {
+  order: 2;
+  font-family: "stolzLight", sans-serif;
+  font-size: 3em;
+  padding: 0rem 2rem 5rem 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.reader.sixth article header figure {
+  order: 4;
+  text-align: center;
+  max-height: 80vh;
+  margin-bottom: 2rem;
+}
+.reader.sixth article header figure img {
+  filter: grayscale(100%);
+}
+.reader.sixth article header figure figcaption {
+  font-family: "stolzLight", sans-serif;
+}
+.reader.sixth article header p {
+  order: 3;
+}
+.reader.sixth article main {
+  padding: 2rem 0;
+}
+.reader.sixth article main p {
+  width: auto;
+  columns: 2 300px;
+  width: 80vw;
+  padding: 0 5rem;
+  text-align: justify;
 }
 
 body {
