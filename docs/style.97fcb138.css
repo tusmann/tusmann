@@ -905,7 +905,10 @@ html {
 .reader.manuzio .right article {
   font-size: 1.4rem;
 }
-.reader.manuzio .left article h1, .reader.manuzio .left article h2, .reader.manuzio .left article h3, .reader.manuzio .left article h4,
+.reader.manuzio .left article h1,
+.reader.manuzio .left article h2,
+.reader.manuzio .left article h3,
+.reader.manuzio .left article h4,
 .reader.manuzio .right article h1,
 .reader.manuzio .right article h2,
 .reader.manuzio .right article h3,
@@ -944,7 +947,10 @@ html {
   .reader.rimpa article {
     font-size: small;
   }
-  .reader.rimpa article h1, .reader.rimpa article h2, .reader.rimpa article h3, .reader.rimpa article h4 {
+  .reader.rimpa article h1,
+.reader.rimpa article h2,
+.reader.rimpa article h3,
+.reader.rimpa article h4 {
     font-size: medium;
   }
   .reader.rimpa article p:first-of-type:first-letter {
@@ -1014,7 +1020,7 @@ html {
   margin-bottom: 1rem;
 }
 .reader.rimpa article .image-background-color {
-  background: #EAC543;
+  background: #eac543;
   height: fit-content;
   width: fit-content;
 }
@@ -1101,7 +1107,10 @@ html {
 .reader.rimpa .right article {
   font-size: 1.4rem;
 }
-.reader.rimpa .left article h1, .reader.rimpa .left article h2, .reader.rimpa .left article h3, .reader.rimpa .left article h4,
+.reader.rimpa .left article h1,
+.reader.rimpa .left article h2,
+.reader.rimpa .left article h3,
+.reader.rimpa .left article h4,
 .reader.rimpa .right article h1,
 .reader.rimpa .right article h2,
 .reader.rimpa .right article h3,
