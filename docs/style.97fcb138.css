@@ -680,7 +680,34 @@ html {
   font-style: normal;
 }
 @font-face {
-<<<<<<< HEAD
+  font-family: "stolzMedium";
+  src: url("/StolzlMedium.9ce07e41.ttf") format("truetype");
+}
+@font-face {
+  font-family: "stolzRegular";
+  src: url("/StolzlRegular.5ff40316.ttf") format("truetype");
+}
+@font-face {
+  font-family: "stolzLight";
+  src: url("/StolzlLight.5a13b4ff.ttf") format("truetype");
+}
+@font-face {
+  font-family: "morganiteMedium";
+  src: url("/Morganite-Thin.c9110b61.ttf") format("truetype");
+}
+@font-face {
+  font-family: "rollingFont";
+  src: url("/Royalacid_o.3e0f2d83.ttf") format("truetype");
+}
+@font-face {
+  font-family: "bernsteinBold";
+  src: url("/bernstein-serial-bold.58e41cf6.ttf") format("truetype");
+}
+@font-face {
+  font-family: "fifthCorpus";
+  src: url("/smorgasbord.4e40d7a8.otf") format("truetype");
+}
+@font-face {
   font-family: "QuentinEF";
   src: url("/QuentinEF.c224d3bc.woff2") format("woff2"), url("/QuentinEF.5cad1edb.woff") format("woff"), url("/QuentinEF.7be9ca20.ttf") format("truetype");
   font-weight: 500;
@@ -709,34 +736,6 @@ html {
   src: url("/Baskerville-Bold.cf841bbe.woff2") format("woff2"), url("/Baskerville-Bold.42ae1365.woff") format("woff"), url("/Baskerville-Bold.3dd8b8a0.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
-=======
-  font-family: "stolzMedium";
-  src: url("/StolzlMedium.9ce07e41.ttf") format("truetype");
-}
-@font-face {
-  font-family: "stolzRegular";
-  src: url("/StolzlRegular.5ff40316.ttf") format("truetype");
-}
-@font-face {
-  font-family: "stolzLight";
-  src: url("/StolzlLight.5a13b4ff.ttf") format("truetype");
-}
-@font-face {
-  font-family: "morganiteMedium";
-  src: url("/Morganite-Thin.c9110b61.ttf") format("truetype");
-}
-@font-face {
-  font-family: "rollingFont";
-  src: url("/Royalacid_o.3e0f2d83.ttf") format("truetype");
-}
-@font-face {
-  font-family: "bernsteinBold";
-  src: url("/bernstein-serial-bold.58e41cf6.ttf") format("truetype");
-}
-@font-face {
-  font-family: "fifthCorpus";
-  src: url("/smorgasbord.4e40d7a8.otf") format("truetype");
->>>>>>> fb70e025dd78836fee2e0d9e5224274f3dc6f362
 }
 @media screen and (max-width: 600px) {
   body {
@@ -1396,7 +1395,6 @@ html {
   font-style: "FuturaFuturisC";
 }
 
-<<<<<<< HEAD
 .reader.dungeon article {
   font-size: 100%;
 }
@@ -1766,7 +1764,8 @@ html {
   background-color: whitesmoke;
   font-family: "ITC Korinna Std";
   text-align: center;
-=======
+}
+
 .reader.fifth article {
   columns: 3 200px;
   background-color: white;
@@ -1928,7 +1927,6 @@ html {
   width: 80vw;
   padding: 0 5rem;
   text-align: justify;
->>>>>>> fb70e025dd78836fee2e0d9e5224274f3dc6f362
 }
 
 body {

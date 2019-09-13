@@ -1015,11 +1015,7 @@ function manuzioLogic() {
 
 var _default = manuzioLogic;
 exports.default = _default;
-<<<<<<< HEAD
 },{}],"dungeon.js":[function(require,module,exports) {
-=======
-},{}],"rimpa.js":[function(require,module,exports) {
->>>>>>> fb70e025dd78836fee2e0d9e5224274f3dc6f362
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1027,7 +1023,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-<<<<<<< HEAD
 function dungeonLogic() {
   var rollerHolder = document.querySelector('.reader header');
   var container = document.createElement('section');
@@ -1127,7 +1122,14 @@ function dungeonLogic() {
 
 var _default = dungeonLogic;
 exports.default = _default;
-=======
+},{}],"rimpa.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
 function rimpaLogic() {
   var image = document.querySelectorAll(".reader figure img");
   image.forEach(function (node) {
@@ -1322,7 +1324,6 @@ function getMeta(metaName) {
   console.log(getMeta('video'));
 
 */
->>>>>>> fb70e025dd78836fee2e0d9e5224274f3dc6f362
 },{}],"styles.js":[function(require,module,exports) {
 "use strict";
 
@@ -1341,15 +1342,13 @@ var _die = _interopRequireDefault(require("./images/die.svg"));
 
 var _manuzio = _interopRequireDefault(require("./manuzio"));
 
-<<<<<<< HEAD
 var _dungeon = _interopRequireDefault(require("./dungeon"));
-=======
+
 var _rimpa = _interopRequireDefault(require("./rimpa"));
 
 var _ = _interopRequireDefault(require("./2020"));
 
 var _rollingDom = _interopRequireDefault(require("./rollingDom"));
->>>>>>> fb70e025dd78836fee2e0d9e5224274f3dc6f362
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1379,11 +1378,7 @@ var styles = [{
 }];
 var _default = styles;
 exports.default = _default;
-<<<<<<< HEAD
-},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./images/die.svg":"images/die.svg","./manuzio":"manuzio.js","./dungeon":"dungeon.js"}],"customStyleLogic.js":[function(require,module,exports) {
-=======
-},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./manuzio":"manuzio.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js"}],"customStyleLogic.js":[function(require,module,exports) {
->>>>>>> fb70e025dd78836fee2e0d9e5224274f3dc6f362
+},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./images/die.svg":"images/die.svg","./manuzio":"manuzio.js","./dungeon":"dungeon.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js"}],"customStyleLogic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1908,11 +1903,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59036" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49202" + '/');
->>>>>>> fb70e025dd78836fee2e0d9e5224274f3dc6f362
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50012" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
