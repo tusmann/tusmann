@@ -1013,7 +1013,11 @@ function manuzioLogic() {
 
 var _default = manuzioLogic;
 exports.default = _default;
+<<<<<<< HEAD
 },{}],"rimpa.js":[function(require,module,exports) {
+=======
+},{}],"2020.js":[function(require,module,exports) {
+>>>>>>> 8d2b8db6cfc5f56121df9926184b22cb026ab1f0
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1021,6 +1025,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+<<<<<<< HEAD
 function rimpaLogic() {
   var image = document.querySelectorAll(".reader figure img");
   image.forEach(function (node) {
@@ -1034,6 +1039,181 @@ function rimpaLogic() {
 
 var _default = rimpaLogic;
 exports.default = _default;
+=======
+function twentyLogic() {
+  list = document.querySelectorAll(".reader.sixth img");
+
+  for (var i = 0; i < list.length; ++i) {
+    list[i].classList.add('picture');
+  }
+}
+
+var _default = twentyLogic;
+/*
+  var options = {
+    imgSrc : "https://unsplash.it/g/1024/768?image=874",
+    containerName : "portrait",
+    rows:5,
+    columns:5,
+    margin:2.5,
+    animTime: 0.3
+  }
+  
+  function ImageGrid(defaults)
+  {
+    var r = defaults.rows;
+    var c = defaults.columns;
+    var margin = defaults.margin;
+      
+    var portrait = document.getElementsByClassName(defaults.containerName)[0];
+    var container = document.createElement('div');
+    container.className = "gridContainer";
+    portrait.appendChild(container); 
+      
+    var gridTile;  
+  
+    var w = (container.offsetWidth / c) -margin;
+    var h = (container.offsetHeight / r) -margin;
+    var arr = [];
+      
+    for (var i=0, l=r*c; i < l; i++)
+    {    
+      gridTile = document.createElement('div');
+      gridTile.className = "gridTile";
+      gridTile.style.backgroundImage = "url("+defaults.imgSrc+")";
+      
+         
+      arr = [(w+margin)*(i%c), (h+margin)*Math.floor(i/c), ((w+margin)*(i%c)+w-margin), (h+margin)*Math.floor(i/c), ((w+margin)*(i%c)+w-margin), ((h+margin)*Math.floor(i/c) + h-margin), (w+margin)*(i%c), ((h+margin)*Math.floor(i/c) + h-margin)];
+          
+     // console.log(i + " ====>>> " + arr + " ||||| " + i%c  + " |||||| " + i/c);  
+      
+          
+      TweenMax.set(gridTile, {webkitClipPath:'polygon('+arr[0]+'px '+ arr[1]+'px,'+arr[2]+'px '+arr[3]+'px, '+arr[4]+'px '+ arr[5] +'px, '+arr[6]+'px '+ arr[7] +'px)', clipPath:'polygon('+arr[0]+'px '+ arr[1]+'px,'+arr[2]+'px '+arr[3]+'px, '+arr[4]+'px '+ arr[5] +'px, '+arr[6]+'px '+ arr[7] +'px)'});
+         
+      container.appendChild(gridTile);    
+      
+      fixTilePosition(gridTile, i);
+    }
+    
+    portrait.addEventListener("mouseover", function(e){
+      var allTiles = e.currentTarget.querySelectorAll(".gridTile");
+      for (var t=0, le = allTiles.length; t < le; t++)
+        {
+          TweenMax.to(allTiles[t], defaults.animTime, {css:{backgroundPosition:"0px 0px"}, ease:Power1.easeOut});
+        }
+    })
+                               
+    portrait.addEventListener("mouseleave", function(e){
+      var allTiles = e.currentTarget.querySelectorAll(".gridTile");
+      for (var ti=0, len = allTiles.length; ti < len; ti++)
+        {
+          fixTilePosition(allTiles[ti], ti, defaults.animTime);
+        }
+    })
+    
+    function fixTilePosition(tile, ind, time)
+    {
+      if(time==null)time=0;
+      var centr, centrCol, centrRow, offsetW, offsetH, left, top;
+      
+      centr = Math.floor(c * r / 2);
+      centrCol = Math.ceil(centr/c);
+      centrRow = Math.ceil(centr/r);
+          
+      offsetW = w/centrCol;
+      offsetH = h/centrRow;
+      
+      left = (Math.round((ind % c - centrCol + 1) * offsetW));
+      top = (Math.round((Math.floor(ind/c) - centrRow + 1) * offsetH));
+      
+      //console.log(left, top)
+      
+      TweenMax.to(tile, time, {css:{backgroundPosition:left+"px "+top+"px"}, ease:Power1.easeOut});
+    }
+  }
+  
+  ImageGrid(options);
+/*
+import Typed from 'typed.js';
+
+var options = {
+  strings: ["<i>First</i> sentence.", "&amp; a second sentence."],
+  typeSpeed: 40
+}
+
+var typed = new Typed(".cazzo", options);/*
+
+/*var list;
+list = document.querySelectorAll(".mainHome");
+for (var i = 0; i < list.length; ++i) {
+    list[i].classList.add('cazzo');
+}
+
+/*
+var root = document.getElementById('portrait');
+
+var mouse_monitor = function(e) {
+   let x = e.clientX/innerWidth;
+   let y = e.clientY/innerHeight;
+   
+   let move_x = (x>0.5) ? '-30px' : '30px';
+   let move_y = (y>0.5) ? '-20px' : '20px';
+   
+   root.style.setProperty("--translate-x", move_x);
+   root.style.setProperty("--translate-y", move_y);
+}
+
+root.addEventListener("mousemove", mouse_monitor);
+
+// Detect request animation frame
+var scroll = window.requestAnimationFrame ||
+             // IE Fallback
+             function(callback){ window.setTimeout(callback, 1000/60)};
+var elementsToShow = document.querySelectorAll('.inline-photo'); 
+
+function loop() {
+
+    Array.prototype.forEach.call(elementsToShow, function(element){
+      if (isElementInViewport(element)) {
+        element.classList.add('is-visible');
+      } else {
+        element.classList.remove('is-visible');
+      }
+    });
+
+    scroll(loop);
+}
+
+// Call the loop for the first time
+loop();*/
+
+exports.default = _default;
+},{}],"rollingDom.js":[function(require,module,exports) {
+/*
+function rollingDom(){
+    const div = document.createElement("div");
+    const location = document.querySelectorAll(".reader section");
+    location.insertAdjacentElement("afterbegin", div);
+}
+
+export default rollingDom;
+
+function getMeta(metaName) {
+    const metas = document.getElementsByTagName('meta');
+  
+    for (let i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute('name') === metaName) {
+        return metas[i].getAttribute('content');
+      }
+    }
+  
+    return '';
+  }
+  
+  console.log(getMeta('video'));
+
+*/
+>>>>>>> 8d2b8db6cfc5f56121df9926184b22cb026ab1f0
 },{}],"styles.js":[function(require,module,exports) {
 "use strict";
 
@@ -1050,7 +1230,13 @@ var _sakura = _interopRequireDefault(require("./images/sakura.svg"));
 
 var _manuzio = _interopRequireDefault(require("./manuzio"));
 
+<<<<<<< HEAD
 var _rimpa = _interopRequireDefault(require("./rimpa"));
+=======
+var _ = _interopRequireDefault(require("./2020"));
+
+var _rollingDom = _interopRequireDefault(require("./rollingDom"));
+>>>>>>> 8d2b8db6cfc5f56121df9926184b22cb026ab1f0
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1070,14 +1256,20 @@ var styles = [{
   icon: ""
 }, {
   name: "fifth",
-  icon: ""
+  icon: "",
+  logic: _rollingDom.default
 }, {
   name: "sixth",
-  icon: ""
+  icon: "",
+  logic: _.default
 }];
 var _default = styles;
 exports.default = _default;
+<<<<<<< HEAD
 },{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./manuzio":"manuzio.js","./rimpa":"rimpa.js"}],"customStyleLogic.js":[function(require,module,exports) {
+=======
+},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./manuzio":"manuzio.js","./2020":"2020.js","./rollingDom":"rollingDom.js"}],"customStyleLogic.js":[function(require,module,exports) {
+>>>>>>> 8d2b8db6cfc5f56121df9926184b22cb026ab1f0
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1139,7 +1331,6 @@ function _addSpecialArticle() {
 
           case 5:
             rightArticle = _context.sent;
-            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1202,7 +1393,6 @@ function _addArticle() {
 
           case 2:
             article = _context2.sent;
-            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1251,7 +1441,6 @@ var _articleParser = require("./article-parser");
 
 var _addArticle = require("./addArticle.js");
 
-//article dictionary with title=key and url=value
 var articles = [{
   title: "Japan's Prisons Are a Haven for Elderly Women",
   url: "./articles/Bloomberg/ShihoFukada.html"
@@ -1520,14 +1709,6 @@ var _addDocumentationPages = require("./addDocumentationPages");
 
 var _overlayMenu = require("./overlayMenu");
 
-// polyfill needed for using for loop on a dictionary
-
-/*
- * Object.prototype.forEach() polyfill
- * https://gomakethings.com/looping-through-objects-with-es6/
- * @author Chris Ferdinandi
- * @license MIT
- */
 if (!Object.prototype.forEach) {
   Object.defineProperty(Object.prototype, "forEach", {
     value: function value(callback, thisArg) {
@@ -1613,7 +1794,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "47890" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51634" + '/');
+>>>>>>> 8d2b8db6cfc5f56121df9926184b22cb026ab1f0
 
   ws.onmessage = function (event) {
     checkedAssets = {};
