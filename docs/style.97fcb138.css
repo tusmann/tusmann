@@ -638,7 +638,7 @@ html {
 }
 
 @font-face {
-  font-family: "Roycroft Initials Regular";
+  font-family: "RoycroftInitialsRegular";
   src: url("/roycroft-webfont.51df3fbb.woff2") format("woff2"), url("/roycroft-webfont.8abc1c68.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -658,7 +658,7 @@ html {
   font-style: normal;
 }
 @font-face {
-  font-family: "Zin Hena Kokoryu";
+  font-family: "ZinHenaKokoryu";
   src: url("/ZinHenaKokuryu-RCF.c78880ff.ttf") format("truetype");
 }
 @font-face {
@@ -680,6 +680,7 @@ html {
   font-style: normal;
 }
 @font-face {
+<<<<<<< HEAD
   font-family: "QuentinEF";
   src: url("/QuentinEF.c224d3bc.woff2") format("woff2"), url("/QuentinEF.5cad1edb.woff") format("woff"), url("/QuentinEF.7be9ca20.ttf") format("truetype");
   font-weight: 500;
@@ -708,6 +709,34 @@ html {
   src: url("/Baskerville-Bold.cf841bbe.woff2") format("woff2"), url("/Baskerville-Bold.42ae1365.woff") format("woff"), url("/Baskerville-Bold.3dd8b8a0.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
+=======
+  font-family: "stolzMedium";
+  src: url("/StolzlMedium.9ce07e41.ttf") format("truetype");
+}
+@font-face {
+  font-family: "stolzRegular";
+  src: url("/StolzlRegular.5ff40316.ttf") format("truetype");
+}
+@font-face {
+  font-family: "stolzLight";
+  src: url("/StolzlLight.5a13b4ff.ttf") format("truetype");
+}
+@font-face {
+  font-family: "morganiteMedium";
+  src: url("/Morganite-Thin.c9110b61.ttf") format("truetype");
+}
+@font-face {
+  font-family: "rollingFont";
+  src: url("/Royalacid_o.3e0f2d83.ttf") format("truetype");
+}
+@font-face {
+  font-family: "bernsteinBold";
+  src: url("/bernstein-serial-bold.58e41cf6.ttf") format("truetype");
+}
+@font-face {
+  font-family: "fifthCorpus";
+  src: url("/smorgasbord.4e40d7a8.otf") format("truetype");
+>>>>>>> fb70e025dd78836fee2e0d9e5224274f3dc6f362
 }
 @media screen and (max-width: 600px) {
   body {
@@ -770,7 +799,11 @@ html {
 
 .reader.manuzio article {
   padding: 18% 34.5% 30% 12%;
-  background: url("/background.708683ce.jpg") no-repeat 50% fixed/cover;
+  background-image: url("/background.708683ce.jpg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-attachment: fixed;
+  background-size: cover;
   box-sizing: border-box;
   font-family: "GriffoClassicoItalic";
   font-style: normal;
@@ -782,6 +815,16 @@ html {
 }
 .reader.manuzio article section {
   margin: 2rem 0;
+}
+.reader.manuzio article section p:first-of-type:first-letter {
+  text-transform: uppercase;
+  float: left;
+  color: #222;
+  font-size: 13rem;
+  line-height: 10rem;
+  text-align: left;
+  margin: 1rem 0.5rem 0.5rem 0;
+  font-family: "RoycroftInitialsRegular";
 }
 .reader.manuzio article a:-webkit-any-link {
   color: #777;
@@ -859,15 +902,6 @@ html {
 .reader.manuzio article main h4 {
   text-align: center;
 }
-.reader.manuzio article main p:first-of-type:first-letter {
-  float: left;
-  color: #222;
-  font-size: 13rem;
-  line-height: 10rem;
-  text-align: left;
-  margin: 1rem 0.5rem 0.5rem 0;
-  font-family: "Roycroft Initials Regular";
-}
 .reader.manuzio article header {
   text-align: center;
   font-family: "GriffoClassicoSmallCaps";
@@ -902,7 +936,10 @@ html {
 .reader.manuzio .right article {
   font-size: 1.4rem;
 }
-.reader.manuzio .left article h1, .reader.manuzio .left article h2, .reader.manuzio .left article h3, .reader.manuzio .left article h4,
+.reader.manuzio .left article h1,
+.reader.manuzio .left article h2,
+.reader.manuzio .left article h3,
+.reader.manuzio .left article h4,
 .reader.manuzio .right article h1,
 .reader.manuzio .right article h2,
 .reader.manuzio .right article h3,
@@ -921,11 +958,30 @@ html {
   padding: 9% 17.2% 15% 6%;
 }
 
+.left-triangle-shape {
+  float: left;
+  shape-outside: polygon(0 0, 0 100%, 100% 50%);
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+  width: 45%;
+  position: relative;
+}
+
+.right-triangle-shape {
+  float: right;
+  shape-outside: polygon(100% 0, 100% 100%, 0 50%);
+  clip-path: polygon(100% 0, 100% 100%, 0 50%);
+  width: 45%;
+  position: relative;
+}
+
 @media (min-width: 320px) and (max-width: 650px) {
   .reader.rimpa article {
     font-size: small;
   }
-  .reader.rimpa article h1, .reader.rimpa article h2, .reader.rimpa article h3, .reader.rimpa article h4 {
+  .reader.rimpa article h1,
+.reader.rimpa article h2,
+.reader.rimpa article h3,
+.reader.rimpa article h4 {
     font-size: medium;
   }
   .reader.rimpa article p:first-of-type:first-letter {
@@ -943,16 +999,27 @@ html {
     padding: 9%, 17.2%, 15%, 6%;
   }
 }
+.reader.rimpa {
+  width: 100%;
+}
 .reader.rimpa article {
-  padding: 10% 20% 10% 20%;
-  background: url("/background.273bbb38.jpg") no-repeat 50% fixed/cover;
+  padding: 5%;
+  background-image: url("/background.273bbb38.jpg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-attachment: fixed;
+  background-size: cover;
   box-sizing: border-box;
-  font-family: "Zin Hena Kokoryu";
+  font-family: "ZinHenaKokoryu";
   font-weight: 400;
   line-height: 1.7;
   color: #210102;
-  font-size: 1.3rem;
-  text-align: justify;
+  font-size: 1.5rem;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+.reader.rimpa article section {
+  margin: 1rem;
 }
 .reader.rimpa article a:-webkit-any-link {
   color: #777;
@@ -961,9 +1028,7 @@ html {
   padding: 0.5rem 0;
 }
 .reader.rimpa article figure {
-  text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 0 1rem;
 }
 .reader.rimpa article figure figcaption {
   font-style: italic;
@@ -972,7 +1037,7 @@ html {
 }
 .reader.rimpa article figure img {
   height: auto;
-  width: 80%;
+  width: 70vh;
   object-fit: contain;
   display: block;
   margin-left: auto;
@@ -985,12 +1050,23 @@ html {
 .reader.rimpa article figure:first-of-type {
   margin-bottom: 1rem;
 }
+.reader.rimpa article .image-background-color {
+  background: #eac543;
+  height: fit-content;
+  width: fit-content;
+}
+.reader.rimpa article .image-background-color img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
 .reader.rimpa article table {
   table-layout: fixed;
   width: 100%;
   border-width: 0.3rem;
   padding: 0.2rem;
   border-collapse: collapse;
+  background: rgba(234, 197, 67, 0.5);
 }
 .reader.rimpa article th {
   font-size: 1rem;
@@ -1010,6 +1086,7 @@ html {
 .reader.rimpa article h2,
 .reader.rimpa article h3,
 .reader.rimpa article h4 {
+  padding: 0 1rem;
   background: -webkit-linear-gradient(left, #210102, #7b562a);
   background: -o-linear-gradient(right, #210102, #7b562a);
   background: -moz-linear-gradient(right, #210102, #7b562a);
@@ -1021,38 +1098,16 @@ html {
 .reader.rimpa article h2,
 .reader.rimpa article h3,
 .reader.rimpa article h4 {
-  font-size: 3rem;
+  font-size: 2.2rem;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 0.3rem;
-  padding: 2rem 0;
-  font-style: normal;
-}
-.reader.rimpa article h2 {
-  font-size: 2.5rem;
-  font-weight: 500;
-  padding: 1rem 0;
-}
-.reader.rimpa article h3 {
-  font-size: 2rem;
-  font-weight: 500;
-  padding: 1rem 0;
-}
-.reader.rimpa article h4 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  padding: 1rem 0;
 }
 .reader.rimpa article main h1,
 .reader.rimpa article main h2,
 .reader.rimpa article main h3,
 .reader.rimpa article main h4 {
-  font-size: 3rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.3rem;
-  padding: 2rem 0;
-  font-style: normal;
+  text-align: center;
 }
 .reader.rimpa article main h2 {
   font-size: 2.5rem;
@@ -1070,10 +1125,28 @@ html {
   padding: 1rem 0;
 }
 .reader.rimpa article header {
-  text-align: center;
+  text-transform: uppercase;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
 }
 .reader.rimpa article footer {
-  text-align: center;
+  margin: 1rem;
+  text-transform: uppercase;
+  height: 100vh;
+}
+.reader.rimpa .left article,
+.reader.rimpa .right article {
+  font-size: 1.4rem;
+}
+.reader.rimpa .left article h1,
+.reader.rimpa .left article h2,
+.reader.rimpa .left article h3,
+.reader.rimpa .left article h4,
+.reader.rimpa .right article h1,
+.reader.rimpa .right article h2,
+.reader.rimpa .right article h3,
+.reader.rimpa .right article h4 {
+  font-size: 1.6rem;
 }
 
 .reader.third {
@@ -1323,6 +1396,7 @@ html {
   font-style: "FuturaFuturisC";
 }
 
+<<<<<<< HEAD
 .reader.dungeon article {
   font-size: 100%;
 }
@@ -1692,6 +1766,169 @@ html {
   background-color: whitesmoke;
   font-family: "ITC Korinna Std";
   text-align: center;
+=======
+.reader.fifth article {
+  columns: 3 200px;
+  background-color: white;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 0;
+  border: 0.1rem solid #222;
+  border-left: -5rem;
+  border-right: -1rem;
+  padding: 2rem 4rem 2rem;
+}
+.reader.fifth article::after {
+  content: "";
+  border-top: 0.1rem solid #222;
+}
+.reader.fifth article h1 {
+  position: relative;
+  font-family: "bernsteinBold";
+  font-size: 4em;
+  text-align: left;
+  width: auto;
+}
+.reader.fifth article h4 {
+  color: #ff0019;
+  position: relative;
+  font-family: "bernsteinBold";
+  font-size: 1.4em;
+  border-bottom: 0.05rem solid #222;
+  border-top: 0.05rem solid #222;
+  text-align: center;
+  width: auto;
+  padding: 0.5rem 1rem;
+  column-span: 2;
+}
+.reader.fifth article img {
+  object-fit: contain;
+  width: 25vw;
+  height: auto;
+  padding-top: 1rem;
+}
+.reader.fifth article figure {
+  text-align: center;
+  padding: 0 0;
+}
+.reader.fifth article figure img {
+  object-fit: contain;
+  width: 25vw;
+  height: auto;
+  padding-top: 1rem;
+}
+.reader.fifth article figure figcaption {
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 0.8em;
+  display: block;
+  width: 20vw;
+  color: white;
+  position: relative;
+  bottom: 4.5rem;
+  right: -2rem;
+}
+.reader.fifth article p:first-of-type {
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 1.1em;
+  text-align: justify;
+  position: relative;
+  color: #777;
+  padding: 1rem 0;
+  border-bottom: #222;
+}
+.reader.fifth article main {
+  padding: 0.5rem;
+}
+.reader.fifth article main p {
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 1.1em;
+  text-align: justify;
+  position: relative;
+  color: black;
+}
+.reader.fifth article main p:first-of-type {
+  border-bottom: 0.05rem solid black;
+}
+.reader.fifth article main p:nth-of-type(2)::first-letter {
+  text-transform: uppercase;
+  font-size: 5em;
+}
+.reader.fifth article main p em {
+  text-transform: uppercase;
+}
+.reader.fifth article mark {
+  font-style: italic;
+  background-color: white;
+}
+.reader.fifth article footer {
+  font-size: 0.8em;
+  column-span: all !important;
+  text-transform: uppercase;
+  position: relative;
+  padding-top: 3rem;
+  text-align: right;
+}
+.reader.fifth table {
+  width: 10vw;
+}
+
+.reader.sixth article {
+  background-color: #222;
+  color: #f6f3ea;
+  overflow-x: auto;
+  width: auto;
+}
+.reader.sixth article header {
+  display: flex;
+  flex-direction: column;
+}
+.reader.sixth article header h1 {
+  order: 1;
+  background-image: url(https://media.giphy.com/media/JoVV55m3KZHdxlpFZ6/giphy.gif);
+  background-size: 90vw 110vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex: 0 0 auto;
+  font-family: "stolzRegular", sans-serif;
+  font-size: 9em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8rem;
+  text-rendering: optimizeLegibility;
+}
+.reader.sixth article header h4 {
+  order: 2;
+  font-family: "stolzLight", sans-serif;
+  font-size: 3em;
+  padding: 0rem 2rem 5rem 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.reader.sixth article header figure {
+  order: 4;
+  text-align: center;
+  max-height: 80vh;
+  margin-bottom: 2rem;
+}
+.reader.sixth article header figure img {
+  filter: grayscale(100%);
+}
+.reader.sixth article header figure figcaption {
+  font-family: "stolzLight", sans-serif;
+}
+.reader.sixth article header p {
+  order: 3;
+}
+.reader.sixth article main {
+  padding: 2rem 0;
+}
+.reader.sixth article main p {
+  width: auto;
+  columns: 2 300px;
+  width: 80vw;
+  padding: 0 5rem;
+  text-align: justify;
+>>>>>>> fb70e025dd78836fee2e0d9e5224274f3dc6f362
 }
 
 body {
