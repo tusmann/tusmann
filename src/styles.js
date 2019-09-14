@@ -1,10 +1,12 @@
 import bauhaus from "./images/bauhaus.svg";
 import aldus_leaf from "./images/aldus_leaf.svg";
 import sakura from "./images/sakura.svg";
-import manuzioLogic from "./manuzio"
-import rimpaLogic from "./rimpa"
+import die from "./images/die.svg";
+import manuzioLogic from "./manuzio";
+import dungeonLogic from "./dungeon";
+import rimpaLogic from "./rimpa";
 import twentyLogic from "./2020";
-import rollingDom from "./rollingDom"
+import rollingDom from "./rollingDom";
 
 const styles = [
     {
@@ -22,8 +24,9 @@ const styles = [
       icon: bauhaus
     },
     {
-      name: "fourth",
-      icon: ""
+      name: "dungeon",
+      icon: die,
+      logic: dungeonLogic
     },
     {
       name: "fifth",

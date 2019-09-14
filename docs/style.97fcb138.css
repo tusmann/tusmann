@@ -711,6 +711,36 @@ html {
   font-family: "fifthCorpus";
   src: url("/smorgasbord.4e40d7a8.otf") format("truetype");
 }
+@font-face {
+  font-family: "QuentinEF";
+  src: url("/QuentinEF.c224d3bc.woff2") format("woff2"), url("/QuentinEF.5cad1edb.woff") format("woff"), url("/QuentinEF.7be9ca20.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ITC Korinna Std";
+  src: url("/KorinnaStd-Regular.0567d5c9.woff2") format("woff2"), url("/KorinnaStd-Regular.a005b4c4.woff") format("woff"), url("/KorinnaStd-Regular.d15793db.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DnDC";
+  src: url("/DungeonsDragonsAS.bedb3ba9.woff2") format("woff2"), url("/DungeonsDragonsAS.9ec7c90b.woff") format("woff"), url("/DungeonsDragonsAS.acd85f34.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Hounds";
+  src: url("/Baskerville.25c0ad83.woff2") format("woff2"), url("/Baskerville.21b47e24.woff") format("woff"), url("/Baskerville.a6c8ce28.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Baskerville";
+  src: url("/Baskerville-Bold.cf841bbe.woff2") format("woff2"), url("/Baskerville-Bold.42ae1365.woff") format("woff"), url("/Baskerville-Bold.3dd8b8a0.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
 @media screen and (max-width: 600px) {
   body {
     font-size: smaller;
@@ -1140,23 +1170,48 @@ html {
 
 .reader.third {
   /*header p {
-        margin: 2rem 0 0; }*/
+  margin: 2rem 0 0; }*/
   /* article > header {
-        display: flex;
-        margin: auto;
-        padding-top: 1rem;
-        padding-bottom: 1rem; } */
+  display: flex;
+  margin: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem; } */
   /*@media (min-width: 1800px) {
-          article > header {
-          padding-bottom: 30rem; } }*/
+    article > header {
+    padding-bottom: 30rem; } }*/
 }
-.reader.third .reader.left article main {
-  margin: 2rem 4rem 6rem 2rem;
-  background-color: #f6f3ea;
-  text-align: justify;
-  column-count: 1;
+.reader.third .reader.left article header, .reader.third .reader.right article header {
+  width: 20vw;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
 }
-.reader.third .reader.right article main {
+.reader.third .reader.left article header h2, .reader.third .reader.right article header h2 {
+  grid-column: 1/3;
+}
+.reader.third .reader.left article header p, .reader.third .reader.right article header p {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.reader.third .reader.left article header p:first-child, .reader.third .reader.right article header p:first-child {
+  border-top: 15px solid #f9423a;
+  border-bottom: 15px solid #f9423a;
+}
+.reader.third .reader.left article header p:first-child::first-letter, .reader.third .reader.right article header p:first-child::first-letter {
+  font-family: "WaddemChooNFW01";
+  color: #0077c0;
+  font-size: 2.5em;
+}
+.reader.third .reader.left article header table, .reader.third .reader.right article header table {
+  writing-mode: vertical-rl;
+  grid-column: 3/4;
+  grid-row: 1/2;
+  justify-self: start;
+}
+.reader.third .reader.left article header table td, .reader.third .reader.right article header table td {
+  border-top: 5px solid #0077c0;
+  padding-bottom: 5px;
+}
+.reader.third .reader.left article main, .reader.third .reader.right article main {
   margin: 2rem 4rem 6rem 2rem;
   background-color: #f6f3ea;
   text-align: justify;
@@ -1174,8 +1229,9 @@ html {
   box-sizing: border-box;
 }
 .reader.third article header {
-  width: 55vw;
+  width: 40vw;
   padding-top: 14vh;
+  padding-bottom: 10vh;
   display: grid;
   margin: auto;
   grid-template-columns: auto 1fr 1fr 1fr 0.5fr;
@@ -1183,8 +1239,7 @@ html {
   grid-gap: 1rem;
   transform: rotate(-30deg);
 }
-.reader.third article header h1,
-.reader.third article header h3 {
+.reader.third article header h1, .reader.third article header h3 {
   font-size: calc(1rem + 1.4vw);
   margin: 0;
   font-weight: 700;
@@ -1262,6 +1317,10 @@ html {
   -webkit-filter: grayscale(100%) contrast(100%);
   filter: grayscale(100%) contrast(100%);
 }
+.reader.third article header figure {
+  grid-column: 1/2;
+  grid-row: 2/4;
+}
 .reader.third article header figure img {
   width: 80%;
   height: auto;
@@ -1289,11 +1348,15 @@ html {
   column-count: 2;
   column-gap: 4vw;
 }
-.reader.third article main p {
-  font-size: 1rem;
+.reader.third article main h3 {
+  writing-mode: vertical-rl;
+  border-right: 10vw solid red;
 }
 .reader.third article main figure {
   width: auto;
+}
+.reader.third article main figure table {
+  border-right: 10px solid #f9423a;
 }
 .reader.third article main figure img {
   width: 100%;
@@ -1308,9 +1371,37 @@ html {
   font-style: "FuturaFuturisBlackC";
   font-weight: 700;
 }
-.reader.third article h1,
-.reader.third article h2,
-.reader.third article h3 {
+.reader.third article main section h3 {
+  writing-mode: vertical-rl;
+  border-right: 10vw solid red;
+  margin-top: 15px;
+}
+.reader.third article main section figure {
+  width: auto;
+}
+.reader.third article main section figure table {
+  border-right: 5px solid #f9423a;
+}
+.reader.third article main section figure table tr {
+  padding-right: 5px;
+}
+.reader.third article main section figure img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-top: 2%;
+  display: block;
+  -webkit-filter: grayscale(100%) contrast(100%);
+  filter: grayscale(100%) contrast(100%);
+}
+.reader.third article main section figure figcaption {
+  font-style: "FuturaFuturisBlackC";
+  font-weight: 700;
+  margin-bottom: 10px;
+  border-left: 5px solid #0077c0;
+  padding-left: 5px;
+}
+.reader.third article h1, .reader.third article h2, .reader.third article h3 {
   margin: 0;
   text-transform: uppercase;
 }
@@ -1322,6 +1413,377 @@ html {
   border-bottom: 15px solid #f9423a;
   text-align: center;
   font-style: "FuturaFuturisC";
+}
+
+.reader.dungeon article {
+  font-size: 100%;
+}
+.reader.dungeon article header {
+  height: 100%;
+  background-image: url("/dedcover.83f1d7a2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto auto auto auto;
+  grid-template-columns: auto;
+}
+.reader.dungeon article header .cube-container {
+  grid-row: 7/8;
+  width: 190px;
+  height: 190px;
+  position: relative;
+  margin: 100px auto;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+.reader.dungeon article header .cube-container:after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 380px;
+  height: 380px;
+  z-index: -1;
+  margin-left: -96px;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%);
+  /* W3C */
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.reader.dungeon article header .cube-container #cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(-60px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  transform: translateZ(-60px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  -webkit-transition: -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out;
+  /* top 5 point */
+  /* bottom 5 point */
+  /* middle point down */
+  /* middle point up */
+}
+.reader.dungeon article header .cube-container #cube figure {
+  width: 189px;
+  height: 188px;
+  display: block;
+  position: absolute;
+  background: url("/blue.13477949.png") top center no-repeat;
+  font-size: 70px;
+  line-height: 190px;
+  font-family: sans-serif;
+  text-align: center;
+  text-shadow: #000 -1px -1px 0, #fff 1px 1px 0;
+  color: #f1f1f1;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.reader.dungeon article header .cube-container #cube .face01 {
+  -webkit-transform: rotateY(36deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
+  transform: rotateY(36deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face06 {
+  -webkit-transform: rotateY(108deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
+  transform: rotateY(108deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face08 {
+  -webkit-transform: rotateY(180deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
+  transform: rotateY(180deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face04 {
+  -webkit-transform: rotateY(253deg) rotateX(53deg) rotateZ(120deg) translateZ(120px);
+  transform: rotateY(253deg) rotateX(53deg) rotateZ(120deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face10 {
+  -webkit-transform: rotateY(324deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
+  transform: rotateY(324deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face18 {
+  -webkit-transform: rotateY(0deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+  transform: rotateY(0deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face16 {
+  -webkit-transform: rotateY(72deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+  transform: rotateY(72deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face11 {
+  -webkit-transform: rotateY(144deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
+  transform: rotateY(144deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face20 {
+  -webkit-transform: rotateY(216deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
+  transform: rotateY(216deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face14 {
+  -webkit-transform: rotateY(288deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+  transform: rotateY(288deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face13 {
+  -webkit-transform: rotateY(36deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+  transform: rotateY(36deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face09 {
+  -webkit-transform: rotateY(108deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+  transform: rotateY(108deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face02 {
+  -webkit-transform: rotateY(180deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
+  transform: rotateY(180deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face05 {
+  -webkit-transform: rotateY(253deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
+  transform: rotateY(253deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face17 {
+  -webkit-transform: rotateY(324deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+  transform: rotateY(324deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face12 {
+  -webkit-transform: rotateY(0deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
+  transform: rotateY(0deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face19 {
+  -webkit-transform: rotateY(72deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+  transform: rotateY(72deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face03 {
+  -webkit-transform: rotateY(144deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+  transform: rotateY(144deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face07 {
+  -webkit-transform: rotateY(216deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+  transform: rotateY(216deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube .face15 {
+  -webkit-transform: rotateY(288deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
+  transform: rotateY(288deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
+}
+.reader.dungeon article header .cube-container #cube.show-1 {
+  -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(-38deg) rotateZ(35deg);
+  transform: translateZ(-60px) rotateY(-50deg) rotateX(-38deg) rotateZ(35deg);
+}
+.reader.dungeon article header .cube-container #cube.show-2 {
+  -webkit-transform: translateZ(-60px) rotateY(170deg) rotateX(5deg) rotateZ(-60deg);
+  transform: translateZ(-60px) rotateY(170deg) rotateX(5deg) rotateZ(-60deg);
+}
+.reader.dungeon article header .cube-container #cube.show-3 {
+  -webkit-transform: translateZ(-60px) rotateY(-144deg) rotateX(-8deg) rotateZ(-6deg);
+  transform: translateZ(-60px) rotateY(-144deg) rotateX(-8deg) rotateZ(-6deg);
+}
+.reader.dungeon article header .cube-container #cube.show-4 {
+  -webkit-transform: translateZ(-60px) rotateY(76deg) rotateX(135deg) rotateZ(-62deg);
+  transform: translateZ(-60px) rotateY(76deg) rotateX(135deg) rotateZ(-62deg);
+}
+.reader.dungeon article header .cube-container #cube.show-5 {
+  -webkit-transform: translateZ(-60px) rotateY(118deg) rotateX(-53deg) rotateZ(-35deg);
+  transform: translateZ(-60px) rotateY(118deg) rotateX(-53deg) rotateZ(-35deg);
+}
+.reader.dungeon article header .cube-container #cube.show-6 {
+  -webkit-transform: translateZ(-60px) rotateY(-75deg) rotateX(135deg) rotateZ(65deg);
+  transform: translateZ(-60px) rotateY(-75deg) rotateX(135deg) rotateZ(65deg);
+}
+.reader.dungeon article header .cube-container #cube.show-7 {
+  -webkit-transform: translateZ(-60px) rotateY(-37deg) rotateX(187deg) rotateZ(185deg);
+  transform: translateZ(-60px) rotateY(-37deg) rotateX(187deg) rotateZ(185deg);
+}
+.reader.dungeon article header .cube-container #cube.show-8 {
+  -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(-153deg) rotateZ(75deg);
+  transform: translateZ(-60px) rotateY(-50deg) rotateX(-153deg) rotateZ(75deg);
+}
+.reader.dungeon article header .cube-container #cube.show-9 {
+  -webkit-transform: translateZ(-60px) rotateY(-73deg) rotateX(-175deg) rotateZ(15deg);
+  transform: translateZ(-60px) rotateY(-73deg) rotateX(-175deg) rotateZ(15deg);
+}
+.reader.dungeon article header .cube-container #cube.show-10 {
+  -webkit-transform: translateZ(-60px) rotateY(51deg) rotateX(-42deg) rotateZ(-41deg);
+  transform: translateZ(-60px) rotateY(51deg) rotateX(-42deg) rotateZ(-41deg);
+}
+.reader.dungeon article header .cube-container #cube.show-11 {
+  -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(-220deg) rotateZ(-37deg);
+  transform: translateZ(-60px) rotateY(-50deg) rotateX(-220deg) rotateZ(-37deg);
+}
+.reader.dungeon article header .cube-container #cube.show-12 {
+  -webkit-transform: translateZ(-60px) rotateY(-10deg) rotateX(-4deg) rotateZ(-120deg);
+  transform: translateZ(-60px) rotateY(-10deg) rotateX(-4deg) rotateZ(-120deg);
+}
+.reader.dungeon article header .cube-container #cube.show-13 {
+  -webkit-transform: translateZ(-60px) rotateY(35deg) rotateX(4deg) rotateZ(-177deg);
+  transform: translateZ(-60px) rotateY(35deg) rotateX(4deg) rotateZ(-177deg);
+}
+.reader.dungeon article header .cube-container #cube.show-14 {
+  -webkit-transform: translateZ(-60px) rotateY(-296deg) rotateX(72deg) rotateZ(30deg);
+  transform: translateZ(-60px) rotateY(-296deg) rotateX(72deg) rotateZ(30deg);
+}
+.reader.dungeon article header .cube-container #cube.show-15 {
+  -webkit-transform: translateZ(-60px) rotateY(-238deg) rotateX(129deg) rotateZ(40deg);
+  transform: translateZ(-60px) rotateY(-238deg) rotateX(129deg) rotateZ(40deg);
+}
+.reader.dungeon article header .cube-container #cube.show-16 {
+  -webkit-transform: translateZ(-60px) rotateY(-254deg) rotateX(-136deg) rotateZ(113deg);
+  transform: translateZ(-60px) rotateY(-254deg) rotateX(-136deg) rotateZ(113deg);
+}
+.reader.dungeon article header .cube-container #cube.show-17 {
+  -webkit-transform: translateZ(-60px) rotateY(-37deg) rotateX(8deg) rotateZ(175deg);
+  transform: translateZ(-60px) rotateY(-37deg) rotateX(8deg) rotateZ(175deg);
+}
+.reader.dungeon article header .cube-container #cube.show-18 {
+  -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(25deg) rotateZ(288deg);
+  transform: translateZ(-60px) rotateY(-50deg) rotateX(25deg) rotateZ(288deg);
+}
+.reader.dungeon article header .cube-container #cube.show-19 {
+  -webkit-transform: translateZ(-60px) rotateY(-72deg) rotateX(4deg) rotateZ(352deg);
+  transform: translateZ(-60px) rotateY(-72deg) rotateX(4deg) rotateZ(352deg);
+}
+.reader.dungeon article header .cube-container #cube.show-20 {
+  -webkit-transform: translateZ(-60px) rotateY(50deg) rotateX(-220deg) rotateZ(38deg);
+  transform: translateZ(-60px) rotateY(50deg) rotateX(-220deg) rotateZ(38deg);
+}
+.reader.dungeon article header #buttons {
+  padding: 20px;
+  grid-row: 8/9;
+  text-align: center;
+  position: relative;
+}
+.reader.dungeon article header #buttons input[type=button] {
+  position: relative;
+  width: 80px;
+  border-width: 0;
+  padding: 6px 16px;
+  font-family: sans-serif;
+  text-shadow: 1px 1px 1px white;
+  font-size: 14px;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0px 0px 3px #000;
+  background: gradient(linear, 50% 0%, 50% 100%, from(#eeeeee), to(#cccccc));
+  background-clip: padding-box;
+}
+.reader.dungeon article header #buttons input[type=button]:active {
+  top: 1px;
+  box-shadow: 0px 0px 2px #000;
+  background: gradient(linear, 50% 0%, 50% 100%, from(#cccccc), to(#eeeeee));
+}
+.reader.dungeon article header #outcome {
+  grid-row: 6/7;
+  text-align: center;
+  z-index: 9;
+  top: -250px;
+  opacity: 0;
+  /* oooh I love pointer events for stuff like this */
+  pointer-events: none;
+  -webkit-transition: opacity 400ms;
+  transition: opacity 400ms;
+}
+.reader.dungeon article header #outcome #text {
+  font-size: 1.4em;
+  font-family: "Hounds";
+  color: #fff;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 0;
+  margin-top: 20px;
+  /* background-color: rgba(30, 30, 30, 0.8); */
+  /* padding: 20px 30px; */
+  display: inline-block;
+}
+.reader.dungeon article header #outcome.show {
+  opacity: 1;
+}
+.reader.dungeon article header figure {
+  grid-row: 5/6;
+  text-align: center;
+}
+.reader.dungeon article header figure img {
+  border: 5px solid black;
+  border-radius: 20px;
+  width: 40%;
+}
+.reader.dungeon article header figure figcaption {
+  border-top: 3px solid whitesmoke;
+  border-bottom: 3px solid whitesmoke;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-family: "ITC Korinna Std";
+  color: whitesmoke;
+  width: 40%;
+  margin: 0 auto;
+}
+.reader.dungeon article header h1 {
+  font-family: "DnDC";
+  line-height: 0.6em;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin: 0 auto;
+  width: 40%;
+  text-align: center;
+  font-size: 5em;
+  font-weight: normal;
+  font-style: normal;
+  color: whitesmoke;
+  grid-row: 1/2;
+}
+.reader.dungeon article header h3 {
+  font-family: "ITC Korinna Std";
+  padding: 5px;
+  text-align: center;
+  font-size: 1.2em;
+  width: 40%;
+  margin: 0 auto;
+  text-transform: uppercase;
+  color: whitesmoke;
+  border-top: 4px solid whitesmoke;
+  border-bottom: 4px solid whitesmoke;
+  grid-row: 2/3;
+}
+.reader.dungeon article header p {
+  font-family: "ITC Korinna Std";
+  padding: 10px;
+  text-align: center;
+  font-size: 1.8em;
+  width: 60%;
+  margin: 0 auto;
+  text-transform: uppercase;
+  color: whitesmoke;
+  grid-row: 4/5;
+}
+.reader.dungeon article header p:first-of-type {
+  grid-row: 3/4;
+}
+.reader.dungeon article main {
+  padding: 8vh 4vw 8vh 4vw;
+  font-family: "Hounds";
+  text-align: justify;
+  column-count: 3;
+  column-gap: 2vw;
+  background-color: whitesmoke;
+}
+.reader.dungeon article main section {
+  padding-bottom: 2vh;
+}
+.reader.dungeon article main h3 {
+  font-family: "Baskerville";
+  padding-bottom: 2vh;
+}
+.reader.dungeon article main p:not(:first-child) {
+  text-indent: 2vw;
+}
+.reader.dungeon article main figure {
+  width: auto;
+  padding-bottom: 2vh;
+}
+.reader.dungeon article main figure img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-top: 2%;
+  display: block;
+}
+.reader.dungeon article footer {
+  background-color: whitesmoke;
+  font-family: "ITC Korinna Std";
+  text-align: center;
 }
 
 .reader.fifth article {

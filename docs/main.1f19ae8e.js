@@ -962,6 +962,8 @@ module.exports = "/bauhaus.00287030.svg";
 module.exports = "/aldus_leaf.72009c54.svg";
 },{}],"images/sakura.svg":[function(require,module,exports) {
 module.exports = "/sakura.3275ced2.svg";
+},{}],"images/die.svg":[function(require,module,exports) {
+module.exports = "/die.8f9f3c68.svg";
 },{}],"manuzio.js":[function(require,module,exports) {
 "use strict";
 
@@ -1012,6 +1014,113 @@ function manuzioLogic() {
 }
 
 var _default = manuzioLogic;
+exports.default = _default;
+},{}],"dungeon.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function dungeonLogic() {
+  var rollerHolder = document.querySelector('.reader header');
+  var container = document.createElement('section');
+  container.className = 'cube-container';
+  var die = document.createElement('div');
+  die.id = "cube";
+  die.className = 'show-1';
+  container.appendChild(die);
+  var i = 0;
+
+  while (i < 20) {
+    i++;
+
+    if (i < 10) {
+      var face = document.createElement('figure');
+      face.className = 'face0' + i;
+      var t = document.createTextNode(i);
+      face.appendChild(t);
+      die.appendChild(face);
+    } else {
+      var face = document.createElement('figure');
+      face.className = 'face' + i;
+      var t = document.createTextNode(i);
+      face.appendChild(t);
+      die.appendChild(face);
+    }
+  }
+
+  var container2 = document.createElement('section');
+  container2.id = 'buttons';
+  var input = document.createElement('input');
+  input.id = 'roll';
+  input.type = 'button';
+  input.name = 'roll';
+  input.value = 'Roll it!';
+  container2.appendChild(input);
+  var container3 = document.createElement('section');
+  container3.id = 'outcome';
+  var text = document.createElement('div');
+  text.id = 'text';
+  var f = document.createTextNode('fill me up');
+  text.appendChild(f);
+  container3.appendChild(text);
+  rollerHolder.insertAdjacentElement('afterbegin', container);
+  rollerHolder.insertAdjacentElement('afterbegin', container2);
+  rollerHolder.insertAdjacentElement('afterbegin', container3); //DIE FUNCTION
+  //window.onload = function () { //added post, maybe to remove
+
+  var randomNumber = function randomNumber(low, high) {
+    return Math.floor(Math.random() * (1 + high - low)) + low;
+  };
+
+  var cube = document.getElementById('cube');
+  var outcome = document.getElementById('outcome');
+  var outcomeText = document.getElementById('text');
+  var messageDelay; //timer
+
+  var fadeout; //timer
+
+  var messages = ['Your Bard was killed', 'You smote the orc', 'You escaped the Ice Dragon', 'Lightning Bolt succeeded', 'Critical hit', 'You are Lawful Evil', 'You fell into the Well of Sorrows', 'You found the Goblet of Endless Grog', 'You encountered a Harpy', 'Charisma + 10', 'You lose 11 Hit Points', 'You disarmed the trap', 'Plate Mail + 3', '14 Damage', 'Spell failure', 'Backstab successful', 'Your wand broke', 'Surprise Attack', 'You broke through the door', 'Critical hit! You pass the exam!'];
+
+  var showFace = function showFace() {
+    var face = randomNumber(1, 20); //if not already at this number
+
+    if (cube.className !== 'show-' + face) {
+      cube.className = 'show-' + face; //delay for spin to finish
+
+      messageDelay = setTimeout(function () {
+        //show message
+        outcomeText.innerHTML = messages[face - 1];
+        outcome.className = 'show'; //display message then fade out
+
+        fadeout = setTimeout(function () {
+          //hide message
+          outcome.className = '';
+        }, 2000);
+      }, 1000);
+    } else {
+      //repeat number, try again
+      return showFace();
+    }
+  };
+
+  document.getElementById('roll').addEventListener('click', function () {
+    //fade message
+    outcome.className = ''; //clear timers if they are there
+
+    if (typeof messageDelay === "number") {
+      clearTimeout(messageDelay);
+      clearTimeout(fadeout);
+    }
+
+    showFace();
+  }, false); //}
+} //
+
+
+var _default = dungeonLogic;
 exports.default = _default;
 },{}],"rimpa.js":[function(require,module,exports) {
 "use strict";
@@ -1235,7 +1344,11 @@ var _aldus_leaf = _interopRequireDefault(require("./images/aldus_leaf.svg"));
 
 var _sakura = _interopRequireDefault(require("./images/sakura.svg"));
 
+var _die = _interopRequireDefault(require("./images/die.svg"));
+
 var _manuzio = _interopRequireDefault(require("./manuzio"));
+
+var _dungeon = _interopRequireDefault(require("./dungeon"));
 
 var _rimpa = _interopRequireDefault(require("./rimpa"));
 
@@ -1257,8 +1370,9 @@ var styles = [{
   name: "third",
   icon: _bauhaus.default
 }, {
-  name: "fourth",
-  icon: ""
+  name: "dungeon",
+  icon: _die.default,
+  logic: _dungeon.default
 }, {
   name: "fifth",
   icon: "",
@@ -1270,7 +1384,7 @@ var styles = [{
 }];
 var _default = styles;
 exports.default = _default;
-},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./manuzio":"manuzio.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js"}],"customStyleLogic.js":[function(require,module,exports) {
+},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./images/die.svg":"images/die.svg","./manuzio":"manuzio.js","./dungeon":"dungeon.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js"}],"customStyleLogic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1332,7 +1446,6 @@ function _addSpecialArticle() {
 
           case 5:
             rightArticle = _context.sent;
-            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1395,7 +1508,6 @@ function _addArticle() {
 
           case 2:
             article = _context2.sent;
-            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1444,7 +1556,6 @@ var _articleParser = require("./article-parser");
 
 var _addArticle = require("./addArticle.js");
 
-//article dictionary with title=key and url=value
 var articles = [{
   title: "Japan's Prisons Are a Haven for Elderly Women",
   url: "./articles/Bloomberg/ShihoFukada.html"
@@ -1713,14 +1824,6 @@ var _addDocumentationPages = require("./addDocumentationPages");
 
 var _overlayMenu = require("./overlayMenu");
 
-// polyfill needed for using for loop on a dictionary
-
-/*
- * Object.prototype.forEach() polyfill
- * https://gomakethings.com/looping-through-objects-with-es6/
- * @author Chris Ferdinandi
- * @license MIT
- */
 if (!Object.prototype.forEach) {
   Object.defineProperty(Object.prototype, "forEach", {
     value: function value(callback, thisArg) {
@@ -1806,7 +1909,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "1725" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50050" + '/');
+>>>>>>> 6927f97b5bfbb26ae140b11dd896038ade3b2a40
 
   ws.onmessage = function (event) {
     checkedAssets = {};
