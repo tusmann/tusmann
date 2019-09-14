@@ -1,14 +1,17 @@
 function rimpaLogic() {
   const image = document.querySelectorAll(".reader figure img");
+  const colorsArray = ["image-background-color-yellow", "image-background-color-green", "image-background-color-blue", "image-background-color-red"]
 
-  image.forEach(node => {
-    const imageParent = node.parentNode
+  for (var i = 0; i < image.length; i++) {
+    var currentImageElement = image[i]
+    const imageParent = currentImageElement.parentNode
     const backgroundColorDiv = document.createElement("div");
-    backgroundColorDiv.classList.add("image-background-color");
-    imageParent.replaceChild(backgroundColorDiv, node)
-    backgroundColorDiv.appendChild(node)
-        // node.insertAdjacentElement("beforebegin", backgroundColorDiv);
-  });
+
+    var currentColor = colorsArray[i % colorsArray.length]
+    backgroundColorDiv.classList.add(currentColor);
+    imageParent.replaceChild(backgroundColorDiv, currentImageElement)
+    backgroundColorDiv.appendChild(currentImageElement)
+  };
 }
 
 export default rimpaLogic;

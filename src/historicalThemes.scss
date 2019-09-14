@@ -34,6 +34,10 @@
   font-family: "ZinHenaKokoryu";
   src: url("./styles/second/ZinHenaKokuryu-RCF.ttf") format("truetype");
 }
+@font-face {
+  font-family: "japaneseLikeFont";
+  src: url("./styles/second/japaneseLikeFont.otf") format("opentype");
+}
 
 //tschichold
 @font-face {
@@ -109,6 +113,7 @@ $manuzio-link-color: #777;
 $manuzio-first-letter: #222;
 //
 $rimpa-font: "ZinHenaKokoryu";
+$rimpa-text-font: "japaneseLikeFont";
 $rimpa-text-color: #210102;
 $rimpa-light-gradient: #7b562a;
 $rimpa-yellow: #eac543;
@@ -203,7 +208,7 @@ $font-transito: "WaddemChooNFW01";
     font-weight: 400;
     line-height: 1.3;
     color: $manuzio-text-color;
-    font-size: 1.9rem;
+    font-size: 100%;
     text-align: justify;
 
     section {
@@ -212,8 +217,8 @@ $font-transito: "WaddemChooNFW01";
         text-transform: uppercase;
         float: left;
         color: $manuzio-first-letter;
-        font-size: 13rem;
-        line-height: 10rem;
+        font-size: 10rem;
+          line-height: 7rem;
         text-align: left;
         margin: 1rem 0.5rem 0.5rem 0;
         font-family: $manuzio-font-initial;
@@ -224,7 +229,9 @@ $font-transito: "WaddemChooNFW01";
       color: $manuzio-link-color;
     }
     p {
-      margin: 1rem 0;
+      margin: 1.5rem 0;
+      font-size: 1.5rem;
+      
     }
     figure {
       text-align: center;
@@ -232,7 +239,6 @@ $font-transito: "WaddemChooNFW01";
       figcaption {
         font-family: $manuzio-font-maiusc;
         font-style: normal;
-        font-size: 1.7rem;
         &::first-child {
           margin: 0;
         }
@@ -266,7 +272,6 @@ $font-transito: "WaddemChooNFW01";
       border-collapse: collapse;
       text-align: center;
       line-height: 1.5rem;
-      font-size: 1.5rem;
     }
     th {
       text-transform: uppercase;
@@ -285,7 +290,7 @@ $font-transito: "WaddemChooNFW01";
     h3,
     h4 {
       font-family: $manuzio-font-maiusc;
-      font-size: 2rem;
+      font-size: 1.5rem;
       text-transform: uppercase;
       font-weight: 600;
       letter-spacing: 0.3rem;
@@ -336,17 +341,10 @@ $font-transito: "WaddemChooNFW01";
   .left,
   .right {
     article {
-      font-size: 1.4rem;
-      h1,
-      h2,
-      h3,
-      h4 {
-        font-size: 1.6rem;
-      }
       main {
         p:first-of-type:first-letter {
           font-size: 10rem;
-          line-height: 6rem;
+          line-height: 7rem;
         }
       }
     }
@@ -406,12 +404,19 @@ $font-transito: "WaddemChooNFW01";
   }
 }
 
+
+
+
+
+
+
+
 //STYLE: RIMPA
 
 .reader.rimpa {
   width: 100%;
   article {
-    padding: 5%;
+    padding: 2%;
     background-image: url("./styles/second/background.jpg");
     background-repeat: no-repeat;
     background-position: 50%;
@@ -422,81 +427,16 @@ $font-transito: "WaddemChooNFW01";
     font-weight: 400;
     line-height: 1.7;
     color: $rimpa-text-color;
-    font-size: 1.5rem;
+    font-size: 100%;
     overflow-x: auto;
     overflow-y: auto;
-
-    section {
-      margin: 1rem;
-    }
-
-    a:-webkit-any-link {
-      color: #777;
-    }
-    p {
-      padding: 0.5rem 0;
-    }
-    figure {
-      padding: 0 1rem;
-
-      figcaption {
-        font-style: italic;
-        font-size: smaller;
-        padding: 1rem;
-      }
-      img {
-        height: auto;
-        width: 70vh;
-        object-fit: contain;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        box-align: center;
-      }
-      &:hover {
-        -webkit-filter: none;
-      }
-      &:first-of-type {
-        margin-bottom: 1rem;
-      }
-    }
-    .image-background-color {
-      background: $rimpa-yellow;
-      height: fit-content;
-      width: fit-content;
-      img {
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
-        opacity: 0.5;
-      }
-    }
-    table {
-      table-layout: fixed;
-      width: 100%;
-      border-width: 0.3rem;
-      padding: 0.2rem;
-      border-collapse: collapse;
-      background: rgba(234, 197, 67, 0.5);
-    }
-    th {
-      font-size: 1rem;
-      text-transform: uppercase;
-      font-weight: 600;
-      text-align: center;
-      border: 0.1rem solid $rimpa-text-color;
-      padding: 0.2rem;
-      font-style: normal;
-    }
-    td {
-      padding: 0.2rem;
-      border: 0.1rem solid $rimpa-text-color;
-    }
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
     p,
     h1,
     h2,
     h3,
     h4 {
-      padding: 0 1rem;
       background: -webkit-linear-gradient(
         left,
         $rimpa-text-color,
@@ -520,61 +460,155 @@ $font-transito: "WaddemChooNFW01";
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-size: 2.2rem;
+    a:-webkit-any-link {
+      color: #777;
+    }
+    table {
+      table-layout: fixed;
+      width: 100%;
+      border-width: 0.3rem;
+      padding: 0.2rem;
+      border-collapse: collapse;
+      background: rgba(234, 197, 67, 0.5);      -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+          page-break-inside: avoid; /* Firefox */
+               break-inside: avoid; /* IE 10+ */
+    
+    th {
+      font-size: 1rem;
       text-transform: uppercase;
       font-weight: 600;
-      letter-spacing: 0.3rem;
-      // padding: 2rem 0;
+      text-align: center;
+      border: 0.1rem solid $rimpa-text-color;
+      padding: 0.2rem;
+      font-style: normal;
+    }
+    td {
+      padding: 0.2rem;
+      border: 0.1rem solid $rimpa-text-color;
+    }
+  }
+  .image-background-color-yellow {
+    background: $rimpa-yellow;
+    height: fit-content;
+    width: fit-content;
+    color: $rimpa-yellow;
+    img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      opacity: 0.5;
+    }
+  }
+  .image-background-color-green {
+    background: $rimpa-green;
+    height: fit-content;
+    width: fit-content;
+    img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      opacity: 0.5;
+    }
+  }
+  .image-background-color-blue {
+    background: $rimpa-blue;
+    height: fit-content;
+    width: fit-content;
+    img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      opacity: 0.5;
+    }
+  }
+  .image-background-color-red {
+    background: $rimpa-red;
+    height: fit-content;
+    width: fit-content;
+    img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      opacity: 0.5;
+    }
+  }
+    header {
+      display: block;
+      column-count: 1;
+      height: 80vh;
+      text-transform: uppercase;
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      margin: 0;
+      text-align: right;
+      figure {
+        writing-mode: horizontal-tb;
+        margin: auto 3rem;
+        img {
+          width: 30rem;
+          object-fit: contain;
+          display: block;
+          box-align: center;
+        }
+      }
     }
     main {
+      //font-family: $rimpa-text-font;
+      margin: 2rem 4rem 6rem 2rem;
+      column-count: 3;
+      column-gap: 2vw;
       h1,
       h2,
       h3,
       h4 {
         text-align: center;
       }
-      h2 {
-        font-size: 2.5rem;
-        font-weight: 500;
-        letter-spacing: 0.2rem;
+      section {
+        margin: 3rem 0;
       }
-      h3 {
-        font-size: 2rem;
-        font-weight: 500;
-        padding: 1rem 0;
+      p {
+        margin: 2rem 0;
       }
-      h3 {
-        font-size: 1.5rem;
-        font-weight: 500;
-        padding: 1rem 0;
+      figure {
+        margin: 1rem 0;
+        figcaption {
+          font-style: italic;
+          font-size: 1rem;
+          margin: 1rem;
+        }
+        img {
+          height: auto;
+          width: 100%;
+          object-fit: contain;
+          display: block;
+          box-align: center;
+        }
       }
+      
     }
-    header {
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 0 2.5rem;
       text-transform: uppercase;
       writing-mode: vertical-lr;
       text-orientation: upright;
+      font-size: 2rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: $rimpa-font;
     }
     footer {
-      margin: 1rem;
+      margin: 3rem;
       text-transform: uppercase;
-      height: 100vh;
+      text-align: center;
+      writing-mode: vertical-lr;
+    text-orientation: upright;
     }
   }
+
   //EU article
   .left,
   .right {
     article {
-      font-size: 1.4rem;
-      h1,
-      h2,
-      h3,
-      h4 {
-        font-size: 1.6rem;
-      }
+      font-size: 90%;
     }
   }
 }

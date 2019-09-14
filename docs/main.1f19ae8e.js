@@ -990,7 +990,7 @@ function manuzioLogic() {
           countP++;
         }
 
-        checkChildren = Boolean(countP >= 2 && childHeigt > 300 && sectionChildren[i].tagName !== "FIGURE" && "TABLE");
+        checkChildren = Boolean(countP >= 2 && childHeigt > 300 && sectionChildren[i].tagName !== "FIGURE" && sectionChildren[i].tagName !== "TABLE");
         i++;
       }
 
@@ -1023,13 +1023,19 @@ exports.default = void 0;
 
 function rimpaLogic() {
   var image = document.querySelectorAll(".reader figure img");
-  image.forEach(function (node) {
-    var imageParent = node.parentNode;
+  var colorsArray = ["image-background-color-yellow", "image-background-color-green", "image-background-color-blue", "image-background-color-red"];
+
+  for (var i = 0; i < image.length; i++) {
+    var currentImageElement = image[i];
+    var imageParent = currentImageElement.parentNode;
     var backgroundColorDiv = document.createElement("div");
-    backgroundColorDiv.classList.add("image-background-color");
-    imageParent.replaceChild(backgroundColorDiv, node);
-    backgroundColorDiv.appendChild(node); // node.insertAdjacentElement("beforebegin", backgroundColorDiv);
-  });
+    var currentColor = colorsArray[i % colorsArray.length];
+    backgroundColorDiv.classList.add(currentColor);
+    imageParent.replaceChild(backgroundColorDiv, currentImageElement);
+    backgroundColorDiv.appendChild(currentImageElement);
+  }
+
+  ;
 }
 
 var _default = rimpaLogic;
@@ -1800,7 +1806,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49202" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1725" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
