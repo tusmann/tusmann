@@ -174,6 +174,10 @@ $rimpa-red: #e04d21;
 $font-futura-black: 'FuturaFuturisBlackC';
 $font-futura: 'FuturaFuturisC';
 $font-transito: 'WaddemChooNFW01';
+$tsi-red: #f9423a;
+$tsi-blue: #0077c0;
+$tsi-paper: #f6f3ea;
+$tsi-ink: #222;
 //
 
 //dungeons
@@ -673,7 +677,7 @@ $font-boldbasker: 'Baskerville';
 //STYLE: JAN TSCHICHOLD
 
 .reader.third {
-  
+  background-color: $tsi-paper;
   .reader.left, .reader.right {
 
     article {
@@ -683,8 +687,16 @@ $font-boldbasker: 'Baskerville';
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto 1fr;
 
-        h2 {
+        h1 {
           grid-column: 1 / 3;
+          grid-row: auto;
+          writing-mode: horizontal-tb;
+          //justify-self: initial;
+          line-height: inherit;
+          margin-right: -10px;
+          margin-top: 0;
+          font-size: 1.3em;
+
         }
 
         p {
@@ -694,12 +706,12 @@ $font-boldbasker: 'Baskerville';
 
           &:first-child {
 
-            border-top: 15px solid #f9423a;
-            border-bottom: 15px solid #f9423a;
+            border-top: 15px solid $tsi-red;
+            border-bottom: 15px solid $tsi-red;
 
             &::first-letter {
               font-family: $font-transito;
-              color: #0077c0;
+              color: $tsi-blue;
               font-size: 2.5em;
             }
           }
@@ -711,7 +723,7 @@ $font-boldbasker: 'Baskerville';
           grid-row: 1 / 2;
           justify-self: start;
           td {
-            border-top: 5px solid #0077c0;
+            border-top: 5px solid $tsi-blue;
             padding-bottom: 5px;
           }
         }
@@ -720,7 +732,7 @@ $font-boldbasker: 'Baskerville';
       main {
         //padding: 5rem;
         margin: 2rem 4rem 6rem 2rem;
-        background-color: #f6f3ea;
+        background-color: $tsi-paper;
         text-align: justify;
         column-count: 1; 
       }
@@ -728,12 +740,12 @@ $font-boldbasker: 'Baskerville';
   }
 
   article {
-    background-color: #f6f3ea;
+    background-color: $tsi-paper;
     /*font-family: 'Roboto', sans-serif;*/
     font-family: $font-futura;
     /*font-family: 'Futura W01', helvetica, sans-serif;*/
     font-size: 100%;
-    color: rgba(12, 12, 10, 0.8);
+    color: $tsi-ink;
     font-weight: 300; 
     -webkit-box-sizing: border-box;
     box-sizing: border-box; 
@@ -752,7 +764,7 @@ $font-boldbasker: 'Baskerville';
       grid-gap: 1rem;
       transform: rotate(-30deg);
 
-        h1, h3 {
+        h1, h2, h3 {
         font-size: calc(1rem + 1.4vw);
         margin: 0;
         font-weight: 700;
@@ -761,7 +773,7 @@ $font-boldbasker: 'Baskerville';
 
         h1 {
         /* autoprefixer: off */
-        color: #f9423a;
+        color: $tsi-red;
         -webkit-writing-mode: vertical-rl;
         writing-mode: vertical-rl;
         grid-column: 3 / 4;
@@ -771,16 +783,16 @@ $font-boldbasker: 'Baskerville';
         margin-right: -10px;
       }
 
-        h3 {
+        h2, h3 {
         grid-column: 1 / 4;
         grid-row: 1 / 2; //
         text-align: right; 
         align-self: end; //
         font-size: 1.3rem;
-        border-bottom: 15px solid #f9423a;
+        border-bottom: 15px solid $tsi-red;
   
           &::first-letter {
-          color: #0077c0;
+          color: $tsi-blue;
           font-size: calc(3rem + 2vw);
           font-family: $font-transito;
         }
@@ -794,7 +806,7 @@ $font-boldbasker: 'Baskerville';
         text-transform: uppercase;
   
           &::first-letter {
-          color: #0077c0;
+          color: $tsi-blue;
           font-size: calc(2rem + 2vw);
           font-family: $font-transito;
         }
@@ -804,16 +816,16 @@ $font-boldbasker: 'Baskerville';
           margin: 0;
           grid-column: 4 / 5;
           grid-row: 2 / 3;
-          color: rgba(12, 12, 10, 0.8);
+          color: $tsi-ink;
+          font-style: $font-transito;
           border-bottom: none;
           text-transform: uppercase;
-          color: rgba(12, 12, 10, 0.8);
           font-weight: 700; 
         
             &:first-of-type {
             /* autoprefixer: off */
-            border-top: 5px solid rgba(12, 12, 10, 0.8);
-            border-bottom: 5px solid rgba(12, 12, 10, 0.8);
+            border-top: 5px solid $tsi-ink;
+            border-bottom: 5px solid $tsi-ink;
             font-weight: 700;
             grid-row: 3;
             grid-column: 4 / 6;
@@ -867,35 +879,53 @@ $font-boldbasker: 'Baskerville';
             margin-left: auto;
             margin-right: auto;
             text-align: center;
-            border-left: 5px solid rgba(12, 12, 10, 0.8);
-            border-right: 5px solid rgba(12, 12, 10, 0.8);
+            border-left: 5px solid $tsi-ink;
+            border-right: 5px solid $tsi-ink;
           }
       }
     }
 
       main {
       //padding: 5rem;
-      margin: 2rem 4rem 6rem 2rem;
-      background-color: #f6f3ea;
+      padding: 4rem 18rem 12rem 6rem;
+      background-color: $tsi-paper;
       text-align: justify;
       column-count: 2;
       column-gap: 4vw;
+      column-rule: 4px double $tsi-ink;
 
         p {
         //font-size: 1rem;
         }
 
-        h3 {
+        h2 {
           writing-mode: vertical-rl;
           //text-orientation: mixed;
-          border-right: 10vw solid red;
+          border-right: 10vw solid $tsi-red;
+          margin-bottom: 1vh;
+          font-weight: 900;
+          font-size: 1.5em;
+
+          &:hover {
+            padding-right: 2vw;
+          }
         }
+
+        section:nth-of-type(5) {
+          figure:nth-of-type(1) {
+              img, figcaption {
+                column-span: all;
+              }
+            
+          }
+        }
+        
 
         figure {
           width: auto;
 
           table {
-            border-right: 10px solid #f9423a;
+            border-right: 10px solid $tsi-red;
           }
 
           img {
@@ -913,11 +943,42 @@ $font-boldbasker: 'Baskerville';
           figcaption {
           font-style: $font-futura-black;
           font-weight: 700;
+          margin-bottom: 10px;
+            border-left: 5px solid $tsi-blue;
+            padding-left: 5px;
+            padding-top: 5px;
           }
         }
 
         section {
+
+          margin-bottom: 2vh;
           
+          &:nth-of-type(5) {
+            figure:nth-of-type(1) {
+                img, figcaption {
+                  column-span: all;
+                }
+              
+            }
+          }
+
+          &:nth-of-type(2n) {
+            figure:nth-of-type(1) {
+                img {
+                  clip-path: circle();
+                }
+              
+            }
+          }
+
+          /*&:nth-of-type(4) {
+            
+              border-bottom: 4px solid #444444;
+              column-span: all;
+            
+          }*/
+
           p {
           //font-size: 1rem;
           }
@@ -925,18 +986,37 @@ $font-boldbasker: 'Baskerville';
           h3 {
             writing-mode: vertical-rl;
             //text-orientation: mixed;
-            border-right: 10vw solid red;
+            border-left: 5vw solid $tsi-blue;
+            font-weight: bold;
             margin-top: 15px;
+
+            &:hover {
+              padding-left: 2.5vw;
+            }
           }
 
           figure {
             width: auto;
 
             table {
-              border-right: 5px solid #f9423a;
+              border-right: 5px solid $tsi-red;
+              padding-bottom: 2vh;
+              margin-top: 2vh;
+              margin-bottom: 2vh;
+              font-size: 0.8em;
 
-              tr {
-                padding-right: 5px;
+              tbody {
+                
+                tr {
+                  padding-right: 5px;
+  
+                  th {
+                    font-weight: bold;
+                  }
+                  td {
+                    padding-right: 1vw;
+                  }
+                }
               }
             }
 
@@ -956,8 +1036,9 @@ $font-boldbasker: 'Baskerville';
             font-style: $font-futura-black;
             font-weight: 700;
             margin-bottom: 10px;
-            border-left: 5px solid #0077c0;
+            border-left: 5px solid $tsi-blue;
             padding-left: 5px;
+            padding-top: 5px;
             }
           }
         }
@@ -971,7 +1052,7 @@ $font-boldbasker: 'Baskerville';
     a {
       font-weight: bold;
       text-decoration: none;
-      color: #000;
+      color: $tsi-ink;
 
       &:link {
         font-weight: bold;
@@ -988,40 +1069,126 @@ $font-boldbasker: 'Baskerville';
     }
 
       footer {
-      background-color: #f6f3ea;
-      color: rgba(12, 12, 10, 0.8);
+      background-color: $tsi-paper;
+      color: $tsi-ink;
+      margin-top: 4vh;
       line-height: 1.2rem;
-      border-top: 15px solid #f9423a;
-      border-bottom: 15px solid #f9423a;
+      border-top: 5px solid $tsi-red;
+      border-bottom: 5px solid $tsi-red;
       text-align: center;
       font-style: $font-futura;
     }
 
   }
-
-        
-        /*header p {
-        margin: 2rem 0 0; }*/
-
-        /* article > header {
-        display: flex;
-        margin: auto;
-        padding-top: 1rem;
-        padding-bottom: 1rem; } */
-
-        /*@media (min-width: 1800px) {
-          article > header {
-          padding-bottom: 30rem; } }*/
-    }
+}
     
   
 //
+
+
+
 //STYLE: DUNGEON
 .reader.dungeon {
 
   
   .reader.left, .reader.right {
+    background-image: url('./styles/fourth/papersheet.png');
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-attachment: fixed;
+      background-size: cover;
+      box-sizing: border-box;
+    
+    article {
+      width: auto;
+      
+      header {
+        width: auto;
+        //margin: 0;
+        display: block;
 
+
+        #outcome {display: none};
+        #buttons {display: none;}
+        .cube-container {display: none;}
+
+        h1 {
+          //margin: 0;
+          //width: auto;
+          font-size: 1.2em;
+          line-height: 2em;
+          
+          p {
+            width: auto;
+            &:first-of-type {
+              font-family: $font-dungeon;
+              font-size: 2.5em;
+              //line-height: 0.6em;
+              //padding-top: 20px;
+              //padding-bottom: 10px;
+              //margin: 0 auto;
+              //width: 40%;
+              text-align: center;
+              //font-size: 0.5em;
+              font-weight: normal;
+              font-style: normal;
+              color: whitesmoke;
+              //grid-row: 2 / 3;
+            }
+  
+            &:nth-of-type(2) {
+              border-top: 4px solid whitesmoke;
+              border-bottom: 4px solid whitesmoke;
+              //font-size: 6em;
+            }
+  
+            &:not(:first-of-type) {
+              font-family: $font-korinna;
+              padding: 5px;
+              text-align: center;
+              font-size: 1.2em;
+              //font-size: 0.2em;
+              //width: 40%;
+              //margin: 0 auto;
+              text-transform: uppercase;
+              color: whitesmoke;
+              //border-top: 4px solid whitesmoke;
+              //border-bottom: 4px solid whitesmoke;
+              //grid-row: 3 / 4;
+            }
+          }
+        }
+
+        table {
+          background-color: #06558e;
+          font-family: $font-korinna;
+          width: 100%;
+          //grid-row: 1 / 2;
+          td {
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+            text-align: center;
+          }
+        }
+      }
+
+      main {
+        column-count: 1;
+        column-width: 100px;
+
+        p {
+          text-indent: 0;
+        }
+
+        section {
+          &:not(:last-of-type) {
+            &::after {
+            display: none;
+            }
+          }
+        }
+      }
+    }
   }
 
   article {
@@ -1053,7 +1220,7 @@ $font-boldbasker: 'Baskerville';
       height: 100%;
       background-image: url('./styles/fourth/dedcover.jpg');
       background-repeat: no-repeat;
-      background-attachment: fixed;
+      //background-attachment: fixed;
       background-size: cover;
       padding: 10px;
       width: 100%;
@@ -1275,7 +1442,7 @@ $font-boldbasker: 'Baskerville';
 
       }
 
-      h3 {
+      h2 {
         font-family: $font-korinna;
         padding: 5px;
         text-align: center;
@@ -1307,12 +1474,24 @@ $font-boldbasker: 'Baskerville';
     }
 
     main {
-      padding: 8vh 4vw 8vh 4vw;
+      background-image: url('./styles/fourth/papersheet.png');
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-attachment: fixed;
+      background-size: cover;
+      box-sizing: border-box;
+      padding: 18vh 4vw 6vh 4vw;
+      color: #444444;
+      //margin-top: 2vh;
+      //border-top: double 5px black;
+      font-weight: 100;
+      font-style: normal;
+      line-height: 0.9em;
       font-family: $font-basker;
       text-align: justify;
       column-count: 3;
       column-gap: 2vw;
-      background-color: whitesmoke;
+      //background-color: whitesmoke;
 
       section {
         padding-bottom: 2vh;
@@ -1333,10 +1512,27 @@ $font-boldbasker: 'Baskerville';
         }
       }
 
-      h3 {
+      ol {
+        list-style-position: inside;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      h2 {
         font-family: $font-basker;
         font-weight: bold;
         font-size: 1.3em;
+        padding-bottom: 2vh;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        font-family: $font-basker;
+        font-weight: bold;
+        font-size: 1em;
+        padding-top: 2vh;
         padding-bottom: 2vh;
       }
 
@@ -1344,6 +1540,27 @@ $font-boldbasker: 'Baskerville';
 
         &:not(:first-child) {
           text-indent: 2vw;
+        }
+      }
+
+      table {
+        border-top: solid 4px black;
+        border-bottom: solid 4px black;
+
+        th {
+          font-family: $font-basker;
+          text-transform: uppercase;
+          font-weight: bold;
+          border-bottom: solid 2px black;
+          text-align: center;
+          padding-top: 1vh;
+          padding-bottom: 1vh;
+        }
+        td {
+          padding-top: 1vh;
+          padding-bottom: 1vh;
+          text-align: left;
+          padding-right: 1vw;
         }
       }
 
@@ -1371,8 +1588,10 @@ $font-boldbasker: 'Baskerville';
             padding-bottom: 1vh;
           }
           td {
-            padding-top: 0.5vh;
-            padding-bottom: 0.5vh;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+            text-align: left;
+            padding-right: 1vw;
           }
         }
 
@@ -1394,12 +1613,18 @@ $font-boldbasker: 'Baskerville';
     }
 
     footer {
-      background-color: whitesmoke;
+      background-image: url('./styles/fourth/papersheet.png');
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-attachment: fixed;
+      background-size: cover;
+      box-sizing: border-box;
+      font-size: 0.8em;
       font-family: $font-korinna;
       text-align: center;
       padding-left: 20%;
       padding-right: 20%;
-      padding-bottom: 10vh;
+      padding-bottom: 5vh;
       
 
       &::before {
@@ -1412,7 +1637,7 @@ $font-boldbasker: 'Baskerville';
         margin: 0;
         padding: 0;
         width: 30vw;
-        height: 20vh;
+        height: 10vh;
       }
     }
   }

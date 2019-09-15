@@ -1332,6 +1332,22 @@ function getMeta(metaName) {
   console.log(getMeta('video'));
 
 */
+},{}],"tschichold.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function tschicholdLogic() {
+  var element = document.querySelector('meta[property~="dc:publisher"]');
+  var content = element && element.getAttribute("content");
+  console.log(content);
+}
+
+var _default = tschicholdLogic;
+exports.default = _default;
 },{}],"styles.js":[function(require,module,exports) {
 "use strict";
 
@@ -1360,6 +1376,8 @@ var _ = _interopRequireDefault(require("./2020"));
 
 var _rollingDom = _interopRequireDefault(require("./rollingDom"));
 
+var _tschichold = _interopRequireDefault(require("./tschichold"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = [{
@@ -1372,7 +1390,8 @@ var styles = [{
   logic: _rimpa.default
 }, {
   name: "third",
-  icon: _bauhaus.default
+  icon: _bauhaus.default,
+  logic: _tschichold.default
 }, {
   name: "dungeon",
   icon: _die.default,
@@ -1388,7 +1407,7 @@ var styles = [{
 }];
 var _default = styles;
 exports.default = _default;
-},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./images/die.svg":"images/die.svg","./images/rollingstones.svg":"images/rollingstones.svg","./manuzio":"manuzio.js","./dungeon":"dungeon.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js"}],"customStyleLogic.js":[function(require,module,exports) {
+},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./images/die.svg":"images/die.svg","./images/rollingstones.svg":"images/rollingstones.svg","./manuzio":"manuzio.js","./dungeon":"dungeon.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js","./tschichold":"tschichold.js"}],"customStyleLogic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1450,7 +1469,6 @@ function _addSpecialArticle() {
 
           case 5:
             rightArticle = _context.sent;
-            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1513,7 +1531,6 @@ function _addArticle() {
 
           case 2:
             article = _context2.sent;
-            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1562,7 +1579,6 @@ var _articleParser = require("./article-parser");
 
 var _addArticle = require("./addArticle.js");
 
-//article dictionary with title=key and url=value
 var articles = [{
   title: "Japan's Prisons Are a Haven for Elderly Women",
   url: "./articles/Bloomberg/ShihoFukada.html"
@@ -1831,14 +1847,6 @@ var _addDocumentationPages = require("./addDocumentationPages");
 
 var _overlayMenu = require("./overlayMenu");
 
-// polyfill needed for using for loop on a dictionary
-
-/*
- * Object.prototype.forEach() polyfill
- * https://gomakethings.com/looping-through-objects-with-es6/
- * @author Chris Ferdinandi
- * @license MIT
- */
 if (!Object.prototype.forEach) {
   Object.defineProperty(Object.prototype, "forEach", {
     value: function value(callback, thisArg) {
@@ -1924,11 +1932,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53903" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "5356" + '/');
->>>>>>> b1befee4af003576f8424d11ba4760e587958c28
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50571" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

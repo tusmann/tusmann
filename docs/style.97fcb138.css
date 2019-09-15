@@ -1169,24 +1169,21 @@ html {
 }
 
 .reader.third {
-  /*header p {
-  margin: 2rem 0 0; }*/
-  /* article > header {
-  display: flex;
-  margin: auto;
-  padding-top: 1rem;
-  padding-bottom: 1rem; } */
-  /*@media (min-width: 1800px) {
-    article > header {
-    padding-bottom: 30rem; } }*/
+  background-color: #f6f3ea;
 }
 .reader.third .reader.left article header, .reader.third .reader.right article header {
   width: 20vw;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 1fr;
 }
-.reader.third .reader.left article header h2, .reader.third .reader.right article header h2 {
+.reader.third .reader.left article header h1, .reader.third .reader.right article header h1 {
   grid-column: 1/3;
+  grid-row: auto;
+  writing-mode: horizontal-tb;
+  line-height: inherit;
+  margin-right: -10px;
+  margin-top: 0;
+  font-size: 1.3em;
 }
 .reader.third .reader.left article header p, .reader.third .reader.right article header p {
   padding-top: 5px;
@@ -1223,7 +1220,7 @@ html {
   font-family: "FuturaFuturisC";
   /*font-family: 'Futura W01', helvetica, sans-serif;*/
   font-size: 100%;
-  color: rgba(12, 12, 10, 0.8);
+  color: #222;
   font-weight: 300;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -1239,7 +1236,7 @@ html {
   grid-gap: 1rem;
   transform: rotate(-30deg);
 }
-.reader.third article header h1, .reader.third article header h3 {
+.reader.third article header h1, .reader.third article header h2, .reader.third article header h3 {
   font-size: calc(1rem + 1.4vw);
   margin: 0;
   font-weight: 700;
@@ -1256,7 +1253,7 @@ html {
   margin-top: -10px;
   margin-right: -10px;
 }
-.reader.third article header h3 {
+.reader.third article header h2, .reader.third article header h3 {
   grid-column: 1/4;
   grid-row: 1/2;
   text-align: right;
@@ -1264,7 +1261,7 @@ html {
   font-size: 1.3rem;
   border-bottom: 15px solid #f9423a;
 }
-.reader.third article header h3::first-letter {
+.reader.third article header h2::first-letter, .reader.third article header h3::first-letter {
   color: #0077c0;
   font-size: calc(3rem + 2vw);
   font-family: "WaddemChooNFW01";
@@ -1285,16 +1282,16 @@ html {
   margin: 0;
   grid-column: 4/5;
   grid-row: 2/3;
-  color: rgba(12, 12, 10, 0.8);
+  color: #222;
+  font-style: "WaddemChooNFW01";
   border-bottom: none;
   text-transform: uppercase;
-  color: rgba(12, 12, 10, 0.8);
   font-weight: 700;
 }
 .reader.third article header p:first-of-type {
   /* autoprefixer: off */
-  border-top: 5px solid rgba(12, 12, 10, 0.8);
-  border-bottom: 5px solid rgba(12, 12, 10, 0.8);
+  border-top: 5px solid #222;
+  border-bottom: 5px solid #222;
   font-weight: 700;
   grid-row: 3;
   grid-column: 4/6;
@@ -1338,19 +1335,29 @@ html {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  border-left: 5px solid rgba(12, 12, 10, 0.8);
-  border-right: 5px solid rgba(12, 12, 10, 0.8);
+  border-left: 5px solid #222;
+  border-right: 5px solid #222;
 }
 .reader.third article main {
-  margin: 2rem 4rem 6rem 2rem;
+  padding: 4rem 18rem 12rem 6rem;
   background-color: #f6f3ea;
   text-align: justify;
   column-count: 2;
   column-gap: 4vw;
+  column-rule: 4px double #222;
 }
-.reader.third article main h3 {
+.reader.third article main h2 {
   writing-mode: vertical-rl;
-  border-right: 10vw solid red;
+  border-right: 10vw solid #f9423a;
+  margin-bottom: 1vh;
+  font-weight: 900;
+  font-size: 1.5em;
+}
+.reader.third article main h2:hover {
+  padding-right: 2vw;
+}
+.reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img, .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
+  column-span: all;
 }
 .reader.third article main figure {
   width: auto;
@@ -1370,20 +1377,53 @@ html {
 .reader.third article main figure figcaption {
   font-style: "FuturaFuturisBlackC";
   font-weight: 700;
+  margin-bottom: 10px;
+  border-left: 5px solid #0077c0;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+.reader.third article main section {
+  margin-bottom: 2vh;
+  /*&:nth-of-type(4) {
+
+      border-bottom: 4px solid #444444;
+      column-span: all;
+
+  }*/
+}
+.reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img, .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
+  column-span: all;
+}
+.reader.third article main section:nth-of-type(2n) figure:nth-of-type(1) img {
+  clip-path: circle();
 }
 .reader.third article main section h3 {
   writing-mode: vertical-rl;
-  border-right: 10vw solid red;
+  border-left: 5vw solid #0077c0;
+  font-weight: bold;
   margin-top: 15px;
+}
+.reader.third article main section h3:hover {
+  padding-left: 2.5vw;
 }
 .reader.third article main section figure {
   width: auto;
 }
 .reader.third article main section figure table {
   border-right: 5px solid #f9423a;
+  padding-bottom: 2vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  font-size: 0.8em;
 }
-.reader.third article main section figure table tr {
+.reader.third article main section figure table tbody tr {
   padding-right: 5px;
+}
+.reader.third article main section figure table tbody tr th {
+  font-weight: bold;
+}
+.reader.third article main section figure table tbody tr td {
+  padding-right: 1vw;
 }
 .reader.third article main section figure img {
   width: 100%;
@@ -1400,6 +1440,7 @@ html {
   margin-bottom: 10px;
   border-left: 5px solid #0077c0;
   padding-left: 5px;
+  padding-top: 5px;
 }
 .reader.third article h1, .reader.third article h2, .reader.third article h3 {
   margin: 0;
@@ -1408,7 +1449,7 @@ html {
 .reader.third article a {
   font-weight: bold;
   text-decoration: none;
-  color: #000;
+  color: #222;
 }
 .reader.third article a:link {
   font-weight: bold;
@@ -1424,14 +1465,86 @@ html {
 }
 .reader.third article footer {
   background-color: #f6f3ea;
-  color: rgba(12, 12, 10, 0.8);
+  color: #222;
+  margin-top: 4vh;
   line-height: 1.2rem;
-  border-top: 15px solid #f9423a;
-  border-bottom: 15px solid #f9423a;
+  border-top: 5px solid #f9423a;
+  border-bottom: 5px solid #f9423a;
   text-align: center;
   font-style: "FuturaFuturisC";
 }
 
+.reader.dungeon .reader.left, .reader.dungeon .reader.right {
+  background-image: url("/papersheet.01c05328.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-attachment: fixed;
+  background-size: cover;
+  box-sizing: border-box;
+}
+.reader.dungeon .reader.left article, .reader.dungeon .reader.right article {
+  width: auto;
+}
+.reader.dungeon .reader.left article header, .reader.dungeon .reader.right article header {
+  width: auto;
+  display: block;
+}
+.reader.dungeon .reader.left article header #outcome, .reader.dungeon .reader.right article header #outcome {
+  display: none;
+}
+.reader.dungeon .reader.left article header #buttons, .reader.dungeon .reader.right article header #buttons {
+  display: none;
+}
+.reader.dungeon .reader.left article header .cube-container, .reader.dungeon .reader.right article header .cube-container {
+  display: none;
+}
+.reader.dungeon .reader.left article header h1, .reader.dungeon .reader.right article header h1 {
+  font-size: 1.2em;
+  line-height: 2em;
+}
+.reader.dungeon .reader.left article header h1 p, .reader.dungeon .reader.right article header h1 p {
+  width: auto;
+}
+.reader.dungeon .reader.left article header h1 p:first-of-type, .reader.dungeon .reader.right article header h1 p:first-of-type {
+  font-family: "DnDC";
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: normal;
+  font-style: normal;
+  color: whitesmoke;
+}
+.reader.dungeon .reader.left article header h1 p:nth-of-type(2), .reader.dungeon .reader.right article header h1 p:nth-of-type(2) {
+  border-top: 4px solid whitesmoke;
+  border-bottom: 4px solid whitesmoke;
+}
+.reader.dungeon .reader.left article header h1 p:not(:first-of-type), .reader.dungeon .reader.right article header h1 p:not(:first-of-type) {
+  font-family: "ITC Korinna Std";
+  padding: 5px;
+  text-align: center;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: whitesmoke;
+}
+.reader.dungeon .reader.left article header table, .reader.dungeon .reader.right article header table {
+  background-color: #06558e;
+  font-family: "ITC Korinna Std";
+  width: 100%;
+}
+.reader.dungeon .reader.left article header table td, .reader.dungeon .reader.right article header table td {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  text-align: center;
+}
+.reader.dungeon .reader.left article main, .reader.dungeon .reader.right article main {
+  column-count: 1;
+  column-width: 100px;
+}
+.reader.dungeon .reader.left article main p, .reader.dungeon .reader.right article main p {
+  text-indent: 0;
+}
+.reader.dungeon .reader.left article main section:not(:last-of-type)::after, .reader.dungeon .reader.right article main section:not(:last-of-type)::after {
+  display: none;
+}
 .reader.dungeon article {
   font-size: 100%;
   cursor: url("/dun_cursor.963a85af.cur"), pointer;
@@ -1458,7 +1571,6 @@ html {
   height: 100%;
   background-image: url("/dedcover.83f1d7a2.jpg");
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
   padding: 10px;
   width: 100%;
@@ -1772,7 +1884,7 @@ html {
   color: whitesmoke;
   grid-row: 1/2;
 }
-.reader.dungeon article header h3 {
+.reader.dungeon article header h2 {
   font-family: "ITC Korinna Std";
   padding: 5px;
   text-align: center;
@@ -1800,12 +1912,21 @@ html {
   grid-row: 3/4;
 }
 .reader.dungeon article main {
-  padding: 8vh 4vw 8vh 4vw;
+  background-image: url("/papersheet.01c05328.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-attachment: fixed;
+  background-size: cover;
+  box-sizing: border-box;
+  padding: 18vh 4vw 6vh 4vw;
+  color: #444444;
+  font-weight: 100;
+  font-style: normal;
+  line-height: 0.9em;
   font-family: "Hounds";
   text-align: justify;
   column-count: 3;
   column-gap: 2vw;
-  background-color: whitesmoke;
 }
 .reader.dungeon article main section {
   padding-bottom: 2vh;
@@ -1822,14 +1943,47 @@ html {
   width: 25vw;
   height: 15vh;
 }
-.reader.dungeon article main h3 {
+.reader.dungeon article main ol {
+  list-style-position: inside;
+}
+.reader.dungeon article main ul {
+  list-style: none;
+}
+.reader.dungeon article main h2 {
   font-family: "Hounds";
   font-weight: bold;
   font-size: 1.3em;
   padding-bottom: 2vh;
+  text-transform: uppercase;
+}
+.reader.dungeon article main h3 {
+  font-family: "Hounds";
+  font-weight: bold;
+  font-size: 1em;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 .reader.dungeon article main p:not(:first-child) {
   text-indent: 2vw;
+}
+.reader.dungeon article main table {
+  border-top: solid 4px black;
+  border-bottom: solid 4px black;
+}
+.reader.dungeon article main table th {
+  font-family: "Hounds";
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: solid 2px black;
+  text-align: center;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.reader.dungeon article main table td {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  text-align: left;
+  padding-right: 1vw;
 }
 .reader.dungeon article main figure {
   width: auto;
@@ -1854,8 +2008,10 @@ html {
   padding-bottom: 1vh;
 }
 .reader.dungeon article main figure table td {
-  padding-top: 0.5vh;
-  padding-bottom: 0.5vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  text-align: left;
+  padding-right: 1vw;
 }
 .reader.dungeon article main figure img {
   width: 100%;
@@ -1865,12 +2021,18 @@ html {
   display: block;
 }
 .reader.dungeon article footer {
-  background-color: whitesmoke;
+  background-image: url("/papersheet.01c05328.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-attachment: fixed;
+  background-size: cover;
+  box-sizing: border-box;
+  font-size: 0.8em;
   font-family: "ITC Korinna Std";
   text-align: center;
   padding-left: 20%;
   padding-right: 20%;
-  padding-bottom: 10vh;
+  padding-bottom: 5vh;
 }
 .reader.dungeon article footer::before {
   content: "";
@@ -1882,7 +2044,7 @@ html {
   margin: 0;
   padding: 0;
   width: 30vw;
-  height: 20vh;
+  height: 10vh;
 }
 
 .reader.fifth article {
