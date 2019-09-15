@@ -964,6 +964,8 @@ module.exports = "/aldus_leaf.72009c54.svg";
 module.exports = "/sakura.3275ced2.svg";
 },{}],"images/die.svg":[function(require,module,exports) {
 module.exports = "/die.8f9f3c68.svg";
+},{}],"images/rollingstones.svg":[function(require,module,exports) {
+module.exports = "/rollingstones.29f3750a.svg";
 },{}],"manuzio.js":[function(require,module,exports) {
 "use strict";
 
@@ -1098,7 +1100,7 @@ function dungeonLogic() {
         fadeout = setTimeout(function () {
           //hide message
           outcome.className = '';
-        }, 2000);
+        }, 4000);
       }, 1000);
     } else {
       //repeat number, try again
@@ -1340,6 +1342,8 @@ var _sakura = _interopRequireDefault(require("./images/sakura.svg"));
 
 var _die = _interopRequireDefault(require("./images/die.svg"));
 
+var _rollingstones = _interopRequireDefault(require("./images/rollingstones.svg"));
+
 var _manuzio = _interopRequireDefault(require("./manuzio"));
 
 var _dungeon = _interopRequireDefault(require("./dungeon"));
@@ -1369,7 +1373,7 @@ var styles = [{
   logic: _dungeon.default
 }, {
   name: "fifth",
-  icon: "",
+  icon: _rollingstones.default,
   logic: _rollingDom.default
 }, {
   name: "sixth",
@@ -1378,7 +1382,7 @@ var styles = [{
 }];
 var _default = styles;
 exports.default = _default;
-},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./images/die.svg":"images/die.svg","./manuzio":"manuzio.js","./dungeon":"dungeon.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js"}],"customStyleLogic.js":[function(require,module,exports) {
+},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./images/die.svg":"images/die.svg","./images/rollingstones.svg":"images/rollingstones.svg","./manuzio":"manuzio.js","./dungeon":"dungeon.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js"}],"customStyleLogic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1903,7 +1907,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50050" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53903" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

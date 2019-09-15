@@ -107,7 +107,7 @@ function dungeonLogic(){
               //hide message
               outcome.className = '';
       
-            }, 2000);
+            }, 4000);
       
           } , 1000);
       

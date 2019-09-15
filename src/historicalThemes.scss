@@ -934,6 +934,25 @@ $font-boldbasker: 'Baskerville';
       text-transform: uppercase; 
     }
 
+    a {
+      font-weight: bold;
+      text-decoration: none;
+      color: #000;
+
+      &:link {
+        font-weight: bold;
+        text-decoration: none;
+      }
+      &:visited {
+        font-weight: bold;
+        text-decoration: none;
+      }
+      &:hover {
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+
       footer {
       background-color: #f6f3ea;
       color: rgba(12, 12, 10, 0.8);
@@ -966,13 +985,35 @@ $font-boldbasker: 'Baskerville';
 //STYLE: DUNGEON
 .reader.dungeon {
 
+  
   .reader.left, .reader.right {
 
   }
 
   article {
-
+    
     font-size: 100%;
+    cursor: url('./styles/fourth/dun_cursor.cur'), pointer;
+
+    a {
+      font-weight: bold;
+      text-decoration: none;
+      color: #000;
+      cursor: url('./styles/fourth/dun_pointer.cur'), pointer;
+
+      &:link {
+        font-weight: bold;
+        text-decoration: none;
+      }
+      &:visited {
+        font-weight: bold;
+        text-decoration: none;
+      }
+      &:hover {
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
 
     header {
       height: 100%;
@@ -988,7 +1029,7 @@ $font-boldbasker: 'Baskerville';
 
       //
       .cube-container {
-        grid-row: 7 / 8;
+        grid-row: 6 / 7;
         width: 190px;
         height: 190px;
         position: relative;
@@ -1095,15 +1136,22 @@ $font-boldbasker: 'Baskerville';
         grid-row: 8 / 9;
         text-align: center;
         position: relative;
+        
 
           & input[type="button"] {
+          cursor: url('./styles/fourth/dun_pointer.cur'), pointer;
           position: relative;
-          width: 80px;
-          border-width: 0;
+          outline: none;
+          width: 15%;
+          height: auto;
+          background-image: url('./styles/fourth/stone_button.png');
+          background-size: cover;
+          background-position: center;
+          //border-width: 0;
           padding: 6px 16px;
-          font-family: sans-serif;
+          font-family: $font-korinna;
           text-shadow: 1px 1px 1px rgb(255, 255, 255);
-          font-size: 14px;
+          font-size: 1.6em;
           border-radius:5px 5px 5px 5px;
           box-shadow:0px 0px 3px #000;
           background:gradient( linear, 50% 0%, 50% 100%, from( rgb(238, 238, 238) ), to( rgb(204, 204, 204) ) );
@@ -1119,12 +1167,19 @@ $font-boldbasker: 'Baskerville';
       
       
       #outcome {
-        grid-row: 6 / 7;
+        grid-row: 7 / 8;
         text-align: center;
         //position: relative;
         z-index: 9;
         top:-250px;
+        height: 25vh;
+        width: 20vw;
         opacity: 0;
+        background-image: url('./styles/fourth/stone_button.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: 0 auto;
         /* oooh I love pointer events for stuff like this */
         pointer-events: none;
         -webkit-transition: opacity 400ms;
@@ -1132,10 +1187,10 @@ $font-boldbasker: 'Baskerville';
 
             #text {
               font-size: 1.4em;
-              font-family: $font-basker;
-              color: #fff;
-              text-shadow: rgba(0, 0, 0, 0.5) 1px 1px 0;
-              margin-top: 20px;
+              font-family: $font-korinna;
+              color: black;
+              text-shadow: 1px 1px 1px rgb(255, 255, 255);
+              margin-top: 70px;
               /* background-color: rgba(30, 30, 30, 0.8); */
               /* padding: 20px 30px; */
               display: inline-block;
@@ -1227,10 +1282,27 @@ $font-boldbasker: 'Baskerville';
 
       section {
         padding-bottom: 2vh;
+
+        &:not(:last-of-type) {
+          &::after {
+          content: '';
+          display: inline-block;
+          background-image: url('./styles/fourth/deddice.png');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          margin: 0 auto;
+          padding: 0;
+          width: 25vw;
+          height: 15vh;
+          }
+        }
       }
 
       h3 {
-        font-family: $font-boldbasker;
+        font-family: $font-basker;
+        font-weight: bold;
+        font-size: 1.3em;
         padding-bottom: 2vh;
       }
 
@@ -1243,7 +1315,32 @@ $font-boldbasker: 'Baskerville';
 
       figure {
         width: auto;
+        padding-top: 2vh;
         padding-bottom: 2vh;
+
+        figcaption {
+          padding-top: 1vh;
+          font-style: italic;
+        }
+
+        table {
+          border-top: solid 4px black;
+          border-bottom: solid 4px black;
+
+          th {
+            font-family: $font-basker;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: solid 2px black;
+            text-align: center;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+          }
+          td {
+            padding-top: 0.5vh;
+            padding-bottom: 0.5vh;
+          }
+        }
 
         img {
           width: 100%;
@@ -1266,6 +1363,23 @@ $font-boldbasker: 'Baskerville';
       background-color: whitesmoke;
       font-family: $font-korinna;
       text-align: center;
+      padding-left: 20%;
+      padding-right: 20%;
+      padding-bottom: 10vh;
+      
+
+      &::before {
+        content: '';
+        background-image: url('./styles/fourth/dedsword.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        width: 30vw;
+        height: 20vh;
+      }
     }
   }
 }
