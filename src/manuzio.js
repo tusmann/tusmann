@@ -20,8 +20,7 @@ function manuzioLogic() {
         checkChildren = Boolean(
           countP >= 2 &&
             childHeigt > 300 &&
-            sectionChildren[i].tagName !== "FIGURE" &&
-            "TABLE"
+            sectionChildren[i].tagName !== "FIGURE" && sectionChildren[i].tagName !== "TABLE"
         );
         i++;
       }
