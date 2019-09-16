@@ -226,8 +226,8 @@ html {
 }
 
 .card__side--back-3 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#fff0e2), to(#e31619));
-  background-image: linear-gradient(to right bottom, #fff0e2, #e31619);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#222), to(#e31619));
+  background-image: linear-gradient(to right bottom, #222, #e31619);
 }
 
 .card:hover .card__side--front {
@@ -242,6 +242,7 @@ html {
 
 .card__picture {
   background-size: cover;
+  background-position: center;
   height: 23rem;
   background-blend-mode: screen;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -261,8 +262,8 @@ html {
 }
 
 .card__picture--3 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#fff0e2), to(#e31619)), url(/ded-card-front.c5365650.jpg);
-  background-image: linear-gradient(to right bottom, #fff0e2, #e31619), url(/ded-card-front.c5365650.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#222), to(#e31619)), url(/ded-card-front.c5365650.jpg);
+  background-image: linear-gradient(to right bottom, #222, #e31619), url(/ded-card-front.c5365650.jpg);
 }
 
 .card__picture--4 {
@@ -281,9 +282,10 @@ html {
 }
 
 .card__heading {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
+  text-transform: capitalize;
   font-weight: 300;
-  text-transform: uppercase;
+  text-align: center;
   vertical-align: center;
   color: black;
   position: absolute;
@@ -465,7 +467,7 @@ html {
 }
 
 .popup__close:hover {
-  color: #fff0e2;
+  color: #222;
 }
 
 .styleDescriptionBlock {
