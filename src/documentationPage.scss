@@ -6,10 +6,10 @@ $card-color-3-light: #9D5D82;
 $card-color-3-dark: #4F1722;
 $card-color-4-light:  #24597B;
 $card-color-4-dark: #00497A;
-$card-color-5-light: #796C63;
-$card-color-5-dark: #796C63;
-$card-color-6-light: #796C63;
-$card-color-6-dark: #796C63;
+$card-color-5-light: #d4d4d4;
+$card-color-5-dark: #ff0019;
+$card-color-6-light: #fff;
+$card-color-6-dark: #222;
 
 .documentationPageSection{
     font-size: 1.2rem;
@@ -140,6 +140,28 @@ $card-color-6-dark: #796C63;
     );
     background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
   }
+
+  .card__side--back-5 {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right bottom,
+      from($card-color-5-light),
+      to($card-color-5-dark)
+    );
+    background-image: linear-gradient(to right bottom, $card-color-5-light, $card-color-5-dark);
+  }
+
+  .card__side--back-6 {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right bottom,
+      from($card-color-6-light),
+      to($card-color-6-dark)
+    );
+    background-image: linear-gradient(to right bottom, $card-color-6-light, $card-color-6-dark);
+  }
   .card:hover .card__side--front {
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
@@ -213,9 +235,11 @@ $card-color-6-dark: #796C63;
         from($card-color-5-light),
         to($card-color-5-dark)
       ),
-      url(./cards/manuzio-card-front.jpg);
+      url(./cards/rollingdom-card-front.jpg);
     background-image: linear-gradient(to right bottom, $card-color-5-light, $card-color-5-dark),
-      url(./cards/manuzio-card-front.jpg);
+      url(./cards/rollingdom-card-front.jpg);
+      background-size: cover;
+      margin-left: -80%;
   }
   .card__picture--6 {
     background-image: -webkit-gradient(
@@ -225,9 +249,10 @@ $card-color-6-dark: #796C63;
         from($card-color-6-light),
         to($card-color-6-dark)
       ),
-      url(./cards/manuzio-card-front.jpg);
+      url(./cards/2020-card-front.gif);
     background-image: linear-gradient(to right bottom, $card-color-6-light, $card-color-6-dark),
-      url(./cards/manuzio-card-front.jpg);
+      url(./cards/2020-card-front.gif);
+      margin-left: -50%;
   }
 
   .card__heading {

@@ -230,6 +230,16 @@ html {
   background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
 }
 
+.card__side--back-5 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#d4d4d4), to(#ff0019));
+  background-image: linear-gradient(to right bottom, #d4d4d4, #ff0019);
+}
+
+.card__side--back-6 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#fff), to(#222));
+  background-image: linear-gradient(to right bottom, #fff, #222);
+}
+
 .card:hover .card__side--front {
   -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
@@ -271,13 +281,16 @@ html {
 }
 
 .card__picture--5 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#796C63), to(#796C63)), url(/manuzio-card-front.8f60d575.jpg);
-  background-image: linear-gradient(to right bottom, #796C63, #796C63), url(/manuzio-card-front.8f60d575.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#d4d4d4), to(#ff0019)), url(/rollingdom-card-front.6e87a907.jpg);
+  background-image: linear-gradient(to right bottom, #d4d4d4, #ff0019), url(/rollingdom-card-front.6e87a907.jpg);
+  background-size: cover;
+  margin-left: -80%;
 }
 
 .card__picture--6 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#796C63), to(#796C63)), url(/manuzio-card-front.8f60d575.jpg);
-  background-image: linear-gradient(to right bottom, #796C63, #796C63), url(/manuzio-card-front.8f60d575.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#fff), to(#222)), url(/2020-card-front.2f797e7a.gif);
+  background-image: linear-gradient(to right bottom, #fff, #222), url(/2020-card-front.2f797e7a.gif);
+  margin-left: -50%;
 }
 
 .card__heading {
@@ -309,11 +322,11 @@ html {
 }
 
 .card5 {
-  color: #796C63;
+  color: #ff0019;
 }
 
 .card6 {
-  color: #796C63;
+  color: #222;
 }
 
 .card__cta {
@@ -2362,6 +2375,9 @@ html {
   display: block;
   border: 1px solid black;
 }
+.reader.fifth .left header p, .reader.fifth .right header p {
+  text-align: left;
+}
 .reader.fifth .left ul, .reader.fifth .left ol, .reader.fifth .right ul, .reader.fifth .right ol {
   font-family: "fifthCorpus", sans-serif;
   font-size: 1.1em;
@@ -2468,11 +2484,10 @@ html {
   margin-left: auto;
   margin-right: auto;
   object-fit: cover;
-  /*&:hover {
-    filter: grayscale(0%) brightness(95%);
-    transform: scale(1.1);
-    //animation: heartBeat 1s linear;
-  }*/
+}
+.reader.sixth article header figure img:hover {
+  filter: grayscale(0%) brightness(95%);
+  transform: scale(1.1);
 }
 .reader.sixth article header figure figcaption {
   font-family: "stolzLight", sans-serif;
@@ -2490,14 +2505,14 @@ html {
   font-style: italic;
   font-family: "stolzLight", sans-serif;
 }
-.reader.sixth article main h3 {
+.reader.sixth article main h2, .reader.sixth article main h3 {
   font-size: 5em;
   font-family: "stolzLight", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.25em;
   padding: 3rem 0 3rem 4rem;
 }
-.reader.sixth article main h3:hover {
+.reader.sixth article main h2:hover, .reader.sixth article main h3:hover {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
 }
 .reader.sixth article main p {
