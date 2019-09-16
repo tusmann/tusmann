@@ -12,22 +12,21 @@ function manuzioLogic() {
 
       while (i < sectionChildren.length && !checkChildren) {
         var childHeigt = sectionChildren[i].clientHeight;
-        console.log(sectionChildren[i])
-        console.log(childHeigt)
+        var childWidth = sectionChildren[i].clientWidth;
         if (sectionChildren[i].tagName == "P") {
           countP++;
         }
         checkChildren = Boolean(
           countP >= 2 &&
             childHeigt > 300 &&
-            sectionChildren[i].tagName !== "FIGURE" && sectionChildren[i].tagName !== "TABLE"
+            sectionChildren[i].tagName !== "FIGURE" &&
+            sectionChildren[i].tagName !== "TABLE"
         );
         i++;
       }
       if (checkChildren) {
         i--;
-       
-        
+
         const leftTriangle = document.createElement("div");
         leftTriangle.classList.add("left-triangle-shape");
         const rightTriangle = document.createElement("div");
@@ -35,11 +34,36 @@ function manuzioLogic() {
         sectionChildren[i].insertAdjacentElement("beforebegin", leftTriangle);
         sectionChildren[i].insertAdjacentElement("beforebegin", rightTriangle);
 
-        leftTriangle.style.height = childHeigt + "px";
-        rightTriangle.style.height = childHeigt + "px";
+        leftTriangle.style.height = Math.min(childHeigt, 3 * childWidth) + "px";
+        rightTriangle.style.height =
+          Math.min(childHeigt, 3 * childWidth) + "px";
       }
     });
   }
   insertTriangles();
+
+  function addCapital() {
+    var sectionList = document.querySelectorAll(".reader section");
+
+    sectionList.forEach(section => {
+      var i = 0;
+      var checkParagraph = false;
+      var paragraphList = Array.from(section.children);
+
+      while (i < paragraphList.length && !checkParagraph) {
+        var pHeight = paragraphList[i].clientHeight;
+        console.log(pHeight);
+        checkParagraph = Boolean(paragraphList[i].tagName == "P" && pHeight > 80);
+        i++;
+      }
+      if (checkParagraph) {
+        i--;
+        console.log(paragraphList[i]);
+        paragraphList[i].classList.add("capital");
+      }
+    });
+  }
+  addCapital();
 }
+
 export default manuzioLogic;

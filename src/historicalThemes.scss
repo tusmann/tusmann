@@ -269,17 +269,18 @@ $font-boldbasker: 'Baskerville';
     font-weight: 400;
     line-height: 1.3;
     color: $manuzio-text-color;
-    font-size: 100%;
+    font-size: 1.5rem;
     text-align: justify;
 
     section {
       margin: 2rem 0;
-      p:first-of-type:first-letter {
+      font-size: 1.5rem;
+      .capital::first-letter {
         text-transform: uppercase;
         float: left;
         color: $manuzio-first-letter;
         font-size: 10rem;
-          line-height: 7rem;
+        line-height: 7rem;
         text-align: left;
         margin: 1rem 0.5rem 0.5rem 0;
         font-family: $manuzio-font-initial;
@@ -290,9 +291,7 @@ $font-boldbasker: 'Baskerville';
       color: $manuzio-link-color;
     }
     p {
-      margin: 1.5rem 0;
-      font-size: 1.5rem;
-      
+      margin: 1.5rem 0;      
     }
     figure {
       text-align: center;
@@ -333,6 +332,7 @@ $font-boldbasker: 'Baskerville';
       border-collapse: collapse;
       text-align: center;
       line-height: 1.5rem;
+      font-size: 1rem;
     }
     th {
       text-transform: uppercase;
@@ -396,6 +396,7 @@ $font-boldbasker: 'Baskerville';
       margin: 3rem 0 0 0;
       text-align: center;
       font-family: $manuzio-font-maiusc;
+      font-size: 1.5rem;
     }
   }
   //EU article
@@ -491,8 +492,6 @@ $font-boldbasker: 'Baskerville';
     font-size: 100%;
     overflow-x: auto;
     overflow-y: auto;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
     p,
     h1,
     h2,
@@ -526,11 +525,12 @@ $font-boldbasker: 'Baskerville';
     }
     table {
       table-layout: fixed;
-      width: 100%;
+      width: 80%;
       border-width: 0.3rem;
       padding: 0.2rem;
       border-collapse: collapse;
-      background: rgba(234, 197, 67, 0.5);      -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+      background: rgba(234, 197, 67, 0.5);  
+      -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
           page-break-inside: avoid; /* Firefox */
                break-inside: avoid; /* IE 10+ */
     
@@ -598,11 +598,12 @@ $font-boldbasker: 'Baskerville';
       text-orientation: upright;
       margin: 0;
       text-align: right;
+      padding-bottom: 2%;
       figure {
         writing-mode: horizontal-tb;
         margin: auto 3rem;
         img {
-          width: 30rem;
+          height: 30rem;
           object-fit: contain;
           display: block;
           box-align: center;
@@ -628,6 +629,9 @@ $font-boldbasker: 'Baskerville';
       }
       figure {
         margin: 1rem 0;
+        -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+        page-break-inside: avoid; /* Firefox */
+             break-inside: avoid; /* IE 10+ */
         figcaption {
           font-style: italic;
           font-size: 1rem;
@@ -660,8 +664,8 @@ $font-boldbasker: 'Baskerville';
       margin: 3rem;
       text-transform: uppercase;
       text-align: center;
-      writing-mode: vertical-lr;
-    text-orientation: upright;
+      writing-mode: horizontal-tb;
+      text-orientation: upright;
     }
   }
 
@@ -669,7 +673,21 @@ $font-boldbasker: 'Baskerville';
   .left,
   .right {
     article {
-      font-size: 90%;
+      width: 50vw;
+      //46 perfetto per lo schermo mio
+      
+      header {
+        h1 {
+          font-size: 1.5rem;
+        }
+      }
+
+      font-size: 100%;
+      main {
+        column-count: 1;
+        margin: 1%;
+      }
+
     }
   }
 }

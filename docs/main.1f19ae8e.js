@@ -987,8 +987,7 @@ function manuzioLogic() {
 
       while (i < sectionChildren.length && !checkChildren) {
         var childHeigt = sectionChildren[i].clientHeight;
-        console.log(sectionChildren[i]);
-        console.log(childHeigt);
+        var childWidth = sectionChildren[i].clientWidth;
 
         if (sectionChildren[i].tagName == "P") {
           countP++;
@@ -1006,13 +1005,37 @@ function manuzioLogic() {
         rightTriangle.classList.add("right-triangle-shape");
         sectionChildren[i].insertAdjacentElement("beforebegin", leftTriangle);
         sectionChildren[i].insertAdjacentElement("beforebegin", rightTriangle);
-        leftTriangle.style.height = childHeigt + "px";
-        rightTriangle.style.height = childHeigt + "px";
+        leftTriangle.style.height = Math.min(childHeigt, 3 * childWidth) + "px";
+        rightTriangle.style.height = Math.min(childHeigt, 3 * childWidth) + "px";
       }
     });
   }
 
   insertTriangles();
+
+  function addCapital() {
+    var sectionList = document.querySelectorAll(".reader section");
+    sectionList.forEach(function (section) {
+      var i = 0;
+      var checkParagraph = false;
+      var paragraphList = Array.from(section.children);
+
+      while (i < paragraphList.length && !checkParagraph) {
+        var pHeight = paragraphList[i].clientHeight;
+        console.log(pHeight);
+        checkParagraph = Boolean(paragraphList[i].tagName == "P" && pHeight > 80);
+        i++;
+      }
+
+      if (checkParagraph) {
+        i--;
+        console.log(paragraphList[i]);
+        paragraphList[i].classList.add("capital");
+      }
+    });
+  }
+
+  addCapital();
 }
 
 var _default = manuzioLogic;
@@ -1469,6 +1492,7 @@ function _addSpecialArticle() {
 
           case 5:
             rightArticle = _context.sent;
+            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1531,6 +1555,7 @@ function _addArticle() {
 
           case 2:
             article = _context2.sent;
+            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1579,6 +1604,7 @@ var _articleParser = require("./article-parser");
 
 var _addArticle = require("./addArticle.js");
 
+//article dictionary with title=key and url=value
 var articles = [{
   title: "Japan's Prisons Are a Haven for Elderly Women",
   url: "./articles/Bloomberg/ShihoFukada.html"
@@ -1847,6 +1873,14 @@ var _addDocumentationPages = require("./addDocumentationPages");
 
 var _overlayMenu = require("./overlayMenu");
 
+// polyfill needed for using for loop on a dictionary
+
+/*
+ * Object.prototype.forEach() polyfill
+ * https://gomakethings.com/looping-through-objects-with-es6/
+ * @author Chris Ferdinandi
+ * @license MIT
+ */
 if (!Object.prototype.forEach) {
   Object.defineProperty(Object.prototype, "forEach", {
     value: function value(callback, thisArg) {
@@ -1932,7 +1966,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50571" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "3457" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
