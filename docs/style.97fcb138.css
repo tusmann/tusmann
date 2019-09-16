@@ -4436,6 +4436,7 @@ h1 {
   font-size: 1.5rem;
   font-family: "GTSectraFine";
   color: #629488;
+  font-weight: bold;
 }
 .disclaimerPageSection a,
 .aboutPageSection a {
@@ -4451,10 +4452,9 @@ h1 {
 }
 .disclaimerPageSection .bioPic,
 .aboutPageSection .bioPic {
-  width: 100%;
-  display: table-cell;
+  width: 15vw;
+  clip-path: circle();
   vertical-align: middle;
-  padding: 1rem 0 0 0;
 }
 .disclaimerPageSection .bioText,
 .aboutPageSection .bioText {
