@@ -285,13 +285,11 @@ html {
   background-image: -webkit-gradient(linear, left top, right bottom, from(#d4d4d4), to(#ff0019)), url(/rollingdom-card-front.6e87a907.jpg);
   background-image: linear-gradient(to right bottom, #d4d4d4, #ff0019), url(/rollingdom-card-front.6e87a907.jpg);
   background-size: cover;
-  margin-left: -80%;
 }
 
 .card__picture--6 {
   background-image: -webkit-gradient(linear, left top, right bottom, from(#fff), to(#222)), url(/2020-card-front.2f797e7a.gif);
   background-image: linear-gradient(to right bottom, #fff, #222), url(/2020-card-front.2f797e7a.gif);
-  margin-left: -50%;
 }
 
 .card__heading {

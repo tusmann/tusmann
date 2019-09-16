@@ -240,7 +240,6 @@ $card-color-6-dark: #222;
     background-image: linear-gradient(to right bottom, $card-color-5-light, $card-color-5-dark),
       url(./cards/rollingdom-card-front.jpg);
       background-size: cover;
-      margin-left: -80%;
   }
   .card__picture--6 {
     background-image: -webkit-gradient(
@@ -253,7 +252,6 @@ $card-color-6-dark: #222;
       url(./cards/2020-card-front.gif);
     background-image: linear-gradient(to right bottom, $card-color-6-light, $card-color-6-dark),
       url(./cards/2020-card-front.gif);
-      margin-left: -50%;
   }
 
   .card__heading {
