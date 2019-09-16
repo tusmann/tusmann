@@ -973,11 +973,6 @@ html {
   font-family: "GriffoClassicoSmallCaps";
   font-size: 1.5rem;
 }
-.reader.manuzio .left article main p:first-of-type:first-letter,
-.reader.manuzio .right article main p:first-of-type:first-letter {
-  font-size: 10rem;
-  line-height: 7rem;
-}
 .reader.manuzio .left article {
   padding: 9% 6% 15% 17.2%;
 }
