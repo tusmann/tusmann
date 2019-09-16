@@ -1368,9 +1368,8 @@ function getMeta(metaName) {
   console.log(getMeta('video'));
 
 */
-<<<<<<< HEAD
 
-=======
+exports.default = _default;
 },{}],"tschichold.js":[function(require,module,exports) {
 "use strict";
 
@@ -1386,7 +1385,6 @@ function tschicholdLogic() {
 }
 
 var _default = tschicholdLogic;
->>>>>>> c84f4f1b8b60343ac3784b1310fa649bd555c1f1
 exports.default = _default;
 },{}],"styles.js":[function(require,module,exports) {
 "use strict";
@@ -1974,11 +1972,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62442" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62897" + '/');
->>>>>>> c84f4f1b8b60343ac3784b1310fa649bd555c1f1
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52783" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

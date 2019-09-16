@@ -2159,8 +2159,6 @@ html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-bottom: 0;
-  outline: #f9423a;
-  outline-offset: 5rem;
   border: 0.1rem solid #222;
   border-left: -5rem;
   border-right: -1rem;
@@ -2169,6 +2167,25 @@ html {
 .reader.fifth article::after {
   content: "";
   border-top: 0.1rem solid #222;
+}
+.reader.fifth article h1 {
+  position: relative;
+  font-family: "bernsteinBold";
+  font-size: 4em;
+  text-align: left;
+  width: auto;
+}
+.reader.fifth article h4 {
+  color: #ff0019;
+  position: relative;
+  font-family: "bernsteinBold";
+  font-size: 1.4em;
+  border-bottom: 0.05rem solid #222;
+  border-top: 0.05rem solid #222;
+  text-align: center;
+  width: auto;
+  padding: 0.5rem 1rem;
+  column-span: 2;
 }
 .reader.fifth h1 {
   position: relative;
@@ -2446,6 +2463,8 @@ html {
 }
 .reader.sixth article main {
   padding: 2rem 0 0 3.5rem;
+  font-style: italic;
+  font-family: "stolzLight", sans-serif;
 }
 .reader.sixth article main h3 {
   font-size: 5em;
