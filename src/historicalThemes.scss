@@ -2024,6 +2024,7 @@ $font-boldbasker: 'Baskerville';
     text-transform: uppercase;
     text-decoration: line-through;
     text-decoration-color: #bebebe;
+    vertical-align: text-bottom;
   }
   article {
     background-color: #222;
@@ -2194,37 +2195,204 @@ $font-boldbasker: 'Baskerville';
     }
 
   .left,.right {
-    width: 44vw;
+    width: 44.5vw;
     display: inline-block;
-    font-family: "stolzLight", sans-serif;
+    border-right: .5rem solid white;
+    overflow: hidden;
+    header {
+      order: 1;
+      h1 {
+        width: inherit;
+        font-size: 2em;
+        &:hover {
+          text-shadow: none;
+        }
+        p {
+          font-family: "sixthBody", sans-serif;
+          font-size: 1em;
+          text-align: left;
+          padding-left: 1rem;
+          &:first-of-type {
+            padding-bottom: 2rem;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            &:hover {
+              text-shadow:
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #fff,
+                0 0 30px #fff;
+            }
+          }
+        }
+      }
+      table {
+        width: auto;
+        text-align: center;
+        order: 2;
+        text-transform: lowercase;
+        margin: 1rem 0;
+        font-size: 2em;
+        display: table;
+        tr {
+          font-family: "windSong", serif;
+        }
+      }
+    }
+    
+    h2, h3 {
+      font-family: "stolzLight", sans-serif;
+      font-size: 3em;
+      padding: 3rem 2rem 2.5rem 2rem;
+      text-align: center;
+      text-transform: uppercase;
+      margin: auto;
+      &:hover {
+        text-shadow:
+          0 0 5px #fff,
+          0 0 10px #fff,
+          0 0 20px #fff,
+          0 0 30px #fff;
+      }
+    }
     p {
+      width: inherit;
       font-family: "sixthBody", sans-serif;
+      padding-left: 2rem;
     }
     ol, ul {
-      font-family: 'Playfair Display', serif;
+      width: inherit;
+      font-family: "sixthBody", serif;
       font-size: 1.2em;
+      line-height: 1.2em;
       list-style-type:decimal;
-      padding: 1rem 0;
+      padding: 1rem 2rem 1rem 0;
       list-style: none;
-      
+      table {
+        text-align: left;
+        margin-left: 0;
+        margin-right: auto;
+        padding: 2rem 0;
+        font-size: .8em;
+        display: block;
+        width: 40vw;
+        height: auto;
+        td {
+          padding: .7rem 0;
+        }
+      }
+      p {
+        font-size: inherit;
+        font-family: inherit;
+        color: inherit;
+        padding: 2rem 0;
+      }
       li {
+        margin: -1.5rem 0;
         font-size: inherit;
         font-family: inherit;
         color: inherit;
         padding: 1rem 0;
         list-style: none;
-        display: inline-block;
+        /*
         background-image: url(styles/sixth/arrow.gif);
         background-repeat: no-repeat;
-        background-size: 1rem;
+        background-size: 1rem;*/
+        &::before {
+          content: ' ';
+          display: inline-block;
+          height: 1.5rem;
+          width: 1.5rem;
+          background-image: url("styles/sixth/arrow.gif");
+          background-repeat: no-repeat;
+          background-size: contain;
         }
-        ol {
+        p {
+          font-size: inherit;
+          font-family: inherit;
+          color: inherit;
+        }
+        }
+        ul, ol {
           font-size: inherit;
           font-family: inherit;
           color: inherit;
           list-style-type: lower-roman;
           padding-left: 2rem;
+          p {
+            font-size: inherit;
+            font-family: inherit;
+            color: inherit;
+          }
+        }
+      }
+    table {
+      text-align: left;
+      margin-left: 1.5rem;
+      margin-right: auto;
+      padding: 2rem 0;
+      font-size: .8em;
+      display: block;
+      width: 40vw;
+      height: auto;
+      td {
+        padding: .7rem 0;
+      }
+    }
+    footer {
+      font-size: .8em;
+      text-align: left;
+      margin-left: -5rem;
+      ul, ol {
+        list-style: lower-roman;
+        &::after {
+          content: none;
         }
       }
     }
+    section {
+      h3 {
+        font-family: "stolzLight", sans-serif;
+        font-size: 3em;
+        padding: 2.5rem 2rem 5rem 2rem;
+        text-align: center;
+        text-transform: uppercase;
+        margin-left: 0%;
+        line-height: 1em;
+        &:hover {
+          text-shadow:
+            0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px #fff;
+        }
+      }
+      table {
+        text-align: left;
+        margin-left: -1.5rem;
+        margin-right: auto;
+        padding: 2rem 0;
+        font-size: .8em;
+        display: block;
+        width: 40vw;
+        height: auto;
+        td {
+          padding: .7rem 0;
+        }
+      }
+      figure {
+        table {
+          margin-left: 1.5rem;
+        }
+        h3 {
+          margin-left: -30rem;
+        }
+      }
+    }
+  }
+  .right {
+    h1 {
+      padding-bottom: 2.5rem;
+    }
+  }
 }
