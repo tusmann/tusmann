@@ -1512,6 +1512,7 @@ html {
 }
 .reader.dungeon .reader.left article header, .reader.dungeon .reader.right article header {
   width: auto;
+  padding: 0;
   display: block;
 }
 .reader.dungeon .reader.left article header #outcome, .reader.dungeon .reader.right article header #outcome {
@@ -1524,7 +1525,7 @@ html {
   display: none;
 }
 .reader.dungeon .reader.left article header h1, .reader.dungeon .reader.right article header h1 {
-  width: 30vw;
+  width: 20vw;
   font-size: 1.2em;
   line-height: 2em;
   padding-top: 10vh;
@@ -1535,14 +1536,14 @@ html {
 }
 .reader.dungeon .reader.left article header h1 p:first-of-type, .reader.dungeon .reader.right article header h1 p:first-of-type {
   font-family: "DnDC";
-  font-size: 2.5em;
+  font-size: 2.8em;
   text-align: center;
   font-weight: normal;
   font-style: normal;
-  color: whitesmoke;
+  color: #fff0e2;
 }
 .reader.dungeon .reader.left article header h1 p:nth-of-type(2), .reader.dungeon .reader.right article header h1 p:nth-of-type(2) {
-  border-bottom: 0.2em solid whitesmoke;
+  border-bottom: 0.2em solid #fff0e2;
   font-size: 1.2em;
   text-transform: capitalize;
   font-weight: bold;
@@ -1554,7 +1555,7 @@ html {
   line-height: 1em;
   font-size: 1.2em;
   text-transform: capitalize;
-  color: whitesmoke;
+  color: #fff0e2;
 }
 .reader.dungeon .reader.left article header h1 p:nth-of-type(4), .reader.dungeon .reader.right article header h1 p:nth-of-type(4) {
   font-family: "ITC Korinna Std";
@@ -1562,24 +1563,29 @@ html {
   text-align: center;
   line-height: 0.8em;
   font-size: 0.8em;
-  border-bottom: 0.2em solid whitesmoke;
+  border-bottom: 0.2em solid #fff0e2;
   margin-bottom: 2vh;
   text-transform: lowercase;
-  color: whitesmoke;
+  color: #fff0e2;
 }
 .reader.dungeon .reader.left article header h1 p:last-of-type, .reader.dungeon .reader.right article header h1 p:last-of-type {
   font-size: 0.6em;
+  text-transform: capitalize;
 }
 .reader.dungeon .reader.left article header table, .reader.dungeon .reader.right article header table {
-  background-color: #06558e;
+  background-color: #455882;
   font-family: "ITC Korinna Std";
-  color: whitesmoke;
+  color: #fff0e2;
   width: 100%;
 }
 .reader.dungeon .reader.left article header table td, .reader.dungeon .reader.right article header table td {
   padding-top: 1vh;
   padding-bottom: 1vh;
   text-align: center;
+}
+.reader.dungeon .reader.left article header table td:first-of-type, .reader.dungeon .reader.right article header table td:first-of-type {
+  font-weight: bold;
+  font-size: 1.2em;
 }
 .reader.dungeon .reader.left article main, .reader.dungeon .reader.right article main {
   column-count: 1;
@@ -1591,7 +1597,29 @@ html {
 .reader.dungeon .reader.left article main section:not(:last-of-type)::after, .reader.dungeon .reader.right article main section:not(:last-of-type)::after {
   display: none;
 }
+.reader.dungeon .reader.left article main section ul, .reader.dungeon .reader.left article main section ol, .reader.dungeon .reader.right article main section ul, .reader.dungeon .reader.right article main section ol {
+  list-style-type: decimal;
+  padding: 0.4em 0;
+}
+.reader.dungeon .reader.left article main section ul li, .reader.dungeon .reader.left article main section ol li, .reader.dungeon .reader.right article main section ul li, .reader.dungeon .reader.right article main section ol li {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  padding: 0.4em 0;
+}
+.reader.dungeon .reader.left article main section ul li ol, .reader.dungeon .reader.left article main section ol li ol, .reader.dungeon .reader.right article main section ul li ol, .reader.dungeon .reader.right article main section ol li ol {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  list-style-type: upper-roman;
+  padding-left: 2rem;
+}
 .reader.dungeon article {
+  background-image: url("/papersheet.01c05328.png");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-attachment: fixed;
+  background-size: cover;
   font-size: 100%;
   cursor: url("/dun_cursor.963a85af.cur"), pointer;
 }
@@ -1905,14 +1933,16 @@ html {
   border: 5px solid black;
   border-radius: 20px;
   width: 40%;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
 }
 .reader.dungeon article header figure figcaption {
-  border-top: 3px solid whitesmoke;
-  border-bottom: 3px solid whitesmoke;
+  border-top: 3px solid #fff0e2;
+  border-bottom: 3px solid #fff0e2;
   padding-top: 7px;
   padding-bottom: 7px;
   font-family: "ITC Korinna Std";
-  color: whitesmoke;
+  color: #fff0e2;
   width: 40%;
   margin: 0 auto;
 }
@@ -1924,10 +1954,10 @@ html {
   margin: 0 auto;
   width: 40%;
   text-align: center;
-  font-size: 5em;
+  font-size: 7em;
   font-weight: normal;
   font-style: normal;
-  color: whitesmoke;
+  color: #fff0e2;
   grid-row: 1/2;
 }
 .reader.dungeon article header h2 {
@@ -1938,9 +1968,9 @@ html {
   width: 40%;
   margin: 0 auto;
   text-transform: uppercase;
-  color: whitesmoke;
-  border-top: 4px solid whitesmoke;
-  border-bottom: 4px solid whitesmoke;
+  color: #fff0e2;
+  border-top: 4px solid #fff0e2;
+  border-bottom: 4px solid #fff0e2;
   grid-row: 2/3;
 }
 .reader.dungeon article header p {
@@ -1951,21 +1981,23 @@ html {
   width: 60%;
   margin: 0 auto;
   text-transform: uppercase;
-  color: whitesmoke;
+  color: #fff0e2;
   grid-row: 4/5;
 }
 .reader.dungeon article header p:first-of-type {
   grid-row: 3/4;
 }
 .reader.dungeon article main {
+  border-top: 0.2em solid #222;
+  padding-top: 10vh;
   background-image: url("/papersheet.01c05328.png");
   background-repeat: no-repeat;
   background-position: 50%;
   background-attachment: fixed;
   background-size: cover;
   box-sizing: border-box;
-  padding: 18vh 4vw 6vh 4vw;
-  color: #444444;
+  margin: 30vh 4vw 6vh 4vw;
+  color: #222;
   font-weight: 100;
   font-style: normal;
   line-height: 0.9em;
