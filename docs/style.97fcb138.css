@@ -48,6 +48,7 @@
    License: none (public domain)
 */
 @import url("https://fonts.googleapis.com/css?family=Fanwood+Text:400,400i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -637,6 +638,28 @@ html {
   text-transform: uppercase;
 }
 
+@keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  14% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+  28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  42% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
 @font-face {
   font-family: "Roycroft Initials Regular";
   src: url("/roycroft-webfont.51df3fbb.woff2") format("woff2"), url("/roycroft-webfont.8abc1c68.woff") format("woff");
@@ -696,8 +719,12 @@ html {
   src: url("/Morganite-Thin.c9110b61.ttf") format("truetype");
 }
 @font-face {
+  font-family: "windSong";
+  src: url("/Windsong.7cbd8b1a.ttf") format("truetype");
+}
+@font-face {
   font-family: "rollingFont";
-  src: url("/Royalacid_o.3e0f2d83.ttf") format("truetype");
+  src: url("/Royalacid.eecf7c6b.ttf") format("truetype");
 }
 @font-face {
   font-family: "bernsteinBold";
@@ -1260,29 +1287,64 @@ html {
   font-style: "FuturaFuturisC";
 }
 
+.reader.fifth :link, .reader.fifth :visited {
+  color: #8d000e;
+  font-style: italic;
+}
+.reader.fifth .publisher {
+  font-family: rollingFont;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ff0019;
+  text-align: center;
+  column-span: all;
+  text-shadow: 4px 4px 0px black;
+  z-index: 100;
+  border-bottom: 1px solid #000;
+  position: absolute;
+  width: 85vw;
+  top: 6.3rem;
+  left: 53.3%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+.reader.fifth .publisher:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 100%;
+  height: 3px;
+  background: #000;
+}
 .reader.fifth article {
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 1.1em;
   columns: 3 200px;
   background-color: white;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-bottom: 0;
+  outline: #f9423a;
+  outline-offset: 5rem;
   border: 0.1rem solid #222;
   border-left: -5rem;
   border-right: -1rem;
-  padding: 2rem 4rem 2rem;
+  padding: 5rem 4rem 2rem;
 }
 .reader.fifth article::after {
   content: "";
   border-top: 0.1rem solid #222;
 }
-.reader.fifth article h1 {
+.reader.fifth h1 {
   position: relative;
   font-family: "bernsteinBold";
   font-size: 4em;
   text-align: left;
   width: auto;
 }
-.reader.fifth article h4 {
+.reader.fifth h3, .reader.fifth h4 {
   color: #ff0019;
   position: relative;
   font-family: "bernsteinBold";
@@ -1294,23 +1356,23 @@ html {
   padding: 0.5rem 1rem;
   column-span: 2;
 }
-.reader.fifth article img {
+.reader.fifth img {
   object-fit: contain;
   width: 25vw;
   height: auto;
   padding-top: 1rem;
 }
-.reader.fifth article figure {
+.reader.fifth figure {
   text-align: center;
   padding: 0 0;
 }
-.reader.fifth article figure img {
+.reader.fifth figure img {
   object-fit: contain;
   width: 25vw;
   height: auto;
   padding-top: 1rem;
 }
-.reader.fifth article figure figcaption {
+.reader.fifth figure figcaption {
   font-family: "fifthCorpus", sans-serif;
   font-size: 0.8em;
   display: block;
@@ -1320,7 +1382,7 @@ html {
   bottom: 4.5rem;
   right: -2rem;
 }
-.reader.fifth article p:first-of-type {
+.reader.fifth p {
   font-family: "fifthCorpus", sans-serif;
   font-size: 1.1em;
   text-align: justify;
@@ -1329,98 +1391,328 @@ html {
   padding: 1rem 0;
   border-bottom: #222;
 }
-.reader.fifth article main {
+.reader.fifth main {
   padding: 0.5rem;
 }
-.reader.fifth article main p {
+.reader.fifth main p {
+  padding: 0.5rem 0;
   font-family: "fifthCorpus", sans-serif;
   font-size: 1.1em;
   text-align: justify;
   position: relative;
   color: black;
 }
-.reader.fifth article main p:first-of-type {
+.reader.fifth main p:first-of-type {
   border-bottom: 0.05rem solid black;
 }
-.reader.fifth article main p:nth-of-type(2)::first-letter {
+.reader.fifth main p:nth-of-type(2)::first-letter {
   text-transform: uppercase;
-  font-size: 5em;
+  font-size: 3em;
+  display: inline;
 }
-.reader.fifth article main p em {
+.reader.fifth main p em {
   text-transform: uppercase;
+  padding: 5rem 0;
 }
-.reader.fifth article mark {
+.reader.fifth mark {
   font-style: italic;
   background-color: white;
+  color: inherit;
 }
-.reader.fifth article footer {
+.reader.fifth footer {
   font-size: 0.8em;
   column-span: all !important;
   text-transform: uppercase;
   position: relative;
   padding-top: 3rem;
+  padding-bottom: 3rem;
   text-align: right;
 }
+.reader.fifth footer p {
+  text-align: right;
+  padding: 0;
+}
+.reader.fifth footer p:first-of-type {
+  padding-top: 1.5rem;
+}
 .reader.fifth table {
-  width: 10vw;
+  display: block;
+  border: 1px solid black;
+  width: auto;
+  overflow: auto;
+}
+.reader.fifth table th {
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid black;
+  transition: 0.25s;
+  color: #8d000e;
+  /*&:hover {
+    background-color: rgba(255, 255, 255, 0.63);
+    background-size:  100% 100%;
+    border-radius: 20px;
+    transform:scale(1.4545,1.34);
+    transform-origin:center;
+    z-index: 100;
+  }*/
+}
+.reader.fifth table td {
+  border: 1px solid black;
+  transition: 0.25s;
+  /*&:hover {
+    background-color: rgba(255, 255, 255, 0.63);
+    background-size:  100% 100%;
+    transform:scale(1.4545,1.34);
+    transform-origin:center;
+    border-radius: 20px;
+    z-index: 100;
+  }*/
+}
+.reader.fifth ol {
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 1.1em;
+  color: black;
+}
+.reader.fifth ol li {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+.reader.fifth .left, .reader.fifth .right {
+  columns: 1 auto;
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 1.1em;
+  text-align: left;
+}
+.reader.fifth .left header table, .reader.fifth .right header table {
+  column-span: all !important;
+  display: block;
+  border: 1px solid black;
+}
+.reader.fifth .left ul, .reader.fifth .left ol, .reader.fifth .right ul, .reader.fifth .right ol {
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 1.1em;
+  color: black;
+  list-style-type: decimal;
+  padding: 1rem 0;
+}
+.reader.fifth .left ul li, .reader.fifth .left ol li, .reader.fifth .right ul li, .reader.fifth .right ol li {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  padding: 1rem 0;
+}
+.reader.fifth .left ul li ol, .reader.fifth .left ol li ol, .reader.fifth .right ul li ol, .reader.fifth .right ol li ol {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  list-style-type: lower-roman;
+  padding-left: 2rem;
+}
+.reader.fifth .left p, .reader.fifth .right p {
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 1.1em;
+  text-align: justify;
+  color: black;
+}
+.reader.fifth .left em, .reader.fifth .right em {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  font-style: italic;
 }
 
+.reader.sixth :link, .reader.sixth :visited {
+  color: white;
+  font-style: italic;
+  text-transform: uppercase;
+  text-decoration: line-through;
+  text-decoration-color: #bebebe;
+}
 .reader.sixth article {
   background-color: #222;
   color: #f6f3ea;
-  overflow-x: auto;
-  width: auto;
+  /*.parallax {
+    order: 3;
+    background-image: url(styles/sixth/human_tree.png);
+    background-color: transparent;
+    width: 50vh;
+    height: 50vh;
+    margin-left: 50%;
+    margin-right: 50%;
+    background-attachment: fixed;
+    transform: translateY(-4000px);
+    object-fit: contain;
+    z-index: 100;
+  }*/
 }
 .reader.sixth article header {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .reader.sixth article header h1 {
   order: 1;
-  background-image: url(https://media.giphy.com/media/JoVV55m3KZHdxlpFZ6/giphy.gif);
-  background-size: 90vw 110vh;
+  background-image: url(/giphy_bkgnd.e13f8e44.gif);
   background-repeat: no-repeat;
-  background-position: center;
+  mix-blend-mode: normal;
+  background-size: cover;
   flex: 0 0 auto;
   font-family: "stolzRegular", sans-serif;
   font-size: 9em;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 8rem;
+  padding: 4.6rem;
   text-rendering: optimizeLegibility;
+  margin-right: auto;
+  margin-left: auto;
 }
-.reader.sixth article header h4 {
+.reader.sixth article header h1:hover {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 50px #fff;
+}
+.reader.sixth article header h3 {
   order: 2;
   font-family: "stolzLight", sans-serif;
   font-size: 3em;
-  padding: 0rem 2rem 5rem 2rem;
+  padding: 5rem 2rem 5rem 2rem;
   text-align: center;
   text-transform: uppercase;
+  margin-right: auto;
+  margin-left: auto;
 }
 .reader.sixth article header figure {
   order: 4;
   text-align: center;
-  max-height: 80vh;
+  width: 80vw;
   margin-bottom: 2rem;
 }
 .reader.sixth article header figure img {
   filter: grayscale(100%);
+  transition: 1s ease-in;
+  width: 89vw;
+  height: 47vh;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  /*&:hover {
+    filter: grayscale(0%) brightness(95%);
+    transform: scale(1.1);
+    //animation: heartBeat 1s linear;
+  }*/
 }
 .reader.sixth article header figure figcaption {
   font-family: "stolzLight", sans-serif;
 }
 .reader.sixth article header p {
+  font-family: "windSong", serif;
+  font-size: 3.5em;
+  text-transform: lowercase;
   order: 3;
+  text-align: right;
+  padding: 0 6rem;
 }
 .reader.sixth article main {
-  padding: 2rem 0;
+  padding: 2rem 0 0 3.5rem;
+}
+.reader.sixth article main h3 {
+  font-size: 5em;
+  font-family: "stolzLight", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  padding: 3rem 0 3rem 4rem;
+}
+.reader.sixth article main h3:hover {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
 }
 .reader.sixth article main p {
+  display: inline-block;
+  font-family: "Playfair Display", serif;
+  font-size: 1.2em;
   width: auto;
   columns: 2 300px;
+  column-gap: 10rem;
   width: 80vw;
   padding: 0 5rem;
   text-align: justify;
+}
+.reader.sixth article main figure {
+  text-align: center;
+  width: 80vw;
+  padding: 4rem 0;
+  transform: translateX(-3.5rem);
+}
+.reader.sixth article main figure img {
+  filter: grayscale(100%);
+  transition: 0.8s ease-in-out;
+  width: 89.2vw;
+  height: 47vh;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  overflow: hidden;
+}
+.reader.sixth article main figure img:hover {
+  filter: grayscale(0%) brightness(95%);
+  transform: scale(1.15);
+}
+.reader.sixth article main figure figcaption {
+  font-family: "stolzLight", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  padding-left: 4rem;
+}
+.reader.sixth article main figure table {
+  text-transform: uppercase;
+  margin-left: 3.5rem;
+}
+.reader.sixth article main figure table tr {
+  padding: 0.5rem 0.5rem;
+}
+.reader.sixth article main figure table tr:nth-of-type(even) {
+  background-color: #333;
+}
+.reader.sixth article main figure table tr:nth-of-type(odd) {
+  background-color: #222;
+}
+.reader.sixth article footer {
+  padding: 5rem 0 1rem 5rem;
+  font-family: "stolzLight", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  width: auto;
+}
+.reader.sixth .left, .reader.sixth .right {
+  width: 44vw;
+  display: inline-block;
+  font-family: "stolzLight", sans-serif;
+}
+.reader.sixth .left p, .reader.sixth .right p {
+  font-family: "stolzLight", sans-serif;
+}
+.reader.sixth .left ol, .reader.sixth .left ul, .reader.sixth .right ol, .reader.sixth .right ul {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2em;
+  list-style-type: decimal;
+  padding: 1rem 0;
+  list-style: none;
+}
+.reader.sixth .left ol li, .reader.sixth .left ul li, .reader.sixth .right ol li, .reader.sixth .right ul li {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  padding: 1rem 0;
+  list-style: none;
+  display: inline-block;
+  background-image: url(/arrow.4d9c4be4.gif);
+  background-repeat: no-repeat;
+  background-size: 1rem;
+}
+.reader.sixth .left ol ol, .reader.sixth .left ul ol, .reader.sixth .right ol ol, .reader.sixth .right ul ol {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  list-style-type: lower-roman;
+  padding-left: 2rem;
 }
 
 body {

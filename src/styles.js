@@ -3,7 +3,8 @@ import aldus_leaf from "./images/aldus_leaf.svg";
 import sakura from "./images/sakura.svg";
 import manuzioLogic from "./manuzio";
 import twentyLogic from "./2020";
-import rollingDom from "./rollingDom"
+import rollingDom from "./rollingDom";
+
 
 const styles = [
     {

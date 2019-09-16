@@ -929,7 +929,7 @@ function _parseArticle() {
             parser = new DOMParser();
             articleDocument = parser.parseFromString(articleHtml, "text/html"); //preso solo body
 
-            body = articleDocument.querySelector("body"); //create url from current article
+            body = articleDocument.querySelector("html"); //create url from current article
 
             articleURL = new URL(article, window.location.href);
             pageURL = new URL(window.location.href); //get article path (without file name)
@@ -987,11 +987,18 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 function twentyLogic() {
-  list = document.querySelectorAll(".reader.sixth img");
-
+  /*var list = document.querySelectorAll(".reader.sixth img");
   for (var i = 0; i < list.length; ++i) {
-    list[i].classList.add('picture');
-  }
+  list[i].setAttribute('data-aos', 'fade-up');
+  }*/
+  var div = document.createElement('div');
+  document.getElementsByTagName("article")[0].appendChild(div);
+  div.setAttribute('class', 'buttonRead');
+  div.innerHTML = "read";
+  /*
+      var immg = document.createElement('div');
+      document.getElementsByTagName("article")[0].appendChild(immg);
+      immg.setAttribute('class', 'parallax');*/
 }
 
 var _default = twentyLogic;
@@ -1135,15 +1142,27 @@ loop();*/
 
 exports.default = _default;
 },{}],"rollingDom.js":[function(require,module,exports) {
-/*
-function rollingDom(){
-    const div = document.createElement("div");
-    const location = document.querySelectorAll(".reader section");
-    location.insertAdjacentElement("afterbegin", div);
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function rollingDom() {
+  /*const div = document.createElement("div");
+  const location = document.querySelectorAll(".reader section");
+  location.insertAdjacentElement("afterbegin", div);*/
+  var element = document.querySelector('meta[property~="dc:publisher"]');
+  var content = element && element.getAttribute("content");
+  var div = document.createElement('div');
+  document.getElementsByTagName("article")[0].appendChild(div);
+  div.setAttribute('class', 'publisher');
+  div.innerHTML = content;
 }
 
-export default rollingDom;
-
+var _default = rollingDom;
+/*
 function getMeta(metaName) {
     const metas = document.getElementsByTagName('meta');
   
@@ -1159,6 +1178,8 @@ function getMeta(metaName) {
   console.log(getMeta('video'));
 
 */
+
+exports.default = _default;
 },{}],"styles.js":[function(require,module,exports) {
 "use strict";
 
@@ -1701,6 +1722,8 @@ function addArticleGlobalUrl() {
 }
 
 addArticleGlobalUrl();
+AOS.init();
+window.addEventListener('load', AOS.refresh);
 },{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js","./articlesSelectionButtons":"articlesSelectionButtons.js","./createThemeButtons":"createThemeButtons.js","./sidebar":"sidebar.js","./addDocumentationPages":"addDocumentationPages.js","./overlayMenu":"overlayMenu.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -1729,7 +1752,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51634" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62442" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
