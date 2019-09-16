@@ -962,6 +962,10 @@ module.exports = "/bauhaus.00287030.svg";
 module.exports = "/aldus_leaf.72009c54.svg";
 },{}],"images/sakura.svg":[function(require,module,exports) {
 module.exports = "/sakura.3275ced2.svg";
+},{}],"images/die.svg":[function(require,module,exports) {
+module.exports = "/die.8f9f3c68.svg";
+},{}],"images/rollingstones.svg":[function(require,module,exports) {
+module.exports = "/rollingstones.29f3750a.svg";
 },{}],"manuzio.js":[function(require,module,exports) {
 "use strict";
 
@@ -971,12 +975,198 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 function manuzioLogic() {
-  var div = document.createElement("div");
-  var location = document.querySelectorAll(".reader section");
-  location.insertAdjacentElement("afterbegin", div);
+  function insertTriangles() {
+    var sectionElement = document.querySelectorAll(".reader section");
+    sectionElement.forEach(function (node) {
+      //quando vera ho trovato figlio idoneo
+      var checkChildren = false; // quando falso ho trovato il secondo type
+
+      var countP = 0;
+      var i = 0;
+      var sectionChildren = Array.from(node.children);
+
+      while (i < sectionChildren.length && !checkChildren) {
+        var childHeigt = sectionChildren[i].clientHeight;
+        console.log(sectionChildren[i]);
+        console.log(childHeigt);
+
+        if (sectionChildren[i].tagName == "P") {
+          countP++;
+        }
+
+        checkChildren = Boolean(countP >= 2 && childHeigt > 300 && sectionChildren[i].tagName !== "FIGURE" && sectionChildren[i].tagName !== "TABLE");
+        i++;
+      }
+
+      if (checkChildren) {
+        i--;
+        var leftTriangle = document.createElement("div");
+        leftTriangle.classList.add("left-triangle-shape");
+        var rightTriangle = document.createElement("div");
+        rightTriangle.classList.add("right-triangle-shape");
+        sectionChildren[i].insertAdjacentElement("beforebegin", leftTriangle);
+        sectionChildren[i].insertAdjacentElement("beforebegin", rightTriangle);
+        leftTriangle.style.height = childHeigt + "px";
+        rightTriangle.style.height = childHeigt + "px";
+      }
+    });
+  }
+
+  insertTriangles();
 }
 
 var _default = manuzioLogic;
+exports.default = _default;
+},{}],"dungeon.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function dungeonLogic() {
+  var rollerHolder = document.querySelector('.reader header');
+  var container = document.createElement('section');
+  container.className = 'cube-container';
+  var die = document.createElement('div');
+  die.id = "cube";
+  die.className = 'show-1';
+  container.appendChild(die);
+  var i = 0;
+
+  while (i < 20) {
+    i++;
+
+    if (i < 10) {
+      var face = document.createElement('figure');
+      face.className = 'face0' + i;
+      var t = document.createTextNode(i);
+      face.appendChild(t);
+      die.appendChild(face);
+    } else {
+      var face = document.createElement('figure');
+      face.className = 'face' + i;
+      var t = document.createTextNode(i);
+      face.appendChild(t);
+      die.appendChild(face);
+    }
+  }
+
+  var container2 = document.createElement('section');
+  container2.id = 'buttons';
+  var input = document.createElement('input');
+  input.id = 'roll';
+  input.type = 'button';
+  input.name = 'roll';
+  input.value = 'Roll it!';
+  container2.appendChild(input);
+  var container3 = document.createElement('section');
+  container3.id = 'outcome';
+  var text = document.createElement('div');
+  text.id = 'text';
+  var f = document.createTextNode('fill me up');
+  text.appendChild(f);
+  container3.appendChild(text);
+  rollerHolder.insertAdjacentElement('afterbegin', container);
+  rollerHolder.insertAdjacentElement('afterbegin', container2);
+  rollerHolder.insertAdjacentElement('afterbegin', container3); //MISSING FONTS
+
+  /*  var node = document.querySelector('.reader.left header h1');
+    var text = node.textContent;
+    for (const c of text) {
+      if (c == '2009') {
+        console.log(c)
+      }
+  }
+    var node = document.querySelector('.reader.right header h1');
+  var text = node.textContent;
+  for (const d of text) {
+    if (d == '2009') {
+      console.log(d)
+    }
+  } */
+  //
+  //DIE FUNCTION
+  //window.onload = function () { //added post, maybe to remove
+
+  var randomNumber = function randomNumber(low, high) {
+    return Math.floor(Math.random() * (1 + high - low)) + low;
+  };
+
+  var cube = document.getElementById('cube');
+  var outcome = document.getElementById('outcome');
+  var outcomeText = document.getElementById('text');
+  var messageDelay; //timer
+
+  var fadeout; //timer
+
+  var messages = ['Your Bard was killed', 'You smote the orc', 'You escaped the Ice Dragon', 'Lightning Bolt succeeded', 'Critical hit', 'You are Lawful Evil', 'You fell into the Well of Sorrows', 'You found the Goblet of Endless Grog', 'You encountered a Harpy', 'Charisma + 10', 'You lose 11 Hit Points', 'You disarmed the trap', 'Plate Mail + 3', '14 Damage', 'Spell failure', 'Backstab successful', 'Your wand broke', 'Surprise Attack', 'You broke through the door', 'Critical hit! You pass the exam!'];
+
+  var showFace = function showFace() {
+    var face = randomNumber(1, 20); //if not already at this number
+
+    if (cube.className !== 'show-' + face) {
+      cube.className = 'show-' + face; //delay for spin to finish
+
+      messageDelay = setTimeout(function () {
+        //show message
+        outcomeText.innerHTML = messages[face - 1];
+        outcome.className = 'show'; //display message then fade out
+
+        fadeout = setTimeout(function () {
+          //hide message
+          outcome.className = '';
+        }, 4000);
+      }, 1000);
+    } else {
+      //repeat number, try again
+      return showFace();
+    }
+  };
+
+  document.getElementById('roll').addEventListener('click', function () {
+    //fade message
+    outcome.className = ''; //clear timers if they are there
+
+    if (typeof messageDelay === "number") {
+      clearTimeout(messageDelay);
+      clearTimeout(fadeout);
+    }
+
+    showFace();
+  }, false); //}
+} //
+
+
+var _default = dungeonLogic;
+exports.default = _default;
+},{}],"rimpa.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function rimpaLogic() {
+  var image = document.querySelectorAll(".reader figure img");
+  var colorsArray = ["image-background-color-yellow", "image-background-color-green", "image-background-color-blue", "image-background-color-red"];
+
+  for (var i = 0; i < image.length; i++) {
+    var currentImageElement = image[i];
+    var imageParent = currentImageElement.parentNode;
+    var backgroundColorDiv = document.createElement("div");
+    var currentColor = colorsArray[i % colorsArray.length];
+    backgroundColorDiv.classList.add(currentColor);
+    imageParent.replaceChild(backgroundColorDiv, currentImageElement);
+    backgroundColorDiv.appendChild(currentImageElement);
+  }
+
+  ;
+}
+
+var _default = rimpaLogic;
 exports.default = _default;
 },{}],"2020.js":[function(require,module,exports) {
 "use strict";
@@ -1178,7 +1368,25 @@ function getMeta(metaName) {
   console.log(getMeta('video'));
 
 */
+<<<<<<< HEAD
 
+=======
+},{}],"tschichold.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function tschicholdLogic() {
+  var element = document.querySelector('meta[property~="dc:publisher"]');
+  var content = element && element.getAttribute("content");
+  console.log(content);
+}
+
+var _default = tschicholdLogic;
+>>>>>>> c84f4f1b8b60343ac3784b1310fa649bd555c1f1
 exports.default = _default;
 },{}],"styles.js":[function(require,module,exports) {
 "use strict";
@@ -1194,11 +1402,21 @@ var _aldus_leaf = _interopRequireDefault(require("./images/aldus_leaf.svg"));
 
 var _sakura = _interopRequireDefault(require("./images/sakura.svg"));
 
+var _die = _interopRequireDefault(require("./images/die.svg"));
+
+var _rollingstones = _interopRequireDefault(require("./images/rollingstones.svg"));
+
 var _manuzio = _interopRequireDefault(require("./manuzio"));
+
+var _dungeon = _interopRequireDefault(require("./dungeon"));
+
+var _rimpa = _interopRequireDefault(require("./rimpa"));
 
 var _ = _interopRequireDefault(require("./2020"));
 
 var _rollingDom = _interopRequireDefault(require("./rollingDom"));
+
+var _tschichold = _interopRequireDefault(require("./tschichold"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1208,16 +1426,19 @@ var styles = [{
   logic: _manuzio.default
 }, {
   name: "rimpa",
-  icon: _sakura.default
+  icon: _sakura.default,
+  logic: _rimpa.default
 }, {
   name: "third",
-  icon: _bauhaus.default
+  icon: _bauhaus.default,
+  logic: _tschichold.default
 }, {
-  name: "fourth",
-  icon: ""
+  name: "dungeon",
+  icon: _die.default,
+  logic: _dungeon.default
 }, {
   name: "fifth",
-  icon: "",
+  icon: _rollingstones.default,
   logic: _rollingDom.default
 }, {
   name: "sixth",
@@ -1226,7 +1447,7 @@ var styles = [{
 }];
 var _default = styles;
 exports.default = _default;
-},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./manuzio":"manuzio.js","./2020":"2020.js","./rollingDom":"rollingDom.js"}],"customStyleLogic.js":[function(require,module,exports) {
+},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./images/die.svg":"images/die.svg","./images/rollingstones.svg":"images/rollingstones.svg","./manuzio":"manuzio.js","./dungeon":"dungeon.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js","./tschichold":"tschichold.js"}],"customStyleLogic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1318,7 +1539,8 @@ function _addSpecialArticle() {
             rightNodes = Array.from(rightArticle.body.childNodes);
             rightNodes.forEach(function (node) {
               rightContainer.appendChild(node);
-            });
+            }); //this function allows for using js on articles dom 
+
             (0, _customStyleLogic.applyCustomStyleLogic)();
 
           case 29:
@@ -1752,7 +1974,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "62442" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62897" + '/');
+>>>>>>> c84f4f1b8b60343ac3784b1310fa649bd555c1f1
 
   ws.onmessage = function (event) {
     checkedAssets = {};
