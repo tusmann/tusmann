@@ -210,6 +210,11 @@ $font-korinna: 'ITC Korinna Std';
 $font-dungeon: 'DnDC';
 $font-basker: 'Hounds';
 $font-boldbasker: 'Baskerville';
+$dragon-red: #e31619;
+$dragon-white: #fff0e2;
+$dragon-blue: #455882;
+$dragon-ink: #222;
+
 //
 
 //media queries
@@ -688,8 +693,6 @@ $font-boldbasker: 'Baskerville';
   .left,
   .right {
     article {
-      width: 50vw;
-      //46 perfetto per lo schermo mio
       
       header {
         h1 {
@@ -700,7 +703,7 @@ $font-boldbasker: 'Baskerville';
       font-size: 100%;
       main {
         column-count: 1;
-        margin: 1%;
+        margin: 3%;
       }
 
     }
@@ -1170,6 +1173,7 @@ $font-boldbasker: 'Baskerville';
       
       header {
         width: auto;
+        padding: 0;
         //margin: 0;
         display: block;
 
@@ -1181,7 +1185,7 @@ $font-boldbasker: 'Baskerville';
         h1 {
           //margin: 0;
           //width: auto;
-          width: 30vw;
+          width: 20vw;
           font-size: 1.2em;
           line-height: 2em;
           padding-top: 10vh;
@@ -1193,7 +1197,7 @@ $font-boldbasker: 'Baskerville';
             
             &:first-of-type {
               font-family: $font-dungeon;
-              font-size: 2.5em;
+              font-size: 2.8em;
               //line-height: 0.6em;
               //padding-top: 20px;
               //padding-bottom: 10px;
@@ -1203,13 +1207,13 @@ $font-boldbasker: 'Baskerville';
               //font-size: 0.5em;
               font-weight: normal;
               font-style: normal;
-              color: whitesmoke;
+              color: $dragon-white;
               //grid-row: 2 / 3;
             }
   
             &:nth-of-type(2) {
-              //border-top: 4px solid whitesmoke;
-              border-bottom: 0.2em solid whitesmoke;
+              //border-top: 4px solid $dragon-white;
+              border-bottom: 0.2em solid $dragon-white;
               font-size: 1.2em;
               text-transform: capitalize;
               font-weight: bold;
@@ -1226,9 +1230,9 @@ $font-boldbasker: 'Baskerville';
               //width: 40%;
               //margin: 0 auto;
               text-transform: capitalize;
-              color: whitesmoke;
-              //border-top: 4px solid whitesmoke;
-              //border-bottom: 4px solid whitesmoke;
+              color: $dragon-white;
+              //border-top: 4px solid $dragon-white;
+              //border-bottom: 4px solid $dragon-white;
               //grid-row: 3 / 4;
             }
 
@@ -1238,34 +1242,40 @@ $font-boldbasker: 'Baskerville';
               text-align: center;
               line-height: 0.8em;
               font-size: 0.8em;
-              border-bottom: 0.2em solid whitesmoke;
+              border-bottom: 0.2em solid $dragon-white;
               //font-size: 0.2em;
               //width: 40%;
               //margin: 0 auto;
               margin-bottom: 2vh;
               text-transform: lowercase;
-              color: whitesmoke;
-              //border-top: 4px solid whitesmoke;
-              //border-bottom: 4px solid whitesmoke;
+              color: $dragon-white;
+              //border-top: 4px solid $dragon-white;
+              //border-bottom: 4px solid $dragon-white;
               //grid-row: 3 / 4;
             }
 
             &:last-of-type {
               font-size: 0.6em;
+              text-transform: capitalize;
             }
           }
         }
 
         table {
-          background-color: #06558e;
+          background-color: $dragon-blue;
           font-family: $font-korinna;
-          color: whitesmoke;
+          color: $dragon-white;
           width: 100%;
           //grid-row: 1 / 2;
           td {
             padding-top: 1vh;
             padding-bottom: 1vh;
             text-align: center;
+
+            &:first-of-type {
+              font-weight: bold;
+              font-size: 1.2em;
+            }
           }
         }
       }
@@ -1284,13 +1294,40 @@ $font-boldbasker: 'Baskerville';
             display: none;
             }
           }
+
+          ul, ol {
+            list-style-type:decimal;
+            padding: 0.4em 0;
+            
+            
+            li {
+              font-size: inherit;
+              font-family: inherit;
+              color: inherit;
+              padding: 0.4em 0;
+              
+              
+              ol {
+                font-size: inherit;
+                font-family: inherit;
+                color: inherit;
+                list-style-type: upper-roman;
+                padding-left: 2rem;
+                
+              }
+            }
+          }
         }
       }
     }
   }
 
   article {
-    
+    background-image: url('./styles/fourth/papersheet.png');
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-attachment: fixed;
+      background-size: cover;
     font-size: 100%;
     cursor: url('./styles/fourth/dun_cursor.cur'), pointer;
 
@@ -1509,15 +1546,17 @@ $font-boldbasker: 'Baskerville';
           border: 5px solid black;
           border-radius: 20px;
           width: 40%;
+          margin-top: 2vh;
+          margin-bottom: 3vh;
         }
 
         figcaption {
-          border-top: 3px solid whitesmoke;
-          border-bottom: 3px solid whitesmoke;
+          border-top: 3px solid $dragon-white;
+          border-bottom: 3px solid $dragon-white;
           padding-top: 7px;
           padding-bottom: 7px;
           font-family: $font-korinna;
-          color: whitesmoke;
+          color: $dragon-white;
           width: 40%;
           margin: 0 auto;
         }
@@ -1532,10 +1571,10 @@ $font-boldbasker: 'Baskerville';
         margin: 0 auto;
         width: 40%;
         text-align: center;
-        font-size: 5em;
+        font-size: 7em;
         font-weight: normal;
         font-style: normal;
-        color: whitesmoke;
+        color: $dragon-white;
         grid-row: 1 / 2;
 
       }
@@ -1548,9 +1587,9 @@ $font-boldbasker: 'Baskerville';
         width: 40%;
         margin: 0 auto;
         text-transform: uppercase;
-        color: whitesmoke;
-        border-top: 4px solid whitesmoke;
-        border-bottom: 4px solid whitesmoke;
+        color: $dragon-white;
+        border-top: 4px solid $dragon-white;
+        border-bottom: 4px solid $dragon-white;
         grid-row: 2 / 3;
       }
 
@@ -1562,7 +1601,7 @@ $font-boldbasker: 'Baskerville';
         width: 60%;
         margin: 0 auto;
         text-transform: uppercase;
-        color: whitesmoke;
+        color: $dragon-white;
         grid-row: 4 / 5;
 
         &:first-of-type {
@@ -1572,14 +1611,16 @@ $font-boldbasker: 'Baskerville';
     }
 
     main {
+      border-top: 0.2em solid $dragon-ink;
+      padding-top: 10vh;
       background-image: url('./styles/fourth/papersheet.png');
       background-repeat: no-repeat;
       background-position: 50%;
       background-attachment: fixed;
       background-size: cover;
       box-sizing: border-box;
-      padding: 18vh 4vw 6vh 4vw;
-      color: #444444;
+      margin: 30vh 4vw 6vh 4vw;
+      color: $dragon-ink;
       //margin-top: 2vh;
       //border-top: double 5px black;
       font-weight: 100;
@@ -1589,7 +1630,7 @@ $font-boldbasker: 'Baskerville';
       text-align: justify;
       column-count: 3;
       column-gap: 2vw;
-      //background-color: whitesmoke;
+      //background-color: $dragon-white;
 
       section {
         padding-bottom: 2vh;
