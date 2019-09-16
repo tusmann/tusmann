@@ -226,8 +226,8 @@ html {
 }
 
 .card__side--back-3 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#2998ff), to(#5643fa));
-  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#fff0e2), to(#e31619));
+  background-image: linear-gradient(to right bottom, #fff0e2, #e31619);
 }
 
 .card:hover .card__side--front {
@@ -261,8 +261,8 @@ html {
 }
 
 .card__picture--3 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#9D5D82), to(#4F1722)), url(/manuzio-card-front.8f60d575.jpg);
-  background-image: linear-gradient(to right bottom, #9D5D82, #4F1722), url(/manuzio-card-front.8f60d575.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#fff0e2), to(#e31619)), url(/ded-card-front.c5365650.jpg);
+  background-image: linear-gradient(to right bottom, #fff0e2, #e31619), url(/ded-card-front.c5365650.jpg);
 }
 
 .card__picture--4 {
@@ -284,10 +284,9 @@ html {
   font-size: 2.4rem;
   font-weight: 300;
   text-transform: uppercase;
-  text-align: center;
+  vertical-align: center;
   color: black;
   position: absolute;
-  bottom: 3rem;
   right: 2rem;
   width: 75%;
 }
@@ -301,7 +300,7 @@ html {
 }
 
 .card3 {
-  color: #4F1722;
+  color: #e31619;
 }
 
 .card4 {
@@ -466,7 +465,7 @@ html {
 }
 
 .popup__close:hover {
-  color: #9D5D82;
+  color: #fff0e2;
 }
 
 .styleDescriptionBlock {
@@ -1204,7 +1203,6 @@ html {
 }
 .reader.rimpa .left article,
 .reader.rimpa .right article {
-  width: 50vw;
   font-size: 100%;
 }
 .reader.rimpa .left article header h1,
@@ -1214,7 +1212,7 @@ html {
 .reader.rimpa .left article main,
 .reader.rimpa .right article main {
   column-count: 1;
-  margin: 1%;
+  margin: 3%;
 }
 
 .reader.third {

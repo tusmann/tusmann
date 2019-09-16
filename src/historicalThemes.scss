@@ -688,8 +688,6 @@ $font-boldbasker: 'Baskerville';
   .left,
   .right {
     article {
-      width: 50vw;
-      //46 perfetto per lo schermo mio
       
       header {
         h1 {
@@ -700,7 +698,7 @@ $font-boldbasker: 'Baskerville';
       font-size: 100%;
       main {
         column-count: 1;
-        margin: 1%;
+        margin: 3%;
       }
 
     }
