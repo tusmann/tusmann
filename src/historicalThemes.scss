@@ -2016,6 +2016,9 @@ $dragon-ink: #222;
         display: block;
         border: 1px solid black;
       }
+      p {
+        text-align: left;
+      }
     }
     ul, ol {
       font-family: 'fifthCorpus', sans-serif;
@@ -2123,11 +2126,11 @@ $dragon-ink: #222;
           margin-left: auto;
           margin-right: auto;
           object-fit: cover;
-          /*&:hover {
+          &:hover {
             filter: grayscale(0%) brightness(95%);
             transform: scale(1.1);
             //animation: heartBeat 1s linear;
-          }*/
+          }
         }
         figcaption {
           font-family: "stolzLight", sans-serif;
@@ -2146,7 +2149,7 @@ $dragon-ink: #222;
       padding: 2rem 0 0 3.5rem;
       font-style: italic;
       font-family: "stolzLight", sans-serif;
-      h3 {
+      h2, h3 {
         font-size: 5em;
         font-family: "stolzLight", sans-serif;
         text-transform: uppercase;
