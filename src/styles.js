@@ -3,6 +3,7 @@ import aldus_leaf from "./images/aldus_leaf.svg";
 import sakura from "./images/sakura.svg";
 import die from "./images/die.svg";
 import rolling from "./images/rollingstones.svg";
+import eye from "./images/eye.svg";
 import manuzioLogic from "./manuzio";
 import dungeonLogic from "./dungeon";
 import rimpaLogic from "./rimpa";
@@ -38,7 +39,7 @@ const styles = [
     },
     {
       name: "sixth",
-      icon: "",
+      icon: eye,
       logic: twentyLogic
     }
   ];

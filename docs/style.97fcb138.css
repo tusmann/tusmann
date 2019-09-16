@@ -48,6 +48,7 @@
    License: none (public domain)
 */
 @import url("https://fonts.googleapis.com/css?family=Fanwood+Text:400,400i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -225,8 +226,8 @@ html {
 }
 
 .card__side--back-3 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#2998ff), to(#5643fa));
-  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#fff0e2), to(#e31619));
+  background-image: linear-gradient(to right bottom, #fff0e2, #e31619);
 }
 
 .card:hover .card__side--front {
@@ -260,8 +261,8 @@ html {
 }
 
 .card__picture--3 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#9D5D82), to(#4F1722)), url(/manuzio-card-front.8f60d575.jpg);
-  background-image: linear-gradient(to right bottom, #9D5D82, #4F1722), url(/manuzio-card-front.8f60d575.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#fff0e2), to(#e31619)), url(/ded-card-front.c5365650.jpg);
+  background-image: linear-gradient(to right bottom, #fff0e2, #e31619), url(/ded-card-front.c5365650.jpg);
 }
 
 .card__picture--4 {
@@ -283,10 +284,9 @@ html {
   font-size: 2.4rem;
   font-weight: 300;
   text-transform: uppercase;
-  text-align: center;
+  vertical-align: center;
   color: black;
   position: absolute;
-  bottom: 3rem;
   right: 2rem;
   width: 75%;
 }
@@ -300,7 +300,7 @@ html {
 }
 
 .card3 {
-  color: #4F1722;
+  color: #e31619;
 }
 
 .card4 {
@@ -465,7 +465,7 @@ html {
 }
 
 .popup__close:hover {
-  color: #9D5D82;
+  color: #fff0e2;
 }
 
 .styleDescriptionBlock {
@@ -637,6 +637,28 @@ html {
   text-transform: uppercase;
 }
 
+@keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  14% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+  28% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  42% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
 @font-face {
   font-family: "RoycroftInitialsRegular";
   src: url("/roycroft-webfont.51df3fbb.woff2") format("woff2"), url("/roycroft-webfont.8abc1c68.woff") format("woff");
@@ -720,8 +742,12 @@ html {
   font-style: normal;
 }
 @font-face {
+  font-family: "windSong";
+  src: url("/Windsong.7cbd8b1a.ttf") format("truetype");
+}
+@font-face {
   font-family: "rollingFont";
-  src: url("/Royalacid_o.3e0f2d83.ttf") format("truetype");
+  src: url("/Royalacid.eecf7c6b.ttf") format("truetype");
 }
 @font-face {
   font-family: "bernsteinBold";
@@ -746,6 +772,10 @@ html {
 @font-face {
   font-family: "morganiteMedium";
   src: url("/Morganite-Thin.c9110b61.ttf") format("truetype");
+}
+@font-face {
+  font-family: "sixthBody";
+  src: url("/alrightsans-light.cdf6f725.otf") format("opentype");
 }
 @media screen and (max-width: 600px) {
   body {
@@ -819,13 +849,14 @@ html {
   font-weight: 400;
   line-height: 1.3;
   color: #222;
-  font-size: 100%;
+  font-size: 1.5rem;
   text-align: justify;
 }
 .reader.manuzio article section {
   margin: 2rem 0;
+  font-size: 1.5rem;
 }
-.reader.manuzio article section p:first-of-type:first-letter {
+.reader.manuzio article section .capital::first-letter {
   text-transform: uppercase;
   float: left;
   color: #222;
@@ -840,7 +871,6 @@ html {
 }
 .reader.manuzio article p {
   margin: 1.5rem 0;
-  font-size: 1.5rem;
 }
 .reader.manuzio article figure {
   text-align: center;
@@ -879,6 +909,7 @@ html {
   border-collapse: collapse;
   text-align: center;
   line-height: 1.5rem;
+  font-size: 1rem;
 }
 .reader.manuzio article th {
   text-transform: uppercase;
@@ -939,11 +970,7 @@ html {
   margin: 3rem 0 0 0;
   text-align: center;
   font-family: "GriffoClassicoSmallCaps";
-}
-.reader.manuzio .left article main p:first-of-type:first-letter,
-.reader.manuzio .right article main p:first-of-type:first-letter {
-  font-size: 10rem;
-  line-height: 7rem;
+  font-size: 1.5rem;
 }
 .reader.manuzio .left article {
   padding: 9% 6% 15% 17.2%;
@@ -1011,8 +1038,6 @@ html {
   font-size: 100%;
   overflow-x: auto;
   overflow-y: auto;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
 }
 .reader.rimpa article p,
 .reader.rimpa article h1,
@@ -1031,7 +1056,7 @@ html {
 }
 .reader.rimpa article table {
   table-layout: fixed;
-  width: 100%;
+  width: 80%;
   border-width: 0.3rem;
   padding: 0.2rem;
   border-collapse: collapse;
@@ -1106,13 +1131,14 @@ html {
   text-orientation: upright;
   margin: 0;
   text-align: right;
+  padding-bottom: 2%;
 }
 .reader.rimpa article header figure {
   writing-mode: horizontal-tb;
   margin: auto 3rem;
 }
 .reader.rimpa article header figure img {
-  width: 30rem;
+  height: 30rem;
   object-fit: contain;
   display: block;
   box-align: center;
@@ -1136,6 +1162,12 @@ html {
 }
 .reader.rimpa article main figure {
   margin: 1rem 0;
+  -webkit-column-break-inside: avoid;
+  /* Chrome, Safari, Opera */
+  page-break-inside: avoid;
+  /* Firefox */
+  break-inside: avoid;
+  /* IE 10+ */
 }
 .reader.rimpa article main figure figcaption {
   font-style: italic;
@@ -1166,12 +1198,21 @@ html {
   margin: 3rem;
   text-transform: uppercase;
   text-align: center;
-  writing-mode: vertical-lr;
+  writing-mode: horizontal-tb;
   text-orientation: upright;
 }
 .reader.rimpa .left article,
 .reader.rimpa .right article {
-  font-size: 90%;
+  font-size: 100%;
+}
+.reader.rimpa .left article header h1,
+.reader.rimpa .right article header h1 {
+  font-size: 1.5rem;
+}
+.reader.rimpa .left article main,
+.reader.rimpa .right article main {
+  column-count: 1;
+  margin: 3%;
 }
 
 .reader.third {
@@ -2125,7 +2166,40 @@ html {
   height: 10vh;
 }
 
+.reader.fifth :link, .reader.fifth :visited {
+  color: #8d000e;
+  font-style: italic;
+}
+.reader.fifth .publisher {
+  font-family: rollingFont;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ff0019;
+  text-align: center;
+  column-span: all;
+  text-shadow: 4px 4px 0px black;
+  z-index: 100;
+  border-bottom: 1px solid #000;
+  position: absolute;
+  width: 85vw;
+  top: 6.3rem;
+  left: 53.3%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+.reader.fifth .publisher:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 100%;
+  height: 3px;
+  background: #000;
+}
 .reader.fifth article {
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 1.1em;
   columns: 3 200px;
   background-color: white;
   -webkit-box-sizing: border-box;
@@ -2134,7 +2208,7 @@ html {
   border: 0.1rem solid #222;
   border-left: -5rem;
   border-right: -1rem;
-  padding: 2rem 4rem 2rem;
+  padding: 5rem 4rem 2rem;
 }
 .reader.fifth article::after {
   content: "";
@@ -2159,23 +2233,42 @@ html {
   padding: 0.5rem 1rem;
   column-span: 2;
 }
-.reader.fifth article img {
+.reader.fifth h1 {
+  position: relative;
+  font-family: "bernsteinBold";
+  font-size: 4em;
+  text-align: left;
+  width: auto;
+}
+.reader.fifth h2, .reader.fifth h3, .reader.fifth h4 {
+  color: #ff0019;
+  position: relative;
+  font-family: "bernsteinBold";
+  font-size: 1.4em;
+  border-bottom: 0.05rem solid #222;
+  border-top: 0.05rem solid #222;
+  text-align: center;
+  width: auto;
+  padding: 0.5rem 1rem;
+  column-span: 2;
+}
+.reader.fifth img {
   object-fit: contain;
   width: 25vw;
   height: auto;
   padding-top: 1rem;
 }
-.reader.fifth article figure {
+.reader.fifth figure {
   text-align: center;
   padding: 0 0;
 }
-.reader.fifth article figure img {
+.reader.fifth figure img {
   object-fit: contain;
   width: 25vw;
   height: auto;
   padding-top: 1rem;
 }
-.reader.fifth article figure figcaption {
+.reader.fifth figure figcaption {
   font-family: "fifthCorpus", sans-serif;
   font-size: 0.8em;
   display: block;
@@ -2185,7 +2278,7 @@ html {
   bottom: 4.5rem;
   right: -2rem;
 }
-.reader.fifth article p:first-of-type {
+.reader.fifth p {
   font-family: "fifthCorpus", sans-serif;
   font-size: 1.1em;
   text-align: justify;
@@ -2194,98 +2287,488 @@ html {
   padding: 1rem 0;
   border-bottom: #222;
 }
-.reader.fifth article main {
+.reader.fifth main {
   padding: 0.5rem;
 }
-.reader.fifth article main p {
+.reader.fifth main p {
+  padding: 0.5rem 0;
   font-family: "fifthCorpus", sans-serif;
   font-size: 1.1em;
   text-align: justify;
   position: relative;
   color: black;
 }
-.reader.fifth article main p:first-of-type {
+.reader.fifth main p:first-of-type {
   border-bottom: 0.05rem solid black;
 }
-.reader.fifth article main p:nth-of-type(2)::first-letter {
+.reader.fifth main p:nth-of-type(2)::first-letter {
   text-transform: uppercase;
-  font-size: 5em;
+  font-size: 3em;
+  display: inline;
 }
-.reader.fifth article main p em {
+.reader.fifth main p em {
   text-transform: uppercase;
+  padding: 5rem 0;
 }
-.reader.fifth article mark {
+.reader.fifth mark {
   font-style: italic;
   background-color: white;
+  color: inherit;
 }
-.reader.fifth article footer {
+.reader.fifth footer {
   font-size: 0.8em;
   column-span: all !important;
   text-transform: uppercase;
   position: relative;
   padding-top: 3rem;
+  padding-bottom: 3rem;
   text-align: right;
 }
+.reader.fifth footer p {
+  text-align: right;
+  padding: 0;
+}
+.reader.fifth footer p:first-of-type {
+  padding-top: 1.5rem;
+}
 .reader.fifth table {
-  width: 10vw;
+  display: block;
+  border: 1px solid black;
+  width: auto;
+  overflow: auto;
+}
+.reader.fifth table th {
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid black;
+  transition: 0.25s;
+  color: #8d000e;
+  /*&:hover {
+    background-color: rgba(255, 255, 255, 0.63);
+    background-size:  100% 100%;
+    border-radius: 20px;
+    transform:scale(1.4545,1.34);
+    transform-origin:center;
+    z-index: 100;
+  }*/
+}
+.reader.fifth table td {
+  border: 1px solid black;
+  transition: 0.25s;
+  /*&:hover {
+    background-color: rgba(255, 255, 255, 0.63);
+    background-size:  100% 100%;
+    transform:scale(1.4545,1.34);
+    transform-origin:center;
+    border-radius: 20px;
+    z-index: 100;
+  }*/
+}
+.reader.fifth ol {
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 1.1em;
+  color: black;
+}
+.reader.fifth ol li {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+.reader.fifth .left, .reader.fifth .right {
+  columns: 1 auto;
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 1.1em;
+  text-align: left;
+}
+.reader.fifth .left header h1, .reader.fifth .right header h1 {
+  position: relative;
+  font-family: "bernsteinBold";
+  font-size: 2em !important;
+  text-align: left;
+  width: auto;
+}
+.reader.fifth .left header table, .reader.fifth .right header table {
+  column-span: all !important;
+  display: block;
+  border: 1px solid black;
+}
+.reader.fifth .left ul, .reader.fifth .left ol, .reader.fifth .right ul, .reader.fifth .right ol {
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 1.1em;
+  color: black;
+  list-style-type: decimal;
+  padding: 1rem 0;
+}
+.reader.fifth .left ul li, .reader.fifth .left ol li, .reader.fifth .right ul li, .reader.fifth .right ol li {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  padding: 1rem 0;
+}
+.reader.fifth .left ul li ol, .reader.fifth .left ol li ol, .reader.fifth .right ul li ol, .reader.fifth .right ol li ol {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  list-style-type: lower-roman;
+  padding-left: 2rem;
+}
+.reader.fifth .left p, .reader.fifth .right p {
+  font-family: "fifthCorpus", sans-serif;
+  font-size: 1.1em;
+  text-align: justify;
+  color: black;
+}
+.reader.fifth .left em, .reader.fifth .right em {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  font-style: italic;
 }
 
+.reader.sixth :link, .reader.sixth :visited {
+  color: white;
+  font-style: italic;
+  text-transform: uppercase;
+  text-decoration: line-through;
+  text-decoration-color: #bebebe;
+  vertical-align: text-bottom;
+}
 .reader.sixth article {
   background-color: #222;
   color: #f6f3ea;
-  overflow-x: auto;
-  width: auto;
+  /*.parallax {
+    order: 3;
+    background-image: url(styles/sixth/human_tree.png);
+    background-color: transparent;
+    width: 50vh;
+    height: 50vh;
+    margin-left: 50%;
+    margin-right: 50%;
+    background-attachment: fixed;
+    transform: translateY(-4000px);
+    object-fit: contain;
+    z-index: 100;
+  }*/
 }
 .reader.sixth article header {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .reader.sixth article header h1 {
   order: 1;
-  background-image: url(https://media.giphy.com/media/JoVV55m3KZHdxlpFZ6/giphy.gif);
-  background-size: 90vw 110vh;
+  background-image: url(/giphy_bkgnd.e13f8e44.gif);
   background-repeat: no-repeat;
-  background-position: center;
+  mix-blend-mode: normal;
+  background-size: cover;
   flex: 0 0 auto;
   font-family: "stolzRegular", sans-serif;
   font-size: 9em;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 8rem;
+  padding: 4.6rem;
   text-rendering: optimizeLegibility;
+  margin-right: auto;
+  margin-left: auto;
 }
-.reader.sixth article header h4 {
+.reader.sixth article header h1:hover {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 50px #fff;
+}
+.reader.sixth article header h2, .reader.sixth article header h3 {
   order: 2;
   font-family: "stolzLight", sans-serif;
   font-size: 3em;
-  padding: 0rem 2rem 5rem 2rem;
+  padding: 5rem 2rem 5rem 2rem;
   text-align: center;
   text-transform: uppercase;
+  margin-right: auto;
+  margin-left: auto;
 }
 .reader.sixth article header figure {
   order: 4;
   text-align: center;
-  max-height: 80vh;
+  width: 80vw;
   margin-bottom: 2rem;
 }
 .reader.sixth article header figure img {
   filter: grayscale(100%);
+  transition: 1s ease-in;
+  width: 89vw;
+  height: 47vh;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  /*&:hover {
+    filter: grayscale(0%) brightness(95%);
+    transform: scale(1.1);
+    //animation: heartBeat 1s linear;
+  }*/
 }
 .reader.sixth article header figure figcaption {
   font-family: "stolzLight", sans-serif;
 }
 .reader.sixth article header p {
+  font-family: "windSong", serif;
+  font-size: 3.5em;
+  text-transform: lowercase;
   order: 3;
+  text-align: right;
+  padding: 0 6rem;
 }
 .reader.sixth article main {
-  padding: 2rem 0;
+  padding: 2rem 0 0 3.5rem;
+  font-style: italic;
+  font-family: "stolzLight", sans-serif;
+}
+.reader.sixth article main h3 {
+  font-size: 5em;
+  font-family: "stolzLight", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  padding: 3rem 0 3rem 4rem;
+}
+.reader.sixth article main h3:hover {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
 }
 .reader.sixth article main p {
+  display: inline-block;
+  font-family: "sixthBody", serif;
+  font-size: 1.2em;
   width: auto;
   columns: 2 300px;
+  column-gap: 10rem;
   width: 80vw;
   padding: 0 5rem;
+  line-height: 1.2em;
   text-align: justify;
+}
+.reader.sixth article main figure {
+  text-align: center;
+  width: 80vw;
+  padding: 4rem 0;
+  transform: translateX(-3.5rem);
+}
+.reader.sixth article main figure img {
+  filter: grayscale(100%);
+  transition: 0.8s ease-in-out;
+  width: 89.2vw;
+  height: 47vh;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  overflow: hidden;
+}
+.reader.sixth article main figure img:hover {
+  filter: grayscale(0%) brightness(95%);
+  transform: scale(1.15);
+}
+.reader.sixth article main figure figcaption {
+  font-family: "stolzLight", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  padding-left: 4rem;
+}
+.reader.sixth article main figure table {
+  text-transform: uppercase;
+  margin-left: 3.5rem;
+}
+.reader.sixth article main figure table tr {
+  padding: 0.5rem 0.5rem;
+}
+.reader.sixth article main figure table tr:nth-of-type(even) {
+  background-color: #333;
+}
+.reader.sixth article main figure table tr:nth-of-type(odd) {
+  background-color: #222;
+}
+.reader.sixth article footer {
+  padding: 5rem 0 1rem 5rem;
+  font-family: "stolzLight", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  width: auto;
+}
+.reader.sixth .left, .reader.sixth .right {
+  width: 44.5vw;
+  display: inline-block;
+  border-right: 0.5rem solid white;
+  overflow: hidden;
+}
+.reader.sixth .left header, .reader.sixth .right header {
+  order: 1;
+}
+.reader.sixth .left header h1, .reader.sixth .right header h1 {
+  width: inherit;
+  font-size: 2em;
+}
+.reader.sixth .left header h1:hover, .reader.sixth .right header h1:hover {
+  text-shadow: none;
+}
+.reader.sixth .left header h1 p, .reader.sixth .right header h1 p {
+  font-family: "sixthBody", sans-serif;
+  font-size: 1em;
+  text-align: left;
+  padding-left: 1rem;
+}
+.reader.sixth .left header h1 p:first-of-type, .reader.sixth .right header h1 p:first-of-type {
+  padding-bottom: 2rem;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.reader.sixth .left header h1 p:first-of-type:hover, .reader.sixth .right header h1 p:first-of-type:hover {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+}
+.reader.sixth .left header table, .reader.sixth .right header table {
+  width: auto;
+  text-align: center;
+  order: 2;
+  text-transform: lowercase;
+  margin: 1rem 0;
+  font-size: 2em;
+  display: table;
+}
+.reader.sixth .left header table tr, .reader.sixth .right header table tr {
+  font-family: "windSong", serif;
+}
+.reader.sixth .left h2, .reader.sixth .left h3, .reader.sixth .right h2, .reader.sixth .right h3 {
+  font-family: "stolzLight", sans-serif;
+  font-size: 3em;
+  padding: 3rem 2rem 2.5rem 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin: auto;
+}
+.reader.sixth .left h2:hover, .reader.sixth .left h3:hover, .reader.sixth .right h2:hover, .reader.sixth .right h3:hover {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+}
+.reader.sixth .left p, .reader.sixth .right p {
+  width: inherit;
+  font-family: "sixthBody", sans-serif;
+  padding-left: 2rem;
+}
+.reader.sixth .left ol, .reader.sixth .left ul, .reader.sixth .right ol, .reader.sixth .right ul {
+  width: inherit;
+  font-family: "sixthBody", serif;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  list-style-type: decimal;
+  padding: 1rem 2rem 1rem 0;
+  list-style: none;
+}
+.reader.sixth .left ol table, .reader.sixth .left ul table, .reader.sixth .right ol table, .reader.sixth .right ul table {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+  padding: 2rem 0;
+  font-size: 0.8em;
+  display: block;
+  width: 40vw;
+  height: auto;
+}
+.reader.sixth .left ol table td, .reader.sixth .left ul table td, .reader.sixth .right ol table td, .reader.sixth .right ul table td {
+  padding: 0.7rem 0;
+}
+.reader.sixth .left ol p, .reader.sixth .left ul p, .reader.sixth .right ol p, .reader.sixth .right ul p {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  padding: 2rem 0;
+}
+.reader.sixth .left ol li, .reader.sixth .left ul li, .reader.sixth .right ol li, .reader.sixth .right ul li {
+  margin: -1.5rem 0;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  padding: 1rem 0;
+  list-style: none;
+  /*
+  background-image: url(styles/sixth/arrow.gif);
+  background-repeat: no-repeat;
+  background-size: 1rem;*/
+}
+.reader.sixth .left ol li::before, .reader.sixth .left ul li::before, .reader.sixth .right ol li::before, .reader.sixth .right ul li::before {
+  content: " ";
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-image: url("/arrow.4d9c4be4.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.reader.sixth .left ol li p, .reader.sixth .left ul li p, .reader.sixth .right ol li p, .reader.sixth .right ul li p {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+.reader.sixth .left ol ul, .reader.sixth .left ol ol, .reader.sixth .left ul ul, .reader.sixth .left ul ol, .reader.sixth .right ol ul, .reader.sixth .right ol ol, .reader.sixth .right ul ul, .reader.sixth .right ul ol {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  list-style-type: lower-roman;
+  padding-left: 2rem;
+}
+.reader.sixth .left ol ul p, .reader.sixth .left ol ol p, .reader.sixth .left ul ul p, .reader.sixth .left ul ol p, .reader.sixth .right ol ul p, .reader.sixth .right ol ol p, .reader.sixth .right ul ul p, .reader.sixth .right ul ol p {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+.reader.sixth .left table, .reader.sixth .right table {
+  text-align: left;
+  margin-left: 1.5rem;
+  margin-right: auto;
+  padding: 2rem 0;
+  font-size: 0.8em;
+  display: block;
+  width: 40vw;
+  height: auto;
+}
+.reader.sixth .left table td, .reader.sixth .right table td {
+  padding: 0.7rem 0;
+}
+.reader.sixth .left footer, .reader.sixth .right footer {
+  font-size: 0.8em;
+  text-align: left;
+  margin-left: -5rem;
+}
+.reader.sixth .left footer ul, .reader.sixth .left footer ol, .reader.sixth .right footer ul, .reader.sixth .right footer ol {
+  list-style: lower-roman;
+}
+.reader.sixth .left footer ul::after, .reader.sixth .left footer ol::after, .reader.sixth .right footer ul::after, .reader.sixth .right footer ol::after {
+  content: none;
+}
+.reader.sixth .left section h3, .reader.sixth .right section h3 {
+  font-family: "stolzLight", sans-serif;
+  font-size: 3em;
+  padding: 2.5rem 2rem 5rem 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-left: 0%;
+  line-height: 1em;
+}
+.reader.sixth .left section h3:hover, .reader.sixth .right section h3:hover {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+}
+.reader.sixth .left section table, .reader.sixth .right section table {
+  text-align: left;
+  margin-left: -1.5rem;
+  margin-right: auto;
+  padding: 2rem 0;
+  font-size: 0.8em;
+  display: block;
+  width: 40vw;
+  height: auto;
+}
+.reader.sixth .left section table td, .reader.sixth .right section table td {
+  padding: 0.7rem 0;
+}
+.reader.sixth .left section figure table, .reader.sixth .right section figure table {
+  margin-left: 1.5rem;
+}
+.reader.sixth .left section figure h3, .reader.sixth .right section figure h3 {
+  margin-left: -30rem;
+}
+.reader.sixth .right h1 {
+  padding-bottom: 2.5rem;
 }
 
 body {

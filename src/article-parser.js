@@ -12,7 +12,7 @@ async function parseArticle(article){
     const parser = new DOMParser();
     const articleDocument = parser.parseFromString(articleHtml, "text/html");
     //preso solo body
-    const body = articleDocument.querySelector("body");
+    const body = articleDocument.querySelector("html");
     //create url from current article
     const articleURL = new URL(article, window.location.href)
     const pageURL = new URL(window.location.href)

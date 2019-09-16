@@ -929,7 +929,7 @@ function _parseArticle() {
             parser = new DOMParser();
             articleDocument = parser.parseFromString(articleHtml, "text/html"); //preso solo body
 
-            body = articleDocument.querySelector("body"); //create url from current article
+            body = articleDocument.querySelector("html"); //create url from current article
 
             articleURL = new URL(article, window.location.href);
             pageURL = new URL(window.location.href); //get article path (without file name)
@@ -966,6 +966,8 @@ module.exports = "/sakura.3275ced2.svg";
 module.exports = "/die.8f9f3c68.svg";
 },{}],"images/rollingstones.svg":[function(require,module,exports) {
 module.exports = "/rollingstones.29f3750a.svg";
+},{}],"images/eye.svg":[function(require,module,exports) {
+module.exports = "/eye.82a727b0.svg";
 },{}],"manuzio.js":[function(require,module,exports) {
 "use strict";
 
@@ -987,8 +989,7 @@ function manuzioLogic() {
 
       while (i < sectionChildren.length && !checkChildren) {
         var childHeigt = sectionChildren[i].clientHeight;
-        console.log(sectionChildren[i]);
-        console.log(childHeigt);
+        var childWidth = sectionChildren[i].clientWidth;
 
         if (sectionChildren[i].tagName == "P") {
           countP++;
@@ -1006,13 +1007,37 @@ function manuzioLogic() {
         rightTriangle.classList.add("right-triangle-shape");
         sectionChildren[i].insertAdjacentElement("beforebegin", leftTriangle);
         sectionChildren[i].insertAdjacentElement("beforebegin", rightTriangle);
-        leftTriangle.style.height = childHeigt + "px";
-        rightTriangle.style.height = childHeigt + "px";
+        leftTriangle.style.height = Math.min(childHeigt, 3 * childWidth) + "px";
+        rightTriangle.style.height = Math.min(childHeigt, 3 * childWidth) + "px";
       }
     });
   }
 
   insertTriangles();
+
+  function addCapital() {
+    var sectionList = document.querySelectorAll(".reader section");
+    sectionList.forEach(function (section) {
+      var i = 0;
+      var checkParagraph = false;
+      var paragraphList = Array.from(section.children);
+
+      while (i < paragraphList.length && !checkParagraph) {
+        var pHeight = paragraphList[i].clientHeight;
+        console.log(pHeight);
+        checkParagraph = Boolean(paragraphList[i].tagName == "P" && pHeight > 80);
+        i++;
+      }
+
+      if (checkParagraph) {
+        i--;
+        console.log(paragraphList[i]);
+        paragraphList[i].classList.add("capital");
+      }
+    });
+  }
+
+  addCapital();
 }
 
 var _default = manuzioLogic;
@@ -1169,22 +1194,24 @@ function rimpaLogic() {
 var _default = rimpaLogic;
 exports.default = _default;
 },{}],"2020.js":[function(require,module,exports) {
-"use strict";
+/*function twentyLogic(){
+    var list = document.querySelectorAll(".reader.sixth img");
+    for (var i = 0; i < list.length; ++i) {
+    list[i].setAttribute('data-aos', 'fade-up');
+    }
+    var div = document.createElement('div');
+    document.getElementsByTagName("article")[0].appendChild(div);
+    div.setAttribute('class', 'buttonRead');
+    div.innerHTML = "read"
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-function twentyLogic() {
-  list = document.querySelectorAll(".reader.sixth img");
-
-  for (var i = 0; i < list.length; ++i) {
-    list[i].classList.add('picture');
-  }
+    var immg = document.createElement('div');
+    document.getElementsByTagName("article")[0].appendChild(immg);
+    immg.setAttribute('class', 'parallax');
+    
 }
 
-var _default = twentyLogic;
+export default twentyLogic;*/
+
 /*
   var options = {
     imgSrc : "https://unsplash.it/g/1024/768?image=874",
@@ -1322,18 +1349,28 @@ function loop() {
 
 // Call the loop for the first time
 loop();*/
-
-exports.default = _default;
 },{}],"rollingDom.js":[function(require,module,exports) {
-/*
-function rollingDom(){
-    const div = document.createElement("div");
-    const location = document.querySelectorAll(".reader section");
-    location.insertAdjacentElement("afterbegin", div);
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function rollingDom() {
+  /*const div = document.createElement("div");
+  const location = document.querySelectorAll(".reader section");
+  location.insertAdjacentElement("afterbegin", div);*/
+  var element = document.querySelector('meta[property~="dc:publisher"]');
+  var content = element && element.getAttribute("content");
+  var div = document.createElement('div');
+  document.getElementsByTagName("article")[0].appendChild(div);
+  div.setAttribute('class', 'publisher');
+  div.innerHTML = content;
 }
 
-export default rollingDom;
-
+var _default = rollingDom;
+/*
 function getMeta(metaName) {
     const metas = document.getElementsByTagName('meta');
   
@@ -1349,6 +1386,8 @@ function getMeta(metaName) {
   console.log(getMeta('video'));
 
 */
+
+exports.default = _default;
 },{}],"tschichold.js":[function(require,module,exports) {
 "use strict";
 
@@ -1382,6 +1421,8 @@ var _sakura = _interopRequireDefault(require("./images/sakura.svg"));
 var _die = _interopRequireDefault(require("./images/die.svg"));
 
 var _rollingstones = _interopRequireDefault(require("./images/rollingstones.svg"));
+
+var _eye = _interopRequireDefault(require("./images/eye.svg"));
 
 var _manuzio = _interopRequireDefault(require("./manuzio"));
 
@@ -1419,12 +1460,12 @@ var styles = [{
   logic: _rollingDom.default
 }, {
   name: "sixth",
-  icon: "",
+  icon: _eye.default,
   logic: _.default
 }];
 var _default = styles;
 exports.default = _default;
-},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./images/die.svg":"images/die.svg","./images/rollingstones.svg":"images/rollingstones.svg","./manuzio":"manuzio.js","./dungeon":"dungeon.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js","./tschichold":"tschichold.js"}],"customStyleLogic.js":[function(require,module,exports) {
+},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./images/die.svg":"images/die.svg","./images/rollingstones.svg":"images/rollingstones.svg","./images/eye.svg":"images/eye.svg","./manuzio":"manuzio.js","./dungeon":"dungeon.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js","./tschichold":"tschichold.js"}],"customStyleLogic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1486,6 +1527,7 @@ function _addSpecialArticle() {
 
           case 5:
             rightArticle = _context.sent;
+            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1548,6 +1590,7 @@ function _addArticle() {
 
           case 2:
             article = _context2.sent;
+            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1596,6 +1639,7 @@ var _articleParser = require("./article-parser");
 
 var _addArticle = require("./addArticle.js");
 
+//article dictionary with title=key and url=value
 var articles = [{
   title: "Japan's Prisons Are a Haven for Elderly Women",
   url: "./articles/Bloomberg/ShihoFukada.html"
@@ -1864,6 +1908,14 @@ var _addDocumentationPages = require("./addDocumentationPages");
 
 var _overlayMenu = require("./overlayMenu");
 
+// polyfill needed for using for loop on a dictionary
+
+/*
+ * Object.prototype.forEach() polyfill
+ * https://gomakethings.com/looping-through-objects-with-es6/
+ * @author Chris Ferdinandi
+ * @license MIT
+ */
 if (!Object.prototype.forEach) {
   Object.defineProperty(Object.prototype, "forEach", {
     value: function value(callback, thisArg) {
@@ -1921,6 +1973,8 @@ function addArticleGlobalUrl() {
 }
 
 addArticleGlobalUrl();
+AOS.init();
+window.addEventListener('load', AOS.refresh);
 },{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js","./articlesSelectionButtons":"articlesSelectionButtons.js","./createThemeButtons":"createThemeButtons.js","./sidebar":"sidebar.js","./addDocumentationPages":"addDocumentationPages.js","./overlayMenu":"overlayMenu.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -1949,7 +2003,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "55206" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "9653" + '/');
+>>>>>>> 65070e930c299bf045f56973808545207257595a
 
   ws.onmessage = function (event) {
     checkedAssets = {};

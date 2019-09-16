@@ -85,3 +85,6 @@ function addArticleGlobalUrl() {
 }
 addArticleGlobalUrl();
 
+AOS.init();
+window.addEventListener('load', AOS.refresh);
+

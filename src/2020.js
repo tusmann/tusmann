@@ -1,11 +1,21 @@
-function twentyLogic(){
-    list = document.querySelectorAll(".reader.sixth img");
+
+/*function twentyLogic(){
+    var list = document.querySelectorAll(".reader.sixth img");
     for (var i = 0; i < list.length; ++i) {
-    list[i].classList.add('picture');
-}
+    list[i].setAttribute('data-aos', 'fade-up');
+    }
+    var div = document.createElement('div');
+    document.getElementsByTagName("article")[0].appendChild(div);
+    div.setAttribute('class', 'buttonRead');
+    div.innerHTML = "read"
+
+    var immg = document.createElement('div');
+    document.getElementsByTagName("article")[0].appendChild(immg);
+    immg.setAttribute('class', 'parallax');
+    
 }
 
-export default twentyLogic;
+export default twentyLogic;*/
 
 /*
   var options = {

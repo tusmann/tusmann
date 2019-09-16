@@ -2,8 +2,8 @@ $card-color-1-light: #E8D0AE;
 $card-color-1-dark: #806261;
 $card-color-2-light: #ecca4d;
 $card-color-2-dark: #279d53;
-$card-color-3-light: #9D5D82;
-$card-color-3-dark: #4F1722;
+$card-color-3-light: #fff0e2 ;
+$card-color-3-dark: #e31619;
 $card-color-4-light:  #24597B;
 $card-color-4-dark: #00497A;
 $card-color-5-light: #796C63;
@@ -135,10 +135,10 @@ $card-color-6-dark: #796C63;
       linear,
       left top,
       right bottom,
-      from(#2998ff),
-      to(#5643fa)
+      from($card-color-3-light),
+      to($card-color-3-dark)
     );
-    background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+    background-image: linear-gradient(to right bottom, $card-color-3-light, $card-color-3-dark);
   }
   .card:hover .card__side--front {
     -webkit-transform: rotateY(-180deg);
@@ -189,9 +189,9 @@ $card-color-6-dark: #796C63;
         from($card-color-3-light),
         to($card-color-3-dark)
       ),
-      url(./cards/manuzio-card-front.jpg);
+      url(./cards/ded-card-front.jpg);
     background-image: linear-gradient(to right bottom, $card-color-3-light, $card-color-3-dark),
-      url(./cards/manuzio-card-front.jpg);
+      url(./cards/ded-card-front.jpg);
   }
   .card__picture--4 {
     background-image: -webkit-gradient(
@@ -234,10 +234,9 @@ $card-color-6-dark: #796C63;
     font-size: 2.4rem;
     font-weight: 300;
     text-transform: uppercase;
-    text-align: center;
+    vertical-align: center;
     color: black;
     position: absolute;
-    bottom: 3rem;
     right: 2rem;
     width: 75%; 
   }

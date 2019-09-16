@@ -32,8 +32,13 @@
     "@babel/runtime": "^7.5.5",
     "@material/drawer": "^3.1.1",
     "@material/top-app-bar": "^3.1.0",
+    "aos": "^2.3.4",
+    "assemble": "^0.3.83",
     "bindery": "^2.2.7",
-    "bindery-controls": "^1.1.2"
+    "bindery-controls": "^1.1.2",
+    "grunt": "^0.4.5",
+    "react": "^16.9.0",
+    "styles": "^0.2.1"
   },
   "staticFiles": {
     "staticPath": [
