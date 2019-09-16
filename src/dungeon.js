@@ -47,6 +47,28 @@ function dungeonLogic(){
     rollerHolder.insertAdjacentElement('afterbegin', container);
     rollerHolder.insertAdjacentElement('afterbegin', container2);
     rollerHolder.insertAdjacentElement('afterbegin', container3);
+  
+    //MISSING FONTS
+
+  /*  var node = document.querySelector('.reader.left header h1');
+    var text = node.textContent;
+    for (const c of text) {
+      if (c == '2009') {
+        console.log(c)
+      }
+  }
+
+  var node = document.querySelector('.reader.right header h1');
+  var text = node.textContent;
+  for (const d of text) {
+    if (d == '2009') {
+      console.log(d)
+    }
+} */
+
+    //
+
+
 
     //DIE FUNCTION
 

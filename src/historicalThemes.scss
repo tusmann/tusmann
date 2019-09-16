@@ -68,38 +68,12 @@
 }
 
 @font-face {
-  font-family: "stolzMedium";
-  src: url("./styles/sixth/StolzlMedium.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "stolzRegular";
-  src: url("./styles/sixth/StolzlRegular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "stolzLight";
-  src: url("./styles/sixth/StolzlLight.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "morganiteMedium";
-  src: url("./styles/sixth/Morganite-Thin.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "rollingFont";
-  src: url("./styles/fifth/Royalacid_o.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "bernsteinBold";
-  src: url("./styles/fifth/bernstein-serial-bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "fifthCorpus";
-  src: url("./styles/fifth/smorgasbord.otf") format("truetype");
+  font-family: 'Gill Sans';
+  src: url("./styles/third/GillSans.woff2") format('woff2'),
+      url("./styles/third/GillSans.woff") format('woff'),
+      url("./styles/third/GillSans.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 //
@@ -149,8 +123,45 @@
   font-weight: 100;
   font-style: normal;
 }
+//
 
+//rollingDOM
+@font-face {
+  font-family: "rollingFont";
+  src: url("./styles/fifth/Royalacid_o.ttf") format("truetype");
+}
 
+@font-face {
+  font-family: "bernsteinBold";
+  src: url("./styles/fifth/bernstein-serial-bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "fifthCorpus";
+  src: url("./styles/fifth/smorgasbord.otf") format("truetype");
+}
+//
+
+//2020
+@font-face {
+  font-family: "stolzMedium";
+  src: url("./styles/sixth/StolzlMedium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "stolzRegular";
+  src: url("./styles/sixth/StolzlRegular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "stolzLight";
+  src: url("./styles/sixth/StolzlLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "morganiteMedium";
+  src: url("./styles/sixth/Morganite-Thin.ttf") format("truetype");
+}
 //
 
 //VARIABLES
@@ -174,6 +185,7 @@ $rimpa-red: #e04d21;
 $font-futura-black: 'FuturaFuturisBlackC';
 $font-futura: 'FuturaFuturisC';
 $font-transito: 'WaddemChooNFW01';
+$font-gill: 'Gill Sans';
 $tsi-red: #f9423a;
 $tsi-blue: #0077c0;
 $tsi-paper: #f6f3ea;
@@ -467,11 +479,6 @@ $font-boldbasker: 'Baskerville';
 
 
 
-
-
-
-
-
 //STYLE: RIMPA
 
 .reader.rimpa {
@@ -674,6 +681,10 @@ $font-boldbasker: 'Baskerville';
   }
 }
 
+
+
+
+
 //STYLE: JAN TSCHICHOLD
 
 .reader.third {
@@ -731,7 +742,6 @@ $font-boldbasker: 'Baskerville';
       }
       main {
         //padding: 5rem;
-        margin: 2rem 4rem 6rem 2rem;
         background-color: $tsi-paper;
         text-align: justify;
         column-count: 1; 
@@ -739,7 +749,20 @@ $font-boldbasker: 'Baskerville';
     }
   }
 
+  .reader.left {
+    article {
+      padding: 6rem 3rem 12rem 8rem;
+    }
+  }
+
+  .reader.right {
+    article {
+      padding: 6rem 8rem 12rem 3rem;
+    }
+  }
+
   article {
+    padding: 8rem 16rem 24rem 8rem;
     background-color: $tsi-paper;
     /*font-family: 'Roboto', sans-serif;*/
     font-family: $font-futura;
@@ -887,7 +910,7 @@ $font-boldbasker: 'Baskerville';
 
       main {
       //padding: 5rem;
-      padding: 4rem 18rem 12rem 6rem;
+      
       background-color: $tsi-paper;
       text-align: justify;
       column-count: 2;
@@ -940,13 +963,18 @@ $font-boldbasker: 'Baskerville';
           filter: grayscale(100%) contrast(100%);
         }
 
-          figcaption {
-          font-style: $font-futura-black;
+        figcaption {
+          //font-style: $font-futura-black;
+          float: right;
           font-weight: 700;
+          font-size: 0.8em;
+          width: 14vw;
+          text-align: right;
           margin-bottom: 10px;
-            border-left: 5px solid $tsi-blue;
-            padding-left: 5px;
-            padding-top: 5px;
+          margin-left: 2vw;
+          border-left: 5px solid $tsi-blue;
+          padding-left: 5px;
+          padding-top: 5px;
           }
         }
 
@@ -1009,12 +1037,17 @@ $font-boldbasker: 'Baskerville';
                 
                 tr {
                   padding-right: 5px;
+                  
   
                   th {
                     font-weight: bold;
+                    padding-top: 1vh;
                   }
                   td {
+                    margin-top: 2vh;
+                    margin-bottom: 2vh;
                     padding-right: 1vw;
+                    text-align: left;
                   }
                 }
               }
@@ -1025,6 +1058,7 @@ $font-boldbasker: 'Baskerville';
             height: auto;
             object-fit: contain;
             margin-top: 2%;
+            margin-bottom: 2%;
             display: block;
             //margin-left: auto;
             //margin-right: auto;
@@ -1033,9 +1067,14 @@ $font-boldbasker: 'Baskerville';
           }
 
             figcaption {
-            font-style: $font-futura-black;
+            //font-style: $font-futura-black;
+            float: right;
             font-weight: 700;
+            font-size: 0.8em;
+            width: 14vw;
+            text-align: right;
             margin-bottom: 10px;
+            margin-left: 2vw;
             border-left: 5px solid $tsi-blue;
             padding-left: 5px;
             padding-top: 5px;
@@ -1071,12 +1110,13 @@ $font-boldbasker: 'Baskerville';
       footer {
       background-color: $tsi-paper;
       color: $tsi-ink;
+      font-weight: 300;
+      font-size: 0.8em;
+      text-align: right;
       margin-top: 4vh;
       line-height: 1.2rem;
       border-top: 5px solid $tsi-red;
       border-bottom: 5px solid $tsi-red;
-      text-align: center;
-      font-style: $font-futura;
     }
 
   }
@@ -1115,11 +1155,16 @@ $font-boldbasker: 'Baskerville';
         h1 {
           //margin: 0;
           //width: auto;
+          width: 30vw;
           font-size: 1.2em;
           line-height: 2em;
+          padding-top: 10vh;
+          
           
           p {
             width: auto;
+            padding: 0;
+            
             &:first-of-type {
               font-family: $font-dungeon;
               font-size: 2.5em;
@@ -1137,24 +1182,50 @@ $font-boldbasker: 'Baskerville';
             }
   
             &:nth-of-type(2) {
-              border-top: 4px solid whitesmoke;
-              border-bottom: 4px solid whitesmoke;
-              //font-size: 6em;
+              //border-top: 4px solid whitesmoke;
+              border-bottom: 0.2em solid whitesmoke;
+              font-size: 1.2em;
+              text-transform: capitalize;
+              font-weight: bold;
             }
   
-            &:not(:first-of-type) {
+            &:nth-of-type(3) {
               font-family: $font-korinna;
               padding: 5px;
               text-align: center;
+              line-height: 1em;
               font-size: 1.2em;
+        
               //font-size: 0.2em;
               //width: 40%;
               //margin: 0 auto;
-              text-transform: uppercase;
+              text-transform: capitalize;
               color: whitesmoke;
               //border-top: 4px solid whitesmoke;
               //border-bottom: 4px solid whitesmoke;
               //grid-row: 3 / 4;
+            }
+
+            &:nth-of-type(4) {
+              font-family: $font-korinna;
+              padding: 5px;
+              text-align: center;
+              line-height: 0.8em;
+              font-size: 0.8em;
+              border-bottom: 0.2em solid whitesmoke;
+              //font-size: 0.2em;
+              //width: 40%;
+              //margin: 0 auto;
+              margin-bottom: 2vh;
+              text-transform: lowercase;
+              color: whitesmoke;
+              //border-top: 4px solid whitesmoke;
+              //border-bottom: 4px solid whitesmoke;
+              //grid-row: 3 / 4;
+            }
+
+            &:last-of-type {
+              font-size: 0.6em;
             }
           }
         }
@@ -1162,6 +1233,7 @@ $font-boldbasker: 'Baskerville';
         table {
           background-color: #06558e;
           font-family: $font-korinna;
+          color: whitesmoke;
           width: 100%;
           //grid-row: 1 / 2;
           td {
@@ -1644,7 +1716,12 @@ $font-boldbasker: 'Baskerville';
 }
 
 //
-//STYLE: ???
+
+
+
+
+
+//STYLE: rollingDOM
 
 .reader.fifth {
   article {
@@ -1756,7 +1833,10 @@ $font-boldbasker: 'Baskerville';
 }
 
 //
-//STYLE: ???
+
+
+
+//STYLE: 2020
 
 .reader.sixth {
   article {

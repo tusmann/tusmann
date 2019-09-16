@@ -1070,7 +1070,24 @@ function dungeonLogic() {
   container3.appendChild(text);
   rollerHolder.insertAdjacentElement('afterbegin', container);
   rollerHolder.insertAdjacentElement('afterbegin', container2);
-  rollerHolder.insertAdjacentElement('afterbegin', container3); //DIE FUNCTION
+  rollerHolder.insertAdjacentElement('afterbegin', container3); //MISSING FONTS
+
+  /*  var node = document.querySelector('.reader.left header h1');
+    var text = node.textContent;
+    for (const c of text) {
+      if (c == '2009') {
+        console.log(c)
+      }
+  }
+    var node = document.querySelector('.reader.right header h1');
+  var text = node.textContent;
+  for (const d of text) {
+    if (d == '2009') {
+      console.log(d)
+    }
+  } */
+  //
+  //DIE FUNCTION
   //window.onload = function () { //added post, maybe to remove
 
   var randomNumber = function randomNumber(low, high) {
@@ -1932,7 +1949,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50571" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62897" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

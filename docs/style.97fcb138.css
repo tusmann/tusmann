@@ -684,32 +684,10 @@ html {
   font-style: normal;
 }
 @font-face {
-  font-family: "stolzMedium";
-  src: url("/StolzlMedium.9ce07e41.ttf") format("truetype");
-}
-@font-face {
-  font-family: "stolzRegular";
-  src: url("/StolzlRegular.5ff40316.ttf") format("truetype");
-}
-@font-face {
-  font-family: "stolzLight";
-  src: url("/StolzlLight.5a13b4ff.ttf") format("truetype");
-}
-@font-face {
-  font-family: "morganiteMedium";
-  src: url("/Morganite-Thin.c9110b61.ttf") format("truetype");
-}
-@font-face {
-  font-family: "rollingFont";
-  src: url("/Royalacid_o.3e0f2d83.ttf") format("truetype");
-}
-@font-face {
-  font-family: "bernsteinBold";
-  src: url("/bernstein-serial-bold.58e41cf6.ttf") format("truetype");
-}
-@font-face {
-  font-family: "fifthCorpus";
-  src: url("/smorgasbord.4e40d7a8.otf") format("truetype");
+  font-family: "Gill Sans";
+  src: url("/GillSans.f6ad76cf.woff2") format("woff2"), url("/GillSans.c96beee4.woff") format("woff"), url("/GillSans.bf38cebd.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: "QuentinEF";
@@ -740,6 +718,34 @@ html {
   src: url("/Baskerville-Bold.cf841bbe.woff2") format("woff2"), url("/Baskerville-Bold.42ae1365.woff") format("woff"), url("/Baskerville-Bold.3dd8b8a0.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
+}
+@font-face {
+  font-family: "rollingFont";
+  src: url("/Royalacid_o.3e0f2d83.ttf") format("truetype");
+}
+@font-face {
+  font-family: "bernsteinBold";
+  src: url("/bernstein-serial-bold.58e41cf6.ttf") format("truetype");
+}
+@font-face {
+  font-family: "fifthCorpus";
+  src: url("/smorgasbord.4e40d7a8.otf") format("truetype");
+}
+@font-face {
+  font-family: "stolzMedium";
+  src: url("/StolzlMedium.9ce07e41.ttf") format("truetype");
+}
+@font-face {
+  font-family: "stolzRegular";
+  src: url("/StolzlRegular.5ff40316.ttf") format("truetype");
+}
+@font-face {
+  font-family: "stolzLight";
+  src: url("/StolzlLight.5a13b4ff.ttf") format("truetype");
+}
+@font-face {
+  font-family: "morganiteMedium";
+  src: url("/Morganite-Thin.c9110b61.ttf") format("truetype");
 }
 @media screen and (max-width: 600px) {
   body {
@@ -1209,12 +1215,18 @@ html {
   padding-bottom: 5px;
 }
 .reader.third .reader.left article main, .reader.third .reader.right article main {
-  margin: 2rem 4rem 6rem 2rem;
   background-color: #f6f3ea;
   text-align: justify;
   column-count: 1;
 }
+.reader.third .reader.left article {
+  padding: 6rem 3rem 12rem 8rem;
+}
+.reader.third .reader.right article {
+  padding: 6rem 8rem 12rem 3rem;
+}
 .reader.third article {
+  padding: 8rem 16rem 24rem 8rem;
   background-color: #f6f3ea;
   /*font-family: 'Roboto', sans-serif;*/
   font-family: "FuturaFuturisC";
@@ -1339,7 +1351,6 @@ html {
   border-right: 5px solid #222;
 }
 .reader.third article main {
-  padding: 4rem 18rem 12rem 6rem;
   background-color: #f6f3ea;
   text-align: justify;
   column-count: 2;
@@ -1375,9 +1386,13 @@ html {
   filter: grayscale(100%) contrast(100%);
 }
 .reader.third article main figure figcaption {
-  font-style: "FuturaFuturisBlackC";
+  float: right;
   font-weight: 700;
+  font-size: 0.8em;
+  width: 14vw;
+  text-align: right;
   margin-bottom: 10px;
+  margin-left: 2vw;
   border-left: 5px solid #0077c0;
   padding-left: 5px;
   padding-top: 5px;
@@ -1421,23 +1436,32 @@ html {
 }
 .reader.third article main section figure table tbody tr th {
   font-weight: bold;
+  padding-top: 1vh;
 }
 .reader.third article main section figure table tbody tr td {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
   padding-right: 1vw;
+  text-align: left;
 }
 .reader.third article main section figure img {
   width: 100%;
   height: auto;
   object-fit: contain;
   margin-top: 2%;
+  margin-bottom: 2%;
   display: block;
   -webkit-filter: grayscale(100%) contrast(100%);
   filter: grayscale(100%) contrast(100%);
 }
 .reader.third article main section figure figcaption {
-  font-style: "FuturaFuturisBlackC";
+  float: right;
   font-weight: 700;
+  font-size: 0.8em;
+  width: 14vw;
+  text-align: right;
   margin-bottom: 10px;
+  margin-left: 2vw;
   border-left: 5px solid #0077c0;
   padding-left: 5px;
   padding-top: 5px;
@@ -1466,12 +1490,13 @@ html {
 .reader.third article footer {
   background-color: #f6f3ea;
   color: #222;
+  font-weight: 300;
+  font-size: 0.8em;
+  text-align: right;
   margin-top: 4vh;
   line-height: 1.2rem;
   border-top: 5px solid #f9423a;
   border-bottom: 5px solid #f9423a;
-  text-align: center;
-  font-style: "FuturaFuturisC";
 }
 
 .reader.dungeon .reader.left, .reader.dungeon .reader.right {
@@ -1499,11 +1524,14 @@ html {
   display: none;
 }
 .reader.dungeon .reader.left article header h1, .reader.dungeon .reader.right article header h1 {
+  width: 30vw;
   font-size: 1.2em;
   line-height: 2em;
+  padding-top: 10vh;
 }
 .reader.dungeon .reader.left article header h1 p, .reader.dungeon .reader.right article header h1 p {
   width: auto;
+  padding: 0;
 }
 .reader.dungeon .reader.left article header h1 p:first-of-type, .reader.dungeon .reader.right article header h1 p:first-of-type {
   font-family: "DnDC";
@@ -1514,20 +1542,38 @@ html {
   color: whitesmoke;
 }
 .reader.dungeon .reader.left article header h1 p:nth-of-type(2), .reader.dungeon .reader.right article header h1 p:nth-of-type(2) {
-  border-top: 4px solid whitesmoke;
-  border-bottom: 4px solid whitesmoke;
+  border-bottom: 0.2em solid whitesmoke;
+  font-size: 1.2em;
+  text-transform: capitalize;
+  font-weight: bold;
 }
-.reader.dungeon .reader.left article header h1 p:not(:first-of-type), .reader.dungeon .reader.right article header h1 p:not(:first-of-type) {
+.reader.dungeon .reader.left article header h1 p:nth-of-type(3), .reader.dungeon .reader.right article header h1 p:nth-of-type(3) {
   font-family: "ITC Korinna Std";
   padding: 5px;
   text-align: center;
+  line-height: 1em;
   font-size: 1.2em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   color: whitesmoke;
+}
+.reader.dungeon .reader.left article header h1 p:nth-of-type(4), .reader.dungeon .reader.right article header h1 p:nth-of-type(4) {
+  font-family: "ITC Korinna Std";
+  padding: 5px;
+  text-align: center;
+  line-height: 0.8em;
+  font-size: 0.8em;
+  border-bottom: 0.2em solid whitesmoke;
+  margin-bottom: 2vh;
+  text-transform: lowercase;
+  color: whitesmoke;
+}
+.reader.dungeon .reader.left article header h1 p:last-of-type, .reader.dungeon .reader.right article header h1 p:last-of-type {
+  font-size: 0.6em;
 }
 .reader.dungeon .reader.left article header table, .reader.dungeon .reader.right article header table {
   background-color: #06558e;
   font-family: "ITC Korinna Std";
+  color: whitesmoke;
   width: 100%;
 }
 .reader.dungeon .reader.left article header table td, .reader.dungeon .reader.right article header table td {
