@@ -2399,6 +2399,7 @@ html {
   text-transform: uppercase;
   text-decoration: line-through;
   text-decoration-color: #bebebe;
+  vertical-align: text-bottom;
 }
 .reader.sixth article {
   background-color: #222;
@@ -2556,37 +2557,186 @@ html {
   width: auto;
 }
 .reader.sixth .left, .reader.sixth .right {
-  width: 44vw;
+  width: 44.5vw;
   display: inline-block;
+  border-right: 0.5rem solid white;
+  overflow: hidden;
+}
+.reader.sixth .left header, .reader.sixth .right header {
+  order: 1;
+}
+.reader.sixth .left header h1, .reader.sixth .right header h1 {
+  width: inherit;
+  font-size: 2em;
+}
+.reader.sixth .left header h1:hover, .reader.sixth .right header h1:hover {
+  text-shadow: none;
+}
+.reader.sixth .left header h1 p, .reader.sixth .right header h1 p {
+  font-family: "sixthBody", sans-serif;
+  font-size: 1em;
+  text-align: left;
+  padding-left: 1rem;
+}
+.reader.sixth .left header h1 p:first-of-type, .reader.sixth .right header h1 p:first-of-type {
+  padding-bottom: 2rem;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.reader.sixth .left header h1 p:first-of-type:hover, .reader.sixth .right header h1 p:first-of-type:hover {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+}
+.reader.sixth .left header table, .reader.sixth .right header table {
+  width: auto;
+  text-align: center;
+  order: 2;
+  text-transform: lowercase;
+  margin: 1rem 0;
+  font-size: 2em;
+  display: table;
+}
+.reader.sixth .left header table tr, .reader.sixth .right header table tr {
+  font-family: "windSong", serif;
+}
+.reader.sixth .left h2, .reader.sixth .left h3, .reader.sixth .right h2, .reader.sixth .right h3 {
   font-family: "stolzLight", sans-serif;
+  font-size: 3em;
+  padding: 3rem 2rem 2.5rem 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin: auto;
+}
+.reader.sixth .left h2:hover, .reader.sixth .left h3:hover, .reader.sixth .right h2:hover, .reader.sixth .right h3:hover {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
 }
 .reader.sixth .left p, .reader.sixth .right p {
+  width: inherit;
   font-family: "sixthBody", sans-serif;
+  padding-left: 2rem;
 }
 .reader.sixth .left ol, .reader.sixth .left ul, .reader.sixth .right ol, .reader.sixth .right ul {
-  font-family: "Playfair Display", serif;
+  width: inherit;
+  font-family: "sixthBody", serif;
   font-size: 1.2em;
+  line-height: 1.2em;
   list-style-type: decimal;
-  padding: 1rem 0;
+  padding: 1rem 2rem 1rem 0;
   list-style: none;
 }
+.reader.sixth .left ol table, .reader.sixth .left ul table, .reader.sixth .right ol table, .reader.sixth .right ul table {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+  padding: 2rem 0;
+  font-size: 0.8em;
+  display: block;
+  width: 40vw;
+  height: auto;
+}
+.reader.sixth .left ol table td, .reader.sixth .left ul table td, .reader.sixth .right ol table td, .reader.sixth .right ul table td {
+  padding: 0.7rem 0;
+}
+.reader.sixth .left ol p, .reader.sixth .left ul p, .reader.sixth .right ol p, .reader.sixth .right ul p {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  padding: 2rem 0;
+}
 .reader.sixth .left ol li, .reader.sixth .left ul li, .reader.sixth .right ol li, .reader.sixth .right ul li {
+  margin: -1.5rem 0;
   font-size: inherit;
   font-family: inherit;
   color: inherit;
   padding: 1rem 0;
   list-style: none;
-  display: inline-block;
-  background-image: url(/arrow.4d9c4be4.gif);
+  /*
+  background-image: url(styles/sixth/arrow.gif);
   background-repeat: no-repeat;
-  background-size: 1rem;
+  background-size: 1rem;*/
 }
-.reader.sixth .left ol ol, .reader.sixth .left ul ol, .reader.sixth .right ol ol, .reader.sixth .right ul ol {
+.reader.sixth .left ol li::before, .reader.sixth .left ul li::before, .reader.sixth .right ol li::before, .reader.sixth .right ul li::before {
+  content: " ";
+  display: inline-block;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-image: url("/arrow.4d9c4be4.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.reader.sixth .left ol li p, .reader.sixth .left ul li p, .reader.sixth .right ol li p, .reader.sixth .right ul li p {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+.reader.sixth .left ol ul, .reader.sixth .left ol ol, .reader.sixth .left ul ul, .reader.sixth .left ul ol, .reader.sixth .right ol ul, .reader.sixth .right ol ol, .reader.sixth .right ul ul, .reader.sixth .right ul ol {
   font-size: inherit;
   font-family: inherit;
   color: inherit;
   list-style-type: lower-roman;
   padding-left: 2rem;
+}
+.reader.sixth .left ol ul p, .reader.sixth .left ol ol p, .reader.sixth .left ul ul p, .reader.sixth .left ul ol p, .reader.sixth .right ol ul p, .reader.sixth .right ol ol p, .reader.sixth .right ul ul p, .reader.sixth .right ul ol p {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+.reader.sixth .left table, .reader.sixth .right table {
+  text-align: left;
+  margin-left: 1.5rem;
+  margin-right: auto;
+  padding: 2rem 0;
+  font-size: 0.8em;
+  display: block;
+  width: 40vw;
+  height: auto;
+}
+.reader.sixth .left table td, .reader.sixth .right table td {
+  padding: 0.7rem 0;
+}
+.reader.sixth .left footer, .reader.sixth .right footer {
+  font-size: 0.8em;
+  text-align: left;
+  margin-left: -5rem;
+}
+.reader.sixth .left footer ul, .reader.sixth .left footer ol, .reader.sixth .right footer ul, .reader.sixth .right footer ol {
+  list-style: lower-roman;
+}
+.reader.sixth .left footer ul::after, .reader.sixth .left footer ol::after, .reader.sixth .right footer ul::after, .reader.sixth .right footer ol::after {
+  content: none;
+}
+.reader.sixth .left section h3, .reader.sixth .right section h3 {
+  font-family: "stolzLight", sans-serif;
+  font-size: 3em;
+  padding: 2.5rem 2rem 5rem 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-left: 0%;
+  line-height: 1em;
+}
+.reader.sixth .left section h3:hover, .reader.sixth .right section h3:hover {
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+}
+.reader.sixth .left section table, .reader.sixth .right section table {
+  text-align: left;
+  margin-left: -1.5rem;
+  margin-right: auto;
+  padding: 2rem 0;
+  font-size: 0.8em;
+  display: block;
+  width: 40vw;
+  height: auto;
+}
+.reader.sixth .left section table td, .reader.sixth .right section table td {
+  padding: 0.7rem 0;
+}
+.reader.sixth .left section figure table, .reader.sixth .right section figure table {
+  margin-left: 1.5rem;
+}
+.reader.sixth .left section figure h3, .reader.sixth .right section figure h3 {
+  margin-left: -30rem;
+}
+.reader.sixth .right h1 {
+  padding-bottom: 2.5rem;
 }
 
 body {

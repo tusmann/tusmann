@@ -966,6 +966,8 @@ module.exports = "/sakura.3275ced2.svg";
 module.exports = "/die.8f9f3c68.svg";
 },{}],"images/rollingstones.svg":[function(require,module,exports) {
 module.exports = "/rollingstones.29f3750a.svg";
+},{}],"images/eye.svg":[function(require,module,exports) {
+module.exports = "/eye.82a727b0.svg";
 },{}],"manuzio.js":[function(require,module,exports) {
 "use strict";
 
@@ -1192,29 +1194,24 @@ function rimpaLogic() {
 var _default = rimpaLogic;
 exports.default = _default;
 },{}],"2020.js":[function(require,module,exports) {
-"use strict";
+/*function twentyLogic(){
+    var list = document.querySelectorAll(".reader.sixth img");
+    for (var i = 0; i < list.length; ++i) {
+    list[i].setAttribute('data-aos', 'fade-up');
+    }
+    var div = document.createElement('div');
+    document.getElementsByTagName("article")[0].appendChild(div);
+    div.setAttribute('class', 'buttonRead');
+    div.innerHTML = "read"
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-function twentyLogic() {
-  /*var list = document.querySelectorAll(".reader.sixth img");
-  for (var i = 0; i < list.length; ++i) {
-  list[i].setAttribute('data-aos', 'fade-up');
-  }*/
-  var div = document.createElement('div');
-  document.getElementsByTagName("article")[0].appendChild(div);
-  div.setAttribute('class', 'buttonRead');
-  div.innerHTML = "read";
-  /*
-      var immg = document.createElement('div');
-      document.getElementsByTagName("article")[0].appendChild(immg);
-      immg.setAttribute('class', 'parallax');*/
+    var immg = document.createElement('div');
+    document.getElementsByTagName("article")[0].appendChild(immg);
+    immg.setAttribute('class', 'parallax');
+    
 }
 
-var _default = twentyLogic;
+export default twentyLogic;*/
+
 /*
   var options = {
     imgSrc : "https://unsplash.it/g/1024/768?image=874",
@@ -1352,8 +1349,6 @@ function loop() {
 
 // Call the loop for the first time
 loop();*/
-
-exports.default = _default;
 },{}],"rollingDom.js":[function(require,module,exports) {
 "use strict";
 
@@ -1427,6 +1422,8 @@ var _die = _interopRequireDefault(require("./images/die.svg"));
 
 var _rollingstones = _interopRequireDefault(require("./images/rollingstones.svg"));
 
+var _eye = _interopRequireDefault(require("./images/eye.svg"));
+
 var _manuzio = _interopRequireDefault(require("./manuzio"));
 
 var _dungeon = _interopRequireDefault(require("./dungeon"));
@@ -1463,12 +1460,12 @@ var styles = [{
   logic: _rollingDom.default
 }, {
   name: "sixth",
-  icon: "",
+  icon: _eye.default,
   logic: _.default
 }];
 var _default = styles;
 exports.default = _default;
-},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./images/die.svg":"images/die.svg","./images/rollingstones.svg":"images/rollingstones.svg","./manuzio":"manuzio.js","./dungeon":"dungeon.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js","./tschichold":"tschichold.js"}],"customStyleLogic.js":[function(require,module,exports) {
+},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./images/die.svg":"images/die.svg","./images/rollingstones.svg":"images/rollingstones.svg","./images/eye.svg":"images/eye.svg","./manuzio":"manuzio.js","./dungeon":"dungeon.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js","./tschichold":"tschichold.js"}],"customStyleLogic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1530,7 +1527,6 @@ function _addSpecialArticle() {
 
           case 5:
             rightArticle = _context.sent;
-            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1593,7 +1589,6 @@ function _addArticle() {
 
           case 2:
             article = _context2.sent;
-            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1642,7 +1637,6 @@ var _articleParser = require("./article-parser");
 
 var _addArticle = require("./addArticle.js");
 
-//article dictionary with title=key and url=value
 var articles = [{
   title: "Japan's Prisons Are a Haven for Elderly Women",
   url: "./articles/Bloomberg/ShihoFukada.html"
@@ -1911,14 +1905,6 @@ var _addDocumentationPages = require("./addDocumentationPages");
 
 var _overlayMenu = require("./overlayMenu");
 
-// polyfill needed for using for loop on a dictionary
-
-/*
- * Object.prototype.forEach() polyfill
- * https://gomakethings.com/looping-through-objects-with-es6/
- * @author Chris Ferdinandi
- * @license MIT
- */
 if (!Object.prototype.forEach) {
   Object.defineProperty(Object.prototype, "forEach", {
     value: function value(callback, thisArg) {
@@ -2006,7 +1992,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "9209" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54296" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
