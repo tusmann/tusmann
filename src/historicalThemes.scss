@@ -169,6 +169,11 @@
   font-family: "morganiteMedium";
   src: url("./styles/sixth/Morganite-Thin.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "sixthBody";
+  src: url("./styles/sixth/alrightsans-light.otf") format("opentype");
+}
 //
 
 //VARIABLES
@@ -1802,7 +1807,7 @@ $font-boldbasker: 'Baskerville';
     text-align: left;
     width: auto;
   }
-  h3, h4 {
+  h2, h3, h4 {
     color: rgb(255, 0, 25);
     position: relative;
     font-family: 'bernsteinBold';
@@ -1944,6 +1949,13 @@ $font-boldbasker: 'Baskerville';
     font-size: 1.1em;
     text-align: left;
     header {
+      h1 {
+        position: relative;
+        font-family: 'bernsteinBold';
+        font-size: 2em !important;
+        text-align: left;
+        width: auto;
+      }
       table {
         column-span: all !important;
         display: block;
@@ -2032,7 +2044,7 @@ $font-boldbasker: 'Baskerville';
             0 0 50px #fff,
         }
       }
-      h3 {
+      h2, h3 {
         order: 2;
         font-family: "stolzLight", sans-serif;
         font-size: 3em;
@@ -2094,13 +2106,14 @@ $font-boldbasker: 'Baskerville';
       }
       p {
         display: inline-block;
-        font-family: 'Playfair Display', serif;
+        font-family: "sixthBody", serif;
         font-size: 1.2em;
         width: auto;
         columns: 2 300px;
         column-gap: 10rem;
         width: 80vw;
         padding: 0 5rem;
+        line-height: 1.2em;
         text-align: justify;
       }
       figure {
@@ -2171,7 +2184,7 @@ $font-boldbasker: 'Baskerville';
     display: inline-block;
     font-family: "stolzLight", sans-serif;
     p {
-      font-family: "stolzLight", sans-serif;
+      font-family: "sixthBody", sans-serif;
     }
     ol, ul {
       font-family: 'Playfair Display', serif;

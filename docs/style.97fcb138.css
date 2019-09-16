@@ -774,6 +774,10 @@ html {
   font-family: "morganiteMedium";
   src: url("/Morganite-Thin.c9110b61.ttf") format("truetype");
 }
+@font-face {
+  font-family: "sixthBody";
+  src: url("/alrightsans-light.cdf6f725.otf") format("opentype");
+}
 @media screen and (max-width: 600px) {
   body {
     font-size: smaller;
@@ -2194,7 +2198,7 @@ html {
   text-align: left;
   width: auto;
 }
-.reader.fifth h3, .reader.fifth h4 {
+.reader.fifth h2, .reader.fifth h3, .reader.fifth h4 {
   color: #ff0019;
   position: relative;
   font-family: "bernsteinBold";
@@ -2334,6 +2338,13 @@ html {
   font-size: 1.1em;
   text-align: left;
 }
+.reader.fifth .left header h1, .reader.fifth .right header h1 {
+  position: relative;
+  font-family: "bernsteinBold";
+  font-size: 2em !important;
+  text-align: left;
+  width: auto;
+}
 .reader.fifth .left header table, .reader.fifth .right header table {
   column-span: all !important;
   display: block;
@@ -2420,7 +2431,7 @@ html {
 .reader.sixth article header h1:hover {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 50px #fff;
 }
-.reader.sixth article header h3 {
+.reader.sixth article header h2, .reader.sixth article header h3 {
   order: 2;
   font-family: "stolzLight", sans-serif;
   font-size: 3em;
@@ -2478,13 +2489,14 @@ html {
 }
 .reader.sixth article main p {
   display: inline-block;
-  font-family: "Playfair Display", serif;
+  font-family: "sixthBody", serif;
   font-size: 1.2em;
   width: auto;
   columns: 2 300px;
   column-gap: 10rem;
   width: 80vw;
   padding: 0 5rem;
+  line-height: 1.2em;
   text-align: justify;
 }
 .reader.sixth article main figure {
@@ -2539,7 +2551,7 @@ html {
   font-family: "stolzLight", sans-serif;
 }
 .reader.sixth .left p, .reader.sixth .right p {
-  font-family: "stolzLight", sans-serif;
+  font-family: "sixthBody", sans-serif;
 }
 .reader.sixth .left ol, .reader.sixth .left ul, .reader.sixth .right ol, .reader.sixth .right ul {
   font-family: "Playfair Display", serif;
