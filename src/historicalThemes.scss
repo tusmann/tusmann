@@ -192,6 +192,7 @@ $rimpa-yellow: #eac543;
 $rimpa-blue: #06558e;
 $rimpa-green: #2a9957;
 $rimpa-red: #e04d21;
+$rimpa-gold: 	#d1c279;
 
 //tschichold
 $font-futura-black: 'FuturaFuturisBlackC';
@@ -507,11 +508,7 @@ $font-boldbasker: 'Baskerville';
     font-size: 100%;
     overflow-x: auto;
     overflow-y: auto;
-    p,
-    h1,
-    h2,
-    h3,
-    h4 {
+    p, h1, h2, h3, h4 {
       background: -webkit-linear-gradient(
         left,
         $rimpa-text-color,
@@ -616,13 +613,23 @@ $font-boldbasker: 'Baskerville';
       padding-bottom: 2%;
       figure {
         writing-mode: horizontal-tb;
-        margin: auto 3rem;
+        margin: auto 2rem;
         img {
-          height: 30rem;
+          height: 450px;
           object-fit: contain;
           display: block;
           box-align: center;
         }
+      }
+      .bird {
+        content: "";
+        display: inline-block;
+        background-image: url(./styles/second/bird.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 110%;
+        width: 400px;
+        padding-top: 80vh;
       }
     }
     main {
@@ -630,6 +637,33 @@ $font-boldbasker: 'Baskerville';
       margin: 2rem 4rem 6rem 2rem;
       column-count: 3;
       column-gap: 2vw;
+      column-rule-color: $rimpa-gold;
+      column-rule-style: groove;
+      column-rule-width: 2px;
+      h2, h3, h4 {
+        background: linear-gradient(to left, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,$rimpa-gold 40%,#3a2c0f 78%); 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #fff;
+        position: relative;
+      text-transform: uppercase;	
+      margin: 0;
+      font-weight: 400;
+    }
+    
+    h2:after {
+        background: none;
+        content: attr(data-heading);
+        left: 0;
+      top: 0;
+        z-index: -1;
+        position: absolute;
+        text-shadow: 
+        -1px 0 1px #c6bb9f, 
+        0 1px 1px #c6bb9f, 
+        5px 5px 10px rgba(0, 0, 0, 0.4),
+        -5px -5px 10px rgba(0, 0, 0, 0.4);
+    }
       h1,
       h2,
       h3,
@@ -681,6 +715,9 @@ $font-boldbasker: 'Baskerville';
       text-align: center;
       writing-mode: horizontal-tb;
       text-orientation: upright;
+      h1, h2, h3, h4  {
+        writing-mode: horizontal-tb;
+      }
     }
   }
 

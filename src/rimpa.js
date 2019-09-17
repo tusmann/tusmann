@@ -1,4 +1,5 @@
 function rimpaLogic() {
+  function addColors() {
   const image = document.querySelectorAll(".reader figure img");
   const colorsArray = ["image-background-color-yellow", "image-background-color-green", "image-background-color-blue", "image-background-color-red"]
 
@@ -13,5 +14,18 @@ function rimpaLogic() {
     backgroundColorDiv.appendChild(currentImageElement)
   };
 }
+addColors()
 
+function addBird() {
+  const header = document.querySelector("header")
+  const headerChildren = Array.from(header.children)
+  var checkImg = true;
+  headerChildren.forEach(node => {
+     if (node.tagName == "FIGURE" && node.tagName == "IMG") {
+       
+     }
+  })
+ 
+}
+}
 export default rimpaLogic;

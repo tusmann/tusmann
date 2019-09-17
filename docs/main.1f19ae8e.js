@@ -1175,20 +1175,33 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 function rimpaLogic() {
-  var image = document.querySelectorAll(".reader figure img");
-  var colorsArray = ["image-background-color-yellow", "image-background-color-green", "image-background-color-blue", "image-background-color-red"];
+  function addColors() {
+    var image = document.querySelectorAll(".reader figure img");
+    var colorsArray = ["image-background-color-yellow", "image-background-color-green", "image-background-color-blue", "image-background-color-red"];
 
-  for (var i = 0; i < image.length; i++) {
-    var currentImageElement = image[i];
-    var imageParent = currentImageElement.parentNode;
-    var backgroundColorDiv = document.createElement("div");
-    var currentColor = colorsArray[i % colorsArray.length];
-    backgroundColorDiv.classList.add(currentColor);
-    imageParent.replaceChild(backgroundColorDiv, currentImageElement);
-    backgroundColorDiv.appendChild(currentImageElement);
+    for (var i = 0; i < image.length; i++) {
+      var currentImageElement = image[i];
+      var imageParent = currentImageElement.parentNode;
+      var backgroundColorDiv = document.createElement("div");
+      var currentColor = colorsArray[i % colorsArray.length];
+      backgroundColorDiv.classList.add(currentColor);
+      imageParent.replaceChild(backgroundColorDiv, currentImageElement);
+      backgroundColorDiv.appendChild(currentImageElement);
+    }
+
+    ;
   }
 
-  ;
+  addColors();
+
+  function addBird() {
+    var header = document.querySelector("header");
+    var headerChildren = Array.from(header.children);
+    var checkImg = true;
+    headerChildren.forEach(function (node) {
+      if (node.tagName == "FIGURE" && node.tagName == "IMG") {}
+    });
+  }
 }
 
 var _default = rimpaLogic;
@@ -2003,7 +2016,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "9653" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "12606" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
