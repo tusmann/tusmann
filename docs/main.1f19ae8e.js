@@ -1407,22 +1407,6 @@ function getMeta(metaName) {
 */
 
 exports.default = _default;
-},{}],"tschichold.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-function tschicholdLogic() {
-  var element = document.querySelector('meta[property~="dc:publisher"]');
-  var content = element && element.getAttribute("content");
-  console.log(content);
-}
-
-var _default = tschicholdLogic;
-exports.default = _default;
 },{}],"styles.js":[function(require,module,exports) {
 "use strict";
 
@@ -1453,10 +1437,9 @@ var _ = _interopRequireDefault(require("./2020"));
 
 var _rollingDom = _interopRequireDefault(require("./rollingDom"));
 
-var _tschichold = _interopRequireDefault(require("./tschichold"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//import tschicholdLogic from "./tschichold";
 var styles = [{
   name: "manuzio",
   icon: _aldus_leaf.default,
@@ -1467,8 +1450,8 @@ var styles = [{
   logic: _rimpa.default
 }, {
   name: "third",
-  icon: _bauhaus.default,
-  logic: _tschichold.default
+  icon: _bauhaus.default //logic: tschicholdLogic
+
 }, {
   name: "dungeon",
   icon: _die.default,
@@ -1484,7 +1467,7 @@ var styles = [{
 }];
 var _default = styles;
 exports.default = _default;
-},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./images/die.svg":"images/die.svg","./images/rollingstones.svg":"images/rollingstones.svg","./images/eye.svg":"images/eye.svg","./manuzio":"manuzio.js","./dungeon":"dungeon.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js","./tschichold":"tschichold.js"}],"customStyleLogic.js":[function(require,module,exports) {
+},{"./images/bauhaus.svg":"images/bauhaus.svg","./images/aldus_leaf.svg":"images/aldus_leaf.svg","./images/sakura.svg":"images/sakura.svg","./images/die.svg":"images/die.svg","./images/rollingstones.svg":"images/rollingstones.svg","./images/eye.svg":"images/eye.svg","./manuzio":"manuzio.js","./dungeon":"dungeon.js","./rimpa":"rimpa.js","./2020":"2020.js","./rollingDom":"rollingDom.js"}],"customStyleLogic.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1546,7 +1529,6 @@ function _addSpecialArticle() {
 
           case 5:
             rightArticle = _context.sent;
-            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1609,7 +1591,6 @@ function _addArticle() {
 
           case 2:
             article = _context2.sent;
-            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1658,7 +1639,6 @@ var _articleParser = require("./article-parser");
 
 var _addArticle = require("./addArticle.js");
 
-//article dictionary with title=key and url=value
 var articles = [{
   title: "Japan's Prisons Are a Haven for Elderly Women",
   url: "./articles/Bloomberg/ShihoFukada.html"
@@ -1927,14 +1907,6 @@ var _addDocumentationPages = require("./addDocumentationPages");
 
 var _overlayMenu = require("./overlayMenu");
 
-// polyfill needed for using for loop on a dictionary
-
-/*
- * Object.prototype.forEach() polyfill
- * https://gomakethings.com/looping-through-objects-with-es6/
- * @author Chris Ferdinandi
- * @license MIT
- */
 if (!Object.prototype.forEach) {
   Object.defineProperty(Object.prototype, "forEach", {
     value: function value(callback, thisArg) {
@@ -1992,8 +1964,6 @@ function addArticleGlobalUrl() {
 }
 
 addArticleGlobalUrl();
-AOS.init();
-window.addEventListener('load', AOS.refresh);
 },{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js","./articlesSelectionButtons":"articlesSelectionButtons.js","./createThemeButtons":"createThemeButtons.js","./sidebar":"sidebar.js","./addDocumentationPages":"addDocumentationPages.js","./overlayMenu":"overlayMenu.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -2022,7 +1992,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "19719" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54457" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

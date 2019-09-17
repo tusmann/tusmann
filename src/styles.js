@@ -9,7 +9,7 @@ import dungeonLogic from "./dungeon";
 import rimpaLogic from "./rimpa";
 import twentyLogic from "./2020";
 import rollingDom from "./rollingDom";
-import tschicholdLogic from "./tschichold";
+//import tschicholdLogic from "./tschichold";
 
 const styles = [
     {
@@ -24,8 +24,8 @@ const styles = [
     },
     {
       name: "third",
-      icon: bauhaus,
-      logic: tschicholdLogic
+      icon: bauhaus
+      //logic: tschicholdLogic
     },
     {
       name: "dungeon",
