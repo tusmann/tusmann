@@ -230,6 +230,11 @@ html {
   background-image: linear-gradient(to right bottom, #222, #e31619);
 }
 
+.card__side--back-4 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#222), to(#e31619));
+  background-image: linear-gradient(to right bottom, #222, #e31619);
+}
+
 .card__side--back-5 {
   background-image: -webkit-gradient(linear, left top, right bottom, from(#d4d4d4), to(#ff0019));
   background-image: linear-gradient(to right bottom, #d4d4d4, #ff0019);
@@ -277,8 +282,8 @@ html {
 }
 
 .card__picture--4 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#24597B), to(#00497A)), url(/manuzio-card-front.8f60d575.jpg);
-  background-image: linear-gradient(to right bottom, #24597B, #00497A), url(/manuzio-card-front.8f60d575.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#222), to(#e31619)), url(/ded-card-front.c5365650.jpg);
+  background-image: linear-gradient(to right bottom, #222, #e31619), url(/ded-card-front.c5365650.jpg);
 }
 
 .card__picture--5 {
@@ -317,7 +322,7 @@ html {
 }
 
 .card4 {
-  color: #00497A;
+  color: #e31619;
 }
 
 .card5 {

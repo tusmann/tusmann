@@ -4,8 +4,8 @@ $card-color-2-light: #ecca4d;
 $card-color-2-dark: #279d53;
 $card-color-3-light: #222 ;
 $card-color-3-dark: #e31619;
-$card-color-4-light:  #24597B;
-$card-color-4-dark: #00497A;
+$card-color-4-light:  #222;
+$card-color-4-dark: #e31619;
 $card-color-5-light: #d4d4d4;
 $card-color-5-dark: #ff0019;
 $card-color-6-light: #fff;
@@ -140,6 +140,16 @@ $card-color-6-dark: #222;
     );
     background-image: linear-gradient(to right bottom, $card-color-3-light, $card-color-3-dark);
   }
+  .card__side--back-4 {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right bottom,
+      from($card-color-4-light),
+      to($card-color-4-dark)
+    );
+    background-image: linear-gradient(to right bottom, $card-color-4-light, $card-color-4-dark);
+  }
 
   .card__side--back-5 {
     background-image: -webkit-gradient(
@@ -224,9 +234,9 @@ $card-color-6-dark: #222;
         from($card-color-4-light),
         to($card-color-4-dark)
       ),
-      url(./cards/manuzio-card-front.jpg);
+      url(./cards/ded-card-front.jpg);
     background-image: linear-gradient(to right bottom, $card-color-4-light, $card-color-4-dark),
-      url(./cards/manuzio-card-front.jpg);
+      url(./cards/ded-card-front.jpg);
   }
   .card__picture--5 {
     background-image: -webkit-gradient(
