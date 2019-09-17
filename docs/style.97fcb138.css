@@ -2232,7 +2232,7 @@ html {
     border-bottom: 1px solid #000;
     position: absolute;
     width: 85vw;
-    top: 6.3rem;
+    top: 17.3%;
     left: 53.3%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
@@ -2383,7 +2383,6 @@ html {
   }
   .reader.fifth article table {
     display: block;
-    border: 1px solid black;
     width: auto;
     overflow: auto;
   }
@@ -2440,7 +2439,10 @@ html {
   .reader.fifth .left header table, .reader.fifth .right header table {
     column-span: all !important;
     display: block;
-    border: 1px solid black;
+    padding-bottom: 1rem;
+  }
+  .reader.fifth .left header table td, .reader.fifth .right header table td {
+    padding: 0 0.3rem;
   }
   .reader.fifth .left header p, .reader.fifth .right header p {
     text-align: left;
@@ -2491,7 +2493,7 @@ html {
     border-bottom: 1px solid #000;
     position: absolute;
     width: 85vw;
-    top: 6.3rem;
+    top: 12rem;
     left: 53.3%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
@@ -2507,6 +2509,7 @@ html {
     background: #000;
   }
   .reader.fifth article {
+    font-size: smaller;
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     columns: 3 200px;
@@ -2642,7 +2645,6 @@ html {
   }
   .reader.fifth article table {
     display: block;
-    border: 1px solid black;
     width: auto;
     overflow: auto;
   }
@@ -2684,7 +2686,7 @@ html {
     color: inherit;
   }
   .reader.fifth .left, .reader.fifth .right {
-    columns: 1 auto;
+    width: 50vw;
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     text-align: left;
@@ -2692,14 +2694,13 @@ html {
   .reader.fifth .left header h1, .reader.fifth .right header h1 {
     position: relative;
     font-family: "bernsteinBold";
-    font-size: 2em !important;
+    font-size: 1.8em !important;
     text-align: left;
     width: auto;
   }
   .reader.fifth .left header table, .reader.fifth .right header table {
     column-span: all !important;
     display: block;
-    border: 1px solid black;
   }
   .reader.fifth .left header p, .reader.fifth .right header p {
     text-align: left;
@@ -2748,7 +2749,6 @@ html {
 }
 @media (min-width: 768px) {
   .reader.sixth article {
-    cursor: url("/2020-card-front.2f797e7a.gif"), auto;
     background-color: #222;
     color: #f6f3ea;
     /*.parallax {
@@ -3088,7 +3088,7 @@ html {
 }
 @media (max-width: 768px) {
   .reader.sixth article {
-    cursor: url("/2020-card-front.2f797e7a.gif"), auto;
+    font-size: smaller;
     background-color: #222;
     color: #f6f3ea;
     /*.parallax {
@@ -3243,7 +3243,7 @@ html {
     width: auto;
   }
   .reader.sixth .left, .reader.sixth .right {
-    width: 44.5vw;
+    width: auto;
     display: inline-block;
     border-right: 0.5rem solid white;
     overflow: hidden;
@@ -3254,6 +3254,7 @@ html {
   .reader.sixth .left header h1, .reader.sixth .right header h1 {
     width: inherit;
     font-size: 2em;
+    margin-left: -2rem;
   }
   .reader.sixth .left header h1:hover, .reader.sixth .right header h1:hover {
     text-shadow: none;
@@ -3262,7 +3263,7 @@ html {
     font-family: "sixthBody", sans-serif;
     font-size: 1em;
     text-align: left;
-    padding-left: 1rem;
+    padding-left: 0rem;
   }
   .reader.sixth .left header h1 p:first-of-type, .reader.sixth .right header h1 p:first-of-type {
     padding-bottom: 2rem;
@@ -3284,15 +3285,15 @@ html {
   .reader.sixth .left header table tr, .reader.sixth .right header table tr {
     font-family: "windSong", serif;
   }
-  .reader.sixth .left h2, .reader.sixth .left h3, .reader.sixth .right h2, .reader.sixth .right h3 {
+  .reader.sixth .left h2, .reader.sixth .right h2 {
     font-family: "stolzLight", sans-serif;
     font-size: 3em;
-    padding: 3rem 2rem 2.5rem 2rem;
+    padding: 3rem 2rem 2.5rem 0rem;
     text-align: center;
     text-transform: uppercase;
     margin: auto;
   }
-  .reader.sixth .left h2:hover, .reader.sixth .left h3:hover, .reader.sixth .right h2:hover, .reader.sixth .right h3:hover {
+  .reader.sixth .left h2:hover, .reader.sixth .right h2:hover {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
   }
   .reader.sixth .left p, .reader.sixth .right p {
@@ -3419,7 +3420,7 @@ html {
     margin-left: 1.5rem;
   }
   .reader.sixth .left section figure h3, .reader.sixth .right section figure h3 {
-    margin-left: -30rem;
+    margin-left: -10rem;
   }
   .reader.sixth .right h1 {
     padding-bottom: 2.5rem;
