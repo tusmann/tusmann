@@ -1895,6 +1895,7 @@ h1 {
     font-size: 1.5rem;
     font-family: $font-sectra;
     color: $secondary-heading-color;
+    font-weight: bold;
   }
   a {
     color: #286278;
@@ -1907,10 +1908,10 @@ h1 {
     padding: 1rem 0 1rem 0;
   }
   .bioPic {
-    width: 100%;
-    display: table-cell;
+    width: 15vw;
+    clip-path: circle();
     vertical-align: middle;
-    padding: 1rem 0 0 0;
+    //padding: 1rem 0 0 0;
   }
   .bioText {
     font-size: 1rem;

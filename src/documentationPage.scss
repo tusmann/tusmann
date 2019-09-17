@@ -2,14 +2,14 @@ $card-color-1-light: #E8D0AE;
 $card-color-1-dark: #806261;
 $card-color-2-light: #ecca4d;
 $card-color-2-dark: #279d53;
-$card-color-3-light: #fff0e2 ;
+$card-color-3-light: #222 ;
 $card-color-3-dark: #e31619;
 $card-color-4-light:  #24597B;
 $card-color-4-dark: #00497A;
-$card-color-5-light: #796C63;
-$card-color-5-dark: #796C63;
-$card-color-6-light: #796C63;
-$card-color-6-dark: #796C63;
+$card-color-5-light: #d4d4d4;
+$card-color-5-dark: #ff0019;
+$card-color-6-light: #fff;
+$card-color-6-dark: #222;
 
 .documentationPageSection{
     font-size: 1.2rem;
@@ -140,6 +140,28 @@ $card-color-6-dark: #796C63;
     );
     background-image: linear-gradient(to right bottom, $card-color-3-light, $card-color-3-dark);
   }
+
+  .card__side--back-5 {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right bottom,
+      from($card-color-5-light),
+      to($card-color-5-dark)
+    );
+    background-image: linear-gradient(to right bottom, $card-color-5-light, $card-color-5-dark);
+  }
+
+  .card__side--back-6 {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right bottom,
+      from($card-color-6-light),
+      to($card-color-6-dark)
+    );
+    background-image: linear-gradient(to right bottom, $card-color-6-light, $card-color-6-dark);
+  }
   .card:hover .card__side--front {
     -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
@@ -150,6 +172,7 @@ $card-color-6-dark: #796C63;
   }
   .card__picture {
     background-size: cover;
+    background-position: center;
     height: 23rem;
     background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -213,9 +236,10 @@ $card-color-6-dark: #796C63;
         from($card-color-5-light),
         to($card-color-5-dark)
       ),
-      url(./cards/manuzio-card-front.jpg);
+      url(./cards/rollingdom-card-front.jpg);
     background-image: linear-gradient(to right bottom, $card-color-5-light, $card-color-5-dark),
-      url(./cards/manuzio-card-front.jpg);
+      url(./cards/rollingdom-card-front.jpg);
+      background-size: cover;
   }
   .card__picture--6 {
     background-image: -webkit-gradient(
@@ -225,15 +249,16 @@ $card-color-6-dark: #796C63;
         from($card-color-6-light),
         to($card-color-6-dark)
       ),
-      url(./cards/manuzio-card-front.jpg);
+      url(./cards/2020-card-front.gif);
     background-image: linear-gradient(to right bottom, $card-color-6-light, $card-color-6-dark),
-      url(./cards/manuzio-card-front.jpg);
+      url(./cards/2020-card-front.gif);
   }
 
   .card__heading {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
+    text-transform: capitalize;
     font-weight: 300;
-    text-transform: uppercase;
+    text-align: center;
     vertical-align: center;
     color: black;
     position: absolute;
