@@ -222,7 +222,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "54675" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "20728" + '/');
+>>>>>>> 0e3b9a22015ed0ed900e417893cfef30f994e4ef
 
   ws.onmessage = function (event) {
     checkedAssets = {};

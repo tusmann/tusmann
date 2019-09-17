@@ -1011,7 +1011,11 @@ html {
   overflow-x: auto;
   overflow-y: auto;
 }
-.reader.rimpa article p, .reader.rimpa article h1, .reader.rimpa article h2, .reader.rimpa article h3, .reader.rimpa article h4 {
+.reader.rimpa article p,
+.reader.rimpa article h1,
+.reader.rimpa article h2,
+.reader.rimpa article h3,
+.reader.rimpa article h4 {
   background: -webkit-linear-gradient(left, #210102, #7b562a);
   background: -o-linear-gradient(right, #210102, #7b562a);
   background: -moz-linear-gradient(right, #210102, #7b562a);
@@ -1111,7 +1115,7 @@ html {
   display: block;
   box-align: center;
 }
-.reader.rimpa article header .bird {
+.reader.rimpa article .bird::before {
   content: "";
   display: inline-block;
   background-image: url(/bird.2df1bcfe.png);
@@ -1129,8 +1133,11 @@ html {
   column-rule-style: groove;
   column-rule-width: 2px;
 }
-.reader.rimpa article main h2, .reader.rimpa article main h3, .reader.rimpa article main h4 {
-  background: linear-gradient(to left, #cfc09f 22%, #634f2c 24%, #cfc09f 26%, #cfc09f 27%, #d1c279 40%, #3a2c0f 78%);
+.reader.rimpa article main h2,
+.reader.rimpa article main h3,
+.reader.rimpa article main h4 {
+  background: #635a2c;
+  background: radial-gradient(circle, #635a2c 0%, #9e8f46 64%, #c5b358 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #fff;
@@ -1201,7 +1208,10 @@ html {
   writing-mode: horizontal-tb;
   text-orientation: upright;
 }
-.reader.rimpa article footer h1, .reader.rimpa article footer h2, .reader.rimpa article footer h3, .reader.rimpa article footer h4 {
+.reader.rimpa article footer h1,
+.reader.rimpa article footer h2,
+.reader.rimpa article footer h3,
+.reader.rimpa article footer h4 {
   writing-mode: horizontal-tb;
 }
 .reader.rimpa .left article,
@@ -1293,7 +1303,9 @@ html {
     grid-gap: 1rem;
     transform: rotate(-30deg);
   }
-  .reader.third article header h1, .reader.third article header h2, .reader.third article header h3 {
+  .reader.third article header h1,
+.reader.third article header h2,
+.reader.third article header h3 {
     font-size: calc(1rem + 1.4vw);
     margin: 0;
     font-weight: 700;
@@ -1310,7 +1322,8 @@ html {
     margin-top: -10px;
     margin-right: -10px;
   }
-  .reader.third article header h2, .reader.third article header h3 {
+  .reader.third article header h2,
+.reader.third article header h3 {
     grid-column: 1/4;
     grid-row: 1/2;
     text-align: right;
@@ -1318,7 +1331,8 @@ html {
     font-size: 1.3rem;
     border-bottom: 15px solid #f9423a;
   }
-  .reader.third article header h2::first-letter, .reader.third article header h3::first-letter {
+  .reader.third article header h2::first-letter,
+.reader.third article header h3::first-letter {
     color: #0077c0;
     font-size: calc(3rem + 2vw);
     font-family: "WaddemChooNFW01";
@@ -1412,7 +1426,8 @@ html {
   .reader.third article main h2:hover {
     padding-right: 2vw;
   }
-  .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img, .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
+  .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img,
+.reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
     column-span: all;
   }
   .reader.third article main figure {
@@ -1446,12 +1461,13 @@ html {
     margin-bottom: 2vh;
     /*&:nth-of-type(4) {
 
-        border-bottom: 4px solid #444444;
-        column-span: all;
+          border-bottom: 4px solid #444444;
+          column-span: all;
 
-    }*/
+      }*/
   }
-  .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img, .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
+  .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img,
+.reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
     column-span: all;
   }
   .reader.third article main section:nth-of-type(2n) figure:nth-of-type(1) img {
@@ -1511,7 +1527,9 @@ html {
     padding-left: 5px;
     padding-top: 5px;
   }
-  .reader.third article h1, .reader.third article h2, .reader.third article h3 {
+  .reader.third article h1,
+.reader.third article h2,
+.reader.third article h3 {
     margin: 0;
     text-transform: uppercase;
   }
@@ -3117,12 +3135,14 @@ html {
   }
 }
 
-.reader.fifth :link, .reader.fifth :visited {
+.reader.fifth :link,
+.reader.fifth :visited {
   color: #8d000e;
   font-style: italic;
 }
+
 @media (min-width: 768px) {
-  .reader.fifth .publisher {
+  .publisher {
     font-family: rollingFont;
     font-size: 2.5em;
     font-weight: bold;
@@ -3134,12 +3154,22 @@ html {
     border-bottom: 1px solid #000;
     position: absolute;
     width: 85vw;
+    top: 6.3rem;
+    left: 53.3%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  .publisher:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 85vw;
     top: 17.3%;
     left: 53.3%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
   }
-  .reader.fifth .publisher:before {
+  .publisher:before:before {
     content: "";
     display: block;
     position: absolute;
@@ -3149,7 +3179,7 @@ html {
     height: 3px;
     background: #000;
   }
-  .reader.fifth article {
+  .publisher article {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     columns: 3 200px;
@@ -3162,18 +3192,18 @@ html {
     border-right: -1rem;
     padding: 5rem 4rem 2rem;
   }
-  .reader.fifth article::after {
+  .publisher article::after {
     content: "";
     border-top: 0.1rem solid #222;
   }
-  .reader.fifth article h1 {
+  .publisher article h1 {
     position: relative;
     font-family: "bernsteinBold";
     font-size: 4em;
     text-align: left;
     width: auto;
   }
-  .reader.fifth article h4 {
+  .publisher article h4 {
     color: #ff0019;
     position: relative;
     font-family: "bernsteinBold";
@@ -3185,14 +3215,14 @@ html {
     padding: 0.5rem 1rem;
     column-span: 2;
   }
-  .reader.fifth article h1 {
+  .publisher article h1 {
     position: relative;
     font-family: "bernsteinBold";
     font-size: 4em;
     text-align: left;
     width: auto;
   }
-  .reader.fifth article h2, .reader.fifth article h3, .reader.fifth article h4 {
+  .publisher article h2, .publisher article h3, .publisher article h4 {
     color: #ff0019;
     position: relative;
     font-family: "bernsteinBold";
@@ -3204,23 +3234,23 @@ html {
     padding: 0.5rem 1rem;
     column-span: 2;
   }
-  .reader.fifth article img {
+  .publisher article img {
     object-fit: contain;
     width: 25vw;
     height: auto;
     padding-top: 1rem;
   }
-  .reader.fifth article figure {
+  .publisher article figure {
     text-align: center;
     padding: 0 0;
   }
-  .reader.fifth article figure img {
+  .publisher article figure img {
     object-fit: contain;
     width: 25vw;
     height: auto;
     padding-top: 1rem;
   }
-  .reader.fifth article figure figcaption {
+  .publisher article figure figcaption {
     font-family: "fifthCorpus", sans-serif;
     font-size: 0.8em;
     display: block;
@@ -3230,7 +3260,7 @@ html {
     bottom: 4.5rem;
     right: -2rem;
   }
-  .reader.fifth article p {
+  .publisher article p {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     text-align: justify;
@@ -3239,10 +3269,10 @@ html {
     padding: 1rem 0;
     border-bottom: #222;
   }
-  .reader.fifth article main {
+  .publisher article main {
     padding: 0.5rem;
   }
-  .reader.fifth article main p {
+  .publisher article main p {
     padding: 0.5rem 0;
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
@@ -3250,24 +3280,24 @@ html {
     position: relative;
     color: black;
   }
-  .reader.fifth article main p:first-of-type {
+  .publisher article main p:first-of-type {
     border-bottom: 0.05rem solid black;
   }
-  .reader.fifth article main p:nth-of-type(2)::first-letter {
+  .publisher article main p:nth-of-type(2)::first-letter {
     text-transform: uppercase;
     font-size: 3em;
     display: inline;
   }
-  .reader.fifth article main p em {
+  .publisher article main p em {
     text-transform: uppercase;
     padding: 5rem 0;
   }
-  .reader.fifth article mark {
+  .publisher article mark {
     font-style: italic;
     background-color: white;
     color: inherit;
   }
-  .reader.fifth article footer {
+  .publisher article footer {
     font-size: 0.8em;
     column-span: all !important;
     text-transform: uppercase;
@@ -3276,19 +3306,19 @@ html {
     padding-bottom: 3rem;
     text-align: right;
   }
-  .reader.fifth article footer p {
+  .publisher article footer p {
     text-align: right;
     padding: 0;
   }
-  .reader.fifth article footer p:first-of-type {
+  .publisher article footer p:first-of-type {
     padding-top: 1.5rem;
   }
-  .reader.fifth article table {
+  .publisher article table {
     display: block;
     width: auto;
     overflow: auto;
   }
-  .reader.fifth article table th {
+  .publisher article table th {
     text-transform: uppercase;
     font-weight: bold;
     border: 1px solid black;
@@ -3303,7 +3333,7 @@ html {
       z-index: 100;
     }*/
   }
-  .reader.fifth article table td {
+  .publisher article table td {
     border: 1px solid black;
     transition: 0.25s;
     /*&:hover {
@@ -3315,75 +3345,91 @@ html {
       z-index: 100;
     }*/
   }
-  .reader.fifth article ol {
+  .publisher article ol {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     color: black;
   }
-  .reader.fifth article ol li {
+  .publisher article ol li {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
   }
-  .reader.fifth .left, .reader.fifth .right {
+  .publisher .left,
+.publisher .right {
     columns: 1 auto;
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     text-align: left;
   }
-  .reader.fifth .left header h1, .reader.fifth .right header h1 {
+  .publisher .left header h1,
+.publisher .right header h1 {
     position: relative;
     font-family: "bernsteinBold";
     font-size: 2em !important;
     text-align: left;
     width: auto;
   }
-  .reader.fifth .left header table, .reader.fifth .right header table {
+  .publisher .left header table,
+.publisher .right header table {
     column-span: all !important;
     display: block;
     padding-bottom: 1rem;
   }
-  .reader.fifth .left header table td, .reader.fifth .right header table td {
+  .publisher .left header table td,
+.publisher .right header table td {
     padding: 0 0.3rem;
   }
-  .reader.fifth .left header p, .reader.fifth .right header p {
+  .publisher .left header p,
+.publisher .right header p {
     text-align: left;
   }
-  .reader.fifth .left ul, .reader.fifth .left ol, .reader.fifth .right ul, .reader.fifth .right ol {
+  .publisher .left ul,
+.publisher .left ol,
+.publisher .right ul,
+.publisher .right ol {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     color: black;
     list-style-type: decimal;
     padding: 1rem 0;
   }
-  .reader.fifth .left ul li, .reader.fifth .left ol li, .reader.fifth .right ul li, .reader.fifth .right ol li {
+  .publisher .left ul li,
+.publisher .left ol li,
+.publisher .right ul li,
+.publisher .right ol li {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     padding: 1rem 0;
   }
-  .reader.fifth .left ul li ol, .reader.fifth .left ol li ol, .reader.fifth .right ul li ol, .reader.fifth .right ol li ol {
+  .publisher .left ul li ol,
+.publisher .left ol li ol,
+.publisher .right ul li ol,
+.publisher .right ol li ol {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     list-style-type: lower-roman;
     padding-left: 2rem;
   }
-  .reader.fifth .left p, .reader.fifth .right p {
+  .publisher .left p,
+.publisher .right p {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     text-align: justify;
     color: black;
   }
-  .reader.fifth .left em, .reader.fifth .right em {
+  .publisher .left em,
+.publisher .right em {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     font-style: italic;
   }
 }
-@media (max-width: 768px) {
-  .reader.fifth .publisher {
+@media (min-width: 768px) and (max-width: 768px) {
+  .publisher {
     font-family: rollingFont;
     font-size: 2.5em;
     font-weight: bold;
@@ -3400,7 +3446,7 @@ html {
     margin-right: -50%;
     transform: translate(-50%, -50%);
   }
-  .reader.fifth .publisher:before {
+  .publisher:before {
     content: "";
     display: block;
     position: absolute;
@@ -3410,7 +3456,8 @@ html {
     height: 3px;
     background: #000;
   }
-  .reader.fifth article {
+
+  article {
     font-size: smaller;
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
@@ -3424,18 +3471,18 @@ html {
     border-right: -1rem;
     padding: 5rem 4rem 2rem;
   }
-  .reader.fifth article::after {
+  article::after {
     content: "";
     border-top: 0.1rem solid #222;
   }
-  .reader.fifth article h1 {
+  article h1 {
     position: relative;
     font-family: "bernsteinBold";
     font-size: 4em;
     text-align: left;
     width: auto;
   }
-  .reader.fifth article h4 {
+  article h4 {
     color: #ff0019;
     position: relative;
     font-family: "bernsteinBold";
@@ -3447,14 +3494,14 @@ html {
     padding: 0.5rem 1rem;
     column-span: 2;
   }
-  .reader.fifth article h1 {
+  article h1 {
     position: relative;
     font-family: "bernsteinBold";
     font-size: 4em;
     text-align: left;
     width: auto;
   }
-  .reader.fifth article h2, .reader.fifth article h3, .reader.fifth article h4 {
+  article h2, article h3, article h4 {
     color: #ff0019;
     position: relative;
     font-family: "bernsteinBold";
@@ -3466,23 +3513,23 @@ html {
     padding: 0.5rem 1rem;
     column-span: 2;
   }
-  .reader.fifth article img {
+  article img {
     object-fit: contain;
     width: 25vw;
     height: auto;
     padding-top: 1rem;
   }
-  .reader.fifth article figure {
+  article figure {
     text-align: center;
     padding: 0 0;
   }
-  .reader.fifth article figure img {
+  article figure img {
     object-fit: contain;
     width: 25vw;
     height: auto;
     padding-top: 1rem;
   }
-  .reader.fifth article figure figcaption {
+  article figure figcaption {
     font-family: "fifthCorpus", sans-serif;
     font-size: 0.8em;
     display: block;
@@ -3492,7 +3539,7 @@ html {
     bottom: 4.5rem;
     right: -2rem;
   }
-  .reader.fifth article p {
+  article p {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     text-align: justify;
@@ -3501,10 +3548,10 @@ html {
     padding: 1rem 0;
     border-bottom: #222;
   }
-  .reader.fifth article main {
+  article main {
     padding: 0.5rem;
   }
-  .reader.fifth article main p {
+  article main p {
     padding: 0.5rem 0;
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
@@ -3512,24 +3559,24 @@ html {
     position: relative;
     color: black;
   }
-  .reader.fifth article main p:first-of-type {
+  article main p:first-of-type {
     border-bottom: 0.05rem solid black;
   }
-  .reader.fifth article main p:nth-of-type(2)::first-letter {
+  article main p:nth-of-type(2)::first-letter {
     text-transform: uppercase;
     font-size: 3em;
     display: inline;
   }
-  .reader.fifth article main p em {
+  article main p em {
     text-transform: uppercase;
     padding: 5rem 0;
   }
-  .reader.fifth article mark {
+  article mark {
     font-style: italic;
     background-color: white;
     color: inherit;
   }
-  .reader.fifth article footer {
+  article footer {
     font-size: 0.8em;
     column-span: all !important;
     text-transform: uppercase;
@@ -3538,19 +3585,19 @@ html {
     padding-bottom: 3rem;
     text-align: right;
   }
-  .reader.fifth article footer p {
+  article footer p {
     text-align: right;
     padding: 0;
   }
-  .reader.fifth article footer p:first-of-type {
+  article footer p:first-of-type {
     padding-top: 1.5rem;
   }
-  .reader.fifth article table {
+  article table {
     display: block;
     width: auto;
     overflow: auto;
   }
-  .reader.fifth article table th {
+  article table th {
     text-transform: uppercase;
     font-weight: bold;
     border: 1px solid black;
@@ -3565,7 +3612,7 @@ html {
       z-index: 100;
     }*/
   }
-  .reader.fifth article table td {
+  article table td {
     border: 1px solid black;
     transition: 0.25s;
     /*&:hover {
@@ -3577,71 +3624,72 @@ html {
       z-index: 100;
     }*/
   }
-  .reader.fifth article ol {
+  article ol {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     color: black;
   }
-  .reader.fifth article ol li {
+  article ol li {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
   }
-  .reader.fifth .left, .reader.fifth .right {
+
+  .left, .right {
     width: 50vw;
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     text-align: left;
   }
-  .reader.fifth .left header h1, .reader.fifth .right header h1 {
+  .left header h1, .right header h1 {
     position: relative;
     font-family: "bernsteinBold";
     font-size: 1.8em !important;
     text-align: left;
     width: auto;
   }
-  .reader.fifth .left header table, .reader.fifth .right header table {
+  .left header table, .right header table {
     column-span: all !important;
     display: block;
   }
-  .reader.fifth .left header p, .reader.fifth .right header p {
+  .left header p, .right header p {
     text-align: left;
   }
-  .reader.fifth .left ul, .reader.fifth .left ol, .reader.fifth .right ul, .reader.fifth .right ol {
+  .left ul, .left ol, .right ul, .right ol {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     color: black;
     list-style-type: decimal;
     padding: 1rem 0;
   }
-  .reader.fifth .left ul li, .reader.fifth .left ol li, .reader.fifth .right ul li, .reader.fifth .right ol li {
+  .left ul li, .left ol li, .right ul li, .right ol li {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     padding: 1rem 0;
   }
-  .reader.fifth .left ul li ol, .reader.fifth .left ol li ol, .reader.fifth .right ul li ol, .reader.fifth .right ol li ol {
+  .left ul li ol, .left ol li ol, .right ul li ol, .right ol li ol {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     list-style-type: lower-roman;
     padding-left: 2rem;
   }
-  .reader.fifth .left p, .reader.fifth .right p {
+  .left p, .right p {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     text-align: justify;
     color: black;
   }
-  .reader.fifth .left em, .reader.fifth .right em {
+  .left em, .right em {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     font-style: italic;
   }
 }
-
-.reader.sixth :link, .reader.sixth :visited {
+.reader.sixth :link,
+.reader.sixth :visited {
   color: white;
   font-style: italic;
   text-transform: uppercase;
@@ -6083,31 +6131,6 @@ h1 {
   background: rgba(244, 241, 208, 0);
   font-size: 1.2rem;
   padding: 3% 10% 3% 4%;
-  /*
-  .arrow1 {
-    position: absolute;
-    background-image: url(images/arrow2.png);
-    background-size: 30vh 47vh;
-    background-repeat: no-repeat;
-    height: 47vh;
-    width: 30vh;
-    margin-top: -31rem;
-    margin-left: 63rem;
-    opacity: 0.85;
-    animation: moveInBottom2 0.6s ease-in 0.1s;
-  }
-  .arrow2 {
-    position: absolute;
-    background-image: url(images/arrow3.png);
-    background-size: 27vh 17vh;
-    background-repeat: no-repeat;
-    height: 30vh;
-    width: 40vh;
-    margin-top: -13rem;
-    margin-left: -9.7rem;
-    transform: rotate(40deg);
-    animation: moveInTop 0.6s ease-in 0.1s;
-  }*/
 }
 .tutorialPageSection p {
   padding: 0.5rem 0;
@@ -6116,19 +6139,28 @@ h1 {
   padding: 1rem 0 1rem 2rem;
 }
 .tutorialPageSection li {
-  margin-left: -1rem;
+  margin-left: 1rem;
+  padding: 1% 0;
 }
 .tutorialPageSection h1 {
   font-family: "TRY Vesterbro";
   padding: 0;
   font-size: 2.5rem;
   color: #d29129;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .tutorialPageSection em {
   font-size: 1.25rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
+}
+.tutorialPageSection .iconsTutorial {
+  display: table;
+}
+.tutorialPageSection div.iconsTutorial {
+  display: table-cell;
+  padding: 1rem 2rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=/style.97fcb138.css.map */
