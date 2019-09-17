@@ -458,10 +458,9 @@ $dragon-ink: #222;
   article {
     padding: 2%;
     background-image: url("./styles/second/background.jpg");
-    background-repeat: no-repeat;
     background-position: 50%;
-    background-attachment: fixed;
-    background-size: cover;
+    background-attachment: scroll;
+    background-size: contain;
     box-sizing: border-box;
     font-family: $rimpa-font;
     font-weight: 400;
@@ -476,22 +475,22 @@ $dragon-ink: #222;
     h3,
     h4 {
       background: -webkit-linear-gradient(
-        left,
+        top,
         $rimpa-text-color,
         $rimpa-light-gradient
       );
       background: -o-linear-gradient(
-        right,
+        bottom,
         $rimpa-text-color,
         $rimpa-light-gradient
       );
       background: -moz-linear-gradient(
-        right,
+        bottom,
         $rimpa-text-color,
         $rimpa-light-gradient
       );
       background: linear-gradient(
-        to right,
+        to bottom,
         $rimpa-text-color,
         $rimpa-light-gradient
       );

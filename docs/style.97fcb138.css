@@ -1002,10 +1002,9 @@ html {
 .reader.rimpa article {
   padding: 2%;
   background-image: url("/background.273bbb38.jpg");
-  background-repeat: no-repeat;
   background-position: 50%;
-  background-attachment: fixed;
-  background-size: cover;
+  background-attachment: scroll;
+  background-size: contain;
   box-sizing: border-box;
   font-family: "ZinHenaKokoryu";
   font-weight: 400;
@@ -1020,10 +1019,10 @@ html {
 .reader.rimpa article h2,
 .reader.rimpa article h3,
 .reader.rimpa article h4 {
-  background: -webkit-linear-gradient(left, #210102, #7b562a);
-  background: -o-linear-gradient(right, #210102, #7b562a);
-  background: -moz-linear-gradient(right, #210102, #7b562a);
-  background: linear-gradient(to right, #210102, #7b562a);
+  background: -webkit-linear-gradient(top, #210102, #7b562a);
+  background: -o-linear-gradient(bottom, #210102, #7b562a);
+  background: -moz-linear-gradient(bottom, #210102, #7b562a);
+  background: linear-gradient(to bottom, #210102, #7b562a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
