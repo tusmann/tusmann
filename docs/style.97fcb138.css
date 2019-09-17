@@ -230,6 +230,11 @@ html {
   background-image: linear-gradient(to right bottom, #222, #e31619);
 }
 
+.card__side--back-4 {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#222), to(#e31619));
+  background-image: linear-gradient(to right bottom, #222, #e31619);
+}
+
 .card__side--back-5 {
   background-image: -webkit-gradient(linear, left top, right bottom, from(#d4d4d4), to(#ff0019));
   background-image: linear-gradient(to right bottom, #d4d4d4, #ff0019);
@@ -277,8 +282,8 @@ html {
 }
 
 .card__picture--4 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#24597B), to(#00497A)), url(/manuzio-card-front.8f60d575.jpg);
-  background-image: linear-gradient(to right bottom, #24597B, #00497A), url(/manuzio-card-front.8f60d575.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#222), to(#e31619)), url(/ded-card-front.c5365650.jpg);
+  background-image: linear-gradient(to right bottom, #222, #e31619), url(/ded-card-front.c5365650.jpg);
 }
 
 .card__picture--5 {
@@ -317,7 +322,7 @@ html {
 }
 
 .card4 {
-  color: #00497A;
+  color: #e31619;
 }
 
 .card5 {
@@ -1006,11 +1011,7 @@ html {
   overflow-x: auto;
   overflow-y: auto;
 }
-.reader.rimpa article p,
-.reader.rimpa article h1,
-.reader.rimpa article h2,
-.reader.rimpa article h3,
-.reader.rimpa article h4 {
+.reader.rimpa article p, .reader.rimpa article h1, .reader.rimpa article h2, .reader.rimpa article h3, .reader.rimpa article h4 {
   background: -webkit-linear-gradient(left, #210102, #7b562a);
   background: -o-linear-gradient(right, #210102, #7b562a);
   background: -moz-linear-gradient(right, #210102, #7b562a);
@@ -1102,18 +1103,50 @@ html {
 }
 .reader.rimpa article header figure {
   writing-mode: horizontal-tb;
-  margin: auto 3rem;
+  margin: auto 2rem;
 }
 .reader.rimpa article header figure img {
-  height: 30rem;
+  height: 450px;
   object-fit: contain;
   display: block;
   box-align: center;
+}
+.reader.rimpa article header .bird {
+  content: "";
+  display: inline-block;
+  background-image: url(/bird.2df1bcfe.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110%;
+  width: 400px;
+  padding-top: 80vh;
 }
 .reader.rimpa article main {
   margin: 2rem 4rem 6rem 2rem;
   column-count: 3;
   column-gap: 2vw;
+  column-rule-color: #d1c279;
+  column-rule-style: groove;
+  column-rule-width: 2px;
+}
+.reader.rimpa article main h2, .reader.rimpa article main h3, .reader.rimpa article main h4 {
+  background: linear-gradient(to left, #cfc09f 22%, #634f2c 24%, #cfc09f 26%, #cfc09f 27%, #d1c279 40%, #3a2c0f 78%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
+  position: relative;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: 400;
+}
+.reader.rimpa article main h2:after {
+  background: none;
+  content: attr(data-heading);
+  left: 0;
+  top: 0;
+  z-index: -1;
+  position: absolute;
+  text-shadow: -1px 0 1px #c6bb9f, 0 1px 1px #c6bb9f, 5px 5px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(0, 0, 0, 0.4);
 }
 .reader.rimpa article main h1,
 .reader.rimpa article main h2,
@@ -1167,6 +1200,9 @@ html {
   text-align: center;
   writing-mode: horizontal-tb;
   text-orientation: upright;
+}
+.reader.rimpa article footer h1, .reader.rimpa article footer h2, .reader.rimpa article footer h3, .reader.rimpa article footer h4 {
+  writing-mode: horizontal-tb;
 }
 .reader.rimpa .left article,
 .reader.rimpa .right article {
@@ -3085,262 +3121,524 @@ html {
   color: #8d000e;
   font-style: italic;
 }
-.reader.fifth .publisher {
-  font-family: rollingFont;
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #ff0019;
-  text-align: center;
-  column-span: all;
-  text-shadow: 4px 4px 0px black;
-  z-index: 100;
-  border-bottom: 1px solid #000;
-  position: absolute;
-  width: 85vw;
-  top: 6.3rem;
-  left: 53.3%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
-.reader.fifth .publisher:before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 4px;
-  width: 100%;
-  height: 3px;
-  background: #000;
-}
-.reader.fifth article {
-  font-family: "fifthCorpus", sans-serif;
-  font-size: 1.1em;
-  columns: 3 200px;
-  background-color: white;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  border-bottom: 0;
-  border: 0.1rem solid #222;
-  border-left: -5rem;
-  border-right: -1rem;
-  padding: 5rem 4rem 2rem;
-}
-.reader.fifth article::after {
-  content: "";
-  border-top: 0.1rem solid #222;
-}
-.reader.fifth article h1 {
-  position: relative;
-  font-family: "bernsteinBold";
-  font-size: 4em;
-  text-align: left;
-  width: auto;
-}
-.reader.fifth article h4 {
-  color: #ff0019;
-  position: relative;
-  font-family: "bernsteinBold";
-  font-size: 1.4em;
-  border-bottom: 0.05rem solid #222;
-  border-top: 0.05rem solid #222;
-  text-align: center;
-  width: auto;
-  padding: 0.5rem 1rem;
-  column-span: 2;
-}
-.reader.fifth h1 {
-  position: relative;
-  font-family: "bernsteinBold";
-  font-size: 4em;
-  text-align: left;
-  width: auto;
-}
-.reader.fifth h2, .reader.fifth h3, .reader.fifth h4 {
-  color: #ff0019;
-  position: relative;
-  font-family: "bernsteinBold";
-  font-size: 1.4em;
-  border-bottom: 0.05rem solid #222;
-  border-top: 0.05rem solid #222;
-  text-align: center;
-  width: auto;
-  padding: 0.5rem 1rem;
-  column-span: 2;
-}
-.reader.fifth img {
-  object-fit: contain;
-  width: 25vw;
-  height: auto;
-  padding-top: 1rem;
-}
-.reader.fifth figure {
-  text-align: center;
-  padding: 0 0;
-}
-.reader.fifth figure img {
-  object-fit: contain;
-  width: 25vw;
-  height: auto;
-  padding-top: 1rem;
-}
-.reader.fifth figure figcaption {
-  font-family: "fifthCorpus", sans-serif;
-  font-size: 0.8em;
-  display: block;
-  width: 20vw;
-  color: white;
-  position: relative;
-  bottom: 4.5rem;
-  right: -2rem;
-}
-.reader.fifth p {
-  font-family: "fifthCorpus", sans-serif;
-  font-size: 1.1em;
-  text-align: justify;
-  position: relative;
-  color: #777;
-  padding: 1rem 0;
-  border-bottom: #222;
-}
-.reader.fifth main {
-  padding: 0.5rem;
-}
-.reader.fifth main p {
-  padding: 0.5rem 0;
-  font-family: "fifthCorpus", sans-serif;
-  font-size: 1.1em;
-  text-align: justify;
-  position: relative;
-  color: black;
-}
-.reader.fifth main p:first-of-type {
-  border-bottom: 0.05rem solid black;
-}
-.reader.fifth main p:nth-of-type(2)::first-letter {
-  text-transform: uppercase;
-  font-size: 3em;
-  display: inline;
-}
-.reader.fifth main p em {
-  text-transform: uppercase;
-  padding: 5rem 0;
-}
-.reader.fifth mark {
-  font-style: italic;
-  background-color: white;
-  color: inherit;
-}
-.reader.fifth footer {
-  font-size: 0.8em;
-  column-span: all !important;
-  text-transform: uppercase;
-  position: relative;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  text-align: right;
-}
-.reader.fifth footer p {
-  text-align: right;
-  padding: 0;
-}
-.reader.fifth footer p:first-of-type {
-  padding-top: 1.5rem;
-}
-.reader.fifth table {
-  display: block;
-  border: 1px solid black;
-  width: auto;
-  overflow: auto;
-}
-.reader.fifth table th {
-  text-transform: uppercase;
-  font-weight: bold;
-  border: 1px solid black;
-  transition: 0.25s;
-  color: #8d000e;
-  /*&:hover {
-    background-color: rgba(255, 255, 255, 0.63);
-    background-size:  100% 100%;
-    border-radius: 20px;
-    transform:scale(1.4545,1.34);
-    transform-origin:center;
+@media (min-width: 768px) {
+  .reader.fifth .publisher {
+    font-family: rollingFont;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ff0019;
+    text-align: center;
+    column-span: all;
+    text-shadow: 4px 4px 0px black;
     z-index: 100;
-  }*/
+    border-bottom: 1px solid #000;
+    position: absolute;
+    width: 85vw;
+    top: 17.3%;
+    left: 53.3%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  .reader.fifth .publisher:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 100%;
+    height: 3px;
+    background: #000;
+  }
+  .reader.fifth article {
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 1.1em;
+    columns: 3 200px;
+    background-color: white;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 0;
+    border: 0.1rem solid #222;
+    border-left: -5rem;
+    border-right: -1rem;
+    padding: 5rem 4rem 2rem;
+  }
+  .reader.fifth article::after {
+    content: "";
+    border-top: 0.1rem solid #222;
+  }
+  .reader.fifth article h1 {
+    position: relative;
+    font-family: "bernsteinBold";
+    font-size: 4em;
+    text-align: left;
+    width: auto;
+  }
+  .reader.fifth article h4 {
+    color: #ff0019;
+    position: relative;
+    font-family: "bernsteinBold";
+    font-size: 1.4em;
+    border-bottom: 0.05rem solid #222;
+    border-top: 0.05rem solid #222;
+    text-align: center;
+    width: auto;
+    padding: 0.5rem 1rem;
+    column-span: 2;
+  }
+  .reader.fifth article h1 {
+    position: relative;
+    font-family: "bernsteinBold";
+    font-size: 4em;
+    text-align: left;
+    width: auto;
+  }
+  .reader.fifth article h2, .reader.fifth article h3, .reader.fifth article h4 {
+    color: #ff0019;
+    position: relative;
+    font-family: "bernsteinBold";
+    font-size: 1.4em;
+    border-bottom: 0.05rem solid #222;
+    border-top: 0.05rem solid #222;
+    text-align: center;
+    width: auto;
+    padding: 0.5rem 1rem;
+    column-span: 2;
+  }
+  .reader.fifth article img {
+    object-fit: contain;
+    width: 25vw;
+    height: auto;
+    padding-top: 1rem;
+  }
+  .reader.fifth article figure {
+    text-align: center;
+    padding: 0 0;
+  }
+  .reader.fifth article figure img {
+    object-fit: contain;
+    width: 25vw;
+    height: auto;
+    padding-top: 1rem;
+  }
+  .reader.fifth article figure figcaption {
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 0.8em;
+    display: block;
+    width: 20vw;
+    color: white;
+    position: relative;
+    bottom: 4.5rem;
+    right: -2rem;
+  }
+  .reader.fifth article p {
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 1.1em;
+    text-align: justify;
+    position: relative;
+    color: #777;
+    padding: 1rem 0;
+    border-bottom: #222;
+  }
+  .reader.fifth article main {
+    padding: 0.5rem;
+  }
+  .reader.fifth article main p {
+    padding: 0.5rem 0;
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 1.1em;
+    text-align: justify;
+    position: relative;
+    color: black;
+  }
+  .reader.fifth article main p:first-of-type {
+    border-bottom: 0.05rem solid black;
+  }
+  .reader.fifth article main p:nth-of-type(2)::first-letter {
+    text-transform: uppercase;
+    font-size: 3em;
+    display: inline;
+  }
+  .reader.fifth article main p em {
+    text-transform: uppercase;
+    padding: 5rem 0;
+  }
+  .reader.fifth article mark {
+    font-style: italic;
+    background-color: white;
+    color: inherit;
+  }
+  .reader.fifth article footer {
+    font-size: 0.8em;
+    column-span: all !important;
+    text-transform: uppercase;
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: right;
+  }
+  .reader.fifth article footer p {
+    text-align: right;
+    padding: 0;
+  }
+  .reader.fifth article footer p:first-of-type {
+    padding-top: 1.5rem;
+  }
+  .reader.fifth article table {
+    display: block;
+    width: auto;
+    overflow: auto;
+  }
+  .reader.fifth article table th {
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid black;
+    transition: 0.25s;
+    color: #8d000e;
+    /*&:hover {
+      background-color: rgba(255, 255, 255, 0.63);
+      background-size:  100% 100%;
+      border-radius: 20px;
+      transform:scale(1.4545,1.34);
+      transform-origin:center;
+      z-index: 100;
+    }*/
+  }
+  .reader.fifth article table td {
+    border: 1px solid black;
+    transition: 0.25s;
+    /*&:hover {
+      background-color: rgba(255, 255, 255, 0.63);
+      background-size:  100% 100%;
+      transform:scale(1.4545,1.34);
+      transform-origin:center;
+      border-radius: 20px;
+      z-index: 100;
+    }*/
+  }
+  .reader.fifth article ol {
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 1.1em;
+    color: black;
+  }
+  .reader.fifth article ol li {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+  }
+  .reader.fifth .left, .reader.fifth .right {
+    columns: 1 auto;
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 1.1em;
+    text-align: left;
+  }
+  .reader.fifth .left header h1, .reader.fifth .right header h1 {
+    position: relative;
+    font-family: "bernsteinBold";
+    font-size: 2em !important;
+    text-align: left;
+    width: auto;
+  }
+  .reader.fifth .left header table, .reader.fifth .right header table {
+    column-span: all !important;
+    display: block;
+    padding-bottom: 1rem;
+  }
+  .reader.fifth .left header table td, .reader.fifth .right header table td {
+    padding: 0 0.3rem;
+  }
+  .reader.fifth .left header p, .reader.fifth .right header p {
+    text-align: left;
+  }
+  .reader.fifth .left ul, .reader.fifth .left ol, .reader.fifth .right ul, .reader.fifth .right ol {
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 1.1em;
+    color: black;
+    list-style-type: decimal;
+    padding: 1rem 0;
+  }
+  .reader.fifth .left ul li, .reader.fifth .left ol li, .reader.fifth .right ul li, .reader.fifth .right ol li {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    padding: 1rem 0;
+  }
+  .reader.fifth .left ul li ol, .reader.fifth .left ol li ol, .reader.fifth .right ul li ol, .reader.fifth .right ol li ol {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    list-style-type: lower-roman;
+    padding-left: 2rem;
+  }
+  .reader.fifth .left p, .reader.fifth .right p {
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 1.1em;
+    text-align: justify;
+    color: black;
+  }
+  .reader.fifth .left em, .reader.fifth .right em {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    font-style: italic;
+  }
 }
-.reader.fifth table td {
-  border: 1px solid black;
-  transition: 0.25s;
-  /*&:hover {
-    background-color: rgba(255, 255, 255, 0.63);
-    background-size:  100% 100%;
-    transform:scale(1.4545,1.34);
-    transform-origin:center;
-    border-radius: 20px;
+@media (max-width: 768px) {
+  .reader.fifth .publisher {
+    font-family: rollingFont;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ff0019;
+    text-align: center;
+    column-span: all;
+    text-shadow: 4px 4px 0px black;
     z-index: 100;
-  }*/
-}
-.reader.fifth ol {
-  font-family: "fifthCorpus", sans-serif;
-  font-size: 1.1em;
-  color: black;
-}
-.reader.fifth ol li {
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-}
-.reader.fifth .left, .reader.fifth .right {
-  columns: 1 auto;
-  font-family: "fifthCorpus", sans-serif;
-  font-size: 1.1em;
-  text-align: left;
-}
-.reader.fifth .left header h1, .reader.fifth .right header h1 {
-  position: relative;
-  font-family: "bernsteinBold";
-  font-size: 2em !important;
-  text-align: left;
-  width: auto;
-}
-.reader.fifth .left header table, .reader.fifth .right header table {
-  column-span: all !important;
-  display: block;
-  border: 1px solid black;
-}
-.reader.fifth .left header p, .reader.fifth .right header p {
-  text-align: left;
-}
-.reader.fifth .left ul, .reader.fifth .left ol, .reader.fifth .right ul, .reader.fifth .right ol {
-  font-family: "fifthCorpus", sans-serif;
-  font-size: 1.1em;
-  color: black;
-  list-style-type: decimal;
-  padding: 1rem 0;
-}
-.reader.fifth .left ul li, .reader.fifth .left ol li, .reader.fifth .right ul li, .reader.fifth .right ol li {
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-  padding: 1rem 0;
-}
-.reader.fifth .left ul li ol, .reader.fifth .left ol li ol, .reader.fifth .right ul li ol, .reader.fifth .right ol li ol {
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-  list-style-type: lower-roman;
-  padding-left: 2rem;
-}
-.reader.fifth .left p, .reader.fifth .right p {
-  font-family: "fifthCorpus", sans-serif;
-  font-size: 1.1em;
-  text-align: justify;
-  color: black;
-}
-.reader.fifth .left em, .reader.fifth .right em {
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-  font-style: italic;
+    border-bottom: 1px solid #000;
+    position: absolute;
+    width: 85vw;
+    top: 12rem;
+    left: 53.3%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  .reader.fifth .publisher:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 100%;
+    height: 3px;
+    background: #000;
+  }
+  .reader.fifth article {
+    font-size: smaller;
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 1.1em;
+    columns: 3 200px;
+    background-color: white;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 0;
+    border: 0.1rem solid #222;
+    border-left: -5rem;
+    border-right: -1rem;
+    padding: 5rem 4rem 2rem;
+  }
+  .reader.fifth article::after {
+    content: "";
+    border-top: 0.1rem solid #222;
+  }
+  .reader.fifth article h1 {
+    position: relative;
+    font-family: "bernsteinBold";
+    font-size: 4em;
+    text-align: left;
+    width: auto;
+  }
+  .reader.fifth article h4 {
+    color: #ff0019;
+    position: relative;
+    font-family: "bernsteinBold";
+    font-size: 1.4em;
+    border-bottom: 0.05rem solid #222;
+    border-top: 0.05rem solid #222;
+    text-align: center;
+    width: auto;
+    padding: 0.5rem 1rem;
+    column-span: 2;
+  }
+  .reader.fifth article h1 {
+    position: relative;
+    font-family: "bernsteinBold";
+    font-size: 4em;
+    text-align: left;
+    width: auto;
+  }
+  .reader.fifth article h2, .reader.fifth article h3, .reader.fifth article h4 {
+    color: #ff0019;
+    position: relative;
+    font-family: "bernsteinBold";
+    font-size: 1.4em;
+    border-bottom: 0.05rem solid #222;
+    border-top: 0.05rem solid #222;
+    text-align: center;
+    width: auto;
+    padding: 0.5rem 1rem;
+    column-span: 2;
+  }
+  .reader.fifth article img {
+    object-fit: contain;
+    width: 25vw;
+    height: auto;
+    padding-top: 1rem;
+  }
+  .reader.fifth article figure {
+    text-align: center;
+    padding: 0 0;
+  }
+  .reader.fifth article figure img {
+    object-fit: contain;
+    width: 25vw;
+    height: auto;
+    padding-top: 1rem;
+  }
+  .reader.fifth article figure figcaption {
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 0.8em;
+    display: block;
+    width: 20vw;
+    color: white;
+    position: relative;
+    bottom: 4.5rem;
+    right: -2rem;
+  }
+  .reader.fifth article p {
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 1.1em;
+    text-align: justify;
+    position: relative;
+    color: #777;
+    padding: 1rem 0;
+    border-bottom: #222;
+  }
+  .reader.fifth article main {
+    padding: 0.5rem;
+  }
+  .reader.fifth article main p {
+    padding: 0.5rem 0;
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 1.1em;
+    text-align: justify;
+    position: relative;
+    color: black;
+  }
+  .reader.fifth article main p:first-of-type {
+    border-bottom: 0.05rem solid black;
+  }
+  .reader.fifth article main p:nth-of-type(2)::first-letter {
+    text-transform: uppercase;
+    font-size: 3em;
+    display: inline;
+  }
+  .reader.fifth article main p em {
+    text-transform: uppercase;
+    padding: 5rem 0;
+  }
+  .reader.fifth article mark {
+    font-style: italic;
+    background-color: white;
+    color: inherit;
+  }
+  .reader.fifth article footer {
+    font-size: 0.8em;
+    column-span: all !important;
+    text-transform: uppercase;
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: right;
+  }
+  .reader.fifth article footer p {
+    text-align: right;
+    padding: 0;
+  }
+  .reader.fifth article footer p:first-of-type {
+    padding-top: 1.5rem;
+  }
+  .reader.fifth article table {
+    display: block;
+    width: auto;
+    overflow: auto;
+  }
+  .reader.fifth article table th {
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid black;
+    transition: 0.25s;
+    color: #8d000e;
+    /*&:hover {
+      background-color: rgba(255, 255, 255, 0.63);
+      background-size:  100% 100%;
+      border-radius: 20px;
+      transform:scale(1.4545,1.34);
+      transform-origin:center;
+      z-index: 100;
+    }*/
+  }
+  .reader.fifth article table td {
+    border: 1px solid black;
+    transition: 0.25s;
+    /*&:hover {
+      background-color: rgba(255, 255, 255, 0.63);
+      background-size:  100% 100%;
+      transform:scale(1.4545,1.34);
+      transform-origin:center;
+      border-radius: 20px;
+      z-index: 100;
+    }*/
+  }
+  .reader.fifth article ol {
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 1.1em;
+    color: black;
+  }
+  .reader.fifth article ol li {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+  }
+  .reader.fifth .left, .reader.fifth .right {
+    width: 50vw;
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 1.1em;
+    text-align: left;
+  }
+  .reader.fifth .left header h1, .reader.fifth .right header h1 {
+    position: relative;
+    font-family: "bernsteinBold";
+    font-size: 1.8em !important;
+    text-align: left;
+    width: auto;
+  }
+  .reader.fifth .left header table, .reader.fifth .right header table {
+    column-span: all !important;
+    display: block;
+  }
+  .reader.fifth .left header p, .reader.fifth .right header p {
+    text-align: left;
+  }
+  .reader.fifth .left ul, .reader.fifth .left ol, .reader.fifth .right ul, .reader.fifth .right ol {
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 1.1em;
+    color: black;
+    list-style-type: decimal;
+    padding: 1rem 0;
+  }
+  .reader.fifth .left ul li, .reader.fifth .left ol li, .reader.fifth .right ul li, .reader.fifth .right ol li {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    padding: 1rem 0;
+  }
+  .reader.fifth .left ul li ol, .reader.fifth .left ol li ol, .reader.fifth .right ul li ol, .reader.fifth .right ol li ol {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    list-style-type: lower-roman;
+    padding-left: 2rem;
+  }
+  .reader.fifth .left p, .reader.fifth .right p {
+    font-family: "fifthCorpus", sans-serif;
+    font-size: 1.1em;
+    text-align: justify;
+    color: black;
+  }
+  .reader.fifth .left em, .reader.fifth .right em {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    font-style: italic;
+  }
 }
 
 .reader.sixth :link, .reader.sixth :visited {
@@ -3351,341 +3649,684 @@ html {
   text-decoration-color: #bebebe;
   vertical-align: text-bottom;
 }
-.reader.sixth article {
-  background-color: #222;
-  color: #f6f3ea;
-  /*.parallax {
+@media (min-width: 768px) {
+  .reader.sixth article {
+    background-color: #222;
+    color: #f6f3ea;
+    /*.parallax {
+      order: 3;
+      background-image: url(styles/sixth/human_tree.png);
+      background-color: transparent;
+      width: 50vh;
+      height: 50vh;
+      margin-left: 50%;
+      margin-right: 50%;
+      background-attachment: fixed;
+      transform: translateY(-4000px);
+      object-fit: contain;
+      z-index: 100;
+    }*/
+  }
+  .reader.sixth article header {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .reader.sixth article header h1 {
+    order: 1;
+    background-image: url(/giphy_bkgnd.e13f8e44.gif);
+    background-repeat: no-repeat;
+    mix-blend-mode: normal;
+    background-size: cover;
+    flex: 0 0 auto;
+    font-family: "stolzRegular", sans-serif;
+    font-size: 9.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4.6rem;
+    text-rendering: optimizeLegibility;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 90vh;
+  }
+  .reader.sixth article header h1:hover {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 50px #fff;
+  }
+  .reader.sixth article header h2, .reader.sixth article header h3 {
+    order: 2;
+    font-family: "stolzLight", sans-serif;
+    font-size: 3em;
+    padding: 5rem 2rem 5rem 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .reader.sixth article header figure {
+    order: 4;
+    text-align: center;
+    width: 90vw;
+    margin-bottom: 2rem;
+  }
+  .reader.sixth article header figure img {
+    filter: grayscale(100%);
+    transition: 1s ease-in;
+    width: 100vw;
+    height: 47vh;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+  }
+  .reader.sixth article header figure img:hover {
+    filter: grayscale(0%) brightness(95%);
+    transform: scale(1.1);
+  }
+  .reader.sixth article header figure figcaption {
+    font-family: "stolzLight", sans-serif;
+  }
+  .reader.sixth article header p {
+    font-family: "windSong", serif;
+    font-size: 3.5em;
+    text-transform: lowercase;
     order: 3;
-    background-image: url(styles/sixth/human_tree.png);
-    background-color: transparent;
-    width: 50vh;
-    height: 50vh;
-    margin-left: 50%;
-    margin-right: 50%;
-    background-attachment: fixed;
-    transform: translateY(-4000px);
-    object-fit: contain;
-    z-index: 100;
-  }*/
+    text-align: right;
+    padding: 0 6rem;
+  }
+  .reader.sixth article main {
+    padding: 2rem 0 2.5rem 3.5rem;
+    font-family: "stolzLight", sans-serif;
+  }
+  .reader.sixth article main h2, .reader.sixth article main h3 {
+    font-size: 5em;
+    font-family: "stolzLight", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    padding: 3rem 0 3rem 4rem;
+  }
+  .reader.sixth article main h2:hover, .reader.sixth article main h3:hover {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  }
+  .reader.sixth article main p {
+    display: inline-block;
+    font-family: "sixthBody", serif;
+    font-size: 1.2em;
+    width: auto;
+    columns: 2 300px;
+    column-gap: 10rem;
+    width: 80vw;
+    padding: 0 5rem;
+    line-height: 1.2em;
+    text-align: justify;
+  }
+  .reader.sixth article main figure {
+    text-align: center;
+    width: 90vw;
+    padding: 4rem 0;
+    transform: translateX(-3.5rem);
+  }
+  .reader.sixth article main figure img {
+    filter: grayscale(100%);
+    transition: 0.8s ease-in-out;
+    width: 100vw;
+    height: 47vh;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  .reader.sixth article main figure img:hover {
+    filter: grayscale(0%) brightness(95%);
+    transform: scale(1.15);
+  }
+  .reader.sixth article main figure figcaption {
+    font-family: "stolzLight", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    padding-left: 4rem;
+  }
+  .reader.sixth article main figure table {
+    text-transform: uppercase;
+    margin-left: 3.5rem;
+  }
+  .reader.sixth article main figure table tr {
+    padding: 0.5rem 0.5rem;
+  }
+  .reader.sixth article main figure table tr:nth-of-type(even) {
+    background-color: #333;
+  }
+  .reader.sixth article main figure table tr:nth-of-type(odd) {
+    background-color: #222;
+  }
+  .reader.sixth article footer {
+    padding: 3rem 0;
+    font-family: "stolzLight", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    width: auto;
+    text-align: center;
+  }
+  .reader.sixth .left, .reader.sixth .right {
+    width: auto;
+    display: inline-block;
+    border-right: 0.5rem solid white;
+    overflow: hidden;
+  }
+  .reader.sixth .left header, .reader.sixth .right header {
+    order: 1;
+  }
+  .reader.sixth .left header h1, .reader.sixth .right header h1 {
+    width: inherit;
+    font-size: 2em;
+  }
+  .reader.sixth .left header h1:hover, .reader.sixth .right header h1:hover {
+    text-shadow: none;
+  }
+  .reader.sixth .left header h1 p, .reader.sixth .right header h1 p {
+    font-family: "sixthBody", sans-serif;
+    font-size: 1em;
+    text-align: left;
+    padding-left: 1rem;
+  }
+  .reader.sixth .left header h1 p:first-of-type, .reader.sixth .right header h1 p:first-of-type {
+    padding-bottom: 2rem;
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+  .reader.sixth .left header h1 p:first-of-type:hover, .reader.sixth .right header h1 p:first-of-type:hover {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  }
+  .reader.sixth .left header table, .reader.sixth .right header table {
+    width: auto;
+    text-align: center;
+    order: 2;
+    text-transform: lowercase;
+    margin: 1rem 0;
+    font-size: 2em;
+    display: table;
+  }
+  .reader.sixth .left header table tr, .reader.sixth .right header table tr {
+    font-family: "windSong", serif;
+  }
+  .reader.sixth .left h2, .reader.sixth .left h3, .reader.sixth .right h2, .reader.sixth .right h3 {
+    font-family: "stolzLight", sans-serif;
+    font-size: 3em;
+    padding: 3rem 2rem 2.5rem 0rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin: auto;
+  }
+  .reader.sixth .left h2:hover, .reader.sixth .left h3:hover, .reader.sixth .right h2:hover, .reader.sixth .right h3:hover {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  }
+  .reader.sixth .left p, .reader.sixth .right p {
+    width: inherit;
+    font-family: "sixthBody", sans-serif;
+    padding-left: 2rem;
+  }
+  .reader.sixth .left ol, .reader.sixth .left ul, .reader.sixth .right ol, .reader.sixth .right ul {
+    width: inherit;
+    font-family: "sixthBody", serif;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    list-style-type: decimal;
+    padding: 1rem 2rem 1rem 0;
+    list-style: none;
+  }
+  .reader.sixth .left ol table, .reader.sixth .left ul table, .reader.sixth .right ol table, .reader.sixth .right ul table {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+    padding: 2rem 0;
+    font-size: 0.8em;
+    display: block;
+    width: 40vw;
+    height: auto;
+  }
+  .reader.sixth .left ol table td, .reader.sixth .left ul table td, .reader.sixth .right ol table td, .reader.sixth .right ul table td {
+    padding: 0.7rem 0;
+  }
+  .reader.sixth .left ol p, .reader.sixth .left ul p, .reader.sixth .right ol p, .reader.sixth .right ul p {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    padding: 2rem 0;
+  }
+  .reader.sixth .left ol li, .reader.sixth .left ul li, .reader.sixth .right ol li, .reader.sixth .right ul li {
+    margin: -1.5rem 0;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    padding: 1rem 0;
+    list-style: none;
+    /*
+    background-image: url(styles/sixth/arrow.gif);
+    background-repeat: no-repeat;
+    background-size: 1rem;*/
+  }
+  .reader.sixth .left ol li::before, .reader.sixth .left ul li::before, .reader.sixth .right ol li::before, .reader.sixth .right ul li::before {
+    content: " ";
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-image: url("/arrow.4d9c4be4.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .reader.sixth .left ol li p, .reader.sixth .left ul li p, .reader.sixth .right ol li p, .reader.sixth .right ul li p {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+  }
+  .reader.sixth .left ol ul, .reader.sixth .left ol ol, .reader.sixth .left ul ul, .reader.sixth .left ul ol, .reader.sixth .right ol ul, .reader.sixth .right ol ol, .reader.sixth .right ul ul, .reader.sixth .right ul ol {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    list-style-type: lower-roman;
+    padding-left: 2rem;
+  }
+  .reader.sixth .left ol ul p, .reader.sixth .left ol ol p, .reader.sixth .left ul ul p, .reader.sixth .left ul ol p, .reader.sixth .right ol ul p, .reader.sixth .right ol ol p, .reader.sixth .right ul ul p, .reader.sixth .right ul ol p {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+  }
+  .reader.sixth .left table, .reader.sixth .right table {
+    text-align: left;
+    margin-left: 1.5rem;
+    margin-right: auto;
+    padding: 2rem 0;
+    font-size: 0.8em;
+    display: block;
+    width: 40vw;
+    height: auto;
+  }
+  .reader.sixth .left table td, .reader.sixth .right table td {
+    padding: 0.7rem 0;
+  }
+  .reader.sixth .left footer, .reader.sixth .right footer {
+    font-size: 0.8em;
+    text-align: left;
+    margin-left: 0rem;
+  }
+  .reader.sixth .left footer ul, .reader.sixth .left footer ol, .reader.sixth .right footer ul, .reader.sixth .right footer ol {
+    list-style: lower-roman;
+  }
+  .reader.sixth .left footer ul::after, .reader.sixth .left footer ol::after, .reader.sixth .right footer ul::after, .reader.sixth .right footer ol::after {
+    content: none;
+  }
+  .reader.sixth .left section h3, .reader.sixth .right section h3 {
+    font-family: "stolzLight", sans-serif;
+    font-size: 3em;
+    padding: 2.5rem 0rem 5rem 0rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: 0%;
+    line-height: 1em;
+  }
+  .reader.sixth .left section h3:hover, .reader.sixth .right section h3:hover {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  }
+  .reader.sixth .left section table, .reader.sixth .right section table {
+    text-align: left;
+    margin-left: -1.5rem;
+    margin-right: auto;
+    padding: 2rem 0;
+    font-size: 0.8em;
+    display: block;
+    width: 40vw;
+    height: auto;
+  }
+  .reader.sixth .left section table td, .reader.sixth .right section table td {
+    padding: 0.7rem 0;
+  }
+  .reader.sixth .left section figure table, .reader.sixth .right section figure table {
+    margin-left: 1.5rem;
+  }
+  .reader.sixth .left section figure h3, .reader.sixth .right section figure h3 {
+    margin-left: -50%;
+  }
+  .reader.sixth .right h1 {
+    padding-bottom: 4.5rem;
+  }
 }
-.reader.sixth article header {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-.reader.sixth article header h1 {
-  order: 1;
-  background-image: url(/giphy_bkgnd.e13f8e44.gif);
-  background-repeat: no-repeat;
-  mix-blend-mode: normal;
-  background-size: cover;
-  flex: 0 0 auto;
-  font-family: "stolzRegular", sans-serif;
-  font-size: 9em;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 4.6rem;
-  text-rendering: optimizeLegibility;
-  margin-right: auto;
-  margin-left: auto;
-}
-.reader.sixth article header h1:hover {
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 50px #fff;
-}
-.reader.sixth article header h2, .reader.sixth article header h3 {
-  order: 2;
-  font-family: "stolzLight", sans-serif;
-  font-size: 3em;
-  padding: 5rem 2rem 5rem 2rem;
-  text-align: center;
-  text-transform: uppercase;
-  margin-right: auto;
-  margin-left: auto;
-}
-.reader.sixth article header figure {
-  order: 4;
-  text-align: center;
-  width: 80vw;
-  margin-bottom: 2rem;
-}
-.reader.sixth article header figure img {
-  filter: grayscale(100%);
-  transition: 1s ease-in;
-  width: 89vw;
-  height: 47vh;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: cover;
-}
-.reader.sixth article header figure img:hover {
-  filter: grayscale(0%) brightness(95%);
-  transform: scale(1.1);
-}
-.reader.sixth article header figure figcaption {
-  font-family: "stolzLight", sans-serif;
-}
-.reader.sixth article header p {
-  font-family: "windSong", serif;
-  font-size: 3.5em;
-  text-transform: lowercase;
-  order: 3;
-  text-align: right;
-  padding: 0 6rem;
-}
-.reader.sixth article main {
-  padding: 2rem 0 0 3.5rem;
-  font-style: italic;
-  font-family: "stolzLight", sans-serif;
-}
-.reader.sixth article main h2, .reader.sixth article main h3 {
-  font-size: 5em;
-  font-family: "stolzLight", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  padding: 3rem 0 3rem 4rem;
-}
-.reader.sixth article main h2:hover, .reader.sixth article main h3:hover {
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
-}
-.reader.sixth article main p {
-  display: inline-block;
-  font-family: "sixthBody", serif;
-  font-size: 1.2em;
-  width: auto;
-  columns: 2 300px;
-  column-gap: 10rem;
-  width: 80vw;
-  padding: 0 5rem;
-  line-height: 1.2em;
-  text-align: justify;
-}
-.reader.sixth article main figure {
-  text-align: center;
-  width: 80vw;
-  padding: 4rem 0;
-  transform: translateX(-3.5rem);
-}
-.reader.sixth article main figure img {
-  filter: grayscale(100%);
-  transition: 0.8s ease-in-out;
-  width: 89.2vw;
-  height: 47vh;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: cover;
-  overflow: hidden;
-}
-.reader.sixth article main figure img:hover {
-  filter: grayscale(0%) brightness(95%);
-  transform: scale(1.15);
-}
-.reader.sixth article main figure figcaption {
-  font-family: "stolzLight", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  padding-left: 4rem;
-}
-.reader.sixth article main figure table {
-  text-transform: uppercase;
-  margin-left: 3.5rem;
-}
-.reader.sixth article main figure table tr {
-  padding: 0.5rem 0.5rem;
-}
-.reader.sixth article main figure table tr:nth-of-type(even) {
-  background-color: #333;
-}
-.reader.sixth article main figure table tr:nth-of-type(odd) {
-  background-color: #222;
-}
-.reader.sixth article footer {
-  padding: 5rem 0 1rem 5rem;
-  font-family: "stolzLight", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  width: auto;
-}
-.reader.sixth .left, .reader.sixth .right {
-  width: 44.5vw;
-  display: inline-block;
-  border-right: 0.5rem solid white;
-  overflow: hidden;
-}
-.reader.sixth .left header, .reader.sixth .right header {
-  order: 1;
-}
-.reader.sixth .left header h1, .reader.sixth .right header h1 {
-  width: inherit;
-  font-size: 2em;
-}
-.reader.sixth .left header h1:hover, .reader.sixth .right header h1:hover {
-  text-shadow: none;
-}
-.reader.sixth .left header h1 p, .reader.sixth .right header h1 p {
-  font-family: "sixthBody", sans-serif;
-  font-size: 1em;
-  text-align: left;
-  padding-left: 1rem;
-}
-.reader.sixth .left header h1 p:first-of-type, .reader.sixth .right header h1 p:first-of-type {
-  padding-bottom: 2rem;
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
-.reader.sixth .left header h1 p:first-of-type:hover, .reader.sixth .right header h1 p:first-of-type:hover {
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
-}
-.reader.sixth .left header table, .reader.sixth .right header table {
-  width: auto;
-  text-align: center;
-  order: 2;
-  text-transform: lowercase;
-  margin: 1rem 0;
-  font-size: 2em;
-  display: table;
-}
-.reader.sixth .left header table tr, .reader.sixth .right header table tr {
-  font-family: "windSong", serif;
-}
-.reader.sixth .left h2, .reader.sixth .left h3, .reader.sixth .right h2, .reader.sixth .right h3 {
-  font-family: "stolzLight", sans-serif;
-  font-size: 3em;
-  padding: 3rem 2rem 2.5rem 2rem;
-  text-align: center;
-  text-transform: uppercase;
-  margin: auto;
-}
-.reader.sixth .left h2:hover, .reader.sixth .left h3:hover, .reader.sixth .right h2:hover, .reader.sixth .right h3:hover {
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
-}
-.reader.sixth .left p, .reader.sixth .right p {
-  width: inherit;
-  font-family: "sixthBody", sans-serif;
-  padding-left: 2rem;
-}
-.reader.sixth .left ol, .reader.sixth .left ul, .reader.sixth .right ol, .reader.sixth .right ul {
-  width: inherit;
-  font-family: "sixthBody", serif;
-  font-size: 1.2em;
-  line-height: 1.2em;
-  list-style-type: decimal;
-  padding: 1rem 2rem 1rem 0;
-  list-style: none;
-}
-.reader.sixth .left ol table, .reader.sixth .left ul table, .reader.sixth .right ol table, .reader.sixth .right ul table {
-  text-align: left;
-  margin-left: 0;
-  margin-right: auto;
-  padding: 2rem 0;
-  font-size: 0.8em;
-  display: block;
-  width: 40vw;
-  height: auto;
-}
-.reader.sixth .left ol table td, .reader.sixth .left ul table td, .reader.sixth .right ol table td, .reader.sixth .right ul table td {
-  padding: 0.7rem 0;
-}
-.reader.sixth .left ol p, .reader.sixth .left ul p, .reader.sixth .right ol p, .reader.sixth .right ul p {
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-  padding: 2rem 0;
-}
-.reader.sixth .left ol li, .reader.sixth .left ul li, .reader.sixth .right ol li, .reader.sixth .right ul li {
-  margin: -1.5rem 0;
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-  padding: 1rem 0;
-  list-style: none;
-  /*
-  background-image: url(styles/sixth/arrow.gif);
-  background-repeat: no-repeat;
-  background-size: 1rem;*/
-}
-.reader.sixth .left ol li::before, .reader.sixth .left ul li::before, .reader.sixth .right ol li::before, .reader.sixth .right ul li::before {
-  content: " ";
-  display: inline-block;
-  height: 1.5rem;
-  width: 1.5rem;
-  background-image: url("/arrow.4d9c4be4.gif");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.reader.sixth .left ol li p, .reader.sixth .left ul li p, .reader.sixth .right ol li p, .reader.sixth .right ul li p {
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-}
-.reader.sixth .left ol ul, .reader.sixth .left ol ol, .reader.sixth .left ul ul, .reader.sixth .left ul ol, .reader.sixth .right ol ul, .reader.sixth .right ol ol, .reader.sixth .right ul ul, .reader.sixth .right ul ol {
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-  list-style-type: lower-roman;
-  padding-left: 2rem;
-}
-.reader.sixth .left ol ul p, .reader.sixth .left ol ol p, .reader.sixth .left ul ul p, .reader.sixth .left ul ol p, .reader.sixth .right ol ul p, .reader.sixth .right ol ol p, .reader.sixth .right ul ul p, .reader.sixth .right ul ol p {
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-}
-.reader.sixth .left table, .reader.sixth .right table {
-  text-align: left;
-  margin-left: 1.5rem;
-  margin-right: auto;
-  padding: 2rem 0;
-  font-size: 0.8em;
-  display: block;
-  width: 40vw;
-  height: auto;
-}
-.reader.sixth .left table td, .reader.sixth .right table td {
-  padding: 0.7rem 0;
-}
-.reader.sixth .left footer, .reader.sixth .right footer {
-  font-size: 0.8em;
-  text-align: left;
-  margin-left: -5rem;
-}
-.reader.sixth .left footer ul, .reader.sixth .left footer ol, .reader.sixth .right footer ul, .reader.sixth .right footer ol {
-  list-style: lower-roman;
-}
-.reader.sixth .left footer ul::after, .reader.sixth .left footer ol::after, .reader.sixth .right footer ul::after, .reader.sixth .right footer ol::after {
-  content: none;
-}
-.reader.sixth .left section h3, .reader.sixth .right section h3 {
-  font-family: "stolzLight", sans-serif;
-  font-size: 3em;
-  padding: 2.5rem 2rem 5rem 2rem;
-  text-align: center;
-  text-transform: uppercase;
-  margin-left: 0%;
-  line-height: 1em;
-}
-.reader.sixth .left section h3:hover, .reader.sixth .right section h3:hover {
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
-}
-.reader.sixth .left section table, .reader.sixth .right section table {
-  text-align: left;
-  margin-left: -1.5rem;
-  margin-right: auto;
-  padding: 2rem 0;
-  font-size: 0.8em;
-  display: block;
-  width: 40vw;
-  height: auto;
-}
-.reader.sixth .left section table td, .reader.sixth .right section table td {
-  padding: 0.7rem 0;
-}
-.reader.sixth .left section figure table, .reader.sixth .right section figure table {
-  margin-left: 1.5rem;
-}
-.reader.sixth .left section figure h3, .reader.sixth .right section figure h3 {
-  margin-left: -30rem;
-}
-.reader.sixth .right h1 {
-  padding-bottom: 2.5rem;
+@media (max-width: 768px) {
+  .reader.sixth article {
+    font-size: smaller;
+    background-color: #222;
+    color: #f6f3ea;
+    /*.parallax {
+      order: 3;
+      background-image: url(styles/sixth/human_tree.png);
+      background-color: transparent;
+      width: 50vh;
+      height: 50vh;
+      margin-left: 50%;
+      margin-right: 50%;
+      background-attachment: fixed;
+      transform: translateY(-4000px);
+      object-fit: contain;
+      z-index: 100;
+    }*/
+  }
+  .reader.sixth article header {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .reader.sixth article header h1 {
+    order: 1;
+    background-image: url(/giphy_bkgnd.e13f8e44.gif);
+    background-repeat: no-repeat;
+    mix-blend-mode: normal;
+    background-size: cover;
+    flex: 0 0 auto;
+    font-family: "stolzRegular", sans-serif;
+    font-size: 9em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4.6rem;
+    text-rendering: optimizeLegibility;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .reader.sixth article header h1:hover {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 50px #fff;
+  }
+  .reader.sixth article header h2, .reader.sixth article header h3 {
+    order: 2;
+    font-family: "stolzLight", sans-serif;
+    font-size: 3em;
+    padding: 5rem 2rem 5rem 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .reader.sixth article header figure {
+    order: 4;
+    text-align: center;
+    width: 80vw;
+    margin-bottom: 2rem;
+  }
+  .reader.sixth article header figure img {
+    filter: grayscale(100%);
+    transition: 1s ease-in;
+    width: 89vw;
+    height: 47vh;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+  }
+  .reader.sixth article header figure img:hover {
+    filter: grayscale(0%) brightness(95%);
+    transform: scale(1.1);
+  }
+  .reader.sixth article header figure figcaption {
+    font-family: "stolzLight", sans-serif;
+  }
+  .reader.sixth article header p {
+    font-family: "windSong", serif;
+    font-size: 3.5em;
+    text-transform: lowercase;
+    order: 3;
+    text-align: right;
+    padding: 0 6rem;
+  }
+  .reader.sixth article main {
+    padding: 2rem 0 2.5rem 3.5rem;
+    font-style: italic;
+    font-family: "stolzLight", sans-serif;
+  }
+  .reader.sixth article main h2, .reader.sixth article main h3 {
+    font-size: 5em;
+    font-family: "stolzLight", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    padding: 3rem 0 3rem 4rem;
+  }
+  .reader.sixth article main h2:hover, .reader.sixth article main h3:hover {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  }
+  .reader.sixth article main p {
+    display: inline-block;
+    font-family: "sixthBody", serif;
+    font-size: 1.2em;
+    width: auto;
+    columns: 2 300px;
+    column-gap: 10rem;
+    width: 80vw;
+    padding: 0 5rem;
+    line-height: 1.2em;
+    text-align: justify;
+  }
+  .reader.sixth article main figure {
+    text-align: center;
+    width: 80vw;
+    padding: 4rem 0;
+    transform: translateX(-3.5rem);
+  }
+  .reader.sixth article main figure img {
+    filter: grayscale(100%);
+    transition: 0.8s ease-in-out;
+    width: 89.2vw;
+    height: 47vh;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  .reader.sixth article main figure img:hover {
+    filter: grayscale(0%) brightness(95%);
+    transform: scale(1.15);
+  }
+  .reader.sixth article main figure figcaption {
+    font-family: "stolzLight", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    padding-left: 4rem;
+  }
+  .reader.sixth article main figure table {
+    text-transform: uppercase;
+    margin-left: 3.5rem;
+  }
+  .reader.sixth article main figure table tr {
+    padding: 0.5rem 0.5rem;
+  }
+  .reader.sixth article main figure table tr:nth-of-type(even) {
+    background-color: #333;
+  }
+  .reader.sixth article main figure table tr:nth-of-type(odd) {
+    background-color: #222;
+  }
+  .reader.sixth article footer {
+    padding: 5rem 0 1rem 5rem;
+    font-family: "stolzLight", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    width: auto;
+  }
+  .reader.sixth .left, .reader.sixth .right {
+    width: auto;
+    display: inline-block;
+    border-right: 0.5rem solid white;
+    overflow: hidden;
+  }
+  .reader.sixth .left header, .reader.sixth .right header {
+    order: 1;
+  }
+  .reader.sixth .left header h1, .reader.sixth .right header h1 {
+    width: inherit;
+    font-size: 2em;
+    margin-left: -2rem;
+  }
+  .reader.sixth .left header h1:hover, .reader.sixth .right header h1:hover {
+    text-shadow: none;
+  }
+  .reader.sixth .left header h1 p, .reader.sixth .right header h1 p {
+    font-family: "sixthBody", sans-serif;
+    font-size: 1em;
+    text-align: left;
+    padding-left: 0rem;
+  }
+  .reader.sixth .left header h1 p:first-of-type, .reader.sixth .right header h1 p:first-of-type {
+    padding-bottom: 2rem;
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+  .reader.sixth .left header h1 p:first-of-type:hover, .reader.sixth .right header h1 p:first-of-type:hover {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  }
+  .reader.sixth .left header table, .reader.sixth .right header table {
+    width: auto;
+    text-align: center;
+    order: 2;
+    text-transform: lowercase;
+    margin: 1rem 0;
+    font-size: 2em;
+    display: table;
+  }
+  .reader.sixth .left header table tr, .reader.sixth .right header table tr {
+    font-family: "windSong", serif;
+  }
+  .reader.sixth .left h2, .reader.sixth .right h2 {
+    font-family: "stolzLight", sans-serif;
+    font-size: 3em;
+    padding: 3rem 2rem 2.5rem 0rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin: auto;
+  }
+  .reader.sixth .left h2:hover, .reader.sixth .right h2:hover {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  }
+  .reader.sixth .left p, .reader.sixth .right p {
+    width: inherit;
+    font-family: "sixthBody", sans-serif;
+    padding-left: 2rem;
+  }
+  .reader.sixth .left ol, .reader.sixth .left ul, .reader.sixth .right ol, .reader.sixth .right ul {
+    width: inherit;
+    font-family: "sixthBody", serif;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    list-style-type: decimal;
+    padding: 1rem 2rem 1rem 0;
+    list-style: none;
+  }
+  .reader.sixth .left ol table, .reader.sixth .left ul table, .reader.sixth .right ol table, .reader.sixth .right ul table {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+    padding: 2rem 0;
+    font-size: 0.8em;
+    display: block;
+    width: 40vw;
+    height: auto;
+  }
+  .reader.sixth .left ol table td, .reader.sixth .left ul table td, .reader.sixth .right ol table td, .reader.sixth .right ul table td {
+    padding: 0.7rem 0;
+  }
+  .reader.sixth .left ol p, .reader.sixth .left ul p, .reader.sixth .right ol p, .reader.sixth .right ul p {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    padding: 2rem 0;
+  }
+  .reader.sixth .left ol li, .reader.sixth .left ul li, .reader.sixth .right ol li, .reader.sixth .right ul li {
+    margin: -1.5rem 0;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    padding: 1rem 0;
+    list-style: none;
+    /*
+    background-image: url(styles/sixth/arrow.gif);
+    background-repeat: no-repeat;
+    background-size: 1rem;*/
+  }
+  .reader.sixth .left ol li::before, .reader.sixth .left ul li::before, .reader.sixth .right ol li::before, .reader.sixth .right ul li::before {
+    content: " ";
+    display: inline-block;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-image: url("/arrow.4d9c4be4.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .reader.sixth .left ol li p, .reader.sixth .left ul li p, .reader.sixth .right ol li p, .reader.sixth .right ul li p {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+  }
+  .reader.sixth .left ol ul, .reader.sixth .left ol ol, .reader.sixth .left ul ul, .reader.sixth .left ul ol, .reader.sixth .right ol ul, .reader.sixth .right ol ol, .reader.sixth .right ul ul, .reader.sixth .right ul ol {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    list-style-type: lower-roman;
+    padding-left: 2rem;
+  }
+  .reader.sixth .left ol ul p, .reader.sixth .left ol ol p, .reader.sixth .left ul ul p, .reader.sixth .left ul ol p, .reader.sixth .right ol ul p, .reader.sixth .right ol ol p, .reader.sixth .right ul ul p, .reader.sixth .right ul ol p {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+  }
+  .reader.sixth .left table, .reader.sixth .right table {
+    text-align: left;
+    margin-left: 1.5rem;
+    margin-right: auto;
+    padding: 2rem 0;
+    font-size: 0.8em;
+    display: block;
+    width: 40vw;
+    height: auto;
+  }
+  .reader.sixth .left table td, .reader.sixth .right table td {
+    padding: 0.7rem 0;
+  }
+  .reader.sixth .left footer, .reader.sixth .right footer {
+    font-size: 0.8em;
+    text-align: left;
+    margin-left: -5rem;
+  }
+  .reader.sixth .left footer ul, .reader.sixth .left footer ol, .reader.sixth .right footer ul, .reader.sixth .right footer ol {
+    list-style: lower-roman;
+  }
+  .reader.sixth .left footer ul::after, .reader.sixth .left footer ol::after, .reader.sixth .right footer ul::after, .reader.sixth .right footer ol::after {
+    content: none;
+  }
+  .reader.sixth .left section h3, .reader.sixth .right section h3 {
+    font-family: "stolzLight", sans-serif;
+    font-size: 3em;
+    padding: 2.5rem 2rem 5rem 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: 0%;
+    line-height: 1em;
+  }
+  .reader.sixth .left section h3:hover, .reader.sixth .right section h3:hover {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+  }
+  .reader.sixth .left section table, .reader.sixth .right section table {
+    text-align: left;
+    margin-left: -1.5rem;
+    margin-right: auto;
+    padding: 2rem 0;
+    font-size: 0.8em;
+    display: block;
+    width: 40vw;
+    height: auto;
+  }
+  .reader.sixth .left section table td, .reader.sixth .right section table td {
+    padding: 0.7rem 0;
+  }
+  .reader.sixth .left section figure table, .reader.sixth .right section figure table {
+    margin-left: 1.5rem;
+  }
+  .reader.sixth .left section figure h3, .reader.sixth .right section figure h3 {
+    margin-left: -10rem;
+  }
+  .reader.sixth .right h1 {
+    padding-bottom: 2.5rem;
+  }
 }
 
 body {
@@ -5268,8 +5909,7 @@ body {
 
 .footerArticleLink {
   grid-column: span 2;
-  height: 5vh;
-  padding: 0px;
+  padding: 2px;
   background-color: #222222;
   color: #f4f1d0;
   text-align: center;

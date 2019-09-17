@@ -1175,20 +1175,33 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 function rimpaLogic() {
-  var image = document.querySelectorAll(".reader figure img");
-  var colorsArray = ["image-background-color-yellow", "image-background-color-green", "image-background-color-blue", "image-background-color-red"];
+  function addColors() {
+    var image = document.querySelectorAll(".reader figure img");
+    var colorsArray = ["image-background-color-yellow", "image-background-color-green", "image-background-color-blue", "image-background-color-red"];
 
-  for (var i = 0; i < image.length; i++) {
-    var currentImageElement = image[i];
-    var imageParent = currentImageElement.parentNode;
-    var backgroundColorDiv = document.createElement("div");
-    var currentColor = colorsArray[i % colorsArray.length];
-    backgroundColorDiv.classList.add(currentColor);
-    imageParent.replaceChild(backgroundColorDiv, currentImageElement);
-    backgroundColorDiv.appendChild(currentImageElement);
+    for (var i = 0; i < image.length; i++) {
+      var currentImageElement = image[i];
+      var imageParent = currentImageElement.parentNode;
+      var backgroundColorDiv = document.createElement("div");
+      var currentColor = colorsArray[i % colorsArray.length];
+      backgroundColorDiv.classList.add(currentColor);
+      imageParent.replaceChild(backgroundColorDiv, currentImageElement);
+      backgroundColorDiv.appendChild(currentImageElement);
+    }
+
+    ;
   }
 
-  ;
+  addColors();
+
+  function addBird() {
+    var header = document.querySelector("header");
+    var headerChildren = Array.from(header.children);
+    var checkImg = true;
+    headerChildren.forEach(function (node) {
+      if (node.tagName == "FIGURE" && node.tagName == "IMG") {}
+    });
+  }
 }
 
 var _default = rimpaLogic;
@@ -1945,8 +1958,6 @@ function addArticleGlobalUrl() {
 }
 
 addArticleGlobalUrl();
-AOS.init();
-window.addEventListener('load', AOS.refresh);
 },{"./article-parser":"article-parser.js","./addArticle.js":"addArticle.js","./articlesSelectionButtons":"articlesSelectionButtons.js","./createThemeButtons":"createThemeButtons.js","./sidebar":"sidebar.js","./addDocumentationPages":"addDocumentationPages.js","./overlayMenu":"overlayMenu.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -1975,7 +1986,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+<<<<<<< HEAD
   var ws = new WebSocket(protocol + '://' + hostname + ':' + "53535" + '/');
+=======
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63517" + '/');
+>>>>>>> 81d6f3601df3c3c1750dc985a29312fb1c35f1cb
 
   ws.onmessage = function (event) {
     checkedAssets = {};
