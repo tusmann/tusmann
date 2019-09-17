@@ -1823,6 +1823,7 @@ $dragon-ink: #222;
 //STYLE: ROLLING DOM
 
 .reader.fifth {
+  font-size: 100%;
   :link, :visited {
     color: rgb(141, 0, 14);
     font-style: italic;
@@ -1860,7 +1861,7 @@ $dragon-ink: #222;
   article {
     font-family: 'fifthCorpus', sans-serif;
     font-size: 1.1em;
-    columns: 3 200px;
+    columns: 3 12.5rem;
     background-color: white;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -1868,11 +1869,7 @@ $dragon-ink: #222;
     border: 0.1rem solid #222;
     border-left: -5rem;
     border-right: -1rem;
-    padding: 5rem 4rem 2rem;
-    &::after {
-      content: "";
-      border-top: 0.1rem solid #222;
-    }
+    padding: 5rem 2rem 2rem;
     h1 {
       position: relative;
       font-family: "bernsteinBold";
@@ -1892,8 +1889,6 @@ $dragon-ink: #222;
       padding: 0.5rem 1rem;
       column-span: 2;
     }
-  
-  
   
     h1 {
       position: relative;
@@ -2372,6 +2367,7 @@ $dragon-ink: #222;
 //STYLE: 2020
 
 .reader.sixth {
+  font-size: 100%;
   :link, :visited {
     color: white;
     font-style: italic;
@@ -2399,9 +2395,9 @@ $dragon-ink: #222;
           background-size: cover;
           flex: 0 0 auto;
           font-family: "stolzRegular", sans-serif;
-          font-size: 9.5em;
+          font-size: 9.5rem;
           text-transform: uppercase;
-          letter-spacing: .05em;
+          letter-spacing: .05rem;
           padding: 4.6rem;
           text-rendering: optimizeLegibility;
           margin-right: auto;
@@ -2420,7 +2416,7 @@ $dragon-ink: #222;
         h2, h3 {
           order: 2;
           font-family: "stolzLight", sans-serif;
-          font-size: 3em;
+          font-size: 3rem;
           padding: 5rem 2rem 5rem 2rem;
           text-align: center;
           text-transform: uppercase;
@@ -2448,11 +2444,12 @@ $dragon-ink: #222;
           }
           figcaption {
             font-family: "stolzLight", sans-serif;
+            text-transform: uppercase;
           }
         }
         p {
           font-family: "windSong", serif;
-          font-size: 3.5em;
+          font-size: 3.5rem;
           text-transform: lowercase;
           order: 3;
           text-align: right;
@@ -2460,14 +2457,14 @@ $dragon-ink: #222;
         }
       }
       main {
-        padding: 2rem 0 2.5rem 3.5rem;
+        padding: 2.5rem 0 2.5rem 2.5rem;
         font-family: "stolzLight", sans-serif;
         h2, h3 {
-          font-size: 5em;
+          font-size: 5rem;
           font-family: "stolzLight", sans-serif;
           text-transform: uppercase;
-          letter-spacing: .25em;
-          padding: 3rem 0 3rem 4rem;
+          letter-spacing: .25rem;
+          padding: 2.5rem 0 2.5rem 5rem;
           &:hover {
             text-shadow:
               0 0 5px #fff,
@@ -2479,19 +2476,19 @@ $dragon-ink: #222;
         p {
           display: inline-block;
           font-family: "sixthBody", serif;
-          font-size: 1.2em;
+          font-size: 1.2rem;
           width: auto;
           columns: 2 300px;
           column-gap: 10rem;
-          width: 80vw;
+          width: 85vw;
           padding: 0 5rem;
-          line-height: 1.2em;
+          line-height: 1.4rem;
           text-align: justify;
         }
         figure {
           text-align: center;
           width: 90vw;
-          padding: 4rem 0;
+          padding: 5rem 0;
           transform: translateX(-3.5rem);
           img {
             filter: grayscale(100%);
@@ -2511,8 +2508,8 @@ $dragon-ink: #222;
           figcaption {
             font-family: "stolzLight", sans-serif;
             text-transform: uppercase;
-            letter-spacing: .25em;
-            padding-left: 4rem;
+            letter-spacing: .25rem;
+            margin-left: 2.5rem;
           }
           table {
             text-transform: uppercase;
@@ -2530,10 +2527,10 @@ $dragon-ink: #222;
         }
       }
       footer {
-        padding: 3rem 0;
+        padding: 2.5rem 0;
         font-family: "stolzLight", sans-serif;
         text-transform: uppercase;
-        letter-spacing: .25em;
+        letter-spacing: .25rem;
         width: auto;
         text-align: center;
       }
@@ -2561,17 +2558,17 @@ $dragon-ink: #222;
         order: 1;
         h1 {
           width: inherit;
-          font-size: 2em;
+          font-size: 2rem;
           &:hover {
             text-shadow: none;
           }
           p {
             font-family: "sixthBody", sans-serif;
-            font-size: 1em;
+            font-size: 1rem;
             text-align: left;
-            padding-left: 1rem;
+            padding-left: 1.25rem;
             &:first-of-type {
-              padding-bottom: 2rem;
+              padding-bottom: 2.5rem;
               font-size: 1.5em;
               text-transform: uppercase;
               &:hover {
@@ -2589,8 +2586,8 @@ $dragon-ink: #222;
           text-align: center;
           order: 2;
           text-transform: lowercase;
-          margin: 1rem 0;
-          font-size: 2em;
+          margin: 1.25rem 0;
+          font-size: 2rem;
           display: table;
           tr {
             font-family: "windSong", serif;
@@ -2600,8 +2597,8 @@ $dragon-ink: #222;
       
       h2, h3 {
         font-family: "stolzLight", sans-serif;
-        font-size: 3em;
-        padding: 3rem 2rem 2.5rem 0rem;
+        font-size: 3rem;
+        padding: 2.5rem 2.5rem 2.5rem 0rem;
         text-align: center;
         text-transform: uppercase;
         margin: auto;
@@ -2616,7 +2613,7 @@ $dragon-ink: #222;
       p {
         width: inherit;
         font-family: "sixthBody", sans-serif;
-        padding-left: 2rem;
+        padding-left: 2.5rem;
       }
       ol, ul {
         width: inherit;
@@ -2624,14 +2621,14 @@ $dragon-ink: #222;
         font-size: 1.2em;
         line-height: 1.2em;
         list-style-type:decimal;
-        padding: 1rem 2rem 1rem 0;
+        padding: 1.25rem 2.5rem 1.25rem 0;
         list-style: none;
         table {
           text-align: left;
           margin-left: 0;
           margin-right: auto;
-          padding: 2rem 0;
-          font-size: .8em;
+          padding: 2.5rem 0;
+          font-size: .8rem;
           display: block;
           width: 40vw;
           height: auto;
@@ -2643,14 +2640,14 @@ $dragon-ink: #222;
           font-size: inherit;
           font-family: inherit;
           color: inherit;
-          padding: 2rem 0;
+          padding: 2.5rem 0;
         }
         li {
           margin: -1.5rem 0;
           font-size: inherit;
           font-family: inherit;
           color: inherit;
-          padding: 1rem 0;
+          padding: 1.25rem 0;
           list-style: none;
           /*
           background-image: url(styles/sixth/arrow.gif);
@@ -2676,7 +2673,7 @@ $dragon-ink: #222;
             font-family: inherit;
             color: inherit;
             list-style-type: lower-roman;
-            padding-left: 2rem;
+            padding-left: 2.5rem;
             p {
               font-size: inherit;
               font-family: inherit;
@@ -2688,8 +2685,8 @@ $dragon-ink: #222;
         text-align: left;
         margin-left: 1.5rem;
         margin-right: auto;
-        padding: 2rem 0;
-        font-size: .8em;
+        padding: 2.5rem 0;
+        font-size: .8rem;
         display: block;
         width: 40vw;
         height: auto;
@@ -2698,7 +2695,7 @@ $dragon-ink: #222;
         }
       }
       footer {
-        font-size: .8em;
+        font-size: .8rem;
         text-align: left;
         margin-left: 0rem;
         ul, ol {
@@ -2711,12 +2708,12 @@ $dragon-ink: #222;
       section {
         h3 {
           font-family: "stolzLight", sans-serif;
-          font-size: 3em;
+          font-size: 3rem;
           padding: 2.5rem 0rem 5rem 0rem;
           text-align: center;
           text-transform: uppercase;
           margin-left: 0%;
-          line-height: 1em;
+          line-height: 1.25rem;
           &:hover {
             text-shadow:
               0 0 5px #fff,
@@ -2729,18 +2726,18 @@ $dragon-ink: #222;
           text-align: left;
           margin-left: -1.5rem;
           margin-right: auto;
-          padding: 2rem 0;
-          font-size: .8em;
+          padding: 2.5rem 0;
+          font-size: .8rem;
           display: block;
           width: 40vw;
           height: auto;
           td {
-            padding: .7rem 0;
+            padding: .75rem 0;
           }
         }
         figure {
           table {
-            margin-left: 1.5rem;
+            margin-left: 1.25rem;
           }
           h3 {
             margin-left: -50%;
