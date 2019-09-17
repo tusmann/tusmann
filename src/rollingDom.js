@@ -1,15 +1,13 @@
 
-function rollingDom(){
+function rollingDom(article){
     /*const div = document.createElement("div");
     const location = document.querySelectorAll(".reader section");
     location.insertAdjacentElement("afterbegin", div);*/
-    var element = document.querySelector('meta[property~="dc:publisher"]');
-    var content = element && element.getAttribute("content");
     
     var div = document.createElement('div');
     document.getElementsByTagName("article")[0].appendChild(div);
     div.setAttribute('class', 'publisher');
-    div.innerHTML = content
+    div.textContent = article.publisher
     
 }
 

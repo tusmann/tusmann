@@ -1,5 +1,8 @@
 function rimpaLogic() {
-  function addColors() {
+  addColors();
+  addBird();
+}
+function addColors() {
   const image = document.querySelectorAll(".reader figure img");
   const colorsArray = ["image-background-color-yellow", "image-background-color-green", "image-background-color-blue", "image-background-color-red"]
 
@@ -12,13 +15,6 @@ function rimpaLogic() {
     backgroundColorDiv.classList.add(currentColor);
     imageParent.replaceChild(backgroundColorDiv, currentImageElement)
     backgroundColorDiv.appendChild(currentImageElement)
-  };
-}
-addColors()
-
-function threshold(element, index, array) {
-  if (element.tagName !== "FIGURE" && element.tagName !== "IMG") {
-    return element.tagName 
   }
 }
 function addBird() {
@@ -28,7 +24,12 @@ function addBird() {
     header.classList.add("bird")
   }
 }
-addBird()
+
+
+function threshold(element, index, array) {
+  if (element.tagName !== "FIGURE" && element.tagName !== "IMG" && element.tagName !== "TABLE") {
+    return element.tagName 
+  }
 }
 
 export default rimpaLogic;
