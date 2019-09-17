@@ -1193,7 +1193,7 @@ function rimpaLogic() {
   addColors();
 
   function threshold(element, index, array) {
-    if (element.tagName !== "FIGURE" && element.tagName !== "IMG") {
+    if (element.tagName !== "FIGURE" && element.tagName !== "IMG" && element.tagName !== "TABLE") {
       return element.tagName;
     }
   }
@@ -2003,7 +2003,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "20728" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "21049" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

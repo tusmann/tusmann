@@ -17,7 +17,7 @@ function rimpaLogic() {
 addColors()
 
 function threshold(element, index, array) {
-  if (element.tagName !== "FIGURE" && element.tagName !== "IMG") {
+  if (element.tagName !== "FIGURE" && element.tagName !== "IMG" && element.tagName !== "TABLE") {
     return element.tagName 
   }
 }

@@ -523,6 +523,12 @@ html {
   vertical-align: middle;
   padding: 0 0 0 0;
 }
+.textNoImage li {
+  padding: 0.5rem;
+}
+.textNoImage li a {
+  color: black;
+}
 
 @keyframes hideing {
   0% {
@@ -950,48 +956,46 @@ html {
 .reader.manuzio .right article {
   padding: 9% 17.2% 15% 6%;
 }
-
-.left-triangle-shape {
+.reader.manuzio .left-triangle-shape {
   float: left;
   shape-outside: polygon(0 0, 0 100%, 100% 50%);
   clip-path: polygon(0 0, 0 100%, 100% 50%);
   width: 45%;
   position: relative;
 }
-
-.right-triangle-shape {
+.reader.manuzio .right-triangle-shape {
   float: right;
   shape-outside: polygon(100% 0, 100% 100%, 0 50%);
   clip-path: polygon(100% 0, 100% 100%, 0 50%);
   width: 45%;
   position: relative;
 }
-
 @media (min-width: 320px) and (max-width: 650px) {
-  .reader.rimpa article {
+  .reader.manuzio .reader.rimpa article {
     font-size: small;
   }
-  .reader.rimpa article h1,
-.reader.rimpa article h2,
-.reader.rimpa article h3,
-.reader.rimpa article h4 {
+  .reader.manuzio .reader.rimpa article h1,
+.reader.manuzio .reader.rimpa article h2,
+.reader.manuzio .reader.rimpa article h3,
+.reader.manuzio .reader.rimpa article h4 {
     font-size: medium;
   }
-  .reader.rimpa article p:first-of-type:first-letter {
+  .reader.manuzio .reader.rimpa article p:first-of-type:first-letter {
     font-size: 6rem;
     line-height: 3rem;
     text-align: left;
   }
-  .reader.rimpa .left,
-.reader.rimpa .right {
+  .reader.manuzio .reader.rimpa .left,
+.reader.manuzio .reader.rimpa .right {
     webkit-animation: slide-in-top 0.5s both;
     animation: slide-in-top 0.5s both;
   }
-  .reader.rimpa .left article,
-.reader.rimpa .right article {
+  .reader.manuzio .reader.rimpa .left article,
+.reader.manuzio .reader.rimpa .right article {
     padding: 9%, 17.2%, 15%, 6%;
   }
 }
+
 .reader.rimpa {
   width: 100%;
 }
@@ -1136,8 +1140,8 @@ html {
 .reader.rimpa article main h2,
 .reader.rimpa article main h3,
 .reader.rimpa article main h4 {
-  background: #635a2c;
-  background: radial-gradient(circle, #635a2c 0%, #9e8f46 64%, #c5b358 100%);
+  background: #917f1f;
+  background: radial-gradient(circle, #917f1f 0%, #9e8f46 64%, #c5b358 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #fff;
@@ -1226,6 +1230,13 @@ html {
 .reader.rimpa .right article main {
   column-count: 1;
   margin: 3%;
+}
+.reader.rimpa .left article main h1, .reader.rimpa .left article main h2, .reader.rimpa .left article main h3, .reader.rimpa .left article main h4,
+.reader.rimpa .right article main h1,
+.reader.rimpa .right article main h2,
+.reader.rimpa .right article main h3,
+.reader.rimpa .right article main h4 {
+  writing-mode: horizontal-tb;
 }
 
 .reader.third {

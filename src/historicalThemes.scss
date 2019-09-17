@@ -401,7 +401,9 @@ $dragon-ink: #222;
       padding: 9% 17.2% 15% 6%;
     }
   }
-}
+
+
+
 
 //triangles
 .left-triangle-shape {
@@ -445,6 +447,9 @@ $dragon-ink: #222;
     }
   }
 }
+}
+
+
 
 //STYLE: RIMPA
 
@@ -604,10 +609,10 @@ $dragon-ink: #222;
       h2,
       h3,
       h4 {
-        background: rgb(99, 90, 44);
+        background: rgb(145, 127, 31, 1);
         background: radial-gradient(
           circle,
-          rgba(99, 90, 44, 1) 0%,
+          rgba(145, 127, 31, 1) 0%,
           rgba(158, 143, 70, 1) 64%,
           rgba(197, 179, 88, 1) 100%
         );
@@ -703,6 +708,9 @@ $dragon-ink: #222;
       main {
         column-count: 1;
         margin: 3%;
+        h1, h2, h3, h4 {
+          writing-mode: horizontal-tb;
+        }
       }
     }
   }
