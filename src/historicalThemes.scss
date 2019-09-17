@@ -719,7 +719,7 @@ $dragon-ink: #222;
       article {
   
         header {
-          width: 20vw;
+          width: 13vw;
           grid-template-columns: 1fr 1fr;
           grid-template-rows: auto 1fr;
   
@@ -776,13 +776,13 @@ $dragon-ink: #222;
   
     .reader.left {
       article {
-        padding: 6rem 3rem 12rem 8rem;
+        padding: 4rem 1rem 10rem 6rem;
       }
     }
   
     .reader.right {
       article {
-        padding: 6rem 8rem 12rem 3rem;
+        padding: 4rem 6rem 10rem 1rem;
       }
     }
   
@@ -899,8 +899,13 @@ $dragon-ink: #222;
         margin-left: auto;
         margin-right: auto;
         clip-path: circle();
-        -webkit-filter: grayscale(100%) contrast(100%);
-        filter: grayscale(100%) contrast(100%);
+        -webkit-filter: grayscale(1) invert(1);
+        filter: grayscale(1) invert(1);
+
+          &:hover {
+          -webkit-filter: none;
+          filter: none;
+        }
       }
 
       figure {
@@ -918,8 +923,13 @@ $dragon-ink: #222;
           margin-left: auto;
           margin-right: auto;
           clip-path: circle();
-          -webkit-filter: grayscale(100%) contrast(100%);
-          filter: grayscale(100%) contrast(100%);
+          -webkit-filter: grayscale(1) invert(1);
+          filter: grayscale(1) invert(1);
+
+            &:hover {
+            -webkit-filter: none;
+            filter: none;
+          }
         }
 
         figcaption {
@@ -986,6 +996,10 @@ $dragon-ink: #222;
           //margin-right: auto;
           -webkit-filter: grayscale(100%) contrast(100%);
           filter: grayscale(100%) contrast(100%);
+          &:hover {
+            -webkit-filter: none;
+            filter: none;
+          }
         }
 
         figcaption {
@@ -1019,6 +1033,12 @@ $dragon-ink: #222;
           figure:nth-of-type(1) {
             img {
               clip-path: circle();
+              -webkit-filter: grayscale(100%) contrast(100%);
+              filter: grayscale(100%) contrast(100%);
+              &:hover {
+                -webkit-filter: none;
+                filter: none;
+              }
             }
           }
         }
@@ -1046,11 +1066,26 @@ $dragon-ink: #222;
           }
         }
 
+        ul, ol {
+          //font-size: 1.1em;
+          list-style-type: upper-roman;
+          list-style-position: inside;
+          padding: 0.4em 0;
+          li {
+            padding: 0.2rem 0;
+            ol {
+              list-style-type: square;
+              padding-left: 2rem;
+            }
+          }
+        }
+
         figure {
           width: auto;
 
           table {
             border-right: 5px solid $tsi-red;
+            border-left: 3px solid $tsi-ink;
             padding-bottom: 2vh;
             margin-top: 2vh;
             margin-bottom: 2vh;
@@ -1063,11 +1098,20 @@ $dragon-ink: #222;
                 th {
                   font-weight: bold;
                   padding-top: 1vh;
+                  padding-left: 1vw;
+                  padding-bottom: 1vh;
+                  border-bottom: 5px double $tsi-ink;
+                  border-top: 5px solid $tsi-ink;
                 }
                 td {
                   margin-top: 2vh;
                   margin-bottom: 2vh;
+                  border-bottom: 3px solid $tsi-ink;
+                  border-top: 3px solid $tsi-ink;
+                  padding-left: 1vw;
                   padding-right: 1vw;
+                  padding-top: 1vh;
+                  padding-bottom: 1vh;
                   text-align: left;
                 }
               }
@@ -1085,6 +1129,10 @@ $dragon-ink: #222;
             //margin-right: auto;
             -webkit-filter: grayscale(100%) contrast(100%);
             filter: grayscale(100%) contrast(100%);
+            &:hover {
+              -webkit-filter: none;
+              filter: none;
+            }
           }
 
           figcaption {
@@ -1326,8 +1374,13 @@ $dragon-ink: #222;
           object-fit: contain;
           display: block;
           clip-path: circle();
-          -webkit-filter: grayscale(100%) contrast(100%);
-          filter: grayscale(100%) contrast(100%);
+          -webkit-filter: grayscale(1) invert(1);
+        filter: grayscale(1) invert(1);
+
+          &:hover {
+          -webkit-filter: none;
+          filter: none;
+        }
         }
   
         figure {
@@ -1347,8 +1400,13 @@ $dragon-ink: #222;
             margin-left: auto;
             margin-right: auto;
             clip-path: circle();
-            -webkit-filter: grayscale(100%) contrast(100%);
-            filter: grayscale(100%) contrast(100%);
+            -webkit-filter: grayscale(1) invert(1);
+            filter: grayscale(1) invert(1);
+
+              &:hover {
+              -webkit-filter: none;
+              filter: none;
+            }
           }
   
             figcaption {
@@ -1390,6 +1448,10 @@ $dragon-ink: #222;
           figure:nth-of-type(1) {
               img, figcaption {
                 column-span: all;
+                &:hover {
+                  -webkit-filter: none;
+                  filter: none;
+                }
               }
             
           }
@@ -1413,6 +1475,10 @@ $dragon-ink: #222;
           //margin-right: auto;
           -webkit-filter: grayscale(100%) contrast(100%);
           filter: grayscale(100%) contrast(100%);
+          &:hover {
+            -webkit-filter: none;
+            filter: none;
+          }
         }
 
         figcaption {
@@ -1438,6 +1504,10 @@ $dragon-ink: #222;
             figure:nth-of-type(1) {
                 img, figcaption {
                   column-span: all;
+                  &:hover {
+                    -webkit-filter: none;
+                    filter: none;
+                  }
                 }
               
             }
@@ -1447,6 +1517,10 @@ $dragon-ink: #222;
             figure:nth-of-type(1) {
                 img {
                   clip-path: circle();
+                  &:hover {
+                    -webkit-filter: none;
+                    filter: none;
+                  }
                 }
               
             }
@@ -1516,6 +1590,10 @@ $dragon-ink: #222;
             //margin-right: auto;
             -webkit-filter: grayscale(100%) contrast(100%);
             filter: grayscale(100%) contrast(100%);
+            &:hover {
+              -webkit-filter: none;
+              filter: none;
+            }
           }
 
             figcaption {
@@ -1575,8 +1653,6 @@ $dragon-ink: #222;
   }
   
 }
-    
-  
 //
 
 
@@ -1621,7 +1697,7 @@ $dragon-ink: #222;
               padding: 0;
               
               &:first-of-type {
-                font-family: $font-dungeon;
+                font-family: $font-dungeon, $font-quentin;
                 font-size: 2.8em;
                 //line-height: 0.6em;
                 //padding-top: 20px;
@@ -2165,13 +2241,14 @@ $dragon-ink: #222;
             object-fit: contain;
             margin-top: 2%;
             display: block;
-            //margin-left: auto;
-            //margin-right: auto;
-            //-webkit-filter: grayscale(100%) contrast(100%);
-            //filter: grayscale(100%) contrast(100%);
-            //filter: blur(0.87px) brightness(3) contrast(3) grayscale(1) saturate(3) ;
-            //-webkit-filter: blur(0.87px) brightness(3) contrast(3) grayscale(1) saturate(3) ;
-            //-moz-filter: blur(0.87px) brightness(3) contrast(3) grayscale(1) saturate(3) ;
+            filter: brightness(1.22) contrast(1.31) grayscale(1) saturate(1.10);
+            -webkit-filter: brightness(1.22) contrast(1.31) grayscale(1) saturate(1.10);
+            -moz-filter: brightness(1.22) contrast(1.31) grayscale(1) saturate(1.10);
+            &:hover {
+            filter: none;
+            -webkit-filter: none;
+            -moz-filter: none;
+            }
           }
         }
       }
@@ -2788,13 +2865,14 @@ $dragon-ink: #222;
             object-fit: contain;
             margin-top: 2%;
             display: block;
-            //margin-left: auto;
-            //margin-right: auto;
-            //-webkit-filter: grayscale(100%) contrast(100%);
-            //filter: grayscale(100%) contrast(100%);
-            //filter: blur(0.87px) brightness(3) contrast(3) grayscale(1) saturate(3) ;
-            //-webkit-filter: blur(0.87px) brightness(3) contrast(3) grayscale(1) saturate(3) ;
-            //-moz-filter: blur(0.87px) brightness(3) contrast(3) grayscale(1) saturate(3) ;
+            filter: brightness(1.22) contrast(1.31) grayscale(1) saturate(1.10);
+            -webkit-filter: brightness(1.22) contrast(1.31) grayscale(1) saturate(1.10);
+            -moz-filter: brightness(1.22) contrast(1.31) grayscale(1) saturate(1.10);
+            &:hover {
+            filter: none;
+            -webkit-filter: none;
+            -moz-filter: none;
+            }
           }
         }
       }

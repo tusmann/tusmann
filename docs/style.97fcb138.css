@@ -226,13 +226,13 @@ html {
 }
 
 .card__side--back-3 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#222), to(#e31619));
-  background-image: linear-gradient(to right bottom, #222, #e31619);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#f9423a), to(#0077c0));
+  background-image: linear-gradient(to right bottom, #f9423a, #0077c0);
 }
 
 .card__side--back-4 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#222), to(#e31619));
-  background-image: linear-gradient(to right bottom, #222, #e31619);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#e31619), to(#222));
+  background-image: linear-gradient(to right bottom, #e31619, #222);
 }
 
 .card__side--back-5 {
@@ -277,13 +277,13 @@ html {
 }
 
 .card__picture--3 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#222), to(#e31619)), url(/ded-card-front.c5365650.jpg);
-  background-image: linear-gradient(to right bottom, #222, #e31619), url(/ded-card-front.c5365650.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#f9423a), to(#0077c0)), url(/tschichold-card-font.4903db28.jpg);
+  background-image: linear-gradient(to right bottom, #f9423a, #0077c0), url(/tschichold-card-font.4903db28.jpg);
 }
 
 .card__picture--4 {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#222), to(#e31619)), url(/ded-card-front.c5365650.jpg);
-  background-image: linear-gradient(to right bottom, #222, #e31619), url(/ded-card-front.c5365650.jpg);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#e31619), to(#222)), url(/ded-card-front.c5365650.jpg);
+  background-image: linear-gradient(to right bottom, #e31619, #222), url(/ded-card-front.c5365650.jpg);
 }
 
 .card__picture--5 {
@@ -318,11 +318,11 @@ html {
 }
 
 .card3 {
-  color: #e31619;
+  color: #0077c0;
 }
 
 .card4 {
-  color: #e31619;
+  color: #222;
 }
 
 .card5 {
@@ -483,7 +483,7 @@ html {
 }
 
 .popup__close:hover {
-  color: #222;
+  color: #f9423a;
 }
 
 .styleDescriptionBlock {
@@ -1233,7 +1233,7 @@ html {
 }
 @media (min-width: 992px) {
   .reader.third .reader.left article header, .reader.third .reader.right article header {
-    width: 20vw;
+    width: 13vw;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
   }
@@ -1275,10 +1275,10 @@ html {
     column-count: 1;
   }
   .reader.third .reader.left article {
-    padding: 6rem 3rem 12rem 8rem;
+    padding: 4rem 1rem 10rem 6rem;
   }
   .reader.third .reader.right article {
-    padding: 6rem 8rem 12rem 3rem;
+    padding: 4rem 6rem 10rem 1rem;
   }
   .reader.third article {
     padding: 8rem 16rem 24rem 8rem;
@@ -1382,8 +1382,12 @@ html {
     margin-left: auto;
     margin-right: auto;
     clip-path: circle();
-    -webkit-filter: grayscale(100%) contrast(100%);
-    filter: grayscale(100%) contrast(100%);
+    -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1);
+  }
+  .reader.third article header img:hover {
+    -webkit-filter: none;
+    filter: none;
   }
   .reader.third article header figure {
     grid-column: 1/2;
@@ -1397,8 +1401,12 @@ html {
     margin-left: auto;
     margin-right: auto;
     clip-path: circle();
-    -webkit-filter: grayscale(100%) contrast(100%);
-    filter: grayscale(100%) contrast(100%);
+    -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1);
+  }
+  .reader.third article header figure img:hover {
+    -webkit-filter: none;
+    filter: none;
   }
   .reader.third article header figure figcaption {
     width: 200px;
@@ -1445,6 +1453,10 @@ html {
     -webkit-filter: grayscale(100%) contrast(100%);
     filter: grayscale(100%) contrast(100%);
   }
+  .reader.third article main figure img:hover {
+    -webkit-filter: none;
+    filter: none;
+  }
   .reader.third article main figure figcaption {
     float: right;
     font-weight: 700;
@@ -1472,6 +1484,12 @@ html {
   }
   .reader.third article main section:nth-of-type(2n) figure:nth-of-type(1) img {
     clip-path: circle();
+    -webkit-filter: grayscale(100%) contrast(100%);
+    filter: grayscale(100%) contrast(100%);
+  }
+  .reader.third article main section:nth-of-type(2n) figure:nth-of-type(1) img:hover {
+    -webkit-filter: none;
+    filter: none;
   }
   .reader.third article main section h3 {
     writing-mode: vertical-rl;
@@ -1482,11 +1500,24 @@ html {
   .reader.third article main section h3:hover {
     padding-left: 2.5vw;
   }
+  .reader.third article main section ul, .reader.third article main section ol {
+    list-style-type: upper-roman;
+    list-style-position: inside;
+    padding: 0.4em 0;
+  }
+  .reader.third article main section ul li, .reader.third article main section ol li {
+    padding: 0.2rem 0;
+  }
+  .reader.third article main section ul li ol, .reader.third article main section ol li ol {
+    list-style-type: square;
+    padding-left: 2rem;
+  }
   .reader.third article main section figure {
     width: auto;
   }
   .reader.third article main section figure table {
     border-right: 5px solid #f9423a;
+    border-left: 3px solid #222;
     padding-bottom: 2vh;
     margin-top: 2vh;
     margin-bottom: 2vh;
@@ -1498,11 +1529,20 @@ html {
   .reader.third article main section figure table tbody tr th {
     font-weight: bold;
     padding-top: 1vh;
+    padding-left: 1vw;
+    padding-bottom: 1vh;
+    border-bottom: 5px double #222;
+    border-top: 5px solid #222;
   }
   .reader.third article main section figure table tbody tr td {
     margin-top: 2vh;
     margin-bottom: 2vh;
+    border-bottom: 3px solid #222;
+    border-top: 3px solid #222;
+    padding-left: 1vw;
     padding-right: 1vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
     text-align: left;
   }
   .reader.third article main section figure img {
@@ -1514,6 +1554,10 @@ html {
     display: block;
     -webkit-filter: grayscale(100%) contrast(100%);
     filter: grayscale(100%) contrast(100%);
+  }
+  .reader.third article main section figure img:hover {
+    -webkit-filter: none;
+    filter: none;
   }
   .reader.third article main section figure figcaption {
     float: right;
@@ -1707,8 +1751,12 @@ html {
     object-fit: contain;
     display: block;
     clip-path: circle();
-    -webkit-filter: grayscale(100%) contrast(100%);
-    filter: grayscale(100%) contrast(100%);
+    -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1);
+  }
+  .reader.third article header img:hover {
+    -webkit-filter: none;
+    filter: none;
   }
   .reader.third article header figure {
     grid-column: 1/2;
@@ -1723,8 +1771,12 @@ html {
     margin-left: auto;
     margin-right: auto;
     clip-path: circle();
-    -webkit-filter: grayscale(100%) contrast(100%);
-    filter: grayscale(100%) contrast(100%);
+    -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1);
+  }
+  .reader.third article header figure img:hover {
+    -webkit-filter: none;
+    filter: none;
   }
   .reader.third article header figure figcaption {
     width: 5em;
@@ -1752,6 +1804,10 @@ html {
   .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img, .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
     column-span: all;
   }
+  .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img:hover, .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption:hover {
+    -webkit-filter: none;
+    filter: none;
+  }
   .reader.third article main figure {
     width: auto;
   }
@@ -1766,6 +1822,10 @@ html {
     display: block;
     -webkit-filter: grayscale(100%) contrast(100%);
     filter: grayscale(100%) contrast(100%);
+  }
+  .reader.third article main figure img:hover {
+    -webkit-filter: none;
+    filter: none;
   }
   .reader.third article main figure figcaption {
     float: right;
@@ -1791,8 +1851,16 @@ html {
   .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img, .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
     column-span: all;
   }
+  .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img:hover, .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption:hover {
+    -webkit-filter: none;
+    filter: none;
+  }
   .reader.third article main section:nth-of-type(2n) figure:nth-of-type(1) img {
     clip-path: circle();
+  }
+  .reader.third article main section:nth-of-type(2n) figure:nth-of-type(1) img:hover {
+    -webkit-filter: none;
+    filter: none;
   }
   .reader.third article main section h3 {
     writing-mode: vertical-rl;
@@ -1835,6 +1903,10 @@ html {
     display: block;
     -webkit-filter: grayscale(100%) contrast(100%);
     filter: grayscale(100%) contrast(100%);
+  }
+  .reader.third article main section figure img:hover {
+    -webkit-filter: none;
+    filter: none;
   }
   .reader.third article main section figure figcaption {
     float: right;
@@ -1919,7 +1991,7 @@ html {
     padding: 0;
   }
   .reader.dungeon .reader.left article header h1 p:first-of-type, .reader.dungeon .reader.right article header h1 p:first-of-type {
-    font-family: "DnDC";
+    font-family: "DnDC", "QuentinEF";
     font-size: 2.8em;
     text-align: center;
     font-weight: normal;
@@ -2481,6 +2553,14 @@ html {
     object-fit: contain;
     margin-top: 2%;
     display: block;
+    filter: brightness(1.22) contrast(1.31) grayscale(1) saturate(1.1);
+    -webkit-filter: brightness(1.22) contrast(1.31) grayscale(1) saturate(1.1);
+    -moz-filter: brightness(1.22) contrast(1.31) grayscale(1) saturate(1.1);
+  }
+  .reader.dungeon article main figure img:hover {
+    filter: none;
+    -webkit-filter: none;
+    -moz-filter: none;
   }
   .reader.dungeon article footer {
     background-image: url("/papersheet.01c05328.png");
@@ -3106,6 +3186,14 @@ html {
     object-fit: contain;
     margin-top: 2%;
     display: block;
+    filter: brightness(1.22) contrast(1.31) grayscale(1) saturate(1.1);
+    -webkit-filter: brightness(1.22) contrast(1.31) grayscale(1) saturate(1.1);
+    -moz-filter: brightness(1.22) contrast(1.31) grayscale(1) saturate(1.1);
+  }
+  .reader.dungeon article main figure img:hover {
+    filter: none;
+    -webkit-filter: none;
+    -moz-filter: none;
   }
   .reader.dungeon article footer {
     background-image: url("/papersheet.01c05328.png");
@@ -5981,6 +6069,7 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 100%;
 }
 
 .tutorialPageSection {
@@ -6016,6 +6105,22 @@ h1 {
 .aboutPageSection {
   font-size: 1.2rem;
   padding: 3% 10% 3% 4%;
+}
+.disclaimerPageSection .aboutSrc,
+.aboutPageSection .aboutSrc {
+  font-family: "GTSectraFine";
+  text-align: right;
+}
+.disclaimerPageSection .aboutTusmann,
+.aboutPageSection .aboutTusmann {
+  width: 80%;
+  font-size: 0.8em;
+  padding-bottom: 1em;
+}
+.disclaimerPageSection .aboutTusmann .megaQuote,
+.aboutPageSection .aboutTusmann .megaQuote {
+  font-size: 1.5em;
+  font-family: "GTSectraFine";
 }
 .disclaimerPageSection p,
 .aboutPageSection p {
