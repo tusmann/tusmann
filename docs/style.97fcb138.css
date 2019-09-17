@@ -1057,7 +1057,11 @@ html {
   overflow-x: auto;
   overflow-y: auto;
 }
-.reader.rimpa article p, .reader.rimpa article h1, .reader.rimpa article h2, .reader.rimpa article h3, .reader.rimpa article h4 {
+.reader.rimpa article p,
+.reader.rimpa article h1,
+.reader.rimpa article h2,
+.reader.rimpa article h3,
+.reader.rimpa article h4 {
   background: -webkit-linear-gradient(left, #210102, #7b562a);
   background: -o-linear-gradient(right, #210102, #7b562a);
   background: -moz-linear-gradient(right, #210102, #7b562a);
@@ -1157,7 +1161,7 @@ html {
   display: block;
   box-align: center;
 }
-.reader.rimpa article header .bird {
+.reader.rimpa article .bird::before {
   content: "";
   display: inline-block;
   background-image: url(/bird.2df1bcfe.png);
@@ -1175,8 +1179,11 @@ html {
   column-rule-style: groove;
   column-rule-width: 2px;
 }
-.reader.rimpa article main h2, .reader.rimpa article main h3, .reader.rimpa article main h4 {
-  background: linear-gradient(to left, #cfc09f 22%, #634f2c 24%, #cfc09f 26%, #cfc09f 27%, #d1c279 40%, #3a2c0f 78%);
+.reader.rimpa article main h2,
+.reader.rimpa article main h3,
+.reader.rimpa article main h4 {
+  background: #635a2c;
+  background: radial-gradient(circle, #635a2c 0%, #9e8f46 64%, #c5b358 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #fff;
@@ -1247,7 +1254,10 @@ html {
   writing-mode: horizontal-tb;
   text-orientation: upright;
 }
-.reader.rimpa article footer h1, .reader.rimpa article footer h2, .reader.rimpa article footer h3, .reader.rimpa article footer h4 {
+.reader.rimpa article footer h1,
+.reader.rimpa article footer h2,
+.reader.rimpa article footer h3,
+.reader.rimpa article footer h4 {
   writing-mode: horizontal-tb;
 }
 .reader.rimpa .left article,
@@ -1267,12 +1277,14 @@ html {
 .reader.third {
   background-color: #f6f3ea;
 }
-.reader.third .reader.left article header, .reader.third .reader.right article header {
+.reader.third .reader.left article header,
+.reader.third .reader.right article header {
   width: 20vw;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 1fr;
 }
-.reader.third .reader.left article header h1, .reader.third .reader.right article header h1 {
+.reader.third .reader.left article header h1,
+.reader.third .reader.right article header h1 {
   grid-column: 1/3;
   grid-row: auto;
   writing-mode: horizontal-tb;
@@ -1281,30 +1293,36 @@ html {
   margin-top: 0;
   font-size: 1.3em;
 }
-.reader.third .reader.left article header p, .reader.third .reader.right article header p {
+.reader.third .reader.left article header p,
+.reader.third .reader.right article header p {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.reader.third .reader.left article header p:first-child, .reader.third .reader.right article header p:first-child {
+.reader.third .reader.left article header p:first-child,
+.reader.third .reader.right article header p:first-child {
   border-top: 15px solid #f9423a;
   border-bottom: 15px solid #f9423a;
 }
-.reader.third .reader.left article header p:first-child::first-letter, .reader.third .reader.right article header p:first-child::first-letter {
+.reader.third .reader.left article header p:first-child::first-letter,
+.reader.third .reader.right article header p:first-child::first-letter {
   font-family: "WaddemChooNFW01";
   color: #0077c0;
   font-size: 2.5em;
 }
-.reader.third .reader.left article header table, .reader.third .reader.right article header table {
+.reader.third .reader.left article header table,
+.reader.third .reader.right article header table {
   writing-mode: vertical-rl;
   grid-column: 3/4;
   grid-row: 1/2;
   justify-self: start;
 }
-.reader.third .reader.left article header table td, .reader.third .reader.right article header table td {
+.reader.third .reader.left article header table td,
+.reader.third .reader.right article header table td {
   border-top: 5px solid #0077c0;
   padding-bottom: 5px;
 }
-.reader.third .reader.left article main, .reader.third .reader.right article main {
+.reader.third .reader.left article main,
+.reader.third .reader.right article main {
   background-color: #f6f3ea;
   text-align: justify;
   column-count: 1;
@@ -1338,7 +1356,9 @@ html {
   grid-gap: 1rem;
   transform: rotate(-30deg);
 }
-.reader.third article header h1, .reader.third article header h2, .reader.third article header h3 {
+.reader.third article header h1,
+.reader.third article header h2,
+.reader.third article header h3 {
   font-size: calc(1rem + 1.4vw);
   margin: 0;
   font-weight: 700;
@@ -1355,7 +1375,8 @@ html {
   margin-top: -10px;
   margin-right: -10px;
 }
-.reader.third article header h2, .reader.third article header h3 {
+.reader.third article header h2,
+.reader.third article header h3 {
   grid-column: 1/4;
   grid-row: 1/2;
   text-align: right;
@@ -1363,7 +1384,8 @@ html {
   font-size: 1.3rem;
   border-bottom: 15px solid #f9423a;
 }
-.reader.third article header h2::first-letter, .reader.third article header h3::first-letter {
+.reader.third article header h2::first-letter,
+.reader.third article header h3::first-letter {
   color: #0077c0;
   font-size: calc(3rem + 2vw);
   font-family: "WaddemChooNFW01";
@@ -1457,7 +1479,8 @@ html {
 .reader.third article main h2:hover {
   padding-right: 2vw;
 }
-.reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img, .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
+.reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img,
+.reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
   column-span: all;
 }
 .reader.third article main figure {
@@ -1491,12 +1514,13 @@ html {
   margin-bottom: 2vh;
   /*&:nth-of-type(4) {
 
-      border-bottom: 4px solid #444444;
-      column-span: all;
+        border-bottom: 4px solid #444444;
+        column-span: all;
 
-  }*/
+    }*/
 }
-.reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img, .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
+.reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img,
+.reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
   column-span: all;
 }
 .reader.third article main section:nth-of-type(2n) figure:nth-of-type(1) img {
@@ -1556,7 +1580,9 @@ html {
   padding-left: 5px;
   padding-top: 5px;
 }
-.reader.third article h1, .reader.third article h2, .reader.third article h3 {
+.reader.third article h1,
+.reader.third article h2,
+.reader.third article h3 {
   margin: 0;
   text-transform: uppercase;
 }
@@ -1589,7 +1615,8 @@ html {
   border-bottom: 5px solid #f9423a;
 }
 
-.reader.dungeon .reader.left, .reader.dungeon .reader.right {
+.reader.dungeon .reader.left,
+.reader.dungeon .reader.right {
   background-image: url("/papersheet.01c05328.png");
   background-repeat: no-repeat;
   background-position: 50%;
@@ -1597,34 +1624,42 @@ html {
   background-size: cover;
   box-sizing: border-box;
 }
-.reader.dungeon .reader.left article, .reader.dungeon .reader.right article {
+.reader.dungeon .reader.left article,
+.reader.dungeon .reader.right article {
   width: auto;
 }
-.reader.dungeon .reader.left article header, .reader.dungeon .reader.right article header {
+.reader.dungeon .reader.left article header,
+.reader.dungeon .reader.right article header {
   width: auto;
   padding: 0;
   display: block;
 }
-.reader.dungeon .reader.left article header #outcome, .reader.dungeon .reader.right article header #outcome {
+.reader.dungeon .reader.left article header #outcome,
+.reader.dungeon .reader.right article header #outcome {
   display: none;
 }
-.reader.dungeon .reader.left article header #buttons, .reader.dungeon .reader.right article header #buttons {
+.reader.dungeon .reader.left article header #buttons,
+.reader.dungeon .reader.right article header #buttons {
   display: none;
 }
-.reader.dungeon .reader.left article header .cube-container, .reader.dungeon .reader.right article header .cube-container {
+.reader.dungeon .reader.left article header .cube-container,
+.reader.dungeon .reader.right article header .cube-container {
   display: none;
 }
-.reader.dungeon .reader.left article header h1, .reader.dungeon .reader.right article header h1 {
+.reader.dungeon .reader.left article header h1,
+.reader.dungeon .reader.right article header h1 {
   width: 20vw;
   font-size: 1.2em;
   line-height: 2em;
   padding-top: 10vh;
 }
-.reader.dungeon .reader.left article header h1 p, .reader.dungeon .reader.right article header h1 p {
+.reader.dungeon .reader.left article header h1 p,
+.reader.dungeon .reader.right article header h1 p {
   width: auto;
   padding: 0;
 }
-.reader.dungeon .reader.left article header h1 p:first-of-type, .reader.dungeon .reader.right article header h1 p:first-of-type {
+.reader.dungeon .reader.left article header h1 p:first-of-type,
+.reader.dungeon .reader.right article header h1 p:first-of-type {
   font-family: "DnDC";
   font-size: 2.8em;
   text-align: center;
@@ -1632,13 +1667,15 @@ html {
   font-style: normal;
   color: #fff0e2;
 }
-.reader.dungeon .reader.left article header h1 p:nth-of-type(2), .reader.dungeon .reader.right article header h1 p:nth-of-type(2) {
+.reader.dungeon .reader.left article header h1 p:nth-of-type(2),
+.reader.dungeon .reader.right article header h1 p:nth-of-type(2) {
   border-bottom: 0.2em solid #fff0e2;
   font-size: 1.2em;
   text-transform: capitalize;
   font-weight: bold;
 }
-.reader.dungeon .reader.left article header h1 p:nth-of-type(3), .reader.dungeon .reader.right article header h1 p:nth-of-type(3) {
+.reader.dungeon .reader.left article header h1 p:nth-of-type(3),
+.reader.dungeon .reader.right article header h1 p:nth-of-type(3) {
   font-family: "ITC Korinna Std";
   padding: 5px;
   text-align: center;
@@ -1647,7 +1684,8 @@ html {
   text-transform: capitalize;
   color: #fff0e2;
 }
-.reader.dungeon .reader.left article header h1 p:nth-of-type(4), .reader.dungeon .reader.right article header h1 p:nth-of-type(4) {
+.reader.dungeon .reader.left article header h1 p:nth-of-type(4),
+.reader.dungeon .reader.right article header h1 p:nth-of-type(4) {
   font-family: "ITC Korinna Std";
   padding: 5px;
   text-align: center;
@@ -1658,46 +1696,62 @@ html {
   text-transform: lowercase;
   color: #fff0e2;
 }
-.reader.dungeon .reader.left article header h1 p:last-of-type, .reader.dungeon .reader.right article header h1 p:last-of-type {
+.reader.dungeon .reader.left article header h1 p:last-of-type,
+.reader.dungeon .reader.right article header h1 p:last-of-type {
   font-size: 0.6em;
   text-transform: capitalize;
 }
-.reader.dungeon .reader.left article header table, .reader.dungeon .reader.right article header table {
+.reader.dungeon .reader.left article header table,
+.reader.dungeon .reader.right article header table {
   background-color: #455882;
   font-family: "ITC Korinna Std";
   color: #fff0e2;
   width: 100%;
 }
-.reader.dungeon .reader.left article header table td, .reader.dungeon .reader.right article header table td {
+.reader.dungeon .reader.left article header table td,
+.reader.dungeon .reader.right article header table td {
   padding-top: 1vh;
   padding-bottom: 1vh;
   text-align: center;
 }
-.reader.dungeon .reader.left article header table td:first-of-type, .reader.dungeon .reader.right article header table td:first-of-type {
+.reader.dungeon .reader.left article header table td:first-of-type,
+.reader.dungeon .reader.right article header table td:first-of-type {
   font-weight: bold;
   font-size: 1.2em;
 }
-.reader.dungeon .reader.left article main, .reader.dungeon .reader.right article main {
+.reader.dungeon .reader.left article main,
+.reader.dungeon .reader.right article main {
   column-count: 1;
   column-width: 100px;
 }
-.reader.dungeon .reader.left article main p, .reader.dungeon .reader.right article main p {
+.reader.dungeon .reader.left article main p,
+.reader.dungeon .reader.right article main p {
   text-indent: 0;
 }
-.reader.dungeon .reader.left article main section:not(:last-of-type)::after, .reader.dungeon .reader.right article main section:not(:last-of-type)::after {
+.reader.dungeon .reader.left article main section:not(:last-of-type)::after,
+.reader.dungeon .reader.right article main section:not(:last-of-type)::after {
   display: none;
 }
-.reader.dungeon .reader.left article main section ul, .reader.dungeon .reader.left article main section ol, .reader.dungeon .reader.right article main section ul, .reader.dungeon .reader.right article main section ol {
+.reader.dungeon .reader.left article main section ul,
+.reader.dungeon .reader.left article main section ol,
+.reader.dungeon .reader.right article main section ul,
+.reader.dungeon .reader.right article main section ol {
   list-style-type: decimal;
   padding: 0.4em 0;
 }
-.reader.dungeon .reader.left article main section ul li, .reader.dungeon .reader.left article main section ol li, .reader.dungeon .reader.right article main section ul li, .reader.dungeon .reader.right article main section ol li {
+.reader.dungeon .reader.left article main section ul li,
+.reader.dungeon .reader.left article main section ol li,
+.reader.dungeon .reader.right article main section ul li,
+.reader.dungeon .reader.right article main section ol li {
   font-size: inherit;
   font-family: inherit;
   color: inherit;
   padding: 0.4em 0;
 }
-.reader.dungeon .reader.left article main section ul li ol, .reader.dungeon .reader.left article main section ol li ol, .reader.dungeon .reader.right article main section ul li ol, .reader.dungeon .reader.right article main section ol li ol {
+.reader.dungeon .reader.left article main section ul li ol,
+.reader.dungeon .reader.left article main section ol li ol,
+.reader.dungeon .reader.right article main section ul li ol,
+.reader.dungeon .reader.right article main section ol li ol {
   font-size: inherit;
   font-family: inherit;
   color: inherit;
@@ -2215,7 +2269,8 @@ html {
   height: 10vh;
 }
 
-.reader.fifth :link, .reader.fifth :visited {
+.reader.fifth :link,
+.reader.fifth :visited {
   color: #8d000e;
   font-style: italic;
 }
@@ -2289,7 +2344,9 @@ html {
   text-align: left;
   width: auto;
 }
-.reader.fifth h2, .reader.fifth h3, .reader.fifth h4 {
+.reader.fifth h2,
+.reader.fifth h3,
+.reader.fifth h4 {
   color: #ff0019;
   position: relative;
   font-family: "bernsteinBold";
@@ -2423,61 +2480,77 @@ html {
   font-family: inherit;
   color: inherit;
 }
-.reader.fifth .left, .reader.fifth .right {
+.reader.fifth .left,
+.reader.fifth .right {
   columns: 1 auto;
   font-family: "fifthCorpus", sans-serif;
   font-size: 1.1em;
   text-align: left;
 }
-.reader.fifth .left header h1, .reader.fifth .right header h1 {
+.reader.fifth .left header h1,
+.reader.fifth .right header h1 {
   position: relative;
   font-family: "bernsteinBold";
   font-size: 2em !important;
   text-align: left;
   width: auto;
 }
-.reader.fifth .left header table, .reader.fifth .right header table {
+.reader.fifth .left header table,
+.reader.fifth .right header table {
   column-span: all !important;
   display: block;
   border: 1px solid black;
 }
-.reader.fifth .left header p, .reader.fifth .right header p {
+.reader.fifth .left header p,
+.reader.fifth .right header p {
   text-align: left;
 }
-.reader.fifth .left ul, .reader.fifth .left ol, .reader.fifth .right ul, .reader.fifth .right ol {
+.reader.fifth .left ul,
+.reader.fifth .left ol,
+.reader.fifth .right ul,
+.reader.fifth .right ol {
   font-family: "fifthCorpus", sans-serif;
   font-size: 1.1em;
   color: black;
   list-style-type: decimal;
   padding: 1rem 0;
 }
-.reader.fifth .left ul li, .reader.fifth .left ol li, .reader.fifth .right ul li, .reader.fifth .right ol li {
+.reader.fifth .left ul li,
+.reader.fifth .left ol li,
+.reader.fifth .right ul li,
+.reader.fifth .right ol li {
   font-size: inherit;
   font-family: inherit;
   color: inherit;
   padding: 1rem 0;
 }
-.reader.fifth .left ul li ol, .reader.fifth .left ol li ol, .reader.fifth .right ul li ol, .reader.fifth .right ol li ol {
+.reader.fifth .left ul li ol,
+.reader.fifth .left ol li ol,
+.reader.fifth .right ul li ol,
+.reader.fifth .right ol li ol {
   font-size: inherit;
   font-family: inherit;
   color: inherit;
   list-style-type: lower-roman;
   padding-left: 2rem;
 }
-.reader.fifth .left p, .reader.fifth .right p {
+.reader.fifth .left p,
+.reader.fifth .right p {
   font-family: "fifthCorpus", sans-serif;
   font-size: 1.1em;
   text-align: justify;
   color: black;
 }
-.reader.fifth .left em, .reader.fifth .right em {
+.reader.fifth .left em,
+.reader.fifth .right em {
   font-size: inherit;
   font-family: inherit;
   color: inherit;
   font-style: italic;
 }
 
-.reader.sixth :link, .reader.sixth :visited {
+.reader.sixth :link,
+.reader.sixth :visited {
   color: white;
   font-style: italic;
   text-transform: uppercase;
@@ -2526,7 +2599,8 @@ html {
 .reader.sixth article header h1:hover {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 50px #fff;
 }
-.reader.sixth article header h2, .reader.sixth article header h3 {
+.reader.sixth article header h2,
+.reader.sixth article header h3 {
   order: 2;
   font-family: "stolzLight", sans-serif;
   font-size: 3em;
@@ -2571,14 +2645,16 @@ html {
   font-style: italic;
   font-family: "stolzLight", sans-serif;
 }
-.reader.sixth article main h2, .reader.sixth article main h3 {
+.reader.sixth article main h2,
+.reader.sixth article main h3 {
   font-size: 5em;
   font-family: "stolzLight", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.25em;
   padding: 3rem 0 3rem 4rem;
 }
-.reader.sixth article main h2:hover, .reader.sixth article main h3:hover {
+.reader.sixth article main h2:hover,
+.reader.sixth article main h3:hover {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
 }
 .reader.sixth article main p {
@@ -2639,37 +2715,45 @@ html {
   letter-spacing: 0.25em;
   width: auto;
 }
-.reader.sixth .left, .reader.sixth .right {
+.reader.sixth .left,
+.reader.sixth .right {
   width: 44.5vw;
   display: inline-block;
   border-right: 0.5rem solid white;
   overflow: hidden;
 }
-.reader.sixth .left header, .reader.sixth .right header {
+.reader.sixth .left header,
+.reader.sixth .right header {
   order: 1;
 }
-.reader.sixth .left header h1, .reader.sixth .right header h1 {
+.reader.sixth .left header h1,
+.reader.sixth .right header h1 {
   width: inherit;
   font-size: 2em;
 }
-.reader.sixth .left header h1:hover, .reader.sixth .right header h1:hover {
+.reader.sixth .left header h1:hover,
+.reader.sixth .right header h1:hover {
   text-shadow: none;
 }
-.reader.sixth .left header h1 p, .reader.sixth .right header h1 p {
+.reader.sixth .left header h1 p,
+.reader.sixth .right header h1 p {
   font-family: "sixthBody", sans-serif;
   font-size: 1em;
   text-align: left;
   padding-left: 1rem;
 }
-.reader.sixth .left header h1 p:first-of-type, .reader.sixth .right header h1 p:first-of-type {
+.reader.sixth .left header h1 p:first-of-type,
+.reader.sixth .right header h1 p:first-of-type {
   padding-bottom: 2rem;
   font-size: 1.5em;
   text-transform: uppercase;
 }
-.reader.sixth .left header h1 p:first-of-type:hover, .reader.sixth .right header h1 p:first-of-type:hover {
+.reader.sixth .left header h1 p:first-of-type:hover,
+.reader.sixth .right header h1 p:first-of-type:hover {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
 }
-.reader.sixth .left header table, .reader.sixth .right header table {
+.reader.sixth .left header table,
+.reader.sixth .right header table {
   width: auto;
   text-align: center;
   order: 2;
@@ -2678,10 +2762,14 @@ html {
   font-size: 2em;
   display: table;
 }
-.reader.sixth .left header table tr, .reader.sixth .right header table tr {
+.reader.sixth .left header table tr,
+.reader.sixth .right header table tr {
   font-family: "windSong", serif;
 }
-.reader.sixth .left h2, .reader.sixth .left h3, .reader.sixth .right h2, .reader.sixth .right h3 {
+.reader.sixth .left h2,
+.reader.sixth .left h3,
+.reader.sixth .right h2,
+.reader.sixth .right h3 {
   font-family: "stolzLight", sans-serif;
   font-size: 3em;
   padding: 3rem 2rem 2.5rem 2rem;
@@ -2689,15 +2777,22 @@ html {
   text-transform: uppercase;
   margin: auto;
 }
-.reader.sixth .left h2:hover, .reader.sixth .left h3:hover, .reader.sixth .right h2:hover, .reader.sixth .right h3:hover {
+.reader.sixth .left h2:hover,
+.reader.sixth .left h3:hover,
+.reader.sixth .right h2:hover,
+.reader.sixth .right h3:hover {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
 }
-.reader.sixth .left p, .reader.sixth .right p {
+.reader.sixth .left p,
+.reader.sixth .right p {
   width: inherit;
   font-family: "sixthBody", sans-serif;
   padding-left: 2rem;
 }
-.reader.sixth .left ol, .reader.sixth .left ul, .reader.sixth .right ol, .reader.sixth .right ul {
+.reader.sixth .left ol,
+.reader.sixth .left ul,
+.reader.sixth .right ol,
+.reader.sixth .right ul {
   width: inherit;
   font-family: "sixthBody", serif;
   font-size: 1.2em;
@@ -2706,7 +2801,10 @@ html {
   padding: 1rem 2rem 1rem 0;
   list-style: none;
 }
-.reader.sixth .left ol table, .reader.sixth .left ul table, .reader.sixth .right ol table, .reader.sixth .right ul table {
+.reader.sixth .left ol table,
+.reader.sixth .left ul table,
+.reader.sixth .right ol table,
+.reader.sixth .right ul table {
   text-align: left;
   margin-left: 0;
   margin-right: auto;
@@ -2716,16 +2814,25 @@ html {
   width: 40vw;
   height: auto;
 }
-.reader.sixth .left ol table td, .reader.sixth .left ul table td, .reader.sixth .right ol table td, .reader.sixth .right ul table td {
+.reader.sixth .left ol table td,
+.reader.sixth .left ul table td,
+.reader.sixth .right ol table td,
+.reader.sixth .right ul table td {
   padding: 0.7rem 0;
 }
-.reader.sixth .left ol p, .reader.sixth .left ul p, .reader.sixth .right ol p, .reader.sixth .right ul p {
+.reader.sixth .left ol p,
+.reader.sixth .left ul p,
+.reader.sixth .right ol p,
+.reader.sixth .right ul p {
   font-size: inherit;
   font-family: inherit;
   color: inherit;
   padding: 2rem 0;
 }
-.reader.sixth .left ol li, .reader.sixth .left ul li, .reader.sixth .right ol li, .reader.sixth .right ul li {
+.reader.sixth .left ol li,
+.reader.sixth .left ul li,
+.reader.sixth .right ol li,
+.reader.sixth .right ul li {
   margin: -1.5rem 0;
   font-size: inherit;
   font-family: inherit;
@@ -2737,7 +2844,10 @@ html {
   background-repeat: no-repeat;
   background-size: 1rem;*/
 }
-.reader.sixth .left ol li::before, .reader.sixth .left ul li::before, .reader.sixth .right ol li::before, .reader.sixth .right ul li::before {
+.reader.sixth .left ol li::before,
+.reader.sixth .left ul li::before,
+.reader.sixth .right ol li::before,
+.reader.sixth .right ul li::before {
   content: " ";
   display: inline-block;
   height: 1.5rem;
@@ -2746,24 +2856,42 @@ html {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.reader.sixth .left ol li p, .reader.sixth .left ul li p, .reader.sixth .right ol li p, .reader.sixth .right ul li p {
+.reader.sixth .left ol li p,
+.reader.sixth .left ul li p,
+.reader.sixth .right ol li p,
+.reader.sixth .right ul li p {
   font-size: inherit;
   font-family: inherit;
   color: inherit;
 }
-.reader.sixth .left ol ul, .reader.sixth .left ol ol, .reader.sixth .left ul ul, .reader.sixth .left ul ol, .reader.sixth .right ol ul, .reader.sixth .right ol ol, .reader.sixth .right ul ul, .reader.sixth .right ul ol {
+.reader.sixth .left ol ul,
+.reader.sixth .left ol ol,
+.reader.sixth .left ul ul,
+.reader.sixth .left ul ol,
+.reader.sixth .right ol ul,
+.reader.sixth .right ol ol,
+.reader.sixth .right ul ul,
+.reader.sixth .right ul ol {
   font-size: inherit;
   font-family: inherit;
   color: inherit;
   list-style-type: lower-roman;
   padding-left: 2rem;
 }
-.reader.sixth .left ol ul p, .reader.sixth .left ol ol p, .reader.sixth .left ul ul p, .reader.sixth .left ul ol p, .reader.sixth .right ol ul p, .reader.sixth .right ol ol p, .reader.sixth .right ul ul p, .reader.sixth .right ul ol p {
+.reader.sixth .left ol ul p,
+.reader.sixth .left ol ol p,
+.reader.sixth .left ul ul p,
+.reader.sixth .left ul ol p,
+.reader.sixth .right ol ul p,
+.reader.sixth .right ol ol p,
+.reader.sixth .right ul ul p,
+.reader.sixth .right ul ol p {
   font-size: inherit;
   font-family: inherit;
   color: inherit;
 }
-.reader.sixth .left table, .reader.sixth .right table {
+.reader.sixth .left table,
+.reader.sixth .right table {
   text-align: left;
   margin-left: 1.5rem;
   margin-right: auto;
@@ -2773,21 +2901,30 @@ html {
   width: 40vw;
   height: auto;
 }
-.reader.sixth .left table td, .reader.sixth .right table td {
+.reader.sixth .left table td,
+.reader.sixth .right table td {
   padding: 0.7rem 0;
 }
-.reader.sixth .left footer, .reader.sixth .right footer {
+.reader.sixth .left footer,
+.reader.sixth .right footer {
   font-size: 0.8em;
   text-align: left;
   margin-left: -5rem;
 }
-.reader.sixth .left footer ul, .reader.sixth .left footer ol, .reader.sixth .right footer ul, .reader.sixth .right footer ol {
+.reader.sixth .left footer ul,
+.reader.sixth .left footer ol,
+.reader.sixth .right footer ul,
+.reader.sixth .right footer ol {
   list-style: lower-roman;
 }
-.reader.sixth .left footer ul::after, .reader.sixth .left footer ol::after, .reader.sixth .right footer ul::after, .reader.sixth .right footer ol::after {
+.reader.sixth .left footer ul::after,
+.reader.sixth .left footer ol::after,
+.reader.sixth .right footer ul::after,
+.reader.sixth .right footer ol::after {
   content: none;
 }
-.reader.sixth .left section h3, .reader.sixth .right section h3 {
+.reader.sixth .left section h3,
+.reader.sixth .right section h3 {
   font-family: "stolzLight", sans-serif;
   font-size: 3em;
   padding: 2.5rem 2rem 5rem 2rem;
@@ -2796,10 +2933,12 @@ html {
   margin-left: 0%;
   line-height: 1em;
 }
-.reader.sixth .left section h3:hover, .reader.sixth .right section h3:hover {
+.reader.sixth .left section h3:hover,
+.reader.sixth .right section h3:hover {
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
 }
-.reader.sixth .left section table, .reader.sixth .right section table {
+.reader.sixth .left section table,
+.reader.sixth .right section table {
   text-align: left;
   margin-left: -1.5rem;
   margin-right: auto;
@@ -2809,13 +2948,16 @@ html {
   width: 40vw;
   height: auto;
 }
-.reader.sixth .left section table td, .reader.sixth .right section table td {
+.reader.sixth .left section table td,
+.reader.sixth .right section table td {
   padding: 0.7rem 0;
 }
-.reader.sixth .left section figure table, .reader.sixth .right section figure table {
+.reader.sixth .left section figure table,
+.reader.sixth .right section figure table {
   margin-left: 1.5rem;
 }
-.reader.sixth .left section figure h3, .reader.sixth .right section figure h3 {
+.reader.sixth .left section figure h3,
+.reader.sixth .right section figure h3 {
   margin-left: -30rem;
 }
 .reader.sixth .right h1 {
@@ -4577,31 +4719,6 @@ h1 {
   background: rgba(244, 241, 208, 0);
   font-size: 1.2rem;
   padding: 3% 10% 3% 4%;
-  /*
-  .arrow1 {
-    position: absolute;
-    background-image: url(images/arrow2.png);
-    background-size: 30vh 47vh;
-    background-repeat: no-repeat;
-    height: 47vh;
-    width: 30vh;
-    margin-top: -31rem;
-    margin-left: 63rem;
-    opacity: 0.85;
-    animation: moveInBottom2 0.6s ease-in 0.1s;
-  }
-  .arrow2 {
-    position: absolute;
-    background-image: url(images/arrow3.png);
-    background-size: 27vh 17vh;
-    background-repeat: no-repeat;
-    height: 30vh;
-    width: 40vh;
-    margin-top: -13rem;
-    margin-left: -9.7rem;
-    transform: rotate(40deg);
-    animation: moveInTop 0.6s ease-in 0.1s;
-  }*/
 }
 .tutorialPageSection p {
   padding: 0.5rem 0;
@@ -4610,19 +4727,28 @@ h1 {
   padding: 1rem 0 1rem 2rem;
 }
 .tutorialPageSection li {
-  margin-left: -1rem;
+  margin-left: 1rem;
+  padding: 1% 0;
 }
 .tutorialPageSection h1 {
   font-family: "TRY Vesterbro";
   padding: 0;
   font-size: 2.5rem;
   color: #d29129;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .tutorialPageSection em {
   font-size: 1.25rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
+}
+.tutorialPageSection .iconsTutorial {
+  display: table;
+}
+.tutorialPageSection div.iconsTutorial {
+  display: table-cell;
+  padding: 1rem 2rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=/style.97fcb138.css.map */

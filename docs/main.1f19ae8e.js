@@ -1024,14 +1024,12 @@ function manuzioLogic() {
 
       while (i < paragraphList.length && !checkParagraph) {
         var pHeight = paragraphList[i].clientHeight;
-        console.log(pHeight);
         checkParagraph = Boolean(paragraphList[i].tagName == "P" && pHeight > 80);
         i++;
       }
 
       if (checkParagraph) {
         i--;
-        console.log(paragraphList[i]);
         paragraphList[i].classList.add("capital");
       }
     });
@@ -1194,14 +1192,22 @@ function rimpaLogic() {
 
   addColors();
 
-  function addBird() {
-    var header = document.querySelector("header");
-    var headerChildren = Array.from(header.children);
-    var checkImg = true;
-    headerChildren.forEach(function (node) {
-      if (node.tagName == "FIGURE" && node.tagName == "IMG") {}
-    });
+  function threshold(element, index, array) {
+    if (element.tagName !== "FIGURE" && element.tagName !== "IMG") {
+      return element.tagName;
+    }
   }
+
+  function addBird() {
+    var header = document.querySelector(".reader header");
+    var headerChildren = Array.from(header.children);
+
+    if (headerChildren.every(threshold)) {
+      header.classList.add("bird");
+    }
+  }
+
+  addBird();
 }
 
 var _default = rimpaLogic;
@@ -2016,7 +2022,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "15433" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "19719" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

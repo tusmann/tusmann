@@ -16,16 +16,19 @@ function rimpaLogic() {
 }
 addColors()
 
+function threshold(element, index, array) {
+  if (element.tagName !== "FIGURE" && element.tagName !== "IMG") {
+    return element.tagName 
+  }
+}
 function addBird() {
-  const header = document.querySelector("header")
+  const header = document.querySelector(".reader header")
   const headerChildren = Array.from(header.children)
-  var checkImg = true;
-  headerChildren.forEach(node => {
-     if (node.tagName == "FIGURE" && node.tagName == "IMG") {
-       
-     }
-  })
- 
+  if (headerChildren.every(threshold)) {
+    header.classList.add("bird")
+  }
 }
+addBird()
 }
+
 export default rimpaLogic;
