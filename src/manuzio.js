@@ -52,13 +52,11 @@ function manuzioLogic() {
 
       while (i < paragraphList.length && !checkParagraph) {
         var pHeight = paragraphList[i].clientHeight;
-        console.log(pHeight);
         checkParagraph = Boolean(paragraphList[i].tagName == "P" && pHeight > 80);
         i++;
       }
       if (checkParagraph) {
         i--;
-        console.log(paragraphList[i]);
         paragraphList[i].classList.add("capital");
       }
     });

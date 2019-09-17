@@ -523,6 +523,12 @@ html {
   vertical-align: middle;
   padding: 0 0 0 0;
 }
+.textNoImage li {
+  padding: 0.5rem;
+}
+.textNoImage li a {
+  color: black;
+}
 
 @keyframes hideing {
   0% {
@@ -800,52 +806,6 @@ html {
     font-size: smaller;
   }
 }
-/* 
-
-  @media (max-width: 800px) {
-  article > header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin: auto;
-    transform: rotate(0);
-    //padding-top: 5rem;
-    //padding-bottom: 5rem; }
-      h1 {
-      margin-top: -5px; }
-      p:first-of-type {
-      margin-left: 1rem;
-      -ms-flex-item-align: start;
-      align-self: start; } } }
-@media (max-width: 700px) {
-  header .references {
-
-    grid-column: 3 / -1;
-    grid-row: 6; } }
-@media (max-width: 500px) {
-  article > header {
-
-    width: 66vw;
-    grid-template-columns: auto 1fr 1fr 1fr 0.5fr;
-    grid-template-rows: auto auto auto auto; }
-  header h1 {
-    grid-column: 1 / -1; }
-  header h3 {
-    grid-column: 5;
-    grid-row: 2 / 4;
-    margin-right: -5px; }
-  header p {
-    grid-column: 1 / -1;
-    grid-row: 5;
-    margin-left: 0; } } 
-@media (min-width: 1000px) {
-  article > header {
-    padding-bottom: 15rem; } }
-@media (min-width: 1300px) {
-  article > header {
-    padding-bottom: 25rem; } } 
-
-    */
 *,
 *::before,
 *::after {
@@ -996,58 +956,55 @@ html {
 .reader.manuzio .right article {
   padding: 9% 17.2% 15% 6%;
 }
-
-.left-triangle-shape {
+.reader.manuzio .left-triangle-shape {
   float: left;
   shape-outside: polygon(0 0, 0 100%, 100% 50%);
   clip-path: polygon(0 0, 0 100%, 100% 50%);
   width: 45%;
   position: relative;
 }
-
-.right-triangle-shape {
+.reader.manuzio .right-triangle-shape {
   float: right;
   shape-outside: polygon(100% 0, 100% 100%, 0 50%);
   clip-path: polygon(100% 0, 100% 100%, 0 50%);
   width: 45%;
   position: relative;
 }
-
 @media (min-width: 320px) and (max-width: 650px) {
-  .reader.rimpa article {
+  .reader.manuzio .reader.rimpa article {
     font-size: small;
   }
-  .reader.rimpa article h1,
-.reader.rimpa article h2,
-.reader.rimpa article h3,
-.reader.rimpa article h4 {
+  .reader.manuzio .reader.rimpa article h1,
+.reader.manuzio .reader.rimpa article h2,
+.reader.manuzio .reader.rimpa article h3,
+.reader.manuzio .reader.rimpa article h4 {
     font-size: medium;
   }
-  .reader.rimpa article p:first-of-type:first-letter {
+  .reader.manuzio .reader.rimpa article p:first-of-type:first-letter {
     font-size: 6rem;
     line-height: 3rem;
     text-align: left;
   }
-  .reader.rimpa .left,
-.reader.rimpa .right {
+  .reader.manuzio .reader.rimpa .left,
+.reader.manuzio .reader.rimpa .right {
     webkit-animation: slide-in-top 0.5s both;
     animation: slide-in-top 0.5s both;
   }
-  .reader.rimpa .left article,
-.reader.rimpa .right article {
+  .reader.manuzio .reader.rimpa .left article,
+.reader.manuzio .reader.rimpa .right article {
     padding: 9%, 17.2%, 15%, 6%;
   }
 }
+
 .reader.rimpa {
   width: 100%;
 }
 .reader.rimpa article {
   padding: 2%;
   background-image: url("/background.273bbb38.jpg");
-  background-repeat: no-repeat;
   background-position: 50%;
-  background-attachment: fixed;
-  background-size: cover;
+  background-attachment: scroll;
+  background-size: contain;
   box-sizing: border-box;
   font-family: "ZinHenaKokoryu";
   font-weight: 400;
@@ -1057,11 +1014,15 @@ html {
   overflow-x: auto;
   overflow-y: auto;
 }
-.reader.rimpa article p, .reader.rimpa article h1, .reader.rimpa article h2, .reader.rimpa article h3, .reader.rimpa article h4 {
-  background: -webkit-linear-gradient(left, #210102, #7b562a);
-  background: -o-linear-gradient(right, #210102, #7b562a);
-  background: -moz-linear-gradient(right, #210102, #7b562a);
-  background: linear-gradient(to right, #210102, #7b562a);
+.reader.rimpa article p,
+.reader.rimpa article h1,
+.reader.rimpa article h2,
+.reader.rimpa article h3,
+.reader.rimpa article h4 {
+  background: -webkit-linear-gradient(top, #210102, #7b562a);
+  background: -o-linear-gradient(bottom, #210102, #7b562a);
+  background: -moz-linear-gradient(bottom, #210102, #7b562a);
+  background: linear-gradient(to bottom, #210102, #7b562a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1157,7 +1118,7 @@ html {
   display: block;
   box-align: center;
 }
-.reader.rimpa article header .bird {
+.reader.rimpa article .bird::before {
   content: "";
   display: inline-block;
   background-image: url(/bird.2df1bcfe.png);
@@ -1175,8 +1136,11 @@ html {
   column-rule-style: groove;
   column-rule-width: 2px;
 }
-.reader.rimpa article main h2, .reader.rimpa article main h3, .reader.rimpa article main h4 {
-  background: linear-gradient(to left, #cfc09f 22%, #634f2c 24%, #cfc09f 26%, #cfc09f 27%, #d1c279 40%, #3a2c0f 78%);
+.reader.rimpa article main h2,
+.reader.rimpa article main h3,
+.reader.rimpa article main h4 {
+  background: #917f1f;
+  background: radial-gradient(circle, #917f1f 0%, #9e8f46 64%, #c5b358 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #fff;
@@ -1247,7 +1211,10 @@ html {
   writing-mode: horizontal-tb;
   text-orientation: upright;
 }
-.reader.rimpa article footer h1, .reader.rimpa article footer h2, .reader.rimpa article footer h3, .reader.rimpa article footer h4 {
+.reader.rimpa article footer h1,
+.reader.rimpa article footer h2,
+.reader.rimpa article footer h3,
+.reader.rimpa article footer h4 {
   writing-mode: horizontal-tb;
 }
 .reader.rimpa .left article,
@@ -1263,967 +1230,1936 @@ html {
   column-count: 1;
   margin: 3%;
 }
+.reader.rimpa .left article main h1, .reader.rimpa .left article main h2, .reader.rimpa .left article main h3, .reader.rimpa .left article main h4,
+.reader.rimpa .right article main h1,
+.reader.rimpa .right article main h2,
+.reader.rimpa .right article main h3,
+.reader.rimpa .right article main h4 {
+  writing-mode: horizontal-tb;
+}
 
 .reader.third {
   background-color: #f6f3ea;
 }
-.reader.third .reader.left article header, .reader.third .reader.right article header {
-  width: 20vw;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr;
-}
-.reader.third .reader.left article header h1, .reader.third .reader.right article header h1 {
-  grid-column: 1/3;
-  grid-row: auto;
-  writing-mode: horizontal-tb;
-  line-height: inherit;
-  margin-right: -10px;
-  margin-top: 0;
-  font-size: 1.3em;
-}
-.reader.third .reader.left article header p, .reader.third .reader.right article header p {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-.reader.third .reader.left article header p:first-child, .reader.third .reader.right article header p:first-child {
-  border-top: 15px solid #f9423a;
-  border-bottom: 15px solid #f9423a;
-}
-.reader.third .reader.left article header p:first-child::first-letter, .reader.third .reader.right article header p:first-child::first-letter {
-  font-family: "WaddemChooNFW01";
-  color: #0077c0;
-  font-size: 2.5em;
-}
-.reader.third .reader.left article header table, .reader.third .reader.right article header table {
-  writing-mode: vertical-rl;
-  grid-column: 3/4;
-  grid-row: 1/2;
-  justify-self: start;
-}
-.reader.third .reader.left article header table td, .reader.third .reader.right article header table td {
-  border-top: 5px solid #0077c0;
-  padding-bottom: 5px;
-}
-.reader.third .reader.left article main, .reader.third .reader.right article main {
-  background-color: #f6f3ea;
-  text-align: justify;
-  column-count: 1;
-}
-.reader.third .reader.left article {
-  padding: 6rem 3rem 12rem 8rem;
-}
-.reader.third .reader.right article {
-  padding: 6rem 8rem 12rem 3rem;
-}
-.reader.third article {
-  padding: 8rem 16rem 24rem 8rem;
-  background-color: #f6f3ea;
-  /*font-family: 'Roboto', sans-serif;*/
-  font-family: "FuturaFuturisC";
-  /*font-family: 'Futura W01', helvetica, sans-serif;*/
-  font-size: 100%;
-  color: #222;
-  font-weight: 300;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.reader.third article header {
-  width: 40vw;
-  padding-top: 14vh;
-  padding-bottom: 10vh;
-  display: grid;
-  margin: auto;
-  grid-template-columns: auto 1fr 1fr 1fr 0.5fr;
-  grid-template-rows: auto 1fr 1fr auto auto;
-  grid-gap: 1rem;
-  transform: rotate(-30deg);
-}
-.reader.third article header h1, .reader.third article header h2, .reader.third article header h3 {
-  font-size: calc(1rem + 1.4vw);
-  margin: 0;
-  font-weight: 700;
-  line-height: 1.2em;
-}
-.reader.third article header h1 {
-  /* autoprefixer: off */
-  color: #f9423a;
-  -webkit-writing-mode: vertical-rl;
-  writing-mode: vertical-rl;
-  grid-column: 3/4;
-  grid-row: 2/5;
-  justify-self: end;
-  margin-top: -10px;
-  margin-right: -10px;
-}
-.reader.third article header h2, .reader.third article header h3 {
-  grid-column: 1/4;
-  grid-row: 1/2;
-  text-align: right;
-  align-self: end;
-  font-size: 1.3rem;
-  border-bottom: 15px solid #f9423a;
-}
-.reader.third article header h2::first-letter, .reader.third article header h3::first-letter {
-  color: #0077c0;
-  font-size: calc(3rem + 2vw);
-  font-family: "WaddemChooNFW01";
-}
-.reader.third article header h4 {
-  grid-column: 1/2;
-  grid-row: 2/3;
-  text-align: right;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.reader.third article header h4::first-letter {
-  color: #0077c0;
-  font-size: calc(2rem + 2vw);
-  font-family: "WaddemChooNFW01";
-}
-.reader.third article header p {
-  margin: 0;
-  grid-column: 4/5;
-  grid-row: 2/3;
-  color: #222;
-  font-style: "WaddemChooNFW01";
-  border-bottom: none;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.reader.third article header p:first-of-type {
-  /* autoprefixer: off */
-  border-top: 5px solid #222;
-  border-bottom: 5px solid #222;
-  font-weight: 700;
-  grid-row: 3;
-  grid-column: 4/6;
-  align-self: start;
-}
-.reader.third article header tr {
-  grid-auto-flow: column;
-}
-.reader.third article header tr td {
-  width: 20px;
-}
-.reader.third article header img {
-  width: 80%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  clip-path: circle();
-  -webkit-filter: grayscale(100%) contrast(100%);
-  filter: grayscale(100%) contrast(100%);
-}
-.reader.third article header figure {
-  grid-column: 1/2;
-  grid-row: 2/4;
-}
-.reader.third article header figure img {
-  width: 80%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  clip-path: circle();
-  -webkit-filter: grayscale(100%) contrast(100%);
-  filter: grayscale(100%) contrast(100%);
-}
-.reader.third article header figure figcaption {
-  width: 200px;
-  padding: 3px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  border-left: 5px solid #222;
-  border-right: 5px solid #222;
-}
-.reader.third article main {
-  background-color: #f6f3ea;
-  text-align: justify;
-  column-count: 2;
-  column-gap: 4vw;
-  column-rule: 4px double #222;
-}
-.reader.third article main h2 {
-  writing-mode: vertical-rl;
-  border-right: 10vw solid #f9423a;
-  margin-bottom: 1vh;
-  font-weight: 900;
-  font-size: 1.5em;
-}
-.reader.third article main h2:hover {
-  padding-right: 2vw;
-}
-.reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img, .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
-  column-span: all;
-}
-.reader.third article main figure {
-  width: auto;
-}
-.reader.third article main figure table {
-  border-right: 10px solid #f9423a;
-}
-.reader.third article main figure img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  margin-top: 2%;
-  display: block;
-  -webkit-filter: grayscale(100%) contrast(100%);
-  filter: grayscale(100%) contrast(100%);
-}
-.reader.third article main figure figcaption {
-  float: right;
-  font-weight: 700;
-  font-size: 0.8em;
-  width: 14vw;
-  text-align: right;
-  margin-bottom: 10px;
-  margin-left: 2vw;
-  border-left: 5px solid #0077c0;
-  padding-left: 5px;
-  padding-top: 5px;
-}
-.reader.third article main section {
-  margin-bottom: 2vh;
-  /*&:nth-of-type(4) {
+@media (min-width: 992px) {
+  .reader.third .reader.left article header, .reader.third .reader.right article header {
+    width: 20vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .reader.third .reader.left article header h1, .reader.third .reader.right article header h1 {
+    grid-column: 1/3;
+    grid-row: auto;
+    writing-mode: horizontal-tb;
+    line-height: inherit;
+    margin-right: -10px;
+    margin-top: 0;
+    font-size: 1.3em;
+  }
+  .reader.third .reader.left article header p, .reader.third .reader.right article header p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .reader.third .reader.left article header p:first-child, .reader.third .reader.right article header p:first-child {
+    border-top: 15px solid #f9423a;
+    border-bottom: 15px solid #f9423a;
+  }
+  .reader.third .reader.left article header p:first-child::first-letter, .reader.third .reader.right article header p:first-child::first-letter {
+    font-family: "WaddemChooNFW01";
+    color: #0077c0;
+    font-size: 2.5em;
+  }
+  .reader.third .reader.left article header table, .reader.third .reader.right article header table {
+    writing-mode: vertical-rl;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    justify-self: start;
+  }
+  .reader.third .reader.left article header table td, .reader.third .reader.right article header table td {
+    border-top: 5px solid #0077c0;
+    padding-bottom: 5px;
+  }
+  .reader.third .reader.left article main, .reader.third .reader.right article main {
+    background-color: #f6f3ea;
+    text-align: justify;
+    column-count: 1;
+  }
+  .reader.third .reader.left article {
+    padding: 6rem 3rem 12rem 8rem;
+  }
+  .reader.third .reader.right article {
+    padding: 6rem 8rem 12rem 3rem;
+  }
+  .reader.third article {
+    padding: 8rem 16rem 24rem 8rem;
+    background-color: #f6f3ea;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: "FuturaFuturisC";
+    /*font-family: 'Futura W01', helvetica, sans-serif;*/
+    font-size: 100%;
+    color: #222;
+    font-weight: 300;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .reader.third article header {
+    width: 40vw;
+    padding-top: 14vh;
+    padding-bottom: 10vh;
+    display: grid;
+    margin: auto;
+    grid-template-columns: auto 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: auto 1fr 1fr auto auto;
+    grid-gap: 1rem;
+    transform: rotate(-30deg);
+  }
+  .reader.third article header h1,
+.reader.third article header h2,
+.reader.third article header h3 {
+    font-size: calc(1rem + 1.4vw);
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.2em;
+  }
+  .reader.third article header h1 {
+    /* autoprefixer: off */
+    color: #f9423a;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    grid-column: 3/4;
+    grid-row: 2/5;
+    justify-self: end;
+    margin-top: -10px;
+    margin-right: -10px;
+  }
+  .reader.third article header h2,
+.reader.third article header h3 {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    text-align: right;
+    align-self: end;
+    font-size: 1.3rem;
+    border-bottom: 15px solid #f9423a;
+  }
+  .reader.third article header h2::first-letter,
+.reader.third article header h3::first-letter {
+    color: #0077c0;
+    font-size: calc(3rem + 2vw);
+    font-family: "WaddemChooNFW01";
+  }
+  .reader.third article header h4 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    text-align: right;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .reader.third article header h4::first-letter {
+    color: #0077c0;
+    font-size: calc(2rem + 2vw);
+    font-family: "WaddemChooNFW01";
+  }
+  .reader.third article header p {
+    margin: 0;
+    grid-column: 4/5;
+    grid-row: 2/3;
+    color: #222;
+    font-style: "WaddemChooNFW01";
+    border-bottom: none;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .reader.third article header p:first-of-type {
+    /* autoprefixer: off */
+    border-top: 5px solid #222;
+    border-bottom: 5px solid #222;
+    font-weight: 700;
+    grid-row: 3;
+    grid-column: 4/6;
+    align-self: start;
+  }
+  .reader.third article header tr {
+    grid-auto-flow: column;
+  }
+  .reader.third article header tr td {
+    width: 20px;
+  }
+  .reader.third article header img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    clip-path: circle();
+    -webkit-filter: grayscale(100%) contrast(100%);
+    filter: grayscale(100%) contrast(100%);
+  }
+  .reader.third article header figure {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+  .reader.third article header figure img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    clip-path: circle();
+    -webkit-filter: grayscale(100%) contrast(100%);
+    filter: grayscale(100%) contrast(100%);
+  }
+  .reader.third article header figure figcaption {
+    width: 200px;
+    padding: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-left: 5px solid #222;
+    border-right: 5px solid #222;
+  }
+  .reader.third article main {
+    background-color: #f6f3ea;
+    text-align: justify;
+    column-count: 2;
+    column-gap: 4vw;
+    column-rule: 4px double #222;
+  }
+  .reader.third article main h2 {
+    writing-mode: vertical-rl;
+    border-right: 10vw solid #f9423a;
+    margin-bottom: 1vh;
+    font-weight: 900;
+    font-size: 1.5em;
+  }
+  .reader.third article main h2:hover {
+    padding-right: 2vw;
+  }
+  .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img,
+.reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
+    column-span: all;
+  }
+  .reader.third article main figure {
+    width: auto;
+  }
+  .reader.third article main figure table {
+    border-right: 10px solid #f9423a;
+  }
+  .reader.third article main figure img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 2%;
+    display: block;
+    -webkit-filter: grayscale(100%) contrast(100%);
+    filter: grayscale(100%) contrast(100%);
+  }
+  .reader.third article main figure figcaption {
+    float: right;
+    font-weight: 700;
+    font-size: 0.8em;
+    width: 14vw;
+    text-align: right;
+    margin-bottom: 10px;
+    margin-left: 2vw;
+    border-left: 5px solid #0077c0;
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+  .reader.third article main section {
+    margin-bottom: 2vh;
+    /*&:nth-of-type(4) {
 
-      border-bottom: 4px solid #444444;
-      column-span: all;
+          border-bottom: 4px solid #444444;
+          column-span: all;
 
-  }*/
+      }*/
+  }
+  .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img,
+.reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
+    column-span: all;
+  }
+  .reader.third article main section:nth-of-type(2n) figure:nth-of-type(1) img {
+    clip-path: circle();
+  }
+  .reader.third article main section h3 {
+    writing-mode: vertical-rl;
+    border-left: 5vw solid #0077c0;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  .reader.third article main section h3:hover {
+    padding-left: 2.5vw;
+  }
+  .reader.third article main section figure {
+    width: auto;
+  }
+  .reader.third article main section figure table {
+    border-right: 5px solid #f9423a;
+    padding-bottom: 2vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: 0.8em;
+  }
+  .reader.third article main section figure table tbody tr {
+    padding-right: 5px;
+  }
+  .reader.third article main section figure table tbody tr th {
+    font-weight: bold;
+    padding-top: 1vh;
+  }
+  .reader.third article main section figure table tbody tr td {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding-right: 1vw;
+    text-align: left;
+  }
+  .reader.third article main section figure img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: block;
+    -webkit-filter: grayscale(100%) contrast(100%);
+    filter: grayscale(100%) contrast(100%);
+  }
+  .reader.third article main section figure figcaption {
+    float: right;
+    font-weight: 700;
+    font-size: 0.8em;
+    width: 14vw;
+    text-align: right;
+    margin-bottom: 10px;
+    margin-left: 2vw;
+    border-left: 5px solid #0077c0;
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+  .reader.third article h1,
+.reader.third article h2,
+.reader.third article h3 {
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .reader.third article a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #222;
+  }
+  .reader.third article a:link {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .reader.third article a:visited {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .reader.third article a:hover {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .reader.third article footer {
+    background-color: #f6f3ea;
+    color: #222;
+    font-weight: 300;
+    font-size: 0.8em;
+    text-align: right;
+    margin-top: 4vh;
+    line-height: 1.2rem;
+    border-top: 5px solid #f9423a;
+    border-bottom: 5px solid #f9423a;
+  }
 }
-.reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img, .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
-  column-span: all;
-}
-.reader.third article main section:nth-of-type(2n) figure:nth-of-type(1) img {
-  clip-path: circle();
-}
-.reader.third article main section h3 {
-  writing-mode: vertical-rl;
-  border-left: 5vw solid #0077c0;
-  font-weight: bold;
-  margin-top: 15px;
-}
-.reader.third article main section h3:hover {
-  padding-left: 2.5vw;
-}
-.reader.third article main section figure {
-  width: auto;
-}
-.reader.third article main section figure table {
-  border-right: 5px solid #f9423a;
-  padding-bottom: 2vh;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  font-size: 0.8em;
-}
-.reader.third article main section figure table tbody tr {
-  padding-right: 5px;
-}
-.reader.third article main section figure table tbody tr th {
-  font-weight: bold;
-  padding-top: 1vh;
-}
-.reader.third article main section figure table tbody tr td {
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  padding-right: 1vw;
-  text-align: left;
-}
-.reader.third article main section figure img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  display: block;
-  -webkit-filter: grayscale(100%) contrast(100%);
-  filter: grayscale(100%) contrast(100%);
-}
-.reader.third article main section figure figcaption {
-  float: right;
-  font-weight: 700;
-  font-size: 0.8em;
-  width: 14vw;
-  text-align: right;
-  margin-bottom: 10px;
-  margin-left: 2vw;
-  border-left: 5px solid #0077c0;
-  padding-left: 5px;
-  padding-top: 5px;
-}
-.reader.third article h1, .reader.third article h2, .reader.third article h3 {
-  margin: 0;
-  text-transform: uppercase;
-}
-.reader.third article a {
-  font-weight: bold;
-  text-decoration: none;
-  color: #222;
-}
-.reader.third article a:link {
-  font-weight: bold;
-  text-decoration: none;
-}
-.reader.third article a:visited {
-  font-weight: bold;
-  text-decoration: none;
-}
-.reader.third article a:hover {
-  font-weight: bold;
-  text-decoration: none;
-}
-.reader.third article footer {
-  background-color: #f6f3ea;
-  color: #222;
-  font-weight: 300;
-  font-size: 0.8em;
-  text-align: right;
-  margin-top: 4vh;
-  line-height: 1.2rem;
-  border-top: 5px solid #f9423a;
-  border-bottom: 5px solid #f9423a;
-}
+@media (min-width: 320px) and (max-width: 992px) {
+  .reader.third .reader.left article header, .reader.third .reader.right article header {
+    width: 20vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .reader.third .reader.left article header h1, .reader.third .reader.right article header h1 {
+    grid-column: 1/3;
+    grid-row: auto;
+    writing-mode: horizontal-tb;
+    line-height: inherit;
+    margin-right: -10px;
+    margin-top: 0;
+    font-size: 1.3em;
+  }
+  .reader.third .reader.left article header p, .reader.third .reader.right article header p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .reader.third .reader.left article header p:first-child, .reader.third .reader.right article header p:first-child {
+    border-top: 15px solid #f9423a;
+    border-bottom: 15px solid #f9423a;
+  }
+  .reader.third .reader.left article header p:first-child::first-letter, .reader.third .reader.right article header p:first-child::first-letter {
+    font-family: "WaddemChooNFW01";
+    color: #0077c0;
+    font-size: 2.5em;
+  }
+  .reader.third .reader.left article header table, .reader.third .reader.right article header table {
+    writing-mode: vertical-rl;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    justify-self: start;
+  }
+  .reader.third .reader.left article header table td, .reader.third .reader.right article header table td {
+    border-top: 5px solid #0077c0;
+    padding-bottom: 5px;
+  }
+  .reader.third .reader.left article main, .reader.third .reader.right article main {
+    background-color: #f6f3ea;
+    text-align: justify;
+    column-count: 1;
+  }
+  .reader.third .reader.left article {
+    padding: 6rem 3rem 12rem 8rem;
+  }
+  .reader.third .reader.right article {
+    padding: 6rem 8rem 12rem 3rem;
+  }
+  .reader.third article {
+    padding: 2rem 4rem 6rem 2rem;
+    background-color: #f6f3ea;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: "FuturaFuturisC";
+    /*font-family: 'Futura W01', helvetica, sans-serif;*/
+    font-size: 100%;
+    color: #222;
+    font-weight: 300;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .reader.third article header {
+    width: 100vw;
+    padding-top: 14vh;
+    padding-bottom: 10vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    transform: rotate(0);
+  }
+  .reader.third article header h1, .reader.third article header h2, .reader.third article header h3 {
+    font-size: calc(0.6rem + 1.2vw);
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.2em;
+  }
+  .reader.third article header h1 {
+    /* autoprefixer: off */
+    color: #f9423a;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    grid-column: 3/4;
+    grid-row: 2/5;
+    justify-self: center;
+    margin-right: 0.8em;
+  }
+  .reader.third article header h2, .reader.third article header h3 {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    text-align: right;
+    align-self: end;
+    font-size: 0.8rem;
+    border-bottom: 15px solid #f9423a;
+  }
+  .reader.third article header h2::first-letter, .reader.third article header h3::first-letter {
+    color: #0077c0;
+    font-size: calc(3rem + 2vw);
+    font-family: "WaddemChooNFW01";
+  }
+  .reader.third article header h4 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    text-align: right;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .reader.third article header h4::first-letter {
+    color: #0077c0;
+    font-size: calc(1rem + 1vw);
+    font-family: "WaddemChooNFW01";
+  }
+  .reader.third article header p {
+    margin: 0;
+    margin-left: 0.5rem;
+    -ms-flex-item-align: start;
+    align-self: start;
+    color: #222;
+    font-style: "WaddemChooNFW01";
+    border-bottom: none;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .reader.third article header p:first-of-type {
+    /* autoprefixer: off */
+    border-top: 5px solid #222;
+    border-bottom: 5px solid #222;
+    font-weight: 700;
+    grid-row: 3;
+    grid-column: 4/6;
+    align-self: start;
+  }
+  .reader.third article header tr {
+    grid-auto-flow: column;
+  }
+  .reader.third article header tr td {
+    width: 20px;
+  }
+  .reader.third article header img {
+    width: 80%;
+    height: auto;
+    margin-left: -10rem;
+    object-fit: contain;
+    display: block;
+    clip-path: circle();
+    -webkit-filter: grayscale(100%) contrast(100%);
+    filter: grayscale(100%) contrast(100%);
+  }
+  .reader.third article header figure {
+    grid-column: 1/2;
+    grid-row: 2/4;
+    display: inline-block;
+  }
+  .reader.third article header figure img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    clip-path: circle();
+    -webkit-filter: grayscale(100%) contrast(100%);
+    filter: grayscale(100%) contrast(100%);
+  }
+  .reader.third article header figure figcaption {
+    width: 5em;
+    margin-left: auto;
+    text-align: center;
+    border-left: 5px solid #222;
+    border-right: 5px solid #222;
+  }
+  .reader.third article main {
+    background-color: #f6f3ea;
+    text-align: justify;
+    column-count: 1;
+    font-size: 1.2em;
+  }
+  .reader.third article main h2 {
+    writing-mode: vertical-rl;
+    border-right: 10vw solid #f9423a;
+    margin-bottom: 1vh;
+    font-weight: 900;
+    font-size: 1.5em;
+  }
+  .reader.third article main h2:hover {
+    padding-right: 2vw;
+  }
+  .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img, .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
+    column-span: all;
+  }
+  .reader.third article main figure {
+    width: auto;
+  }
+  .reader.third article main figure table {
+    border-right: 10px solid #f9423a;
+  }
+  .reader.third article main figure img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 2%;
+    display: block;
+    -webkit-filter: grayscale(100%) contrast(100%);
+    filter: grayscale(100%) contrast(100%);
+  }
+  .reader.third article main figure figcaption {
+    float: right;
+    font-weight: 700;
+    font-size: 0.8em;
+    width: 14vw;
+    text-align: right;
+    margin-bottom: 10px;
+    margin-left: 2vw;
+    border-left: 5px solid #0077c0;
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+  .reader.third article main section {
+    margin-bottom: 2vh;
+    /*&:nth-of-type(4) {
 
-.reader.dungeon .reader.left, .reader.dungeon .reader.right {
-  background-image: url("/papersheet.01c05328.png");
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-attachment: fixed;
-  background-size: cover;
-  box-sizing: border-box;
-}
-.reader.dungeon .reader.left article, .reader.dungeon .reader.right article {
-  width: auto;
-}
-.reader.dungeon .reader.left article header, .reader.dungeon .reader.right article header {
-  width: auto;
-  padding: 0;
-  display: block;
-}
-.reader.dungeon .reader.left article header #outcome, .reader.dungeon .reader.right article header #outcome {
-  display: none;
-}
-.reader.dungeon .reader.left article header #buttons, .reader.dungeon .reader.right article header #buttons {
-  display: none;
-}
-.reader.dungeon .reader.left article header .cube-container, .reader.dungeon .reader.right article header .cube-container {
-  display: none;
-}
-.reader.dungeon .reader.left article header h1, .reader.dungeon .reader.right article header h1 {
-  width: 20vw;
-  font-size: 1.2em;
-  line-height: 2em;
-  padding-top: 10vh;
-}
-.reader.dungeon .reader.left article header h1 p, .reader.dungeon .reader.right article header h1 p {
-  width: auto;
-  padding: 0;
-}
-.reader.dungeon .reader.left article header h1 p:first-of-type, .reader.dungeon .reader.right article header h1 p:first-of-type {
-  font-family: "DnDC";
-  font-size: 2.8em;
-  text-align: center;
-  font-weight: normal;
-  font-style: normal;
-  color: #fff0e2;
-}
-.reader.dungeon .reader.left article header h1 p:nth-of-type(2), .reader.dungeon .reader.right article header h1 p:nth-of-type(2) {
-  border-bottom: 0.2em solid #fff0e2;
-  font-size: 1.2em;
-  text-transform: capitalize;
-  font-weight: bold;
-}
-.reader.dungeon .reader.left article header h1 p:nth-of-type(3), .reader.dungeon .reader.right article header h1 p:nth-of-type(3) {
-  font-family: "ITC Korinna Std";
-  padding: 5px;
-  text-align: center;
-  line-height: 1em;
-  font-size: 1.2em;
-  text-transform: capitalize;
-  color: #fff0e2;
-}
-.reader.dungeon .reader.left article header h1 p:nth-of-type(4), .reader.dungeon .reader.right article header h1 p:nth-of-type(4) {
-  font-family: "ITC Korinna Std";
-  padding: 5px;
-  text-align: center;
-  line-height: 0.8em;
-  font-size: 0.8em;
-  border-bottom: 0.2em solid #fff0e2;
-  margin-bottom: 2vh;
-  text-transform: lowercase;
-  color: #fff0e2;
-}
-.reader.dungeon .reader.left article header h1 p:last-of-type, .reader.dungeon .reader.right article header h1 p:last-of-type {
-  font-size: 0.6em;
-  text-transform: capitalize;
-}
-.reader.dungeon .reader.left article header table, .reader.dungeon .reader.right article header table {
-  background-color: #455882;
-  font-family: "ITC Korinna Std";
-  color: #fff0e2;
-  width: 100%;
-}
-.reader.dungeon .reader.left article header table td, .reader.dungeon .reader.right article header table td {
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  text-align: center;
-}
-.reader.dungeon .reader.left article header table td:first-of-type, .reader.dungeon .reader.right article header table td:first-of-type {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-.reader.dungeon .reader.left article main, .reader.dungeon .reader.right article main {
-  column-count: 1;
-  column-width: 100px;
-}
-.reader.dungeon .reader.left article main p, .reader.dungeon .reader.right article main p {
-  text-indent: 0;
-}
-.reader.dungeon .reader.left article main section:not(:last-of-type)::after, .reader.dungeon .reader.right article main section:not(:last-of-type)::after {
-  display: none;
-}
-.reader.dungeon .reader.left article main section ul, .reader.dungeon .reader.left article main section ol, .reader.dungeon .reader.right article main section ul, .reader.dungeon .reader.right article main section ol {
-  list-style-type: decimal;
-  padding: 0.4em 0;
-}
-.reader.dungeon .reader.left article main section ul li, .reader.dungeon .reader.left article main section ol li, .reader.dungeon .reader.right article main section ul li, .reader.dungeon .reader.right article main section ol li {
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-  padding: 0.4em 0;
-}
-.reader.dungeon .reader.left article main section ul li ol, .reader.dungeon .reader.left article main section ol li ol, .reader.dungeon .reader.right article main section ul li ol, .reader.dungeon .reader.right article main section ol li ol {
-  font-size: inherit;
-  font-family: inherit;
-  color: inherit;
-  list-style-type: upper-roman;
-  padding-left: 2rem;
-}
-.reader.dungeon article {
-  background-image: url("/papersheet.01c05328.png");
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-attachment: fixed;
-  background-size: cover;
-  font-size: 100%;
-  cursor: url("/dun_cursor.963a85af.cur"), pointer;
-}
-.reader.dungeon article a {
-  font-weight: bold;
-  text-decoration: none;
-  color: #000;
-  cursor: url("/dun_pointer.9e3e3a8c.cur"), pointer;
-}
-.reader.dungeon article a:link {
-  font-weight: bold;
-  text-decoration: none;
-}
-.reader.dungeon article a:visited {
-  font-weight: bold;
-  text-decoration: none;
-}
-.reader.dungeon article a:hover {
-  font-weight: bold;
-  text-decoration: none;
-}
-.reader.dungeon article header {
-  height: 100%;
-  background-image: url("/dedcover.83f1d7a2.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 10px;
-  width: 100%;
-  display: grid;
-  grid-template-rows: auto auto auto auto auto auto auto auto;
-  grid-template-columns: auto;
-}
-.reader.dungeon article header .cube-container {
-  grid-row: 6/7;
-  width: 190px;
-  height: 190px;
-  position: relative;
-  margin: 100px auto;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-}
-.reader.dungeon article header .cube-container:after {
-  content: "";
-  display: block;
-  position: relative;
-  width: 380px;
-  height: 380px;
-  z-index: -1;
-  margin-left: -96px;
-  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%);
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%);
-  /* W3C */
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-}
-.reader.dungeon article header .cube-container #cube {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transform: translateZ(-60px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
-  transform: translateZ(-60px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
-  -webkit-transition: -webkit-transform 1s ease-in-out;
-  transition: transform 1s ease-in-out;
-  /* top 5 point */
-  /* bottom 5 point */
-  /* middle point down */
-  /* middle point up */
-}
-.reader.dungeon article header .cube-container #cube figure {
-  width: 189px;
-  height: 188px;
-  display: block;
-  position: absolute;
-  background: url("/blue.13477949.png") top center no-repeat;
-  font-size: 70px;
-  line-height: 190px;
-  font-family: sans-serif;
-  text-align: center;
-  text-shadow: #000 -1px -1px 0, #fff 1px 1px 0;
-  color: #f1f1f1;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-.reader.dungeon article header .cube-container #cube .face01 {
-  -webkit-transform: rotateY(36deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
-  transform: rotateY(36deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face06 {
-  -webkit-transform: rotateY(108deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
-  transform: rotateY(108deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face08 {
-  -webkit-transform: rotateY(180deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
-  transform: rotateY(180deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face04 {
-  -webkit-transform: rotateY(253deg) rotateX(53deg) rotateZ(120deg) translateZ(120px);
-  transform: rotateY(253deg) rotateX(53deg) rotateZ(120deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face10 {
-  -webkit-transform: rotateY(324deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
-  transform: rotateY(324deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face18 {
-  -webkit-transform: rotateY(0deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
-  transform: rotateY(0deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face16 {
-  -webkit-transform: rotateY(72deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
-  transform: rotateY(72deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face11 {
-  -webkit-transform: rotateY(144deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
-  transform: rotateY(144deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face20 {
-  -webkit-transform: rotateY(216deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
-  transform: rotateY(216deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face14 {
-  -webkit-transform: rotateY(288deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
-  transform: rotateY(288deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face13 {
-  -webkit-transform: rotateY(36deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
-  transform: rotateY(36deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face09 {
-  -webkit-transform: rotateY(108deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
-  transform: rotateY(108deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face02 {
-  -webkit-transform: rotateY(180deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
-  transform: rotateY(180deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face05 {
-  -webkit-transform: rotateY(253deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
-  transform: rotateY(253deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face17 {
-  -webkit-transform: rotateY(324deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
-  transform: rotateY(324deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face12 {
-  -webkit-transform: rotateY(0deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
-  transform: rotateY(0deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face19 {
-  -webkit-transform: rotateY(72deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
-  transform: rotateY(72deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face03 {
-  -webkit-transform: rotateY(144deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
-  transform: rotateY(144deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face07 {
-  -webkit-transform: rotateY(216deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
-  transform: rotateY(216deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube .face15 {
-  -webkit-transform: rotateY(288deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
-  transform: rotateY(288deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
-}
-.reader.dungeon article header .cube-container #cube.show-1 {
-  -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(-38deg) rotateZ(35deg);
-  transform: translateZ(-60px) rotateY(-50deg) rotateX(-38deg) rotateZ(35deg);
-}
-.reader.dungeon article header .cube-container #cube.show-2 {
-  -webkit-transform: translateZ(-60px) rotateY(170deg) rotateX(5deg) rotateZ(-60deg);
-  transform: translateZ(-60px) rotateY(170deg) rotateX(5deg) rotateZ(-60deg);
-}
-.reader.dungeon article header .cube-container #cube.show-3 {
-  -webkit-transform: translateZ(-60px) rotateY(-144deg) rotateX(-8deg) rotateZ(-6deg);
-  transform: translateZ(-60px) rotateY(-144deg) rotateX(-8deg) rotateZ(-6deg);
-}
-.reader.dungeon article header .cube-container #cube.show-4 {
-  -webkit-transform: translateZ(-60px) rotateY(76deg) rotateX(135deg) rotateZ(-62deg);
-  transform: translateZ(-60px) rotateY(76deg) rotateX(135deg) rotateZ(-62deg);
-}
-.reader.dungeon article header .cube-container #cube.show-5 {
-  -webkit-transform: translateZ(-60px) rotateY(118deg) rotateX(-53deg) rotateZ(-35deg);
-  transform: translateZ(-60px) rotateY(118deg) rotateX(-53deg) rotateZ(-35deg);
-}
-.reader.dungeon article header .cube-container #cube.show-6 {
-  -webkit-transform: translateZ(-60px) rotateY(-75deg) rotateX(135deg) rotateZ(65deg);
-  transform: translateZ(-60px) rotateY(-75deg) rotateX(135deg) rotateZ(65deg);
-}
-.reader.dungeon article header .cube-container #cube.show-7 {
-  -webkit-transform: translateZ(-60px) rotateY(-37deg) rotateX(187deg) rotateZ(185deg);
-  transform: translateZ(-60px) rotateY(-37deg) rotateX(187deg) rotateZ(185deg);
-}
-.reader.dungeon article header .cube-container #cube.show-8 {
-  -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(-153deg) rotateZ(75deg);
-  transform: translateZ(-60px) rotateY(-50deg) rotateX(-153deg) rotateZ(75deg);
-}
-.reader.dungeon article header .cube-container #cube.show-9 {
-  -webkit-transform: translateZ(-60px) rotateY(-73deg) rotateX(-175deg) rotateZ(15deg);
-  transform: translateZ(-60px) rotateY(-73deg) rotateX(-175deg) rotateZ(15deg);
-}
-.reader.dungeon article header .cube-container #cube.show-10 {
-  -webkit-transform: translateZ(-60px) rotateY(51deg) rotateX(-42deg) rotateZ(-41deg);
-  transform: translateZ(-60px) rotateY(51deg) rotateX(-42deg) rotateZ(-41deg);
-}
-.reader.dungeon article header .cube-container #cube.show-11 {
-  -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(-220deg) rotateZ(-37deg);
-  transform: translateZ(-60px) rotateY(-50deg) rotateX(-220deg) rotateZ(-37deg);
-}
-.reader.dungeon article header .cube-container #cube.show-12 {
-  -webkit-transform: translateZ(-60px) rotateY(-10deg) rotateX(-4deg) rotateZ(-120deg);
-  transform: translateZ(-60px) rotateY(-10deg) rotateX(-4deg) rotateZ(-120deg);
-}
-.reader.dungeon article header .cube-container #cube.show-13 {
-  -webkit-transform: translateZ(-60px) rotateY(35deg) rotateX(4deg) rotateZ(-177deg);
-  transform: translateZ(-60px) rotateY(35deg) rotateX(4deg) rotateZ(-177deg);
-}
-.reader.dungeon article header .cube-container #cube.show-14 {
-  -webkit-transform: translateZ(-60px) rotateY(-296deg) rotateX(72deg) rotateZ(30deg);
-  transform: translateZ(-60px) rotateY(-296deg) rotateX(72deg) rotateZ(30deg);
-}
-.reader.dungeon article header .cube-container #cube.show-15 {
-  -webkit-transform: translateZ(-60px) rotateY(-238deg) rotateX(129deg) rotateZ(40deg);
-  transform: translateZ(-60px) rotateY(-238deg) rotateX(129deg) rotateZ(40deg);
-}
-.reader.dungeon article header .cube-container #cube.show-16 {
-  -webkit-transform: translateZ(-60px) rotateY(-254deg) rotateX(-136deg) rotateZ(113deg);
-  transform: translateZ(-60px) rotateY(-254deg) rotateX(-136deg) rotateZ(113deg);
-}
-.reader.dungeon article header .cube-container #cube.show-17 {
-  -webkit-transform: translateZ(-60px) rotateY(-37deg) rotateX(8deg) rotateZ(175deg);
-  transform: translateZ(-60px) rotateY(-37deg) rotateX(8deg) rotateZ(175deg);
-}
-.reader.dungeon article header .cube-container #cube.show-18 {
-  -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(25deg) rotateZ(288deg);
-  transform: translateZ(-60px) rotateY(-50deg) rotateX(25deg) rotateZ(288deg);
-}
-.reader.dungeon article header .cube-container #cube.show-19 {
-  -webkit-transform: translateZ(-60px) rotateY(-72deg) rotateX(4deg) rotateZ(352deg);
-  transform: translateZ(-60px) rotateY(-72deg) rotateX(4deg) rotateZ(352deg);
-}
-.reader.dungeon article header .cube-container #cube.show-20 {
-  -webkit-transform: translateZ(-60px) rotateY(50deg) rotateX(-220deg) rotateZ(38deg);
-  transform: translateZ(-60px) rotateY(50deg) rotateX(-220deg) rotateZ(38deg);
-}
-.reader.dungeon article header #buttons {
-  padding: 20px;
-  grid-row: 8/9;
-  text-align: center;
-  position: relative;
-}
-.reader.dungeon article header #buttons input[type=button] {
-  cursor: url("/dun_pointer.9e3e3a8c.cur"), pointer;
-  position: relative;
-  outline: none;
-  width: 15%;
-  height: auto;
-  background-image: url("/stone_button.c6d1005a.png");
-  background-size: cover;
-  background-position: center;
-  padding: 6px 16px;
-  font-family: "ITC Korinna Std";
-  text-shadow: 1px 1px 1px white;
-  font-size: 1.6em;
-  border-radius: 5px 5px 5px 5px;
-  box-shadow: 0px 0px 3px #000;
-  background: gradient(linear, 50% 0%, 50% 100%, from(#eeeeee), to(#cccccc));
-  background-clip: padding-box;
-}
-.reader.dungeon article header #buttons input[type=button]:active {
-  top: 1px;
-  box-shadow: 0px 0px 2px #000;
-  background: gradient(linear, 50% 0%, 50% 100%, from(#cccccc), to(#eeeeee));
-}
-.reader.dungeon article header #outcome {
-  grid-row: 7/8;
-  text-align: center;
-  z-index: 9;
-  top: -250px;
-  height: 25vh;
-  width: 20vw;
-  opacity: 0;
-  background-image: url("/stone_button.c6d1005a.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin: 0 auto;
-  /* oooh I love pointer events for stuff like this */
-  pointer-events: none;
-  -webkit-transition: opacity 400ms;
-  transition: opacity 400ms;
-}
-.reader.dungeon article header #outcome #text {
-  font-size: 1.4em;
-  font-family: "ITC Korinna Std";
-  color: black;
-  text-shadow: 1px 1px 1px white;
-  margin-top: 70px;
-  /* background-color: rgba(30, 30, 30, 0.8); */
-  /* padding: 20px 30px; */
-  display: inline-block;
-}
-.reader.dungeon article header #outcome.show {
-  opacity: 1;
-}
-.reader.dungeon article header figure {
-  grid-row: 5/6;
-  text-align: center;
-}
-.reader.dungeon article header figure img {
-  border: 5px solid black;
-  border-radius: 20px;
-  width: 40%;
-  margin-top: 2vh;
-  margin-bottom: 3vh;
-}
-.reader.dungeon article header figure figcaption {
-  border-top: 3px solid #fff0e2;
-  border-bottom: 3px solid #fff0e2;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  font-family: "ITC Korinna Std";
-  color: #fff0e2;
-  width: 40%;
-  margin: 0 auto;
-}
-.reader.dungeon article header h1 {
-  font-family: "DnDC";
-  line-height: 0.6em;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  margin: 0 auto;
-  width: 40%;
-  text-align: center;
-  font-size: 7em;
-  font-weight: normal;
-  font-style: normal;
-  color: #fff0e2;
-  grid-row: 1/2;
-}
-.reader.dungeon article header h2 {
-  font-family: "ITC Korinna Std";
-  padding: 5px;
-  text-align: center;
-  font-size: 1.2em;
-  width: 40%;
-  margin: 0 auto;
-  text-transform: uppercase;
-  color: #fff0e2;
-  border-top: 4px solid #fff0e2;
-  border-bottom: 4px solid #fff0e2;
-  grid-row: 2/3;
-}
-.reader.dungeon article header p {
-  font-family: "ITC Korinna Std";
-  padding: 10px;
-  text-align: center;
-  font-size: 1.8em;
-  width: 60%;
-  margin: 0 auto;
-  text-transform: uppercase;
-  color: #fff0e2;
-  grid-row: 4/5;
-}
-.reader.dungeon article header p:first-of-type {
-  grid-row: 3/4;
-}
-.reader.dungeon article main {
-  border-top: 0.2em solid #222;
-  padding-top: 10vh;
-  background-image: url("/papersheet.01c05328.png");
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-attachment: fixed;
-  background-size: cover;
-  box-sizing: border-box;
-  margin: 30vh 4vw 6vh 4vw;
-  color: #222;
-  font-weight: 100;
-  font-style: normal;
-  line-height: 0.9em;
-  font-family: "Hounds";
-  text-align: justify;
-  column-count: 3;
-  column-gap: 2vw;
-}
-.reader.dungeon article main section {
-  padding-bottom: 2vh;
-}
-.reader.dungeon article main section:not(:last-of-type)::after {
-  content: "";
-  display: inline-block;
-  background-image: url("/deddice.a9437174.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  margin: 0 auto;
-  padding: 0;
-  width: 25vw;
-  height: 15vh;
-}
-.reader.dungeon article main ol {
-  list-style-position: inside;
-}
-.reader.dungeon article main ul {
-  list-style: none;
-}
-.reader.dungeon article main h2 {
-  font-family: "Hounds";
-  font-weight: bold;
-  font-size: 1.3em;
-  padding-bottom: 2vh;
-  text-transform: uppercase;
-}
-.reader.dungeon article main h3 {
-  font-family: "Hounds";
-  font-weight: bold;
-  font-size: 1em;
-  padding-top: 2vh;
-  padding-bottom: 2vh;
-}
-.reader.dungeon article main p:not(:first-child) {
-  text-indent: 2vw;
-}
-.reader.dungeon article main table {
-  border-top: solid 4px black;
-  border-bottom: solid 4px black;
-}
-.reader.dungeon article main table th {
-  font-family: "Hounds";
-  text-transform: uppercase;
-  font-weight: bold;
-  border-bottom: solid 2px black;
-  text-align: center;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-}
-.reader.dungeon article main table td {
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  text-align: left;
-  padding-right: 1vw;
-}
-.reader.dungeon article main figure {
-  width: auto;
-  padding-top: 2vh;
-  padding-bottom: 2vh;
-}
-.reader.dungeon article main figure figcaption {
-  padding-top: 1vh;
-  font-style: italic;
-}
-.reader.dungeon article main figure table {
-  border-top: solid 4px black;
-  border-bottom: solid 4px black;
-}
-.reader.dungeon article main figure table th {
-  font-family: "Hounds";
-  text-transform: uppercase;
-  font-weight: bold;
-  border-bottom: solid 2px black;
-  text-align: center;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-}
-.reader.dungeon article main figure table td {
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  text-align: left;
-  padding-right: 1vw;
-}
-.reader.dungeon article main figure img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  margin-top: 2%;
-  display: block;
-}
-.reader.dungeon article footer {
-  background-image: url("/papersheet.01c05328.png");
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-attachment: fixed;
-  background-size: cover;
-  box-sizing: border-box;
-  font-size: 0.8em;
-  font-family: "ITC Korinna Std";
-  text-align: center;
-  padding-left: 20%;
-  padding-right: 20%;
-  padding-bottom: 5vh;
-}
-.reader.dungeon article footer::before {
-  content: "";
-  background-image: url("/dedsword.673655e2.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  width: 30vw;
-  height: 10vh;
+        border-bottom: 4px solid #444444;
+        column-span: all;
+
+    }*/
+  }
+  .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) img, .reader.third article main section:nth-of-type(5) figure:nth-of-type(1) figcaption {
+    column-span: all;
+  }
+  .reader.third article main section:nth-of-type(2n) figure:nth-of-type(1) img {
+    clip-path: circle();
+  }
+  .reader.third article main section h3 {
+    writing-mode: vertical-rl;
+    border-left: 5vw solid #0077c0;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  .reader.third article main section h3:hover {
+    padding-left: 2.5vw;
+  }
+  .reader.third article main section figure {
+    width: auto;
+  }
+  .reader.third article main section figure table {
+    border-right: 5px solid #f9423a;
+    padding-bottom: 2vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    font-size: 0.8em;
+  }
+  .reader.third article main section figure table tbody tr {
+    padding-right: 5px;
+  }
+  .reader.third article main section figure table tbody tr th {
+    font-weight: bold;
+    padding-top: 1vh;
+  }
+  .reader.third article main section figure table tbody tr td {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding-right: 1vw;
+    text-align: left;
+  }
+  .reader.third article main section figure img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: block;
+    -webkit-filter: grayscale(100%) contrast(100%);
+    filter: grayscale(100%) contrast(100%);
+  }
+  .reader.third article main section figure figcaption {
+    float: right;
+    font-weight: 700;
+    font-size: 0.8em;
+    width: 14vw;
+    text-align: right;
+    margin-bottom: 10px;
+    margin-left: 2vw;
+    border-left: 5px solid #0077c0;
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+  .reader.third article h1, .reader.third article h2, .reader.third article h3 {
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .reader.third article a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #222;
+  }
+  .reader.third article a:link {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .reader.third article a:visited {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .reader.third article a:hover {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .reader.third article footer {
+    background-color: #f6f3ea;
+    color: #222;
+    font-weight: 300;
+    font-size: 0.8em;
+    text-align: right;
+    margin-top: 4vh;
+    line-height: 1.2rem;
+    border-top: 5px solid #f9423a;
+    border-bottom: 5px solid #f9423a;
+  }
 }
 
+@media (min-width: 992px) {
+  .reader.dungeon .reader.left, .reader.dungeon .reader.right {
+    background-image: url("/papersheet.01c05328.png");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    box-sizing: border-box;
+  }
+  .reader.dungeon .reader.left article, .reader.dungeon .reader.right article {
+    width: auto;
+  }
+  .reader.dungeon .reader.left article header, .reader.dungeon .reader.right article header {
+    width: auto;
+    padding: 0;
+    display: block;
+  }
+  .reader.dungeon .reader.left article header #outcome, .reader.dungeon .reader.right article header #outcome {
+    display: none;
+  }
+  .reader.dungeon .reader.left article header #buttons, .reader.dungeon .reader.right article header #buttons {
+    display: none;
+  }
+  .reader.dungeon .reader.left article header .cube-container, .reader.dungeon .reader.right article header .cube-container {
+    display: none;
+  }
+  .reader.dungeon .reader.left article header h1, .reader.dungeon .reader.right article header h1 {
+    width: 20vw;
+    font-size: 1.2em;
+    line-height: 2em;
+    padding-top: 10vh;
+  }
+  .reader.dungeon .reader.left article header h1 p, .reader.dungeon .reader.right article header h1 p {
+    width: auto;
+    padding: 0;
+  }
+  .reader.dungeon .reader.left article header h1 p:first-of-type, .reader.dungeon .reader.right article header h1 p:first-of-type {
+    font-family: "DnDC";
+    font-size: 2.8em;
+    text-align: center;
+    font-weight: normal;
+    font-style: normal;
+    color: #fff0e2;
+  }
+  .reader.dungeon .reader.left article header h1 p:nth-of-type(2), .reader.dungeon .reader.right article header h1 p:nth-of-type(2) {
+    border-bottom: 0.2em solid #fff0e2;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+  .reader.dungeon .reader.left article header h1 p:nth-of-type(3), .reader.dungeon .reader.right article header h1 p:nth-of-type(3) {
+    font-family: "ITC Korinna Std";
+    padding: 5px;
+    text-align: center;
+    line-height: 1em;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    color: #fff0e2;
+  }
+  .reader.dungeon .reader.left article header h1 p:nth-of-type(4), .reader.dungeon .reader.right article header h1 p:nth-of-type(4) {
+    font-family: "ITC Korinna Std";
+    padding: 5px;
+    text-align: center;
+    line-height: 0.8em;
+    font-size: 0.8em;
+    border-bottom: 0.2em solid #fff0e2;
+    margin-bottom: 2vh;
+    text-transform: lowercase;
+    color: #fff0e2;
+  }
+  .reader.dungeon .reader.left article header h1 p:last-of-type, .reader.dungeon .reader.right article header h1 p:last-of-type {
+    font-size: 0.6em;
+    text-transform: capitalize;
+  }
+  .reader.dungeon .reader.left article header table, .reader.dungeon .reader.right article header table {
+    background-color: #455882;
+    font-family: "ITC Korinna Std";
+    color: #fff0e2;
+    width: 100%;
+  }
+  .reader.dungeon .reader.left article header table td, .reader.dungeon .reader.right article header table td {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: center;
+  }
+  .reader.dungeon .reader.left article header table td:first-of-type, .reader.dungeon .reader.right article header table td:first-of-type {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  .reader.dungeon .reader.left article main, .reader.dungeon .reader.right article main {
+    column-count: 1;
+    column-width: 100px;
+  }
+  .reader.dungeon .reader.left article main p, .reader.dungeon .reader.right article main p {
+    text-indent: 0;
+  }
+  .reader.dungeon .reader.left article main section:not(:last-of-type)::after, .reader.dungeon .reader.right article main section:not(:last-of-type)::after {
+    display: none;
+  }
+  .reader.dungeon .reader.left article main section ul, .reader.dungeon .reader.left article main section ol, .reader.dungeon .reader.right article main section ul, .reader.dungeon .reader.right article main section ol {
+    list-style-type: decimal;
+    padding: 0.4em 0;
+  }
+  .reader.dungeon .reader.left article main section ul li, .reader.dungeon .reader.left article main section ol li, .reader.dungeon .reader.right article main section ul li, .reader.dungeon .reader.right article main section ol li {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    padding: 0.4em 0;
+  }
+  .reader.dungeon .reader.left article main section ul li ol, .reader.dungeon .reader.left article main section ol li ol, .reader.dungeon .reader.right article main section ul li ol, .reader.dungeon .reader.right article main section ol li ol {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    list-style-type: upper-roman;
+    padding-left: 2rem;
+  }
+  .reader.dungeon article {
+    background-image: url("/papersheet.01c05328.png");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 100%;
+    cursor: url("/dun_cursor.963a85af.cur"), pointer;
+  }
+  .reader.dungeon article a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    cursor: url("/dun_pointer.9e3e3a8c.cur"), pointer;
+  }
+  .reader.dungeon article a:link {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .reader.dungeon article a:visited {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .reader.dungeon article a:hover {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .reader.dungeon article header {
+    height: 100%;
+    background-image: url("/dedcover.83f1d7a2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto;
+  }
+  .reader.dungeon article header .cube-container {
+    grid-row: 6/7;
+    width: 190px;
+    height: 190px;
+    position: relative;
+    margin: 100px auto;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+  .reader.dungeon article header .cube-container:after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 380px;
+    height: 380px;
+    z-index: -1;
+    margin-left: -96px;
+    background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%);
+    /* W3C */
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+  .reader.dungeon article header .cube-container #cube {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: translateZ(-60px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+    transform: translateZ(-60px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    /* top 5 point */
+    /* bottom 5 point */
+    /* middle point down */
+    /* middle point up */
+  }
+  .reader.dungeon article header .cube-container #cube figure {
+    width: 189px;
+    height: 188px;
+    display: block;
+    position: absolute;
+    background: url("/blue.13477949.png") top center no-repeat;
+    font-size: 70px;
+    line-height: 190px;
+    font-family: sans-serif;
+    text-align: center;
+    text-shadow: #000 -1px -1px 0, #fff 1px 1px 0;
+    color: #f1f1f1;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .reader.dungeon article header .cube-container #cube .face01 {
+    -webkit-transform: rotateY(36deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
+    transform: rotateY(36deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face06 {
+    -webkit-transform: rotateY(108deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
+    transform: rotateY(108deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face08 {
+    -webkit-transform: rotateY(180deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
+    transform: rotateY(180deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face04 {
+    -webkit-transform: rotateY(253deg) rotateX(53deg) rotateZ(120deg) translateZ(120px);
+    transform: rotateY(253deg) rotateX(53deg) rotateZ(120deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face10 {
+    -webkit-transform: rotateY(324deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
+    transform: rotateY(324deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face18 {
+    -webkit-transform: rotateY(0deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+    transform: rotateY(0deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face16 {
+    -webkit-transform: rotateY(72deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+    transform: rotateY(72deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face11 {
+    -webkit-transform: rotateY(144deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
+    transform: rotateY(144deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face20 {
+    -webkit-transform: rotateY(216deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
+    transform: rotateY(216deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face14 {
+    -webkit-transform: rotateY(288deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+    transform: rotateY(288deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face13 {
+    -webkit-transform: rotateY(36deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+    transform: rotateY(36deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face09 {
+    -webkit-transform: rotateY(108deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+    transform: rotateY(108deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face02 {
+    -webkit-transform: rotateY(180deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
+    transform: rotateY(180deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face05 {
+    -webkit-transform: rotateY(253deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
+    transform: rotateY(253deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face17 {
+    -webkit-transform: rotateY(324deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+    transform: rotateY(324deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face12 {
+    -webkit-transform: rotateY(0deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
+    transform: rotateY(0deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face19 {
+    -webkit-transform: rotateY(72deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+    transform: rotateY(72deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face03 {
+    -webkit-transform: rotateY(144deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+    transform: rotateY(144deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face07 {
+    -webkit-transform: rotateY(216deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+    transform: rotateY(216deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face15 {
+    -webkit-transform: rotateY(288deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
+    transform: rotateY(288deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube.show-1 {
+    -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(-38deg) rotateZ(35deg);
+    transform: translateZ(-60px) rotateY(-50deg) rotateX(-38deg) rotateZ(35deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-2 {
+    -webkit-transform: translateZ(-60px) rotateY(170deg) rotateX(5deg) rotateZ(-60deg);
+    transform: translateZ(-60px) rotateY(170deg) rotateX(5deg) rotateZ(-60deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-3 {
+    -webkit-transform: translateZ(-60px) rotateY(-144deg) rotateX(-8deg) rotateZ(-6deg);
+    transform: translateZ(-60px) rotateY(-144deg) rotateX(-8deg) rotateZ(-6deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-4 {
+    -webkit-transform: translateZ(-60px) rotateY(76deg) rotateX(135deg) rotateZ(-62deg);
+    transform: translateZ(-60px) rotateY(76deg) rotateX(135deg) rotateZ(-62deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-5 {
+    -webkit-transform: translateZ(-60px) rotateY(118deg) rotateX(-53deg) rotateZ(-35deg);
+    transform: translateZ(-60px) rotateY(118deg) rotateX(-53deg) rotateZ(-35deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-6 {
+    -webkit-transform: translateZ(-60px) rotateY(-75deg) rotateX(135deg) rotateZ(65deg);
+    transform: translateZ(-60px) rotateY(-75deg) rotateX(135deg) rotateZ(65deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-7 {
+    -webkit-transform: translateZ(-60px) rotateY(-37deg) rotateX(187deg) rotateZ(185deg);
+    transform: translateZ(-60px) rotateY(-37deg) rotateX(187deg) rotateZ(185deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-8 {
+    -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(-153deg) rotateZ(75deg);
+    transform: translateZ(-60px) rotateY(-50deg) rotateX(-153deg) rotateZ(75deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-9 {
+    -webkit-transform: translateZ(-60px) rotateY(-73deg) rotateX(-175deg) rotateZ(15deg);
+    transform: translateZ(-60px) rotateY(-73deg) rotateX(-175deg) rotateZ(15deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-10 {
+    -webkit-transform: translateZ(-60px) rotateY(51deg) rotateX(-42deg) rotateZ(-41deg);
+    transform: translateZ(-60px) rotateY(51deg) rotateX(-42deg) rotateZ(-41deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-11 {
+    -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(-220deg) rotateZ(-37deg);
+    transform: translateZ(-60px) rotateY(-50deg) rotateX(-220deg) rotateZ(-37deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-12 {
+    -webkit-transform: translateZ(-60px) rotateY(-10deg) rotateX(-4deg) rotateZ(-120deg);
+    transform: translateZ(-60px) rotateY(-10deg) rotateX(-4deg) rotateZ(-120deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-13 {
+    -webkit-transform: translateZ(-60px) rotateY(35deg) rotateX(4deg) rotateZ(-177deg);
+    transform: translateZ(-60px) rotateY(35deg) rotateX(4deg) rotateZ(-177deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-14 {
+    -webkit-transform: translateZ(-60px) rotateY(-296deg) rotateX(72deg) rotateZ(30deg);
+    transform: translateZ(-60px) rotateY(-296deg) rotateX(72deg) rotateZ(30deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-15 {
+    -webkit-transform: translateZ(-60px) rotateY(-238deg) rotateX(129deg) rotateZ(40deg);
+    transform: translateZ(-60px) rotateY(-238deg) rotateX(129deg) rotateZ(40deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-16 {
+    -webkit-transform: translateZ(-60px) rotateY(-254deg) rotateX(-136deg) rotateZ(113deg);
+    transform: translateZ(-60px) rotateY(-254deg) rotateX(-136deg) rotateZ(113deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-17 {
+    -webkit-transform: translateZ(-60px) rotateY(-37deg) rotateX(8deg) rotateZ(175deg);
+    transform: translateZ(-60px) rotateY(-37deg) rotateX(8deg) rotateZ(175deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-18 {
+    -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(25deg) rotateZ(288deg);
+    transform: translateZ(-60px) rotateY(-50deg) rotateX(25deg) rotateZ(288deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-19 {
+    -webkit-transform: translateZ(-60px) rotateY(-72deg) rotateX(4deg) rotateZ(352deg);
+    transform: translateZ(-60px) rotateY(-72deg) rotateX(4deg) rotateZ(352deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-20 {
+    -webkit-transform: translateZ(-60px) rotateY(50deg) rotateX(-220deg) rotateZ(38deg);
+    transform: translateZ(-60px) rotateY(50deg) rotateX(-220deg) rotateZ(38deg);
+  }
+  .reader.dungeon article header #buttons {
+    padding: 20px;
+    grid-row: 8/9;
+    text-align: center;
+    position: relative;
+  }
+  .reader.dungeon article header #buttons input[type=button] {
+    cursor: url("/dun_pointer.9e3e3a8c.cur"), pointer;
+    position: relative;
+    outline: none;
+    width: 15%;
+    height: auto;
+    background-image: url("/stone_button.c6d1005a.png");
+    background-size: cover;
+    background-position: center;
+    padding: 6px 16px;
+    font-family: "ITC Korinna Std";
+    text-shadow: 1px 1px 1px white;
+    font-size: 1.6em;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0px 0px 3px #000;
+    background: gradient(linear, 50% 0%, 50% 100%, from(#eeeeee), to(#cccccc));
+    background-clip: padding-box;
+  }
+  .reader.dungeon article header #buttons input[type=button]:active {
+    top: 1px;
+    box-shadow: 0px 0px 2px #000;
+    background: gradient(linear, 50% 0%, 50% 100%, from(#cccccc), to(#eeeeee));
+  }
+  .reader.dungeon article header #outcome {
+    grid-row: 7/8;
+    text-align: center;
+    z-index: 9;
+    top: -250px;
+    height: 25vh;
+    width: 20vw;
+    opacity: 0;
+    background-image: url("/stone_button.c6d1005a.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    /* oooh I love pointer events for stuff like this */
+    pointer-events: none;
+    -webkit-transition: opacity 400ms;
+    transition: opacity 400ms;
+  }
+  .reader.dungeon article header #outcome #text {
+    font-size: 1.4em;
+    font-family: "ITC Korinna Std";
+    color: black;
+    text-shadow: 1px 1px 1px white;
+    margin-top: 70px;
+    /* background-color: rgba(30, 30, 30, 0.8); */
+    /* padding: 20px 30px; */
+    display: inline-block;
+  }
+  .reader.dungeon article header #outcome.show {
+    opacity: 1;
+  }
+  .reader.dungeon article header figure {
+    grid-row: 5/6;
+    text-align: center;
+  }
+  .reader.dungeon article header figure img {
+    border: 5px solid black;
+    border-radius: 20px;
+    width: 40%;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+  }
+  .reader.dungeon article header figure figcaption {
+    border-top: 3px solid #fff0e2;
+    border-bottom: 3px solid #fff0e2;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-family: "ITC Korinna Std";
+    color: #fff0e2;
+    width: 40%;
+    margin: 0 auto;
+  }
+  .reader.dungeon article header h1 {
+    font-family: "DnDC";
+    line-height: 0.6em;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    width: 40%;
+    text-align: center;
+    font-size: 7em;
+    font-weight: normal;
+    font-style: normal;
+    color: #fff0e2;
+    grid-row: 1/2;
+  }
+  .reader.dungeon article header h2 {
+    font-family: "ITC Korinna Std";
+    padding: 5px;
+    text-align: center;
+    font-size: 1.2em;
+    width: 40%;
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: #fff0e2;
+    border-top: 4px solid #fff0e2;
+    border-bottom: 4px solid #fff0e2;
+    grid-row: 2/3;
+  }
+  .reader.dungeon article header p {
+    font-family: "ITC Korinna Std";
+    padding: 10px;
+    text-align: center;
+    font-size: 1.8em;
+    width: 60%;
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: #fff0e2;
+    grid-row: 4/5;
+  }
+  .reader.dungeon article header p:first-of-type {
+    grid-row: 3/4;
+  }
+  .reader.dungeon article main {
+    border-top: 0.2em solid #222;
+    padding-top: 10vh;
+    background-image: url("/papersheet.01c05328.png");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    box-sizing: border-box;
+    margin: 30vh 4vw 6vh 4vw;
+    color: #222;
+    font-weight: 100;
+    font-style: normal;
+    line-height: 0.9em;
+    font-family: "Hounds";
+    text-align: justify;
+    column-count: 3;
+    column-gap: 2vw;
+  }
+  .reader.dungeon article main section {
+    padding-bottom: 2vh;
+  }
+  .reader.dungeon article main section:not(:last-of-type)::after {
+    content: "";
+    display: inline-block;
+    background-image: url("/deddice.a9437174.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 0 auto;
+    padding: 0;
+    width: 25vw;
+    height: 15vh;
+  }
+  .reader.dungeon article main ol {
+    list-style-position: inside;
+  }
+  .reader.dungeon article main ul {
+    list-style: none;
+  }
+  .reader.dungeon article main h2 {
+    font-family: "Hounds";
+    font-weight: bold;
+    font-size: 1.3em;
+    padding-bottom: 2vh;
+    text-transform: uppercase;
+  }
+  .reader.dungeon article main h3 {
+    font-family: "Hounds";
+    font-weight: bold;
+    font-size: 1em;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+  .reader.dungeon article main p:not(:first-child) {
+    text-indent: 2vw;
+  }
+  .reader.dungeon article main table {
+    border-top: solid 4px black;
+    border-bottom: solid 4px black;
+  }
+  .reader.dungeon article main table th {
+    font-family: "Hounds";
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: solid 2px black;
+    text-align: center;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+  .reader.dungeon article main table td {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: left;
+    padding-right: 1vw;
+  }
+  .reader.dungeon article main figure {
+    width: auto;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+  .reader.dungeon article main figure figcaption {
+    padding-top: 1vh;
+    font-style: italic;
+  }
+  .reader.dungeon article main figure table {
+    border-top: solid 4px black;
+    border-bottom: solid 4px black;
+  }
+  .reader.dungeon article main figure table th {
+    font-family: "Hounds";
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: solid 2px black;
+    text-align: center;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+  .reader.dungeon article main figure table td {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: left;
+    padding-right: 1vw;
+  }
+  .reader.dungeon article main figure img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 2%;
+    display: block;
+  }
+  .reader.dungeon article footer {
+    background-image: url("/papersheet.01c05328.png");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    font-family: "ITC Korinna Std";
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 5vh;
+  }
+  .reader.dungeon article footer::before {
+    content: "";
+    background-image: url("/dedsword.673655e2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 30vw;
+    height: 10vh;
+  }
+}
+@media (min-width: 320px) and (max-width: 992px) {
+  .reader.dungeon .reader.left, .reader.dungeon .reader.right {
+    background-image: url("/papersheet.01c05328.png");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    box-sizing: border-box;
+  }
+  .reader.dungeon .reader.left article, .reader.dungeon .reader.right article {
+    width: auto;
+  }
+  .reader.dungeon .reader.left article header, .reader.dungeon .reader.right article header {
+    width: auto;
+    padding: 0;
+    display: block;
+  }
+  .reader.dungeon .reader.left article header #outcome, .reader.dungeon .reader.right article header #outcome {
+    display: none;
+  }
+  .reader.dungeon .reader.left article header #buttons, .reader.dungeon .reader.right article header #buttons {
+    display: none;
+  }
+  .reader.dungeon .reader.left article header .cube-container, .reader.dungeon .reader.right article header .cube-container {
+    display: none;
+  }
+  .reader.dungeon .reader.left article header h1, .reader.dungeon .reader.right article header h1 {
+    width: 20vw;
+    font-size: 1.2em;
+    line-height: 2em;
+    padding-top: 10vh;
+  }
+  .reader.dungeon .reader.left article header h1 p, .reader.dungeon .reader.right article header h1 p {
+    width: auto;
+    padding: 0;
+  }
+  .reader.dungeon .reader.left article header h1 p:first-of-type, .reader.dungeon .reader.right article header h1 p:first-of-type {
+    font-family: "DnDC";
+    font-size: 2.8em;
+    text-align: center;
+    font-weight: normal;
+    font-style: normal;
+    color: #fff0e2;
+  }
+  .reader.dungeon .reader.left article header h1 p:nth-of-type(2), .reader.dungeon .reader.right article header h1 p:nth-of-type(2) {
+    border-bottom: 0.2em solid #fff0e2;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+  .reader.dungeon .reader.left article header h1 p:nth-of-type(3), .reader.dungeon .reader.right article header h1 p:nth-of-type(3) {
+    font-family: "ITC Korinna Std";
+    padding: 5px;
+    text-align: center;
+    line-height: 1em;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    color: #fff0e2;
+  }
+  .reader.dungeon .reader.left article header h1 p:nth-of-type(4), .reader.dungeon .reader.right article header h1 p:nth-of-type(4) {
+    font-family: "ITC Korinna Std";
+    padding: 5px;
+    text-align: center;
+    line-height: 0.8em;
+    font-size: 0.8em;
+    border-bottom: 0.2em solid #fff0e2;
+    margin-bottom: 2vh;
+    text-transform: lowercase;
+    color: #fff0e2;
+  }
+  .reader.dungeon .reader.left article header h1 p:last-of-type, .reader.dungeon .reader.right article header h1 p:last-of-type {
+    font-size: 0.6em;
+    text-transform: capitalize;
+  }
+  .reader.dungeon .reader.left article header table, .reader.dungeon .reader.right article header table {
+    background-color: #455882;
+    font-family: "ITC Korinna Std";
+    color: #fff0e2;
+    width: 100%;
+  }
+  .reader.dungeon .reader.left article header table td, .reader.dungeon .reader.right article header table td {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: center;
+  }
+  .reader.dungeon .reader.left article header table td:first-of-type, .reader.dungeon .reader.right article header table td:first-of-type {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  .reader.dungeon .reader.left article main, .reader.dungeon .reader.right article main {
+    column-count: 1;
+    column-width: 100px;
+  }
+  .reader.dungeon .reader.left article main p, .reader.dungeon .reader.right article main p {
+    text-indent: 0;
+  }
+  .reader.dungeon .reader.left article main section:not(:last-of-type)::after, .reader.dungeon .reader.right article main section:not(:last-of-type)::after {
+    display: none;
+  }
+  .reader.dungeon .reader.left article main section ul, .reader.dungeon .reader.left article main section ol, .reader.dungeon .reader.right article main section ul, .reader.dungeon .reader.right article main section ol {
+    list-style-type: decimal;
+    padding: 0.4em 0;
+  }
+  .reader.dungeon .reader.left article main section ul li, .reader.dungeon .reader.left article main section ol li, .reader.dungeon .reader.right article main section ul li, .reader.dungeon .reader.right article main section ol li {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    padding: 0.4em 0;
+  }
+  .reader.dungeon .reader.left article main section ul li ol, .reader.dungeon .reader.left article main section ol li ol, .reader.dungeon .reader.right article main section ul li ol, .reader.dungeon .reader.right article main section ol li ol {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    list-style-type: upper-roman;
+    padding-left: 2rem;
+  }
+  .reader.dungeon article {
+    background-image: url("/papersheet.01c05328.png");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 100%;
+    cursor: url("/dun_cursor.963a85af.cur"), pointer;
+  }
+  .reader.dungeon article a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    cursor: url("/dun_pointer.9e3e3a8c.cur"), pointer;
+  }
+  .reader.dungeon article a:link {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .reader.dungeon article a:visited {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .reader.dungeon article a:hover {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .reader.dungeon article header {
+    height: 100%;
+    background-image: url("/dedcover.83f1d7a2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-template-columns: auto;
+  }
+  .reader.dungeon article header .cube-container {
+    grid-row: 6/7;
+    width: 190px;
+    height: 190px;
+    position: relative;
+    margin: 100px auto;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+  .reader.dungeon article header .cube-container:after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 380px;
+    height: 380px;
+    z-index: -1;
+    margin-left: -96px;
+    background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%);
+    /* W3C */
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+  }
+  .reader.dungeon article header .cube-container #cube {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: translateZ(-60px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+    transform: translateZ(-60px) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+    /* top 5 point */
+    /* bottom 5 point */
+    /* middle point down */
+    /* middle point up */
+  }
+  .reader.dungeon article header .cube-container #cube figure {
+    width: 189px;
+    height: 188px;
+    display: block;
+    position: absolute;
+    background: url("/blue.13477949.png") top center no-repeat;
+    font-size: 70px;
+    line-height: 190px;
+    font-family: sans-serif;
+    text-align: center;
+    text-shadow: #000 -1px -1px 0, #fff 1px 1px 0;
+    color: #f1f1f1;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .reader.dungeon article header .cube-container #cube .face01 {
+    -webkit-transform: rotateY(36deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
+    transform: rotateY(36deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face06 {
+    -webkit-transform: rotateY(108deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
+    transform: rotateY(108deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face08 {
+    -webkit-transform: rotateY(180deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
+    transform: rotateY(180deg) rotateX(53deg) rotateZ(240deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face04 {
+    -webkit-transform: rotateY(253deg) rotateX(53deg) rotateZ(120deg) translateZ(120px);
+    transform: rotateY(253deg) rotateX(53deg) rotateZ(120deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face10 {
+    -webkit-transform: rotateY(324deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
+    transform: rotateY(324deg) rotateX(53deg) rotateZ(0deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face18 {
+    -webkit-transform: rotateY(0deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+    transform: rotateY(0deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face16 {
+    -webkit-transform: rotateY(72deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+    transform: rotateY(72deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face11 {
+    -webkit-transform: rotateY(144deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
+    transform: rotateY(144deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face20 {
+    -webkit-transform: rotateY(216deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
+    transform: rotateY(216deg) rotateX(-53deg) rotateZ(180deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face14 {
+    -webkit-transform: rotateY(288deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+    transform: rotateY(288deg) rotateX(-53deg) rotateZ(60deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face13 {
+    -webkit-transform: rotateY(36deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+    transform: rotateY(36deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face09 {
+    -webkit-transform: rotateY(108deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+    transform: rotateY(108deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face02 {
+    -webkit-transform: rotateY(180deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
+    transform: rotateY(180deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face05 {
+    -webkit-transform: rotateY(253deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
+    transform: rotateY(253deg) rotateX(11deg) rotateZ(300deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face17 {
+    -webkit-transform: rotateY(324deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+    transform: rotateY(324deg) rotateX(11deg) rotateZ(180deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face12 {
+    -webkit-transform: rotateY(0deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
+    transform: rotateY(0deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face19 {
+    -webkit-transform: rotateY(72deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+    transform: rotateY(72deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face03 {
+    -webkit-transform: rotateY(144deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+    transform: rotateY(144deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face07 {
+    -webkit-transform: rotateY(216deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+    transform: rotateY(216deg) rotateX(-11deg) rotateZ(0deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube .face15 {
+    -webkit-transform: rotateY(288deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
+    transform: rotateY(288deg) rotateX(-11deg) rotateZ(120deg) translateZ(120px);
+  }
+  .reader.dungeon article header .cube-container #cube.show-1 {
+    -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(-38deg) rotateZ(35deg);
+    transform: translateZ(-60px) rotateY(-50deg) rotateX(-38deg) rotateZ(35deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-2 {
+    -webkit-transform: translateZ(-60px) rotateY(170deg) rotateX(5deg) rotateZ(-60deg);
+    transform: translateZ(-60px) rotateY(170deg) rotateX(5deg) rotateZ(-60deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-3 {
+    -webkit-transform: translateZ(-60px) rotateY(-144deg) rotateX(-8deg) rotateZ(-6deg);
+    transform: translateZ(-60px) rotateY(-144deg) rotateX(-8deg) rotateZ(-6deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-4 {
+    -webkit-transform: translateZ(-60px) rotateY(76deg) rotateX(135deg) rotateZ(-62deg);
+    transform: translateZ(-60px) rotateY(76deg) rotateX(135deg) rotateZ(-62deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-5 {
+    -webkit-transform: translateZ(-60px) rotateY(118deg) rotateX(-53deg) rotateZ(-35deg);
+    transform: translateZ(-60px) rotateY(118deg) rotateX(-53deg) rotateZ(-35deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-6 {
+    -webkit-transform: translateZ(-60px) rotateY(-75deg) rotateX(135deg) rotateZ(65deg);
+    transform: translateZ(-60px) rotateY(-75deg) rotateX(135deg) rotateZ(65deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-7 {
+    -webkit-transform: translateZ(-60px) rotateY(-37deg) rotateX(187deg) rotateZ(185deg);
+    transform: translateZ(-60px) rotateY(-37deg) rotateX(187deg) rotateZ(185deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-8 {
+    -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(-153deg) rotateZ(75deg);
+    transform: translateZ(-60px) rotateY(-50deg) rotateX(-153deg) rotateZ(75deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-9 {
+    -webkit-transform: translateZ(-60px) rotateY(-73deg) rotateX(-175deg) rotateZ(15deg);
+    transform: translateZ(-60px) rotateY(-73deg) rotateX(-175deg) rotateZ(15deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-10 {
+    -webkit-transform: translateZ(-60px) rotateY(51deg) rotateX(-42deg) rotateZ(-41deg);
+    transform: translateZ(-60px) rotateY(51deg) rotateX(-42deg) rotateZ(-41deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-11 {
+    -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(-220deg) rotateZ(-37deg);
+    transform: translateZ(-60px) rotateY(-50deg) rotateX(-220deg) rotateZ(-37deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-12 {
+    -webkit-transform: translateZ(-60px) rotateY(-10deg) rotateX(-4deg) rotateZ(-120deg);
+    transform: translateZ(-60px) rotateY(-10deg) rotateX(-4deg) rotateZ(-120deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-13 {
+    -webkit-transform: translateZ(-60px) rotateY(35deg) rotateX(4deg) rotateZ(-177deg);
+    transform: translateZ(-60px) rotateY(35deg) rotateX(4deg) rotateZ(-177deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-14 {
+    -webkit-transform: translateZ(-60px) rotateY(-296deg) rotateX(72deg) rotateZ(30deg);
+    transform: translateZ(-60px) rotateY(-296deg) rotateX(72deg) rotateZ(30deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-15 {
+    -webkit-transform: translateZ(-60px) rotateY(-238deg) rotateX(129deg) rotateZ(40deg);
+    transform: translateZ(-60px) rotateY(-238deg) rotateX(129deg) rotateZ(40deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-16 {
+    -webkit-transform: translateZ(-60px) rotateY(-254deg) rotateX(-136deg) rotateZ(113deg);
+    transform: translateZ(-60px) rotateY(-254deg) rotateX(-136deg) rotateZ(113deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-17 {
+    -webkit-transform: translateZ(-60px) rotateY(-37deg) rotateX(8deg) rotateZ(175deg);
+    transform: translateZ(-60px) rotateY(-37deg) rotateX(8deg) rotateZ(175deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-18 {
+    -webkit-transform: translateZ(-60px) rotateY(-50deg) rotateX(25deg) rotateZ(288deg);
+    transform: translateZ(-60px) rotateY(-50deg) rotateX(25deg) rotateZ(288deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-19 {
+    -webkit-transform: translateZ(-60px) rotateY(-72deg) rotateX(4deg) rotateZ(352deg);
+    transform: translateZ(-60px) rotateY(-72deg) rotateX(4deg) rotateZ(352deg);
+  }
+  .reader.dungeon article header .cube-container #cube.show-20 {
+    -webkit-transform: translateZ(-60px) rotateY(50deg) rotateX(-220deg) rotateZ(38deg);
+    transform: translateZ(-60px) rotateY(50deg) rotateX(-220deg) rotateZ(38deg);
+  }
+  .reader.dungeon article header #buttons {
+    padding: 20px;
+    grid-row: 8/9;
+    text-align: center;
+    position: relative;
+  }
+  .reader.dungeon article header #buttons input[type=button] {
+    cursor: url("/dun_pointer.9e3e3a8c.cur"), pointer;
+    position: relative;
+    outline: none;
+    width: 15%;
+    height: auto;
+    background-image: url("/stone_button.c6d1005a.png");
+    background-size: cover;
+    background-position: center;
+    padding: 6px 16px;
+    font-family: "ITC Korinna Std";
+    text-shadow: 1px 1px 1px white;
+    font-size: 1.6em;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0px 0px 3px #000;
+    background: gradient(linear, 50% 0%, 50% 100%, from(#eeeeee), to(#cccccc));
+    background-clip: padding-box;
+  }
+  .reader.dungeon article header #buttons input[type=button]:active {
+    top: 1px;
+    box-shadow: 0px 0px 2px #000;
+    background: gradient(linear, 50% 0%, 50% 100%, from(#cccccc), to(#eeeeee));
+  }
+  .reader.dungeon article header #outcome {
+    grid-row: 7/8;
+    text-align: center;
+    z-index: 9;
+    top: -250px;
+    height: 25vh;
+    width: 20vw;
+    opacity: 0;
+    background-image: url("/stone_button.c6d1005a.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    /* oooh I love pointer events for stuff like this */
+    pointer-events: none;
+    -webkit-transition: opacity 400ms;
+    transition: opacity 400ms;
+  }
+  .reader.dungeon article header #outcome #text {
+    font-size: 1.4em;
+    font-family: "ITC Korinna Std";
+    color: black;
+    text-shadow: 1px 1px 1px white;
+    margin-top: 70px;
+    /* background-color: rgba(30, 30, 30, 0.8); */
+    /* padding: 20px 30px; */
+    display: inline-block;
+  }
+  .reader.dungeon article header #outcome.show {
+    opacity: 1;
+  }
+  .reader.dungeon article header figure {
+    grid-row: 5/6;
+    text-align: center;
+  }
+  .reader.dungeon article header figure img {
+    border: 5px solid black;
+    border-radius: 20px;
+    width: 40%;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+  }
+  .reader.dungeon article header figure figcaption {
+    border-top: 3px solid #fff0e2;
+    border-bottom: 3px solid #fff0e2;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-family: "ITC Korinna Std";
+    color: #fff0e2;
+    width: 40%;
+    margin: 0 auto;
+  }
+  .reader.dungeon article header h1 {
+    font-family: "DnDC";
+    line-height: 0.6em;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    width: 40%;
+    text-align: center;
+    font-size: 7em;
+    font-weight: normal;
+    font-style: normal;
+    color: #fff0e2;
+    grid-row: 1/2;
+  }
+  .reader.dungeon article header h2 {
+    font-family: "ITC Korinna Std";
+    padding: 5px;
+    text-align: center;
+    font-size: 1.2em;
+    width: 40%;
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: #fff0e2;
+    border-top: 4px solid #fff0e2;
+    border-bottom: 4px solid #fff0e2;
+    grid-row: 2/3;
+  }
+  .reader.dungeon article header p {
+    font-family: "ITC Korinna Std";
+    padding: 10px;
+    text-align: center;
+    font-size: 1.8em;
+    width: 60%;
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: #fff0e2;
+    grid-row: 4/5;
+  }
+  .reader.dungeon article header p:first-of-type {
+    grid-row: 3/4;
+  }
+  .reader.dungeon article main {
+    border-top: 0.2em solid #222;
+    padding-top: 10vh;
+    background-image: url("/papersheet.01c05328.png");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    box-sizing: border-box;
+    margin: 30vh 4vw 6vh 4vw;
+    color: #222;
+    font-weight: 100;
+    font-style: normal;
+    line-height: 0.9em;
+    font-family: "Hounds";
+    text-align: justify;
+  }
+  .reader.dungeon article main section {
+    padding-bottom: 2vh;
+  }
+  .reader.dungeon article main section:not(:last-of-type)::after {
+    content: "";
+    display: inline-block;
+    background-image: url("/deddice.a9437174.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin: 0 auto;
+    padding: 0;
+    width: 25vw;
+    height: 15vh;
+  }
+  .reader.dungeon article main ol {
+    list-style-position: inside;
+  }
+  .reader.dungeon article main ul {
+    list-style: none;
+  }
+  .reader.dungeon article main h2 {
+    font-family: "Hounds";
+    font-weight: bold;
+    font-size: 1.3em;
+    padding-bottom: 2vh;
+    text-transform: uppercase;
+  }
+  .reader.dungeon article main h3 {
+    font-family: "Hounds";
+    font-weight: bold;
+    font-size: 1em;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+  .reader.dungeon article main p:not(:first-child) {
+    text-indent: 2vw;
+  }
+  .reader.dungeon article main table {
+    border-top: solid 4px black;
+    border-bottom: solid 4px black;
+  }
+  .reader.dungeon article main table th {
+    font-family: "Hounds";
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: solid 2px black;
+    text-align: center;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+  .reader.dungeon article main table td {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: left;
+    padding-right: 1vw;
+  }
+  .reader.dungeon article main figure {
+    width: auto;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+  .reader.dungeon article main figure figcaption {
+    padding-top: 1vh;
+    font-style: italic;
+  }
+  .reader.dungeon article main figure table {
+    border-top: solid 4px black;
+    border-bottom: solid 4px black;
+  }
+  .reader.dungeon article main figure table th {
+    font-family: "Hounds";
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: solid 2px black;
+    text-align: center;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+  .reader.dungeon article main figure table td {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: left;
+    padding-right: 1vw;
+  }
+  .reader.dungeon article main figure img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-top: 2%;
+    display: block;
+  }
+  .reader.dungeon article footer {
+    background-image: url("/papersheet.01c05328.png");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-attachment: fixed;
+    background-size: cover;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    font-family: "ITC Korinna Std";
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 5vh;
+  }
+  .reader.dungeon article footer::before {
+    content: "";
+    background-image: url("/dedsword.673655e2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    width: 30vw;
+    height: 10vh;
+  }
+}
+
+<<<<<<< HEAD
 .reader.fifth {
   font-size: 100%;
 }
 .reader.fifth :link, .reader.fifth :visited {
+=======
+.reader.fifth :link,
+.reader.fifth :visited {
+>>>>>>> 306aaf67d1af780b41a566ddb11ad8e7b72fb89d
   color: #8d000e;
   font-style: italic;
 }
+
 @media (min-width: 768px) {
-  .reader.fifth .publisher {
+  .publisher {
     font-family: rollingFont;
     font-size: 2.5em;
     font-weight: bold;
@@ -2235,12 +3171,22 @@ html {
     border-bottom: 1px solid #000;
     position: absolute;
     width: 85vw;
+    top: 6.3rem;
+    left: 53.3%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  .publisher:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 85vw;
     top: 17.3%;
     left: 53.3%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
   }
-  .reader.fifth .publisher:before {
+  .publisher:before:before {
     content: "";
     display: block;
     position: absolute;
@@ -2250,7 +3196,7 @@ html {
     height: 3px;
     background: #000;
   }
-  .reader.fifth article {
+  .publisher article {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     columns: 3 12.5rem;
@@ -2261,16 +3207,24 @@ html {
     border: 0.1rem solid #222;
     border-left: -5rem;
     border-right: -1rem;
+<<<<<<< HEAD
     padding: 5rem 2rem 2rem;
+=======
+    padding: 5rem 4rem 2rem;
   }
-  .reader.fifth article h1 {
+  .publisher article::after {
+    content: "";
+    border-top: 0.1rem solid #222;
+>>>>>>> 306aaf67d1af780b41a566ddb11ad8e7b72fb89d
+  }
+  .publisher article h1 {
     position: relative;
     font-family: "bernsteinBold";
     font-size: 4em;
     text-align: left;
     width: auto;
   }
-  .reader.fifth article h4 {
+  .publisher article h4 {
     color: #ff0019;
     position: relative;
     font-family: "bernsteinBold";
@@ -2282,14 +3236,14 @@ html {
     padding: 0.5rem 1rem;
     column-span: 2;
   }
-  .reader.fifth article h1 {
+  .publisher article h1 {
     position: relative;
     font-family: "bernsteinBold";
     font-size: 4em;
     text-align: left;
     width: auto;
   }
-  .reader.fifth article h2, .reader.fifth article h3, .reader.fifth article h4 {
+  .publisher article h2, .publisher article h3, .publisher article h4 {
     color: #ff0019;
     position: relative;
     font-family: "bernsteinBold";
@@ -2301,23 +3255,23 @@ html {
     padding: 0.5rem 1rem;
     column-span: 2;
   }
-  .reader.fifth article img {
+  .publisher article img {
     object-fit: contain;
     width: 25vw;
     height: auto;
     padding-top: 1rem;
   }
-  .reader.fifth article figure {
+  .publisher article figure {
     text-align: center;
     padding: 0 0;
   }
-  .reader.fifth article figure img {
+  .publisher article figure img {
     object-fit: contain;
     width: 25vw;
     height: auto;
     padding-top: 1rem;
   }
-  .reader.fifth article figure figcaption {
+  .publisher article figure figcaption {
     font-family: "fifthCorpus", sans-serif;
     font-size: 0.8em;
     display: block;
@@ -2327,7 +3281,7 @@ html {
     bottom: 4.5rem;
     right: -2rem;
   }
-  .reader.fifth article p {
+  .publisher article p {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     text-align: justify;
@@ -2336,10 +3290,10 @@ html {
     padding: 1rem 0;
     border-bottom: #222;
   }
-  .reader.fifth article main {
+  .publisher article main {
     padding: 0.5rem;
   }
-  .reader.fifth article main p {
+  .publisher article main p {
     padding: 0.5rem 0;
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
@@ -2347,24 +3301,24 @@ html {
     position: relative;
     color: black;
   }
-  .reader.fifth article main p:first-of-type {
+  .publisher article main p:first-of-type {
     border-bottom: 0.05rem solid black;
   }
-  .reader.fifth article main p:nth-of-type(2)::first-letter {
+  .publisher article main p:nth-of-type(2)::first-letter {
     text-transform: uppercase;
     font-size: 3em;
     display: inline;
   }
-  .reader.fifth article main p em {
+  .publisher article main p em {
     text-transform: uppercase;
     padding: 5rem 0;
   }
-  .reader.fifth article mark {
+  .publisher article mark {
     font-style: italic;
     background-color: white;
     color: inherit;
   }
-  .reader.fifth article footer {
+  .publisher article footer {
     font-size: 0.8em;
     column-span: all !important;
     text-transform: uppercase;
@@ -2373,19 +3327,19 @@ html {
     padding-bottom: 3rem;
     text-align: right;
   }
-  .reader.fifth article footer p {
+  .publisher article footer p {
     text-align: right;
     padding: 0;
   }
-  .reader.fifth article footer p:first-of-type {
+  .publisher article footer p:first-of-type {
     padding-top: 1.5rem;
   }
-  .reader.fifth article table {
+  .publisher article table {
     display: block;
     width: auto;
     overflow: auto;
   }
-  .reader.fifth article table th {
+  .publisher article table th {
     text-transform: uppercase;
     font-weight: bold;
     border: 1px solid black;
@@ -2400,7 +3354,7 @@ html {
       z-index: 100;
     }*/
   }
-  .reader.fifth article table td {
+  .publisher article table td {
     border: 1px solid black;
     transition: 0.25s;
     /*&:hover {
@@ -2412,75 +3366,91 @@ html {
       z-index: 100;
     }*/
   }
-  .reader.fifth article ol {
+  .publisher article ol {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     color: black;
   }
-  .reader.fifth article ol li {
+  .publisher article ol li {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
   }
-  .reader.fifth .left, .reader.fifth .right {
+  .publisher .left,
+.publisher .right {
     columns: 1 auto;
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     text-align: left;
   }
-  .reader.fifth .left header h1, .reader.fifth .right header h1 {
+  .publisher .left header h1,
+.publisher .right header h1 {
     position: relative;
     font-family: "bernsteinBold";
     font-size: 2em !important;
     text-align: left;
     width: auto;
   }
-  .reader.fifth .left header table, .reader.fifth .right header table {
+  .publisher .left header table,
+.publisher .right header table {
     column-span: all !important;
     display: block;
     padding-bottom: 1rem;
   }
-  .reader.fifth .left header table td, .reader.fifth .right header table td {
+  .publisher .left header table td,
+.publisher .right header table td {
     padding: 0 0.3rem;
   }
-  .reader.fifth .left header p, .reader.fifth .right header p {
+  .publisher .left header p,
+.publisher .right header p {
     text-align: left;
   }
-  .reader.fifth .left ul, .reader.fifth .left ol, .reader.fifth .right ul, .reader.fifth .right ol {
+  .publisher .left ul,
+.publisher .left ol,
+.publisher .right ul,
+.publisher .right ol {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     color: black;
     list-style-type: decimal;
     padding: 1rem 0;
   }
-  .reader.fifth .left ul li, .reader.fifth .left ol li, .reader.fifth .right ul li, .reader.fifth .right ol li {
+  .publisher .left ul li,
+.publisher .left ol li,
+.publisher .right ul li,
+.publisher .right ol li {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     padding: 1rem 0;
   }
-  .reader.fifth .left ul li ol, .reader.fifth .left ol li ol, .reader.fifth .right ul li ol, .reader.fifth .right ol li ol {
+  .publisher .left ul li ol,
+.publisher .left ol li ol,
+.publisher .right ul li ol,
+.publisher .right ol li ol {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     list-style-type: lower-roman;
     padding-left: 2rem;
   }
-  .reader.fifth .left p, .reader.fifth .right p {
+  .publisher .left p,
+.publisher .right p {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     text-align: justify;
     color: black;
   }
-  .reader.fifth .left em, .reader.fifth .right em {
+  .publisher .left em,
+.publisher .right em {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     font-style: italic;
   }
 }
-@media (max-width: 768px) {
-  .reader.fifth .publisher {
+@media (min-width: 768px) and (max-width: 768px) {
+  .publisher {
     font-family: rollingFont;
     font-size: 2.5em;
     font-weight: bold;
@@ -2497,7 +3467,7 @@ html {
     margin-right: -50%;
     transform: translate(-50%, -50%);
   }
-  .reader.fifth .publisher:before {
+  .publisher:before {
     content: "";
     display: block;
     position: absolute;
@@ -2507,7 +3477,8 @@ html {
     height: 3px;
     background: #000;
   }
-  .reader.fifth article {
+
+  article {
     font-size: smaller;
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
@@ -2521,18 +3492,18 @@ html {
     border-right: -1rem;
     padding: 5rem 4rem 2rem;
   }
-  .reader.fifth article::after {
+  article::after {
     content: "";
     border-top: 0.1rem solid #222;
   }
-  .reader.fifth article h1 {
+  article h1 {
     position: relative;
     font-family: "bernsteinBold";
     font-size: 4em;
     text-align: left;
     width: auto;
   }
-  .reader.fifth article h4 {
+  article h4 {
     color: #ff0019;
     position: relative;
     font-family: "bernsteinBold";
@@ -2544,14 +3515,14 @@ html {
     padding: 0.5rem 1rem;
     column-span: 2;
   }
-  .reader.fifth article h1 {
+  article h1 {
     position: relative;
     font-family: "bernsteinBold";
     font-size: 4em;
     text-align: left;
     width: auto;
   }
-  .reader.fifth article h2, .reader.fifth article h3, .reader.fifth article h4 {
+  article h2, article h3, article h4 {
     color: #ff0019;
     position: relative;
     font-family: "bernsteinBold";
@@ -2563,23 +3534,23 @@ html {
     padding: 0.5rem 1rem;
     column-span: 2;
   }
-  .reader.fifth article img {
+  article img {
     object-fit: contain;
     width: 25vw;
     height: auto;
     padding-top: 1rem;
   }
-  .reader.fifth article figure {
+  article figure {
     text-align: center;
     padding: 0 0;
   }
-  .reader.fifth article figure img {
+  article figure img {
     object-fit: contain;
     width: 25vw;
     height: auto;
     padding-top: 1rem;
   }
-  .reader.fifth article figure figcaption {
+  article figure figcaption {
     font-family: "fifthCorpus", sans-serif;
     font-size: 0.8em;
     display: block;
@@ -2589,7 +3560,7 @@ html {
     bottom: 4.5rem;
     right: -2rem;
   }
-  .reader.fifth article p {
+  article p {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     text-align: justify;
@@ -2598,10 +3569,10 @@ html {
     padding: 1rem 0;
     border-bottom: #222;
   }
-  .reader.fifth article main {
+  article main {
     padding: 0.5rem;
   }
-  .reader.fifth article main p {
+  article main p {
     padding: 0.5rem 0;
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
@@ -2609,24 +3580,24 @@ html {
     position: relative;
     color: black;
   }
-  .reader.fifth article main p:first-of-type {
+  article main p:first-of-type {
     border-bottom: 0.05rem solid black;
   }
-  .reader.fifth article main p:nth-of-type(2)::first-letter {
+  article main p:nth-of-type(2)::first-letter {
     text-transform: uppercase;
     font-size: 3em;
     display: inline;
   }
-  .reader.fifth article main p em {
+  article main p em {
     text-transform: uppercase;
     padding: 5rem 0;
   }
-  .reader.fifth article mark {
+  article mark {
     font-style: italic;
     background-color: white;
     color: inherit;
   }
-  .reader.fifth article footer {
+  article footer {
     font-size: 0.8em;
     column-span: all !important;
     text-transform: uppercase;
@@ -2635,19 +3606,19 @@ html {
     padding-bottom: 3rem;
     text-align: right;
   }
-  .reader.fifth article footer p {
+  article footer p {
     text-align: right;
     padding: 0;
   }
-  .reader.fifth article footer p:first-of-type {
+  article footer p:first-of-type {
     padding-top: 1.5rem;
   }
-  .reader.fifth article table {
+  article table {
     display: block;
     width: auto;
     overflow: auto;
   }
-  .reader.fifth article table th {
+  article table th {
     text-transform: uppercase;
     font-weight: bold;
     border: 1px solid black;
@@ -2662,7 +3633,7 @@ html {
       z-index: 100;
     }*/
   }
-  .reader.fifth article table td {
+  article table td {
     border: 1px solid black;
     transition: 0.25s;
     /*&:hover {
@@ -2674,74 +3645,80 @@ html {
       z-index: 100;
     }*/
   }
-  .reader.fifth article ol {
+  article ol {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     color: black;
   }
-  .reader.fifth article ol li {
+  article ol li {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
   }
-  .reader.fifth .left, .reader.fifth .right {
+
+  .left, .right {
     width: 50vw;
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     text-align: left;
   }
-  .reader.fifth .left header h1, .reader.fifth .right header h1 {
+  .left header h1, .right header h1 {
     position: relative;
     font-family: "bernsteinBold";
     font-size: 1.8em !important;
     text-align: left;
     width: auto;
   }
-  .reader.fifth .left header table, .reader.fifth .right header table {
+  .left header table, .right header table {
     column-span: all !important;
     display: block;
   }
-  .reader.fifth .left header p, .reader.fifth .right header p {
+  .left header p, .right header p {
     text-align: left;
   }
-  .reader.fifth .left ul, .reader.fifth .left ol, .reader.fifth .right ul, .reader.fifth .right ol {
+  .left ul, .left ol, .right ul, .right ol {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     color: black;
     list-style-type: decimal;
     padding: 1rem 0;
   }
-  .reader.fifth .left ul li, .reader.fifth .left ol li, .reader.fifth .right ul li, .reader.fifth .right ol li {
+  .left ul li, .left ol li, .right ul li, .right ol li {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     padding: 1rem 0;
   }
-  .reader.fifth .left ul li ol, .reader.fifth .left ol li ol, .reader.fifth .right ul li ol, .reader.fifth .right ol li ol {
+  .left ul li ol, .left ol li ol, .right ul li ol, .right ol li ol {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     list-style-type: lower-roman;
     padding-left: 2rem;
   }
-  .reader.fifth .left p, .reader.fifth .right p {
+  .left p, .right p {
     font-family: "fifthCorpus", sans-serif;
     font-size: 1.1em;
     text-align: justify;
     color: black;
   }
-  .reader.fifth .left em, .reader.fifth .right em {
+  .left em, .right em {
     font-size: inherit;
     font-family: inherit;
     color: inherit;
     font-style: italic;
   }
 }
+<<<<<<< HEAD
 
 .reader.sixth {
   font-size: 100%;
 }
 .reader.sixth :link, .reader.sixth :visited {
+=======
+.reader.sixth :link,
+.reader.sixth :visited {
+>>>>>>> 306aaf67d1af780b41a566ddb11ad8e7b72fb89d
   color: white;
   font-style: italic;
   text-transform: uppercase;
@@ -5184,31 +6161,6 @@ h1 {
   background: rgba(244, 241, 208, 0);
   font-size: 1.2rem;
   padding: 3% 10% 3% 4%;
-  /*
-  .arrow1 {
-    position: absolute;
-    background-image: url(images/arrow2.png);
-    background-size: 30vh 47vh;
-    background-repeat: no-repeat;
-    height: 47vh;
-    width: 30vh;
-    margin-top: -31rem;
-    margin-left: 63rem;
-    opacity: 0.85;
-    animation: moveInBottom2 0.6s ease-in 0.1s;
-  }
-  .arrow2 {
-    position: absolute;
-    background-image: url(images/arrow3.png);
-    background-size: 27vh 17vh;
-    background-repeat: no-repeat;
-    height: 30vh;
-    width: 40vh;
-    margin-top: -13rem;
-    margin-left: -9.7rem;
-    transform: rotate(40deg);
-    animation: moveInTop 0.6s ease-in 0.1s;
-  }*/
 }
 .tutorialPageSection p {
   padding: 0.5rem 0;
@@ -5217,19 +6169,28 @@ h1 {
   padding: 1rem 0 1rem 2rem;
 }
 .tutorialPageSection li {
-  margin-left: -1rem;
+  margin-left: 1rem;
+  padding: 1% 0;
 }
 .tutorialPageSection h1 {
   font-family: "TRY Vesterbro";
   padding: 0;
   font-size: 2.5rem;
   color: #d29129;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 .tutorialPageSection em {
   font-size: 1.25rem;
   font-weight: bold;
   letter-spacing: 0.1rem;
+}
+.tutorialPageSection .iconsTutorial {
+  display: table;
+}
+.tutorialPageSection div.iconsTutorial {
+  display: table-cell;
+  padding: 1rem 2rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=/style.97fcb138.css.map */
