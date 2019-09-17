@@ -2843,6 +2843,7 @@ $dragon-ink: #222;
 
 
 
+//
 //STYLE: ROLLING DOM
 
 .reader.fifth {
@@ -2851,29 +2852,19 @@ $dragon-ink: #222;
     color: rgb(141, 0, 14);
     font-style: italic;
   }
-}
 
   //DESKTOP view
   @media (min-width:768px) {
   .publisher {
-    font-family: rollingFont;
-    font-size: 2.5em;
-    font-weight: bold;
-    color: rgb(255, 0, 25);
-    text-align: center;
-    column-span: all;
-    text-shadow: 4px 4px 0px rgb(0, 0, 0);
-    z-index: 100;
-    border-bottom: 1px solid #000;
-    position: absolute;
-    width: 85vw;
-    top: 6.3rem;
-    left: 53.3%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    &:before {
-      content: "";
-      display: block;
+      font-family: rollingFont;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: rgb(255, 0, 25);
+      text-align: center;
+      column-span: all;
+      text-shadow: 4px 4px 0px rgb(0, 0, 0);
+      z-index: 100;
+      border-bottom:1px solid #000;
       position: absolute;
       width: 85vw;
       top: 17.3%;
@@ -2892,7 +2883,7 @@ $dragon-ink: #222;
       }
   } 
   article {
-    font-family: "fifthCorpus", sans-serif;
+    font-family: 'fifthCorpus', sans-serif;
     font-size: 1.1em;
     columns: 3 12.5rem;
     background-color: white;
@@ -3066,16 +3057,15 @@ $dragon-ink: #222;
       }
     }
   }
-  .left,
-  .right {
+  .left, .right {
     columns: 1 auto;
-    font-family: "fifthCorpus", sans-serif;
+    font-family: 'fifthCorpus', sans-serif;
     font-size: 1.1em;
     text-align: left;
     header {
       h1 {
         position: relative;
-        font-family: "bernsteinBold";
+        font-family: 'bernsteinBold';
         font-size: 2em !important;
         text-align: left;
         width: auto;
@@ -3092,12 +3082,11 @@ $dragon-ink: #222;
         text-align: left;
       }
     }
-    ul,
-    ol {
-      font-family: "fifthCorpus", sans-serif;
+    ul, ol {
+      font-family: 'fifthCorpus', sans-serif;
       font-size: 1.1em;
       color: black;
-      list-style-type: decimal;
+      list-style-type:decimal;
       padding: 1rem 0;
       li {
         font-size: inherit;
