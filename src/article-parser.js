@@ -12,7 +12,7 @@ async function parseArticle(article){
     const parser = new DOMParser();
     const articleDocument = parser.parseFromString(articleHtml, "text/html");
     //preso solo body
-    const body = articleDocument.querySelector("html");
+    const body = articleDocument.querySelector("body");
     //create url from current article
     const articleURL = new URL(article, window.location.href)
     const pageURL = new URL(window.location.href)
@@ -25,9 +25,13 @@ async function parseArticle(article){
         const imageName = imageSplitUrl[imageSplitUrl.length-1]
         image.src = url.origin + articlePath + "/" + imageName
     })
+
+    const element = articleDocument.querySelector('meta[property~="dc:publisher"]')
+
     return {
         body: body,
-        title: articleDocument.querySelector("title").text
+        title: articleDocument.querySelector("title").text,
+        publisher: element && element.getAttribute("content")
     }
 }
 

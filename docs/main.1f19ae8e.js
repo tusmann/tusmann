@@ -910,7 +910,7 @@ function _parseArticle() {
   _parseArticle = (0, _asyncToGenerator2.default)(
   /*#__PURE__*/
   _regenerator.default.mark(function _callee(article) {
-    var articleResponse, articleHtml, parser, articleDocument, body, articleURL, pageURL, articlePath;
+    var articleResponse, articleHtml, parser, articleDocument, body, articleURL, pageURL, articlePath, element;
     return _regenerator.default.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -929,7 +929,7 @@ function _parseArticle() {
             parser = new DOMParser();
             articleDocument = parser.parseFromString(articleHtml, "text/html"); //preso solo body
 
-            body = articleDocument.querySelector("html"); //create url from current article
+            body = articleDocument.querySelector("body"); //create url from current article
 
             articleURL = new URL(article, window.location.href);
             pageURL = new URL(window.location.href); //get article path (without file name)
@@ -942,12 +942,14 @@ function _parseArticle() {
               var imageName = imageSplitUrl[imageSplitUrl.length - 1];
               image.src = url.origin + articlePath + "/" + imageName;
             });
+            element = articleDocument.querySelector('meta[property~="dc:publisher"]');
             return _context.abrupt("return", {
               body: body,
-              title: articleDocument.querySelector("title").text
+              title: articleDocument.querySelector("title").text,
+              publisher: element && element.getAttribute("content")
             });
 
-          case 14:
+          case 15:
           case "end":
             return _context.stop();
         }
@@ -1173,41 +1175,38 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 function rimpaLogic() {
-  function addColors() {
-    var image = document.querySelectorAll(".reader figure img");
-    var colorsArray = ["image-background-color-yellow", "image-background-color-green", "image-background-color-blue", "image-background-color-red"];
-
-    for (var i = 0; i < image.length; i++) {
-      var currentImageElement = image[i];
-      var imageParent = currentImageElement.parentNode;
-      var backgroundColorDiv = document.createElement("div");
-      var currentColor = colorsArray[i % colorsArray.length];
-      backgroundColorDiv.classList.add(currentColor);
-      imageParent.replaceChild(backgroundColorDiv, currentImageElement);
-      backgroundColorDiv.appendChild(currentImageElement);
-    }
-
-    ;
-  }
-
   addColors();
-
-  function threshold(element, index, array) {
-    if (element.tagName !== "FIGURE" && element.tagName !== "IMG" && element.tagName !== "TABLE") {
-      return element.tagName;
-    }
-  }
-
-  function addBird() {
-    var header = document.querySelector(".reader header");
-    var headerChildren = Array.from(header.children);
-
-    if (headerChildren.every(threshold)) {
-      header.classList.add("bird");
-    }
-  }
-
   addBird();
+}
+
+function addColors() {
+  var image = document.querySelectorAll(".reader figure img");
+  var colorsArray = ["image-background-color-yellow", "image-background-color-green", "image-background-color-blue", "image-background-color-red"];
+
+  for (var i = 0; i < image.length; i++) {
+    var currentImageElement = image[i];
+    var imageParent = currentImageElement.parentNode;
+    var backgroundColorDiv = document.createElement("div");
+    var currentColor = colorsArray[i % colorsArray.length];
+    backgroundColorDiv.classList.add(currentColor);
+    imageParent.replaceChild(backgroundColorDiv, currentImageElement);
+    backgroundColorDiv.appendChild(currentImageElement);
+  }
+}
+
+function addBird() {
+  var header = document.querySelector(".reader header");
+  var headerChildren = Array.from(header.children);
+
+  if (headerChildren.every(threshold)) {
+    header.classList.add("bird");
+  }
+}
+
+function threshold(element, index, array) {
+  if (element.tagName !== "FIGURE" && element.tagName !== "IMG" && element.tagName !== "TABLE") {
+    return element.tagName;
+  }
 }
 
 var _default = rimpaLogic;
@@ -1376,16 +1375,14 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-function rollingDom() {
+function rollingDom(article) {
   /*const div = document.createElement("div");
   const location = document.querySelectorAll(".reader section");
   location.insertAdjacentElement("afterbegin", div);*/
-  var element = document.querySelector('meta[property~="dc:publisher"]');
-  var content = element && element.getAttribute("content");
   var div = document.createElement('div');
   document.getElementsByTagName("article")[0].appendChild(div);
   div.setAttribute('class', 'publisher');
-  div.innerHTML = content;
+  div.textContent = article.publisher;
 }
 
 var _default = rollingDom;
@@ -1479,10 +1476,10 @@ var _styles = _interopRequireDefault(require("./styles"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function applyCustomStyleLogic() {
+function applyCustomStyleLogic(article) {
   _styles.default.forEach(function (style) {
     if (document.querySelector(".reader").classList.contains(style.name)) {
-      if (typeof style.logic !== 'undefined') style.logic();
+      if (typeof style.logic !== 'undefined') style.logic(article);
     }
   });
 }
@@ -1562,7 +1559,7 @@ function _addSpecialArticle() {
               rightContainer.appendChild(node);
             }); //this function allows for using js on articles dom 
 
-            (0, _customStyleLogic.applyCustomStyleLogic)();
+            (0, _customStyleLogic.applyCustomStyleLogic)(article);
 
           case 29:
           case "end":
@@ -1617,7 +1614,7 @@ function _addArticle() {
             nodes.forEach(function (node) {
               container.appendChild(node);
             });
-            (0, _customStyleLogic.applyCustomStyleLogic)();
+            (0, _customStyleLogic.applyCustomStyleLogic)(article);
 
           case 14:
           case "end":
@@ -2003,7 +2000,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "24248" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "24379" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -43,7 +43,7 @@ async function addSpecialArticle(leftArticleUrl, rightArticleUrl) {
         rightContainer.appendChild(node)
     }) 
     //this function allows for using js on articles dom 
-    applyCustomStyleLogic()
+    applyCustomStyleLogic(article)
 }
 
 //add articles to dom
@@ -78,7 +78,7 @@ async function addArticle(articleUrl){
         container.appendChild(node)
     })
 
-    applyCustomStyleLogic()
+    applyCustomStyleLogic(article)
 }
 
 export {addSpecialArticle}
