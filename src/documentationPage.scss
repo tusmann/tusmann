@@ -2,10 +2,10 @@ $card-color-1-light: #E8D0AE;
 $card-color-1-dark: #806261;
 $card-color-2-light: #ecca4d;
 $card-color-2-dark: #279d53;
-$card-color-3-light: #222 ;
-$card-color-3-dark: #e31619;
-$card-color-4-light:  #222;
-$card-color-4-dark: #e31619;
+$card-color-3-light: #f9423a;
+$card-color-3-dark: #0077c0;
+$card-color-4-light:  #e31619;
+$card-color-4-dark: #222;
 $card-color-5-light: #d4d4d4;
 $card-color-5-dark: #ff0019;
 $card-color-6-light: #fff;
@@ -222,9 +222,9 @@ $card-color-6-dark: #222;
         from($card-color-3-light),
         to($card-color-3-dark)
       ),
-      url(./cards/ded-card-front.jpg);
+      url(./cards/tschichold-card-font.jpg);
     background-image: linear-gradient(to right bottom, $card-color-3-light, $card-color-3-dark),
-      url(./cards/ded-card-front.jpg);
+      url(./cards/tschichold-card-font.jpg);
   }
   .card__picture--4 {
     background-image: -webkit-gradient(
