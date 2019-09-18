@@ -829,6 +829,7 @@ html {
   color: #222;
   font-size: 1.5rem;
   text-align: justify;
+  height: 100%;
 }
 .reader.manuzio article section {
   margin: 2rem 0;
@@ -851,12 +852,12 @@ html {
   margin: 1.5rem 0;
 }
 .reader.manuzio article figure {
-  text-align: center;
   margin: 1rem 0;
 }
 .reader.manuzio article figure figcaption {
   font-family: "GriffoClassicoSmallCaps";
   font-style: normal;
+  text-align: center;
 }
 .reader.manuzio article figure figcaption::first-child {
   margin: 0;
@@ -886,8 +887,8 @@ html {
   margin: 0.2rem 0;
   border-collapse: collapse;
   text-align: center;
-  line-height: 1.5rem;
-  font-size: 1rem;
+  line-height: 1rem;
+  font-size: 1.2rem;
 }
 .reader.manuzio article th {
   text-transform: uppercase;
@@ -912,6 +913,9 @@ html {
   letter-spacing: 0.3rem;
   margin: 2rem 0;
   font-style: normal;
+}
+.reader.manuzio article ol, .reader.manuzio article ul {
+  list-style-type: decimal;
 }
 .reader.manuzio article main h1,
 .reader.manuzio article main h2,
@@ -1013,6 +1017,7 @@ html {
   font-size: 100%;
   overflow-x: auto;
   overflow-y: auto;
+  height: 100%;
 }
 .reader.rimpa article p,
 .reader.rimpa article h1,
@@ -1031,9 +1036,9 @@ html {
 }
 .reader.rimpa article table {
   table-layout: fixed;
-  width: 80%;
+  width: 100%;
   border-width: 0.3rem;
-  padding: 0.2rem;
+  margin: 1rem;
   border-collapse: collapse;
   background: rgba(234, 197, 67, 0.5);
   -webkit-column-break-inside: avoid;
@@ -1055,6 +1060,9 @@ html {
 .reader.rimpa article table td {
   padding: 0.2rem;
   border: 0.1rem solid #210102;
+}
+.reader.rimpa article ol, .reader.rimpa article ul {
+  list-style-type: decimal;
 }
 .reader.rimpa article .image-background-color-yellow {
   background: #eac543;
@@ -5964,6 +5972,7 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 100%;
 }
 
 .tutorialPageSection {

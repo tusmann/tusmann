@@ -4,7 +4,7 @@ function rimpaLogic() {
 }
 function addColors() {
   const image = document.querySelectorAll(".reader figure img");
-  const colorsArray = ["image-background-color-yellow", "image-background-color-green", "image-background-color-blue", "image-background-color-red"]
+  const colorsArray = ["image-background-color-green", "image-background-color-blue", "image-background-color-red"]
 
   for (var i = 0; i < image.length; i++) {
     var currentImageElement = image[i]

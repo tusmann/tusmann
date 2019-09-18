@@ -1,14 +1,19 @@
 
 function rollingDom(article){
-    /*const div = document.createElement("div");
-    const location = document.querySelectorAll(".reader section");
-    location.insertAdjacentElement("afterbegin", div);*/
-    
-    var div = document.createElement('div');
-    document.getElementsByTagName("article")[0].appendChild(div);
+  /*const div = document.createElement("div");
+  const location = document.querySelectorAll(".reader section");
+  location.insertAdjacentElement("afterbegin", div);*/
+  
+  const articles = document.querySelectorAll("article");
+  articles.forEach(node => {
+    const div = document.createElement('div');
     div.setAttribute('class', 'publisher');
-    div.textContent = article.publisher
-    
+    div.textContent = article.publisher;
+    console.log(article.publisher)
+    if (!node.querySelector("div.publisher"))
+      node.appendChild(div);
+  })
+  
 }
 
 

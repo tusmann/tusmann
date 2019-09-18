@@ -255,6 +255,7 @@ $dragon-ink: #222;
     color: $manuzio-text-color;
     font-size: 1.5rem;
     text-align: justify;
+    height: 100%;
 
     section {
       margin: 2rem 0;
@@ -278,11 +279,12 @@ $dragon-ink: #222;
       margin: 1.5rem 0;
     }
     figure {
-      text-align: center;
+      
       margin: 1rem 0;
       figcaption {
         font-family: $manuzio-font-maiusc;
         font-style: normal;
+        text-align: center;
         &::first-child {
           margin: 0;
         }
@@ -315,8 +317,8 @@ $dragon-ink: #222;
       margin: 0.2rem 0;
       border-collapse: collapse;
       text-align: center;
-      line-height: 1.5rem;
-      font-size: 1rem;
+      line-height: 1rem;
+      font-size: 1.2rem;
     }
     th {
       text-transform: uppercase;
@@ -341,6 +343,9 @@ $dragon-ink: #222;
       letter-spacing: 0.3rem;
       margin: 2rem 0;
       font-style: normal;
+    }
+    ol, ul {
+        list-style-type: decimal;
     }
     main {
       h1,
@@ -388,6 +393,7 @@ $dragon-ink: #222;
   .right {
     article {
       main {
+
       }
     }
   }
@@ -469,6 +475,7 @@ $dragon-ink: #222;
     font-size: 100%;
     overflow-x: auto;
     overflow-y: auto;
+    height: 100%;
     p,
     h1,
     h2,
@@ -502,9 +509,9 @@ $dragon-ink: #222;
     }
     table {
       table-layout: fixed;
-      width: 80%;
+      width: 100%;
       border-width: 0.3rem;
-      padding: 0.2rem;
+      margin: 1rem;
       border-collapse: collapse;
       background: rgba(234, 197, 67, 0.5);
       -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
@@ -524,6 +531,9 @@ $dragon-ink: #222;
         padding: 0.2rem;
         border: 0.1rem solid $rimpa-text-color;
       }
+    }
+    ol, ul {
+        list-style-type: decimal;
     }
     .image-background-color-yellow {
       background: $rimpa-yellow;

@@ -1181,7 +1181,7 @@ function rimpaLogic() {
 
 function addColors() {
   var image = document.querySelectorAll(".reader figure img");
-  var colorsArray = ["image-background-color-yellow", "image-background-color-green", "image-background-color-blue", "image-background-color-red"];
+  var colorsArray = ["image-background-color-green", "image-background-color-blue", "image-background-color-red"];
 
   for (var i = 0; i < image.length; i++) {
     var currentImageElement = image[i];
@@ -1379,10 +1379,14 @@ function rollingDom(article) {
   /*const div = document.createElement("div");
   const location = document.querySelectorAll(".reader section");
   location.insertAdjacentElement("afterbegin", div);*/
-  var div = document.createElement('div');
-  document.getElementsByTagName("article")[0].appendChild(div);
-  div.setAttribute('class', 'publisher');
-  div.textContent = article.publisher;
+  var articles = document.querySelectorAll("article");
+  articles.forEach(function (node) {
+    var div = document.createElement('div');
+    div.setAttribute('class', 'publisher');
+    div.textContent = article.publisher;
+    console.log(article.publisher);
+    if (!node.querySelector("div.publisher")) node.appendChild(div);
+  });
 }
 
 var _default = rollingDom;
@@ -1526,6 +1530,7 @@ function _addSpecialArticle() {
 
           case 5:
             rightArticle = _context.sent;
+            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1588,6 +1593,7 @@ function _addArticle() {
 
           case 2:
             article = _context2.sent;
+            //before adding the article, clear the page from jumbotron etc (they get hidden) to show only the reader
             elementsToDelete = document.querySelectorAll(".jumbo, .tutorialPageSection, .aboutPageSection, .documentationPageSection, .disclaimerPageSection");
             elementsToDelete.forEach(function (node) {
               node.classList.add("hidden");
@@ -1636,6 +1642,7 @@ var _articleParser = require("./article-parser");
 
 var _addArticle = require("./addArticle.js");
 
+//article dictionary with title=key and url=value
 var articles = [{
   title: "Japan's Prisons Are a Haven for Elderly Women",
   url: "./articles/Bloomberg/ShihoFukada.html"
@@ -1904,6 +1911,14 @@ var _addDocumentationPages = require("./addDocumentationPages");
 
 var _overlayMenu = require("./overlayMenu");
 
+// polyfill needed for using for loop on a dictionary
+
+/*
+ * Object.prototype.forEach() polyfill
+ * https://gomakethings.com/looping-through-objects-with-es6/
+ * @author Chris Ferdinandi
+ * @license MIT
+ */
 if (!Object.prototype.forEach) {
   Object.defineProperty(Object.prototype, "forEach", {
     value: function value(callback, thisArg) {
@@ -1989,11 +2004,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "24379" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50130" + '/');
->>>>>>> 975ab40aef50bb6e6ba6a8d1589a991ac38a0813
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32351" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
