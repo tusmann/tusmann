@@ -1031,12 +1031,8 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.reader.rimpa article a:-webkit-any-link {
-  color: #777;
-}
 .reader.rimpa article table {
   table-layout: fixed;
-  width: 100%;
   border-width: 0.3rem;
   margin: 1rem;
   border-collapse: collapse;
@@ -1178,6 +1174,9 @@ html {
 .reader.rimpa article main p {
   margin: 2rem 0;
 }
+.reader.rimpa article main a:-webkit-any-link {
+  color: #06558e;
+}
 .reader.rimpa article main figure {
   margin: 1rem 0;
   -webkit-column-break-inside: avoid;
@@ -1191,6 +1190,7 @@ html {
   font-style: italic;
   font-size: 1rem;
   margin: 1rem;
+  text-align: center;
 }
 .reader.rimpa article main figure img {
   height: auto;

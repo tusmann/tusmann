@@ -504,12 +504,9 @@ $dragon-ink: #222;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    a:-webkit-any-link {
-      color: #777;
-    }
+    
     table {
       table-layout: fixed;
-      width: 100%;
       border-width: 0.3rem;
       margin: 1rem;
       border-collapse: collapse;
@@ -656,6 +653,9 @@ $dragon-ink: #222;
       p {
         margin: 2rem 0;
       }
+      a:-webkit-any-link {
+        color: $rimpa-blue;
+      }
       figure {
         margin: 1rem 0;
         -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
@@ -665,6 +665,7 @@ $dragon-ink: #222;
           font-style: italic;
           font-size: 1rem;
           margin: 1rem;
+          text-align: center;
         }
         img {
           height: auto;
